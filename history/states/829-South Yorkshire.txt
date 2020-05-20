@@ -1,0 +1,22 @@
+state={
+	id=829
+	name="STATE_829"
+	state_category=town
+	manpower=516800
+	history={
+		owner = ENG
+		add_core_of = ENG
+		buildings = {
+			infrastructure = 6
+			arms_factory = 2
+			industrial_complex = 2
+			}		
+
+		}
+
+
+	provinces={
+		6237 9315 11345 11382 
+	}
+	buildings_max_level_factor=1.000
+}

@@ -1,0 +1,20 @@
+state={
+	id=824
+	name="STATE_824"
+	state_category=town
+	manpower=15600
+	history={
+		owner = ROM
+		add_core_of = ROM
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+		}
+
+
+		}
+	provinces={
+		577 
+	}
+	buildings_max_level_factor=1.000
+}

@@ -1,0 +1,28 @@
+state={
+	id=843
+	name="STATE_843"
+	state_category=town
+	manpower=516800
+	history={
+		owner = ENG
+		add_core_of = ENG
+		add_core_of = SCO
+		buildings = {
+			infrastructure = 6
+			arms_factory = 2
+			industrial_complex = 2
+			6395 = {
+				naval_base = 2
+			}		
+
+			}		
+
+		}
+
+
+	provinces={
+		6350 6395 9237 9350 
+	}
+	buildings_max_level_factor=1.000
+}
+

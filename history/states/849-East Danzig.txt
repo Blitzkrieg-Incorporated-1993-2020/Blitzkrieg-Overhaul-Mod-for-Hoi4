@@ -1,0 +1,23 @@
+state={
+	id=849
+	name="STATE_849"
+	state_category=city
+	manpower=122240
+	history={
+		owner = DAN
+		add_core_of = DAN
+		add_core_of = POL
+		buildings = {
+			infrastructure = 9
+			industrial_complex = 1
+
+		}
+
+		}
+
+	provinces={
+
+		13246 
+	}
+	buildings_max_level_factor=1.000
+}

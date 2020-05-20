@@ -1,0 +1,21 @@
+
+state={
+	id=814
+	name="STATE_814"
+	state_category=town
+	manpower=1516800
+	history={
+		owner = ROM
+		add_core_of = ROM
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+		}
+
+
+		}
+	provinces={
+		723 6706 6729 6747 9701 11652 11655 11672 
+	}
+	buildings_max_level_factor=1.000
+}

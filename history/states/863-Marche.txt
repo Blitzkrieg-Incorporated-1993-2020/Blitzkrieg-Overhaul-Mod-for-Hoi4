@@ -1,0 +1,27 @@
+state={
+	id=863
+	name="STATE_863"
+
+	history={
+		owner = ITA
+		add_core_of = ITA
+		buildings = {
+			infrastructure = 6
+			arms_factory = 2
+			industrial_complex = 2
+			925 = {
+				naval_base = 4
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		925 967 3910 9838 11861 
+	}
+	manpower=116800
+	buildings_max_level_factor=1.000
+	state_category=town
+}

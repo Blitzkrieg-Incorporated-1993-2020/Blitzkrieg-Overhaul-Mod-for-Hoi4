@@ -1,0 +1,24 @@
+state={
+	id=851
+	name="STATE_851"
+	state_category=city
+	manpower=10600
+	history={
+		owner = LIE
+		add_core_of = LIE
+		add_core_of = AUS
+		buildings = {
+			infrastructure = 9
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+
+		}
+
+	provinces={
+
+		13245 
+	}
+	buildings_max_level_factor=1.000
+}

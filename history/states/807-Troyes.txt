@@ -1,0 +1,24 @@
+state={
+	id=807
+	name="STATE_807"
+	state_category=town
+	manpower=516800
+	history={
+		owner = FRA
+		add_core_of = FRA
+		buildings = {
+			infrastructure = 6
+			arms_factory = 2
+			industrial_complex = 2
+
+		}
+
+		}
+
+	provinces={
+		551 3533 6531 6949 11491 11732 
+	}
+	buildings_max_level_factor=1.000
+}
+
+

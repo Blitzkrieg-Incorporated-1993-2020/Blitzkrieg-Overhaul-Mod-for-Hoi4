@@ -1,0 +1,22 @@
+state={
+	id=844
+	name="STATE_844"
+	state_category=city
+	manpower=2116800
+	history={
+		owner = BEL
+		add_core_of = BEL
+		buildings = {
+			infrastructure = 9
+			arms_factory = 2
+			industrial_complex = 2
+			}		
+
+		}
+
+
+	provinces={
+		516 
+	}
+	buildings_max_level_factor=1.000
+}

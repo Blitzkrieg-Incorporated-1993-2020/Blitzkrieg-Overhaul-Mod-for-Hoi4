@@ -1,0 +1,35 @@
+state={
+	id=856
+	name="STATE_856"
+
+	history={
+		owner = ITA
+		add_core_of = ITA
+		buildings = {
+			infrastructure = 6
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 2
+			6788 = {
+				naval_base = 8
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		3772 6788 11891 
+	}
+	manpower=116800
+	buildings_max_level_factor=1.000
+	state_category=town
+}
+		1939.1.1 = {
+			buildings = {
+				dockyard = 3
+
+			}
+
+		}

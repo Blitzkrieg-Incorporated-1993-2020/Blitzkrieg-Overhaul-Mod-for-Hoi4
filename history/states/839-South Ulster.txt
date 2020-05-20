@@ -1,0 +1,22 @@
+state={
+	id=839
+	name="STATE_839"
+	state_category=town
+	manpower=15600
+	history={
+		owner = IRE
+		add_core_of = IRE
+		buildings = {
+			infrastructure = 6
+			arms_factory = 2
+			industrial_complex = 2
+			}		
+
+		}
+
+
+	provinces={
+		11303 
+	}
+	buildings_max_level_factor=1.000
+}

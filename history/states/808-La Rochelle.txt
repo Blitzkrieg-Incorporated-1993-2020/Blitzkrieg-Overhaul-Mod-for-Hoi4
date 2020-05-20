@@ -1,0 +1,23 @@
+
+state={
+	id=808
+	name="STATE_808"
+	state_category=rural
+	manpower=516800
+	history={
+		owner = FRA
+		add_core_of = FRA
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 2
+
+		}
+
+		}
+
+	provinces={
+		595 6657 9597 11565 11582 
+	}
+	buildings_max_level_factor=1.000
+}
+

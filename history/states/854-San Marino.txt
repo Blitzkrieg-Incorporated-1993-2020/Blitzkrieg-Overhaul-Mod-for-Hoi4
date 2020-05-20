@@ -1,0 +1,24 @@
+state={
+	id=854
+	name="STATE_854"
+	state_category=city
+	manpower=14500
+	history={
+		owner = SNM
+		add_core_of = SNM
+		add_core_of = ITA
+		buildings = {
+			infrastructure = 9
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+
+		}
+
+	provinces={
+
+		13237 
+	}
+	buildings_max_level_factor=1.000
+}
