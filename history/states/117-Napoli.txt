@@ -24,6 +24,7 @@ state={
 
 		}
 		add_core_of = ITA
+		add_core_of = KTS
 		1939.1.1 = {
 			buildings = {
 				arms_factory = 2
@@ -36,7 +37,7 @@ state={
 	}
 
 	provinces={
-		819 883 955 6939 6980 9826 11803 
+		819 851 955 9826 11803 
 	}
 	manpower=5333611
 	buildings_max_level_factor=1.000

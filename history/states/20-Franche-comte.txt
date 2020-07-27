@@ -12,6 +12,9 @@ state={
 		victory_points = {
 			6613 10 
 		}
+		victory_points = {
+			3650 3 
+		}
 		buildings = {
 			infrastructure = 7
 			arms_factory = 1
@@ -19,8 +22,8 @@ state={
 			air_base = 4
 
 		}
-		add_core_of = OCC
 		add_core_of = FRA
+		add_core_of = OCC
 		1939.1.1 = {
 			buildings = {
 				arms_factory = 2
@@ -33,7 +36,7 @@ state={
 	}
 
 	provinces={
-		6613 6786 9728 11593 11716 11794 
+		641 3650 3770 6613 6639 6786 9590 9728 9732 11593 11716 11794 
 	}
 	manpower=2973200
 	buildings_max_level_factor=1.000

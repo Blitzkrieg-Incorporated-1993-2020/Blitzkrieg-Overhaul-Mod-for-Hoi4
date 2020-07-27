@@ -9,20 +9,20 @@ state={
 	history={
 		owner = FRA
 		victory_points = {
-			9434 10 
-		}
-		victory_points = {
 			6449 3 
 		}
 		victory_points = {
-			11563 5 
+			6599 10 
 		}
 		victory_points = {
-			485 3 
+			9578 5 
+		}
+		victory_points = {
+			11535 1 
 		}
 		buildings = {
 			infrastructure = 7
-			industrial_complex = 2
+			industrial_complex = 1
 			air_base = 6
 			6449 = {
 				naval_base = 3
@@ -38,7 +38,7 @@ state={
 	provinces={
 		539 553 3534 3549 3579 6449 6599 9550 9578 11521 11535 
 	}
-	manpower=2332100
+	manpower=1401100
 	buildings_max_level_factor=1.000
-	state_category=city
+	state_category=large_town
 }

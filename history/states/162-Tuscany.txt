@@ -24,6 +24,10 @@ state={
 				naval_base = 10
 
 			}
+			11833 = {
+				naval_base = 4
+
+			}
 
 		}
 		add_core_of = ITA
@@ -39,7 +43,7 @@ state={
 	}
 
 	provinces={
-		1616 6946 6973 9907 11889 
+		910 1616 6875 6946 6973 9750 9879 9907 11833 11889 
 	}
 	manpower=3084933
 	buildings_max_level_factor=1.000

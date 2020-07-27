@@ -15,6 +15,10 @@ state={
 			infrastructure = 7
 			industrial_complex = 1
 			air_base = 2
+			782 = {
+				naval_base = 2
+
+			}
 
 		}
 		add_core_of = ITA
@@ -22,7 +26,7 @@ state={
 	}
 
 	provinces={
-		3773 3976 6790 9752 
+		782 3773 3976 6606 6790 6793 6985 9752 9924 11734 
 	}
 	manpower=3202401
 	buildings_max_level_factor=1.000

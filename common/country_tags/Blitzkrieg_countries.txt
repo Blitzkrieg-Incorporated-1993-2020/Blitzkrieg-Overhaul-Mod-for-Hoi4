@@ -1,6 +1,0 @@
-AND = "countries/Andorra.txt"
-VTC = "countries/Vatican City.txt"
-SNM = "countries/San Marino.txt"
-MNC = "countries/Monaco.txt"
-LIE = "countries/Liechtenstein.txt"
-DAN = "countries/Danzig.txt"
