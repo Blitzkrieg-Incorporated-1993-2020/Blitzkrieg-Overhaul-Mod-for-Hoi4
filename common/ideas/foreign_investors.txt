@@ -1,0 +1,68 @@
+ideas = { 
+
+    foreign_investors = {
+	
+	 law = yes
+     use_list_view = yes
+	
+	    allowed_investors = {
+		    available = {
+				NOT = { has_government = communism }
+				}
+			
+			modifier = {
+				political_power_factor = -0.10
+				consumer_goods_factor = 0.05
+			    industrial_capacity_factory = 0.10
+				industrial_capacity_dockyard = 0.10
+				production_factory_max_efficiency_factor = 0.10
+			}
+			cost = 100
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 3
+   			}
+		}
+		
+		regulated_investors = {
+		   available = {
+				}
+			
+			
+			modifier = {
+				political_power_factor = -0.05
+                industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+			cost = 100
+			cancel_if_invalid = yes
+
+			ai_will_do = {
+   				factor = 0.5
+   			}
+		}
+		
+		banned_investors = {
+		   available = {
+				}
+			
+			
+			modifier = {
+				political_power_factor = 0.10
+				production_factory_max_efficiency_factor = -0.10
+                industrial_capacity_factory = -0.10
+				industrial_capacity_dockyard = -0.10
+				consumer_goods_factor = -0.05
+			}
+			cost = 100
+			cancel_if_invalid = yes
+
+			ai_will_do = {
+   				factor = 0.5
+   			}
+		}
+	}
+}

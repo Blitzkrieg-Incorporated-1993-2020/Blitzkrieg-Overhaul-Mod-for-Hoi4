@@ -1,0 +1,122 @@
+ideas = {
+
+    government_size = { 
+		
+		law = yes
+        use_list_view = yes
+		
+		
+		totalitarian_state = {
+		    available = {
+				NOT = {
+				  OR = { 
+					has_government = democratic
+				    }
+				  }
+				}
+			
+			modifier = {
+				political_power_factor = 0.15
+                stability_factor = -0.10
+				war_support_factor = 0.10
+				consumer_goods_factor = 0.05
+			}
+			cost = 100
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 0.5
+				modifier = {
+					has_government = communism
+					factor = 10
+				}
+				modifier = {
+					has_government = fascism
+					factor = 10
+				}
+   			}
+		}
+		
+		authoritarian_state = {
+		    available = {
+				NOT = {
+				  OR = { 
+					has_government = democratic
+				    }
+				  }
+				}
+			
+			modifier = {
+				political_power_factor = 0.10
+                stability_factor = -0.05
+				war_support_factor = 0.05
+			}
+			cost = 100
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 0.5
+				modifier = {
+					has_government = neutrality
+					factor = 10
+				}
+   			}
+		}
+		
+		democratic_state = {
+		    available = {
+				NOT = {
+				  has_government = communism
+				  has_government = neutrality
+				  has_government = fascism  
+				}
+			}
+			
+			modifier = {
+				political_power_factor = -0.10
+                stability_factor = 0.10
+				consumer_goods_factor = -0.05
+			}
+			cost = 100
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 0.5
+				modifier = {
+					has_government = democratic
+					factor = 10
+				}
+   			}
+		}
+		
+		
+		anarchism = {
+		    available = {
+				NOT = {
+				  has_government = communism
+				  has_government = democratic
+				  has_government = fascism
+				  has_government = neutrality
+				}
+			}
+			
+			modifier = {
+				political_power_factor = -0.25
+                war_support_factor = 0.15
+				consumer_goods_factor = -0.10
+			}
+			cost = 100
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+   				factor = 0.1
+   			}
+		}
+		
+	}
+
+}

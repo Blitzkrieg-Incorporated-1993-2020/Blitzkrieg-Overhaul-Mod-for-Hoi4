@@ -2,6 +2,10 @@
 state={
 	id=341
 	name="STATE_341"
+	resources={
+		chromium=45.000
+		steel=5.000
+	}
 
 	history={
 		add_claim_by = GRE
@@ -10,10 +14,10 @@ state={
 			9833 20 
 		}
 		buildings = {
-			infrastructure = 6
+			infrastructure = 5
 			industrial_complex = 1
 			dockyard = 1
-			arms_factory = 1
+			arms_factory = 2
 			air_base = 4
 			9833 = {
 				naval_base = 8
@@ -26,9 +30,9 @@ state={
 	}
 
 	provinces={
-		9833 
+		9833 11829 
 	}
-	manpower=502108
+	manpower=950859
 	buildings_max_level_factor=1.000
 	state_category=city
 }

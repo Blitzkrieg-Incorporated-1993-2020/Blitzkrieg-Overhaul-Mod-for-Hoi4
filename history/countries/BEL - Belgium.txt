@@ -20,7 +20,6 @@ set_technology = {
 }
 
 add_ideas = {
-	king_leopold_iii
 }
 
 1939.1.1 = {

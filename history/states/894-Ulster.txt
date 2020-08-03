@@ -1,0 +1,26 @@
+state={
+	id=894
+	name="STATE_894"
+	resources={
+		steel=7.000
+	}
+
+	history={
+		owner = ENG
+		
+		buildings = {
+			infrastructure = 5		
+
+		}
+		add_core_of = ENG
+		add_core_of = IRE
+		add_core_of = NIR
+
+	}
+	provinces={
+		385 11257 
+	}
+	manpower=198537
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

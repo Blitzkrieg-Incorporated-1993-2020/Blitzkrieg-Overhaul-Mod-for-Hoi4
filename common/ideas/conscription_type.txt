@@ -1,0 +1,114 @@
+ideas = {
+
+	conscription_type = { 
+	
+		law = yes
+		use_list_view = yes
+
+		
+		conscription_all = {
+		    available = {
+				
+			}
+			
+			modifier = {
+				conscription_factor = 0.25
+				mobilization_speed = 0.25
+                army_attack_factor = 0.10
+				army_morale_factor = -0.20
+                war_support_factor = -0.10
+                political_power_gain = -0.10
+			}
+	
+			cost = 100
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 2
+				modifier = {
+				    OR = {
+					has_government = communism
+					has_government = democratic
+					}
+					factor = 1
+					
+				}
+			}		
+			
+		}
+		
+		
+		conscription_mixed = {
+
+		available = {
+				NOT = { 
+				    
+				}
+			}
+			
+			modifier = {
+			    conscription_factor = 0.10
+				mobilization_speed = 0.10
+                army_attack_factor = 0.05
+				army_morale_factor = 0.10
+                war_support_factor = 0.05
+			}
+			
+			cancel_if_invalid = yes
+			
+			cost = 100
+			
+			ai_will_do = {
+			
+   				factor = 0.5
+
+   				modifier = {
+				    
+					
+				}
+   			}
+		}
+		
+		conscription_small = {
+
+			available = {
+		     
+			}
+			
+			modifier = {
+			    conscription_factor = -0.10
+				mobilization_speed = -0.10
+                army_attack_factor = -0.10
+				army_morale_factor = 0.10
+                war_support_factor = 0.10
+			}
+			
+			cost = 100
+
+			
+			cancel_if_invalid = yes
+
+			ai_will_do = {
+   				factor = 0.5
+
+				modifier = {
+				    OR = {
+					has_government = fascism
+					has_government = neutrality
+					}
+					factor = 2
+					
+				}
+				modifier = {
+				    OR = {
+					has_government = fascism
+					}
+					factor = 2.0
+					
+				}
+   			}
+		}
+		
+	}
+}

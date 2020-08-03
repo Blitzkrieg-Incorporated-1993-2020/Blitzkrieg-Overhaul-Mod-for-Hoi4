@@ -7,14 +7,11 @@ state={
 		victory_points = {
 			6389 10 
 		}
-		victory_points = {
-			9347 20 
-		}
 		owner = GER
 		buildings = {
 			infrastructure = 6
 			arms_factory = 2
-			dockyard = 6
+			dockyard = 3
 			air_base = 5
 			6389 = {
 				naval_base = 8
@@ -23,8 +20,6 @@ state={
 
 		}
 		add_core_of = GER
-		add_core_of = PRE
-		add_core_of = SHL
 		1939.1.1 = {
 			buildings = {
 				synthetic_refinery = 3
@@ -39,9 +34,9 @@ state={
 	}
 
 	provinces={
-		3368 6257 6389 9320 9347 11331 
+		3368 6257 6389 9320 11331 
 	}
-	manpower=2144100
+	manpower=1044773
 	buildings_max_level_factor=1.000
-	state_category=large_city
+	state_category=city
 }

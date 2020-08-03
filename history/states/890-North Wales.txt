@@ -1,0 +1,25 @@
+state={
+	id=890
+	name="STATE_890"
+	resources={
+		steel=8.000
+		aluminium=9.000
+	}
+
+	history={
+		owner = ENG
+		
+		buildings = {
+			infrastructure = 4
+		}
+		add_core_of = ENG
+		add_core_of = WLS
+
+	}
+	provinces={
+		311 6363 9364 
+	}
+	manpower=309230
+	buildings_max_level_factor=1.000
+	state_category=town
+}

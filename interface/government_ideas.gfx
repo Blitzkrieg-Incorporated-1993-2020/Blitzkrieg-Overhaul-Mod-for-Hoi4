@@ -1,0 +1,627 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_idea_categories"
+		texturefile = "gfx/interface/idea_categories.dds"
+		noOfFrames = 7
+	}
+#slots
+	spriteType = {
+		name = "GFX_idea_slot_population"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_mass_media"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_equality"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_war_bonds"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_economic_policy"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_finances"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_conscription_type"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_soldier_training"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_officer_training"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_spec_ops"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_legioners"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_convention"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_slot_tax_policy"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_slot_tariffs_policy"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_slot_gender_equality"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_national_spirit"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_government_size"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_civil_liberties"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_state_and_church"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_nationalisation"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_foreign_investors"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_immigration"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_healthcare"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_unemployment"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_education"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_pensions"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_family_welfare"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_infrastructure_and_investment"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+#head of cabinet ministers
+	spriteType = {
+		name = "GFX_idea_slot_minister_of_foreign_affairs"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_head_of_state"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_minister_of_economy_and_finance"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_minister_of_the_interior_and_defence"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_minister_of_commerce_and_trade"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slot_minister_culture_and_information"
+		textureFile = "gfx/interface/idea_slot_political_advisor.dds"
+	}
+#investments
+    spriteType = {
+		name = "GFX_idea_full_infrastructure_and_investment_spending"
+		textureFile = "gfx/interface/ideas/laws/full_infrastructure_and_investment_spending.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_expanded_infrastructure_and_investment_spending"
+		textureFile = "gfx/interface/ideas/laws/expanded_infrastructure_and_investment_spending.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_cut_infrastructure_and_investment_spending"
+		textureFile = "gfx/interface/ideas/laws/cut_infrastructure_and_investment_spending.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_bare_bones_infrastructure_and_investment_spending"
+		textureFile = "gfx/interface/ideas/laws/bare_bones_infrastructure_and_investment_spending.dds"
+	}
+#pensions
+	spriteType = {
+		name = "GFX_idea_full_pensions"
+		textureFile = "gfx/interface/ideas/laws/full_pensions.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_partial_pensions"
+		textureFile = "gfx/interface/ideas/laws/partial_pensions.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slashed_pensions"
+		textureFile = "gfx/interface/ideas/laws/slashed_pensions.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_bare_bones_pensions"
+		textureFile = "gfx/interface/ideas/laws/bare_bones_pensions.dds"
+	}
+#family welfare
+    spriteType = {
+		name = "GFX_idea_expanded_family_welfare"
+		textureFile = "gfx/interface/ideas/laws/expanded_family_welfare.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_partial_family_welfare"
+		textureFile = "gfx/interface/ideas/laws/partial_family_welfare.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_reduced_family_welfare"
+		textureFile = "gfx/interface/ideas/laws/reduced_family_welfare.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_bare_bones_family_welfare"
+		textureFile = "gfx/interface/ideas/laws/bare_bones_family_welfare.dds"
+	}
+#healthcare
+    spriteType = {
+		name = "GFX_idea_fully_nationalised_healthcare"
+		texturefile = "gfx/interface/ideas/laws/fully_nationalised_healthcare.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_partly_nationalised_healthcare"
+		texturefile = "gfx/interface/ideas/laws/partly_nationalised_healthcare.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_private_healthcare"
+		texturefile = "gfx/interface/ideas/laws/private_healthcare.dds"
+	}
+
+#natio
+	spriteType = {
+		name = "GFX_idea_economic_capital"
+		texturefile = "gfx/interface/ideas/laws/economic_capital.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_economic_full"
+		texturefile = "gfx/interface/ideas/laws/economic_full.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_economic_partial"
+		texturefile = "gfx/interface/ideas/laws/economic_partial.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_economic_mixed"
+		texturefile = "gfx/interface/ideas/laws/economic_mixed.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_economic_interventionist"
+		texturefile = "gfx/interface/ideas/laws/economic_interventionist.dds"
+	}
+#education
+    spriteType = {
+		name = "GFX_idea_full_school_funding"
+		texturefile = "gfx/interface/ideas/laws/full_school_funding.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_partial_school_funding"
+		texturefile = "gfx/interface/ideas/laws/partial_school_funding.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slashed_school_funding"
+		texturefile = "gfx/interface/ideas/laws/slashed_school_funding.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_bare_bones_school_funding"
+		texturefile = "gfx/interface/ideas/laws/bare_bones_school_funding.dds"
+	}
+#unemployment
+    spriteType = {
+		name = "GFX_idea_no_unemployment_subsides"
+		texturefile = "gfx/interface/ideas/laws/no_unemployment_subsides.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_full_unemployment_subsides"
+		texturefile = "gfx/interface/ideas/laws/full_unemployment_subsides.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_partial_unemployment_subsides"
+		texturefile = "gfx/interface/ideas/laws/partial_unemployment_subsides.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_slashed_unemployment_subsides"
+		texturefile = "gfx/interface/ideas/laws/slashed_unemployment_subsides.dds"
+	}
+
+	
+#nationalisation
+    spriteType = {
+		name = "GFX_idea_full_nationalisation"
+		texturefile = "gfx/interface/ideas/laws/full_nationalisation.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_semi_nationalisation"
+		texturefile = "gfx/interface/ideas/laws/semi_nationalisation.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_low_nationalisation"
+		texturefile = "gfx/interface/ideas/laws/low_nationalisation.dds"
+	}
+	
+#national spirit
+    spriteType = {
+		name = "GFX_idea_nationalist_spirit"
+		texturefile = "gfx/interface/ideas/laws/nationalist_spirit.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_revolutionary_spirit"
+		texturefile = "gfx/interface/ideas/laws/revolutionary_spirit.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_freedom_liberty_spirit"
+		texturefile = "gfx/interface/ideas/laws/freedom_liberty_spirit.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_reactionary_spirit"
+		texturefile = "gfx/interface/ideas/laws/reactionary_spirit.dds"
+	}
+#immigration
+    spriteType = {
+		name = "GFX_idea_immigration_no"
+		texturefile = "gfx/interface/ideas/laws/immigration_no.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_immigration_strict"
+		texturefile = "gfx/interface/ideas/laws/immigration_strict.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_immigration_relaxed"
+		texturefile = "gfx/interface/ideas/laws/immigration_relaxed.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_immigration_open_borders"
+		texturefile = "gfx/interface/ideas/laws/immigration_open_borders.dds"
+	}
+
+#foreign investment
+    spriteType = {
+		name = "GFX_idea_allowed_investors"
+		texturefile = "gfx/interface/ideas/laws/allowed_investors.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_regulated_investors"
+		texturefile = "gfx/interface/ideas/laws/regulated_investors.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_banned_investors"
+		texturefile = "gfx/interface/ideas/laws/banned_investors.dds"
+	}
+
+#government size
+    spriteType = {
+		name = "GFX_idea_totalitarian_state"
+		texturefile = "gfx/interface/ideas/laws/totalitarian_state.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_authoritarian_state"
+		texturefile = "gfx/interface/ideas/laws/authoritarian_state.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_democratic_state"
+		texturefile = "gfx/interface/ideas/laws/democratic_state.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_anarchism"
+		texturefile = "gfx/interface/ideas/laws/anarchism.dds"
+	}
+#civil liberties
+    spriteType = {
+		name = "GFX_idea_no_rights"
+		texturefile = "gfx/interface/ideas/laws/no_rights.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_restricted_rights"
+		texturefile = "gfx/interface/ideas/laws/restricted_rights.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_civil_rights_expanded"
+		texturefile = "gfx/interface/ideas/laws/civil_rights_expanded.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_for_freedom"
+		texturefile = "gfx/interface/ideas/laws/for_freedom.dds"
+	}
+	
+#religon
+    spriteType = {
+		name = "GFX_idea_church_and_state"
+		texturefile = "gfx/interface/ideas/laws/church_and_state.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_empowered_church"
+		texturefile = "gfx/interface/ideas/laws/empowered_church.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_endorsed_church"
+		texturefile = "gfx/interface/ideas/laws/endorsed_church.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_weakened_church"
+		texturefile = "gfx/interface/ideas/laws/weakened_church.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_state_atheism"
+		texturefile = "gfx/interface/ideas/laws/state_atheism.dds"
+	}
+
+
+
+#taxes
+    spriteType = {
+		name = "GFX_idea_very_high_taxes"
+		texturefile = "gfx/interface/ideas/laws/very_high_taxes.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_high_taxes"
+		texturefile = "gfx/interface/ideas/laws/high_taxes.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_medium_taxes"
+		texturefile = "gfx/interface/ideas/laws/medium_taxes.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_low_taxes"
+		texturefile = "gfx/interface/ideas/laws/low_taxes.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_very_low_taxes"
+		texturefile = "gfx/interface/ideas/laws/very_low_taxes.dds"
+	}
+#tariffs
+    spriteType = {
+		name = "GFX_idea_very_high_tariffs"
+		texturefile = "gfx/interface/ideas/laws/very_high_taxes.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_high_tariffs"
+		texturefile = "gfx/interface/ideas/laws/high_taxes.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_medium_tariffs"
+		texturefile = "gfx/interface/ideas/laws/medium_taxes.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_low_tariffs"
+		texturefile = "gfx/interface/ideas/laws/low_taxes.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_very_low_tariffs"
+		texturefile = "gfx/interface/ideas/laws/very_low_taxes.dds"
+	}
+#population
+	spriteType = {
+		name = "GFX_idea_population_controlled"
+		texturefile = "gfx/interface/ideas/laws/population_controlled.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_population_encourage"
+		texturefile = "gfx/interface/ideas/laws/population_encourage.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_population_open"
+		texturefile = "gfx/interface/ideas/laws/population_open.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_population_pure"
+		texturefile = "gfx/interface/ideas/laws/population_pure.dds"
+	}
+
+#finance
+	spriteType = {
+		name = "GFX_idea_finances_foreign"
+		texturefile = "gfx/interface/ideas/laws/finances_foreign.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_finances_civilian"
+		texturefile = "gfx/interface/ideas/laws/finances_civilian.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_finances_army"
+		texturefile = "gfx/interface/ideas/laws/finances_army.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_finances_science"
+		texturefile = "gfx/interface/ideas/laws/finances_science.dds"
+	}
+#gender equality
+    spriteType = {
+		name = "GFX_idea_full_equality"
+		texturefile = "gfx/interface/ideas/laws/full_equality.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_limited_equality"
+		texturefile = "gfx/interface/ideas/laws/limited_equality.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_traditional_roles"
+		texturefile = "gfx/interface/ideas/laws/traditional_roles.dds"
+	}
+    spriteType = {
+		name = "GFX_idea_enforced_patriarchy"
+		texturefile = "gfx/interface/ideas/laws/enforced_patriarchy.dds"
+	}
+#mass media
+	spriteType = {
+		name = "GFX_idea_mass_media_censorship"
+		texturefile = "gfx/interface/ideas/laws/mass_media_censorship.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_mass_media_free"
+		texturefile = "gfx/interface/ideas/laws/mass_media_free.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_mass_media_propaganda"
+		texturefile = "gfx/interface/ideas/laws/mass_media_propaganda.dds"
+	}
+
+#equality
+	spriteType = {
+		name = "GFX_idea_equality_minority"
+		texturefile = "gfx/interface/ideas/laws/equality_minority.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_equality_segregation"
+		texturefile = "gfx/interface/ideas/laws/equality_segregation.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_equality_genocide"
+		texturefile = "gfx/interface/ideas/laws/equality_genocide.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_equality_all"
+		texturefile = "gfx/interface/ideas/laws/equality_all.dds"
+	}
+
+#war bonds
+	spriteType = {
+		name = "GFX_idea_war_bonds_welcome"
+		texturefile = "gfx/interface/ideas/laws/war_bonds_welcome.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_bonds_no"
+		texturefile = "gfx/interface/ideas/laws/war_bonds_no.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_bonds_force"
+		texturefile = "gfx/interface/ideas/laws/war_bonds_force.dds"
+	}
+#conscription
+	spriteType = {
+		name = "GFX_idea_conscription_all"
+		texturefile = "gfx/interface/ideas/laws/conscription_all.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_conscription_small"
+		texturefile = "gfx/interface/ideas/laws/conscription_small.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_conscription_mixed"
+		texturefile = "gfx/interface/ideas/laws/conscription_partial.dds"
+	}
+
+#soldier
+	spriteType = {
+		name = "GFX_idea_soldier_full"
+		texturefile = "gfx/interface/ideas/laws/soldier_full.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_soldier_basic"
+		texturefile = "gfx/interface/ideas/laws/soldier_basic.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_soldier_extended"
+		texturefile = "gfx/interface/ideas/laws/soldier_extended.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_soldier_baptism"
+		texturefile = "gfx/interface/ideas/laws/soldier_baptism.dds"
+	}
+
+#officer
+	spriteType = {
+		name = "GFX_idea_officer_full"
+		texturefile = "gfx/interface/ideas/laws/officer_full.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_officer_basic"
+		texturefile = "gfx/interface/ideas/laws/officer_basic.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_officer_advanced"
+		texturefile = "gfx/interface/ideas/laws/officer_advanced.dds"
+	}
+
+#spec_ops
+	spriteType = {
+		name = "GFX_idea_spec_ops_quantity" 
+		texturefile = "gfx/interface/ideas/laws/spec_ops_quantity.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_spec_ops_quality"
+		texturefile = "gfx/interface/ideas/laws/spec_ops_quality.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_spec_ops_foreign"
+		texturefile = "gfx/interface/ideas/laws/spec_ops_foreign.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_spec_ops_security"
+		texturefile = "gfx/interface/ideas/laws/spec_ops_security.dds"
+	}
+
+#legio
+	spriteType = {
+		name = "GFX_idea_legioners_allowed"
+		texturefile = "gfx/interface/ideas/laws/legioner_allowed.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_legioners_forbidden"
+		texturefile = "gfx/interface/ideas/laws/legioner_forbidden.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_legioners_int"
+		texturefile = "gfx/interface/ideas/laws/legioner_int.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_legioners_ext"
+		texturefile = "gfx/interface/ideas/laws/legioner_ext.dds"
+	}
+
+#convention
+	spriteType = {
+		name = "GFX_idea_convention_strict"
+		texturefile = "gfx/interface/ideas/laws/convention_strict.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_convention_no"
+		texturefile = "gfx/interface/ideas/laws/convention_no.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_convention_small"
+		texturefile = "gfx/interface/ideas/laws/convention_small.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_convention_severe"
+		texturefile = "gfx/interface/ideas/laws/convention_severe.dds"
+	}
+}

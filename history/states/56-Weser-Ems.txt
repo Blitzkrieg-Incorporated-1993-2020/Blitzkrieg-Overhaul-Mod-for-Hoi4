@@ -9,7 +9,13 @@ state={
 			241 5 
 		}
 		victory_points = {
+			11360 1 
+		}
+		victory_points = {
 			11388 5 
+		}
+		victory_points = {
+			13254 5 
 		}
 		buildings = {
 			infrastructure = 6
@@ -24,8 +30,6 @@ state={
 
 		}
 		add_core_of = GER
-		add_core_of = PRE
-		add_core_of = HAN
 		1939.1.1 = {
 			buildings = {
 				industrial_complex = 4
@@ -38,9 +42,9 @@ state={
 	}
 
 	provinces={
-		241 247 309 3234 9281 11233 11388 
+		241 247 309 336 9281 11233 11264 11360 11388 13254 
 	}
-	manpower=2016434
+	manpower=2058467
 	buildings_max_level_factor=1.000
-	state_category=city
+	state_category=large_town
 }

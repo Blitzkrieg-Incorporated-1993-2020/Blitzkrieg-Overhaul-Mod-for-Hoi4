@@ -9,4 +9,4 @@ tags={
 }
 name="Blitzkrieg: An Overhaul Mod for Hearts of Iron 4"
 supported_version="1.9.2"
-path="mod/Blitzkrieg-Overhaul-Mod-for-Hoi4"
+path="C:/Users/Eesa/Dropbox/My PC (JAMILAH-DESKTOP)/Documents/Paradox Interactive/Hearts of Iron IV/mod/blitzkrieg"
