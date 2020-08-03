@@ -66,6 +66,23 @@ focus_tree = {
 	}
 
 	focus = {
+		id = FRA_nationalize_the_french_bank
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = FRA_create_the_sncf}
+		relative_position_id = FRA_create_the_sncf
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
 		id = FRA_raise_compulsory_school_attendance_age
 		icon = GFX_goal_generic_scientific_exchange
 		prerequisite = { focus = FRA_public_sector_funding}
@@ -87,6 +104,58 @@ focus_tree = {
 		icon = GFX_focus_fra_devalue_the_franc
 		prerequisite = { focus = FRA_raise_compulsory_school_attendance_age}
 		relative_position_id = FRA_raise_compulsory_school_attendance_age
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = FRA_free_gold_market
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = FRA_franc_devaluation}
+		relative_position_id = FRA_franc_devaluation
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = FRA_exchnage_rate_comitty
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = FRA_franc_devaluation}
+		relative_position_id = FRA_franc_devaluation
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = FRA_public_loan
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = FRA_exchnage_rate_comitty}
+		prerequisite = { focus = FRA_free_gold_market}
+		relative_position_id = FRA_free_gold_market
 		x = 1
 		y = 1
 		cost = 10
@@ -271,12 +340,30 @@ focus_tree = {
 	}
 
 	focus = {
+		id = FRA_national_defense_council
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		prerequisite = { focus = FRA_disolve_the_far_right_leagues}
+		prerequisite = { focus = FRA_amend_the_social_insurance_scheme}
+		relative_position_id = FRA_disolve_the_far_right_leagues
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
 		id = FRA_blum_violet_proposal
 		icon = GFX_focus_fra_french_union
 		prerequisite = { focus = FRA_disolve_the_far_right_leagues focus = FRA_production_tax}
 		relative_position_id = FRA_disolve_the_far_right_leagues
-		x = -1
-		y = 1
+		x = 0
+		y = 2
 		cost = 10
 		ai_will_do = {
 			factor = 12
