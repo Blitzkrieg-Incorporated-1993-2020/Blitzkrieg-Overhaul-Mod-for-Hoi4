@@ -373,4 +373,224 @@ focus_tree = {
 			
 		}
 	}
+
+focus = {
+	id = FRA_dalider_cabinet
+	icon = GFX_focus_generic_treaty
+	x = 25
+	y = 0
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+}
+
+focus = {
+	id = FRA_issue_mobilization
+	icon = GFX_focus_generic_treaty
+	prerequisite = { focus = FRA_dalider_cabinet}
+	relative_position_id = FRA_dalider_cabinet
+	x = 1
+	y = 1
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+}
+
+focus = {
+	id = FRA_comission_firearms
+	icon = GFX_focus_generic_treaty
+	prerequisite = { focus = FRA_issue_mobilization}
+	relative_position_id = FRA_issue_mobilization
+	x = 1
+	y = 1
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+}
+
+focus = {
+	id = FRA_code_de_la_famille
+	icon = GFX_focus_generic_treaty
+	prerequisite = { focus = FRA_comission_firearms}
+	relative_position_id = FRA_comission_firearms
+	x = 1
+	y = 1
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+}
+
+focus = {
+	id = FRA_press_censorship
+	icon = GFX_focus_generic_treaty
+	prerequisite = {  focus = FRA_code_de_la_famille}
+	relative_position_id = FRA_code_de_la_famille
+	x = 1
+	y = 1
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+}
+
+focus = {
+	id = FRA_rationing
+	icon = GFX_focus_generic_treaty
+	prerequisite = {  focus = FRA_code_de_la_famille}
+	relative_position_id = FRA_code_de_la_famille
+	x = -1
+	y = 1
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+}
+
+focus = {
+	id = FRA_administrative_reforms
+	icon = GFX_focus_generic_treaty
+	prerequisite = { focus = FRA_dalider_cabinet}
+	relative_position_id = FRA_dalider_cabinet
+	x = -2
+	y = 2
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+}
+
+focus = {
+	id = FRA_war_powers
+	icon = GFX_focus_generic_treaty
+	prerequisite = { focus = FRA_dalider_cabinet}
+	relative_position_id = FRA_dalider_cabinet
+	x = 0
+	y = 2
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+}
+
+focus = {
+	id = FRA_foreign_police
+	icon = GFX_focus_generic_treaty
+	prerequisite = { focus = FRA_dalider_cabinet}
+	relative_position_id = FRA_dalider_cabinet
+	x = -1
+	y = 1
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+}
+
+focus = {
+	id = FRA_laval_decree
+	icon = GFX_focus_generic_treaty
+	prerequisite = { focus = FRA_war_powers focus = FRA_administrative_reforms}
+	relative_position_id = FRA_administrative_reforms
+	x = 1
+	y = 1
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+}
+
+focus = {
+	id = FRA_laval_decree
+	icon = GFX_focus_generic_treaty
+	prerequisite = { focus = FRA_war_powers focus = FRA_administrative_reforms}
+	relative_position_id = FRA_administrative_reforms
+	x = 1
+	y = 1
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+}
+
+focus = {
+	id = FRA_modernize_counter_intelligence
+	icon = GFX_focus_generic_treaty
+	prerequisite = { focus = FRA_laval_decree }
+	relative_position_id = FRA_laval_decree
+	x = 0
+	y = 1
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+}
+
+focus = {
+	id = FRA_ban_the_communist_party
+	icon = GFX_focus_generic_treaty
+	prerequisite = { focus = FRA_war_powers focus = FRA_issue_mobilization}
+	relative_position_id = FRA_war_powers
+	x = 1
+	y = 1
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+}
+
 }
