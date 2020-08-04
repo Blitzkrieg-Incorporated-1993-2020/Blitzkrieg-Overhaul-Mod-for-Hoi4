@@ -4,9 +4,12 @@ state={
 	name="STATE_85"
 
 	history={
-		owner = DAN
+		owner = POL
 		victory_points = {
-			362 10 
+			3295 5 
+		}
+		victory_points = {
+			279 1 
 		}
 		buildings = {
 			infrastructure = 6
@@ -14,13 +17,8 @@ state={
 			industrial_complex = 1
 			dockyard = 1
 			air_base = 3
-			362 = {
-				naval_base = 5
-
-			}
 
 		}
-		add_core_of = DAN
 		add_core_of = POL
 		1938.3.12 = {
 			add_claim_by = GER
@@ -30,9 +28,9 @@ state={
 	}
 
 	provinces={
-		362 
+		334 389 3295 3324 6347 9263 13245 13246 
 	}
-	manpower=330000
+	manpower=718600
 	buildings_max_level_factor=1.000
 	state_category=city
 }

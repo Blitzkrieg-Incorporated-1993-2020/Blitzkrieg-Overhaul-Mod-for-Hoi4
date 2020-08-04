@@ -7,11 +7,11 @@ state={
 
 	history={
 		victory_points = {
-			6375 3
+			6375 5
 		}
-		#victory_points = {
-		#	11386 1
-		#}
+		victory_points = {
+			11386 3
+		}
 		owner = GER
 		controller = GER
 		
@@ -19,7 +19,6 @@ state={
 			infrastructure = 6
 		}
 		add_core_of = GER
-		add_core_of = PRE
 	}
 
 	provinces={

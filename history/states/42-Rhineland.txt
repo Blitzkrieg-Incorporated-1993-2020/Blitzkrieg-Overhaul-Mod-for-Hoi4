@@ -4,19 +4,12 @@ state={
 	name="STATE_42"
 	resources={
 		steel=59.000
-		aluminium=14.000
 	}
 
 	history={
 		owner = GER
 		victory_points = {
-			3558 5 
-		}
-		victory_points = {
-			11560 10
-		}
-		victory_points = {
-			13236 1
+			11435 1 
 		}
 		buildings = {
 			infrastructure = 7
@@ -41,9 +34,9 @@ state={
 	}
 
 	provinces={
-		563 3423 3558 11547 11560 13236 
+		3423 9575 11435 11470 11494 
 	}
-	manpower=2795303
+	manpower=1840639
 	buildings_max_level_factor=1.000
-	state_category=large_city
+	state_category=city
 }

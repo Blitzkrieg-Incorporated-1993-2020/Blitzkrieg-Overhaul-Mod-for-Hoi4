@@ -1,0 +1,26 @@
+state={
+	id=888
+	name="STATE_888"
+	history={
+		owner = ENG
+		victory_points = {
+		9239 15	
+		}
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 2
+
+		}
+		add_core_of = ENG
+		
+
+		
+
+	}
+	provinces={
+		6221 9239 11471 
+	}
+	manpower=224296
+	buildings_max_level_factor=1.000
+	state_category=large_town
+}

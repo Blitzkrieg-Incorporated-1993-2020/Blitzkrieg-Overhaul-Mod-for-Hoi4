@@ -4,13 +4,9 @@ state={
 	name="STATE_78"
 
 	history={
-		add_core_of = MOL
 		owner = ROM
 		victory_points = {
-			3707 5 
-		}
-		victory_points = {
-			6600 1 
+			3707 1 
 		}
 		buildings = {
 			infrastructure = 4
@@ -24,7 +20,7 @@ state={
 	provinces={
 		414 565 3577 3707 3724 6600 9683 11686 11705 
 	}
-	manpower=2216400
+	manpower=2176247
 	buildings_max_level_factor=1.000
 	state_category=town
 }

@@ -4,7 +4,7 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 10141;1419;sea;5267;-1;-1;-1;-1;;Moluccas
 480;9431;sea;8621;-1;-1;-1;-1;;Netherlands outlier
 8857;2284;sea;7617;1560;1009;1556;1016;PANAMA_CANAL;Panama
-2729;2408;sea;6389;2948;1598;2966;1611;KIEL_CANAL;Kiel
+2729;2408;sea;6257;2949;1598;2962;1612;KIEL_CANAL;Kiel
 5388;803;sea;1155;-1;-1;-1;-1;SUEZ_CANAL;Suez
 299;211;sea;2282;-1;-1;-1;-1;;Småland-Öland
 6345;6287;sea;2382;-1;-1;-1;-1;;Skåne-Sjaelland
@@ -69,8 +69,8 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 10092;7046;sea;8791;-1;-1;-1;-1;;Kyushu-Shikoku
 4198;12032;sea;8472;-1;-1;-1;-1;;Kanoya-Yokushima
 11948;1177;sea;2708;-1;-1;-1;-1;;Jeju-Korea
-10124;11932;sea;8499;-1;-1;-1;-1;;Okinawa
-1123;7115;sea;2829;-1;-1;-1;-1;;Senkaku
+10124;1123;sea;8499;-1;-1;-1;-1;;Okinawa 1
+1123;7115;sea;8318;-1;-1;-1;-1;;Okinawa 2
 3995;13024;sea;2855;-1;-1;-1;-1;;Saipan-Tinian
 1135;13090;sea;6471;-1;-1;-1;-1;;Amlia-Unalaska
 13090;10694;sea;6064;-1;-1;-1;-1;;Unalaska-Unimak
@@ -129,12 +129,6 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 5407;2400;;-1;-1;-1;-1;-1;GIBRALTAR_STRAIT;Gibraltar South
 2455;2506;;-1;-1;-1;-1;-1;DANISH_BELTS_STRAIT;Øresund
 5412;7678;;-1;-1;-1;-1;-1;BOSPHORUS_STRAIT;Bosphorus
-11064;13246;sea;3195;-1;-1;-1;-1;;Scottish Highlands-Orkeny Islands
-10791;10870;sea;2691;-1;-1;-1;-1;;Saudi-Bahrain
-7683;13247;sea;8642;-1;-1;-1;-1;;Quebec-Anticosti
-4155;13284;sea;5507;-1;-1;-1;-1;;Virgin islands
-13285;13286;sea;2871;-1;-1;-1;-1;;Channel islands
-677;9671;sea;5430;-1;-1;-1;-1;GOLDEN_GATE_BRIDGE;Golden Gate Bride
 10825;1991;impassable;-1;-1;-1;-1;-1;;Himalayas
 10825;8029;impassable;-1;-1;-1;-1;-1;;Himalayas
 10910;1991;impassable;-1;-1;-1;-1;-1;;Himalayas
@@ -180,39 +174,6 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 4391;4828;impassable;-1;-1;-1;-1;-1;;pamir mountains
 4391;1703;impassable;-1;-1;-1;-1;-1;;pamir mountains
 4391;12526;impassable;-1;-1;-1;-1;-1;;pamir mountains
-10482;7630;impassable;-1;-1;-1;-1;-1;;Darien Gap
-10482;4969;impassable;-1;-1;-1;-1;-1;;Darien Gap
-2129;4635;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-2129;12107;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-2129;12123;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-2129;1222;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-2129;12931;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-1617;2129;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-1617;8235;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-8235;4593;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-8235;1602;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-11018;10423;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-11018;12400;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-11018;12240;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-11018;1389;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-11018;4393;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-11018;7614;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-5135;7614;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-5135;12154;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-5135;12931;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-7570;10423;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-7570;10396;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-7570;12371;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-7570;4552;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-10436;4552;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-10436;1546;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-10436;7269;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-10436;4593;impassable;-1;-1;-1;-1;-1;;Papua Mountain
-13069;7855;impassable;-1;-1;-1;-1;-1;;Alaska
-13069;1830;impassable;-1;-1;-1;-1;-1;;Alaska
-13069;10679;impassable;-1;-1;-1;-1;-1;;Alaska
-13069;13091;impassable;-1;-1;-1;-1;-1;;Alaska
-13069;4848;impassable;-1;-1;-1;-1;-1;;Alaska
-13069;7869;impassable;-1;-1;-1;-1;-1;;Alaska
 3314;6336;sea;2752;2885;1578;2890;1581;;Afsluitdijk
+849;9887;sea;7678;-1;-1;-1;-1;;Dardanelles
 -1;-1;;-1;-1;-1;-1;-1;-1

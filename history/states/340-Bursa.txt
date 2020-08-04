@@ -14,22 +14,16 @@ state={
 
 		}
 		victory_points = {
-			947 3
-		}
-		victory_points = {
-			9887 1 
-		}
-		victory_points = {
-			11778 1
+			947 1 
 		}
 		add_core_of = TUR
 
 	}
 
 	provinces={
-		785 947 3786 6864 6912 9799 9887 11778 11867 
+		785 947 3786 3851 6864 6912 9799 11778 11867 13250 
 	}
-	manpower=1026527
+	manpower=980377
 	buildings_max_level_factor=1.000
 	state_category=town
 }

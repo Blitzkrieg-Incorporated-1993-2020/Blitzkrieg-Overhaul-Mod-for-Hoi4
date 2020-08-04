@@ -10,7 +10,6 @@ state={
 
 		}
 		add_core_of = GER
-		add_core_of = BAY
 		victory_points = {
 			9515 3 
 		}
@@ -18,9 +17,9 @@ state={
 	}
 
 	provinces={
-		532 571 586 3299 3541 3571 11497 
+		532 571 586 3299 3474 3541 3571 6725 9416 9515 9681 11404 11497 
 	}
-	manpower=1423245
+	manpower=1453365
 	buildings_max_level_factor=1.000
-	state_category=city
+	state_category=large_town
 }
