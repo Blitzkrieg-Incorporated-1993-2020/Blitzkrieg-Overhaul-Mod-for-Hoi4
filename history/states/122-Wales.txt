@@ -4,7 +4,7 @@ state={
 	name="STATE_122"
 	resources={
 		steel=11.000
-		aluminium=3.000
+		aluminium=9.000
 	}
 
 	history={
@@ -29,7 +29,7 @@ state={
 	provinces={
 		253 377 407 3274 11361 
 	}
-	manpower=2309230
+	manpower=1909230
 	buildings_max_level_factor=1.000
-	state_category=city
+	state_category=large_town
 }

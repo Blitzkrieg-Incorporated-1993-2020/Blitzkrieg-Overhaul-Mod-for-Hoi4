@@ -1,0 +1,118 @@
+ideas = {
+    
+	education = {
+	
+	 law = yes
+     use_list_view = yes
+	
+	    full_school_funding = {
+		    available = {
+				  }
+			 
+			modifier = {
+				political_power_factor = -0.10
+				war_support_factor = -0.05
+				consumer_goods_factor = 0.08
+				stability_factor = 0.05
+				production_factory_start_efficiency_factor = 0.10
+				research_speed_factor = 0.15
+			}
+			cost = 100
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 2
+				modifier = {
+					has_government = communism
+					factor = 5
+				}
+   			}
+		}
+		
+		partial_school_funding = {
+		    available = {
+				 }
+			 
+			modifier = {
+				political_power_factor = -0.05
+				consumer_goods_factor = 0.04
+				production_factory_start_efficiency_factor = 0.05
+				research_speed_factor = 0.10
+			}
+			cost = 100
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 2
+				modifier = {
+					has_government = fascism
+					factor = 5
+				}
+				modifier = {
+					has_government = democratic
+					factor = 3
+				}
+   			}
+		}
+		
+		slashed_school_funding = {
+		    available = {
+			    NOT = {
+					has_government = communism
+				    }
+				  }
+			 
+			modifier = {
+				political_power_factor = 0.05
+				consumer_goods_factor = -0.04
+				production_factory_start_efficiency_factor = -0.05
+				research_speed_factor = -0.10
+			}
+			cost = 100
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 2
+				modifier = {
+					has_government = fascism
+					factor = 5
+				}
+				modifier = {
+					has_government = democratic
+					factor = 3
+				}
+   			}
+		}
+		
+		bare_bones_school_funding = {
+		    available = {
+			    NOT = {
+					has_government = communism
+				    }
+				 NOT = {
+					has_government = fascism
+				    }	
+				  }
+			 
+			modifier = {
+				political_power_factor = 0.10
+				consumer_goods_factor = -0.10
+				stability_factor = -0.05
+				war_support_factor = 0.05
+				production_factory_start_efficiency_factor = -0.10
+				research_speed_factor = -0.15
+			}
+			cost = 100
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 2
+   			}
+		}
+	
+	
+	
+	
+	}
+
+}

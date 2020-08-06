@@ -1,0 +1,26 @@
+state={
+	id=887
+	name="STATE_887"
+	history={
+		owner = ENG
+		buildings = {
+			infrastructure = 6
+            dockyard = 1
+			11374 = {
+				naval_base = 10
+
+			}
+
+		}
+		add_core_of = ENG
+		
+
+
+	}
+	provinces={
+		221 11374 
+	}
+	manpower=824296
+	buildings_max_level_factor=1.000
+	state_category=large_town
+}

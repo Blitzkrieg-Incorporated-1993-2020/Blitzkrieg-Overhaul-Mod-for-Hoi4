@@ -1,0 +1,131 @@
+ideas = { 
+
+        state_and_church = {
+		
+	    law = yes
+        use_list_view = yes
+		
+		church_and_state = {
+		    available = {	 
+				NOT = {
+					has_government = communism
+				}
+			}
+			modifier = {
+				political_power_factor = 0.15
+                stability_factor = 0.10
+				consumer_goods_factor = 0.10
+                
+			}
+			cost = 100
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 1
+   			}
+		}
+		
+		empowered_church = {
+		    available = {	 
+				NOT = {
+					has_government = communism
+				}
+			}
+			modifier = {
+				political_power_factor = 0.10
+                stability_factor = 0.05
+				consumer_goods_factor = 0.05
+                
+			}
+			cost = 100
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 1
+   			}
+		}
+		
+		endorsed_church = {
+		    available = {	 
+				NOT = {
+					has_government = communism
+				}
+			}
+			modifier = {
+				political_power_factor = 0.05
+                stability_factor = 0.05       
+			}
+			cost = 100
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 1
+   			}
+		}
+		
+		weakened_church = {
+		    available = {	 
+			}
+			modifier = {
+				political_power_factor = -0.05
+                stability_factor = -0.05  
+                consumer_goods_factor = -0.05				
+			}
+			cost = 100
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 1
+   			}
+		}
+		
+		state_atheism = {
+		    available = {	 
+				NOT = {
+					has_government = neutrality
+				}
+			}
+			modifier = {
+				political_power_factor = -0.10
+                stability_factor = -0.10
+                consumer_goods_factor = -0.10				
+			}
+			cost = 100
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 1
+   			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		}
+		
+
+
+
+
+}

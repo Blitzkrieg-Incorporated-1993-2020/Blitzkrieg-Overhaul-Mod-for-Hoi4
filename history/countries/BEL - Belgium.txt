@@ -1,9 +1,9 @@
-capital = 844
+﻿capital = 6
 
 oob = "BEL_1936"
 
 set_research_slots = 3
-set_stability = 0.8
+set_stability = 0.7
 set_war_support = 0.3 #we see what you are doing there Adolf
 
 set_technology = {
@@ -17,6 +17,9 @@ set_technology = {
 	trench_warfare = 1
 	fuel_silos = 1
 	fuel_refining = 1
+}
+
+add_ideas = {
 }
 
 1939.1.1 = {
@@ -107,15 +110,26 @@ set_convoys = 80
 set_stability = 0.75
 
 create_country_leader = {
-	name = "Hubert Pierlot"
-	desc = "POLITICS_HUBERT_PIERLOT_DESC"
-	picture = "Portrait_Belgium_Hubert_Pierlot.dds"
+	name = "Paul Van Zeeland"
+	desc = "POLITICS_PAUL_VAN_ZEELAND_DESC"
+	picture = "Portrait_Belgium_Paul_Van_Zeeland.dds"
 	expire = "1965.1.1"
 	ideology = conservatism
 	traits = {
 		#
 	}
 }
+
+#create_country_leader = {
+#	name = "Hubert Pierlot"
+#	desc = "POLITICS_HUBERT_PIERLOT_DESC"
+#	picture = "Portrait_Belgium_Hubert_Pierlot.dds"
+#	expire = "1965.1.1"
+#	ideology = conservatism
+#	traits = {
+#		#
+#	}
+#}
 
 create_country_leader = {
 	name = "Joseph Jacquemotte"
@@ -131,7 +145,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Léon Degrelle"
 	desc = "POLITICS_LEON_DEGRELLE_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
+	picture = "Portrait_Belgium_Leon_Degrelle.dds"
 	expire = "1965.1.1"
 	ideology = rexism
 	traits = {

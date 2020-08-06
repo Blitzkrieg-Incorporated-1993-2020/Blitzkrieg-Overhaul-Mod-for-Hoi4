@@ -1,0 +1,82 @@
+ideas = {
+    
+	healthcare = {
+    
+	 law = yes
+     use_list_view = yes
+       
+
+		fully_nationalised_healthcare = {
+		    available = {
+				NOT = {
+					has_government = democratic
+				    }
+				  }
+			 
+			modifier = {
+				political_power_factor = -0.10
+				consumer_goods_factor = 0.08
+				stability_factor = 0.05
+				MONTHLY_POPULATION = 0.2
+			}
+			cost = 100
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 0.5
+				modifier = {
+					has_government = communism
+					factor = 10
+				}
+   			}
+		}
+
+		partly_nationalised_healthcare = {
+		    available = {
+				  }
+			 
+			modifier = {
+				political_power_factor = -0.05
+				consumer_goods_factor = 0.04
+				MONTHLY_POPULATION = 0.10
+			}
+			cost = 100
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 2
+				modifier = {
+					has_government = fascism
+					factor = 5
+				}
+   			}
+		}
+		
+		private_healthcare = {
+		    available = {
+			    NOT = {
+					has_government = communism
+				    }
+				  }
+			 
+			modifier = {
+				political_power_factor = 0.10
+				consumer_goods_factor = -0.08
+				stability_factor = -0.05
+				MONTHLY_POPULATION = -0.20
+			}
+			cost = 100
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 2
+				modifier = {
+					has_government = democratic 
+					factor = 5
+				}
+   			}
+		}
+    }
+}

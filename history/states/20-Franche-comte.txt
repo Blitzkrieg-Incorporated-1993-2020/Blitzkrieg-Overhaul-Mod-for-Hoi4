@@ -3,8 +3,8 @@ state={
 	id=20
 	name="STATE_20"
 	resources={
-		steel=60.000
-		aluminium=35.000
+		steel=40.000
+		aluminium=25.000
 	}
 
 	history={
@@ -15,7 +15,7 @@ state={
 		buildings = {
 			infrastructure = 7
 			arms_factory = 1
-			industrial_complex = 2
+			industrial_complex = 1
 			air_base = 4
 
 		}
@@ -33,9 +33,9 @@ state={
 	}
 
 	provinces={
-		6613 6786 9728 11593 11716 11794 
+		3770 6613 6786 9728 9732 11593 11716 11794 
 	}
-	manpower=2973200
+	manpower=2213200
 	buildings_max_level_factor=1.000
-	state_category=city
+	state_category=large_town
 }

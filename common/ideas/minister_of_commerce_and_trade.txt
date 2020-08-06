@@ -1,0 +1,15 @@
+ideas = {      
+	
+	
+	minister_of_commerce_and_trade = {
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+
+}

@@ -1,0 +1,10 @@
+ideas = {
+    
+	minister_culture_and_information = {
+	
+	
+	
+	
+	}
+
+}
