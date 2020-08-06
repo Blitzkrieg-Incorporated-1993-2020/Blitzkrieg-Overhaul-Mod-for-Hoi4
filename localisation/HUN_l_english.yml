@@ -1,5 +1,10 @@
 ﻿l_english:
      
+     
+    ###########
+    ##FOCUSES##
+    ###########
+     
  ##German Treaty
 HUN_german_treaty: "Treaty with Germany"
 HUN_german_treaty_desc: "Germany has offered us very good trade deals, subsidizing our grain exports to them among other things, which would surely help accelerate the economy and lift us out of the Depression. Surely those fools claiming that it would irreversibly tie our economy to the german one are simply over-speculating."
@@ -66,3 +71,63 @@ HUN_expand_pecs_arsenal_desc: "The Pécs Arsenal is large, but not large enough.
 
 HUN_military_roads: "Military Roads"
 HUN_military_roads_desc: "Building Military Roads will allow our army to traverse the nation much faster will increase army responsiveness and allow them to be anywhere at any time."
+
+
+    #########
+    ##IDEAS##
+    #########
+    
+   #Beginning Focuses
+
+HUN_trianon: "The Treaty of Triannon"
+HUN_trianon_desc: "After Austria-Hungary's defeat in the Great War, Hungary was forced to sign a humiliating treaty, forcing it to give up 2/3 of it's land, population, and resources, and limiting it's military. Even now, a third of all hungarians live outside our borders. This has widely influenced hugarian politics."
+
+HUN_kingdom_without_a_king: "A Kingdom without a King"
+HUN_kingdom_without_a_king_desc: "After the defeat of the communist revolutionaries, Hungary was proclaimed a Kingdom, however the parliament vetoed a romanian or habsburg king, and nowadays it is obvious that this is just a pretense for Admiral Hórthy to continue ruling. Maybe in the future we can find a suitable candidate..."
+
+HUN_sluggish_economy: "A Sluggish Economy"
+HUN_sluggish_economy_desc: "Although the economy is not at the levels of ruin it was in 1932, it's still sluggish, and slow to recover. Hopefully new reforms and changes might improve the situation."
+
+HUN_sluggish_economy_2: "A Sluggish Economy"
+HUN_sluggish_economy_2_desc: "Although the economy is not at the levels of ruin it was in 1932, and even in early 1936, it's still damaged, and even more reforms may be necessary to improve the situation."
+
+HUN_sluggish_economy_3: "A Sluggish Economy"
+HUN_sluggish_economy_3_desc: "Recent Reforms have improved the economy a large amount, and hopefully soon the economy will make a complete recovery from the Great Depression."
+
+#Leaders
+
+HUN_gombos: "Gyula Gömbös"
+HUN_gombos_desc: "Gyula Gömbös is the leading fascist demagogue in our nation, and currently our Prime Minister. Under him, hungary has forged closer ties with germany and expanded it's influence, however his health has recently been failing..."
+
+HUN_bethlen: "Ístvan Bethlen"
+HUN_bethlen_desc: "Ístvan Bethlen is one of Hungary's most beloved former Prime Ministers, knwon for helping guide the ship of state through the early stages of the depression. Now that he has been made PM again, he will ensure that hungary stays strong and independent."
+
+HUN_teleki: "Pál Teleki"
+HUN_teleki_desc: "Originally a Sea Scout, Pál Teleki has risen up in hungarian politics to become the Prime Minister, supporting the preservation of hungarian autonomy amidst increasing pressure from Germany. Just how successful he will be is yet to be seen."
+
+HUN_szalszai: "Ferenc Szálasi"
+HUN_szalszai_desc: "Ferenc Szálasi, first an officer in the army, became radicalized by the likes of Gömbös. After being kicked out of the army for being in politics, he formed The Party of National Will. When that was made illegal, he formed The Arrow Cross Party, a party advocating Szálasi's personal ideology of Hungarism, a mix of Turanism, Anti-semitism, and other right-wing ideas. Now PM, he will use his power to ensure that Hungary, and the Magyars, are ascendant." 
+
+#German Treaty Ideas
+
+HUN_treaty_with_germany: "Trade Treaty with Germany"
+HUN_treaty_with_germany_desc: "The German-Hungarian Supplementary Trade Agreement is a treaty signed between Hungary and Germany, mainly focusing on agricultural exports."
+
+   ###########
+   ##PARTIES##
+   ###########
+   
+   
+ HUN_fascism_party:1 "Horthy Government"
+ HUN_arrow_cross_party:0 "NPHM"
+ HUN_arrow_cross_party_long:0 "Nyilaskeresztes Párt – Hungarista Mozgalom"
+ HUN_communism_party:0 "KMP"
+ HUN_communism_party_long:0 "Kommunisták Magyarországi Pártja"
+ HUN_democratic_party:0 "SZDP"
+ HUN_democratic_party_long:0 "Szociáldemokrata Párt"
+ HUN_neutrality_party:0 "Hórthy Government"
+ HUN_neutrality_party_long:0 "Hórthy Government"
+ HUN_legitimists_party:0 "House of Habsburg"
+ HUN_legitimists_party_long:0 "House of Habsburg-Lorraine"
+   
+   
