@@ -1,0 +1,16 @@
+state={
+	id=912
+	name="STATE_912"
+	history={
+		owner = YUN
+		add_core_of = YUN
+		add_core_of = CHI
+		add_core_of = PRC
+		}
+	provinces={
+		5072 10819 12841 
+	}
+	manpower=456734
+	buildings_max_level_factor=1.000
+	state_category=rural
+}
