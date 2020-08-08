@@ -129,5 +129,35 @@ HUN_treaty_with_germany_desc: "The German-Hungarian Supplementary Trade Agreemen
  HUN_neutrality_party_long:0 "Hórthy Government"
  HUN_legitimists_party:0 "House of Habsburg"
  HUN_legitimists_party_long:0 "House of Habsburg-Lorraine"
+ 
+ 
+  #############
+  ##Decisions##
+  ############# 
    
    
+  #######################
+  ##Decision Categories##
+  #######################
+  
+  HUN_foreign_influence: "Foreign Influence"
+  HUN_foreign_influence_desc: "Hungary is one of the largest and wealthiest Central European nations, aside from the likes of Germany and Poland. This makes it an appetizing target for foreign powers, especially when combined with large amounts of political strife. Two main nations vie for influence within our government. The British, and the Germans. Although over the years the Germans have gained a better foothold, especially with the rise of the fascist Gyula Gömbös, Britain has not yet given up on influencing the politics of our nation. These two powers are like poised snakes, and giving too many concessions to one may anger the other, so we must tread carefully.\n§BGerman§!  Influence is: [HUN.GermanInfluence_HUN]\n§RBritish§!  Influence is: [HUN.BritishInfluence_HUN]"
+  
+  
+  ################
+  ##Scripted Loc##
+  ################
+  
+  ger_hun_influence_none: "§GNone§!"
+  ger_hun_influence_low: "§GLow§!"
+  ger_hun_influence_average: "§YMedium§!"
+  ger_hun_influence_high: "§RHigh§!"
+  ger_hun_influence_total: "§RTotal§!"
+  
+  eng_hun_influence_none: "§GNone§!"
+  eng_hun_influence_low: "§GLow§!"
+  eng_hun_influence_average: "§YMedium§!"
+  eng_hun_influence_high: "§RHigh§!"
+  eng_hun_influence_total: "§RTotal§!"
+ 
+ 

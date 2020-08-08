@@ -963,8 +963,277 @@ focus_tree = {
 
 		}
 		}
-	
-	
+  
+  
+  ##################
+  ##British Treaty##
+  ##################
+  
+  focus = {
+		id = HUN_british_Treaty
+		icon = GFX_goal_generic_construction
+		x = 10
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+		
+		mutually_exclusive = {}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+          add_political_power = 100
+		}
+		}
+		
+		focus = {
+		id = HUN_british_treaty
+		icon = GFX_goal_generic_construction
+		x = 10
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+		
+		mutually_exclusive = {}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+          add_political_power = 100
+		}
+		}
+		
+		focus = {
+		id = HUN_trans_hungarian_highway
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = HUN_british_treaty }
+		x = 10
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+		
+		mutually_exclusive = {}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+          
+		}
+		}
+		
+		focus = {
+		id = HUN_coal_exports
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = HUN_trans_hungarian_highway }
+		x = 8
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+		
+		mutually_exclusive = {}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+         
+		}
+		}
+   
+   
+  		focus = {
+		id = HUN_bauxite_exploitation
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = HUN_trans_hungarian_highway }
+		x = 12
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+		
+		mutually_exclusive = {}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+          
+		}
+		}
+		
+		focus = {
+		id = HUN_subsidize_alfold_farmers
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = HUN_coal_exports }
+		prerequisite = { focus = HUN_bauxite_exploitation }
+		x = 10
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+		
+		mutually_exclusive = {}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+          
+		}
+		}
+        
+        focus = {
+		id = HUN_work_with_ra_lister_and_co
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = HUN_subsidize_alfold_farmers }
+		x = 8
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+		
+		mutually_exclusive = {}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+          
+		}
+		}
+		
+		focus = {
+		id = HUN_invite_british_aluminium
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = HUN_subsidize_alfold_farmers }
+		x = 12
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+		
+		mutually_exclusive = {}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+          
+		}
+		}
+
+
 }
 	
 	

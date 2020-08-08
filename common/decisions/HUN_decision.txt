@@ -1,0 +1,44 @@
+HUN_foreign_influence = {
+
+HUN_variable_test = {
+		available = {
+		
+		}
+		ai_will_do = {
+			factor = 4000
+		}
+
+		fire_only_once = no
+		days_re_enable = 182
+
+		complete_effect = {
+				add_to_variable = {HUN_german_influence = 5}
+		}
+	}
+	
+	
+	
+	HUN_variable_test2 = {
+		available = {
+		
+		}
+		ai_will_do = {
+			factor = 4000
+		}
+
+		fire_only_once = no
+		days_re_enable = 182
+
+		complete_effect = {
+				add_to_variable = {HUN_british_influence = 5}
+		}
+	}
+	
+	
+
+
+
+
+
+
+}

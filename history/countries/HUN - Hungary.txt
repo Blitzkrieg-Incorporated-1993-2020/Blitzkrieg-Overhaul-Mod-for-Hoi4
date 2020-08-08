@@ -25,6 +25,16 @@ HUN_kingdom_without_a_king
 HUN_gombos
 }
 
+set_variable = {
+        var = HUN_german_influence
+        value = 20
+    }
+    
+set_variable = {
+        var = HUN_british_influence
+        value = 5
+    }
+
 
 1939.1.1 = {
 	remove_ideas = HUN_treaty_of_triannon
