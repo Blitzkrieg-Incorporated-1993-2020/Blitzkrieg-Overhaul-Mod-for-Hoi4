@@ -1,0 +1,658 @@
+focus_tree = {
+	id = AUS
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = AUS
+		}
+	}
+	#Focus for War With The Axis
+	focus = {
+		id = AUS_war_with_the_axis
+		icon = GFX_AUS_war_with_the_axis-35698
+		x = 12
+		y = 18
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_invite_hungary }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = GER
+}
+		}
+	}
+
+	#Focus for Invite Hungary
+	focus = {
+		id = AUS_invite_hungary
+		icon = GFX_AUS_invite_hungary-35696
+		x = 12
+		y = 17
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_rival_the_axis }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_to_faction= HUN
+		}
+	}
+
+	#Focus for Take On Germany With The Comintern
+	focus = {
+		id = AUS_take_on_germany_with_the_comintern
+		icon = GFX_AUS_take_on_germany_with_the_comintern-34665
+		x = 36
+		y = 19
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_alliance_with_the_soviet_bear }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything
+target = GER
+}
+		}
+	}
+
+	#Focus for Alliance With The Soviet Bear
+	focus = {
+		id = AUS_alliance_with_the_soviet_bear
+		icon = GFX_AUS_alliance_with_the_soviet_bear-34663
+		x = 36
+		y = 18
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_form_a_common_goal_with_the_soviet_union }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Hire Communist Infrastructural Workers
+	focus = {
+		id = AUS_hire_communist_infrastructural_workers
+		icon = GFX_AUS_hire_communist_infrastructural_workers-34661
+		x = 37
+		y = 17
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_form_a_common_goal_with_the_soviet_union }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state= {
+add_building_construction = {type = infrastructurelevel = 2
+instant_build = no}
+
+}
+		}
+	}
+
+	#Focus for Build Gulags
+	focus = {
+		id = AUS_build_gulags
+		icon = GFX_goal_continuous_restrict_freedom
+		x = 35
+		y = 17
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_form_a_common_goal_with_the_soviet_union }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability= 0.15add_political_power= -25
+		}
+	}
+
+	#Focus for Form A Common Goal With The Soviet Union
+	focus = {
+		id = AUS_form_a_common_goal_with_the_soviet_union
+		icon = GFX_focus_por_workers_of_iberia
+		x = 36
+		y = 16
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_nationalist_bolshevism }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Nationalist Bolshevism
+	focus = {
+		id = AUS_nationalist_bolshevism
+		icon = GFX_AUS_nationalist_bolshevism-34635
+		x = 36
+		y = 15
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_rely_on_the_sozialistische_armee 
+			focus = AUS_hire_a_militia_to_aid_the_socialist_falcon 
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	#Focus for Hire A Militia To Aid The Socialist Falcon
+	focus = {
+		id = AUS_hire_a_militia_to_aid_the_socialist_falcon
+		icon = GFX_AUS_hire_a_militia_to_aid_the_socialist_falcon-34639
+		x = 37
+		y = 14
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_communist_uprising }
+		mutually_exclusive = { focus = AUS_rely_on_the_sozialistische_armee }
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	#Focus for Rely On The Sozialistische Armee
+	focus = {
+		id = AUS_rely_on_the_sozialistische_armee
+		icon = GFX_AUS_rely_on_the_sozialistische_armee-34642
+		x = 35
+		y = 14
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_communist_uprising }
+		mutually_exclusive = { focus = AUS_hire_a_militia_to_aid_the_socialist_falcon }
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	#Focus for Communist Uprising
+	focus = {
+		id = AUS_communist_uprising
+		icon = GFX_AUS_communist_uprising-34635
+		x = 36
+		y = 13
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_build_public_support_for_socialist_reforms }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			start_civil_war= {
+ ideology = communism 
+size = 0.5 
+}
+add_popularity= { 
+ideology = communism
+popularity = 0.40 
+}
+		}
+	}
+
+	#Focus for Build Public Support For Socialist Reforms
+	focus = {
+		id = AUS_build_public_support_for_socialist_reforms
+		icon = GFX_AUS_build_public_support_for_socialist_reforms-34630
+		x = 36
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_work_with_communist_figures }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	#Focus for er
+	focus = {
+		id = AUS_er
+		icon = GFX_goal_unknown
+		x = 0
+		y = 40
+		cost = 10
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Reunification of The German People
+	focus = {
+		id = AUS_reunification_of_the_german_people
+		icon = GFX_AUS_reunification_of_the_german_people-32574
+		x = 24
+		y = 3
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_our_northwestern_brothers }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 75
+		}
+		available = {
+			date >, date <> 1938.3.12 GER has_completed_focus= GER_anschluss
+		}
+		completion_reward = {
+			add_opinion_modifier= { 
+target = GER 
+modifier = GER_germanic_heritage_in_austria 
+}
+add_opinion_modifier= { 
+target = AUS
+modifier = GER_germanic_heritage_in_austria 
+}
+		}
+	}
+
+	#Focus for Austrian Honor
+	focus = {
+		id = AUS_austrian_honor
+		icon = GFX_AUS_austrian_honor-32192
+		x = 16
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_stability= 0.10
+		}
+	}
+
+	#Focus for Economic Reforms In Austria
+	focus = {
+		id = AUS_economic_reforms_in_austria
+		icon = GFX_AUS_economic_reforms_in_austria-32195
+		x = 13
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_austrian_honor }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_equipment_to_stockpile= {
+ type = infantryequipment_1 
+amount = 100 
+producer = AUS 
+}
+		}
+	}
+
+	#Focus for Introduce Military Funding Programs
+	focus = {
+		id = AUS_introduce_military_funding_programs
+		icon = GFX_AUS_introduce_military_funding_programs-32545
+		x = 19
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_austrian_honor }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_equipment_to_stockpile= {
+ type = infantry_equipment_1 
+amount = 1000 
+producer = AUS 
+}
+		}
+	}
+
+	#Focus for Justice Reforms
+	focus = {
+		id = AUS_justice_reforms
+		icon = GFX_AUS_justice_reforms-32550
+		x = 8
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_austrian_honor }
+		search_filters = { FOCUS_FILTER_STABILITY } 
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_stability= 0.10
+		}
+	}
+
+	#Focus for Remembering Our History
+	focus = {
+		id = AUS_remembering_our_history
+		icon = GFX_AUS_remembering_our_history-32192
+		x = 24
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_austrian_honor }
+		ai_will_do = {
+			factor = 75
+		}
+		completion_reward = {
+			add_political_power= 50
+		}
+	}
+
+	#Focus for Crack Down On Criminals!
+	focus = {
+		id = AUS_crack_down_on_criminals
+		icon = GFX_AUS_crack_down_on_criminals-32551
+		x = 8
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_justice_reforms }
+		search_filters = { FOCUS_FILTER_STABILITY } 
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_stability= 0.05
+		}
+	}
+
+	#Focus for e
+	focus = {
+		id = AUS_e
+		icon = GFX_goal_unknown
+		x = 60
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Higher Pay For Our Troops
+	focus = {
+		id = AUS_higher_pay_for_our_troops
+		icon = GFX_AUS_higher_pay_for_our_troops-32572
+		x = 19
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_introduce_military_funding_programs }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas= higher_pay_grade
+		}
+	}
+
+	#Focus for Send Invitations To Investors
+	focus = {
+		id = AUS_send_invitations_to_investors
+		icon = GFX_AUS_send_invitations_to_investors-32563
+		x = 13
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_economic_reforms_in_austria }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_offsite_building= { type = industrial_complex level = 2 }
+		}
+	}
+
+	#Focus for Our Northwestern Brothers
+	focus = {
+		id = AUS_our_northwestern_brothers
+		icon = GFX_AUS_our_northwestern_brothers-32574
+		x = 24
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_remembering_our_history }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 75
+		}
+	}
+
+	#Focus for A Path Without Germany
+	focus = {
+		id = AUS_a_path_without_germany
+		icon = GFX_AUS_a_path_without_germany-34625
+		x = 26
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+			date >, date <> 1939.1.1
+		}
+		completion_reward = {
+			add_opinion_modifier= { 
+target = GER
+modifier = against_germany 
+}
+		}
+	}
+
+	#Focus for Work With Communist Figures
+	focus = {
+		id = AUS_work_with_communist_figures
+		icon = GFX_AUS_work_with_communist_figures-34628
+		x = 36
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_a_path_without_germany }
+		mutually_exclusive = { 
+			focus = AUS_support_rexist_politicians 
+		}
+		mutually_exclusive = { 
+			focus = AUS_decide_on_an_heir 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			set_political_power= 20set_political_party= { 
+ideology = communism 
+popularity = 0.20 
+}
+		}
+	}
+
+	#Focus for Support Rexist Politicians
+	focus = {
+		id = AUS_support_rexist_politicians
+		icon = GFX_AUS_support_rexist_politicians-34673
+		x = 12
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_a_path_without_germany }
+		mutually_exclusive = { 
+			focus = AUS_work_with_communist_figures 
+		}
+		mutually_exclusive = { 
+			focus = AUS_decide_on_an_heir 
+		}
+		ai_will_do = {
+			factor = 40
+		}
+	}
+
+	#Focus for Begin To Sway The Italians In Our Favor
+	focus = {
+		id = AUS_begin_to_sway_the_italians_in_our_favor
+		icon = GFX_AUS_begin_to_sway_the_italians_in_our_favor-34888
+		x = 12
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_support_rexist_politicians }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_opinion_modifier= { 
+target = ITA
+modifier = austrian_italian_friendship
+}
+		}
+	}
+
+	#Focus for Launch A Fullscale Coup
+	focus = {
+		id = AUS_launch_a_fullscale_coup
+		icon = GFX_AUS_launch_a_fullscale_coup-34881
+		x = 12
+		y = 13
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_begin_to_sway_the_italians_in_our_favor }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for An Alliance With Italia
+	focus = {
+		id = AUS_an_alliance_with_italia
+		icon = GFX_AUS_an_alliance_with_italia-35327
+		x = 12
+		y = 15
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_fighting_under_the_banner_of_a_new_empire }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_faction= 'innsbrucker_ pakt'add_to_faction= ITA
+		}
+	}
+
+	#Focus for Fighting Under The Banner Of A New Empire
+	focus = {
+		id = AUS_fighting_under_the_banner_of_a_new_empire
+		icon = GFX_AUS_fighting_under_the_banner_of_a_new_empire-35326
+		x = 12
+		y = 14
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_launch_a_fullscale_coup }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas= fighting_under_a_nationalist_banneradd_manpower= 10000
+		}
+	}
+
+	#Focus for Womens Rights Act
+	focus = {
+		id = AUS_womens_rights_act
+		icon = GFX_AUS_womens_rights_act-35702
+		x = 27
+		y = 14
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_archduchess_elisabeth_marie_is_the_true_heir }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Otto Von Habsburg Is The Sworn Heir!
+	focus = {
+		id = AUS_otto_von_habsburg_is_the_sworn_heir
+		icon = GFX_goal_unknown
+		x = 25
+		y = 13
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_decide_on_an_heir }
+		mutually_exclusive = { focus = AUS_archduchess_elisabeth_marie_is_the_true_heir }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Decide On An Heir
+	focus = {
+		id = AUS_decide_on_an_heir
+		icon = GFX_AUS_decide_on_an_heir-35700
+		x = 26
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_a_path_without_germany }
+		mutually_exclusive = { 
+			focus = AUS_work_with_communist_figures 
+		}
+		mutually_exclusive = { 
+			focus = AUS_support_rexist_politicians 
+		}
+		mutually_exclusive = { 
+			focus = AUS_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Rival The Axis
+	focus = {
+		id = AUS_rival_the_axis
+		icon = GFX_AUS_rival_the_axis-34625
+		x = 12
+		y = 16
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_an_alliance_with_italia }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Archduchess Elisabeth Marie Is The True Heir
+	focus = {
+		id = AUS_archduchess_elisabeth_marie_is_the_true_heir
+		icon = GFX_goal_unknown
+		x = 27
+		y = 13
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_decide_on_an_heir }
+		mutually_exclusive = { focus = AUS_otto_von_habsburg_is_the_sworn_heir }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }

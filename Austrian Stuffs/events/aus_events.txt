@@ -1,0 +1,27 @@
+add_namespace = aus
+
+##Event: Death Of Karl Kraus
+country_event = {
+	id = aus.1
+	title = aus.1.title
+	desc = aus.1.desc
+	fire_only_once = yes
+	trigger = {
+		date >, date <> 1936.6.12
+	}
+	option = {
+		name = aus.1.a
+		ai_chance = { factor = 100}
+	}
+}
+##Event: Pact Of Rome
+country_event = {
+	id = aus.2
+	title = aus.2.title
+	desc = aus.2.desc
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		has_completed_focus= FRA_pact_of_rome
+	}
+}

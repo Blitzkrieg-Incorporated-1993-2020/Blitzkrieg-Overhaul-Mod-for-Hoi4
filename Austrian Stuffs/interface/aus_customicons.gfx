@@ -1,0 +1,15 @@
+spriteTypes = { 
+	##Icon For: Death Of Karl Kraus
+	SpriteType = { 
+		name = "death_of_karl_kraus-32199"
+		texturefile = "gfx/interface/event_gfx/death_of_karl_kraus-32199.dds"
+	}
+
+	##Icon For: Pact Of Rome
+	SpriteType = { 
+		name = "pact_of_rome-35589"
+		texturefile = "gfx/interface/event_gfx/pact_of_rome-35589.dds"
+	}
+
+ 
+ }
