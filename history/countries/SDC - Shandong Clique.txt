@@ -6,6 +6,8 @@ set_war_support = 1
 set_technology = {
 }
 
+load_oob = "SDC_1936"
+
 #For start date 1939.1.1
 1939.1.1 = {
 	add_political_power = 500
