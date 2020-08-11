@@ -1,0 +1,24 @@
+state={
+	id=904
+	name="STATE_904"
+
+	history={
+		victory_points = {
+			1205 1 
+		}
+		owner = GRE
+		buildings = {
+			infrastructure = 4
+
+		}
+		add_core_of = GRE
+
+	}
+
+	provinces={
+		1205 11786 11895 12001 
+	}
+	manpower=415000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

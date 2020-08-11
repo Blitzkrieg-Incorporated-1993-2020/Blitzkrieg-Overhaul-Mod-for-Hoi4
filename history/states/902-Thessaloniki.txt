@@ -1,0 +1,30 @@
+state={
+	id=902
+	name="STATE_902"
+
+	history={
+		owner = GRE
+		victory_points = {
+			11818 5 
+		}
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+			11818 = {
+				naval_base = 3
+
+			}
+
+		}
+		add_core_of = GRE
+		add_claim_by = BUL
+
+	}
+
+	provinces={
+		895 3936 11818 
+	}
+	manpower=515196
+	buildings_max_level_factor=1.000
+	state_category=city
+}
