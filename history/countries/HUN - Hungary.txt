@@ -34,7 +34,16 @@ set_variable = {
         var = HUN_british_influence
         value = 5
     }
-
+    
+    add_to_variable = {
+        var = HUN_filler
+        value = 3
+    }
+	
+	add_to_variable = {
+        var = HUN_filler
+        value = 6
+    }
 
 1939.1.1 = {
 	remove_ideas = HUN_treaty_of_triannon

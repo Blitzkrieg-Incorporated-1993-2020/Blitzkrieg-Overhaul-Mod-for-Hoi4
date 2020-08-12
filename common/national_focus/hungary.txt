@@ -1188,7 +1188,7 @@ focus_tree = {
 
 		}
 		
-		mutually_exclusive = {}
+		mutually_exclusive = { focus = HUN_invite_british_aluminium}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1221,7 +1221,7 @@ focus_tree = {
 
 		}
 		
-		mutually_exclusive = {}
+		mutually_exclusive = { focus = HUN_work_with_ra_lister_and_co}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no

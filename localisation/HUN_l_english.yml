@@ -136,12 +136,19 @@ HUN_treaty_with_germany_desc: "The German-Hungarian Supplementary Trade Agreemen
   ############# 
    
    
+   
   #######################
   ##Decision Categories##
   #######################
   
   HUN_foreign_influence: "Foreign Influence"
   HUN_foreign_influence_desc: "Hungary is one of the largest and wealthiest Central European nations, aside from the likes of Germany and Poland. This makes it an appetizing target for foreign powers, especially when combined with large amounts of political strife. Two main nations vie for influence within our government. The British, and the Germans. Although over the years the Germans have gained a better foothold, especially with the rise of the fascist Gyula Gömbös, Britain has not yet given up on influencing the politics of our nation. These two powers are like poised snakes, and giving too many concessions to one may anger the other, so we must tread carefully.\n§BGerman§!  Influence is: [HUN.GermanInfluence_HUN]\n§RBritish§!  Influence is: [HUN.BritishInfluence_HUN]"
+  
+  HUN_foreign_influence_ger: "Our Influence in Hungary"
+  HUN_foreign_influence_ger_desc: "Hungary is very large and wealthy, and is politically unstable, allowing us to take control. Over the years, although we have been forced to compete with the british for domination of Hungary, with the rise of Fascism in Hungary and the appointment of Gyula Gömbös, a Fascist Demagogue, our secret domination of Hungary is all but assured.\n§BOur§!  Influence is: [HUN.GermanInfluence_HUN]\n§RBritish§!  Influence is: [HUN.BritishInfluence_HUN]"
+  
+  HUN_filler_desc: "Lol dude §R[?HUN_filler]§!"
+  
   
   
   ################

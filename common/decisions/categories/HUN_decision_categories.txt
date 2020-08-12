@@ -24,6 +24,8 @@ HUN_foreign_influence_ger = {
 	allowed = {
 		original_tag = GER
 	}
+	
+	visible_when_empty = yes
 
 	visible = {
 	original_tag = GER
@@ -37,8 +39,25 @@ HUN_foreign_influence_eng = {
 	allowed = {
 		original_tag = ENG
 	}
+	
+	visible_when_empty = yes
 
 	visible = {
 	original_tag = ENG
+	}
+}
+
+HUN_filler = {
+
+	icon = hol_bernhard
+	
+	allowed = {
+		original_tag = HUN
+	}
+	
+	visible_when_empty = yes
+
+	visible = {
+	original_tag = HUN
 	}
 }
