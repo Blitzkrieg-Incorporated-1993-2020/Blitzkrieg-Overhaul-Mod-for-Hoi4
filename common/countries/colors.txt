@@ -556,3 +556,19 @@ RKA = {
 	color = HSV { 0.1 0.15 0.4 }
 	color_ui = rgb { 138 155 116 }
 }
+HUB = {
+	color = rgb { 6 102 167 }
+	color_ui = rgb { 6 102 167 }
+}
+PLC = {
+	color = rgb { 178 95 59 }
+	color_ui = rgb { 178 95 59 }
+}
+SDC = {
+	color = rgb { 6 164 167 }
+	color_ui = rgb { 6 164 167 }
+}
+KUM = {
+	color = rgb { 198 218 177 }
+	color_ui = rgb { 198 218 177 }
+}
