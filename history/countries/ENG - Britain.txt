@@ -15,8 +15,8 @@ load_oob = "ENG_Motorized"
 
 set_research_slots = 4
 
-set_stability = 0.6
-set_war_support = 0.1
+set_stability = 0.55
+set_war_support = 0.15
 
 # Starting tech
 set_technology = {
@@ -347,9 +347,11 @@ set_politics = {
 	elections_allowed = yes ##suspended through duration of war, which is handled via event
 }
 set_popularities = {
-	democratic = 97
+	democratic = 55
 	fascism = 2
-	communism = 1
+	communism = 3
+	social_democracy = 30
+	liberal = 10
 }
 
 
@@ -374,9 +376,9 @@ create_country_leader = {
 	desc = "POLITICS_WINSTON_CHURCHILL_DESC"
 	picture = "Portrait_Britain_Winston_Churchill.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = trad_conservatism
 	traits = {
-		#traits here need to also be added to events britain.9 and britain.10. Don't ask why.
+	prime_minister	#traits here need to also be added to events britain.9 and britain.10. Don't ask why.
 	}
 }
 
@@ -386,9 +388,10 @@ create_country_leader = {
 	desc = "POLITICS_STANLEY_BALDWIN_DESC"
 	picture = "gfx//leaders//ENG//Portrait_Britain_Stanley_Baldwin.dds"
 	expire = "1938.1.1"
-	ideology = liberalism
+	ideology = trad_conservatism
 	traits = {
 		conservative_grandee
+		prime_minister
 	}
 }
 
@@ -397,9 +400,9 @@ create_country_leader = {
 #	desc = "POLITICS_NEVILLE_CHAMBERLAIN_DESC"
 #	picture = "Portrait_Britain_Neville_Chamberlain.dds"
 #	expire = "1965.1.1"
-#	ideology = liberalism
+#	ideology = social_conservatism
 #	traits = {
-#		
+#		prime_minister
 #	}
 #}
 
@@ -416,13 +419,24 @@ create_country_leader = {
 }
 
 create_country_leader = {
+	name = "Clement Atlee"
+	desc = "POLITICS_CLEMENT_ATLEE_DESC"
+	picture = "Clement_Atlee.dds"
+	expire = "1965.1.1"
+	ideology = moderate_social_democracy
+	traits = {
+    prime_minister
+	}
+}
+
+create_country_leader = {
 	name = "Harry Pollitt"
 	desc = "POLITICS_HARRY_POLLITT_DESC"
 	picture = "portrait_eng_harry_pollitt.dds"
 	expire = "1965.1.1"
 	ideology = leninism
 	traits = {
-		staunch_stalinist
+	staunch_stalinist
 	}
 }
 

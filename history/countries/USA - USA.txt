@@ -10,7 +10,7 @@ if = {
 }
 
 set_research_slots = 4
-set_stability = 0.75
+set_stability = 0.65
 set_war_support = 0
 set_variable = { var = senators_support value = 48 }
 set_variable = { var = senators_total value = 96 }
@@ -260,14 +260,16 @@ set_convoys = 500
 
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = liberal
 	last_election = "1932.11.8"
 	election_frequency = 48
 	elections_allowed = yes
 }
 set_popularities = {
-	democratic = 99
-	communism = 1
+	democratic = 40
+	liberal = 55
+	communism = 3
+	fascism = 2
 }
 
 add_ideas = {
@@ -287,7 +289,7 @@ set_autonomy = {
 
 1939.1.1 = {
 	set_politics = {
-		ruling_party = democratic
+		ruling_party = liberal
 		last_election = "1936.11.3"
 		election_frequency = 48
 		elections_allowed = yes
@@ -298,10 +300,22 @@ create_country_leader = {
 	name = "Franklin Delano Roosevelt"
 	desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
 	picture = "Portrait_FDR.dds"
-	expire = "1947.1.1"
-	ideology = liberalism
+	expire = "1944.1.1"
+	ideology = social_liberalism
 	traits = {
-		dislikes_germany
+	dislikes_germany
+	president
+	}
+}
+
+create_country_leader = {
+	name = "Alf Landon"
+	desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
+	picture = "portrait_USA_alf_landon.dds"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+	president
 	}
 }
 

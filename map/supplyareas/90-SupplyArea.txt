@@ -3,10 +3,6 @@ supply_area={
 	name="SUPPLYAREA_90"
 	value=9
 	states={
-<<<<<<< HEAD
-		184 341 804 805 806 911
-=======
-		184 341 804 805 806 901 902
->>>>>>> parent of f66549b... Add files via upload
+		184 341 804 805 806
 	}
 }

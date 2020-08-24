@@ -102,7 +102,7 @@ set_variable = { var = wehrmacht_anger value = 0 }
 set_variable = { var = ss_anger value = 0 }
 set_research_slots = 4
 set_convoys = 200
-set_stability = 0.55
+set_stability = 0.50
 set_war_support = 0.3
 
 #Trade
@@ -290,15 +290,17 @@ create_import = {
 }
 
 set_politics = {
-	ruling_party = fascism
+	ruling_party = nazism_ideology
 	last_election = "1933.3.5"
 	election_frequency = 48
 	elections_allowed = no
 }
 set_popularities = {
-	democratic = 20
-	fascism = 60
-	communism = 20
+	democratic = 10
+	nazism_ideology = 55
+	communism = 10
+	neutrality = 15
+	social_democracy = 10
 }
 
 create_faction = Axis
@@ -311,10 +313,9 @@ add_ideas = {
 	limited_exports
 	limited_conscription
 	partial_economic_mobilisation
+	economic_depression_3
+	
 }
-add_ideas = GER_mefo_bills_1
-
-activate_mission = GER_mefo_bills_mission
 
 create_country_leader = {
 	name = "Adolf Hitler"
