@@ -1,0 +1,14 @@
+##############
+### ITALY ####
+##############
+
+ITA_ = {
+	icon = ita_fyp_decision_category
+
+	picture = generic_industry
+
+	allowed = {
+		original_tag = ITA
+		has_completed_focus = ITA_foundations_for_fyp
+	}
+}

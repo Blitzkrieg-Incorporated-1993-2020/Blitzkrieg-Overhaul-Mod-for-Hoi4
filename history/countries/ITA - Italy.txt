@@ -8,6 +8,8 @@ set_war_support = 0.7
 add_ideas = {
 	victor_emmanuel
 	vittoria_mutilata
+	ITA_king_fascist_balance
+	ITA_industrial_atrophy
 	limited_exports
 	limited_conscription
 	partial_economic_mobilisation
@@ -26,7 +28,7 @@ add_ideas = {
 	set_resistance = 0
 	set_garrison_strength = 1.0
 }
-
+set_variable = { var = italy_fyp_famine value = 0 }
 # Starting tech
 set_technology = {
 	infantry_weapons = 1

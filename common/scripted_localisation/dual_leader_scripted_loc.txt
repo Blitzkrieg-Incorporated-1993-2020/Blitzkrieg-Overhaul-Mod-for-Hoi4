@@ -17,6 +17,18 @@ defined_text = {
 		localization_key = ENG_PRIME_MINISTER_TITLE
 	}
 	text = {
+		trigger = {
+			original_tag = ITA
+			NOT = {
+				has_government = communism
+			}
+			ITA = {
+				has_idea = victor_emmanuel
+			}
+		}
+		localization_key = ITA_IL_DUCE
+	}
+	text = {
 		localization_key = DEFAULT_FIRST_TITLE
 	}
 }
@@ -36,6 +48,18 @@ defined_text = {
 			has_government = democratic
 		}
 		localization_key = ENG_KING_TITLE
+	}
+	text = {
+		trigger = {
+			original_tag = ITA
+			NOT = {
+				has_government = communism
+			}
+			ITA = {
+				has_idea = victor_emmanuel
+			}
+		}
+		localization_key = ITA_KING_TITLE
 	}
 }
 
@@ -58,6 +82,18 @@ defined_text = {
 		localization_key = ENG_GEORGE_V
 	}
 	text = {
+		trigger = {
+			original_tag = ITA
+			NOT = {
+				has_government = communism
+			}
+			ITA = {
+				has_idea = victor_emmanuel
+			}
+		}
+		localization_key = ITA_EMMANUEL
+	}
+	text = {
 		localization_key = DEFAULT_TITLE
 	}
 }
@@ -73,12 +109,24 @@ defined_text = {
 	}
     text = {
         trigger = {
-			original_tag = ENG
+			original_tag = ENG ITA_emmanuel
 			ENG = {
 				has_idea = george_v
 			}
         }
         localization_key = "GFX_ENG_George_V"
+	}
+	text = {
+        trigger = {
+			original_tag = ITA
+			NOT = {
+				has_government = communism
+			}
+			ITA = {
+				has_idea = victor_emmanuel
+			}
+        }
+        localization_key = "GFX_ITA_emmanuel"
 	}
 	text = {
 		localization_key = "GFX_portrait_bg_blank"
@@ -96,6 +144,18 @@ defined_text = {
 			}
         }
         localization_key = "DESCRIPTION_TEST"
+	}
+	text = {
+        trigger = {
+			original_tag = ITA
+			NOT = {
+				has_government = communism
+			}
+			ITA = {
+				has_idea = victor_emmanuel
+			}
+        }
+        localization_key = "ITA_KING_DESC"
 	}
 }
 

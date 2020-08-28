@@ -1,0 +1,57 @@
+﻿l_english:
+
+ #Leader Description Localisation
+ POLITICS_BENITO_MUSSOLINI_DESC:0 "Benito Mussolini, or Il Duce as his people know him, is a man of many talents. Born in 1883, Mussolini began his early life as an avid socialist, protesting various actions of the Italian government such as the invasion of Libya in 1911. As The Great War raged across Europe, Mussolini broke from the socialist party, and began synthesizing a new ideology, known as fascism. After his coup d'etat in 1922, known as the March of Rome, the first fascist state has made a name for itself. All across the country, the mafia and political dissenters find themselves crushed under the boot of the State, and as Mussolini continues to militarize his country, he begins to look outward. Mediterranean domination was always the Italian destiny, and Mussolini envisions an Empire sprawling across Europe and Africa, and those who oppose the New Rome at their knees before him. \n\nAnd Mussolini will do anything to achieve his goal."
+ ITA_GATHERING_STORM_DESC:0 "Ever since the Risorgimento, or Italian unification, the Kingdom of Italy has sought to make a name for itself, and cement it's status as a great power in Europe. When they joined The Great War in 1915, many Italians hoped that this was the beginning of the Italian ascension over their rivals. However, this was not to be. \n\nThe 'multilated victory' they recieved at Versailles forever changed Italy, causing spite, hatred, and anger. As of 1936, Italy stands once more, poised to conquer the territories it sees as rightfully Italian, no matter the consequences."
+ 
+ 
+ #Focus Localisation
+ ITA_italian_economy:0 "The State of the Italian Economy"
+ ITA_italian_economy_desc:0 "Through our swift and effective reforms and actions, Italy has managed to mostly remove the effects of the Great Depression. However, this is not the end of our meteoric growth! The destiny of Italy is not to stagnate, but rather to rise into the greatest heights never beefore seen! We shall begin economic initiatives to bring Italy into her new era."
+ ITA_status_quo:0 "The Status Quo"
+ ITA_status_quo_desc:0 "Many complain of the economic troubles of Italy, but this is not true. Sure, there are things which need to be done, yet Italy has become the first major European country to completely stave off the effects of the Depression! Surely, this is a sign that we should follow this policy."
+ ITA_consolidate_IRI:0 "Consolidate the IRI"
+ ITA_consolidate_IRI_desc:0 "Currently, Italy operates in what can be described as a 'pseudo corporatist' economy, effectively meaning that the private sector can and will be used by the state at any time necessary for them. Such a system needs to end. The IRI demonstrated its usefulness in the Depression, surely giving it more control over the economy will allow us to boost our productive forces."
+ ITA_liberalization:0 "Liberalization"
+ ITA_liberalization_desc:0 "Currently, Italy operates in what can be described as a 'pseudo corporatist' economy, effectively meaning that the private sector can and will be used by the state at any time necessary for them. However, this does nothing but impede the growth of the market! We should restrict the power of the IRI, and allow Italy to become a market economy."
+ ITA_foundations_for_fyp:0 "Foundations of a Five Year Plan"
+ ITA_foundations_for_fyp_desc:0 "Control from the IRI isn't merely enough. If Italy is to be strong, the state must be strong. It is time that the IRI become more then a mere stopgap measure, we will declare seizure of all but small businesses. This will cause some disturbances in the short term, but in the long term, will be our first step to superpower status."
+ ITA_pseudo_syndicates:0 "Pseudo Syndicates"
+ ITA_pseudo_syndicates_desc:0 "Many of those in the fascist movement who were once socialists have argued that syndicates, which are organized worker unions, should be formed and sponsored by the government, in order to increase worker productivity and happiness. While the happiness isn't much of a concern for us, productivity is. Il Duce shall enact a series of policies to make these syndicates a reality, albeit with no real power."
+ ITA_controlled_markets:0 "Controlled Markets"
+ ITA_controlled_markets_desc:0 "Liberalization is good and all, but we must ensure that subversive elements in the country are kept in check. Therefore, markets shall be constrained in some capacities, in order to keep them under the watchful eye of Il Duce."
+ ITA_free_market_econ:0 "A Free Market Economy"
+ ITA_free_market_econ_desc:0 "If Italy is to become great, we cannot merely implement half-measures under the fear of subversion. The flimsy, fluid market is far to concerned with stocks and profits to challenge the might of Il Duce, therefore, we shall implement these policies to the fullest."
+ 
+ 
+ 
+ 
+ 
+ #Idea Localisation
+ ITA_king_fascist_balance:0 "Royal Collaboration"
+ ITA_king_fascist_balance_desc:0 "Despite Mussolini's dictatorial power, there remains a single force which can threaten him: the King. However, the King is largely ambivalent to Mussolini's rule as of now. However, if something were to happen, then the King's attitude will change..."
+ ITA_industrial_atrophy:0 "Industrial Atrophy"
+ ITA_industrial_atrophy_desc:0 "For a country to be strong in the modern era, it must have a strong industrial base. Italy, despite its attempts to assert itself as a great power, lacks this. Once, before the Great War, Italy was on the road to industrialization, but the losses and atrophy caused by the post-war era have stagnated Italy's economy. Industrialization is not merely done through a single law, policy, or decree. It will take years to bring Italy up to pace with the great powers."
+ ITA_old_guard_military:0 "Old Guard Dominance"
+ ITA_old_guard_military_desc:0 "Many of the generals from the Great War have maintained their position in army command, and the Supreme Command has found itself infested with the Old Guard. Our highest army officials believe that the upcoming war will be no different from the last, causing us to be woefully ill-equipped in case that assumption is wrong..."
+ ITA_consolidate_iri_idea:0 "Consolidate the IRI"
+ ITA_consolidate_iri_idea_desc:0 "Consolidation of the IRI will lead to more effective production, as well as our oversight of the economy."
+ ITA_liberalization:0 "Liberalization"
+ ITA_liberalization_desc:0 "Liberalizing our economy means that our grasp on it slips, however, it allows us to focus on constructing more buildings."
+ ITA_controlled_markets:0 "Controlled Markets"
+ ITA_controlled_markets_desc:0 "Free markets cause subversion and degeneracy in a society. By controlling them, we can benefit from the market whilst not dealing with the downsides."
+ ITA_iri_syndicates:0 "IRI Syndicates"
+ ITA_iri_syndicates_desc:0 "The IRI maintains immense control over the syndicates of the workplace. This will allow us to exercise more influence over the workplaces."
+ ITA_fyp_idea:0 "Foundations for the Five Year Plan"
+ ITA_fyp_idea_desc:0 "It is time for Italy to become an industrial power. Increasing reach into the workplace will allow us to squeeze out even more production."
+ ITA_free_market:0 "A Free Market Economy"
+ ITA_free_market_desc:0 "The Free Market will be the only true force which allows Italy to rise! We shall allow liberalization of our economy."
+ 
+ 
+ 
+ #Event Localisation
+ italy.17.t:0 "The State of the Italian Economy"
+ italy.17.d:0 "Despite our triumph over the Great Depression, not all is well with the Italian economy. Even now, our productive forces do not match pre-war levels, and if Italy is to be seen as anything more then a second-rate power, we must decide how best to combat this crisis."
+ italy.17.a:0 "The IRI has demonstrated their skill and ability. We shall give them more power!"
+ italy.17.b:0 "The status quo shall be fine. We cannot take any risks!"
+ italy.17.c:0 "It may be unpopular, but we need to liberalize. The market shall lead Italy to greatness!"

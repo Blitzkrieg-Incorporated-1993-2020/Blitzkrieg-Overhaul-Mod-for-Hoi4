@@ -48,4 +48,9 @@ spriteTypes = {
 		name = "GFX_ROM_Carol_II"
 		texturefile = "gfx/dual_leaders/ROM/ROM_Carol_II.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_ITA_emmanuel"
+		texturefile = "gfx/dual_leaders/ITA/Portrait_Italy_Victor_Emmanuel_III.dds"
+	}
 }
