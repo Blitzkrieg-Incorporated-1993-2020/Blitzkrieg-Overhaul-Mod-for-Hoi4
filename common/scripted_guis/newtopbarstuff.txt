@@ -1,0 +1,14 @@
+scripted_gui = {
+	BKG_party_popularity = {
+		parent_window_token = top_bar
+		window_name = "DB_party_popularity_number_container"
+
+		ai_enabled = {
+			always = no
+		}
+
+		visible = {
+			is_ai = no
+		}
+  }
+}
