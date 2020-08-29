@@ -146,18 +146,13 @@ guiTypes = {
 		}
 
 		iconType ={
-			name ="num_units_bg"
+			name ="economy_bg"
 			spriteType = "GFX_generic_box_smallest"
 			position = { x = 250 y = 5 }
 			Orientation = "UPPER_LEFT"
 		}
 
-		iconType ={
-			name ="num_units_icon"
-			spriteType = "GFX_topbar_armycountericon"
-			position = { x= 252 y = 3 }
-			Orientation = "UPPER_LEFT"
-		}
+		
 
 		iconType ={
 			name ="manpower_value_bg"
