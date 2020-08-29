@@ -1,22 +1,22 @@
+
 state={
-	id=845
-	name="STATE_845"
+	id=764
+	name="STATE_764"
+	manpower = 585579
+	state_category = rural
 
 	history={
 		owner = YUG
+		controller = YUG
+
 		buildings = {
 			infrastructure = 3
-
 		}
 		add_core_of = YUG
 		add_core_of = SER
-
 	}
 
 	provinces={
-		11857 11868 
+		614 3614 6643 11787
 	}
-	manpower=73555
-	buildings_max_level_factor=1.000
-	state_category=town
 }

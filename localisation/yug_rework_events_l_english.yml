@@ -1,0 +1,28 @@
+﻿l_english:
+
+    #events
+    yugreworkevent.0.t:0 "Invitation to Faction!"
+    yugreworkevent.0.d:0 "Placeholder"
+    yugreworkevent.0.a:0 "Yes at peace"
+    yugreworkevent.0.b:0 "No at peace"
+    yugreworkevent.0.c:0 "No at war"
+    yugreworkevent.1.t:0 "Rally of Youth"
+    yugreworkevent.1.d:0 "Placeholder"
+    yugreworkevent.1.a:0 "Sloboda Narodu!"
+    yugreworkevent.2.t:0 "Yugoslavia Want to be Guaranteed"
+    yugreworkevent.2.d:0 "Placeholder"
+    yugreworkevent.2.a:0 "We will guarantee them!"
+    yugreworkevent.2.b:0 "Waste of resources..."
+    yugreworkevent.3.t:0 "They accept!"
+    yugreworkevent.3.d:0 "Placeholder"
+    yugreworkevent.3.a:0 "Good"
+    yugreworkevent.4.t:0 "They refuse!"
+    yugreworkevent.4.d:0 "Placeholder"
+    yugreworkevent.4.a:0 "Well fuck them too."
+    yugreworkevent.7.t:0 "Highway Finished!"
+
+
+    #news
+    yugreworknews.0.t:0 "[Root.GetLeader] issues Emergency Factory Build!"
+    yugreworknews.0.d:0 "Placeholder"
+    yugreworknews.0.a:0 "Interesting..."

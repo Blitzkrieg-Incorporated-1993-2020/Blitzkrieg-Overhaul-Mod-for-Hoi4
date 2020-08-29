@@ -1,0 +1,1193 @@
+ideas = {
+	country = {
+		#####COMMUNIST
+		##Titoism0 National Spirit
+		YUG_idea_Titoism0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war =  {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					communism_drift = 0.08
+				}
+		}
+		##Titoism Faith in new goverment
+		YUG_idea_Titoism_faith0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					stability_weekly = 0.001
+				}
+		}
+		##LCY membership spirit
+		YUG_idea_LCY_membership0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					communism_drift = 0.02
+					production_factory_max_efficiency_factor = 0.15
+				}
+		}
+		YUG_idea_LCY_membership1 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1 
+			picture = air_support_focus
+				modifier = {
+					communism_drift = 0.04
+					production_factory_max_efficiency_factor = 0.15
+					production_factory_efficiency_gain_factor = 0.1
+					stability_factor = 0.05
+				}
+		}
+		##Establish UDBA
+		YUG_idea_UDBA0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					political_power_gain = 0.05
+				}
+		}
+		YUG_idea_UDBA1 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					political_power_gain = 0.2
+					political_advisor_cost_factor = -0.25
+					stability_factor = -0.05
+				}
+		}
+		#UDBA Filler
+		YUG_idea_UDBA2 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+		}
+		YUG_idea_OZNA0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					operative_slot = 1
+				}
+		}
+		YUG_idea_KOS0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					intelligence_agency_defense	= 2
+				}
+		}
+		#Cult of personality
+		YUG_idea_cult_of_personality0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					drift_defence_factor = 0.25
+					communism_acceptance = 50
+				}
+		}
+		#FORM SAWPY
+		YUG_idea_cult_of_personality1 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					drift_defence_factor = 0.25
+					communism_acceptance = 50
+					political_power_gain = 0.05
+					political_advisor_cost_factor = -0.25
+				}
+		}
+		#RALLY OF YOUTH
+		YUG_idea_cult_of_personality2 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					drift_defence_factor = 0.25
+					communism_acceptance = 50
+					stability_weekly = 0.0015
+				}
+		}
+		#RALLY OF YOUTH + SAWPY
+		YUG_idea_cult_of_personality3 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					drift_defence_factor = 0.25
+					communism_acceptance = 50
+					stability_weekly = 0.0015
+					political_advisor_cost_factor = -0.25
+					political_power_gain = 0.05
+				}
+		}
+		##TITOIST Alignment
+		YUG_idea_titoist_alignment0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					trade_opinion_factor = 0.35
+					political_power_factor = 0.15
+				}
+		}
+		##TITOIST Alignment PEACE TIME
+		YUG_idea_peacetime_alignment0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					trade_laws_cost_factor = -0.25
+					economy_cost_factor = -0.25
+					lend_lease_tension = 0.25
+					send_volunteers_tension = 0.5
+					join_faction_tension = 0.5
+					justify_war_goal_time = 0.2
+					enemy_justify_war_goal_time = 0.2
+					generate_wargoal_tension = 0.2
+					guarantee_tension = 0.5
+					opinion_gain_monthly_factor = 0.2
+				}
+		}
+		##TITOIST Alignment WAR TIME
+		YUG_idea_wartime_alignment0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					mobilization_laws_cost_factor = -0.25
+					high_command_cost_factor = -0.25
+					air_chief_cost_factor = -0.1
+					army_chief_cost_factor = -0.1
+					navy_chief_cost_factor = -0.1
+					military_leader_cost_factor = -0.15
+					conscription_factor = 0.1
+					resistance_growth_on_our_occupied_states = 0.15
+				}
+		}
+		#Sold resourced USA
+		YUG_idea_sold_resources0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = 1
+			picture = air_support_focus
+				modifier = {
+					consumer_goods_factor = 0.05
+				}
+		}
+		###INDUSTRIAL
+		YUG_idea_self_reliance0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					local_resources_factor = 0.15
+				}
+		}
+		#Self reliance agricultural safety focus
+		YUG_idea_self_reliance1 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					local_resources_factor = 0.15
+					production_factory_max_efficiency_factor = 0.1
+					monthly_population = 0.1
+				}
+		}
+		#Self reliance initiate IMT
+		YUG_idea_self_reliance2 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					local_resources_factor = 0.15
+					production_factory_max_efficiency_factor = 0.1
+					monthly_population = 0.1
+					production_speed_industrial_complex_factor = 0.1
+				}
+		}
+		#Investment settbacks from resource extraction
+		YUG_idea_investment_setback = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					consumer_goods_factor = 0.15
+				}
+		}
+		##Brotherhood and Unity highway
+		YUG_idea_brotherhood_highway0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_infrastructure_factor = 0.05
+				}
+		}
+		YUG_idea_brotherhood_highway1 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_infrastructure_factor = 0.05
+					production_speed_buildings_factor = 0.05
+				}
+		}
+		YUG_idea_brotherhood_highway2 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_infrastructure_factor = 0.15
+					production_speed_buildings_factor = 0.05
+				}
+		}
+		YUG_idea_brotherhood_highway3 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_infrastructure_factor = 0.15
+					production_speed_buildings_factor = 0.05
+				}
+				equipment_bonus = {
+					motorized_equipment = {
+						reliability = 0.15
+					}
+				}
+		}
+		##Fill connection gaps
+		YUG_idea_fill_connection_gaps0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_infrastructure_factor = 0.2
+				}
+		}
+		#Balkan Capital Debuff
+		YUG_idea_capitaldebuff0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+				}
+		}
+		#Balkan Capital 1
+		YUG_idea_capital0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					industrial_capacity_factory = 0.15
+					industrial_capacity_dockyard = 0.1
+				}
+		}
+		#Balkan Capital 2
+		YUG_idea_capital1 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					industrial_capacity_factory = 0.15
+					industrial_capacity_dockyard = 0.1
+					industry_repair_factor = 0.2
+					industry_air_damage_factor = -0.1
+				}
+		}
+		#Balkan Capital 3
+		YUG_idea_capital2 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					industrial_capacity_factory = 0.15
+					industrial_capacity_dockyard = 0.1
+					industry_repair_factor = 0.2
+					industry_air_damage_factor = -0.1
+					local_resources_factor = 0.15
+					consumer_goods_factor = -0.03
+					production_factory_efficiency_gain_factor = 0.1
+				}
+		}
+		#Balkan Capital 4 FINAL
+		YUG_idea_capital3 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					industrial_capacity_factory = 0.15
+					industrial_capacity_dockyard = 0.1
+					industry_repair_factor = 0.2
+					industry_air_damage_factor = -0.1
+					local_resources_factor = 0.15
+					consumer_goods_factor = -0.03
+					production_factory_efficiency_gain_factor = 0.1
+					political_power_gain = 0.2
+					trade_opinion_factor = 0.2
+				}
+		}
+
+		#Pan Slavic Communist influence
+		YUG_idea_panslavic_influence0 = {
+			allowed = {
+				always = no #added via focus
+			}
+			allowed_civil_war = {
+				has_government = communism
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					communism_acceptance = 65
+					communism_drift = 0.1
+				}
+		}
+		#
+		#
+		#
+		###MILITARY
+		#
+		#
+		#
+		##Military Funding Program
+		YUG_idea_military_funding0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_arms_factory_factor = 0.05
+				}
+		}
+		#Prvi Partizan
+		YUG_idea_military_funding1 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_arms_factory_factor = 0.05
+				}
+				equipment_bonus = {
+					infantry_equipment = {
+						reliability = 0.15
+					}
+				}
+		}
+		#Border Defense Program
+		YUG_idea_military_funding2 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_arms_factory_factor = 0.05
+					production_speed_bunker_factor = 0.05
+					production_speed_coastal_bunker_factor = 0.05
+					industry_repair_factor = 0.1
+				}
+				equipment_bonus = {
+					infantry_equipment = {
+						reliability = 0.15
+					}
+				}
+		}
+		#Guide Ratko Markovic
+		YUG_idea_military_funding3 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_arms_factory_factor = 0.05
+					production_speed_bunker_factor = 0.15
+					production_speed_coastal_bunker_factor = 0.15
+					industry_repair_factor = 0.1
+				}
+				equipment_bonus = {
+					infantry_equipment = {
+						reliability = 0.15
+					}
+				}
+		}
+		#Secure continuous output
+		YUG_idea_military_funding4 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_arms_factory_factor = 0.05
+					production_speed_bunker_factor = 0.15
+					production_speed_coastal_bunker_factor = 0.15
+					line_change_production_efficiency_factor = 0.2
+					production_factory_efficiency_gain_factor = 0.1
+					industry_repair_factor = 0.1
+				}
+				equipment_bonus = {
+					infantry_equipment = {
+						reliability = 0.15
+					}
+				}
+		}
+		#Balkan Military Project
+		YUG_idea_military_funding5 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_arms_factory_factor = 0.15
+					production_speed_bunker_factor = 0.15
+					production_speed_coastal_bunker_factor = 0.15
+					line_change_production_efficiency_factor = 0.2
+					production_factory_efficiency_gain_factor = 0.1
+					industry_repair_factor = 0.1
+				}
+				equipment_bonus = {
+					infantry_equipment = {
+						reliability = 0.15
+					}
+				}
+		}
+		#Zastava Artillery focus
+		YUG_idea_zastava_artillery0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				equipment_bonus = {
+					artillery_equipment = {
+						reliability = 0.1
+					}
+				}
+		}
+		#Form The JNA
+		YUG_idea_form_jna0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					war_support_factor = 0.05
+				}
+		}
+		#Faith In the army
+		YUG_idea_form_jna1 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					war_support_factor = 0.05
+					conscription = 0.02
+					mobilization_speed = 0.05
+				}
+		}
+		#Faith In the army
+		YUG_idea_form_jna2 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					war_support_factor = 0.1
+					stability_factor = 0.05
+					mobilization_speed = 0.1
+					conscription = 0.02
+				}
+		}
+		#Beograd Military Academy
+		YUG_idea_military_academy0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					experience_gain_army = 0.05
+					planning_speed = 0.1
+				}
+		}
+		#Mointain Movements
+		YUG_idea_mountain_movement0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					category_all_infantry = {
+						army_speed_factor = 0.1
+					}
+				}
+		}
+		#Zastava Understanding
+		YUG_idea_artillery_understanding0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				equipment_bonus = {
+					artillery_equipment = {
+						build_cost_ic = -0.1
+					}
+				}
+		}
+		#POBJEDA AMMO PLANT
+		YUG_idea_pobjeda_ammo0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				equipment_bonus = {
+					infantry_equipment = {
+						build_cost_ic = -0.15
+					}
+				}
+		}
+		#DURO DAKOVIC ARMOR
+		YUG_idea_duro_dakovic_armor0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				equipment_bonus = {
+					armor = {
+						build_cost_ic = -0.1
+					}
+				}
+		}
+		#RELY ON DEFENSE
+		YUG_idea_rely_defense0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					defence = 0.05
+					max_dig_in = 10
+					dig_in_speed_factor = 0.25
+					army_morale_factor = 0.10
+					max_planning = 0.15
+				}
+		}
+		#ATTACK IS THE BEST DEFENSE
+		YUG_idea_rely_attack0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					offence = 0.05
+					army_speed_factor = 0.05
+					planning_speed = 0.15
+					army_morale_factor = 0.10
+				}
+		}
+		#EXPAND JNA SERVICE
+		YUG_idea_expand_jna_service0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					conscription = 0.04
+					mobilization_speed = 0.02
+				}
+		}
+		#YUGOSLAV FANATICISM
+		YUG_idea_yugoslav_fanaticism0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					conscription_factor = 0.1
+					mobilization_speed = 0.1
+					war_support_factor = 0.05
+				}
+		}
+		#ESTABLISH RV
+		YUG_idea_establish_rv0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					experience_gain_air = 0.05
+					air_ace_generation_chance_factor = 0.1
+				}
+		}
+		#HOME DEFENSE
+		YUG_idea_home_defense0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_anti_air_building_factor = 0.1
+				}
+		}	
+		#AGGRESIVE PLANS
+		YUG_idea_aggresive_plane0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_air_base_factor = 0.1
+				}
+		}
+		#AIRCRAFT FACTORY MODERNIZATION
+		YUG_idea_aircraft_factory_modern0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				equipment_bonus = {
+					fighter_equipment = {
+						build_cost_ic = -0.1
+						instant = yes
+					}
+					cv_fighter_equipment = {
+						build_cost_ic = -0.1
+						instant = yes
+					}
+					CAS_equipment = {
+						build_cost_ic = -0.1
+						instant = yes
+					}
+					cv_CAS_equipment = {
+						build_cost_ic = -0.1
+						instant = yes
+					}
+					cv_nav_bomber_equipment = {
+						build_cost_ic = -0.1
+						instant = yes
+					}
+					nav_bomber_equipment = {
+						build_cost_ic = -0.1
+						instant = yes
+					}
+					tac_bomber_equipment = {
+						build_cost_ic = -0.1
+						instant = yes
+					}
+					heavy_fighter_equipment = {
+						build_cost_ic = -0.1
+						instant = yes
+					}
+					strat_bomber_equipment = {
+						build_cost_ic = -0.1
+						instant = yes
+					}
+					transport_plane_equipment = {
+						instant = yes
+						build_cost_ic = -0.1
+					}
+				}
+		}
+		#ESTABLISH JRM
+		YUG_idea_jrm0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					experience_gain_navy = 0.05
+				}
+		}
+		#RIJEKA NAVAL ACADEMY
+		YUG_idea_rijeka_academy0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					navy_leader_start_level = 1
+					navy_leader_start_defense_level = 1
+				}
+		}
+		#VELJKO VLAHOVIC
+		YUG_idea_veljko_vlahovic0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					production_speed_naval_base_factor = 0.1
+					production_speed_dockyard_factor = 0.1
+				}
+		}
+		#AIM FOR THE MEDITERANIAN
+		YUG_idea_mediteranian_battleship0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				equipment_bonus = {
+					ship_hull_heavy = {
+						build_cost_ic = -0.1
+					}
+					ship_hull_carrier = {
+						build_cost_ic = -0.1
+					}
+
+				}
+		}
+		#PROTECT ADRIATIC
+		YUG_idea_protect_adriatic0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				equipment_bonus = {
+					ship_hull_light = {
+						build_cost_ic = -0.1
+					}
+					ship_hull_submarine = {
+						build_cost_ic = -0.1
+					}
+				}
+		}
+		#Air Safety courses
+		YUG_idea_air_safety_courses0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					air_accidents_factor = -0.15
+					air_night_penalty = -0.1
+					air_weather_penalty = -0.1
+				}
+		}
+		#Ikarus Fighters
+		YUG_idea_ikarus_fighters0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+					air_interception_attack_factor = 0.05
+					air_interception_agility_factor = 0.05
+					air_interception_defence_factor = 0.05
+					air_air_superiority_attack_factor = 0.05
+					air_air_superiority_agility_factor = 0.05
+					air_air_superiority_defence_factor = 0.05
+				}
+				equipment_bonus = {
+					light_fighter = {
+						air_attack = 0.02
+						air_defence = 0.02
+					}
+				}
+		}
+		#JAT Bombers
+		YUG_idea_jat_bombers0 = {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				modifier = {
+						air_strategic_bomber_bombing_factor = 0.1
+						air_strategic_bomber_defence_factor = 0.1
+				}
+		}
+		#Rogozarski CAS
+		YUG_idea_rogozarski_cas0= {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				equipment_bonus = {
+					cas_bomber = {
+						reliability = 0.1
+					}
+				}
+				modifier = {
+							air_close_air_support_attack_factor = 0.1
+							air_close_air_support_agility_factor = 0.05
+							air_close_air_support_defence_factor = 0.05
+				}
+		}
+		#Zmaj Heavy
+		YUG_idea_zmaj_heavy0= {
+			allowed = {
+				original_tag = YUG
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = air_support_focus
+				equipment_bonus = {
+					cat_heavy_fighter = {}
+				}
+				modifier = {
+					air_air_superiority_attack_factor = 0.1
+					air_air_superiority_defence_factor = 0.02
+					air_range_factor = 0.15
+				}
+		}
+		#next focus
+	}
+
+
+	#POLITICAL ADVISORS
+#END OF IDEAS
+}
+

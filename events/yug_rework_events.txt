@@ -1,0 +1,311 @@
+add_namespace = yugreworkevent
+
+country_event = {
+	id = yugreworkevent.0
+	title = yugreworkevent.0.t
+	desc = yugreworkevent.0.d
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = no
+	is_triggered_only = yes
+
+	#accept
+	option = {
+		name = yugreworkevent.0.a
+		ai_chance = {
+			factor = 90
+		}
+		trigger = {
+			NOT = {
+				has_war_with = YUG
+			}
+		}
+		YUG = {
+			add_to_faction = ROOT
+		}
+	}
+
+	#decline peace
+	option = {
+		name = yugreworkevent.0.b
+		ai_chance = {
+			factor = 10
+		}
+		trigger = {
+			NOT = {
+				has_war_with = YUG			
+			}	
+		}
+	}
+
+	#decline war
+	option = {
+		name = yugreworkevent.0.c
+		ai_chance = {
+			factor = 4000
+		}
+		trigger = {
+			has_war_with = YUG
+		}
+	}
+}
+
+#rally of youth event
+country_event = {
+	id = yugreworkevent.1
+	title = yugreworkevent.1.t
+	desc = yugreworkevent.1.d
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = no
+	is_triggered_only = yes
+
+	trigger = {
+		tag = YUG
+		has_completed_focus = YUG_rally_of_youth
+		date > 1936.5.25
+	}
+	
+	option = {
+		name = yugreworkevent.1.a
+		ai_chance = {
+			factor = 4000
+		}
+		add_political_power = 10
+		add_stability = 0.01
+			if = {
+				limit = {
+					has_war = yes
+				}
+				add_war_support = 0.05
+					hidden_effect = {
+						country_event = {
+							name = yugreworkevent.1
+							days = 365
+						}
+					}
+			}
+			else = {
+				add_stability = 0.05
+				hidden_effect = {
+					country_event = {
+						name = yugreworkevent.1
+						days = 365
+					}
+				}
+			}
+	}
+}
+
+#Strategic Value guarantee event
+country_event = {
+	id = yugreworkevent.2
+	title = yugreworkevent.2.t
+	desc = yugreworkevent.2.d
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #accept
+		name = yugreworkevent.2.a
+		ai_chance = {
+			factor = 40
+		}
+		ROOT = {
+				give_guarantee = YUG
+		}
+		hidden_effect = {
+			YUG = {
+				country_event = {
+					id = yugreworkevent.3
+					days = 1
+				}
+			}
+		}
+	}
+	option = { #decline
+		name = yugreworkevent.2.b
+		ai_chance = {
+			factor = 40
+		}
+		hidden_effect = {
+			YUG = {
+				country_event = {
+					id = yugreworkevent.4
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+#Strategic value accept
+country_event = {
+	id = yugreworkevent.3
+	title = yugreworkevent.3.t
+	desc = yugreworkevent.3.d
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+	fire_only_once = no
+
+	option = {
+		name = yugreworkevent.3.a
+		ai_chance = {
+			factor = 4000
+		}
+	}
+}
+
+#Strategic value decline
+country_event = {
+	id = yugreworkevent.4
+	title = yugreworkevent.4.t
+	desc = yugreworkevent.4.d
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+	fire_only_once = no
+
+	option = {
+		name = yugreworkevent.4.a
+		ai_chance = {
+			factor = 4000
+		}
+	}
+}
+#PeaceTime Alignment
+country_event = {
+	id = yugreworkevent.5
+	title = yugreworkevent.5.t
+	desc = yugreworkevent.5.d
+	picture = GFX_report_event_election_vote
+
+	#is_triggered_only = no
+	#fire_only_once = not
+
+	trigger = {
+		has_idea = YUG_idea_wartime_alignment0
+		tag = YUG
+		has_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = yugreworkevent.5.a
+		if = {
+			limit = {
+				has_idea = YUG_idea_wartime_alignment0
+			}
+			swap_ideas = {
+				remove_idea = YUG_idea_wartime_alignment0
+				add_idea = YUG_idea_peacetime_alignment0
+			}
+		}
+	}
+}
+
+#Wartime Alignment
+country_event = {
+	id = yugreworkevent.6
+	title = yugreworkevent.6.t
+	desc = yugreworkevent.6.d
+	picture = GFX_report_event_election_vote
+
+	#is_triggered_only = no
+	#fire_only_once = not
+
+	trigger = {
+		has_idea = YUG_idea_peacetime_alignment0
+		has_war = yes
+		tag = YUG
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = yugreworkevent.6.a
+		if = {
+			limit = {
+				has_idea = YUG_idea_peacetime_alignment0
+			}
+			swap_ideas = {
+				remove_idea = YUG_idea_peacetime_alignment0
+				add_idea = YUG_idea_wartime_alignment0
+			}
+		}
+	}
+}
+
+#Finished Highway
+country_event = {
+	id = yugreworkevent.7
+	title = yugreworkevent.7.t
+	desc = yugreworkevent.7.d
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	option = {
+		name = yugreworkevent.7.a
+		custom_effect_tooltip = 09tt_YUG_rework
+			hidden_effect = {
+				add_stability = 0.1
+				836 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+				109 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+				45 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+				847 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+				107 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+				108 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+				106 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+	}
+}

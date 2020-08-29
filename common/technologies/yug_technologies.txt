@@ -1,0 +1,21 @@
+technologies = {
+
+    torpedo = {
+        research_cost = 1
+        allow = {
+            always = yes
+        }
+        destroyer = {
+			torpedo_attack = 0.2
+		}
+		submarine = {
+			torpedo_attack = 0.2
+		}
+		light_cruiser = {
+			torpedo_attack = 0.2
+		}
+		heavy_cruiser = {
+			torpedo_attack = 0.2
+		}
+    }
+}
