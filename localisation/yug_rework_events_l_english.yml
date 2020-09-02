@@ -20,6 +20,13 @@
     yugreworkevent.4.d:0 "Placeholder"
     yugreworkevent.4.a:0 "Well fuck them too."
     yugreworkevent.7.t:0 "Highway Finished!"
+    yugreworkevent.8.t:0 "Balkan Capital Proposal"
+    yugreworkevent.8.d:0 "Yugoslavia wants your land."
+    yugreworkevent.8.a:0 "Yes"
+    yugreworkevent.8.b:0 "No"
+    yugreworkevent.9.t:0 "Communist Party Wins!"
+    yugreworkevent.9.d:0 "Due to the major internal instabily of the country, the high command had to prevent any notations of a possible civil war. In the fiasco of parties verbally and physicaly attacking eachother, one group emerged victorious. The Communist Party of Yugoslavia. Although the elections we're alegedlly fraudelant and cause just more instability, it was a legal proof of KPJ's victory."
+    yugreworkevent.9.a:0 "Hooray!"
 
 
     #news

@@ -492,11 +492,9 @@ focus_tree = {
 					factor = 1
 				}
 				completion_reward = {
-					set_politics = {
-						ruling_party = communism 
-						elections_allowed = no 
+					country_event = {
+						name = yugreworkevent.9
 					}
-					add_stability= -0.1
 			}
 	}
 
@@ -649,6 +647,9 @@ focus_tree = {
 		available_if_capitulated = yes
 			prerequisite = {
 				focus = YUG_prepare_brotherhood_and_unity_highway
+			}
+			available = {
+				controls_state = 103
 			}
 				ai_will_do = {
 					factor = 1
@@ -969,9 +970,11 @@ focus_tree = {
 				focus = YUG_panslavic_workers_congress
 			}
 			bypass = {
-				OR = {
-					has_war_with = YUG
-					is_in_faction = yes
+				ROM = {
+					OR = {
+						has_war_with = YUG
+						is_in_faction = yes
+					}
 				}
 			}
 				ai_will_do = {
@@ -1409,7 +1412,7 @@ focus_tree = {
 				}
 	}
 	#Focus for Consolidate with The Airforce
-	focus = {
+	#focus = {
 		id = YUG_consolidate_with_airforce
 		icon = GFX_goal_generic_neutrality_focus
 		relative_position_id = YUG_rig_the_elections
@@ -1428,14 +1431,14 @@ focus_tree = {
 					remove_ideas = anti_germany_military
 				
 				}
-	}
+	#}
 
 	#Focus for Unity and Brotherhood
 	focus = {
 		id = YUG_unity_and_brotherhood
 		icon = GFX_focus_YUG_unity_brotherhood
 		relative_position_id = YUG_rig_the_elections
-		x = -5
+		x = -4
 		y = 2
 		cost = 10
 		available_if_capitulated = yes
@@ -1447,9 +1450,7 @@ focus_tree = {
 					factor = 1
 				}
 				completion_reward = {
-					remove_ideas = YUG_idea_croatian_opposition
-					remove_ideas = YUG_idea_slovene_nationalism
-					remove_ideas = YUG_idea_macedonian_opposition
+					custom_effect_tooltip = 12tt_YUG_rework
 				}
 	}
 
@@ -2235,6 +2236,10 @@ focus_tree = {
 			prerequisite = { 
 				focus = YUG_agressive_resource_extraction 
 			}
+			available = {
+				controls_state = 108
+				controls_state = 106
+			}
 				ai_will_do = {
 					factor = 1
 				}
@@ -2680,6 +2685,9 @@ focus_tree = {
 		available_if_capitulated = yes
 			prerequisite = {
 				focus = YUG_additional_resource_extraction_investments
+			}
+			available = {
+				controls_state = 104
 			}
 				ai_will_do = {
 					factor = 1
@@ -3352,59 +3360,6 @@ focus_tree = {
 				}
 	}
 
-	#Focus for Balkan Capital
-	focus = {
-		id = YUG_balkan_capital
-		icon = GFX_focus_invite_yugoslavia
-		relative_position_id = YUG_phase_3_secure_self_sufficiency
-		x = 0
-		y = 1
-		cost = 20
-		available_if_capitulated = yes
-			prerequisite = {
-				focus = YUG_phase_3_secure_self_sufficiency
-			}
-				ai_will_do = {
-					factor = 1
-				}
-				completion_reward = {
-					swap_ideas = {
-						remove_idea = YUG_idea_capital2
-						add_idea = YUG_idea_capital3
-					}
-					ALB = {
-						add_opinion_modifier = {
-							target = YUG
-							modifier = YUG_balkan_capital
-						}
-					}
-					ROM = {
-						add_opinion_modifier = {
-							target = YUG
-							modifier = YUG_balkan_capital
-						}
-					}
-					GRE = {
-						add_opinion_modifier = {
-							target = YUG
-							modifier = YUG_balkan_capital
-						}
-					}
-					BUL = {
-						add_opinion_modifier = {
-							target = YUG
-							modifier = YUG_balkan_capital
-						}
-					}
-					HUN = {
-						add_opinion_modifier = {
-							target = YUG
-							modifier = YUG_balkan_capital
-						}
-					}
-				}
-	}
-
 	#Focus for Establish RV
 	focus = {
 		id = YUG_establish_rv
@@ -3672,21 +3627,21 @@ focus_tree = {
 
 	#Focus for Superior Firepower
 	#focus = {
-		id = YUG_super
-		icon = GFX_goal_generic_navy_battleship
-		relative_position_id = YUG_serbian_ship_building
-		x = 0
-		y = 3
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = YUG_aim_at_the_mediteranian 
-			focus = YUG_protect_the_adriatic 
-		}
-		mutually_exclusive = { focus = YUG_stealth_supremacy }
-		ai_will_do = {
-			factor = 1
-		}
+	#	id = YUG_super
+	#	icon = GFX_goal_generic_navy_battleship
+	#	relative_position_id = YUG_serbian_ship_building
+	#	x = 0
+	#	y = 3
+	#	cost = 10
+	#	available_if_capitulated = yes
+	#	prerequisite = { 
+	#		focus = YUG_aim_at_the_mediteranian 
+	#		focus = YUG_protect_the_adriatic 
+	#	}
+	#	mutually_exclusive = { focus = YUG_stealth_supremacy }
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
 	#}
 
 	#Focus for Protect the Adriatic
@@ -4123,6 +4078,111 @@ focus_tree = {
 						uses = 3
 					}
 				}
+	}
+	
+	#Focus for Balkan Capital
+	focus = {
+		id = YUG_balkan_capital
+		icon = GFX_focus_invite_yugoslavia
+		relative_position_id = YUG_phase_3_secure_self_sufficiency
+		x = 0
+		y = 1
+		cost = 20
+		available_if_capitulated = yes
+			prerequisite = {
+				focus = YUG_phase_3_secure_self_sufficiency
+			}
+				ai_will_do = {
+					factor = 1
+				}
+				completion_reward = {
+					custom_effect_tooltip = 11tt_YUG_rework
+					hidden_effect = {
+						swap_ideas = {
+							remove_idea = YUG_idea_capital2
+							add_idea = YUG_idea_capital3
+						}
+						ALB = {
+							if = {
+								limit = {
+									is_in_faction_with = YUG
+								}
+								country_event = {
+									name = yugreworkevent.8
+									mean_time_to_happen = 1 days
+								}
+							}
+							else = {
+								ALB = {
+									add_opinion_modifier = {
+										target = YUG
+										modifier = YUG_balkan_capital
+									}
+								}
+							}
+						}
+						ROM = {
+							if = {
+								limit = {
+									is_in_faction_with = YUG
+								}
+								country_event = {
+									name = yugreworkevent.8
+									mean_time_to_happen = 1 days
+								}
+							}
+							else = {
+								ROM = {
+									add_opinion_modifier = {
+										target = YUG
+										YUG_balkan_capital
+									}
+								}
+							}
+						}
+						GRE = {
+							add_opinion_modifier = {
+								target = YUG
+								modifier = YUG_balkan_capital
+							}
+						}
+						BUL = {
+							add_opinion_modifier = {
+								target = YUG
+								modifier = YUG_balkan_capital
+							}
+						}
+						HUN = {
+							add_opinion_modifier = {
+								target = YUG
+								modifier = YUG_balkan_capital
+							}
+						}
+					}
+				}
+	}
+
+##DEMOCRATIC##
+	focus = {
+		id = YUG_strenghten_the_monarchy
+		icon = GFX_focus_generic_steel
+		relative_position_id = YUG_oppose_the_communists
+		x = 0
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+			prerequisite = {
+				focus = YUG_oppose_the_communists
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_popularity = {
+					ideology = democracy
+					popularity = 0.1
+				}
+			}
 	}
 
 #End of focuses 

@@ -1,0 +1,29 @@
+#Only allowed for Yugoslavia
+
+YUG_unity_and_brotherhood_decay = {
+    YUG_croatian_opposition_decay0
+    icon = jap_conquer_china
+    available = {
+        has_completed_focus = YUG_unity_and_brotherhood
+        has_idea = YUG_idea_croatian_opposition
+    }
+    cost = 100
+    complete_effect = {
+        swap_ideas = {
+            remove_idea = YUG_idea_croatian_opposition
+            add_idea = YUG_idea_croatian_opposition1
+        }
+    }
+}
+YUG_unity_and_brotherhood_decay = {
+    YUG_croatian_opposition_decay1
+    icon = jap_conquer_china
+    available = {
+        has_completed_focus = YUG_unity_and_brotherhood
+        has_idea = YUG_idea_croatian_opposition1
+    }
+    cost = 100
+    complete_effect = {
+        remove_ideas = YUG_idea_croatian_opposition1
+    }
+}

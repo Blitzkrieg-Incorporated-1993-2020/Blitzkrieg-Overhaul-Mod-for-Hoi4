@@ -63,7 +63,10 @@ country_event = {
 	trigger = {
 		tag = YUG
 		has_completed_focus = YUG_rally_of_youth
-		date > 1936.5.25
+		date > 1936.1.1
+	}
+	limit = {
+		ideology = communism
 	}
 	
 	option = {
@@ -256,7 +259,7 @@ country_event = {
 		name = yugreworkevent.7.a
 		custom_effect_tooltip = 09tt_YUG_rework
 			hidden_effect = {
-				add_stability = 0.1
+				add_stability = 0.05
 				836 = {
 					add_building_construction = {
 						type = infrastructure
@@ -309,3 +312,91 @@ country_event = {
 			}
 	}
 }
+
+#Balkan Capital Request
+country_event = {
+	id = yugreworkevent.8
+	title = yugreworkevent.8.t
+	desc = yugreworkevent.8.d
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	option = {
+		name = yugreworkevent.8.a
+		ai_chance = {
+			factor = 50
+		}
+		hidden_effect = {
+			YUG = {
+				country_event = {
+					name = yugreworkevent.10
+				}
+			}
+		}
+	}
+	option = {
+		name = yugreworkevent.8.b
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+#Balkan Capital Romania Accepted
+country_event = {
+	id = yugreworkevent.10
+	title = yugreworkevent.10.t
+	desc = yugreworkevent.10.d
+	picture = GFX_focus_eng_crush_the_dream
+
+	fire_only_once = yes
+
+	option = {
+		name = yugreworkevent.10.a
+		ai_chance = {
+			factor = 4000
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = {
+						tag = ROM
+					}
+				}
+				add_political_power = 10
+			}
+			if = { 
+				limit = {
+					FROM = {
+						tag = ALB
+					}
+				}
+				add_political_power = 50
+			}
+		}
+	}
+}
+
+#Rig the Elections Communist
+country_event = {
+	id = yugreworkevent.9
+	title = yugreworkevent.9.t
+	desc = yugreworkevent.9.d
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	option = {
+		name = yugreworkevent.9.a
+		ai_chance = {
+			factor = 80
+		}
+		set_politics = {
+			ruling_party = communism 
+			elections_allowed = no 
+		}
+		add_stability= -0.1
+	}
+}
+

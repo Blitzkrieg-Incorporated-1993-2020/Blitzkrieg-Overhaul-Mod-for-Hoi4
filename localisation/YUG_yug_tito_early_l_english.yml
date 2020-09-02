@@ -196,7 +196,7 @@
   YUG_phase_2_integrate_military_factories:0 "Phase 2: Integrate and Safeguard Military "
   YUG_phase_2_integrate_military_factories_desc:0 "Filler"
   YUG_balkan_capital:0 "Balkan Capital"
-  YUG_balkan_capital_desc:0 "Filler"
+  YUG_balkan_capital_desc:0 "Opinion or easter egg annexPLEASE WORK."
   YUG_establish_rv:0 "Establish RV"
   YUG_establish_rv_desc:0 "Filler"
   YUG_serbian_airbases:0 "Serbian Airbases"
@@ -327,11 +327,15 @@ YUG_idea_rogozarski_cas0:0 "Rogozarski Close Air Expertise"
 YUG_idea_rogozarski_cas0_desc:0 "Placeholder"
 YUG_idea_zmaj_heavy0:0 "Zmaj Escort Expertise"
 YUG_idea_zmaj_heavy0_desc:0 "Placeholder"
+YUG_idea_peacetime_alignment0:0 "Peacetime Alignment"
+#YUG_idea_peacetime_alignment0_desc:0 "Placeholder"
+YUG_idea_wartime_alignment0:0 "Wartime Alignment"
+#YUG_idea_wartime_alignment0_desc:0 "Placeholder"
 
   #OPINION MODIFIERS
 
-YUG_balkan_capital:0 "Balkan Capital"
-YUG_balkan_capital_desc:0 "Filler"
+YUG_opinion_balkan_capital:0 "Balkan Capital"
+YUG_opinion_balkan_capital_desc:0 "Filler"
 YUG_strategic_value:0 "Strategic Value"
 YUG_refused_faction_invite:0 "Refused Invite to Faction"
 
@@ -353,6 +357,9 @@ Pan_Slavic_Workers_Union:0 "Pan-Slavic Workers Union"
 08tt_YUG_rework:0 "Add maximum Infrastructure in §YLjubljana§!, §YHrvatska§!, §YVojvodina§!, §YSrijem§!, §YBeograd§!, §YMorava§! and §YVardar§!."
 09tt_YUG_rework:0 "Build §Y1 Land Fort§! in provinces bordering Romanian and Bulgarian Land."
 10tt_YUG_rework:0 "Build §Y1 Land Fort§! in provinces bordering Albania and Greece."
+11tt_YUG_rework:0 "We will ask them if they want to get eaten."
+12tt_YUG_rework:0 "Unlock Decisions for removing the negative effects of the Opposition."
+13tt_YUG_rework:0 "We will ask them if they want to get eaten."
 
   #Reseach Sharing
 
