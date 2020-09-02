@@ -312,6 +312,7 @@ ideas = {
 					local_resources_factor = 0.15
 					production_factory_max_efficiency_factor = 0.1
 					monthly_population = 0.1
+					consumer_goods_factor = 0.03
 				}
 		}
 		#Self reliance initiate IMT
@@ -330,6 +331,7 @@ ideas = {
 					production_factory_max_efficiency_factor = 0.1
 					monthly_population = 0.1
 					production_speed_industrial_complex_factor = 0.1
+					consumer_goods_factor = 0.05
 				}
 		}
 		#Investment settbacks from resource extraction
@@ -1221,6 +1223,128 @@ ideas = {
 				trade_laws_cost_factor = 0.1
 				mobilization_laws_cost_factor = 0.1
 				economy_cost_factor = 0.1
+			}
+		}
+
+		#Yugoslavian General Staff CROATS RECRUIT
+		YUG_idea_yugoslavian_general_staff_cro = {
+			picture = generic_air_europe_1
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				military_leader_cost_factor = 0.25
+				max_planning = 0.1
+				army_leader_start_logistics_level = 1
+			}
+		}
+
+		#Yugoslavian General Staff MACEDONIAN RECRUIT
+		YUG_idea_yugoslavian_general_staff_mac = {
+			picture = generic_acquire_tanks
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				military_leader_cost_factor = 0.5
+				max_planning = 0.15
+				planning_speed = 0.05
+			}
+		}
+
+		#Yugoslavian General Staff SLOVENIAN RECRUIT
+		YUG_idea_yugoslavian_general_staff_slo = {
+			picture = generic_acquire_tanks
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				military_leader_cost_factor = 0.25
+				max_planning = 0.1
+				winter_attrition_factor = -0.1
+			}
+		}
+
+		#Yugoslavian General Staff CRO SLOVENIAN
+		YUG_idea_yugoslavian_general_staff_croslo = {
+			picture = generic_acquire_tanks
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				max_planning = 0.1
+				winter_attrition_factor = -0.1
+				army_leader_start_logistics_level = 1
+			}
+		}
+
+		#Yugoslavian General Staff CRO MAX
+		YUG_idea_yugoslavian_general_staff_cromac = {
+			picture = generic_acquire_tanks
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				military_leader_cost_factor = 0.25
+				max_planning = 0.15
+				planning_speed = 0.05
+				army_leader_start_logistics_level = 1
+			}
+		}
+
+		#Yugoslavian General Staff SLO MAC
+		YUG_idea_yugoslavian_general_staff_slomac = {
+			picture = generic_acquire_tanks
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				military_leader_cost_factor = 0.25
+				max_planning = 0.15
+				planning_speed = 0.05
+				winter_attrition_factor = -0.1
+			}
+		}
+
+		#Yugoslavian General Staff ALL
+		YUG_idea_yugoslavian_general_staff_all = {
+			picture = generic_acquire_tanks
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				max_planning = 0.15
+				planning_speed = 0.05
+				winter_attrition_factor = -0.1
+				army_leader_start_logistics_level = 1
 			}
 		}
 		#next focus

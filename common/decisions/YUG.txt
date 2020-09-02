@@ -80,3 +80,162 @@ YUG_unity_and_brotherhood_decay = {
         }
     }
 }
+
+#CROAT
+YUG_yugoslavian_general_staff = {
+    YUG_croatian_recruitment = {
+        icon = jap_conquer_china
+        available = {
+            has_completed_focus = YUG_establish_beograd_military_academy
+        }
+        cost = 50
+        complete_effect = {
+            #Slovenian-croatian
+            if = {
+                limit = {
+                    has_idea = YUG_idea_yugoslavian_general_staff_slo
+                }
+                swap_ideas = {
+                    remove_idea = YUG_idea_yugoslavian_general_staff_slo
+                    add_idea = YUG_idea_yugoslavian_general_staff_croslo
+                }
+            }
+            #Maceodonian-Croatian
+            if = {
+                limit = {
+                    has_idea = YUG_idea_yugoslavian_general_staff_mac
+                }
+                swap_ideas = {
+                    remove_idea = YUG_idea_yugoslavian_general_staff_mac
+                    add_idea = YUG_idea_yugoslavian_general_staff_cromac
+                }
+            }
+            #FULL
+            if = {
+                limit = {
+                    has_idea = YUG_idea_yugoslavian_general_staff_slomac
+                }
+                swap_ideas = {
+                    remove_idea = YUG_idea_yugoslavian_general_staff_slomac
+                    add_idea = YUG_idea_yugoslavian_general_staff_all
+                }
+            }
+            #empty
+            if = {
+                limit = {
+                    has_idea = YUG_idea_serbian_general_staff
+                }
+                swap_ideas = {
+                    remove_idea = YUG_idea_serbian_general_staff
+                    add_idea = YUG_idea_yugoslavian_general_staff_cro
+                }
+            }
+        }
+    }
+}
+
+#SLOVENE
+YUG_yugoslavian_general_staff = {
+    YUG_slovene_recruitment = {
+        icon = jap_conquer_china
+        available = {
+            has_completed_focus = YUG_establish_beograd_military_academy
+        }
+        cost = 50
+        complete_effect = {
+            #Croatian-Slovene
+            if = {
+                limit = {
+                    has_idea = YUG_idea_yugoslavian_general_staff_cro
+                }
+                swap_ideas = {
+                    remove_idea = YUG_idea_yugoslavian_general_staff_cro
+                    add_idea = YUG_idea_yugoslavian_general_staff_croslo
+                }
+            }
+            #Macedonian-Slovene
+            if = {
+                limit = {
+                    has_idea = YUG_idea_yugoslavian_general_staff_mac
+                }
+                swap_ideas = {
+                    remove_idea = YUG_idea_yugoslavian_general_staff_mac
+                    add_idea = YUG_idea_yugoslavian_general_staff_slomac
+                }
+            }
+            #FULL
+            if = {
+                limit = {
+                    has_idea = YUG_idea_yugoslavian_general_staff_cromac
+                }
+                swap_ideas = {
+                    remove_idea = YUG_idea_yugoslavian_general_staff_cromac
+                    add_idea = YUG_idea_yugoslavian_general_staff_all
+                }
+            }
+            empty
+            if = {
+                limit = {
+                    has_idea = YUG_idea_serbian_general_staff
+                }
+                swap_ideas = {
+                    remove_idea = YUG_idea_serbian_general_staff
+                    add_idea = YUG_idea_yugoslavian_general_staff_slo
+                }
+            }
+        }
+    }
+}
+
+#MACEDONIAN
+YUG_yugoslavian_general_staff = {
+    YUG_macedonian_recruitment = {
+        icon = jap_conquer_china
+        available = {
+            has_completed_focus = YUG_establish_beograd_military_academy
+        }
+        cost = 50
+        complete_effect = {
+            #Macedonian-Croatian
+            if = {
+                limit = {
+                    has_idea = YUG_idea_yugoslavian_general_staff_cro
+                }
+                swap_ideas = {
+                    remove_idea = YUG_idea_yugoslavian_general_staff_cro
+                    add_idea = YUG_idea_yugoslavian_general_staff_cromac
+                }
+            }
+            #Macedonian-Slovene
+            if = {
+                limit = {
+                    has_idea = YUG_idea_yugoslavian_general_staff_slo
+                }
+                swap_ideas = {
+                    remove_idea = YUG_idea_yugoslavian_general_staff_slo
+                    add_idea = YUG_idea_yugoslavian_general_staff_slomac
+                }
+            }
+            #FULL
+            if = {
+                limit = {
+                    has_idea = YUG_idea_yugoslavian_general_staff_croslo
+                }
+                swap_ideas = {
+                    remove_idea = YUG_idea_yugoslavian_general_staff_croslo
+                    add_idea = YUG_idea_yugoslavian_general_staff_all
+                }
+            }
+            empty
+            if = {
+                limit = {
+                    has_idea = YUG_idea_serbian_general_staff
+                }
+                swap_ideas = {
+                    remove_idea = YUG_idea_serbian_general_staff
+                    add_idea = YUG_idea_yugoslavian_general_staff_mac
+                }
+            }
+        }
+    }
+}
