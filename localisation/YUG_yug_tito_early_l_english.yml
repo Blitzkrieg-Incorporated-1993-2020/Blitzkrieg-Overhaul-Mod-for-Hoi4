@@ -296,8 +296,8 @@ YUG_idea_military_funding4:0 "Secured Military Funding"
 YUG_idea_military_funding5:0 "Balkan Military Center"
 YUG_idea_zastava_artillery0:0 "Zastava Artillery"
 YUG_idea_form_jna0:0 "JNA"
-YUG_idea_form_jna1:0 "Mandatory JNA service"
-YUG_idea_form_jna2:0 "The Mighty JNA"
+YUG_idea_form_jna1:0 "JNA"
+YUG_idea_form_jna2:0 "JNA"
 YUG_idea_military_academy0:0 "Beograd Military Academy"
 #Not in use YUG_idea_mountain_movement0:0 "Filler"
 YUG_idea_artillery_understanding0:0 "Zastava Artillery Expertise"
@@ -365,3 +365,12 @@ Pan_Slavic_Workers_Union:0 "Pan-Slavic Workers Union"
 
 panslavic_research_sharing:0 "Pan-Slavic Research Collaboration"
 panslavic_research_sharing_desc:0 "Placeholder"
+
+  #Decisions
+
+YUG_unity_and_brotherhood_decay:0 "Unity and Brotherhood Efforts"¸
+YUG_croatian_opposition_decay0:0 "Give Croats Seats in the Goverment"
+YUG_croatian_opposition_decay1:0 "Croats in High Places"
+YUG_macedonian_opposition_decay0:0 "Bribe High Ranked Macedonian Officials"
+YUG_macedonian_opposition_decay1:0 "Block Any Bulgarian Influence"
+YUG_slovene_nationalism_decay:0 "Ensure Slovene Products Are Placed on Market"

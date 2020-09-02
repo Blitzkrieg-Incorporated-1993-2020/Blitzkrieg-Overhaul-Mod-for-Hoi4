@@ -1199,6 +1199,30 @@ ideas = {
 					stability_factor = -0.15
 				}
 		}
+		
+		#Macedonian Opposition Decay
+		YUG_idea_macedonian_opposition1 = {
+			
+			picture = generic_volunteer_expedition_bonus
+
+			allowed = {
+				always = no
+				country_exists = BUL
+			}
+
+			allowed_civil_war = {
+
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_advisor_cost_factor = 0.1
+				trade_laws_cost_factor = 0.1
+				mobilization_laws_cost_factor = 0.1
+				economy_cost_factor = 0.1
+			}
+		}
 		#next focus
 	}
 
