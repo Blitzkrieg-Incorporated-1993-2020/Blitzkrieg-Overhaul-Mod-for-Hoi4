@@ -256,7 +256,9 @@
   YUG_eastern_approach_defense:0 "Defend the Eastern Approach"
   YUG_eastern_approach_defense_desc:0 "Count Dracula spookz."
   YUG_defend_the_coast_extended:0 "Extenend the Coastal Line"
-  YUG_defend_the_coast_extended_desc:0 "DESC GOES HERE"
+  YUG_defend_the_coast_extended_desc:0 "DESC GOES HERE"¸
+  YUG_strenghten_the_monarchy:0 "Authoritarian Path"
+  YUG_strenghten_the_monarchy_desc:0 "Placeholder"
 
 #IDEAS
 
@@ -345,6 +347,12 @@ YUG_idea_yugoslavian_general_staff_mac:0 "Yugoslavian General Staff"
 YUG_idea_yugoslavian_general_staff_mac_desc:0 "Only Macedonian"
 YUG_idea_yugoslavian_general_staff_slomac:0 "Yugoslavian General Staff"
 YUG_idea_yugoslavian_general_staff_slomac_desc:0 "Slovenian and Macedonian"
+YUG_idea_croatian_opposition1:0 "Weakened Croatian Opposition"
+YUG_idea_croatian_opposition1_desc:0 "Filler"
+YUG_idea_macedonian_opposition1:0 "Lesser Macedonian Opposition"
+YUG_idea_macedonian_opposition1_desc:0 "Filler"
+YUG_idea_strenghten_the_monarchism:0 "Strengthened Monarchy"
+YUG_idea_strenghten_the_neutrality:0 "Strengthened Neutrality"
 
   #OPINION MODIFIERS
 
@@ -388,3 +396,10 @@ YUG_croatian_opposition_decay1:0 "Croats in High Places"
 YUG_macedonian_opposition_decay0:0 "Bribe High Ranked Macedonian Officials"
 YUG_macedonian_opposition_decay1:0 "Block Any Bulgarian Influence"
 YUG_slovene_nationalism_decay:0 "Ensure Slovene Products Are Placed on Market"
+YUG_yugoslavian_general_staff:0 "Army Education Reform"
+YUG_croatian_recruitment:0 "Fund Croatian Recruitment"
+YUG_croatian_recruitment_desc:0 "Filler"
+YUG_slovene_recruitment:0 "Conscription in Slovenia"
+YUG_slovene_recruitment_desc:0 "Filler"
+YUG_macedonian_recruitment:0 "Advertise Army Benefits in Macedonia"
+YUG_macedonian_recruitment_desc:0 "Filler"

@@ -1347,6 +1347,32 @@ ideas = {
 				army_leader_start_logistics_level = 1
 			}
 		}
+
+		#Strengthen the Neutrality
+		YUG_idea_strenghten_the_neutrality = {
+			picture = generic_acquire_tanks
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				neutrality_drift = 0.1
+				neutrality_acceptance = 65
+			}
+		}
+
+		#Strengthen the Monarchy
+		YUG_idea_strenghten_the_monarchism = {
+			picture = generic_acquire_tanks
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				monarchism_drift = 0.1
+				monarchism_acceptance = 65¸
+			}
+		}
 		#next focus
 	}
 

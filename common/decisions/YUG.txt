@@ -87,9 +87,11 @@ YUG_yugoslavian_general_staff = {
         icon = jap_conquer_china
         available = {
             has_completed_focus = YUG_establish_beograd_military_academy
+            has_army_experience > 25
         }
         cost = 50
         complete_effect = {
+            army_experience = -25
             #Slovenian-croatian
             if = {
                 limit = {
@@ -140,9 +142,11 @@ YUG_yugoslavian_general_staff = {
         icon = jap_conquer_china
         available = {
             has_completed_focus = YUG_establish_beograd_military_academy
+            has_army_experience > 25
         }
         cost = 50
         complete_effect = {
+            army_experience = -25
             #Croatian-Slovene
             if = {
                 limit = {
@@ -173,7 +177,7 @@ YUG_yugoslavian_general_staff = {
                     add_idea = YUG_idea_yugoslavian_general_staff_all
                 }
             }
-            empty
+            #empty
             if = {
                 limit = {
                     has_idea = YUG_idea_serbian_general_staff
@@ -193,9 +197,11 @@ YUG_yugoslavian_general_staff = {
         icon = jap_conquer_china
         available = {
             has_completed_focus = YUG_establish_beograd_military_academy
+            has_army_experience > 25
         }
         cost = 50
         complete_effect = {
+            army_experience = -25
             #Macedonian-Croatian
             if = {
                 limit = {
@@ -226,7 +232,7 @@ YUG_yugoslavian_general_staff = {
                     add_idea = YUG_idea_yugoslavian_general_staff_all
                 }
             }
-            empty
+            #empty
             if = {
                 limit = {
                     has_idea = YUG_idea_serbian_general_staff

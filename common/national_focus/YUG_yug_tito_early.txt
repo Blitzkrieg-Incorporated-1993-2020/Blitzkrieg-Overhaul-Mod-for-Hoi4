@@ -493,7 +493,7 @@ focus_tree = {
 				}
 				completion_reward = {
 					country_event = {
-						name = yugreworkevent.9
+						id = yugreworkevent.9
 					}
 			}
 	}
@@ -562,6 +562,12 @@ focus_tree = {
 		mutually_exclusive = { focus = YUG_strengthen_the_communist_party }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = -0.3
+			}
 		}
 	}
 
@@ -674,8 +680,9 @@ focus_tree = {
 	focus = {
 		id = YUG_phase_3_secure_self_sufficiency
 		icon = GFX_goal_generic_positive_trade_relations
-		x = 40
-		y = 11
+		relative_position_id = YUG_phase_2_integrate_military_factories
+		x = 0
+		y = 1
 		cost = 10
 		available_if_capitulated = yes
 			prerequisite = {
@@ -696,7 +703,8 @@ focus_tree = {
 	focus = {
 		id = YUG_establish_jrm
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		x = 72
+		relative_position_id = YUG_form_the_jna
+		x = 10
 		y = 1
 		cost = 5
 		available_if_capitulated = yes
@@ -715,7 +723,7 @@ focus_tree = {
 	focus = {
 		id = YUG_form_the_jna
 		icon = GFX_goal_generic_axis_build_infantry
-		x = 62
+		x = 80
 		y = 0
 		cost = 5
 		available_if_capitulated = yes
@@ -732,8 +740,9 @@ focus_tree = {
 	focus = {
 		id = YUG_guide_ratko_mirkovic
 		icon = GFX_goal_generic_fortify_city
-		x = 47
-		y = 5
+		relative_position_id = YUG_border_defense_program
+		x = 3
+		y = 1
 		cost = 5
 		available_if_capitulated = yes
 			prerequisite = {
@@ -754,8 +763,9 @@ focus_tree = {
 	focus = {
 		id = YUG_jat_bombers
 		icon = GFX_goal_generic_air_bomber
-		x = 53
-		y = 3
+		relative_position_id = YUG_aggressive_plans
+		x = -1
+		y = 1
 		cost = 7.2
 		available_if_capitulated = yes
 			prerequisite = { 
@@ -784,8 +794,9 @@ focus_tree = {
 	focus = {
 		id = YUG_ikarus_fighters
 		icon = GFX_focus_YUG_ikarus
-		x = 51
-		y = 3
+		relative_position_id = YUG_home_defense
+		x = 1
+		y = 1
 		cost = 7.2
 		available_if_capitulated = yes
 			prerequisite = { 
@@ -1391,7 +1402,7 @@ focus_tree = {
 	#Focus for Titoism
 	focus = {
 		id = YUG_titoism
-		icon = GFX_yugr_focus_titoism1
+		icon = GFX_yug_focus_titoism1
 		relative_position_id = YUG_rig_the_elections
 		x = 1
 		y = 1
@@ -1413,24 +1424,24 @@ focus_tree = {
 	}
 	#Focus for Consolidate with The Airforce
 	#focus = {
-		id = YUG_consolidate_with_airforce
-		icon = GFX_goal_generic_neutrality_focus
-		relative_position_id = YUG_rig_the_elections
-		x = 0
-		y = 2
-		cost = 10
-		available_if_capitulated = yes
-			prerequisite = {
-				focus = YUG_solidify_titos_rule
-				focus = YUG_titoism
-			}
-				ai_will_do = {
-					factor = 1
-				}
-				completion_reward = {
-					remove_ideas = anti_germany_military
-				
-				}
+	#	id = YUG_consolidate_with_airforce
+	#	icon = GFX_goal_generic_neutrality_focus
+	#	relative_position_id = YUG_rig_the_elections
+	#	x = 0
+	#	y = 2
+	#	cost = 10
+	#	available_if_capitulated = yes
+	#		prerequisite = {
+	#			focus = YUG_solidify_titos_rule
+	#			focus = YUG_titoism
+	#		}
+	#			ai_will_do = {
+	#				factor = 1
+	#			}
+	#			completion_reward = {
+	#				remove_ideas = anti_germany_military
+	#			
+	#			}
 	#}
 
 	#Focus for Unity and Brotherhood
@@ -1478,7 +1489,7 @@ focus_tree = {
 	focus = {
 		id = YUG_strengthen_the_communist_party
 		icon = GFX_focus_YUG_strenghten_communist
-		x = 18
+		x = 36
 		y = 0
 		cost = 5
 		available_if_capitulated = yes
@@ -1653,7 +1664,7 @@ focus_tree = {
 	focus = {
 		id = YUG_begin_industrialization
 		icon = GFX_goal_generic_construct_civilian
-		x = 40
+		x = 58
 		y = 0
 		cost = 4
 		available_if_capitulated = no
@@ -1893,8 +1904,9 @@ focus_tree = {
 	focus = {
 		id = YUG_balkan_military_center_project
 		icon = GFX_goal_generic_production
-		x = 44
-		y = 8
+		relative_position_id = YUG_secure_continuous_output
+		x = 0
+		y = 1
 		cost = 5
 		available_if_capitulated = yes
 			prerequisite = {
@@ -3892,14 +3904,13 @@ focus_tree = {
 	focus = {
 		id = YUG_disrupt_the_supply
 		icon = GFX_goal_generic_navy_anti_submarine
-		relative_position_id = YUG_torpedo
+		relative_position_id = YUG_destroyer_flexibility
 		x = 0
 		y = 1
 		cost = 6
 		available_if_capitulated = yes
 			prerequisite = {
-				focus = YUG_rijeka_naval_academy
-				focus = YUG_torpedo
+				focus = YUG_destroyer_flexibility
 			}
 				ai_will_do = {
 					factor = 1
@@ -3918,14 +3929,13 @@ focus_tree = {
 	focus = {
 		id = YUG_destroyer_flexibility
 		icon = GFX_goal_generic_navy_cruiser
-		relative_position_id = YUG_rijeka_naval_academy
-		x = 0
+		relative_position_id = YUG_croatian_ship_building
+		x = 1
 		y = 1
 		cost = 6
 		available_if_capitulated = yes
 			prerequisite = { 
-				focus = YUG_rijeka_naval_academy 
-				focus = YUG_torpedo
+				focus = YUG_croatian_ship_building
 			}
 				ai_will_do = {
 					factor = 1
@@ -4128,13 +4138,16 @@ focus_tree = {
 	focus = {
 		id = YUG_torpedo
 		icon = GFX_goal_generic_construct_naval_dockyard
-		relative_position_id = YUG_croatian_ship_building
-		x = 1
+		relative_position_id = YUG_rijeka_naval_academy
+		x = 0
 		y = 1
 		cost = 10
 		available_if_capitulated = yes
 			prerequisite = {
-				focus = YUG_croatian_ship_building
+				focus = YUG_rijeka_naval_academy
+			}
+			available = {
+				owns_state = 839
 			}
 				ai_will_do = {
 					factor = 1
@@ -4158,6 +4171,9 @@ focus_tree = {
 			prerequisite = {
 				focus = YUG_croatian_ship_building
 			}
+			available = {
+				owns_state = 839
+			}
 				ai_will_do = {
 					factor = 1
 				}
@@ -4177,7 +4193,7 @@ focus_tree = {
 		available_if_capitulated = yes
 			prerequisite = { 
 				focus = YUG_disrupt_the_supply 
-				focus = YUG_destroyer_flexibility 
+				focus = YUG_torpedo
 			}
 			mutually_exclusive = { 
 				focus = YUG_superior_firepower 
@@ -4194,8 +4210,35 @@ focus_tree = {
 					}
 				}
 	}
+
+	##NEUTRAL##
+
+	#Going Neutral
+	focus = {
+		id = YUG_strenghten_the_monarchy
+		icon = GFX_focus_generic_steel
+		relative_position_id = YUG_oppose_the_communists
+		x = 0
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+			prerequisite = {
+				focus = YUG_oppose_the_communists
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				country_event = {
+					id = yugreworkevent.11
+				}
+			}
+	}
+
+	#
+
 	
-	#Focus for Balkan Capital
+	############################Focus for Balkan Capital ##KEEP THIS FOCUS AT END. BREAKS THE FOCUS TREE#########################################################################
 	focus = {
 		id = YUG_balkan_capital
 		icon = GFX_focus_invite_yugoslavia
@@ -4223,7 +4266,7 @@ focus_tree = {
 									is_in_faction_with = YUG
 								}
 								country_event = {
-									name = yugreworkevent.8
+									id = yugreworkevent.8
 									mean_time_to_happen = 1 days
 								}
 							}
@@ -4242,7 +4285,7 @@ focus_tree = {
 									is_in_faction_with = YUG
 								}
 								country_event = {
-									name = yugreworkevent.8
+									id = yugreworkevent.8
 									mean_time_to_happen = 1 days
 								}
 							}
@@ -4276,29 +4319,5 @@ focus_tree = {
 					}
 				}
 	}
-
-##DEMOCRATIC##
-	focus = {
-		id = YUG_strenghten_the_monarchy
-		icon = GFX_focus_generic_steel
-		relative_position_id = YUG_oppose_the_communists
-		x = 0
-		y = 1
-		cost = 10
-		available_if_capitulated = yes
-			prerequisite = {
-				focus = YUG_oppose_the_communists
-			}
-			ai_will_do = {
-				factor = 1
-			}
-			completion_reward = {
-				add_popularity = {
-					ideology = democracy
-					popularity = 0.1
-				}
-			}
-	}
-
 #End of focuses 
  }
