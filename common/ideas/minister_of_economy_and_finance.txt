@@ -1,0 +1,18 @@
+ideas = { 
+   
+  minister_of_economy_and_finance = { 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  }
+
+}

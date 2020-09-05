@@ -1,0 +1,31 @@
+state={
+	id=798
+	name="STATE_798"
+
+	history={
+		owner = DAN
+		controller = DAN
+		victory_points = {
+			362 10
+		}
+		buildings = {
+			infrastructure = 6
+			dockyard = 1
+			362 = {
+				naval_base = 5
+
+			}
+
+		}
+		add_core_of = DAN
+		add_core_of = POL
+
+	}
+
+	provinces={
+		362 
+	}
+	manpower=361500
+	buildings_max_level_factor=1.000
+	state_category=city
+}

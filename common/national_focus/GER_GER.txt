@@ -1,0 +1,120 @@
+focus_tree = {
+	id = GER
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = GER
+		}
+	}
+	#Focus for Enter The Rhineland
+	focus = {
+		id = GER_enter_the_rhineland
+		icon = GFX_focus_ger_reichskommisariats
+		x = 11
+		y = 0
+		cost = 9
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 10
+		}
+		bypass = {
+			42 = { is_demilitarized_zone = no }
+51 = { is_demilitarized_zone = no }
+822 = { is_demilitarized_zone = no }
+818 = { is_demilitarized_zone = no }
+825 = { is_demilitarized_zone = no }
+824 = { is_demilitarized_zone = no }
+823 = { is_demilitarized_zone = no }
+		}
+		available = {
+			is_puppet = no
+		}
+		completion_reward = {
+			42 = { set_demilitarized_zone = no }
+51 = { set_demilitarized_zone = no }
+822 = { set_demilitarized_zone = no }
+818 = { set_demilitarized_zone = no }
+825 = { set_demilitarized_zone = no }
+824 = { set_demilitarized_zone = no }
+823 = { set_demilitarized_zone = no }
+custom_effect_tooltip = GER_rhineland_ultimatum
+add_political_power = 120
+army_experience = 5
+add_named_threat = { threat = 5 name = GER_rhineland }
+if = {
+limit = { FRA = { is_puppet = no } }
+FRA = {
+country_event = { id = germany.60 }
+custom_effect_tooltip = may_provoke_hostility
+    }
+}
+		}
+	}
+
+	#Focus for The 4 Year Plan
+	focus = {
+		id = GER_the_4_year_plan
+		icon = GFX_goal_generic_construction2
+		x = 2
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 12
+		}
+		completion_reward = {
+			add_tech_bonus = {
+name = GER_four_year_plan
+bonus = 1.0
+uses = 2
+category = industry
+}
+custom_effect_tooltip = available_political_advisor
+show_ideas_tooltip = hjalmar_schacht
+		}
+	}
+
+	#Focus for Großraumwirtschaft Project
+	focus = {
+		id = GER_groraumwirtschaft_project
+		icon = GFX_goal_generic_construct_civilian
+		x = 1
+		y = 1
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = { focus = GER_the_4_year_plan }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_ideas = GER_grosraumwirtschaft
+		}
+	}
+
+	#Focus for Finish The Reichsautobahn
+	focus = {
+		id = GER_finish_the_reichsautobahn
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 2
+		cost = 7
+		available_if_capitulated = yes
+		prerequisite = { focus = GER_groraumwirtschaft_project }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_full_control_of_state = 64
+has_full_control_of_state = 59
+has_full_control_of_state = 60
+has_full_control_of_state = 54
+		}
+	}
+
+#End of focuses 
+ }
