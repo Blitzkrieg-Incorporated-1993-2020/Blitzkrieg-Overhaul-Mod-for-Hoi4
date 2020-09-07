@@ -1,0 +1,31 @@
+﻿
+units = {
+	division = {
+		name = "1st SS Panzer Division 'LSSAH'"
+		location = 6521
+		division_template = "SS Panzer Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}	
+	division = {
+		name = "2nd SS Panzer Division 'Das Reich'"
+		location = 6521
+		division_template = "SS Panzer Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "3rd SS Panzer Division 'Totenkopf'"
+		location = 6521
+		division_template = "SS Motorisierte Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "4th SS Polizei Panzergrenadier Division"
+		location = 6521
+		division_template = "SS Motorisierte Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+}

@@ -1,0 +1,148 @@
+﻿division_template = {
+	name = "Division Roja"			
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	division = {
+		name = "I Division Roja"
+		location = 3816  # Zaragoza
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "I Brigada de las JSU"
+		location = 3816  # Zaragoza
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "II Division Roja"
+		location = 3816  # Zaragoza
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "III Division Roja"
+		location = 3816  # Zaragoza
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "IV Division Roja"
+		location = 3816  # Zaragoza
+		division_template = "Division Roja"
+	}
+
+	division = {
+		name = "II Brigada de las JSU"
+		location = 9764  # Barcelona
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "III Brigada de las JSU"
+		location = 9764  # Barcelona
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "V Division Roja"
+		location = 9764  # Barcelona
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "VI Division Roja"
+		location = 6906  # Valencia
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "I Brigada de la FAI"
+		location = 6906  # Valencia
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "IV Brigada de las JSU"
+		location = 6906  # Valencia
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "VII Division Roja"
+		location = 10024  # Murcia
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "V Brigada de las JSU"
+		location = 10024  # Murcia
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "II Brigada de la FAI"
+		location = 10024  # Murcia
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "VI Brigada de las JSU"
+		location = 9979  # Malaga
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "VIII Division Roja"
+		location = 9979  # Malaga
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "VII Brigada de las JSU"
+		location = 9979  # Malaga
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "VIII Brigada de las JSU"
+		location = 7183  # Sevilla
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "IX Division Roja"
+		location = 7183  # Sevilla
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "X Division Roja"
+		location = 7183  # Sevilla 
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "III Brigada de la FAI"
+		location = 6906  # Valencia
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "XI Division Roja"
+		location = 9764  # Barcelona
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "IV Brigada de la FAI"
+		location = 9764  # Barcelona
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "IX Brigada de las JSU"
+		location = 9764  # Barcelona
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "XII Division Roja"
+		location = 9764  # Barcelona
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "XIII Division Roja"
+		location = 6906  # Valencia
+		division_template = "Division Roja"
+	}
+	division = {
+		name = "X Brigada de las JSU"
+		location = 6906  # Valencia
+		division_template = "Division Roja"
+	}
+}

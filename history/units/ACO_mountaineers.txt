@@ -1,0 +1,121 @@
+﻿division_template = {
+	name = "Mountaineer-Division"
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+        mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+        mountaineers = { x = 1 y = 2 }
+		mountaineers = { x = 2 y = 0 }
+		mountaineers = { x = 2 y = 1 }
+        mountaineers = { x = 2 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		artillery = { x = 0 y = 2 }
+	}
+}
+
+
+
+units = {	
+	division= {			
+		name = "1st Mountaineer-Division"		
+		location = 7386
+		division_template = "Mountaineer-Division"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+
+	}	
+	division= {			
+		name = "2nd Mountaineer-Division"		
+		location = 7386
+		division_template = "Mountaineer-Division"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+
+	}
+	division= {			
+		name = "3rd Mountaineer-Division"		
+		location = 7386
+		division_template = "Mountaineer-Division"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+
+	}
+	division= {			
+		name = "4th Mountaineer-Division"		
+		location = 7386
+		division_template = "Mountaineer-Division"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+
+	}	
+	division= {			
+		name = "5th Mountaineer-Division"		
+		location = 7386
+		division_template = "Mountaineer-Division"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+
+	}
+	division= {			
+		name = "6th Mountaineer-Division"		
+		location = 7386
+		division_template = "Mountaineer-Division"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+
+	}
+	division= {			
+		name = "7th Mountaineer-Division"		
+		location = 7386
+		division_template = "Mountaineer-Division"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+
+	}	
+	division= {			
+		name = "8th Mountaineer-Division"		
+		location = 7386
+		division_template = "Mountaineer-Division"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+
+	}
+	division= {			
+		name = "9th Mountaineer-Division"		
+		location = 7386
+		division_template = "Mountaineer-Division"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+
+	}		
+	division= {			
+		name = "10th Mountaineer-Division"		
+		location = 7386
+		division_template = "Mountaineer-Division"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+
+	}	
+	division= {			
+		name = "11th Mountaineer-Division"		
+		location = 7386
+		division_template = "Mountaineer-Division"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+
+	}
+	division= {			
+		name = "12th Mountaineer-Division"		
+		location = 7386
+		division_template = "Mountaineer-Division"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+
+	}	
+}

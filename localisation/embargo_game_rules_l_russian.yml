@@ -1,0 +1,7 @@
+﻿l_russian:
+  DONT_ALLOW_AI_EMBARGO:0 «AI отключил»
+  DONT_ALLOW_AI_EMBARGO_TEXT:0 «Отключенный»
+  ALLOW_AI_EMBARGO:0 «AI эмбарго »
+  ALLOW_AI_EMBARGO_TEXT:0 «Включен»
+  RULE_GROUP_EMBARGO_POLICY:0 «Политика эмбарго»
+  allow_ai_embargo:0 «Политика эмбарго»

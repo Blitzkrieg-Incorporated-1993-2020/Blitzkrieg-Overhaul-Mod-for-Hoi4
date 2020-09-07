@@ -1,0 +1,28 @@
+﻿
+units = {
+	division = {
+		name = "Tercio de Montserrat"
+		location = 885  # Burgos
+		division_template = "Brigada Nacional"
+	}
+	division = {
+		name = "Tercio de San Miguel"
+		location = 885  # Burgos
+		division_template = "Brigada Nacional"
+	}
+	division = {
+		name = "Tercio Navarro"
+		location = 885  # Burgos
+		division_template = "Brigada Nacional"
+	}
+	division = {
+		name = "Tercio del Alcázar"
+		location = 885  # Burgos
+		division_template = "Brigada Nacional"
+	}
+	division = {
+		name = "Tercio de Doña María"
+		location = 885  # Burgos
+		division_template = "Brigada Nacional"
+	}
+}

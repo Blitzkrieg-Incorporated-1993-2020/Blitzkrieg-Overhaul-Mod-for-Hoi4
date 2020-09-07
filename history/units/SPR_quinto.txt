@@ -1,0 +1,12 @@
+units = {
+	#####LAND UNITS #####
+	### MAINLAND UNITS ###
+	division = {			
+		name = "Quinto Regimiento"		
+		location = 3938  # Madrid
+		division_template = "División de Infantería"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+}

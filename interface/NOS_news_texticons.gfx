@@ -1,0 +1,97 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_soviet_news"
+		texturefile = "gfx/texticons/soviet_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_russian_news"
+		texturefile = "gfx/texticons/russian_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_nazi_news"
+		texturefile = "gfx/texticons/nazi_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_kaiser_news"
+		texturefile = "gfx/texticons/kaiser_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_east_ger_news"
+		texturefile = "gfx/texticons/east_ger_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_weimar_news"
+		texturefile = "gfx/texticons/weimar_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_usa_news"
+		texturefile = "gfx/texticons/usa_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_british_news"
+		texturefile = "gfx/texticons/british_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_generic_news"
+		texturefile = "gfx/texticons/generic_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_vichy_news"
+		texturefile = "gfx/texticons/vichy_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_france_news"
+		texturefile = "gfx/texticons/france_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_china_news"
+		texturefile = "gfx/texticons/china_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_com_china_news"
+		texturefile = "gfx/texticons/com_china_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_sinkiang_news"
+		texturefile = "gfx/texticons/sinkiang_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_japanese_news"
+		texturefile = "gfx/texticons/japanese_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_korean_news"
+		texturefile = "gfx/texticons/korean_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_italian_news"
+		texturefile = "gfx/texticons/italian_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_man_nippon_news"
+		texturefile = "gfx/texticons/man_nippon_news.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_man_daily_news"
+		texturefile = "gfx/texticons/man_daily_news.dds"
+		legacy_lazy_load = no
+	}
+}

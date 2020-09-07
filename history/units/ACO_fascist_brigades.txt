@@ -1,0 +1,208 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "Anti-Communist Regiment" 
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+	name = "Anti-Communist Armored Brigades" 
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+
+units = {
+	division= {			
+		name = "1st Anti-Communist Armored Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Armored Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.1
+
+	}	
+	division= {			
+		name = "2nd Anti-Communist Armored Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Armored Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.1
+
+	}	
+
+	division= {			
+		name = "1st Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "2nd Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}
+	division= {			
+		name = "3rd Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "4th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "5th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "6th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "7th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "8th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "9th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "10th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}			
+	division= {			
+		name = "11th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "12th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "13th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "14th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "15th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "16th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "17th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "18th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "19th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "20th Anti-Communist Regiment"		
+		location = 6710
+		division_template = "Anti-Communist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}			
+	
+}

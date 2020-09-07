@@ -1,0 +1,209 @@
+﻿l_english: 
+ bce_news.1.t:0 "Republic of China joins the Allies"
+ bce_news.1.d:0 "[This.GetNewsIcon]The Kuomintang and Communists formed an alliance against the Japanese. Chiang Kai-shek's Nationalists and Mao Zedong's Red Army occupied the interior of China. The area under Mao's control was home to around 100 million people. Chiang reluctantly agreed to form a United Front with the Communists against the Japanese after being pressured to do so by the United States. The war cooled China's formerly warm relations with Germany, and following the Japanese attack on Pearl Harbor, China has formally requested to join the Allies, and the British confirmed the addition."
+ bce_news.1.a:0 "At least now they are not fighting alone."
+ bce_news.1.b:0 "Cowering behind the British will not help them, they will be crushed."
+ bce_news.1.c:0 "Let us hope that they will be a good ally."
+
+ bce_news.2.t:0 "Nationalist China restarts the Chinese Civil War"
+ bce_news.2.d:0 "[This.GetNewsIcon]By the end of the Second Sino-Japanese War, the power of the Communist Party has grown considerably. Their main force grew to 1.2 million troops, backed with additional militia of 2 million. The Soviet Union turned over all of its captured Japanese weapons and a substantial amount of their own supplies to the Communists, who received Northeastern China from the Soviets as well. As postwar negotiations between the Nationalist government in Nanjing and the Communist Party failed, the civil war between these two parties resumed. This stage of war is referred to in mainland China and Communist historiography as the "War of Liberation". On 20 July 1946, Chiang Kai-shek launched a large-scale assault on Communist territory in North China with 113 brigades. The final battle for the Control of China has begun."
+ bce_news.2.a:0 "It was bound to happen eventually."
+ bce_news.2.b:0 "How dare they!"
+
+ bce_news.3.t:0 "Communists win the Chinese Civil War"
+ bce_news.3.d:0 "[This.GetNewsIcon]Mao Zedong has proclaimed the establishment of the People's Republic of China. Chiang Kai-shek, 600,000 Nationalist troops, and about two million Nationalist-sympathizer refugees retreated to the island of Taiwan. After that, resistance to the Communists on the mainland was substantial but scattered, such as in the far south. An attempt to take the Nationalist-controlled island of Kinmen was thwarted in the Battle of Kuningtou. Chiang has proclaimed Taipei, Taiwan the temporary capital of the Republic, and continues to assert his government as the sole legitimate authority of all China, while the PRC government continues to call for the unification of all China."
+ bce_news.3.a:0 "Good for them."
+ bce_news.3.b:0 "Oh dear god."
+
+ bce_news.4.t:0 "Germany Surrenders"
+ bce_news.4.d:0 "[This.GetNewsIcon]Yesterday, German High Command, in the person of General Alfred Jodl, signed the unconditional surrender of all German forces, East and West, at Reims, in northwestern France. At first, General Jodl hoped to limit the terms of German surrender to only those forces still fighting the Western Allies. But General Dwight Eisenhower demanded complete surrender of all German forces. If this demand was not met, Eisenhower was prepared to seal off the Western front, preventing Germans from fleeing to the West in order to surrender, thereby leaving them in the hands of the enveloping Soviet forces. Jodl radioed Grand Admiral Karl Donitz, Hitler’s successor, with the terms. Donitz ordered him to sign. So with Russian General Ivan Susloparov and French General Francois Sevez signing as witnesses, Germany is defeated."
+ bce_news.4.a:0 "The War in Europe is finally over!"
+ bce_news.4.b:0 "What happens now?"
+
+ bce_news.5.t:0 "The British Occupy Our Colonial Empire"
+ bce_news.5.d:0 "[This.GetNewsIcon]Follow our losses in North Africa and the beginning of our Civil War, the Allies have seen fit to dismantle the Colonial Empire we have spent the past 30 years attempting to cultivate. Today is a sad day indeed."
+ bce_news.5.a:0 "Vaffanculo!" 
+
+ bce_news.6.t:0 "Occupation of the Italian Colonial Empire"
+ bce_news.6.d:0 "[This.GetNewsIcon]To the utter ire of the people of the Italian Peninsula who fight on the side of Fascism and National Socialism, the Colonial Empire of Italy, following their defeats in Lybia, Egypt, Sudan, and Ethiopia, has today been reorganized by the British Empire and her allies. This is the first step the Democracies of the world had to take in order to endure victory in this war."
+ bce_news.6.a:0 "Yet another example of Mussolini's ineptitude."
+ bce_news.6.b:0 "We shall reclaim it once we obtain our victory..."
+
+ bce_news.7.t:0 "The Germans have announced Italian Occupation"
+ bce_news.7.d:0 "[This.GetNewsIcon]Following the beginning of our Civil War, the Germans, in an effort to, as they put it, "Put an end to Italian Ineptitude", have seen fit to move troops into our Nation and take control of many of our foreign affairs."
+ bce_news.7.a:0 "Merde..." 
+
+ bce_news.8.t:0 "Italy becomes a German Satellite"
+ bce_news.8.d:0 "[This.GetNewsIcon]Since the Italian Civil War began, and Benito Mussolini was stripped of power, he has been rescued by the Germans in Operation Eiche. The Germans have re-located Mussolini to northern Italy where he set up a new Fascist state, the Italian Social Republic. Many Italian personalities have joined the RSI, like General Rodolfo Graziani. It is assumed that Hitler plans to keep Mussolini under his thumb until the Axis Powers win the war they currently seem to be losing."
+ bce_news.8.a:0 "That's what happens when you allign yourself with a man like Hitler."
+ bce_news.8.b:0 "Why do we have to do everything ourselves?"
+
+ bce_news.9.t:0 "Italians Rebel to the Allies"
+ bce_news.9.d:0 "[This.GetNewsIcon]Partisans in Allied-Occupied Italy have decided that Musolini is unfit to rule the Italians. They have sent a message to the United Nations requesting cooperation. Our Enemy agreed to the propostion."
+ bce_news.9.a:0 "Sono figli di una cagna!" 
+
+ bce_news.10.t:0 "Italian Civil War"
+ bce_news.10.d:0 "[This.GetNewsIcon]Following the Armistice of Cassibile, which ended hostitities between the official Italian Government and the Allies, Hitler authorized a dastardly and ambitious rescue mission for Benito Mussolini. The mission succeeded and Hitler, under the pretense of "helping his ally with international administration" created a puppet state in Northern Italy. The Italians are now in conflict against each other..."
+ bce_news.10.a:0 "Oops."
+ bce_news.10.b:0 "Are you serious?"
+ bce_news.10.c:0 "This could be advantageous."
+ bce_news.10.e:0 "Interesting. Moving on."
+
+ bce_news.11.t:0 "We are now the People's Republic of China!"
+ bce_news.11.d:0 "[This.GetNewsIcon]The Communist Congress of China has agreed to our suggestion to rebrand the image of Communist China. With a new name suggested by the Soviet Union, and a new flag design submitted by Zeng Liansong, we are now a better nation."
+ bce_news.11.a:0 "We must proclaim it to the world!" 
+
+ bce_news.12.t:0 "Mao proclaims the People's Republic of China"
+ bce_news.12.d:0 "[This.GetNewsIcon]Naming himself head of state, communist revolutionary Mao Zedong officially proclaims the existence of the People’s Republic of China; Zhou Enlai is named premier. The proclamation is the climax of years of battle between Mao’s communist forces and the regime of Nationalist Chinese leader Chiang Kai-Shek, who had been supported with money and arms from the American government. The loss of China, the largest nation in Asia, to communism is a severe blow to the United States, which is still reeling from the Soviet Union’s detonation of a nuclear device one month earlier."
+ bce_news.12.a:0 "Good for them."
+ bce_news.12.b:0 "As it should be."
+
+ bce_news.13.t:0 "Japan Surrenders"
+ bce_news.13.d:0 "[This.GetNewsIcon]The Japanese, after fighting back invasions from the full might of the United Nations for the past months, officially signed a Treaty of Surrender, in which the Japanese are obligated to accept occupation from the Chinese, the British, the French, and the Russians. It seems this is the end of the Pacific Theatre of the War."
+ bce_news.13.a:0 "The War in Asia is finally over!"
+ bce_news.13.b:0 "Today is a very sad day indeed."
+
+ bce_news.14.t:0 "Japan Surrenders"
+ bce_news.14.d:0 "[This.GetNewsIcon]The Japanese, after fighting in the Pacific against the British, French, and Americans for years, signed the Treaty of Honolulu, which ended Japan's colonial Empire in Asia. They are expected to turn over their Pacific Island territories to the United States and to return Northern China and Manchuria to the Chinese. The fate of the Korean Peninsula is yet to be decided."
+ bce_news.14.a:0 "At least the War in Asia is Over.."
+ bce_news.14.b:0 "It could've been worse."
+
+ bce_news.15.t:0 "The Japs Quit"
+ bce_news.15.d:0 "[This.GetNewsIcon]Today, the Emperor of Japan appeared to his suffering masses in a national radio broadcast, announcing and explaining the unconditional surrender of Japan to her enemy and it's allies;                                                                                                                        "....The war has lasted for nearly four years. Despite the best efforts of our nation, the gallant fighting of our military and naval forces, the war situation has developed not necessarily to Japan's advantage. Moreover, the enemy has begun to employ a new and most cruel bomb, capable of incalculable amounts of damage, as well as the ending of many an innocent life. Should we continue to fight, it would not only result in the utter obliteration of the Japanese nation, but also to the total extinction of human civilization....""
+ bce_news.15.a:0 "The War in Asia is finally over!"
+ bce_news.15.b:0 "Today is a very sad day indeed."
+
+ bce_news.16.t:0 "Declaration of the United Nations"
+ bce_news.16.d:0 "[This.GetNewsIcon]On New Year’s Day 1942, Representatives of a multitude of nations, all of which were in major conflicts with the Rome-Berlin-Tokyo Axis, have decided to affirm their continued international support. President Roosevelt, Prime Minister Winston Churchill, Maxim Litvinov, of the U.S.S.R., and T. V. Soong, of China, signed a short document which later came to be known as the United Nations Declaration. The next day the representatives of twenty-two other nations added their signatures. This important document pledged the signatory governments to the maximum war effort and bound them against making a separate peace."
+ bce_news.16.a:0 "Axis Powers, we're coming for you!"
+ bce_news.16.b:0 "We are not intimidated."
+ bce_news.16.c:0 "Interesting."
+
+ bce_news.17.t:0 "The Division of Korea into North and South"
+ bce_news.17.d:0 "[This.GetNewsIcon]The Failure to negotiate a Unified Korean Government between the Soviet Union and the United States of America has lead both nations to install regimes based on their own very different ideals in their occupation zones of Korea."
+ bce_news.17.a:0 "This definitely doesn't bode well..." 
+
+ bce_news.18.t:0 "Hitler Found dead in his Führerbunker"
+ bce_news.18.d:0 "[This.GetNewsIcon]German men and women, soldiers of the German Wehrmacht, our Fuhrer, Adolf Hitler, has fallen. In deepest sorrow and reverence the German people bows. He recognised the terrible danger of Bolshevism at an early date and dedicated his existence to this struggle. The end of this, his struggle, and of his unswerving straight path of life, is marked by his heroic death in the capital of the Reich. His life was one single service for Germany. His action in fighting against the Bolshevist springtide was waged beyond that, for Europe and the entire civilised world."
+ bce_news.18.a:0 "How can we carry on without the Führer?" 
+
+ bce_news.19.t:0 "Suicide of Adolf Hitler"
+ bce_news.19.d:0 "[This.GetNewsIcon]Der Führer, Adolf Hitler, dictator of Nazi Germany, burrowed away in a refurbished air-raid shelter, consumed a cyanide capsule, then shot himself with a pistol, as his "1,000 Year Reich" collapsed all about him. Warned by officers that the Russians were only a day or so from overtaking the chancellery and urged to escape to Berchtesgarden, a small town in the Bavarian Alps where Hitler owned a home, the dictator instead chose suicide. It is believed that both he and his newlywed wife, Eva Braun, swallowed cyanide capsules. For good measure, he shot himself with his service pistol."
+ bce_news.19.a:0 "A coward's escape."
+ bce_news.19.b:0 "We must mourn the Führer and his crumbling Reich."
+ bce_news.19.c:0 "So the bastard is dead? Pity we couldn't capture him alive!"
+
+ bce_news.20.t:0 "Foundation of D.P.R.K."
+ bce_news.20.d:0 "[This.GetNewsIcon]The Soviet Union, having captured sections of the Korean Peninsula following the Second World War, has installed a Marxist Regime in Korea."
+ bce_news.20.a:0 "Oh dear god."
+ bce_news.20.b:0 "Good for them."
+
+ bce_news.21.t:0 "Liberation of Korea"
+ bce_news.21.d:0 "[This.GetNewsIcon]The Soviet Union and the United States of America, having succeeded in their attempts to reach a concensus on the Korean System of Government, have ended their Joint Occupation of the Korean Peninsula. This new nation is under the Protection of both the West and the Eastern Bloc."
+ bce_news.21.a:0 "Good for them." 
+
+ bce_news.22.t:0 "Foundation of Korean Republic"
+ bce_news.22.d:0 "[This.GetNewsIcon]The United States, having captured sections of the Korean Peninsula following the Second World War, has installed a Capitalist Democratic Regime in Korea."
+ bce_news.22.a:0 "Good for them."
+ bce_news.22.b:0 "Another example of American Imperialism."
+
+ bce_news.23.t:0 "Colonization of Korea"
+ bce_news.23.d:0 "[This.GetNewsIcon]Following the Japanese Surrender to the United Nations, more specifically, to the United States of America, the Americans have been spending much of their time trying to decide what the fate of the former Japanese Imperial Commissions should be. In a move that has left many people in Europe and Asia highly disconcerted, today the American Persident signed a mandate for the creation of a Governor-Generalate in Seoul and the appointment of a Korean Colonial Guard."
+ bce_news.23.a:0 "This is not acceptable!" 
+ bce_news.23.b:0 "What's wrong with a bit of Expansion?"
+
+ bce_news.24.t:0 "Korea Negotiations Break Down"
+ bce_news.24.d:0 "[This.GetNewsIcon]For the past few months, there has been a Soviet-American Joint Commission in Seoul, trying to come to a conclusive, decisive compromise on the Government of a Unified Korea, as the Yalta Conference of 1944 had stipulated. The Joint Commission, unfortunately, was declared a failure and the delegates of the council have returned to their countries of origin."
+ bce_news.24.a:0 "This does not bode well." 
+
+ bce_news.25.t:0 "Victory Day Celebration"
+ bce_news.25.d:0 "[This.GetNewsIcon]Comrades, Today is the day of national triumph and pride. The day of mourning and eternal memory. This is a holiday that demonstrates the winning power of patriotism, the day when all of us become emotionally aware of what it is like to be devoted to the Motherland and how important it is to defend the country's interests. The Soviet people's unbending will, fearlessness and firmness saved Europe from slavery. It was our native country that drove the fascists out of their den, and accomplished their crushing and final defeat at the price of millions of lives and ordeals. We will always cherish this sacred and unfading truth. Glory to the people of the Soviet Union!"
+ bce_news.25.a:0 "To Communism's triumph lead us on!" 
+
+ bce_news.26.t:0 "Creation of Federal Republic of Germany"
+ bce_news.26.d:0 "[This.GetNewsIcon]The Federal Republic of Germany has been formally established as a separate and independent nation. On May 23, the West German Parliamentary Council met and formally declared the establishment of the Federal Republic of Germany. Although Konrad Adenauer, the president of the council and future president of West Germany, proudly proclaimed, “Today a new Germany arises,” the occasion was not a festive one. Many of the German representatives at the meeting were subdued, for they had harbored the faint hope that Germany might be reunified. Two communist members of the council refused to sign the proclamation establishing the new state."
+ bce_news.26.a:0 "Good for them." 
+
+ bce_news.27.t:0 "Foundation of the Japanese State"
+ bce_news.27.d:0 "[This.GetNewsIcon]The Treaty of San Francisco was officially signed by 48 nations in San Francisco. This Treaty officially ended the American-led Allied Occupation of Japan. According to Article 11 of the Treaty, Japan accepts the judgments of the International Military Tribunal for the Far East and of other Allied War Crimes Courts imposed on Japan both within and outside Japan. This treaty served to officially end Japan's position as an imperial power, to allocate compensation to Allied civilians and former prisoners of war who had suffered Japanese war crimes during World War II, and to end the Allied post-war occupation of Japan and return sovereignty to that nation."
+ bce_news.27.a:0 "Good for them." 
+
+ bce_news.28.t:0 "Foundation of Communist Italy"
+ bce_news.28.d:0 "[This.GetNewsIcon]A Treaty which stipulated the Independence of Communist Italy has been signed, among its stipulations were an agreement that "the Soviet troops temporarily stationed in the GDR with the consent of its government do not interfere in the country’s domestic affairs and social and political life.""
+ bce_news.28.a:0 "Oh dear god." 
+ bce_news.28.b:0 "Good for them."
+
+ bce_news.29.t:0 "Foundation of Italian Republic"
+ bce_news.29.d:0 "[This.GetNewsIcon]The Treaty of Brooklyn was officially signed by 48 nations in New York City. This Treaty officially ended the American-led Allied Occupation of the Italian Peninsula. According to Article 11 of the Treaty, Italy accepts the judgments of the Allied War Crimes Courts imposed on Italy both within and outside Italy. This treaty served to officially end Italy's position as a dangerous fascist dictatorship, to allocate compensation to Allied civilians and former prisoners of war who had suffered Italian war crimes during World War II, and to end the Allied post-war occupation of Italy and return sovereignty to that nation."
+ bce_news.29.a:0 "Good for them." 
+
+ bce_news.30.t:0 "Foundation of D.D.R."
+ bce_news.30.d:0 "[This.GetNewsIcon]A Treaty which stipulated the Independence of Communist Germany has been signed, among its stipulations were an agreement that "the Soviet troops temporarily stationed in the GDR with the consent of its government do not interfere in the country’s domestic affairs and social and political life." Until a further agreement was reached, the Soviet Army Command in Germany was to "control the movement of American, French, and British personnel and cargoes entering and exiting West Berlin. Nikita Khrushchev, the First Secretary of the Communist Party of the Soviet Union, was said to have famously remarked, "Berlin is the testicles of the West. When I want to make the West scream, I squeeze Berlin!""
+ bce_news.30.a:0 "Dammit." 
+ bce_news.30.b:0 "Good for them."
+
+ bce_news.31.t:0 "Foundation of People's Republic of Japan"
+ bce_news.31.d:0 "[This.GetNewsIcon]A Treaty which stipulated the Independence of Communist Japan has been signed, among its stipulations were an agreement that "the Soviet troops temporarily stationed in the PRJ with the consent of its government do not interfere in the country’s domestic affairs and social and political life.""
+ bce_news.31.a:0 "Dammit." 
+ bce_news.31.b:0 "Good for them."
+
+ bce_news.32.t:0 "The Allies Land in France"
+ bce_news.32.d:0 "[This.GetNewsIcon]Commander-in-Chief West, Field Marshal Karl R. Gerd von Rundstedt's issued the following report on the "systematic, almost scientifically conducted" invasion. Given the Allied air superiority, "marches by day are obviously excluded in good weather," he writes. "The troops must constantly be prepared for low flying attacks so that all means of protection for them against air attacks can be immediately put into effect." For the same reason, he writes, "camouflage in all forms must be stressed again and again." Just how much the Reich is now on the defensive is clear in Rundstedt's recommendations."
+ bce_news.32.a:0 "Scheiße!"
+
+ bce_news.33.t:0 "D-Day"
+ bce_news.33.d:0 "[This.GetNewsIcon]Thousands of Allied troops began landing on the beaches of Occupied France yesterday in the start of a major offensive against the Germans. The landings were preceded by air attacks along the French Coast. The Prime Minister [ENG.GetLeader] has told MPs that Operation Neptune - the codename for the Normandy landings - is proceeding "in a thoroughly satisfactory manner". He said the landing of airborne troops was "on a scale far larger than anything there has been so far in the world" and had taken place with extremely little loss. President [USA.GetLeader] told a news conference the invasion did not mean the war was over. He said, "You don't just walk to Berlin, and the sooner this country realises that the better.""
+ bce_news.33.a:0 "They fight to end conquest, not in lust for it."
+ bce_news.33.b:0 "This is not good!"
+ bce_news.33.c:0 "Interesting."
+
+ bce_news.34.t:0 "The Ethiopians Accept Italian Rule"
+ bce_news.34.d:0 "[This.GetNewsIcon]The Ethiopians have been defeated and their Emperor has been exiled to England. The Remaining government officials of the Abbysinian Empire have decided to accept Italian Colonial rule."
+ bce_news.34.a:0 "As they should!"
+
+ bce_news.35.t:0 "Conquest of Ethiopia"
+ bce_news.35.d:0 "[This.GetNewsIcon]Italian troops entered Addis Ababa yesterday afternoon. In Rome a mass demonstration was called, and Mussolini, in a short speech to the crowd, announced Italy's intention to annex Ethiopia in the phrase 'Ethiopia is Italian'. Opening his speech, Mussolini announced; "During the thirty centuries of her history Italy has lived many memorable hours. This is certainly the most solemn. I announce to the world that the war is finished and peace re-established. I gave an undertaking that I would not disturb the peace of Europe. I have maintained that undertaking. I am more than ever convinced that to disturb the peace of Europe is to cause the downfall of civilisation. But I may immediately add that we are ready to defend our shining victory with the same impressive determination with which we won it."
+ bce_news.35.a:0 "Barbaric." 
+ bce_news.35.b:0 "Nice!"
+
+ bce_news.36.t:0 "The Death of Josef Stalin"
+ bce_news.36.d:0 "[This.GetNewsIcon]To the end, when he was in his seventies and approaching his own death, his subordinates continued to carry out the murderous orders of Josef Stalin. There are conflicting reports of what happened, but after a routine night of heavy drinking until the early hours of March 1st, the guards became alarmed when there was no sound from their master all day and late in the evening a guard or a maid ventured in and found him lying on the floor of his bedroom. Not until the next day, with Stalin paralysed and speechless, were doctors summoned. According to his daughter Svetlana, who was at the bedside, Stalin’s eyes opened with ‘a terrible look – either mad or angry and full of the fear of death’. He raised his left hand, pointing upwards, perhaps threateningly, and then death took him."
+ bce_news.36.a:0 "Good!" 
+ bce_news.36.b:0 "We must pay our respects to the Great Leader."
+
+ bce_news.37.t:0 "The End of the Allied Powers"
+ bce_news.37.d:0 "[This.GetNewsIcon]The End of the War has seen an obvious rise in tensions between the Western and Eastern Allies. The United States, viewing this as an ideal time to decide exactly what it's relationship is with it's allies, has seen fit to announce the End of the Allied Powers Faction."
+ bce_news.37.a:0 "The Alliance served its purpose." 
+
+ bce_news.38.t:0 "The Eastern Bloc"
+ bce_news.38.d:0 "[This.GetNewsIcon]Following the end of the Second World War and the Soviet Union's utter dominance of Eastern Europe, the Supreme Soviet, the U.S.S.R.'s Congress under the direction of Josef Stalin, has seen fit to organize a string of meetings between communist parties from Russia, France, Numerous Soviet Satelites in Eastern Europe, and Yugoslavia to discuss the future of communism in general. The resultant alliance was made to solidify the Russian's control over Eastern Europe, and sets a foreboding tone for the future of this Post-War World."
+ bce_news.38.a:0 "Hmmph." 
+ bce_news.38.b:0 "May it ever prosper"
+
+ bce_news.39.t:0 "The North Atlantic Treaty"
+ bce_news.39.d:0 "[This.GetNewsIcon]On 4 March 1947 the Treaty of Dunkirk was signed by France and the United Kingdom as a Treaty of Alliance and Mutual Assistance in the event of a possible attack by Germany or the Soviet Union in the aftermath of World War II. In 1948, this alliance was expanded to include the Benelux countries, in the form of the Western Union, also referred to as the Brussels Treaty Organization, established by the Treaty of Brussels. Talks for a new military alliance which could also include North America has resulted in the signature of the North Atlantic Treaty by the member states of the Western Union plus the United States, Canada, Portugal, Italy, Norway, Denmark and Iceland."
+ bce_news.39.a:0 "Fair Enough." 
+ bce_news.39.b:0 "We must be the Safeguard of Freedom."
+ bce_news.39.c:0 "Enjoy your alliance, pigs."
+ bce_news.39.e:0 "We must be the Safeguard of Freedom."
+
+ bce_news.40.t:0 "U.S.A. Announces Return to Isolation"
+ bce_news.40.d:0 "[This.GetNewsIcon]On 4 March 1947 the Treaty of Dunkirk was signed by France and the United Kingdom as a Treaty of Alliance and Mutual Assistance in the event of a possible attack by Germany or the Soviet Union in the aftermath of World War II. In 1948, this alliance was expanded to include the Benelux countries, in the form of the Western Union, also referred to as the Brussels Treaty Organization, established by the Treaty of Brussels. Talks for a new military alliance were initiated by the English and the French in an attempt to encorporate the North American powers into the treaty, but the United States, in an amazing and sudden announcement, stated that it had done its part in ending the War against Hitler and the Japanese Empire and would have no further military cooperation outside the Western Hempisphere and East Asia."
+ bce_news.40.a:0 "What??" 
+ bce_news.40.b:0 "It is for the best..."
+ bce_news.40.c:0 "Excellent!"
+
+ bce_news.41.t:0 "The U.S.S.R. joins the War against Japan"
+ bce_news.41.d:0 "[This.GetNewsIcon]Two years ago, the Pemier of the Soviet Union, Josef Stalin, met with American President Franklin Delano Roosevelt and British Prime Minister Winston Churchill met at Yalta to discuss the coordination of the political and military actions which were to be taken in the last stages of the War. Among these actions, the United States and her Western Allies requested that Josef Stalin should join the War in Asia against the Empire of Japan sometime after Germany's defeat. Stalin seems to have kept his promise. Earlier this morning, 1.56 Million men were sent by Russia's Red Army into Japanese Manchuria."
+ bce_news.41.a:0 "The Sun is setting on Japan." 
+ bce_news.41.b:0 "It is over!"
+
+ bce_news.42.t:0 "The Japanese Invade British Malaya"
+ bce_news.42.d:0 "[This.GetNewsIcon]The occupation commenced with Imperial Japanese Army landings at Padang Pak Amat beach Kota Bharu just after midnight on the 4th of December 1941. This battle marks the official start of what many are calling the Pacific War. The British troops in “Fortress Singapore”, as it was nicknamed before the invasion, had their defences facing out to sea. So the Japanese started their invasion via land instead, attacking Malaya’s north and east, at Jitra, Kedah, and in Kota Baru, and advancing southward on bicycles and in light tanks. They were extensively trained in jungle warfare and amphibious landings, among other things, and were well-prepared for their invasion of Malay. The British troops did not stand a chance against the Japanese."
+ bce_news.42.a:0 "Bloody Hell." 
+ bce_news.42.b:0 "Banzai!"
+
+ bce_news.43.t:0 "The Bombing of Pearl Harbor"
+ bce_news.43.d:0 "[This.GetNewsIcon]War broke with lightning suddenness in the Pacific today when waves of Japanese bombers attacked Hawaii. The Japanese surprise attack on Pearl Harbor began just before 8 a.m. local time Sunday morning, December 7th. Japanese forces wreaked havoc on US naval vessels and on US aircraft on the island’s airfield. In all, 2,403 Americans, including 68 civilians, died in the attack. The American people were shocked, bewildered, surprised, and angered by the attack. President [USA.GetLeader] has addressed a joint session of Congress in the Capitol, his words broadcast on radio to the nation: “Yesterday, December 7th, 1941, the United States of America was suddenly and deliberately attacked by naval and air forces of the Empire of Japan.”"
+ bce_news.43.a:0 "A Date which will Live in Infamy..." 
+ bce_news.43.b:0 "Banzai?"

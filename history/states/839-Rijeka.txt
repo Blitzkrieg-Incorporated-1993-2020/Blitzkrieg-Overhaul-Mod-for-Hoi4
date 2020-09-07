@@ -1,0 +1,28 @@
+state={
+	id=839
+	name="STATE_839"
+
+	history={
+		owner = ITA
+		victory_points = {
+			11564 1 
+		}
+		buildings = {
+			infrastructure = 6
+			dockyard = 1
+			industrial_complex = 1
+
+		}
+		add_core_of = YUG
+		add_core_of = CRO
+		add_core_of = ITA
+
+	}
+
+	provinces={
+		11564 
+	}
+	manpower=137953
+	buildings_max_level_factor=1.000
+	state_category=town
+}

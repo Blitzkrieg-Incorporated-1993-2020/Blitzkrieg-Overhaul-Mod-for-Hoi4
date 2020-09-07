@@ -1,0 +1,209 @@
+﻿l_english: 
+
+ diplomats:0 "Sent us Diplomats"
+ tariffs:0 "Tariffing us"
+ 
+ SWI_strong_haute:0 "Switzerland claims Haute-Savoy"
+ SWI_haute:0 "Switzerland claims Haute-Savoy"
+ SWI_german_yes:0 "Switzerland helps the German Reich"
+
+ ### diplomacy ###
+ KMT_SHX_refused:0 "Rejected offer"
+ PRC_SHX_refused:0 "Rear protected"
+ SHX_SHX_refused:0 "Diplomatic annexation attempted"
+ no_collaboration_with_CHI_COM:0 "Strike the PRC"
+ chi_tib_diplomatic_focus:0 "Chinese-Tibetan Diplomacy Focus"
+ CHI_join_britain_rejected:0 "Join faction rejected"
+ false_document_trusted:0 "False document trusted"
+ never_like_them_anyway:0 "Never like them anyway"
+ recognition:0 "Recognition"
+ tolerance:0 "Tolerance"
+ wtever:0 "Magic!"
+ SOV_CHI_join_comintern_reject:0 "Rejected China joining Comintern"
+ KMT_commie_banned:0 "Communism Banned"
+ ## 7/7/2016 ##
+ boycott_comitern:0 "Boycott Comitern"
+ ## 8/7/2016 ##
+ gzw_kept:0 "Guangzhouwan Kept"
+ hk_kept:0 "Hong Kong Kept"
+ macau_kept:0 "Macau Kept"
+ ## 22/8/2016 ##
+ no_interv_in_tp:0 "Refused Intervention"
+ jap_friendship_trade:0 "Japan Diplomacy Focus"
+ jap_friendship:0 "Japan Diplomacy Focus"
+ jap_no_return_terri:0 "Refused to Return Territories"
+ still_border_dispute:0 "Border Dispute"
+ sov_better_trade:0 "Would you be interested in a trade agreement with Sovetskiy Soyuz"
+ aggresion:0 "Aggression"
+ ## 27/8/2016 ##
+ hanjian:0 "Hanjian"
+ ohne_ehre:0 "OHNE EHRE!"
+ flying_tigers:0 "Flying Tigers Volunteers"
+ gzw_demo_kept:0 "Guangzhouwan Kept"
+ hk_demo_kept:0 "Hong Kong Kept"
+ macau_demo_kept:0 "Macau Kept"
+ revisionist_pig:0 "Revisionist Pigs"
+ ## 6/10/2016 ##
+ war_against_communist_china:0 "War against communist China"
+ liberator_of_korea:0 "Liberator of Korea"
+ ## 19/10/2016 ##
+ ignore_claim:0 "Ignored our claims on indochina"
+ ## 20/10/2016 ## Tomorrow I can play Civ VI!!!
+ sino_german_cooperation:0 "Sino-German Cooperation"
+ more_sino_german_coop:0 "More Sino-German Cooperation"
+ ## 4/11/2016 ##
+ GER_CHI_join_germany_reject:0 "Rejected China joining Axis"
+ ## 6/11/2016 ##
+ KMT_closer_to_britain:0 "China Diplomatic Focus"
+ KMT_trans_pacific_friendship:0 "China Diplomatic Focus"
+ ## 15/11/2016 ##
+ KMT_sino_japanes_friendship:0 "Sino-Japanese Friendship"
+ ## 3/1/2017 ##
+ pro_jap_traitor:0 "Pro-Japanese Traitor"
+ ## 9/3/2017 ##
+ KMT_doolittle_pilots_help_arrest:0 "Handed Over American Pilot"
+ KMT_doolittle_pilots_given_to_JAP:0 "Handed Over Pilot to Japan"
+ KMT_doolittle_pilots_help_JAP_reaction:0 "Help American Pilot"
+ KMT_doolittle_pilots_detained_SOV:0 "Pilot Detained"
+ KMT_doolittle_pilots_detained:0 "Pilot Detained"
+ KMT_doolittle_pilots_help:0 "Helped Pilots"
+ KMT_assist_in_war:0 "Doolittle Raid"
+ ## 20/4/2017 ##
+ KMT_discontent:0 "Discontent"
+ KMT_disobedience:0 "Disobedience"
+ ## 23/4/2017 ##
+ KMT_xian_incident_sov_pos:0 "Xi'an Incident"
+ KMT_xian_incident_sov_pos_trade:0 "Xi'an Incident"
+ KMT_xian_incident_sov_neg:0 "Xi'an Incident"
+ KMT_xian_incident_sov_neg_trade:0 "Xi'an Incident"
+ ## 6/6/2017 ##
+ KMT_closer_to_britain_ENG:0 "China Diplomatic Focus"
+ ## 16/6/2017 ##
+ CHI_KR_fd:0 "China Diplomatic Focus"
+ 
+ ### flag ###
+ mao_is_greatest:0 "Completed Focus : Integration Of Government"
+ baihua_completed:0 "The Campaign has ended"
+ full_control_by_root:0 "Is controlled and owned by you"
+ CHI_warred_with_JAP:0 "The war with Japan has ended"
+ PRC_civil_war_started:0 "The civil war with Communist China has broken out"
+ PRC_refuse_yangtze_partisan:0 "Yangtze Partition rejected"
+ jap_support_chi_pro_jap:0 "Japan supports us"
+ jap_civil_war_sf:0 "Japanese Civil War has broken out"
+ KMT_any_state_chi_core_jap_own_tt:0 "Any Chinese core is owned by Japan or Japan's puppet"
+ ## 2/1/2017 ##
+ KMT_pro_japanese:0 "Supported pro-Japanese faction in China"
+ ## 4/2/2017 ##
+ liangguang_incident:0 "Liangguang Incident is going on"
+ jyut_generals_defected:0 "Defected To KMT"
+ huhanwen_dead:0 "Hu Hanmin has passed away"
+ chen_jitang_join_gxc:0 "Chen Jitang has joined us"
+ ## 10/4/2017 ##
+ KMT_central_government_flag:0 "Is currently the Central Government"
+ KMT_central_gov_capital:0 "Is the capital of the Central Government"
+ ## 12/4/2017 ##
+ yut_sumitted:0 "Yue Clique has submitted"
+ xsm_sumitted:0 "Xi Bei San Ma has submitted"
+ gxc_sumitted:0 "Guangxi Clique has submitted"
+ yun_sumitted:0 "Yunnan has submitted"
+ shx_sumitted:0 "Shanxi has submitted"
+ kmt_cjt_flag:0 "Chen Jitang has joined our army"
+ kmt_lzr_flag:0 "Li Zongren has joined our army"
+ kmt_mbf_flag:0 "Ma Bufang has joined our army"
+ kmt_yxs_flag:0 "Yan Xishan has joined our army"
+ kmt_ly_flag:0 "Long Yun has joined our army"
+ kmt_yhm_flag:0 "Yu Hanmou has joined our army"
+ KMT_cjt_tt:0 "Chen Jitang is the leader of Yue Clique"
+ KMT_yhm_tt:0 "Yu Hanmou is the leader of Yue Clique"
+ KMT_lzr_tt:0 "Li Zongren is the leader of Guangxi Clique"
+ KMT_mbf_tt:0 "Ma Bufang is the leader of Xi Bei San Ma"
+ KMT_yxs_tt:0 "Yan Xishan is the leader of Shanxi"
+ KMT_ly_tt:0 "Long Yun is the leader of Yunnan"
+ KMT_zhu_de_joined:0 "Zhu De has joined us"
+
+ ### diplomacy ###
+ hand_over_rfr:0 "Help arrested Konstantin"
+ tungchow_mutiny:0 "Tungchow mutiny"
+ 
+ ### flag ###
+ MAN_assassinated:0 "Assassinated"
+ MAN_reliant_flag:0 "Has national spirit §YReliance On Kwantung Army§!"
+ anti_comintern_member:0 "Signed Anti-Comintern Pact"
+ ## 2/1/2017 ##
+ MAN_navy_allowed:0 "Permission granted by Japan"
+ ## 16/5/2017 ##  
+ no_jap_officials:0 "Banned"
+ no_jap_mili_officials:0 "Banned"
+ ## 20/5/2017 ##
+ annexed_ECR:0 "Agreed to establish the Mongol Military Government"
+ SIA_radicalisation_against_the_chinese:0 "Radicalisation against the Chinese"
+ agree_to_arcadia:0 "Has Attended the Arcadia Conference"
+
+
+ ### EMBARGO DIPLOMATIC ACTIONS ACTIONS ###
+ CW_EMBARGO_TITLE:0 "Impose Embargo"
+ CW_EMBARGO_ACTION_DESC:0 "Impose an embargo on this nation which will prevent them from buying resources from us.\n\nThis will not prevent us from buying resources from them unless they embargo us as well.\n\nYou cannot use this action on your own puppets or allies."
+ CW_EMBARGO_LOC:0 "Would you like to impose an embargo on\n\n§Y[From.Getname]?§!\n\nThis will prevent them from buying resources from us.\nThey may retaliate and embargo us in return."
+ CW_EMBARGO_INITIATED_TITLE:0 "[ROOT.GetAdjective] Embargo"
+ CW_EMBARGO_INITIATED_DESC:0 "§Y[ROOT.GetNameDef]§!\n\nHas decided to impose an embargo on our nation.\n\nAs a result we can no longer buy resources from them but they are free to buy resources from us unless we embargo them as well."
+ CW_CANCEL_EMBARGO_TITLE:0 "Revoke Embargo"
+ CW_CANCEL_EMBARGO_ACTION_DESC:0 "Remove the embargo we have placed on this nation, this will allow them once more to trade with us for resources."
+ CW_CANCEL_EMBARGO_LOC:0 "Would you like to lift the embargo imposed on\n\n§Y[From.Getname]?§!\n\nThis will allow them to trade with us freely.\nThis will not automatically cancel their embargo against us if they have one imposed."
+ CW_CANCEL_EMBARGO_INITIATED_TITLE:0 "[ROOT.GetAdjective] Embargo Lifted"
+ CW_CANCEL_EMBARGO_INITIATED_DESC:0 "The §Y[ROOT.GetAdjective]§! government\n\nHas decided to lift the economic embargo against us, this will improve our relations and allow us to buy resources from them.[CW_CHECK_COUNTER_EMBARGO]"
+ CW_WE_ARE_EMBARGO_THEM:0 "\n\n§RNote:§! this will not automatically cancel the embargo we currently have imposed on them!"
+
+ LOWER_STATE_RELIANCE_TITLE:0 "Lower Subject Reliance"
+ LOWER_STATE_RELIANCE_ACTION_DESC:0 "Give new responsibilites and higher discretion in decisionmaking to the government of this subject.\n\nThis will raise the subject's autonomy."
+ lower_state_reliance_LOC:0 "Would you lower the reliance of\n\n§Y[From.Getname]?§!\n\nThis will raise their autonomy."
+ lower_state_reliance_INITIATED_TITLE:0 "[ROOT.GetAdjective] has given us more Autonomy"
+ lower_state_reliance_INITIATED_DESC:0 "§Y[ROOT.GetNameDef]§!\n\nHas decided to allow our government to make more decisions with less agressive oversight."
+
+ RAISE_STATE_RELIANCE_TITLE:0 "Raise Subject Reliance"
+ RAISE_STATE_RELIANCE_ACTION_DESC:0 "Use influence and subversion to arrest some of the powers and responsibilites of the region away from the local government of this subject.\n\nThis will lower the subject's autonomy."
+ raise_state_reliance_LOC:0 "Would you enforce greater reliance on\n\n§Y[From.Getname]?§!\n\nThis will lower their autonomy."
+ raise_state_reliance_INITIATED_TITLE:0 "[ROOT.GetAdjective] has decided to limit our Autonomy"
+ raise_state_reliance_INITIATED_DESC:0 "§Y[ROOT.GetNameDef]§!\n\nHas decided to force our government to make less decisions and will be pushing for more agressive oversight."
+
+ PETITION_FOR_INDEPENDANCE_TITLE:0 "Petition for Independence"
+ PETITION_FOR_INDEPENDANCE_ACTION_DESC:0 "Use some of our power to allow elements of independence activism into the local government.\n\nThis will raise our autonomy."
+ petition_for_independance_LOC:0 "Would you petition for greater independence from\n\n§Y[From.Getname]?§!\n\nThis will raise our autonomy."
+ petition_for_independance_INITIATED_TITLE:0 "[ROOT.GetAdjective] has decided to petition for independence"
+ petition_for_independance_INITIATED_DESC:0 "§Y[ROOT.GetNameDef]§!\n\nHas used some of their power to allow elements of independence activism into the local government."
+
+ COMMITEE_FOR_INTEGRATION_TITLE:0 "Commitee for Integration"
+ COMMITEE_FOR_INTEGRATION_ACTION_DESC:0 "Use some of our power to send delegations and commitees to our overlord on the subject of integration.\n\nThis will lower our autonomy."
+ commitee_for_integration_LOC:0 "Would you send an Integration Commitee to\n\n§Y[From.Getname]?§!\n\nThis will lower our autonomy."
+ commitee_for_integration_INITIATED_TITLE:0 "[ROOT.GetAdjective] has decided to lobby for Integration"
+ commitee_for_integration_INITIATED_DESC:0 "§Y[ROOT.GetNameDef]§!\n\nHas used some of their power to send delegations and commitees to us on the subject of integration."
+
+########### IRELAND ##################################################################################################################################################################################
+
+ IRE_belfast_blitz:0 "Belfast Blitz"
+ IRE_axisalignger:0 "Irish aligned with Axis"
+ IRE_axisalignuk:0 "Irish aligned with Axis"
+
+
+########### AUSTRIA ##################################################################################################################################################################################
+
+ alps_defence_member:0 "Alps Defence Pact Member"
+
+
+########### IRAQ ##################################################################################################################################################################################
+
+ IRQ_extended_british_mandate:0 "Extended British Mandate"
+ IRQ_looks_to_us_for_guidance:0 "Looks up to Us"
+ IRQ_solved_border_dispute:0 "Solved Border Dispute"
+ IRQ_alliance_with_turkey_boost:0 "Alliance with Turkey"
+ IRQ_defy_british_treaty:0 "Defied Anglo-Iraqi Treaty"
+
+
+########### LITHUANIA ##################################################################################################################################################################################
+
+ LIT_lublin_union_opinion:0 "Union of Lublin"
+ LIT_vilnius_poland_opinion:0 "Deal for Vilnius"
+ LIT_ally_up:0 "Seek Allies"
+ LIT_close_schools:0 "Closed Polish Schools"
+ LIT_execute_nazis:0 "Nazi Executions"
+ LIT_german_civil_war_nice:0 "Civil War Intervention nice"
+ LIT_german_civil_war_rude:0 "Civil War Intervention rude"

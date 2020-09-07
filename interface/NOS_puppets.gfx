@@ -1,0 +1,140 @@
+spriteTypes = {
+
+	#Autonomy Stuff
+
+	spriteType = {
+		name = "GFX_autonomy_provisional_government_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_provisional_government_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_imperial_client_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_imperial_client_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_imperial_province_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_imperial_province_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_imperial_tributary_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_imperial_tributary_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_subject_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_subject_state_icon.dds"
+	} 
+
+	spriteType = {
+		name = "GFX_autonomy_autonomous_region_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_autonomous_region_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_loyal_warlord_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_loyal_warlord_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_compliant_warlord_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_compliant_warlord_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_sphered_nation_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_sphered_nation_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_tributary_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_tributary_state_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_associate_republic_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_associate_republic_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_soviet_satellite_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_communist_satellite_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_integrated_republic_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_integrated_republic_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_autonomous_ssr_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_autonomous_ssr_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_free_regime_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_free_regime_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_federal_puppet_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_federal_puppet_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_territory_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_territory_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_protected_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_protected_state_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_collaborator_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_collaborator_state_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_protectorate_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_protectorate_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_commissariat_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_commissariat_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_occupied_regime_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_occupied_regime_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_satellite_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_satellite_state_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_crown_colony_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_crown_colony_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_imperial_dominion_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_imperial_dominion_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_integrated_region_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_integrated_region_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_royal_protectorate_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_royal_protectorate_icon.dds"
+	}
+}
+

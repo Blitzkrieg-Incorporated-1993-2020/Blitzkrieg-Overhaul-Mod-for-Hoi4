@@ -1,0 +1,7 @@
+﻿l_english:
+  DONT_ALLOW_AI_EMBARGO:0 "AI disabled"
+  DONT_ALLOW_AI_EMBARGO_TEXT:0 "Disabled"
+  ALLOW_AI_EMBARGO:0 "AI Embargo"
+  ALLOW_AI_EMBARGO_TEXT:0 "Enabled"
+  RULE_GROUP_EMBARGO_POLICY:0 "Embargo Policy"
+  allow_ai_embargo:0 "Embargo Policy"

@@ -1,0 +1,31 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_nuke_button_2"
+		texturefile = "gfx/interface/GFX_nuke_button2.dds"
+	}
+	
+	spriteType = {
+	name = "GFX_100kt_nuke"
+	texturefile = "gfx/interface/GFX_100kt_nuke.dds"		
+	}
+	
+	spriteType = { 
+		name = "GFX_gcg_conversion_bar"
+		texturefile = "gfx/interface/nukebar.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_gcg_conversion_progress_bar_bg"
+		texturefile = "gfx/interface/navalrepairview/repair_progress_bar_bg.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_gcg_big_red_button"
+		texturefile = "gfx/interface/GFX_gcg_big_red_button.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_gcg_big_coloured_button"
+		texturefile = "gfx/interface/GFX_gcg_big_coloured_button.dds"
+	}
+}

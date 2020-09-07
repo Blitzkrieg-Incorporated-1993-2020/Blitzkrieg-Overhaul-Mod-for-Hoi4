@@ -1,0 +1,23 @@
+
+units = {
+    division = {
+		name = "IV Brigada Confederal"
+		location = 9764  # Barcelona
+		division_template = "Columna Milicianos"
+	}
+	division = {
+		name = "V Brigada Confederal"
+		location = 9764  # Barcelona
+		division_template = "Columna Milicianos"
+	}
+	division = {
+		name = "VI Milicias Valencianas"
+		location = 6906  # Valencia
+		division_template = "Columna Milicianos"
+	}
+	division = {
+		name = "VII Milicias Valencianas"
+		location = 6906  # Valencia
+		division_template = "Columna Milicianos"
+	}
+}

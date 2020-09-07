@@ -1,0 +1,33 @@
+state={
+	id=873
+	name="STATE_873"
+
+
+	history={
+		owner = FRA
+		victory_points = {
+			3652 5 
+		}
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 1
+			air_base = 4
+
+		}
+		add_core_of = FRA
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 3
+
+			}
+
+		}
+
+	}
+	provinces={
+		648 680 817 3652 11628 
+	}
+	manpower=310800
+	buildings_max_level_factor=1.000
+	state_category=large_town
+}

@@ -1,0 +1,75 @@
+﻿l_english:
+
+minorcountryhandicap:0 "Minor country"
+ limit_minors.1.t:0 "Minor Country"
+ limit_minors.1.d:0 "Not enough resources to develop a modern army"
+ limit_minors.1.a:0 "You need an ally"
+ 
+ limit_minors.2.t:0 "Improved country"
+ limit_minors.2.d:0 "Now it is time to develop a modern army"
+ limit_minors.2.a:0 "Congratulations"
+
+dynamic_modifier_less_production:0 "Industrial Bottleneck"
+ limit_hardware.1.t:0 "Begining of Industrial Bottleneck"
+ limit_hardware.1.d:0 "So many factories have increased inefficiency [?var_dyn_production]"
+ limit_hardware.1.a:0 "Build more military factories!"
+ 
+ limit_hardware.2.t:0 "Industrial Bottleneck"
+ limit_hardware.2.d:0 "So many factories have increased inefficiency [?var_dyn_production]"
+ limit_hardware.2.a:0 "Build even more military factories!"
+ 
+dynamic_modifier_less_building:0 "Army food supply"
+ limit_hardware.3.t:0 "Begining of Building Bottleneck"
+ limit_hardware.3.d:0 "So many civil factories have increased inefficiency [?var_dyn_building]"
+ limit_hardware.3.a:0 "Build even more civil factories!"
+ 
+ limit_hardware.4.t:0 "Building Bottleneck"
+ limit_hardware.4.d:0 "So many civil factories have modified inefficiency [?var_dyn_building]"
+ limit_hardware.4.a:0 "Build even more civil factories!"
+
+fast_training:0 "Fast training"
+stop_training:0 "Training stopped"
+
+ limit_training.1.t:0 "Army max size planning"
+ limit_training.1.d:0 "Maximum number of divisions should be updated monthly"
+ limit_training.1.a:0 "No spam possible"
+
+ limit_training.2.t:0 "Army max size monthly reevaluation"
+ limit_training.2.d:0 "Maximum number of divisions should be updated monthly"
+ limit_training.2.a:0 "No spam possible"
+
+ limit_training.3.t:0 "Training stopped"
+ limit_training.3.d:0 "Maximum number of divisions reached"
+ limit_training.3.a:0 "No more divisions"
+
+ limit_training.4.t:0 "Training restarted"
+ limit_training.4.d:0 "New divisions training"
+ limit_training.4.a:0 "More divisions"
+
+ limit_training.5.t:0 "Fast training"
+ limit_training.5.d:0 "Shorter training program"
+ limit_training.5.a:0 "Better soldiers"
+
+ limit_training.6.t:0 "Normal training"
+ limit_training.6.d:0 "Fast training program"
+ limit_training.6.a:0 "No time for advanced training"
+
+motherland_defense_1:0 "Motherland defense"
+motherland_defense_2:0 "Motherland defense"
+motherland_defense_3:0 "Motherland defense"
+
+ limit_defense.0.t:0 "Enemy out of Motherland"
+ limit_defense.0.d:0 "No need to desperate fights"
+ limit_defense.0.a:0 "A big step to victory"
+
+ limit_defense.1.t:0 "Motherland defense"
+ limit_defense.1.d:0 "High moral to defend your country"
+ limit_defense.1.a:0 "They should pay"
+
+ limit_defense.2.t:0 "Motherland harsh defense"
+ limit_defense.2.d:0 "No retreat without fight"
+ limit_defense.2.a:0 "Keep your position"
+
+ limit_defense.3.t:0 "Motherland final defense"
+ limit_defense.3.d:0 "Defend your country at all costs"
+ limit_defense.3.a:0 "No step back"

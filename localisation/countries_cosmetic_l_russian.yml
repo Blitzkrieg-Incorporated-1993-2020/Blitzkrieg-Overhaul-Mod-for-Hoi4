@@ -1,0 +1,1053 @@
+﻿l_russian:
+
+ _GER_autonomy_protectorate:0 "Протекторат Рейха"
+ _GER_autonomy_protectorate_DEF:0 "Протекторат Рейха"
+ _GER_autonomy_commissariat:0 "Рейх Комиссариат"
+ _GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат"
+ _GER_autonomy_occupied_regime-0 "Протекторат"
+ _GER_autonomy_occupied_regime_DEF:0 "Протекторат"
+
+ CZE_GER_autonomy_protectorate:0 "Протекторат Чехии"
+ CZE_GER_autonomy_protectorate_DEF:0 "Протекторат Чехии"
+ CZE_GER_autonomy_commissariat:0 "Рейхкомиссариат Богемии"
+ CZE_GER_autonomy_commissariat_DEF:0 "Рейх комиссариат Богемии"
+ CZE_GER_autonomy_occupied_regime:0 "Чешский протекторат"
+ CZE_GER_autonomy_occupied_regime_DEF:0 "Протекторат Богемии и Моравии"
+ POL_GER_autonomy_protectorate:0 "Протекторат Польши"
+ POL_GER_autonomy_protectorate_DEF:0 "Протекторат Польши"
+ POL_GER_autonomy_commissariat:0 "Рейх Комиссариат Польши"
+ POL_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Польши"
+ POL_GER_autonomy_occupied_regime:0 "Общее правительство"
+ POL_GER_autonomy_occupied_regime_DEF:0 "Генеральное правительство"
+ AUS_GER_autonomy_protectorate:0 "Протекторат Австрии"
+ AUS_GER_autonomy_protectorate_DEF:0 "Протекторат Австрии"
+ AUS_GER_autonomy_commissariat:0 "Рейх Комиссариат Австрии"
+ AUS_GER_autonomy_commissariat_DEF:0 "Рейх комиссариат Австрии"
+ AUS_GER_autonomy_occupied_regime:0 "Протекторат Вены"
+ AUS_GER_autonomy_occupied_regime_DEF:0 "Протекторат Вены"
+ SLO_GER_autonomy_protectorate:0 "Рейхспротектор" Словакия"
+ SLO_GER_autonomy_protectorate_DEF:0 "Рейхспротектор" Словакия"
+ SLO_GER_autonomy_commissariat:0 "Рейхскоммиссиат Словакия"
+ SLO_GER_autonomy_commissariat_DEF:0 "Рейхскоммиссиат Словакия"
+ SLO_GER_autonomy_occupied_regime:0 "Братиславский протекторат"
+ SLO_GER_autonomy_occupied_regime_DEF:0 "Братиславский протекторат"
+ DEN_GER_autonomy_protectorate:0 "Рейхспротектор", Дания"
+ DEN_GER_autonomy_protectorate_DEF:0 "Рейхспротектор", Дания"
+ DEN_GER_autonomy_commissariat:0 "Рейхскомиссариат Дания"
+ DEN_GER_autonomy_commissariat_DEF:0 "Рейхскомиссариать Дания"
+ DEN_GER_autonomy_occupied_regime:0 "Копенгаген Протекторат"
+ DEN_GER_autonomy_occupied_regime_DEF:0 "Копенгаген протекторат"
+ NOR_GER_autonomy_protectorate:0 "Рейхспротекторат Норвегия"
+ NOR_GER_autonomy_protectorate_DEF:0 "Рейхспротекторат Норвегия"
+ NOR_GER_autonomy_commissariat:0 "Рейх Комиссариат Норвегии"
+ NOR_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Норвегии"
+ NOR_GER_autonomy_occupied_regime:0 "Протекторат Осло"
+ NOR_GER_autonomy_occupied_regime_DEF:0 "Протекторат Осло"
+ FIN_GER_autonomy_protectorate:0 "Протекторат Финляндии"
+ FIN_GER_autonomy_protectorate_DEF:0 "Протекторат Финляндии"
+ FIN_GER_autonomy_commissariat:0 "Рейх Комиссариат Финляндии"
+ FIN_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Финляндии"
+ FIN_GER_autonomy_occupied_regime:0 "Протекторат Хельсинки"
+ FIN_GER_autonomy_occupied_regime_DEF:0 "Протекторат Хельсинки"
+ SWE_GER_autonomy_protectorate:0 "Рейхспротекторат Швеция"
+ SWE_GER_autonomy_protectorate_DEF:0 "Рейхспротектор", Швеция"
+ SWE_GER_autonomy_commissariat:0 "Рейхскомиссариат Швеция"
+ SWE_GER_autonomy_commissariat_DEF:0 "Рейхскомиссариат Швеция"
+ SWE_GER_autonomy_occupied_regime:0 "Протекторат Стокгольм"
+ SWE_GER_autonomy_occupied_regime_DEF:0 "Стокгольмский протекторат"
+ ICE_GER_autonomy_protectorate:0 "Остров Рейхспротекторат"
+ ICE_GER_autonomy_protectorate_DEF:0 "Остров Рейхспротекторат"
+ ICE_GER_autonomy_commissariat:0 "Рейх Комиссариат Исландии"
+ ICE_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Исландии"
+ ICE_GER_autonomy_occupied_regime:0 "Протекторат Рейкьявик"
+ ICE_GER_autonomy_occupied_regime_DEF:0 "Протекторат Рейкьявика"
+ HOL_GER_autonomy_protectorate:0 "Рейхспротекторат Нидерланды"
+ HOL_GER_autonomy_protectorate_DEF:0 "Рейхспротекторат Нидерланды"
+ HOL_GER_autonomy_commissariat:0 "Рейх Комиссариат Нидерландов"
+ HOL_GER_autonomy_commissariat_DEF:0 "Рейх-комиссариат Нидерландов"
+ HOL_GER_autonomy_occupied_regime:0 "Амстердамский протекторат"
+ HOL_GER_autonomy_occupied_regime_DEF:0 "Амстердамский протекторат"
+ BEL_GER_autonomy_protectorate:0 "Протекторат Бельгии"
+ BEL_GER_autonomy_protectorate_DEF:0 "Протекторат Бельгии"
+ BEL_GER_autonomy_commissariat:0 "Рейх Комиссариат Бельгии"
+ BEL_GER_autonomy_commissariat_DEF:0"
+ BEL_GER_autonomy_occupied_regime:0 "Протекторат Брюссель"
+ BEL_GER_autonomy_occupied_regime_DEF:0 "Протекторат Брюсселя"
+ SWI_GER_autonomy_protectorate:0 "Рейхспротекторат Швейц"
+ SWI_GER_autonomy_protectorate_DEF:0 "Рейхспротекторат Швейц"
+ SWI_GER_autonomy_commissariat:0 "Рейх Комиссариат Швейцарии"
+ SWI_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Швейцарии"
+ SWI_GER_autonomy_occupied_regime:0 "Протекторат Цюриха"
+ SWI_GER_autonomy_occupied_regime_DEF:0 "Протекторат Цюриха"
+ FRA_GER_autonomy_protectorate:0 "Протекторат Франции"
+ FRA_GER_autonomy_protectorate_DEF:0 "Протекторат Франции"
+ FRA_GER_autonomy_commissariat:0 "Рейх Комиссариат Франции"
+ FRA_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Франции"
+ FRA_GER_autonomy_occupied_regime:0 "Парижский протекторат"
+ FRA_GER_autonomy_occupied_regime_DEF:0 "Парижский протекторат"
+ VCF_GER_autonomy_protectorate:0 "Протекторат Франции"
+ VCF_GER_autonomy_protectorate_DEF:0 "Протекторат Франции"
+ VCF_GER_autonomy_commissariat:0 "Рейх Комиссариат Франции"
+ VCF_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Франции"
+ VCF_GER_autonomy_occupied_regime:0 "Парижский протекторат"
+ VCF_GER_autonomy_occupied_regime_DEF:0 "Парижский протекторат"
+ SPR_GER_autonomy_protectorate:0 "Протекторат Испании"
+ SPR_GER_autonomy_protectorate_DEF:0 "Протекторат Испании"
+ SPR_GER_autonomy_commissariat:0 "Рейх Комиссариат Испании"
+ SPR_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Испании"
+ SPR_GER_autonomy_occupied_regime:0 "Мадрид протекторат"
+ SPR_GER_autonomy_occupied_regime_DEF:0 "Мадридский протекторат"
+ SPS_GER_autonomy_protectorate:0 "Протекторат Испании"
+ SPS_GER_autonomy_protectorate_DEF:0 "Протекторат Испании"
+ SPS_GER_autonomy_commissariat:0 "Рейх Комиссариат Испании"
+ SPS_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Испании"
+ SPS_GER_autonomy_occupied_regime:0 "Мадрид протекторат"
+ SPS_GER_autonomy_occupied_regime_DEF:0 "Мадридский протекторат"
+ POR_GER_autonomy_protectorate:0 "Рейхспротекторпортугалия Португалия"
+ POR_GER_autonomy_protectorate_DEF:0 "Рейхспротекторпортугалия Португалия"
+ POR_GER_autonomy_commissariat:0 "Рейх Комиссариат Португалия"
+ POR_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Португалия"
+ POR_GER_autonomy_occupied_regime:0 "Протекторат Лиссабона"
+ POR_GER_autonomy_occupied_regime_DEF:0 "Лиссабонский протекторат"
+ IRE_GER_autonomy_protectorate:0 "Протекторат Ирландии"
+ IRE_GER_autonomy_protectorate_DEF:0 "Рейх Протекторат Ирландии"
+ IRE_GER_autonomy_commissariat:0 "Рейх Комиссариат Ирландии"
+ IRE_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Ирландии"
+ IRE_GER_autonomy_occupied_regime:0 "Протекторат Дублин"
+ IRE_GER_autonomy_occupied_regime_DEF:0 "Дублинский протекторат"
+ UKR_GER_autonomy_protectorate:0 "Протекторат Украины"
+ UKR_GER_autonomy_protectorate_DEF:0 "Протекторат Украины"
+ UKR_GER_autonomy_commissariat:0 "Рейх Комиссариат Украины"
+ UKR_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Украины"
+ UKR_GER_autonomy_occupied_regime:0 "Киевский протекторат"
+ UKR_GER_autonomy_occupied_regime_DEF:0 "Киевский протекторат"
+ BLR_GER_autonomy_protectorate:0 "Рейхспротеторорат Остланд"
+ BLR_GER_autonomy_protectorate_DEF:0 "Рейхспротеторорат Остланд"
+ BLR_GER_autonomy_commissariat:0 "Рейхскоммиссисат Остланд"
+ BLR_GER_autonomy_commissariat_DEF:0 "Рейхскоммиссисат Остланд"
+ BLR_GER_autonomy_occupied_regime:0 "Большой Балтийский протекторат"
+ BLR_GER_autonomy_occupied_regime_DEF:0 "Большой Балтийский протекторат"
+ GEO_GER_autonomy_protectorate:0 "Стракторат Кавказа"
+ GEO_GER_autonomy_protectorate_DEF:0 "Райх Протекторат Кавказ"
+ GEO_GER_autonomy_commissariat:0 "Рейх Комиссариат Кавказ"
+ GEO_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Кавказ"
+ GEO_GER_autonomy_occupied_regime:0 "Кавказский протекторат"
+ GEO_GER_autonomy_occupied_regime_DEF:0 "Кавказский протекторат"
+ RUS_GER_autonomy_protectorate:0 "Рейхспротекторатор Московиен"
+ RUS_GER_autonomy_protectorate_DEF:0 "Райх протекторат Московия"
+ RUS_GER_autonomy_commissariat:0 "Рейхскомиссариат Московия"
+ RUS_GER_autonomy_commissariat_DEF:0 "Рейхскомиссариат Московия"
+ RUS_GER_autonomy_occupied_regime:0 Московский протекторат
+ RUS_GER_autonomy_occupied_regime_DEF:0 "Московский протекторат"
+ SOV_GER_autonomy_protectorate:0 "Протекторат Сибири"
+ SOV_GER_autonomy_protectorate_DEF:0 "Протекторат Сибири"
+ SOV_GER_autonomy_commissariat:0 "Рейх-комиссариат Сибири"
+ SOV_GER_autonomy_commissariat_DEF:0 "Рейх-комиссариат Сибири"
+ SOV_GER_autonomy_occupied_regime:0 "Новосибирский протекторат"
+ SOV_GER_autonomy_occupied_regime_DEF:0 "Новосибирский протекторат"
+ ITA_GER_autonomy_protectorate:0 "Протекторат Италии"
+ ITA_GER_autonomy_protectorate_DEF:0 "Протекторат Италии"
+ ITA_GER_autonomy_commissariat:0 "Рейх Комиссариат Италии"
+ ITA_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Италии"
+ ITA_GER_autonomy_occupied_regime:0 Римский протекторат
+ ITA_GER_autonomy_occupied_regime_DEF:0 "Римский протекторат"
+ YUG_GER_autonomy_protectorate:0 "Протекторат Сербии"
+ YUG_GER_autonomy_protectorate_DEF:0 "Протекторат Сербии"
+ YUG_GER_autonomy_commissariat:0 "Рейх Комиссариат Сербии"
+ YUG_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Сербии"
+ YUG_GER_autonomy_occupied_regime:0 "Протекторат Белград"
+ YUG_GER_autonomy_occupied_regime_DEF:0 "Белградский протекторат"
+ CRO_GER_autonomy_protectorate:0 "Протекторат Хорватии"
+ CRO_GER_autonomy_protectorate_DEF:0 "Протекторат Хорватии"
+ CRO_GER_autonomy_commissariat:0 "Рейх Комиссариат Хорватии"
+ CRO_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Хорватии"
+ CRO_GER_autonomy_occupied_regime:0 Загреб протекторат
+ CRO_GER_autonomy_occupied_regime_DEF:0 "Протекторат Загреба"
+ ALB_GER_autonomy_protectorate:0 "Протекторат Албании"
+ ALB_GER_autonomy_protectorate_DEF:0 "Протекторат Албании"
+ ALB_GER_autonomy_commissariat:0 "Рейх Комиссариат Албании"
+ ALB_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Албании"
+ ALB_GER_autonomy_occupied_regime:0 "Тирана Протекторат"
+ ALB_GER_autonomy_occupied_regime_DEF:0 "Протекторат Тираны"
+ HUN_GER_autonomy_protectorate:0 "Протекторат Венгрии"
+ HUN_GER_autonomy_protectorate_DEF:0 "Протекторат Венгрии"
+ HUN_GER_autonomy_commissariat:0 "Рейх Комиссариат Венгрии"
+ HUN_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Венгрии"
+  HUN_GER_autonomy_occupied_regime:0 "Протекторат Будапешт"
+ HUN_GER_autonomy_occupied_regime_DEF-0 "Будапештский протекторат"
+ ROM_GER_autonomy_protectorate:0 "Рейх Протекторат Румыния"
+ ROM_GER_autonomy_protectorate_DEF:0 "Рейх Протекторат Румыния"
+ ROM_GER_autonomy_commissariat:0 "Рейх Комиссариат Румыния"
+ ROM_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Румыния"
+ протекторат ROM_GER_autonomy_occupied_regime:0 Бухарест
+ ROM_GER_autonomy_occupied_regime_DEF:0 "Бухарестский протекторат"
+ BUL_GER_autonomy_protectorate:0 "Страйх Протекторат Болгария"
+ BUL_GER_autonomy_protectorate_DEF:0 "Страйх Протекторат Болгария"
+ BUL_GER_autonomy_commissariat:0 "Рейх Комиссариат Болгария"
+ BUL_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Болгария"
+ BUL_GER_autonomy_occupied_regime:0 "Протекторат София
+ BUL_GER_autonomy_occupied_regime_DEF"0 "Софийский протекторат"
+ GRE_GER_autonomy_protectorate:0 "Протекторат Греции"
+ GRE_GER_autonomy_protectorate_DEF:0 "Протекторат Греции"
+ GRE_GER_autonomy_commissariat:0 "Рейх Комиссариат Греции"
+ GRE_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Греции"
+ GRE_GER_autonomy_occupied_regime:0 "Протекторат Афины"
+ GRE_GER_autonomy_occupied_regime_DEF:0 "Афинский протекторат"
+ TUR_GER_autonomy_protectorate:0 "Протекторат Турции"
+ TUR_GER_autonomy_protectorate_DEF:0 "Протекторат Турции"
+ TUR_GER_autonomy_commissariat:0 "Рейх Комиссариат Турции"
+ TUR_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Турции"
+ TUR_GER_autonomy_occupied_regime:0 "Протекторат Анкара"
+ TUR_GER_autonomy_occupied_regime_DEF:0 "Протекторат Анкары"
+ LIT_GER_autonomy_protectorate:0 "Протекторат Литвы"
+ LIT_GER_autonomy_protectorate_DEF:0 "Протекторат Литвы"
+ LIT_GER_autonomy_commissariat:0 "Рейх Комиссариат Литвы"
+ LIT_GER_autonomy_commissariat_DEF:0 "Рейх Комиссариат Литвы"
+ LIT_GER_autonomy_occupied_regime:0 "Каунас протекторат"
+ LIT_GER_autonomy_occupied_regime_DEF:0 "Каунас протекторат"
+ LAT_GER_autonomy_protectorate:0 "Рейхспротектор", Латвия"
+ LAT_GER_autonomy_protectorate_DEF:0 "Протекторат Латвии"
+ LAT_GER_autonomy_commissariat:0 "Рейх-комиссариат Латвии"
+ LAT_GER_autonomy_commissariat_DEF:0 "Рейх-комиссариат Латвии"
+ LAT_GER_autonomy_occupied_regime:0 "Рижский протекторат"
+ LAT_GER_autonomy_occupied_regime_DEF:0 "Рижский протекторат"
+ EST_GER_autonomy_protectorate:0 ("Рейхспротекторат Эстланд"
+ EST_GER_autonomy_protectorate_DEF:0 «Рейхспротекторат Эстланд»
+ EST_GER_autonomy_commissariat:0 ("Рейхскоммиссисат Эстланд"
+ EST_GER_autonomy_commissariat_DEF:0 ("Рейхскоммиссисат Эстланд"
+ EST_GER_autonomy_occupied_regime:0 «Таллиннский протекторат»
+ EST_GER_autonomy_occupied_regime_DEF:0 «Таллиннский протекторат»
+
+ENG_GER_autonomy_collaborator_state:0 «Большая Британия»
+ ENG_GER_autonomy_collaborator_state_DEF:0 «Большая Британия»
+ ENG_GER_autonomy_satellite_state:0 «Большая Британия»
+ ENG_GER_autonomy_satellite_state_DEF:0 «Большая Британия»
+ ENG_GER_autonomy_protectorate:0 «Рейхспротекторат Гробртантьен»
+ ENG_GER_autonomy_protectorate_DEF:0 «Рейхспротекторат Гробртантьен»
+ ENG_GER_autonomy_commissariat:0 ("Рейхскоммиссиат Грошбританинен"
+ ENG_GER_autonomy_commissariat_DEF:0 ("Рейхскоммиссиат Грошбританинен"
+ ENG_GER_autonomy_occupied_regime:0 «Протекторат Большого Лондона»
+ ENG_GER_autonomy_occupied_regime_DEF:0 «Протекторат Большого Лондона»
+
+RAJ_autonomy_imperial_dominion:0 «Доминион Индии»
+ RAJ_autonomy_imperial_dominion_DEF:0 «Доминион Индии» 
+ RAJ_autonomy_crown_colony:0 $OVERLORDADJ $ Радж"
+ RAJ_autonomy_crown_colony_DEF:0 «$OVERLORDADJ$ Радж» 
+ RAJ_autonomy_royal_protectorate:0 «$OVERLORDADJ$ Индия»
+ RAJ_autonomy_royal_protectorate_DEF:0 «$OVERLORDADJ» 
+ RAJ_autonomy_integrated_region:0 «Провинция Индии»
+ RAJ_autonomy_integrated_region_DEF:0 «Провинция Индии»
+ CAN_autonomy_imperial_dominion:0 «Доминион Канады»
+ CAN_autonomy_imperial_dominion_DEF:0 «Доминион Канады» 
+ CAN_autonomy_crown_colony:0 «$OVERLORDADJдоллар Канада»
+ CAN_autonomy_crown_colony_DEF:0 «$OVERLORDADJдоллар Канада» 
+ CAN_autonomy_royal_protectorate:0 «$OVERLORDADJдоллар Канада»
+ CAN_autonomy_royal_protectorate_DEF:0 «$OVERLORDADJдоллар Канада» 
+ CAN_autonomy_integrated_region:0 «Провинция Канады»
+ CAN_autonomy_integrated_region_DEF:0 «Провинция Канада»
+ AST_autonomy_imperial_dominion:0 «Доминион Австралии»
+ AST_autonomy_imperial_dominion_DEF:0 «Доминион Австралии» 
+ AST_autonomy_crown_colony:0 «$OVERLORDADJ$ Австралия»
+ AST_autonomy_crown_colony_DEF:0 «$OVERLORDADJ$ Австралия» 
+ AST_autonomy_royal_protectorate:0 «$OVERLORDADJ$ Австралия»
+ AST_autonomy_royal_protectorate_DEF:0 «$OVERLORDADJ$ Австралия» 
+ AST_autonomy_integrated_region:0 «Провинция Австралии»
+ AST_autonomy_integrated_region_DEF:0 «Провинция Австралия»
+ NZL_autonomy_imperial_dominion:0 «Доминион Новой Зеландии»
+ NZL_autonomy_imperial_dominion_DEF:0 «Доминион Новой Зеландии» 
+ NZL_autonomy_crown_colony:0 «$OVERLORDADJ$ Новая Зеландия»
+ NZL_autonomy_crown_colony_DEF:0 «$OVERLORDADJ$ Новой Зеландии» 
+ NZL_autonomy_royal_protectorate:0 «$OVERLORDADJ$ Новая Зеландия»
+ NZL_autonomy_royal_protectorate_DEF:0 «$OVERLORDADJ$ Новая Зеландия» 
+ NZL_autonomy_integrated_region:0 «Провинция Новая Зеландия»
+ NZL_autonomy_integrated_region_DEF:0 «Провинция Новая Зеландия»
+ SAF_autonomy_imperial_dominion:0 «Союз южной Африки»
+ SAF_autonomy_imperial_dominion_DEF:0 «Союз южной Африки» 
+ SAF_autonomy_crown_colony:0 «$OVERLORDADJдолларовые»
+ SAF_autonomy_crown_colony_DEF:0 «$OVERLORDADJ$ южная Африка» 
+ SAF_autonomy_royal_protectorate:0 «$OVERLORDADJ$ южная Африка»
+ SAF_autonomy_royal_protectorate_DEF:0 «$OVERLORDADJ$ южная Африка» 
+ SAF_autonomy_integrated_region:0 «Кейп Колония»
+ SAF_autonomy_integrated_region_DEF:0 «Кейп Колония»
+ BRM_autonomy_imperial_dominion:0 «Доминион Бирмы»
+ BRM_autonomy_imperial_dominion_DEF:0 «Доминион Бирмы» 
+ BRM_autonomy_crown_colony:0 «Колония Бирмы»
+ BRM_autonomy_crown_colony_DEF:0 «Колония Бирмы» 
+ BRM_autonomy_royal_protectorate:0 «$OVERLORDADJ$ Бирмы»
+ BRM_autonomy_royal_protectorate_DEF:0 «$OVERLORDADJ$ Бирма» 
+ BRM_autonomy_integrated_region:0 «$OVERLORDADJ$ Бирма»
+ BRM_autonomy_integrated_region_DEF:0 «$OVERLORDADJ$ Бирма»
+ MAL_autonomy_imperial_dominion:0 «Доминион Малайзии»
+ MAL_autonomy_imperial_dominion_DEF:0 «Доминион Малайзии» 
+ MAL_autonomy_crown_colony:0 «$OVERLORDADJдолларов Малайзия»
+ MAL_autonomy_crown_colony_DEF:0 «$OVERLORDADJ» Малайзия 
+ MAL_autonomy_royal_protectorate:0 «$OVERLORDADJ$ Малайя»
+ MAL_autonomy_royal_protectorate_DEF:0 «$OVERLORDADJ$ Малайя» 
+ MAL_autonomy_integrated_region:0 «Провинция Малайя»
+ MAL_autonomy_integrated_region_DEF:0 «Провинция Малая»
+
+ VIN_autonomy_imperial_dominion:0 «Доминион Индокитая»
+ VIN_autonomy_imperial_dominion_DEF:0 «Доминион Индокитая» 
+ VIN_autonomy_crown_colony:0 «Индокитайский союз»
+ VIN_autonomy_crown_colony_DEF:0 «Индокитайский союз» 
+ VIN_autonomy_royal_protectorate:0 «$OVERLORDADJ$Индокитай»
+ VIN_autonomy_royal_protectorate_DEF:0 «$OVERLORDADJ$Индокитай» 
+ VIN_autonomy_integrated_region:0 «$OVERLORDADJ$Индокитай»
+ VIN_autonomy_integrated_region_DEF:0 «$OVERLORDADJ$Индокитай»
+
+ COG_autonomy_imperial_dominion:0 «Доминион Конго»
+ COG_autonomy_imperial_dominion_DEF:0 «Доминион Конго» 
+ COG_autonomy_crown_colony:0 «Колония Конго»
+ COG_autonomy_crown_colony_DEF:0 «Колония Конго» 
+ COG_autonomy_royal_protectorate:0 ("$OVERLORDADJ$ Конго"
+ COG_autonomy_royal_protectorate_DEF:0 ("$OVERLORDADJ$ Конго" 
+ COG_autonomy_integrated_region:0 «$OVERLORDADJдоллар Конго»
+ COG_autonomy_integrated_region_DEF:0 «$OVERLORDADJдоллар Конго»
+
+ PHI_autonomy_imperial_dominion:0 «Доминион Филиппин»
+ PHI_autonomy_imperial_dominion_DEF:0 «Доминион Филиппин» 
+ PHI_autonomy_crown_colony:0 «Содружество Филиппин»
+ PHI_autonomy_crown_colony_DEF:0 «Содружество Филиппин» 
+ PHI_autonomy_royal_protectorate:0 «Островное управление Филиппинами»
+ PHI_autonomy_royal_protectorate_DEF:0 «Островное управление Филиппинами» 
+ PHI_autonomy_integrated_region:0 «$OVERLORDADJ$ Филиппины»
+ PHI_autonomy_integrated_region_DEF:0 «$OVERLORDADJ$ Филиппины»
+
+ INS_autonomy_imperial_dominion:0 «Доминион Индонезии»
+ INS_autonomy_imperial_dominion_DEF:0 «Доминион Индонезии» 
+ INS_autonomy_crown_colony:0 «Республика Индонезия»
+ INS_autonomy_crown_colony_DEF:0 «Республика Индонезия» 
+ INS_autonomy_royal_protectorate:0 «$OVERLORDADJ$Ост-Индия»
+ INS_autonomy_royal_protectorate_DEF:0 «$OVERLORDADJ$ Ост-Индии» 
+ INS_autonomy_integrated_region:0 «$OVERLORDADJ$Ост-Индия»
+ INS_autonomy_integrated_region_DEF:0 «$OVERLORDADJ$ Ост-Индии»
+
+ MAN_autonomy_imperial_tributary:0 «Цин Временная империя»
+ MAN_autonomy_imperial_tributary_DEF:0 «Временная империя «Цин» 
+ MAN_autonomy_imperial_tributary_ADJ:0 «Цин»
+ MAN_autonomy_subject_state:0 «Маньчжурская империя»
+ MAN_autonomy_subject_state_DEF:0 «Империя Маньчжурии» 
+ MAN_autonomy_subject_state_ADJ:0 (Маньчжурский)  
+ MAN_autonomy_imperial_client:0 (провинция Маньчжурия)
+ MAN_autonomy_imperial_client_DEF:0 «Провинция Маньчжурия» 
+ MAN_autonomy_imperial_client_ADJ:0 (Маньчжурский) 
+ MAN_autonomy_imperial_province:0 ("$OVERLORDADJ$ Маньчжурии"
+ MAN_autonomy_imperial_province_DEF:0 «$OVERLORDADJ$ Маньчжурии»
+ MAN_autonomy_imperial_province_ADJ:0 (Маньчжурский) 
+ MEN_autonomy_imperial_tributary:0 «Внутреннее монгольское династическое государство»
+ MEN_autonomy_imperial_tributary_DEF:0 «Внутреннее монгольское династическое государство»
+ MEN_autonomy_subject_state:0 «Государство Внутренней Монголии»
+ MEN_autonomy_subject_state_DEF:0 «Государство Внутренняя Монголия»
+ MEN_autonomy_imperial_client:0 ("Монгольская граница"
+ MEN_autonomy_imperial_client_DEF:0 «Монгольская граница»
+ MEN_autonomy_imperial_province:0 «$OVERLORDADJ$ Внутренняя Монголия»
+ MEN_autonomy_imperial_province_DEF:0 «$OVERLORDADJ$ Внутренняя Монголия»
+ RGR_autonomy_imperial_tributary:0 «Китайское Соединенные Штаты»
+ RGR_autonomy_imperial_tributary_DEF:0 «Китайское Соединенные Штаты»
+ RGR_autonomy_subject_state:0 «Китайское реорганизованное правительство»
+ RGR_autonomy_subject_state_DEF:0 «Китайское реорганизованное правительство»
+ RGR_autonomy_imperial_client:0 «Сино-$OVERLORDADJ$Государство»
+ RGR_autonomy_imperial_client_DEF:0 «Состояние сино-$OVERLORDADJ$»
+ RGR_autonomy_imperial_province:0 «$OVERLORDADJдоллар Китай»
+ RGR_autonomy_imperial_province_DEF:0 «$OVERLORDADJдоллар Ы.
+
+ SHX_autonomy_compliant_warlord:0 «Шаньси Клик»
+ SHX_autonomy_compliant_warlord_DEF:0 «Шаньси Клик»
+ SHX_autonomy_loyal_warlord:0 «Шаньси Клик»
+ SHX_autonomy_loyal_warlord_DEF:0 «Шэньси Клик» 
+ SHX_autonomy_autonomous_region:0 «Шаньси Клик»
+ SHX_autonomy_autonomous_region_DEF:0 «Шаньси Клик»
+ XSM_autonomy_compliant_warlord:0 ("Ма Клика"
+ XSM_autonomy_compliant_warlord_DEF:0 «Ма Клика»
+ XSM_autonomy_loyal_warlord:0 ("Ма Клика"
+ XSM_autonomy_loyal_warlord_DEF:0 «Ма Клика» 
+ XSM_autonomy_autonomous_region:0 ("Ма Клика"
+ XSM_autonomy_autonomous_region_DEF:0 «Ма Клика»
+ YUN_autonomy_compliant_warlord:0 «Yun Clique»
+ YUN_autonomy_compliant_warlord_DEF:0 «Клец yun»
+ YUN_autonomy_loyal_warlord:0 «Yun Clique»
+ YUN_autonomy_loyal_warlord_DEF:0 «Клец yun» 
+ YUN_autonomy_autonomous_region:0 «Yun Clique»
+ YUN_autonomy_autonomous_region_DEF:0 «Клец yun»
+ GXC_autonomy_compliant_warlord:0 «Гуанси Клик»
+ GXC_autonomy_compliant_warlord_DEF:0 «Клайк Гуанси»
+ GXC_autonomy_loyal_warlord:0 «Гуанси Клик»
+ GXC_autonomy_loyal_warlord_DEF:0 «Гуанси Клик» 
+ GXC_autonomy_autonomous_region:0 «Гуанси Клик»
+ GXC_autonomy_autonomous_region_DEF:0 «Клайк Гуанси»
+
+ SIK_SOV_autonomous_ssr_communism:0 «Синьи али С.С.Р.»
+ SIK_SOV_autonomous_ssr_communism_DEF:0 «Синьи с.С.С.Р.»
+ SIK_SOV_autonomous_ssr_communism_ADJ:0 «Синьиали»
+ MON_SOV_autonomous_ssr_communism:0 «Монгольская С.С.Р.»
+ MON_SOV_autonomous_ssr_communism_DEF:0 ("Монгольская с.С.Р."
+ TAN_SOV_autonomous_ssr_communism:0 «Туван С.С.Р.»
+ TAN_SOV_autonomous_ssr_communism_DEF:0 «Туван С.С.Р.»
+
+ IRE_autonomy_free_regime:0 «Ирландское свободное государство»
+ IRE_autonomy_free_regime_DEF:0 «Ирландское свободное государство»
+ IRE_autonomy_protected_state:0 «Ирландское свободное государство»
+ IRE_autonomy_protected_state_DEF:0 «Ирландское свободное государство»
+ IRE_autonomy_federal_puppet:0 (Ирландия)
+ IRE_autonomy_federal_puppet_DEF:0 «Ирландия»
+ IRE_autonomy_territory:0 «Территория Ирландии»
+ IRE_autonomy_territory_DEF:0 «Ирландская территория»
+
+ POL_und:0 «Польское подполье»
+ POL_und_DEF:0 «Польское подполье»
+ FRA_FREE:0 «Свободная Франция»
+ FRA_FREE_DEF:0 «Свободные французские силы»
+ BRI_resistance:0 «Британское сопротивление»
+ BRI_resistance_DEF:0 «Британское сопротивление»
+ ENG_resistance:0 «Английское сопротивление»
+ ENG_resistance_DEF:0 «Английское Сопротивление»
+ JAP_showa_restoration_fascism:0 (Япония)
+ JAP_showa_restoration_neutrality:0 «Империя Японии»
+ JAP_showa_restoration_democratic:0 «Государство Япония»
+ JAP_showa_restoration_communism:0 «Японская народная республика»
+ JAP_showa_restoration_fascism_DEF:0 (Япония)
+ JAP_showa_restoration_neutrality_DEF:0 «Империя Японии»
+ JAP_showa_restoration_democratic_DEF:0 «Государство Япония»
+ JAP_showa_restoration_communism_DEF:0 «Японская народная республика»
+ GER_greater_german_reich_fascism:0 «Большой немецкий рейх» 
+ CHI_warlord_leader_neutrality_ADJ:0 «Китайский»
+ CHI_warlord_leader_democratic_ADJ:0 «Китайский»
+ MAN_restored_fascism_ADJ:0 «Китайский»
+ MAN_restored_neutrality_ADJ:0 «Китайский»
+ MAN_restored_democratic_ADJ:0 «Китайский»
+ MAN_restored_communism_ADJ:0 «Китайский»
+ CHI_power_struggle_defeated_neutrality:0 «CC Clique»
+ CHI_power_struggle_defeated_neutrality_DEF:0 «Cc Clique»
+ CHI_power_struggle_defeated_democratic:0 «Республиканское правительство Китая»
+ CHI_power_struggle_defeated_democratic_DEF:0 «Республиканское правительство Китая»
+ CHI_power_struggle_defeated_neutrality_ADJ:0 «Китайский»
+ CHI_power_struggle_defeated_democratic_ADJ:0 «Китайский»
+ PRC_CSR_communism:0 «Китайская советская зона»
+ PRC_CSR_communism_DEF:0 «Коммунистический Китай»
+ GCDsgn_communism:0 «Коммунистический Китай»
+ GCDsgn_communism_DEF:0 «Коммунистический Китай»
+ libchina_communism:0 «Китайская освобожденная зона»
+ libchina_communism_DEF:0 «Коммунистический Китай»
+ MON_whites_neutrality:0 «Государство Монголия»
+ MON_whites_neutrality_DEF:0 «Государство Монголия»
+ MON_const_democratic:0 «Государство Монголия»
+ MON_const_democratic_DEF:0 «Государство Монголия»
+ XSM_prov_communism:0 «Провинция Цинхай»
+ XIN_sinkiang_fascism:0 «Синьцзян Клика»
+ XIN_sinkiang_fascism_DEF:0 «Синьцзян-Клика»
+ XIN_sinkiang_democratic:0 «Синьцзян Клика»
+ XIN_sinkiang_democratic_DEF:0 «Синьцзян-Клика»
+ XIN_sinkiang_neutrality:0 «Синьцзян Клика»
+ XIN_sinkiang_neutrality_DEF:0 «Синьцзян-Клика»
+ XIN_sinkiang_communism:0 «Синьцзян Клика»
+ XIN_sinkiang_communism_DEF:0 «Синьцзян-Клика»
+ XIN_sinkiang_fascism_ADJ:0 "Синьцзяни"
+ XIN_sinkiang_democratic_ADJ:0 "Синьцзяни"
+ XIN_sinkiang_neutrality_ADJ:0 "Синьцзяни"
+ XIN_sinkiang_communism_ADJ:0 "Синьцзяни"
+ XIN_sinkiang:0 «Синьцзян»
+ XIN_sinkiang_DEF:0 «Синьцзян»
+ XIN_sinkiang_ADJ:0 "Синьцзяни"
+ USA_CSA_fascism:0 "Конфедеративные Штаты Америки"
+ USA_CSA_fascism_DEF:0 "Конфедеративные Штаты Америки"
+ USA_CSA_democratic:0 "Конфедерация американских государств"
+ USA_CSA_democratic_DEF:0 "Конфедерация американских государств"
+ USA_CSA_communism:0 "Конфедерация американских рабочих"
+ USA_CSA_communism_DEF:0 "Конфедерация американских рабочих"
+ USA_CSA_neutrality:1 «лоялисты»
+ USA_CSA_neutrality_DEF:1 «лоялисты»
+ USA_CSA_fascism_ADJ:0 «конфедерат»
+ USA_CSA_communism_ADJ:0 «конфедерат»
+ USA_CSA_democratic_ADJ:0 «конфедерат»
+ USA_CSA_neutrality_ADJ:1 «лоялисты»
+ USA_REBEL_fascism:0 «американская империя»
+ USA_REBEL_fascism_DEF:0 "Американская империя"
+ USA_REBEL_democratic:0 «Сторонники конституционной формы правления»
+ USA_REBEL_democratic_DEF:0 «сторонники конституционной формы правления»
+ USA_REBEL_communism:0 "Объединённые социалистические государства"
+ USA_REBEL_communism_DEF:0 "Объединённые социалистические государства"
+ USA_REBEL_neutrality:0 «Мятежники»
+ USA_REBEL_neutrality_DEF:0 «мятежники»
+ USA_REBEL_fascism_ADJ:0 «американец»
+ USA_REBEL_communism_ADJ:0 «американец»
+ USA_REBEL_democratic_ADJ:0 «Сторонник конституционной формы правления»
+ USA_REBEL_neutrality_ADJ:0 «Мятежник»
+ MEX_cristero_fascism:0 «Католическая Мексика»
+ MEX_cristero_fascism_DEF:0 «Католическая Мексика»
+ MEX_cristero_fascism_ADJ:0 «Мексиканец»
+ MEX_cristero_neutrality:0 «Третья мексиканская империя»
+ MEX_cristero_neutrality_DEF:0 «Третья мексиканская империя»
+ MEX_cristero_neutrality_ADJ:0 «Мексиканец»
+ MEX_cristero_democratic:0 (Мексиканская республика)
+ MEX_cristero_democratic_DEF:0 «Мексиканская Республика»
+ MEX_cristero_democratic_ADJ:0 «Мексиканец»
+ MEX_cristero_communism:1 «Мексиканская Социалистическая Республика»
+ MEX_cristero_communism_DEF:1 «Мексиканская Социалистическая Республика»
+ MEX_cristero_communism_ADJ:0 «Мексиканец»
+ MEX_SPR_fascism_subject:0 «Новая Испания»
+ MEX_SPR_fascism_subject_DEF:0 «Новая Испания»
+ MEX_SPR_fascism_subject_ADJ:0 «Новый испанский»
+ MEX_SPR_neutrality_subject:0 «Новая Испания»
+ MEX_SPR_neutrality_subject_DEF:0 «Новая Испания»
+ MEX_SPR_neutrality_subject_ADJ:0 «Новый испанский»
+ MEX_cristero_SPR_fascism_subject:0 «Новая Испания»
+ MEX_cristero_SPR_fascism_subject_DEF:0 «Новая Испания»
+ MEX_cristero_SPR_fascism_subject_ADJ:0 «Новый испанский»
+ MEX_cristero_SPR_neutrality_subject:0 «Новая Испания»
+ MEX_cristero_SPR_neutrality_subject_DEF:0 «Новая Испания»
+ MEX_cristero_SPR_neutrality_subject_ADJ:0 «Новый испанский»
+ MEX_SPA_fascism_subject:0 «Новая Испания»
+ MEX_SPA_fascism_subject_DEF:0 «Новая Испания»
+ MEX_SPA_fascism_subject_ADJ:0 «Новый испанский»
+ MEX_SPA_neutrality_subject:0 «Новая Испания»
+ MEX_SPA_neutrality_subject_DEF:0 «Новая Испания»
+ MEX_SPA_neutrality_subject_ADJ:0 «Новый испанский»
+ MEX_cristero_SPA_fascism_subject:0 «Новая Испания»
+ MEX_cristero_SPA_fascism_subject_DEF:0 «Новая Испания»
+ MEX_cristero_SPA_fascism_subject_ADJ:0 «Новый испанский»
+ MEX_cristero_SPA_neutrality_subject:0 «Новая Испания»
+ MEX_cristero_SPA_neutrality_subject_DEF:0 «Новая Испания»
+ MEX_cristero_SPA_neutrality_subject_ADJ:0 «Новый испанский»
+ ENG_imperial_federation_unified_fascism:0 «Империя»
+ ENG_imperial_federation_unified_communism:0 «Содружество народов»
+ ENG_imperial_federation_unified_democratic:0 «Содружество Наций»
+ ENG_imperial_federation_unified_neutrality:0 «Имперская федерация»
+ ENG_imperial_federation_unified_fascism_DEF:0 «Империя»
+ ENG_imperial_federation_unified_communism_DEF:0 «Содружество народов»
+ ENG_imperial_federation_unified_democratic_DEF:0 «Содружество Наций»
+ ENG_imperial_federation_unified_neutrality_DEF:0 «Имперская федерация»
+ ENG_imperial_federation_unified_fascism_ADJ:0 «Империал»
+ ENG_imperial_federation_unified_communism_ADJ:0 «Содружество»
+ ENG_imperial_federation_unified_democratic_ADJ:0 «Содружество»
+ ENG_imperial_federation_unified_neutrality_ADJ:0 «Империал»
+ ENG_imperial_federation_india_unified_fascism:0 «Империя»
+ ENG_imperial_federation_india_unified_communism:0 «Содружество народов»
+ ENG_imperial_federation_india_unified_democratic:0 «Содружество Наций»
+ ENG_imperial_federation_india_unified_neutrality:0 «Имперская федерация»
+ ENG_imperial_federation_india_unified_fascism_DEF:0 «Империя»
+ ENG_imperial_federation_india_unified_communism_DEF:0 «Содружество народов»
+ ENG_imperial_federation_india_unified_democratic_DEF:0 «Содружество Наций»
+ ENG_imperial_federation_india_unified_neutrality_DEF:0 «Имперская федерация»
+ ENG_imperial_federation_india_unified_fascism_ADJ:0 «Империал»
+ ENG_imperial_federation_india_unified_communism_ADJ:0 «Содружество»
+ ENG_imperial_federation_india_unified_democratic_ADJ:0 «Содружество»
+ ENG_imperial_federation_india_unified_neutrality_ADJ:0 «Империал»
+ ENG_imperialist_canada_fascism:0 «Империалистическая Канада»
+ ENG_imperialist_canada_fascism_DEF:0 «Империалистическая Канада»
+ ENG_imperialist_canada_fascism_ADJ:0 «Империалистический канадец»
+ ENG_imperialist_canada_neutrality:0 «Империалистическая Канада»
+ ENG_imperialist_canada_neutrality_DEF:0 «Империалистическая Канада»
+ ENG_imperialist_canada_neutrality_ADJ:0 «Империалистический канадец»
+ ENG_imperialist_south_africa_fascism:0 «Империалистическая южная Африка»
+ ENG_imperialist_south_africa_fascism_DEF:0 «Империалистическая южная Африка»
+ ENG_imperialist_south_africa_fascism_ADJ:0 «Империалистический южноафриканец»
+ ENG_imperialist_south_africa_neutrality:0 «Империалистическая южная Африка»
+ ENG_imperialist_south_africa_neutrality_DEF:0 «Империалистическая южная Африка»
+ ENG_imperialist_south_africa_neutrality_ADJ:0 «Империалистический южноафриканец»
+ ENG_imperialist_australia_fascism:0 «Империалистическая Австралия»
+ ENG_imperialist_australia_fascism_DEF:0 «Империалистическая Австралия»
+ ENG_imperialist_australia_fascism_ADJ:0 «Империалистический австралиец»
+ ENG_imperialist_australia_neutrality:0 «Империалистическая Австралия»
+ ENG_imperialist_australia_neutrality_DEF:0 «Империалистическая Австралия»
+ ENG_imperialist_australia_neutrality_ADJ:0 "Империалистический австралиец"
+ ENG_imperialist_new_zealand_fascism:0 «Империалистическая Новая Зеландия»
+ ENG_imperialist_new_zealand_fascism_DEF:0 «Империалистическая Новая Зеландия»
+ ENG_imperialist_new_zealand_fascism_ADJ:0 «Империалистическая Новая Зеландия»
+ ENG_imperialist_new_zealand_neutrality:0 «Империалистическая Новая Зеландия»
+ ENG_imperialist_new_zealand_neutrality_DEF:0 «Империалистическая Новая Зеландия»
+ ENG_imperialist_new_zealand_neutrality_ADJ:0 «Империалистическая Новая Зеландия»
+ США'wallis-simpson-neutrality:0 ("Соединенное Королевство Америки")
+ США»wallis-simpson-neutrality-def:0 ("Соединенное Королевство Америки")
+ CAN_north_america_dominion_neutrality:0 «Доминион Северной Америки»
+ CAN_north_america_dominion_neutrality_def:0 «Доминион Северной Америки»
+ CAN_north_america_dominion_fascism:0 «Доминион Северной Америки»
+ CAN_north_america_dominion_fascism_def:0 «Доминион Северной Америки»
+ ENG_MEX_dominion_democratic:0 «Доминион Мексики»
+ ENG_MEX_dominion_democratic_def:0 «Доминион Мексики»
+ ENG_MEX_dominion_neutrality:0 «Доминион Мексики»
+ ENG_MEX_dominion_neutrality_def:0 «Доминион Мексики»
+ ENG_MEX_dominion_fascism:0 «Доминион Мексики»
+ ENG_MEX_dominion_fascism_def:0 «Доминион Мексики»
+ ENG_MEX_dominion_communism:0 «Доминион Мексики»
+ ENG_MEX_dominion_communism_def:0 «Доминион Мексики»
+ ENG_england_democratic:0 ("Англия"
+ ENG_england_democratic_DEF:0 ("Англия"
+ ENG_england_democratic_ADJ:0 «Английский язык»
+ ENG_england_neutrality:0 «Королевство Англии»
+ ENG_england_neutrality_DEF:0 «Королевство Англии»
+ ENG_england_neutrality_ADJ:0 «Английский язык»
+ ENG_england_fascism:0 «Альбион»
+ ENG_england_fascism_DEF:0 «Альбион»
+ ENG_england_fascism_ADJ:0 «Английский язык»
+ ENG_england_communism:0 «Коммуна Англии»
+ ENG_england_communism_DEF:0 «Коммуна Англии»
+ ENG_england_communism_ADJ:0 «Англиан»
+ ENG_communist_civil_war_communism:1 «Настоящий союз Британии»
+ ENG_communist_civil_war_communism_def:1 «Настоящий союз Британии»
+ ENG_syndicalist_communism:0 «Английский синдикат»
+ ENG_syndicalist_communism_DEF:0 «Английский синдикат»
+ ENG_syndicalist_communism_ADJ:0 «Английский язык»
+ ENG_syndicalist_fascism:0 «Англия»
+ ENG_syndicalist_fascism_DEF:0 ("Англия"
+ ENG_syndicalist_fascism_ADJ:0 «Английский язык»
+ ENG_syndicalist_democratic:0 «Английский синдикат»
+ ENG_syndicalist_democratic_DEF:0 «Английский синдикат»
+ ENG_syndicalist_democratic_ADJ:0 «Английский язык»
+ ENG_syndicalist_neutrality:0 ("Англия"
+ ENG_syndicalist_neutrality_DEF:0 «Англия»
+ ENG_syndicalist_neutrality_ADJ:0 «Английский язык»
+ ENG_federation_communism:0 «Великая коммуна»
+ ENG_federation_communism_DEF:0 «Великая коммуна»
+ ENG_federation_communism_ADJ:0 «Империал»
+ ENG_federation_fascism:0 «Имперская федерация»
+ ENG_federation_fascism_DEF:0 «Имперская федерация»
+ ENG_federation_fascism_ADJ:0 «Империал»
+ ENG_federation_democratic:0 «Имперская федерация»
+ ENG_federation_democratic_DEF:0 ("Имперская федерация"
+ ENG_federation_democratic_ADJ:0 «Империал»
+ ENG_federation_neutrality:0 «Имперская федерация»
+ ENG_federation_neutrality_DEF:0 ("Имперская федерация"
+ ENG_federation_neutrality_ADJ:0 «Империал»
+ ITL_civilwar_fascism:0 «Итальянское сопротивление»
+ ITL_civilwar_fascism_DEF:0 «Итальянские партизаны»
+ ITL_civilwar_democratic:0 «Итальянское сопротивление»
+ ITL_civilwar_democratic_DEF:0 «Итальянские партизаны»
+ ITL_civilwar_communism:0 «Итальянское сопротивление»
+ ITL_civilwar_communism_DEF:0 «Итальянские партизаны»
+ ITL_civilwar_neutrality:0 «Итальянское сопротивление»
+ ITL_civilwar_neutrality_DEF:0 «Итальянские партизаны»
+ ITL_civilwar_fascism_ADJ:0 «Итальянский партизан»
+ ITL_civilwar_democratic_ADJ:0 «Итальянский партизан»
+ ITL_civilwar_communism_ADJ:0 «Итальянский партизан»
+ ITL_civilwar_neutrality_ADJ:0 «Итальянский партизан»
+ GER_clean_fascism:0 «Немецкий рейх»
+ GER_clean_fascism_DEF:0 (Германия)
+ AUSHUN_fascism:0 «Австро-Венгрия»
+ AUSHUN_fascism_ADJ:0 «Австро-Венгерский»
+ AUSHUN_fascism_DEF:0 «Австро-Венгрия»
+ ROYAUSHUN_neutrality:0 «Австро-Венгерская империя»
+ ROYAUSHUN_neutrality_ADJ:0 «Австро-Венгерский»
+ ROYAUSHUN_neutrality_DEF:0 «Австро-Венгерская империя»
+ HREAUS_neutrality:0 «Святая Римская империя»
+ HREAUS_neutrality_ADJ:0 «Святая Римская империя»
+ HREAUS_neutrality_DEF:0 «Святая Римская Империала»
+ EGE_empire_fascism:0 «Египетская империя»
+ EGE_empire_neutrality:0 «Египетская империя»
+ EGE_empire_democratic:0 «Египетская империя»
+ EGE_empire_communism:0 «Египетская империя»
+ EGE_empire_fascism_DEF:0 «Египетская империя»
+ EGE_empire_neutrality_DEF:0 «Египетская империя»
+ EGE_empire_democratic_DEF:0 «Египетская империя»
+ EGE_empire_communism_DEF:0 «Египетская империя»
+ EGE_empire_fascism_ADJ:0 «Египетский»
+ EGE_empire_neutrality_ADJ:0 «Египетский»
+ EGE_empire_democratic_ADJ:0 «Египетский»
+ EGE_empire_communism_ADJ:0 «Египетский»
+ ERWgrossdeutschland_fascism:0 "Великий Германский Рейх"
+ ERWgrossdeutschland_fascism_DEF:0 "Великий Германский Рейх"
+ ERWgrossdeutschland_neutrality:0 "Великая Германская империя"
+ ERWgrossdeutschland_neutrality_DEF:0 "Великая Германская империя"
+ ERWgrossdeutschland_communism:0 "Великая Германская Демократическая республика"
+ ERWgrossdeutschland_communism_DEF:0 "Великая Германская Демократическая республика"
+ ERWgrossdeutschland_democratic:0 "Великая Веймарская республика"
+ ERWgrossdeutschland_democratic_DEF:0 "Великая Веймарская республика"
+ european_socialist_union:0 («Европейский социалистический союз»»
+ POL_reichskommissariat:0 «Польское общее правительство»
+ POL_reichskommissariat_DEF:0 «Польское общее правительство»
+ FRA_GER_fascism_autonomy_puppet:0 «Виши Франция»
+ FRA_GER_fascism_autonomy_royal_protectorate_DEF:0 «Виши Франция»
+ GER_FRA_autonomy_dominion:0 ("Протекторат Германии"
+ GER_FRA_autonomy_colony:0 «Конфедерация Рейна»
+ GER_FRA_autonomy_puppet:0 ("Вестфалия"
+ GER_FRA_autonomy_integrated_region_puppet:0 «Восточная Франция»
+ ITA_FRA_autonomy_puppet:0 ("Итальянские государства"
+ ENG_FRA_autonomy_puppet:0 ("Бретань"
+ США-ФРА-автономия-кукла:0 »Луизиана»
+ CAN_FRA_autonomy_puppet:0 «Квебек»
+ JAP_FRA_autonomy_puppet:0 «Колония Японии»
+ LAO_FRA_neutrality:0 «Протекторат Лаоса»
+ CAM_FRA_neutrality:0 «Протекторат Камбоджи»
+ FRA_EMPIRE_neutrality:0 «Французская империя»
+ FRA_KINGDOM_neutrality:0 "Французское королевство"
+  NEW_ROMAN_EMPIRE_fascism:0 «Новая Римская империя»
+  NEW_ROMAN_EMPIRE_fascism_ADJ:0 «Романский»
+  NEW_ROMAN_EMPIRE_fascism_DEF:0 «Новая Римская империя»
+  NEW_ROMAN_EMPIRE_communism:0 «Средиземноморский социалистический союз»
+  NEW_ROMAN_EMPIRE_communism_ADJ:0 «Средиземноморье»
+  NEW_ROMAN_EMPIRE_communism_DEF:0 «Средиземноморский социалистический народный союз»
+  Roman_FRA_fascism:0 «Легионер Франция»
+  Roman_FRA_fascism_ADJ:0 «Французский»
+  Roman_FRA_fascism_DEF:0 «Римская зависимость Франции»
+  Roman_SPR_fascism:0 «Легионер Испания»
+  Roman_SPR_fascism_ADJ:0 "Испанский"
+  Roman_SPR_fascism_DEF:0 «Римская зависимость Испании»
+  Roman_YUG_fascism:0 «Легионер югославия»
+  Roman_YUG_fascism_ADJ:0 "югославские"
+  Roman_YUG_fascism_DEF:0 «Римская зависимость от югославской»
+  Roman_GRE_fascism:0 "Византия"
+  Roman_GRE_fascism_ADJ:0 "Византийский"
+  Roman_YUG_fascism_DEF:0 «Римская зависимость Греции»
+  Roman_TUR_fascism:0 «Легионер Анатолия»
+  Roman_TUR_fascism_ADJ:0 "Анатолийский"
+  Roman_TUR_fascism_DEF:0 «Римская зависимость Анатолии»
+  italy_communist_faction:0 «Средиземноморская социалистическая лига»
+  italy_democratic_faction:0 «Средиземноморский экономический союз»
+  Anti_ITA_coalition:0 «Антиримская коалиция»
+  Anti_ITA_COM_coalition:0 «Антикоммунистическая энтете»
+  Anti_ITA_UNI_coalition:0 «Антиобъединительная коалиция»
+  SIA_THAILAND_fascism:0 «Тайская империя»
+  SIA_THAILAND_fascism_DEF:0 «Тайская империя»
+  SIA_THAILAND_democratic:0 «Республика Таиланд»
+  SIA_THAILAND_democratic_DEF:0 «Республика Таиланд»
+  SIA_THAILAND_neutrality:0 «Таиланд»
+  SIA_THAILAND_neutrality_DEF:0 «Таиланд»
+  SIA_THAILAND_communism:0 «Тайская народная республика»
+  SIA_THAILAND_communism_DEF:0 «Тайская народная республика»
+  SIA_THAILAND_fascism_ADJ:0 "Тайский"
+  SIA_THAILAND_democratic_ADJ:0 "Тайский"
+  SIA_THAILAND_neutrality_ADJ:0 «Тайский»
+  SIA_THAILAND_communism_ADJ:0 «Тайский»
+ BRA_IDB_fascism:0 «Империя Бразилии»
+ BRA_IDB_fascism_ADJ:0 «Бразильский»
+ BRA_IDB_fascism_DEF:0 «Империя Бразилии»
+ BRA_IDB_neutrality:0 «Империя Бразилии»
+ BRA_IDB_neutrality_ADJ:0 «Бразильский»
+ BRA_IDB_neutrality_DEF:0 «Империя Бразилии»
+ BRA_IDB_democratic:0 «Империя Бразилии»
+ BRA_IDB_democratic_ADJ:0 «Бразильский»
+ BRA_IDB_democratic_DEF:0 «Империя Бразилии»
+ BRA_IDB_communism:0 «Империя Бразилии»
+ BRA_IDB_communism_ADJ:0 «Бразильский»
+ BRA_IDB_communism_DEF:0 «Империя Бразилии»
+ 
+ PAR_BRA_autonomy_integrated_puppet:0 «Государство Западного Мату-Гросу»
+ PAR_BRA_autonomy_puppet:0 «Государство Западного Мату-Гросу»
+ PAR_BRA_autonomy_colony:0 «Территория Западного Мату-Гросу»
+ PAR_BRA_autonomy_dominion:0 «Федеральный Парагвай»
+ PAR_BRA_autonomy_integrated_puppet_DEF:0 «Государство Западного Мату-Гросу»
+ PAR_BRA_autonomy_puppet_DEF:0 «Государство Западного Мату-Гросу»
+ PAR_BRA_autonomy_colony_DEF:0 «Федеральная территория Западного Мату-Гросу»
+ PAR_BRA_autonomy_dominion_DEF:0 «Федеративная Республика Парагвай»
+ 
+ URG_BRA_autonomy_integrated_puppet:0 «Государство Цисплатин»
+ URG_BRA_autonomy_puppet:0 «Государство Цисплатин»
+ URG_BRA_autonomy_colony:0 «Территория Цисплатина»
+ URG_BRA_autonomy_dominion:0 ("Федеральный Уругвай"
+ URG_BRA_autonomy_integrated_puppet_DEF:0 «Государство Цисплатин»
+ URG_BRA_autonomy_puppet_DEF:0 «Государство Цисплатин»
+ URG_BRA_autonomy_colony_DEF:0 «Федеральная территория Цисплатини»
+ URG_BRA_autonomy_dominion_DEF:0 «Федеративная Республика Уругвай»
+ 
+ BOL_BRA_autonomy_integrated_puppet:0 «Государство Параньос»
+ BOL_BRA_autonomy_puppet:0 («Государство Параньос»
+ BOL_BRA_autonomy_colony:0 «Территория Параньоса»
+ BOL_BRA_autonomy_dominion:0 «Федеральная Боливия»
+ BOL_BRA_autonomy_integrated_puppet_DEF:0 «Государство Параньос»
+ BOL_BRA_autonomy_puppet_DEF:0 «Государство Параньос»
+ BOL_BRA_autonomy_colony_DEF:0 «Федеральная территория Параньоса»
+ BOL_BRA_autonomy_dominion_DEF:0 «Федеративная Республика Боливия»
+ 
+ SPC_fascism:0 «Националистическая Испания»
+ SPC_fascism_DEF:0 «Националистическая Испания»
+ SPC_democratic:0 «Республиканская Испания»
+ SPC_democratic_DEF:0 «Республиканская Испания»
+ SPC_neutrality:0 «Националистическая Испания»
+ SPC_neutrality_DEF:0 «Националистическая Испания»
+ SPC_communism:0 «Республиканская Испания»
+ SPC_communism_DEF:0 «Республиканская Испания»
+ SPC_fascism_ADJ:0 "Испанский"
+ SPC_democratic_ADJ:0 «Испанский»
+ SPC_neutrality_ADJ:0 «Испанский»
+ SPC_communism_ADJ:0 «Испанский»
+
+ SPF_fascism:0 "Испания"
+ SPF_fascism_DEF:0 "Испания"
+ SPF_democratic:0 «Республиканская Испания»
+ SPF_democratic_DEF:0 «Республиканская Испания»
+ SPF_neutrality:0 «Королевство Испании»
+ SPF_neutrality_DEF:0 «Королевство Испания»
+ SPF_communism:0 «Коммунистическая Испания»
+ SPF_communism_DEF:0 «Коммунистическая Испания»
+ SPF_fascism_ADJ:0 «Испанский»
+ SPF_democratic_ADJ:0 «Испанский»
+ SPF_neutrality_ADJ:0 «Испанский»
+ SPF_communism_ADJ:0 «Испанский»
+
+ SP3_fascism:0 "Испания"
+ SP3_fascism_DEF:0 "Испания"
+ SP3_democratic:0 «Республиканская Испания»
+ SP3_democratic_DEF:0 «Республиканская Испания»
+ SP3_neutrality:0 «Королевство Испании»
+ SP3_neutrality_DEF:0 «Королевство Испания»
+ SP3_communism:0 «Коммунистическая Испания»
+ SP3_communism_DEF:0 «Коммунистическая Испания»
+ SP3_fascism_ADJ:0 «Испанский»
+ SP3_democratic_ADJ:0 ("Испанский"
+ SP3_neutrality_ADJ:0 «Испанский»
+ SP3_communism_ADJ:0 «Испанский»
+
+ SPE_fascism:0 «Националистическая империя Испании»
+ SPE_fascism_DEF:0 «Националистическая империя Испании»
+ SPE_democratic:0 «Имперская республиканская Испания»
+ SPE_democratic_DEF:0 «Имперская республиканская Испания»
+ SPE_neutrality:0 «Испанская империя»
+ SPE_neutrality_DEF:0 «Испанская империя»
+ SPE_communism:0 «Международный союз Испании»
+ SPE_communism_DEF:0 «Международный союз Испании»
+ SPE_fascism_ADJ:0 «Испанский»
+ SPE_democratic_ADJ:0 «Испанский»
+ SPE_neutrality_ADJ:0 "Испанский"
+ SPE_communism_ADJ:0 «Испанский»
+
+ VNS_fascism:1 «Новая испанская хунта»
+ VNS_fascism_DEF:1 «Новая испанская хунта»
+ VNS_democratic:0 «Объединенные новые испанские государства»
+ VNS_democratic_DEF:0 «Соединенные Новые испанские государства»
+ VNS_neutrality:0 «Вице-роялтия Новой Испании»
+ VNS_neutrality_DEF:0 «Вице-королевства Новой Испании»
+ VNS_communism:1 «Новая Испанская Советская Республика»
+ VNS_communism_DEF:1 «Новая Испанская Советская Республика»
+ VNS_fascism_ADJ:0 «Новый испанский»
+ VNS_democratic_ADJ:0 «Новый испанский»
+ VNS_neutrality_ADJ:0 «Новый испанский»
+ VNS_communism_ADJ:0 «Новый испанский»
+
+ VNG_fascism:0 «Вице-роялти» Новой Гранады»
+ VNG_fascism_DEF:0 «Вице-королевства Новой Гранады»
+ VNG_democratic:0 «Вице-роялти демократической Новой Гранады»
+ VNG_democratic_DEF:0 «Вице-королевства Демократической Новой Гранады»
+ VNG_neutrality:0 «Вице-роялти» Новой Гранады»
+ VNG_neutrality_DEF:0 «Вице-королевства Новой Гранады»
+ VNG_communism:0 «Новая Гранатская Социалистическая Республика»
+ VNG_communism_DEF:0 «Новая Гранатская Социалистическая Республика»
+ VNG_fascism_ADJ:0 «Новый Гранат»
+ VNG_democratic_ADJ:0 «Новый Гранат»
+ VNG_neutrality_ADJ:0 «Новый Гранат»
+ VNG_communism_ADJ:0 «Новый Гранат»
+
+ VPU_fascism:0 «Вице-роялти Перу»
+ VPU_fascism_DEF:0 «Вице-королевства Перу»
+ VPU_democratic:0 «Вице-роялтиреспублики Республики Перу»
+ VPU_democratic_DEF:0 «Вице-королевства Республики Перу»
+ VPU_neutrality:0 «Вице-роялти Перу»
+ VPU_neutrality_DEF:0 «Вице-королевства Перу»
+ VPU_communism:0 «Революционная вице-короля Перу»
+ VPU_communism_DEF:0 «Революционная вице-короля Перу»
+ VPU_fascism_ADJ:0 «Перуаниан»
+ VPU_democratic_ADJ:0 «Перуаниан»
+ VPU_neutrality_ADJ:0 «Перуаниан»
+ VPU_communism_ADJ:0 «Перуаниан»
+
+ VRP_fascism:0 «Вице-роялтиРиоз Рио-де-ла-Плата Лига»
+ VRP_fascism_DEF:0 «Вице-королевства Рио-де-ла-Плата Лиги»
+ VRP_democratic:0 «Вице-королевства Республики Рио-де-ла-Плата»
+ VRP_democratic_DEF:0 «Вице-королевства Республики Рио-де-ла-Плата»
+ VRP_neutrality:0 «Вице-роялти Рио-де-ла-Плата»
+ VRP_neutrality_DEF:0 «Вице-королевства Рио-де-ла-Плата»
+ VRP_communism:0 «Вице-роялтиРиоз Рио-де-ла-Плата Популярес»
+ VRP_communism_DEF:0 «Вице-королевства Рио-де-ла-Плата Популярес»
+ VRP_fascism_ADJ:0 "Аргентинский"
+ VRP_democratic_ADJ:0 "Аргентинский"
+ VRP_neutrality_ADJ:0 "Аргентинский"
+ VRP_communism_ADJ:0 "Аргентинский"
+
+ ARG_BRA_autonomy_integrated_puppet:0 «Платиновые государства»
+ ARG_BRA_autonomy_puppet:0 «Платиновые государства»
+ ARG_BRA_autonomy_colony:0 «Платинские территории»
+ ARG_BRA_autonomy_dominion:0 «Федеральная Аргентина»
+ ARG_BRA_autonomy_integrated_puppet_DEF:0 «Государства Платинового бассейна»
+ ARG_BRA_autonomy_puppet_DEF:0 «Государства Платинового бассейна»
+ ARG_BRA_autonomy_colony_DEF:0 «Федеральные территории Платинового бассейна»
+ ARG_BRA_autonomy_dominion_DEF:0 «Федеративные Республики Аргентины»
+ 
+ VEN_BRA_autonomy_integrated_puppet:0 «Карибские государства»
+ VEN_BRA_autonomy_puppet:0 «Карибские государства»»
+ VEN_BRA_autonomy_colony:0 «Карибские территории»
+ VEN_BRA_autonomy_dominion:0 «Федеральный Карибский бассейн»
+ VEN_BRA_autonomy_integrated_puppet_DEF:0 «Государства Карибского бассейна»
+ VEN_BRA_autonomy_puppet_DEF:0 «Государства Карибского бассейна»
+ VEN_BRA_autonomy_colony_DEF:0 «Федеральные территории Карибского бассейна»
+ VEN_BRA_autonomy_dominion_DEF:0 «Федеративная Республика Венесуэла»
+ 
+ PAR_BRA_autonomy_reichskommissariat:0 «Государство Западного Мату-Гросу»
+ PAR_BRA_autonomy_reichsprotectorate:0 «Государство Западного Мату-Гросу»
+ PAR_BRA_autonomy_satellite:0 «Территория Западного Мату-Гросу»
+ PAR_BRA_autonomy_dominion:0 «Федеральный Парагвай»
+ PAR_BRA_autonomy_reichskommissariat_DEF:0 «Государство Западного Мату-Гросу»
+ PAR_BRA_autonomy_reichsprotectorate_DEF:0 «Государство Западного Мату-Гросу»
+ PAR_BRA_autonomy_satellite_DEF:0 «Федеральная территория Западного Мату-Гросу»
+ PAR_BRA_autonomy_dominion_DEF:0 «Федеративная Республика Парагвай»
+ 
+ URG_BRA_autonomy_reichskommissariat:0 «Государство Цисплатин»
+ URG_BRA_autonomy_reichsprotectorate:0 «Государство Цисплатин»
+ URG_BRA_autonomy_satellite:0 «Территория Цисплатина»
+ URG_BRA_autonomy_dominion:0 ("Федеральный Уругвай"
+ URG_BRA_autonomy_reichskommissariat_DEF:0 «Государство Цисплатин»
+ URG_BRA_autonomy_reichsprotectorate_DEF:0 «Государство Цисплатин»
+ URG_BRA_autonomy_satellite_DEF:0 «Федеральная территория Цисплатини»
+ URG_BRA_autonomy_dominion_DEF:0 «Федеративная Республика Уругвай»
+ 
+ BOL_BRA_autonomy_reichskommissariat:0 «Государство Параньос»
+ BOL_BRA_autonomy_reichsprotectorate:0 «Государство Параньос»
+ BOL_BRA_autonomy_satellite:0 «Территория Параньоса»
+ BOL_BRA_autonomy_dominion:0 «Федеральная Боливия»
+ BOL_BRA_autonomy_reichskommissariat_DEF:0 «Государство Параньос»
+ BOL_BRA_autonomy_reichsprotectorate_DEF:0 «Государство Параньос»
+ BOL_BRA_autonomy_satellite_DEF:0 «Федеральная территория Параньоса»
+ BOL_BRA_autonomy_dominion_DEF:0 «Федеративная Республика Боливия»
+ 
+ ARG_BRA_autonomy_reichskommissariat:0 «Платиновые государства»
+ ARG_BRA_autonomy_reichsprotectorate:0 «Платиновые государства»
+ ARG_BRA_autonomy_satellite:0 «Платинские территории»
+ ARG_BRA_autonomy_dominion:0 «Федеральная Аргентина»
+ ARG_BRA_autonomy_reichskommissariat_DEF:0 «Государства Платинового бассейна»
+ ARG_BRA_autonomy_reichsprotectorate_DEF:0 «Государства Платинового бассейна»
+ ARG_BRA_autonomy_satellite_DEF:0 «Федеральные территории Платинового бассейна»
+ ARG_BRA_autonomy_dominion_DEF:0 «Федеративные Республики Аргентины»
+ 
+ VEN_BRA_autonomy_reichskommissariat:0 «Карибские государства»»
+ VEN_BRA_autonomy_reichsprotectorate:0 «Карибские государства»»
+ VEN_BRA_autonomy_satellite:0 «Карибские территории»
+ VEN_BRA_autonomy_dominion:0 «Федеральный Карибский бассейн»
+ VEN_BRA_autonomy_reichskommissariat_DEF:0 «Государства Карибского бассейна»
+ VEN_BRA_autonomy_reichsprotectorate_DEF:0 «Государства Карибского бассейна»
+ VEN_BRA_autonomy_satellite_DEF:0 «Федеральные территории Карибского бассейна»
+ VEN_BRA_autonomy_dominion_DEF:0 «Федеративная Республика Венесуэла»
+
+ LIT_kingdom_neutrality:0 «Королевство Литовского»
+ LIT_kingdom_neutrality_ADJ:0 ("Литва")
+ LIT_kingdom_neutrality_DEF:0 ("Королевство Литовское"
+ 
+ LIT_kingdom2_neutrality:0 ("Королевство Литовского"
+ LIT_kingdom2_neutrality_ADJ:0 ("Литва")
+ LIT_kingdom2_neutrality_DEF:0 «Королевство Литовское»
+ 
+ LIT_duchy_lithuania_neutrality:0 «Кнюшей Литовской»
+ LIT_duchy_lithuania_neutrality_ADJ:0 ("Литва"
+ LIT_duchy_lithuania_neutrality_DEF:0 «Княжеское Литовское»
+ 
+ LIT_grand_duchy_lithuania_neutrality:0 «Великое княжество Литовское»
+ LIT_grand_duchy_lithuania_neutrality_ADJ:0 ("Литва")
+ LIT_grand_duchy_lithuania_neutrality_DEF:0 «Великое княжество Литовское»
+ 
+ LIT_kingdom_europa:0 «Европа Регнум»
+ 
+ IBE_UNIFIED_neutrality:0 («Иберия»»
+ IBE_UNIFIED_fascism:0 «Иберийская империя»
+ IBE_UNIFIED_democratic:0 («Иберия»»
+ IBE_UNIFIED_communism:0 «Иберийское социалистическое государство»
+ IBE_UNIFIED_neutrality_DEF:0 «Королевство Иберия»
+ IBE_UNIFIED_fascism_DEF:0 «Иберийская империя»
+ IBE_UNIFIED_democratic_DEF:0 («Иберия»»
+ IBE_UNIFIED_communism_DEF:0 «Иберийское социалистическое государство»
+ POR_UKPBA_democratic:0 (Соединенное Королевство Португалия, Бразилия и Алгарвесы)
+ POR_UKPBA_democratic_DEF:0 «Великобритания Португалия, Бразилия и Алгарвес»
+ POR_UKPBA_fascism:0 «Великобритания Португалия, Бразилия и Алгарвес»
+ POR_UKPBA_fascism_DEF:0 «Великобритания Португалия, Бразилия и Алгарвес»
+ POR_UKPBA_commumism:0 «Великобритания Португалия, Бразилия и Алгарвес»
+ POR_UKPBA_commumism_DEF:0 «Великобритания Португалия, Бразилия и Алгарвес»
+ POR_UKPBA_neutrality:0 «Великобритания Португалия, Бразилия и Алгарвес»
+ POR_UKPBA_neutrality_DEF:0 «Великобритания Португалия, Бразилия и Алгарвес»
+ POR_miguelist_restoration_fascism:0 «Португальская империя»
+ POR_miguelist_restoration_neutrality:0 «Королевство Португалии»
+ POR_miguelist_restoration_democratic:0 «Государство Португалия»
+ POR_miguelist_restoration_communism:0 «Португальская народная республика»
+ POR_miguelist_restoration_fascism_DEF:0 «Португальская империя»
+ POR_miguelist_restoration_neutrality_DEF:0 «Королевство Португалия»
+ POR_miguelist_restoration_democratic_DEF:0 «Государство Португалия»
+ POR_miguelist_restoration_communism_DEF:0 ("Португальская народная республика"
+ POR_civil_war_neutrality:0 «Национальный университет»
+ Monarchists_faction:0 «Иберийская империя»
+ Brazil_Axis:0 «Рио-пакт»
+ CIV_fascism:0 «Националистическая Испания»
+ CIV_fascism_DEF:0 «Националистическая Испания»
+ CIV_democratic:0 «Республиканская Испания»
+ CIV_democratic_DEF:0 «Республиканская Испания»
+ CIV_neutrality:0 «Карлист Испания»
+ CIV_neutrality_DEF:0 «Карлист Испания»
+ CIV_communism:0 «Республиканская Испания»
+ CIV_communism_DEF:0 «Республиканская Испания»
+ CIV_fascism_ADJ:0 «Испанский»
+ CIV_democratic_ADJ:0 «Испанский»
+ CIV_neutrality_ADJ:0 «Испанский»
+ CIV_communism_ADJ:0 «Испанский»
+ ENG_emergency_empire_democratic:0 «Имперская ассамблея»
+ ENG_emergency_empire_democratic_DEF:0 «Имперская ассамблея»
+ ENG_emergency_empire_democratic_ADJ:0 «Империал»
+ ENG_emergency_empire_neutrality:0 «Имперский совет»
+ ENG_emergency_empire_neutrality_DEF:0 «Имперский совет»
+ ENG_emergency_empire_neutrality_ADJ:0 «Империал»
+ ENG_emergency_empire_fascism:0 «Имперская республика»
+ ENG_emergency_empire_fascism_DEF:0 «Имперская республика»
+ ENG_emergency_empire_fascism_ADJ:0 «Империал»
+ ENG_emergency_empire_communism:0 «Англо Союз»
+ ENG_emergency_empire_communism_DEF:0 «Англо Союз»
+ ENG_emergency_empire_communism_ADJ:0 «Англо»
+ ENG_empire_democratic:0 «Имперское Содружество»
+ ENG_empire_democratic_DEF:0 «Имперское Содружество»
+ ENG_empire_democratic_ADJ:0 «Содружество»
+ ENG_empire_neutrality:0 «Имперская федерация»
+ ENG_empire_neutrality_DEF:0 «Имперская федерация»
+ ENG_empire_neutrality_ADJ:0 «Федерация»
+ ENG_empire_fascism:0 «Империя»
+ ENG_empire_fascism_DEF:0 «Империя»
+ ENG_empire_fascism_ADJ:0 «Империал»
+ ENG_empire_communism:0 «Союз англо-рабочих республик»
+ ENG_empire_communism_DEF:0 «Англо Союз»
+ ENG_empire_communism_ADJ:0 «Англо»
+ CSA_dixie_fascism:0 «Белое государство Дикси»
+ CSA_dixie_fascism_DEF:0 «Белая Дикси»
+ CSA_dixie_democratic:0 «Бонни Блю Дикси»
+ CSA_dixie_democratic_DEF:0 «Бонни Блю Дикси»
+ CSA_dixie_neutrality:1 «Дикси Государства»
+ CSA_dixie_neutrality_DEF:1 «Состояние Дикси»
+ CSA_dixie_communism:0 «Социалистические государства Дикси»
+ CSA_dixie_communism_DEF:0 «Социалистическая Дикси»
+ CSA_dixie_fascism_ADJ:0 ("Дикси")
+ CSA_dixie_democratic_ADJ:0 «Дикси»
+ CSA_dixie_neutrality_ADJ:0 ("Дикси")
+ CSA_dixie_communism_ADJ:0 «Дикси»
+ CSA_dixie:0 «Диксиленд»
+ CSA_dixie_DEF:0 «Дикси»
+ CSA_dixie_ADJ:0 "Дикси"
+
+ GER_monarchy:0 "Германская империя"
+ GER_monarchy_DEF:0 «Германская империя»
+ ENG_monarchy:0 «Королевство Англии»
+ ENG_monarchy_DEF:0 «Королевство Англии»
+ SOV_monarchy:0 «Русское царство»
+ SOV_monarchy_DEF:0 «Русское царство»
+ SOV_monarchy_ADJ:0 «Русский»
+ SWE_monarchy:0 «Королевство Швеции»
+ SWE_monarchy_DEF:0 «Королевство Швеции»
+ FRA_monarchy:0 «Французская империя»
+ FRA_monarchy_DEF:0 «Французская империя»
+ LUX_monarchy:0 «Королевство Люксембурга»
+ LUX_monarchy_DEF:0 «Герцогство Люксембург»
+ BEL_monarchy:0 «Королевство Бельгии»
+ BEL_monarchy_DEF:0 «Королевство Бельгия»
+ HOL_monarchy:0 «Королевство Нидерландов»
+ HOL_monarchy_DEF:0 «Королевство Нидерландов»
+ SPR_monarchy:0 «Королевство Испании»
+ SPR_monarchy_DEF:0 «Королевство Испания»
+ ITA_monarchy:0 «Королевство Италии»
+ ITA_monarchy_DEF:0 «Королевство Италии»
+ ROM_monarchy:0 «Королевство Румыния»
+ ROM_monarchy_DEF:0 «Королевство Румыния»
+ YUG_monarchy:0 «Королевство Сербии»
+ YUG_monarchy_DEF:0 «Королевство Сербия»
+ GRE_monarchy_DEF:0 «Королевство Греция»
+ GRE_monarchy:0 «Королевство Греция»
+ GRE_monarchy_fascism_DEF:0 «Королевство Греция»
+ ALB_monarchy:0 «Королевство Албании»
+ ALB_monarchy_DEF:0 «Королевство Албания»
+ NOR_monarchy:0 "Королевство Норвегия"
+ NOR_monarchy_DEF:0 «Королевство Норвегия»
+ DEN_monarchy:0 «Королевство Дании»
+ DEN_monarchy_DEF:0 «Королевство Дании»
+ BUL_monarchy:0 «Болгарский Царь»
+ BUL_monarchy_DEF:0 «Болгарское царство»
+ HUN_monarchy:0 «Королевство Венгрии»
+ HUN_monarchy_DEF:0 «Королевство Венгрии»
+ FIN_monarchy:0 «Королевство Финляндии»
+ FIN_monarchy_DEF:0 «Королевство Финляндии»

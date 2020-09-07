@@ -1,0 +1,71 @@
+
+bitmapfonts = {
+
+	textcolors = {
+		M = { 35 206 255 }
+		L = { 195 176 145 }
+		W = { 255 255 255 }
+		B = { 0 0 255 }
+		G = { 0 159 3 }
+		R = { 255 50 50 }
+		b = { 0 0 0 }
+		g = { 176 176 176 }
+		Y = { 255 189 0 }
+		H = { 255 189 0 }
+		T = { 255 255 255 }
+	}
+    bitmapfont = {
+		name = "hoi_16reworked"
+#		path = "gfx/fonts/hoi_16reworked"
+		fontfiles = { 
+		"gfx/fonts/hoi_16reworked" 
+		"gfx/fonts/hoi_16mbs_cryllic" 
+		}		
+		color = 0xffffffff
+
+		textcolors = {
+			G = { 86 172 91 }
+			R = { 222 86 70 }
+			Y = { 238 201 35 }
+			H = { 238 201 35 }
+			T = { 255 255 255 }
+		}
+	}
+    
+	bitmapfont = {
+		name = "hoi_18reworked"
+#		path = "gfx/fonts/hoi_18reworked"
+		fontfiles = { 
+		"gfx/fonts/hoi_18reworked" 
+		"gfx/fonts/hoi_16mbs_cryllic"
+		}		
+		color = 0xffffffff
+
+		textcolors = {
+			G = { 86 172 91 }
+			R = { 222 86 70 }
+			Y = { 238 201 35 }
+			H = { 238 201 35 }
+			T = { 255 255 255 }
+		}
+	}
+
+	bitmapfont = {
+		name = "hoi_14reworked"
+#		path = "gfx/fonts/hoi_14reworked"
+		fontfiles = { 
+		"gfx/fonts/hoi_14reworked" 
+		"gfx/fonts/hoi_16mbs_cryllic"
+		}		
+		color = 0xffffffff
+
+		textcolors = {
+			G = { 86 172 91 }
+			R = { 222 86 70 }
+			Y = { 238 201 35 }
+			H = { 238 201 35 }
+			T = { 255 255 255 }
+		}
+	}
+}
+

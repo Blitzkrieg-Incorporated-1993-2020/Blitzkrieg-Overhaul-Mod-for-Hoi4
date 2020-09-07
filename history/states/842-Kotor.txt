@@ -1,0 +1,22 @@
+state={
+	id=842
+	name="STATE_842"
+
+	history={
+		owner = YUG
+		buildings = {
+			infrastructure = 4
+
+		}
+		add_core_of = YUG
+		add_core_of = MNT
+
+	}
+
+	provinces={
+		9821 
+	}
+	manpower=7943
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

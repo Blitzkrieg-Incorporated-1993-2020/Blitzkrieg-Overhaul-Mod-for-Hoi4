@@ -1,0 +1,16 @@
+spriteTypes = {	
+
+	spriteType = {
+		name = "GFX_make_core_progress_bar"
+		texturefile = "gfx/interface/navalrepairview/repair_progress_bar.dds"
+	}
+	spriteType = {
+		name = "GFX_make_core_progress_bar_bg"
+		texturefile = "gfx/interface/navalrepairview/repair_progress_bar_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_claim_power"
+		texturefile = "gfx/interface/relations/relation_justifing_wargoal.dds"
+		legacy_lazy_load = no
+	}
+}

@@ -1,0 +1,208 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "Anti-Fascist Regiment" 
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+	name = "Anti-Fascist Armored Brigades" 
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+
+units = {
+	division= {			
+		name = "1st Anti-Fascist Armored Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Armored Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.1
+
+	}	
+	division= {			
+		name = "2nd Anti-Fascist Armored Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Armored Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.1
+
+	}	
+
+	division= {			
+		name = "1st Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "2nd Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}
+	division= {			
+		name = "3rd Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "4th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "5th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "6th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "7th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "8th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "9th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "10th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}			
+	division= {			
+		name = "11th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "12th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "13th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "14th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "15th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "16th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "17th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "18th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "19th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "20th Anti-Fascist Regiment"		
+		location = 9671
+		division_template = "Anti-Fascist Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}			
+	
+}
