@@ -1,0 +1,1203 @@
+﻿###########################
+# AI Workaround
+###########################
+# This file has been created as a temporary work around for AI in NWO.
+# Until I can find how to make the AI actually work, events will prompt the AI to change their laws.
+# Far from ideal, but better than nothing.
+###########################
+
+add_namespace = ai
+
+country_event = {		## War Bonds
+    id = ai.1
+    hidden = yes
+    
+	mean_time_to_happen = { days = 2 }
+	
+    trigger = { 
+    	any_country = {
+    		is_ai = yes
+    		has_war = yes
+			has_political_power > 150
+    		OR = {
+    			AND = {
+    				NOT = { has_idea = bonds_basic }
+    				NOT = { has_idea = bonds_war_public }
+    				NOT = { has_idea = bonds_print }
+					OR = {
+						has_war = yes
+						has_government = fascism
+						has_government = communism
+					}
+    			}
+    			AND = {
+    				NOT = { has_idea = bonds_war_public }
+    				NOT = { has_idea = bonds_print }
+					has_war = yes
+					OR = {
+						has_country_flag = is_in_world_war
+						surrender_progress > 0.1
+						has_country_flag = missing_core_territory
+					}
+					OR = {
+						has_idea = unity_broken_nation
+						has_idea = unity_divided_nation
+						has_idea = unity_united_nation
+					}
+    			}
+    			AND = {
+    				NOT = { has_idea = bonds_print }
+					has_war = yes
+					OR = {
+						surrender_progress > 0.2
+						has_country_flag = missing_core_territory
+					}
+					OR = {
+						has_idea = unity_divided_nation
+						has_idea = unity_united_nation
+					}
+    			}
+    		}
+    	}
+    }
+    
+    option = {
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+	    		has_war = yes
+    			has_political_power > 150
+				NOT = { has_idea = bonds_basic }
+				NOT = { has_idea = bonds_war_public }
+				NOT = { has_idea = bonds_print }
+				OR = {
+					has_war = yes
+					has_government = fascism
+					has_government = communism
+				}
+	    	}
+	        add_ideas = bonds_basic
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+	    		has_war = yes
+    			has_political_power > 150
+				NOT = { has_idea = bonds_war_public }
+				NOT = { has_idea = bonds_print }
+				has_war = yes
+				OR = {
+					has_country_flag = is_in_world_war
+					surrender_progress > 0.1
+					has_country_flag = missing_core_territory
+				}
+				OR = {
+					has_idea = unity_broken_nation
+					has_idea = unity_divided_nation
+					has_idea = unity_united_nation
+				}
+	    	}
+	        add_ideas = bonds_war_public
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+	    		has_war = yes
+    			has_political_power > 150
+				NOT = { has_idea = bonds_print }
+				has_war = yes
+				OR = {
+					surrender_progress > 0.2
+					has_country_flag = missing_core_territory
+				}
+				OR = {
+					has_idea = unity_divided_nation
+					has_idea = unity_united_nation
+				}
+	    	}
+	        add_ideas = bonds_print
+			add_political_power = -150
+    	}
+    }
+} 
+
+country_event = {
+    id = ai.2			## Manpower
+    hidden = yes
+    
+	mean_time_to_happen = { days = 2 }
+	
+    trigger = { 
+    	any_country = {
+	        is_ai = yes
+	        has_war = yes
+	        is_major = no
+	        has_manpower < 5000
+			has_political_power > 150
+    		OR = {
+    			AND = {
+    				NOT = { has_idea = volunteer_only }
+    				NOT = { has_idea = limited_conscription }
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+    			}
+    			AND = {
+    				NOT = { has_idea = limited_conscription }
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					has_war_support > 0.1
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+    			}
+    			AND = {
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					OR = {
+						has_war = yes
+						has_government = fascism
+						has_government = unionism
+						has_government = communism		
+					}
+					has_war_support > 0.3
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+    			}
+    			AND = {
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					has_war_support > 0.5
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					OR = {
+						surrender_progress > 0.1
+						has_government = fascism
+						has_government = unionism
+						has_government = communism
+						has_government = neutrality
+						has_government = monarchism
+					}
+    			}
+    			AND = {
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					has_war = yes
+					OR = {
+						has_war_support > 0.7
+						surrender_progress > 0.3
+					}
+    			}
+    			AND = {
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = etgi_laws_leadership_structure_2 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					has_war = yes
+					OR = {
+						has_war_support > 0.9
+						surrender_progress > 0.5
+					}
+    			}
+    		}
+    	}
+    }
+    
+    option = {
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+		        has_war = yes
+		        is_major = no
+		        has_manpower < 5000
+    			has_political_power > 150
+    			AND = {
+    				NOT = { has_idea = volunteer_only }
+    				NOT = { has_idea = limited_conscription }
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+    			}
+	    	}
+	        add_ideas = volunteer_only
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+		        has_war = yes
+		        is_major = no
+		        has_manpower < 5000
+    			has_political_power > 150
+    			AND = {
+    				NOT = { has_idea = limited_conscription }
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					has_war_support > 0.1
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+    			}
+	    	}
+	        add_ideas = limited_conscription
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+		        has_war = yes
+		        is_major = no
+		        has_manpower < 5000
+    			has_political_power > 150
+    			AND = {
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					OR = {
+						has_war = yes
+						has_government = fascism
+						has_government = unionism
+						has_government = communism		
+					}
+					has_war_support > 0.3
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+    			}
+	    	}
+	        add_ideas = extensive_conscription
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+		        has_war = yes
+		        is_major = no
+		        has_manpower < 5000
+    			has_political_power > 150
+    			AND = {
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					has_war_support > 0.5
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					OR = {
+						surrender_progress > 0.1
+						has_government = fascism
+						has_government = unionism
+						has_government = communism
+						has_government = neutrality
+						has_government = monarchism
+					}
+    			}
+	    	}
+	        add_ideas = service_by_requirement
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+		        has_war = yes
+		        is_major = no
+		        has_manpower < 5000
+    			has_political_power > 150
+    			AND = {
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					has_war = yes
+					OR = {
+						has_war_support > 0.7
+						surrender_progress > 0.3
+					}
+    			}
+	    	}
+	        add_ideas = all_adults_serve
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+		        has_war = yes
+		        is_major = no
+		        has_manpower < 5000
+    			has_political_power > 150
+    			AND = {
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = etgi_laws_leadership_structure_2 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					has_war = yes
+					OR = {
+						has_war_support > 0.9
+						surrender_progress > 0.5
+					}
+    			}
+	    	}
+	        add_ideas = scraping_the_barrel
+			add_political_power = -150
+    	}
+    }
+} 
+
+country_event = {
+    id = ai.3			# Big Boi Manpower
+    hidden = yes
+    
+	mean_time_to_happen = { days = 2 }
+	
+    trigger = {
+    	any_country = {
+	        is_ai = yes
+	        has_war = yes
+	        is_major = yes
+			has_political_power > 150
+	        has_manpower < 100000
+	        is_literally_russia = no
+	        is_literally_china_proper = no
+    		OR = {
+    			AND = {
+    				NOT = { has_idea = volunteer_only }
+    				NOT = { has_idea = limited_conscription }
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+    			}
+    			AND = {
+    				NOT = { has_idea = limited_conscription }
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					has_war_support > 0.1
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+    			}
+    			AND = {
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					OR = {
+						has_war = yes
+						has_government = fascism
+						has_government = unionism
+						has_government = communism		
+					}
+					has_war_support > 0.3
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+    			}
+    			AND = {
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					has_war_support > 0.5
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					OR = {
+						surrender_progress > 0.1
+						has_government = fascism
+						has_government = unionism
+						has_government = communism
+						has_government = neutrality
+						has_government = monarchism
+					}
+    			}
+    			AND = {
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					has_war = yes
+					OR = {
+						has_war_support > 0.7
+						surrender_progress > 0.3
+					}
+    			}
+    			AND = {
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = etgi_laws_leadership_structure_2 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					has_war = yes
+					OR = {
+						has_war_support > 0.9
+						surrender_progress > 0.5
+					}
+    			}
+    		}
+    	}
+    }
+    
+    option = {
+    	every_country = {
+    		limit = {
+		        is_ai = yes
+		        has_war = yes
+		        is_major = yes
+    			has_political_power > 150
+		        has_manpower < 100000
+		        is_literally_russia = no
+		        is_literally_china_proper = no
+    			AND = {
+    				NOT = { has_idea = volunteer_only }
+    				NOT = { has_idea = limited_conscription }
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+    			}
+	    	}
+	        add_ideas = volunteer_only
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+		        is_ai = yes
+		        has_war = yes
+		        is_major = yes
+    			has_political_power > 150
+		        has_manpower < 100000
+		        is_literally_russia = no
+		        is_literally_china_proper = no
+    			AND = {
+    				NOT = { has_idea = limited_conscription }
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					has_war_support > 0.1
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+    			}
+	    	}
+	        add_ideas = limited_conscription
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+		        is_ai = yes
+		        has_war = yes
+		        is_major = yes
+    			has_political_power > 150
+		        has_manpower < 100000
+		        is_literally_russia = no
+		        is_literally_china_proper = no
+    			AND = {
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					OR = {
+						has_war = yes
+						has_government = fascism
+						has_government = unionism
+						has_government = communism		
+					}
+					has_war_support > 0.3
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+    			}
+	    	}
+	        add_ideas = extensive_conscription
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+		        is_ai = yes
+		        has_war = yes
+		        is_major = yes
+    			has_political_power > 150
+		        has_manpower < 100000
+		        is_literally_russia = no
+		        is_literally_china_proper = no
+    			AND = {
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					has_war_support > 0.5
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					OR = {
+						surrender_progress > 0.1
+						has_government = fascism
+						has_government = unionism
+						has_government = communism
+						has_government = neutrality
+						has_government = monarchism
+					}
+    			}
+	    	}
+	        add_ideas = service_by_requirement
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+		        is_ai = yes
+		        has_war = yes
+		        is_major = yes
+    			has_political_power > 150
+		        has_manpower < 100000
+		        is_literally_russia = no
+		        is_literally_china_proper = no
+    			AND = {
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					has_war = yes
+					OR = {
+						has_war_support > 0.7
+						surrender_progress > 0.3
+					}
+    			}
+	    	}
+	        add_ideas = all_adults_serve
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+		        is_ai = yes
+		        has_war = yes
+		        is_major = yes
+    			has_political_power > 150
+		        has_manpower < 100000
+		        is_literally_russia = no
+		        is_literally_china_proper = no
+    			AND = {
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = etgi_laws_leadership_structure_2 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					has_war = yes
+					OR = {
+						has_war_support > 0.9
+						surrender_progress > 0.5
+					}
+    			}
+	    	}
+	        add_ideas = scraping_the_barrel
+			add_political_power = -150
+    	}
+    }
+} 
+
+country_event = {
+    id = ai.4			## Chinese and Russian Manpower
+    hidden = yes
+    
+	mean_time_to_happen = { days = 2 }
+	
+    trigger = {
+    	any_country = {
+	        is_ai = yes
+	        has_war = yes
+	        is_major = yes
+			has_political_power > 150
+	        has_manpower < 1000000
+	        OR = {
+	        	is_literally_russia = yes
+	        	is_literally_china_proper = yes
+	        }
+    		OR = {
+    			AND = {
+    				NOT = { has_idea = volunteer_only }
+    				NOT = { has_idea = limited_conscription }
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+    			}
+    			AND = {
+    				NOT = { has_idea = limited_conscription }
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					has_war_support > 0.1
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+    			}
+    			AND = {
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					OR = {
+						has_war = yes
+						has_government = fascism
+						has_government = unionism
+						has_government = communism		
+					}
+					has_war_support > 0.3
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+    			}
+    			AND = {
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					has_war_support > 0.5
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					OR = {
+						surrender_progress > 0.1
+						has_government = fascism
+						has_government = unionism
+						has_government = communism
+						has_government = neutrality
+						has_government = monarchism
+					}
+    			}
+    			AND = {
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					has_war = yes
+					OR = {
+						has_war_support > 0.7
+						surrender_progress > 0.3
+					}
+    			}
+    			AND = {
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = etgi_laws_leadership_structure_2 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					has_war = yes
+					OR = {
+						has_war_support > 0.9
+						surrender_progress > 0.5
+					}
+    			}
+    		}
+    	}
+    }
+    
+    option = {
+    	every_country = {
+    		limit = {
+		        is_ai = yes
+		        has_war = yes
+		        is_major = yes
+    			has_political_power > 150
+		        has_manpower < 1000000
+		        OR = {
+		        	is_literally_russia = yes
+		        	is_literally_china_proper = yes
+		        }
+    			AND = {
+    				NOT = { has_idea = volunteer_only }
+    				NOT = { has_idea = limited_conscription }
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+    			}
+	    	}
+	        add_ideas = volunteer_only
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+		        is_ai = yes
+		        has_war = yes
+		        is_major = yes
+    			has_political_power > 150
+		        has_manpower < 1000000
+		        OR = {
+		        	is_literally_russia = yes
+		        	is_literally_china_proper = yes
+		        }
+    			AND = {
+    				NOT = { has_idea = limited_conscription }
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					has_war_support > 0.1
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+    			}
+	    	}
+	        add_ideas = limited_conscription
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+		        is_ai = yes
+		        has_war = yes
+		        is_major = yes
+    			has_political_power > 150
+		        has_manpower < 1000000
+		        OR = {
+		        	is_literally_russia = yes
+		        	is_literally_china_proper = yes
+		        }
+    			AND = {
+    				NOT = { has_idea = extensive_conscription }
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					OR = {
+						has_war = yes
+						has_government = fascism
+						has_government = unionism
+						has_government = communism		
+					}
+					has_war_support > 0.3
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+    			}
+	    	}
+	        add_ideas = extensive_conscription
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+		        is_ai = yes
+		        has_war = yes
+		        is_major = yes
+    			has_political_power > 150
+		        has_manpower < 1000000
+		        OR = {
+		        	is_literally_russia = yes
+		        	is_literally_china_proper = yes
+		        }
+    			AND = {
+    				NOT = { has_idea = service_by_requirement }
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					has_war_support > 0.5
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					OR = {
+						surrender_progress > 0.1
+						has_government = fascism
+						has_government = unionism
+						has_government = communism
+						has_government = neutrality
+						has_government = monarchism
+					}
+    			}
+	    	}
+	        add_ideas = service_by_requirement
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+		        is_ai = yes
+		        has_war = yes
+		        is_major = yes
+    			has_political_power > 150
+		        has_manpower < 1000000
+		        OR = {
+		        	is_literally_russia = yes
+		        	is_literally_china_proper = yes
+		        }
+    			AND = {
+    				NOT = { has_idea = all_adults_serve }
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					has_war = yes
+					OR = {
+						has_war_support > 0.7
+						surrender_progress > 0.3
+					}
+    			}
+	    	}
+	        add_ideas = all_adults_serve
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+		        is_ai = yes
+		        has_war = yes
+		        is_major = yes
+    			has_political_power > 150
+		        has_manpower < 1000000
+		        OR = {
+		        	is_literally_russia = yes
+		        	is_literally_china_proper = yes
+		        }
+    			AND = {
+    				NOT = { has_idea = scraping_the_barrel }
+					NOT = { has_idea = etgi_laws_leadership_structure_d }
+					NOT = { has_idea = etgi_laws_leadership_structure_1 }
+					NOT = { has_idea = etgi_laws_leadership_structure_2 }
+					NOT = { has_idea = HUN_treaty_of_triannon }
+					NOT = { has_idea = great_depression }
+					has_war = yes
+					OR = {
+						has_war_support > 0.9
+						surrender_progress > 0.5
+					}
+    			}
+	    	}
+	        add_ideas = scraping_the_barrel
+			add_political_power = -150
+    	}
+    }
+} 
+
+country_event = {
+    id = ai.5			## Military Investment
+    hidden = yes
+    
+	mean_time_to_happen = { days = 20 }
+	
+    trigger = { 
+    	any_country = {
+    		is_ai = yes
+    		has_war = yes
+			OR = {
+    			is_major = yes
+				has_political_power > 150
+    		}
+    		OR = {
+    			AND = {
+    				NOT = { has_idea = unity_broken_nation }
+    				NOT = { has_idea = unity_divided_nation }
+    				NOT = { has_idea = unity_united_nation }
+					OR = {
+						has_war_support > 0.8
+						has_war = yes
+						AND = {
+							threat > 0.95
+							is_major = yes
+							any_country = {
+								has_country_flag = is_in_world_war
+							}
+						}
+					}	
+					OR = {
+						has_idea = tax_average
+						has_idea = tax_high
+						has_idea = tax_extreme
+					}
+    			}
+    			AND = {
+    				NOT = { has_idea = unity_divided_nation }
+    				NOT = { has_idea = unity_united_nation }
+					has_war_support > 0.95
+					has_war = yes	
+					OR = {
+						has_idea = tax_high
+						has_idea = tax_extreme
+					}
+				}
+    			AND = {
+    				NOT = { has_idea = unity_united_nation }
+					has_war = yes
+					has_idea = tax_extreme
+				}
+    		}
+    	}
+    }
+    
+    option = {
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+	    		has_war = yes
+    			OR = {
+	    			is_major = yes
+					has_political_power > 150
+	    		}
+				NOT = { has_idea = unity_broken_nation }
+				NOT = { has_idea = unity_divided_nation }
+				NOT = { has_idea = unity_united_nation }
+				OR = {
+					has_war_support > 0.8
+					has_war = yes
+					AND = {
+						threat > 0.95
+						is_major = yes
+						any_country = {
+							has_country_flag = is_in_world_war
+						}
+					}
+				}	
+				OR = {
+					has_idea = tax_average
+					has_idea = tax_high
+					has_idea = tax_extreme
+				}
+    		}
+	        add_ideas = unity_broken_nation
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+	    		has_war = yes
+    			OR = {
+	    			is_major = yes
+					has_political_power > 150
+	    		}
+				NOT = { has_idea = unity_divided_nation }
+				NOT = { has_idea = unity_united_nation }
+				has_war_support > 0.95
+				has_war = yes	
+				OR = {
+					has_idea = tax_high
+					has_idea = tax_extreme
+				}
+    		}
+	        add_ideas = unity_divided_nation
+			add_political_power = -150
+    	}
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+	    		has_war = yes
+    			OR = {
+	    			is_major = yes
+					has_political_power > 150
+	    		}
+				NOT = { has_idea = unity_united_nation }
+				has_idea = tax_extreme
+    		}
+	        add_ideas = unity_united_nation
+			add_political_power = -150
+    	}
+    }
+} 
+
+country_event = {
+    id = ai.6			## War Readiness
+    hidden = yes
+    
+	mean_time_to_happen = { days = 2 }
+	
+    trigger = { 
+    	any_country = {
+    		is_ai = yes
+    		has_war = yes
+			OR = {
+    			is_major = yes
+				has_political_power > 50
+    		}
+    		OR = {
+    			AND = {
+		    		NOT = { has_idea = mob_standing }
+		    		NOT = { has_idea = mob_limited }
+		    		NOT = { has_idea = mob_general }
+					OR = {
+						has_idea = unity_broken_nation
+						has_idea = unity_divided_nation
+						has_idea = unity_united_nation
+					}
+    			}
+    			AND = {
+		    		NOT = { has_idea = mob_limited }
+		    		NOT = { has_idea = mob_general }
+					OR = {
+						has_idea = unity_broken_nation
+						has_idea = unity_divided_nation
+						has_idea = unity_united_nation
+					}
+					OR = {
+						has_war = yes
+						is_major = yes
+						threat > 0.5
+						any_country = { is_justifying_wargoal_against = ROOT }
+						any_country = { ROOT = { is_justifying_wargoal_against = PREV } }
+					}
+    			}
+    			AND = {
+		    		NOT = { has_idea = mob_general }
+					OR = {
+						has_idea = unity_divided_nation
+						has_idea = unity_united_nation
+					}	
+					OR = {
+						has_war = yes
+						threat > 0.9
+						any_country = { is_justifying_wargoal_against = ROOT }
+						any_country = { ROOT = { is_justifying_wargoal_against = PREV } }
+					}	
+    			}
+    		}
+    	}
+    }
+    
+    option = {
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+	    		has_war = yes
+				OR = {
+	    			is_major = yes
+					has_political_power > 50
+	    		}
+	    		NOT = { has_idea = mob_standing }
+	    		NOT = { has_idea = mob_limited }
+	    		NOT = { has_idea = mob_general }
+				OR = {
+					has_idea = unity_broken_nation
+					has_idea = unity_divided_nation
+					has_idea = unity_united_nation
+				}
+    		}
+	        add_ideas = mob_standing
+			add_political_power = -50
+    	}
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+	    		has_war = yes
+				OR = {
+	    			is_major = yes
+					has_political_power > 50
+	    		}
+	    		NOT = { has_idea = mob_limited }
+	    		NOT = { has_idea = mob_general }
+				OR = {
+					has_idea = unity_broken_nation
+					has_idea = unity_divided_nation
+					has_idea = unity_united_nation
+				}
+				OR = {
+					has_war = yes
+					is_major = yes
+					threat > 0.5
+					any_country = { is_justifying_wargoal_against = ROOT }
+					any_country = { ROOT = { is_justifying_wargoal_against = PREV } }
+				}
+    		}
+	        add_ideas = mob_limited
+			add_political_power = -50
+    	}
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+	    		has_war = yes
+				OR = {
+	    			is_major = yes
+					has_political_power > 50
+	    		}
+	    		NOT = { has_idea = mob_general }
+				OR = {
+					has_idea = unity_divided_nation
+					has_idea = unity_united_nation
+				}	
+				OR = {
+					has_war = yes
+					threat > 0.9
+					any_country = { is_justifying_wargoal_against = ROOT }
+					any_country = { ROOT = { is_justifying_wargoal_against = PREV } }
+				}	
+    		}
+	        add_ideas = mob_general
+			add_political_power = -50
+    	}
+    }
+} 
+
+country_event = {
+    id = ai.7
+    hidden = yes
+    
+	mean_time_to_happen = { days = 20 }
+	
+    trigger = { 
+    	any_country = {
+    		is_ai = yes
+    		has_war = yes
+			is_past_division_limit = no 
+    		NOT = {
+    			OR = {
+    				has_idea = tax_high
+    				has_idea = tax_extreme
+    			}
+    		}
+    	}
+    }
+    
+    option = {
+    	every_country = {
+    		limit = {
+	    		is_ai = yes
+	    		has_war = yes
+				is_past_division_limit = no 
+	    		NOT = {
+	    			OR = {
+	    				has_idea = tax_high
+	    				has_idea = tax_extreme
+	    			}
+	    		}
+    		}
+	        add_ideas = tax_high
+    	}
+    }
+} 

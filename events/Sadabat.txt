@@ -1,0 +1,248 @@
+﻿###########################
+# Sadabat Events
+###########################
+
+add_namespace = sadabat
+
+#Turkey Seeks Alliance With ROOT
+#Event fired by Turkey seeking to make a Gulf faction
+country_event = {
+	id = sadabat.7
+	title = sadabat.7.t
+	desc = sadabat.7.d
+	picture = GFX_news_event_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = { #Enter alliance
+		name = sadabat.7.a
+		ai_chance = {
+			factor = 90
+		}
+		TUR = {
+			add_to_faction = ROOT
+			country_event = { id = turkey.10 days = 1 }
+		}
+	}
+
+	option = {
+		name = sadabat.7.b
+		ai_chance = {
+			factor = 10
+		}
+		TUR = {
+			country_event = { id = turkey.11 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = sadabat.31
+	title = sadabat.31.t
+	desc = sadabat.31.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = sadabat.31.a
+		ai_chance = { factor = 90 }
+		TUR = {
+			country_event = { days = 1 id = turkey.22 }
+			}
+		}
+	option = { # Refuse
+		name = sadabat.31.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				}
+			}
+			effect_tooltip = {
+				TUR = {
+					create_wargoal = {
+					type = take_state_focus
+					target = FRA
+					generator = { 763 }
+					}
+					country_event = { days = 1 id = turkey.23 }
+				}
+			}
+			hidden_effect = {
+				TUR = {
+					country_event = { days = 1 id = turkey.23 }
+				}
+			}
+		}
+	}
+	
+country_event = {
+	id = sadabat.32
+	title = sadabat.32.t
+	desc = sadabat.32.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = sadabat.32.a
+		ai_chance = { factor = 90 }
+		TUR = {
+			country_event = { days = 1 id = turkey.24 }
+			}
+		}
+	option = { # Refuse
+		name = sadabat.32.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				}
+			}
+			effect_tooltip = {
+				TUR = {
+					create_wargoal = {
+					type = take_state_focus
+					target = FRA
+					generator = { 677 }
+					}
+					country_event = { days = 1 id = turkey.25 }
+				}
+			}
+			hidden_effect = {
+				TUR = {
+					country_event = { days = 1 id = turkey.25 }
+				}
+			}
+		}
+	}
+	
+country_event = {
+	id = sadabat.33
+	title = sadabat.33.t
+	desc = sadabat.33.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = sadabat.33.a
+		ai_chance = { factor = 90 }
+		TUR = {
+			country_event = { days = 1 id = turkey.26 }
+			}
+		}
+	option = { # Refuse
+		name = sadabat.33.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				}
+			}
+			effect_tooltip = {
+				TUR = {
+					create_wargoal = {
+					type = take_state_focus
+					target = ENG
+					generator = { 183 }
+					}
+					country_event = { days = 1 id = turkey.27 }
+				}
+			}
+			hidden_effect = {
+				TUR = {
+					country_event = { days = 1 id = turkey.27 }
+				}
+			}
+		}
+	}
+	
+country_event = {
+	id = sadabat.34
+	title = sadabat.34.t
+	desc = sadabat.34.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = sadabat.34.a
+		ai_chance = { factor = 90 }
+		TUR = {
+			country_event = { days = 1 id = turkey.28 }
+			}
+		}
+	option = { # Refuse
+		name = sadabat.34.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				}
+			}
+			effect_tooltip = {
+				TUR = {
+					create_wargoal = {
+					type = take_state_focus
+					target = ITA
+					generator = { 164 }
+					}
+					country_event = { days = 1 id = turkey.29 }
+				}
+			}
+			hidden_effect = {
+				TUR = {
+					country_event = { days = 1 id = turkey.29 }
+				}
+			}
+		}
+	}
+	
+country_event = {
+	id = sadabat.35
+	title = sadabat.35.t
+	desc = sadabat.35.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = sadabat.35.a
+		ai_chance = { factor = 90 }
+		TUR = {
+			country_event = { days = 1 id = turkey.33 }
+			}
+		}
+	option = { # Refuse
+		name = sadabat.35.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				}
+			}
+			effect_tooltip = {
+				TUR = {
+					create_wargoal = {
+					type = take_state_focus
+					target = ENG
+					generator = { 656 }
+					}
+					country_event = { days = 1 id = turkey.34 }
+				}
+			}
+			hidden_effect = {
+				TUR = {
+					country_event = { days = 1 id = turkey.34 }
+				}
+			}
+		}
+	}
+

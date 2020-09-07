@@ -1,0 +1,98 @@
+
+add_namespace = nos_elections
+
+country_event = {
+	id = nos_elections.2
+	title = nos_elections.2.t
+	desc = nos_elections.2.d
+	picture = GFX_report_event_bunker_01
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nos_elections.2.a
+		trigger = { 
+			has_government = conservative 
+			democratic > 0.2
+		}
+		add_popularity = { ideology = conservative popularity = 0.05 }
+		add_popularity = { ideology = democratic popularity = 0.05 }
+		add_timed_idea = {
+			idea = liberal_conservative_government
+			days = 1800
+		}
+	}
+	option = {
+		name = nos_elections.2.b
+		trigger = { 
+			has_government = conservative 
+			OR = {
+				neutrality > 0.2
+				fascism > 0.2
+			}
+		}
+		add_popularity = { ideology = conservative popularity = 0.1 }
+		add_popularity = { ideology = neutrality popularity = 0.05 }
+		add_popularity = { ideology = fascism popularity = 0.05 }
+		add_timed_idea = {
+			idea = rightist_conservative_government
+			days = 1800
+		}
+	}
+	option = {
+		name = nos_elections.2.c
+		trigger = { 
+			has_government = democratic 
+			conservative > 0.2
+		}
+		add_popularity = { ideology = conservative popularity = 0.05 }
+		add_popularity = { ideology = democratic popularity = 0.05 }
+		add_timed_idea = {
+			idea = liberal_conservative_government
+			days = 1800
+		}
+	}
+	option = {
+		name = nos_elections.2.d
+		trigger = { 
+			has_government = democratic 
+			social_democracy > 0.2
+		}
+		add_popularity = { ideology = social_democracy popularity = 0.05 }
+		add_popularity = { ideology = democratic popularity = 0.05 }
+		add_timed_idea = {
+			idea = liberal_social_democrat_government
+			days = 1800
+		}
+	}
+	option = {
+		name = nos_elections.2.e
+		trigger = { 
+			has_government = social_democracy 
+			democratic > 0.2
+		}
+		add_popularity = { ideology = social_democracy popularity = 0.05 }
+		add_popularity = { ideology = democratic popularity = 0.05 }
+		add_timed_idea = {
+			idea = liberal_social_democrat_government
+			days = 1800
+		}
+	}
+	option = {
+		name = nos_elections.2.f
+		trigger = { 
+			has_government = social_democracy 
+			OR = {
+				unionism > 0.2
+				communism > 0.2
+			}
+		}
+		add_popularity = { ideology = social_democracy popularity = 0.1 }
+		add_popularity = { ideology = unionism popularity = 0.05 }
+		add_popularity = { ideology = communism popularity = 0.05 }
+		add_timed_idea = {
+			idea = leftist_social_democrat_government
+			days = 1800
+		}
+	}
+}

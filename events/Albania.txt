@@ -1,0 +1,328 @@
+###########################
+# Albania Events
+###########################
+
+add_namespace = albania
+
+
+# Pact with Yugoslavia
+
+country_event = {
+	id = albania.2
+	title = albania.2.t
+	desc = albania.2.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.2.a
+		ALB = {
+			country_event = { days = 1 id = albania.3 }
+		}
+		diplomatic_relation = {
+			country = ALB
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+	
+	option = {
+		name = albania.2.b
+		ai_chance = { factor = 0 }
+		add_political_power = -150
+		ALB = {
+			country_event = { days = 1 id = albania.4 }
+		}
+	}
+}
+
+# Yugoslavia Accept
+country_event = {
+	id = albania.3
+	title = albania.3.t
+	desc = albania.3.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.3.a
+	}
+}
+
+# Yugoslavia Reject
+country_event = {
+	id = albania.4
+	title = albania.4.t
+	desc = albania.4.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.4.a
+	}
+}
+
+
+# Guarantee Pact with England
+country_event = {
+	id = albania.5
+	title = albania.5.t
+	desc = albania.5.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.5.a
+		give_guarantee = ALB
+		ALB = {
+			country_event = { days = 1 id = albania.6 }
+		}
+	}
+	
+	option = {
+		name = albania.5.b
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+		ALB = {
+			country_event = { days = 1 id = albania.7 }
+		}
+	}
+}
+
+# England Accept
+country_event = {
+	id = albania.6
+	title = albania.6.t
+	desc = albania.6.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.6.a
+	}
+}
+
+# England Reject
+country_event = {
+	id = albania.7
+	title = albania.7.t
+	desc = albania.7.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.7.a
+	}
+}
+
+
+
+
+#Buy Ship from Greece
+country_event = {
+	id = albania.8
+	title = albania.8.t
+	desc = albania.8.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.8.a
+		ALB = {
+			country_event = { days = 1 id = albania.9 }
+		}
+		GRE = {
+		transfer_ship = {
+			prefer_name = "RHS Spetsai"
+			type = destroyer
+			target = ALB
+			}
+		transfer_ship = {
+			prefer_name = "RHS Psara"
+			type = destroyer
+			target = ALB
+			}
+		}
+		add_stability = 0.1
+	}
+	
+	option = {
+		name = albania.8.b
+		ai_chance = { factor = 0 }
+		add_political_power = -100
+		ALB = {
+			country_event = { days = 1 id = albania.10 }
+		}
+	}
+}
+
+# Greece Accept
+country_event = {
+	id = albania.9
+	title = albania.9.t
+	desc = albania.9.d
+	picture = GFX_report_event_physics_lab_02
+
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.9.a
+		add_stability = -0.05
+	}
+}
+
+# Greece Reject
+country_event = {
+	id = albania.10
+	title = albania.10.t
+	desc = albania.10.d
+	picture = GFX_report_event_physics_lab_02
+
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.10.a
+	}
+}
+
+
+
+
+
+#Buy Ship from France
+country_event = {
+	id = albania.11
+	title = albania.11.t
+	desc = albania.11.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.11.a
+		ALB = {
+			country_event = { days = 1 id = albania.12 }
+		}
+		FRA = {
+		transfer_ship = {
+			prefer_name = "La Galissonnière"
+			type = light_cruiser
+			target = ALB
+			}
+		transfer_ship = {
+			prefer_name = "Émile Bertin"
+			type = light_cruiser
+			target = ALB
+			}
+		}
+		add_stability = 0.1
+	}
+	
+	option = {
+		name = albania.11.b
+		ai_chance = { factor = 0 }
+		add_political_power = -100
+		ALB = {
+			country_event = { days = 1 id = albania.13 }
+		}
+	}
+}
+
+# France Accept
+country_event = {
+	id = albania.12
+	title = albania.12.t
+	desc = albania.12.d
+	picture = GFX_report_event_physics_lab_02
+
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.12.a
+		add_stability = -0.05
+	}
+}
+
+# France Reject
+country_event = {
+	id = albania.13
+	title = albania.13.t
+	desc = albania.13.d
+	picture = GFX_report_event_physics_lab_02
+
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.13.a
+	}
+}
+
+
+
+
+# Pact with Greece
+
+country_event = {
+	id = albania.14
+	title = albania.14.t
+	desc = albania.14.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.14.a
+		ALB = {
+			country_event = { days = 1 id = albania.15 }
+		}
+		diplomatic_relation = {
+			country = ALB
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+	
+	option = {
+		name = albania.14.b
+		ai_chance = { factor = 0 }
+		add_political_power = -150
+		ALB = {
+			country_event = { days = 1 id = albania.16 }
+		}
+	}
+}
+
+# Greece Accept
+country_event = {
+	id = albania.15
+	title = albania.15.t
+	desc = albania.15.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.15.a
+	}
+}
+
+# Greece Reject
+country_event = {
+	id = albania.16
+	title = albania.16.t
+	desc = albania.16.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = albania.16.a
+	}
+}

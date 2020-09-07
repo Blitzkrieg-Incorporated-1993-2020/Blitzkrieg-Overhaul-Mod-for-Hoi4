@@ -1,0 +1,2367 @@
+﻿add_namespace = latvia
+
+# Herberts Cukurs Circumnavigates Globe Trigger
+news_event = {
+	         id = latvia.1
+	         hidden = yes	
+	         fire_only_once = yes	
+	         trigger = {
+		               date > 1937.7.16
+		               country_exists = LAT
+		               LAT = { has_war = no }
+	                   }
+	         immediate = {
+		                 random_list = {
+			                           50 = { LAT = { news_event = { id = latvia.2 }}}
+			                           50 = { LAT = { news_event = { id = latvia.3 }}}
+		                               }
+	         }
+	         
+	         option = { name = latvia.1.a } 	
+}
+
+# Herberts Cukurs Circumnavigates Globe
+news_event = {
+	         id = latvia.2
+	         title = latvia.2.t
+	         desc = latvia.2.d
+	         picture = GFX_news_event_latvia_1
+	         is_triggered_only = yes	
+	         
+	         option = {
+	                  name = latvia.2.a
+                      if = {
+			               limit = { not = { has_tech = CAS1 }}
+			               set_technology = { CAS1 = 1 }
+		                   }
+	                  }
+}
+
+# Herberts Cukurs Crashes
+news_event = {
+	         id = latvia.3
+	         title = latvia.3.t
+	         desc = latvia.3.d
+	         picture = GFX_news_event_latvia_2
+	         is_triggered_only = yes
+             
+             option = {
+		              name = latvia.3.a
+		              set_country_flag = Crash_of_Herberts_Cukurs
+		              if = {
+			               limit = { has_idea = LAT_Herberts_Cukurs }
+			               remove_ideas = LAT_Herberts_Cukurs
+		                   }
+	         }
+}
+
+# The EuroBasket 1937 Trigger
+news_event = {
+	         id = latvia.4
+	         hidden = yes	
+	         fire_only_once = yes	
+	         trigger = {
+		               date > 1937.3.7
+		               country_exists = LAT
+		               LAT = { has_war = no }
+	                   }
+	         immediate = {
+		                 random_list = {
+			                           50 = { LAT = { news_event = { id = latvia.5 }}}
+			                           50 = { LAT = { news_event = { id = latvia.6 }}}
+		                               }
+	         }
+	         
+	         option = { name = latvia.4.a } 	
+}
+
+# The EuroBasket 1937 - Lithuania wins
+news_event = {
+	         id = latvia.5
+	         title = latvia.5.t
+	         desc = latvia.5.d
+	         picture = GFX_news_event_latvia_3
+	         is_triggered_only = yes	
+	         
+	         option = { name = latvia.5.a }
+}
+
+# The EuroBasket 1937 - Latvia wins
+news_event = {
+	         id = latvia.6
+	         title = latvia.6.t
+	         desc = latvia.6.d
+	         picture = GFX_news_event_latvia_4
+	         is_triggered_only = yes	
+	         
+	         option = {
+	                  name = latvia.6.a
+                      add_stability = 0.01
+	                  }
+}
+
+# Finish the Coup Ulmanis
+country_event = {
+	            id = latvia.7
+	            title = latvia.7.t
+	            desc = latvia.7.d
+	            picture = GFX_country_event_latvia_1
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.7.a
+                         create_country_leader = {
+	                                             name = "Kārlis Ulmanis"
+	                                             picture = "gfx/leaders/LAT/Portrait_Karlis_Ulmanis.dds"
+	                                             expire = "1965.1.1"
+	                                             ideology = oligarchism
+	                                             traits = { dictator }
+	                                             }
+	                     }
+}
+
+# The Lightning Strike
+country_event = {
+	            id = latvia.8
+	            title = latvia.8.t
+	            desc = latvia.8.d
+	            picture = GFX_country_event_latvia_2
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.8.a
+	                     set_politics = { ruling_party = fascism }
+	                     add_popularity = {
+	                                      ideology = fascism
+	                                      popularity = 0.1
+	                                      }
+	                     news_event = { id = latvia.9 }
+	                     }
+}
+
+# New fascist power in Europe
+news_event = {
+	         id = latvia.9
+	         title = latvia.9.t
+	         desc = latvia.9.d
+	         picture = GFX_news_event_latvia_5
+	         is_triggered_only = yes
+	         major = yes
+	         
+	         option = {
+	                  name = latvia.9.a
+	                  }
+}
+
+# Bring Out the Hammers
+country_event = {
+	            id = latvia.10
+	            title = latvia.10.t
+	            desc = latvia.10.d
+	            picture = GFX_country_event_latvia_3
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.10.a
+	                     add_stability = 0.05
+	                     add_popularity = {
+	                                      ideology = communism
+	                                      popularity = 0.1
+	                                      }
+	                     }
+}
+
+# Red Flag Revolution
+country_event = {
+	            id = latvia.11
+	            title = latvia.11.t
+	            desc = latvia.11.d
+	            picture = GFX_country_event_latvia_4
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.11.a
+	                     set_politics = { ruling_party = communism }
+	                     add_popularity = {
+	                                      ideology = communism
+	                                      popularity = 0.1
+	                                      }
+	                     }
+}
+
+# German Cooperation
+country_event = {
+	            id = latvia.12
+	            title = latvia.12.t
+	            desc = latvia.12.d
+	            picture = GFX_country_event_latvia_5
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.12.a
+	                     LAT = { country_event = { id = latvia.13 }}
+	                     add_to_faction = LAT
+	                     LAT = { add_opinion_modifier = { target = GER modifier = German-Latvian_Cooperation }}
+			             GER = { add_opinion_modifier = { target = LAT modifier = German-Latvian_Cooperation }}
+	                     }
+	            option = {
+	                     name = latvia.12.b
+	                     LAT = { country_event = { id = latvia.14 }}
+	                     LAT = { add_opinion_modifier = { target = GER modifier = German-Latvian_Cooperation_Declined }}
+			             GER = { add_opinion_modifier = { target = LAT modifier = German-Latvian_Cooperation_Declined }}
+	                     }
+
+}
+
+# German Cooperation - Accepted
+country_event = {
+	            id = latvia.13
+	            title = latvia.13.t
+	            desc = latvia.13.d
+	            picture = GFX_country_event_latvia_6
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.13.a
+	                     }
+}
+
+# German Cooperation - Declined
+country_event = {
+	            id = latvia.14
+	            title = latvia.14.t
+	            desc = latvia.14.d
+	            picture = GFX_country_event_latvia_5
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.14.a
+	                     }
+}
+
+# the Riga Referendum Succesful
+country_event = {
+	            id = latvia.15
+	            title = latvia.15.t
+	            desc = latvia.15.d
+	            picture = GFX_country_event_latvia_7
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.15.a
+	                     set_politics = {
+	                                    ruling_party = democratic
+                                        elections_allowed = yes
+	                                    }
+	                     add_popularity = {
+	                                      ideology = democratic
+	                                      popularity = 0.1
+	                                      }
+	                     }
+}
+
+# the Riga Referendum Failed
+country_event = {
+	            id = latvia.16
+	            title = latvia.16.t
+	            desc = latvia.16.d
+	            picture = GFX_country_event_latvia_8
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.16.a
+	                     set_politics = {
+	                                    ruling_party = democratic
+                                        elections_allowed = yes
+	                                    }
+	                     start_civil_war = {
+	                                       ideology = neutrality
+							               size = 0.5
+							               }
+	                     }
+}
+
+# the Ulmanis royal family
+country_event = {
+	            id = latvia.17
+	            title = latvia.17.t
+	            desc = latvia.17.d
+	            picture = GFX_country_event_latvia_9
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.17.a
+	                     add_stability = 0.05
+	                     }
+}
+
+# Formation of Latvian Kingdom
+country_event = {
+	            id = latvia.18
+	            title = latvia.18.t
+	            desc = latvia.18.d
+	            picture = GFX_country_event_latvia_10
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.18.a
+	                     set_party_name = { ideology = neutrality long_name = LTK_neutrality_party name = LTK_neutrality_party }
+	                     set_cosmetic_tag = LTK
+	                     add_ideas = latvian_kingdom
+                         create_country_leader = {
+	                                             name = "Kārlis I"
+	                                             picture = "gfx/leaders/LAT/Portrait_Karlis_Ulmanis.dds"
+	                                             expire = "1965.1.1"
+	                                             ideology = despotism
+	                                             traits = { dictator }
+	                                             }
+	                     }
+}
+
+# Offer to restore Livonian Order
+country_event = {
+	            id = latvia.19
+	            title = latvia.19.t
+	            desc = latvia.19.d
+	            picture = GFX_country_event_latvia_11
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.19.a
+	                     LAT = {
+	                           annex_country = { target = EST transfer_troops = yes }
+	                           country_event = { id = latvia.20 }
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.19.b
+	                     LAT = { country_event = { id = latvia.21 }}
+	                     }
+}
+
+# Offer to restore Livonian Order Estonia Accepts
+country_event = {
+	            id = latvia.20
+	            title = latvia.20.t
+	            desc = latvia.20.d
+	            picture = GFX_country_event_latvia_11
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.20.a
+	                     add_ideas = livonian_unity
+	                     }
+}
+
+# Offer to restore Livonian Order Estonia Declines
+country_event = {
+	            id = latvia.21
+	            title = latvia.21.t
+	            desc = latvia.21.d
+	            picture = GFX_country_event_latvia_13
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.21.a
+	                     create_wargoal = { 
+			                              type = annex_everything
+				                          target = EST
+			                              }
+	                     }
+	            option = {
+	                     name = latvia.21.b
+	                     }
+}
+
+# Offer to unite the Balts
+country_event = {
+	            id = latvia.22
+	            title = latvia.22.t
+	            desc = latvia.22.d
+	            picture = GFX_country_event_latvia_12
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.22.a
+	                     LAT = {
+	                           annex_country = { target = LIT transfer_troops = yes }
+	                           country_event = { id = latvia.23 }
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.22.b
+	                     LAT = { country_event = { id = latvia.24 }}
+	                     }
+}
+
+# Offer to unite the Balts Lithuania Accepts
+country_event = {
+	            id = latvia.23
+	            title = latvia.23.t
+	            desc = latvia.23.d
+	            picture = GFX_country_event_latvia_12
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.23.a
+	                     add_ideas = baltic_unity
+	                     }
+}
+
+# Offer to unite the Balts Lithuania Declines
+country_event = {
+	            id = latvia.24
+	            title = latvia.24.t
+	            desc = latvia.24.d
+	            picture = GFX_country_event_latvia_13
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.24.a
+	                     create_wargoal = { 
+			                              type = annex_everything
+				                          target = LIT
+			                              }
+	                     }
+	            option = {
+	                     name = latvia.24.b
+	                     }
+}
+
+# Invite Estonia to Baltic Entente
+country_event = {
+	            id = latvia.25
+	            title = latvia.25.t
+	            desc = latvia.25.d
+	            picture = GFX_country_event_latvia_14
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.25.a
+	                     LAT = { country_event = latvia.26 }
+	                     }
+	            option = {
+	                     name = latvia.25.b
+	                     LAT = { country_event = latvia.27 }
+	                     }
+}
+
+# Estonia accepts to join Baltic Entente
+country_event = {
+	            id = latvia.26
+	            title = latvia.26.t
+	            desc = latvia.26.d
+	            picture = GFX_country_event_latvia_15
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.26.a
+	                     LAT = { add_to_faction = EST }
+	                     }
+}
+
+# Estonia declines to join Baltic Entente
+country_event = {
+	            id = latvia.27
+	            title = latvia.27.t
+	            desc = latvia.27.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.27.a
+	                     }
+}
+
+# Invite Lithuania to Baltic Entente
+country_event = {
+	            id = latvia.28
+	            title = latvia.28.t
+	            desc = latvia.28.d
+	            picture = GFX_country_event_latvia_14
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.28.a
+	                     LAT = { country_event = latvia.29 }
+	                     }
+	            option = {
+	                     name = latvia.28.b
+	                     LAT = { country_event = latvia.30 }
+	                     }
+}
+
+# Lithuania accepts to join Baltic Entente
+country_event = {
+	            id = latvia.29
+	            title = latvia.29.t
+	            desc = latvia.29.d
+	            picture = GFX_country_event_latvia_15
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.29.a
+	                     LAT = { add_to_faction = LIT }
+	                     }
+}
+
+# Lithuania declines to join Baltic Entente
+country_event = {
+	            id = latvia.30
+	            title = latvia.30.t
+	            desc = latvia.30.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.30.a
+	                     }
+}
+
+# Wave of Latvian Socialism
+country_event = {
+	            id = latvia.31
+	            title = latvia.31.t
+	            desc = latvia.31.d
+	            picture = GFX_country_event_latvia_3
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.31.a
+	                     add_ideas = wave_of_latvian_socialism
+	                     }
+}
+
+# Estonian Revolution
+country_event = {
+	            id = latvia.32
+	            title = latvia.32.t
+	            desc = latvia.32.d
+	            picture = GFX_country_event_latvia_18
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.32.a
+	                     LAT = {
+	                           puppet = EST
+	                           country_event = latvia.33
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.32.b
+	                     LAT = { country_event = latvia.34 }
+	                     }
+}
+
+# Estonian Revolution Estonia Accepts
+country_event = {
+	            id = latvia.33
+	            title = latvia.33.t
+	            desc = latvia.33.d
+	            picture = GFX_country_event_latvia_19
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.33.a
+	                     }
+}
+
+# Estonian Revolution Estonia Declines
+country_event = {
+	            id = latvia.34
+	            title = latvia.34.t
+	            desc = latvia.34.d
+	            picture = GFX_country_event_latvia_18
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.34.a
+	                     create_wargoal = {
+			                              type = annex_everything
+			                              target = EST
+			                              }
+	                     }
+	            option = {
+	                     name = latvia.34.b
+	                     EST = {
+	                           start_civil_war = {
+	                                             ideology = communism
+							                     size = 0.5
+							                     }
+							   }
+	                     }
+}
+
+# Lithuanian Revolution
+country_event = {
+	            id = latvia.35
+	            title = latvia.35.t
+	            desc = latvia.35.d
+	            picture = GFX_country_event_latvia_18
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.35.a
+	                     LAT = {
+	                           puppet = LIT
+	                           country_event = latvia.36
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.35.b
+	                     LAT = { country_event = latvia.37 }
+	                     }
+}
+
+# Lithuanian Revolution Lithuania Accepts
+country_event = {
+	            id = latvia.36
+	            title = latvia.36.t
+	            desc = latvia.36.d
+	            picture = GFX_country_event_latvia_19
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.36.a
+	                     }
+}
+
+# Lithuanian Revolution Lithuania Declines
+country_event = {
+	            id = latvia.37
+	            title = latvia.37.t
+	            desc = latvia.37.d
+	            picture = GFX_country_event_latvia_18
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.37.a
+	                     create_wargoal = {
+			                              type = annex_everything
+			                              target = LIT
+			                              }
+	                     }
+	            option = {
+	                     name = latvia.37.b
+	                     LIT = {
+	                           start_civil_war = {
+	                                             ideology = communism
+							                     size = 0.5
+							                     }
+							   }
+	                     }
+}
+
+# Baltic Socialist Union Foundation
+country_event = {
+	            id = latvia.38
+	            title = latvia.38.t
+	            desc = latvia.38.d
+	            picture = GFX_country_event_latvia_20
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.38.a
+	                     set_cosmetic_tag = BSU
+	                     annex_country = { target = EST transfer_troops = yes }
+	                     annex_country = { target = LIT transfer_troops = yes }
+	                     }
+	            option = {
+	                     name = latvia.38.b
+	                     create_faction = baltic_socialist_union
+	                     add_to_faction = EST
+	                     add_to_faction = LIT
+	                     }
+}
+
+# Request to join the Comitern
+country_event = {
+	            id = latvia.39
+	            title = latvia.39.t
+	            desc = latvia.39.d
+	            picture = GFX_country_event_latvia_21
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.39.a
+	                     SOV = { add_to_faction = LAT }
+	                     LAT = { country_event = latvia.40 }
+	                     }
+	            option = {
+	                     name = latvia.39.b
+	                     LAT = { country_event = latvia.41 }
+	                     }
+}
+
+# Request to join the Comitern Accepted
+country_event = {
+	            id = latvia.40
+	            title = latvia.40.t
+	            desc = latvia.40.d
+	            picture = GFX_country_event_latvia_21
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.40.a
+	                     }
+}
+
+# Request to join the Comitern Declined
+country_event = {
+	            id = latvia.41
+	            title = latvia.41.t
+	            desc = latvia.41.d
+	            picture = GFX_country_event_latvia_21
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.41.a
+	                     }
+}
+
+# Latvia pushes Estonia for integration
+country_event = {
+	            id = latvia.42
+	            title = latvia.42.t
+	            desc = latvia.42.d
+	            picture = GFX_country_event_latvia_22
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.42.a
+	                     LAT = { 
+	                           country_event = latvia.43
+	                           annex_country = { target = EST transfer_troops = yes }
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.42.b
+	                     LAT = { country_event = latvia.44 }
+	                     }
+}
+
+# Latvia pushes Estonia for integration Estonia Accepts
+country_event = {
+	            id = latvia.43
+	            title = latvia.43.t
+	            desc = latvia.43.d
+	            picture = GFX_country_event_latvia_22
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.43.a
+	                     }
+}
+
+# Latvia pushes Estonia for integration Estonia Declines
+country_event = {
+	            id = latvia.44
+	            title = latvia.44.t
+	            desc = latvia.44.d
+	            picture = GFX_country_event_latvia_23
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.44.a
+	                     create_wargoal = {
+			                              type = annex_everything
+			                              target = EST
+			                              }
+	                     }
+}
+
+# Latvia pushes Lithuania for integration
+country_event = {
+	            id = latvia.45
+	            title = latvia.45.t
+	            desc = latvia.45.d
+	            picture = GFX_country_event_latvia_22
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.45.a
+	                     LAT = { 
+	                           country_event = latvia.46
+	                           annex_country = { target = LIT transfer_troops = yes }
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.45.b
+	                     LAT = { country_event = latvia.47 }
+	                     }
+}
+
+# Latvia pushes Lithuania for integration Lithuania Accepts
+country_event = {
+	            id = latvia.46
+	            title = latvia.46.t
+	            desc = latvia.46.d
+	            picture = GFX_country_event_latvia_22
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.46.a
+	                     }
+}
+
+# Latvia pushes Lithuania for integration Lithuania Declines
+country_event = {
+	            id = latvia.47
+	            title = latvia.47.t
+	            desc = latvia.47.d
+	            picture = GFX_country_event_latvia_23
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.47.a
+	                     create_wargoal = {
+			                              type = annex_everything
+			                              target = LIT
+			                              }
+	                     }
+}
+
+# Latvia demands Prussia
+country_event = {
+	            id = latvia.48
+	            title = latvia.48.t
+	            desc = latvia.48.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.48.a
+	                     LAT = { country_event = latvia.49 }
+	                     LAT = {
+	                           transfer_state = 5
+                               transfer_state = 763
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.48.a
+	                     LAT = { country_event = latvia.50 }
+	                     }
+}
+
+# Latvia demands Prussia Germany Accepts
+country_event = {
+	            id = latvia.49
+	            title = latvia.49.t
+	            desc = latvia.49.d
+	            picture = GFX_country_event_latvia_24
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.49.a
+	                     }
+}
+
+# Latvia demands Prussia Germany Declines
+country_event = {
+	            id = latvia.50
+	            title = latvia.50.t
+	            desc = latvia.50.d
+	            picture = GFX_country_event_latvia_17
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.50.a
+	                     create_wargoal = {
+			                              type = annex_everything
+			                              target = GER
+			                              }
+	                     }
+}
+
+# Latvia demands Western Belarus POLAND
+country_event = {
+	            id = latvia.51
+	            title = latvia.51.t
+	            desc = latvia.51.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.51.a
+	                     LAT = { country_event = latvia.52 }
+	                     LAT = {
+	                           transfer_state = 96
+	                           transfer_state = 95
+	                           transfer_state = 97
+	                           transfer_state = 94
+	                           transfer_state = 784
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.51.b
+	                     LAT = { country_event = latvia.53 }
+	                     }
+}
+
+# Latvia demands Western Belarus POLAND Accepts
+country_event = {
+	            id = latvia.52
+	            title = latvia.52.t
+	            desc = latvia.52.d
+	            picture = GFX_country_event_latvia_24
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.52.a
+	                     }
+}
+
+# Latvia demands Western Belarus POLAND Declines
+country_event = {
+	            id = latvia.53
+	            title = latvia.53.t
+	            desc = latvia.53.d
+	            picture = GFX_country_event_latvia_17
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.53.a
+	                     create_wargoal = {
+			                              type = annex_everything
+			                              target = POL
+			                              }
+	                     }
+}
+
+# Latvia demands Western Belarus USSR
+country_event = {
+	            id = latvia.54
+	            title = latvia.54.t
+	            desc = latvia.54.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.54.a
+	                     LAT = { country_event = latvia.55 }
+	                     LAT = {
+	                           transfer_state = 96
+	                           transfer_state = 95
+	                           transfer_state = 97
+	                           transfer_state = 94
+	                           transfer_state = 784
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.54.b
+	                     LAT = { country_event = latvia.56 }
+	                     }
+}
+
+# Latvia demands Western Belarus USSR Accepts
+country_event = {
+	            id = latvia.55
+	            title = latvia.55.t
+	            desc = latvia.55.d
+	            picture = GFX_country_event_latvia_24
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.55.a
+	                     }
+}
+
+# Latvia demands Western Belarus USSR Declines
+country_event = {
+	            id = latvia.56
+	            title = latvia.56.t
+	            desc = latvia.56.d
+	            picture = GFX_country_event_latvia_17
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.56.a
+	                     create_wargoal = {
+			                              type = annex_everything
+			                              target = SOV
+			                              }
+	                     }
+}
+
+# Latvia demands Eastern Belarus
+country_event = {
+	            id = latvia.57
+	            title = latvia.57.t
+	            desc = latvia.57.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.57.a
+	                     LAT = { country_event = latvia.58 }
+	                     LAT = {
+	                           transfer_state = 209
+	                           transfer_state = 210
+	                           transfer_state = 207
+	                           transfer_state = 206
+	                           transfer_state = 241
+	                           transfer_state = 204
+	                           transfer_state = 194
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.57.a
+	                     LAT = { country_event = latvia.59 }
+	                     }
+}
+
+# Latvia demands Eastern Belarus USSR Accepts
+country_event = {
+	            id = latvia.58
+	            title = latvia.58.t
+	            desc = latvia.58.d
+	            picture = GFX_country_event_latvia_24
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.58.a
+	                     }
+}
+
+# Latvia demands Eastern Belarus USSR Declines
+country_event = {
+	            id = latvia.59
+	            title = latvia.59.t
+	            desc = latvia.59.d
+	            picture = GFX_country_event_latvia_17
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.59.a
+	                     create_wargoal = {
+			                              type = annex_everything
+			                              target = SOV
+			                              }
+	                     }
+}
+
+# Latvia demands Former Colonies
+country_event = {
+	            id = latvia.60
+	            title = latvia.60.t
+	            desc = latvia.60.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.60.a
+	                     LAT = { country_event = latvia.61 }
+	                     LAT = {
+	                           transfer_state = 701
+	                           transfer_state = 691
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.60.a
+	                     LAT = { country_event = latvia.62 }
+	                     }
+}
+
+# Latvia demands Former Colonies United Kingdom Accepts
+country_event = {
+	            id = latvia.61
+	            title = latvia.61.t
+	            desc = latvia.61.d
+	            picture = GFX_country_event_latvia_24
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.61.a
+	                     }
+}
+
+# Latvia demands Former Colonies United Kingdom Declines
+country_event = {
+	            id = latvia.62
+	            title = latvia.62.t
+	            desc = latvia.62.d
+	            picture = GFX_country_event_latvia_17
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.62.a
+	                     create_wargoal = {
+			                              type = annex_everything
+			                              target = ENG
+			                              }
+	                     }
+}
+
+# New skilled officers join the Latvian Legion
+country_event = {
+	            id = latvia.63
+	            title = latvia.63.t
+	            desc = latvia.63.d
+	            picture = GFX_country_event_latvia_25
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.63.a
+	                     create_corps_commander = {
+				                                  name = "Voldemārs Veiss"
+				                                  portrait_path = "gfx/leaders/LAT/Portrait_Voldemars_Veiss.dds"
+				                                  traits = { war_hero infantry_officer infantry_leader }
+				                                  skill = 4
+				                                  id = 8019
+				                                  attack_skill = 4
+	                                              defense_skill = 3
+	                                              planning_skill = 3
+	                                              logistics_skill = 3
+			                                      }
+	                     create_corps_commander = {
+				                                  name = "Roberts Ancāns"
+				                                  portrait_path = "gfx/leaders/LAT/Portrait_Roberts_Ancans.dds"
+				                                  traits = { inflexible_strategist }
+				                                  skill = 2
+				                                  id = 8020
+				                                  attack_skill = 2
+	                                              defense_skill = 1
+	                                              planning_skill = 2
+	                                              logistics_skill = 2
+			                                      }
+	                     create_corps_commander = {
+				                                  name = "Nikolajs Galdiņš"
+				                                  portrait_path = "gfx/leaders/LAT/Portrait_Nikolajs_Galdins.dds"
+				                                  traits = { infantry_officer }
+				                                  skill = 3
+				                                  id = 8021
+				                                  attack_skill = 3
+	                                              defense_skill = 2
+	                                              planning_skill = 3
+	                                              logistics_skill = 2
+			                                      }
+	                     create_corps_commander = {
+				                                  name = "Kārlis Lobe"
+				                                  portrait_path = "gfx/leaders/LAT/Portrait_Karlis_Lobe.dds"
+				                                  traits = { infantry_officer infantry_leader }
+				                                  skill = 4
+				                                  id = 8022
+				                                  attack_skill = 4
+	                                              defense_skill = 2
+	                                              planning_skill = 4
+	                                              logistics_skill = 3
+			                                      }
+	                     create_corps_commander = {
+				                                  name = "Kārlis Aperāts"
+				                                  portrait_path = "gfx/leaders/LAT/Portrait_Karlis_Aperats.dds"
+				                                  traits = { armor_officer commando }
+				                                  skill = 4
+				                                  id = 8023
+				                                  attack_skill = 4
+	                                              defense_skill = 3
+	                                              planning_skill = 4
+	                                              logistics_skill = 3
+			                                      }
+	                     }
+}
+
+# Plans to United Baltics
+country_event = {
+	            id = latvia.64
+	            title = latvia.64.t
+	            desc = latvia.64.d
+	            picture = GFX_country_event_latvia_26
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.64.a
+	                     }
+	            option = {
+	                     name = latvia.64.b
+	                     add_state_core = 97
+	                     add_state_core = 997
+	                     add_state_core = 207
+	                     add_state_core = 206
+	                     add_state_core = 204
+	                     add_state_core = 241
+	                     add_state_core = 194
+	                     add_political_power = -150
+	                     }
+	            option = {
+	                     name = latvia.64.c
+	                     add_state_core = 195
+	                     add_state_core = 208
+	                     add_state_core = 244
+	                     add_state_core = 263
+	                     add_state_core = 210
+	                     add_state_core = 209
+	                     add_political_power = -150
+	                     }
+	            option = {
+	                     name = latvia.64.e
+	                     add_state_core = 97
+	                     add_state_core = 997
+	                     add_state_core = 207
+	                     add_state_core = 206
+	                     add_state_core = 204
+	                     add_state_core = 241
+	                     add_state_core = 194
+	                     add_state_core = 195
+	                     add_state_core = 208
+	                     add_state_core = 244
+	                     add_state_core = 263
+	                     add_state_core = 210
+	                     add_state_core = 209
+	                     add_political_power = -300
+	                     }
+}
+
+# Reichskommissariat Ostland
+country_event = {
+	            id = latvia.65
+	            title = latvia.65.t
+	            desc = latvia.65.d
+	            picture = GFX_country_event_latvia_27
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.65.a
+	                     set_cosmetic_tag = OST
+	                     add_ideas = ost_ostland_project
+	                     set_party_name = { ideology = fascism long_name = OST_fascism_party_long name = OST_fascism_party }
+	                     create_country_leader = {
+	                                             name = "Kārlis Lobe"
+	                                             picture = "Portrait_Karlis_Lobe.dds"
+	                                             expire = "1965.1.1"
+	                                             ideology = nazism
+	                                             traits = { }
+                                                 }
+	                     }
+	            option = {
+	                     name = latvia.65.b
+	                     set_cosmetic_tag = GOS
+	                     add_ideas = gos_ostland_project
+	                     set_party_name = { ideology = fascism long_name = GOS_fascism_party_long name = GOS_fascism_party }
+	                     create_country_leader = {
+	                                             name = "Adolf Hitler"
+	                                             desc = "POLITICS_ADOLF_HITLER_DESC"
+	                                             picture = "gfx/leaders/GER/Portrait_Germany_Adolf_Hitler.dds"
+	                                             expire = "1965.1.1"
+	                                             ideology = nazism
+	                                             traits = { dictator }
+                                                 }
+                         GER = {
+	                           puppet = LAT
+	                           country_event = latvia.66
+	                           }
+	                     }
+}
+
+# Ostland becomes puppet of Germany
+country_event = {
+	            id = latvia.66
+	            title = latvia.66.t
+	            desc = latvia.66.d
+	            picture = GFX_country_event_latvia_26
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.66.a
+	                     }
+}
+
+# Request For Defensive Measures ENG
+country_event = {
+	            id = latvia.67
+	            title = latvia.67.t
+	            desc = latvia.67.d
+	            picture = GFX_country_event_latvia_31
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.67.a
+	                     LAT = { country_event = { id = latvia.68 }}
+	                     give_guarantee = LAT
+	                     }
+	            option = {
+	                     name = latvia.67.b
+	                     LAT = { country_event = { id = latvia.69 }}
+	                     }
+}
+
+# Request For Defensive Measures ENG Accepts
+country_event = {
+	            id = latvia.68
+	            title = latvia.68.t
+	            desc = latvia.68.d
+	            picture = GFX_country_event_latvia_28
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.68.a
+	                     }
+}
+
+# Request For Defensive Measures ENG Declines
+country_event = {
+	            id = latvia.69
+	            title = latvia.69.t
+	            desc = latvia.69.d
+	            picture = GFX_country_event_latvia_31
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.69.a
+	                     }
+}
+
+# Request For Defensive Measures CAN
+country_event = {
+	            id = latvia.70
+	            title = latvia.70.t
+	            desc = latvia.70.d
+	            picture = GFX_country_event_latvia_31
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.70.a
+	                     LAT = { country_event = { id = latvia.71 }}
+	                     give_guarantee = LAT
+	                     }
+	            option = {
+	                     name = latvia.70.b
+	                     LAT = { country_event = { id = latvia.72 }}
+	                     }
+}
+
+# Request For Defensive Measures CAN Accepts
+country_event = {
+	            id = latvia.71
+	            title = latvia.71.t
+	            desc = latvia.71.d
+	            picture = GFX_country_event_latvia_29
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.71.a
+	                     }
+}
+
+# Request For Defensive Measures CAN Declines
+country_event = {
+	            id = latvia.72
+	            title = latvia.72.t
+	            desc = latvia.72.d
+	            picture = GFX_country_event_latvia_31
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.72.a
+	                     }
+}
+
+# Request For Defensive Measures USA
+country_event = {
+	            id = latvia.73
+	            title = latvia.73.t
+	            desc = latvia.73.d
+	            picture = GFX_country_event_latvia_31
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.73.a
+	                     LAT = { country_event = { id = latvia.74 }}
+	                     give_guarantee = LAT
+	                     }
+	            option = {
+	                     name = latvia.73.b
+	                     LAT = { country_event = { id = latvia.75 }}
+	                     }
+}
+
+# Request For Defensive Measures USA Accepts
+country_event = {
+	            id = latvia.74
+	            title = latvia.74.t
+	            desc = latvia.74.d
+	            picture = GFX_country_event_latvia_30
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.74.a
+	                     }
+}
+
+# Request For Defensive Measures USA Declines
+country_event = {
+	            id = latvia.75
+	            title = latvia.75.t
+	            desc = latvia.75.d
+	            picture = GFX_country_event_latvia_31
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.75.a
+	                     }
+}
+
+# Latvia Requests to Join Allies
+country_event = {
+	            id = latvia.76
+	            title = latvia.76.t
+	            desc = latvia.76.d
+	            picture = GFX_country_event_latvia_33
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.76.a
+	                     LAT = { country_event = { id = latvia.77 }}
+	                     add_to_faction = LAT
+	                     }
+	            option = {
+	                     name = latvia.76.b
+	                     LAT = { country_event = { id = latvia.78 }}
+	                     }
+}
+
+# Latvia Requests to Join Allies ENG Accepts
+country_event = {
+	            id = latvia.77
+	            title = latvia.77.t
+	            desc = latvia.77.d
+	            picture = GFX_country_event_latvia_32
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.77.a
+	                     }
+}
+
+# Latvia Requests to Join Allies ENG Declines
+country_event = {
+	            id = latvia.78
+	            title = latvia.78.t
+	            desc = latvia.78.d
+	            picture = GFX_country_event_latvia_33
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.78.a
+	                     }
+}
+
+# Estonian Democratic Uprising TRIGGER
+country_event = {
+	            id = latvia.79
+	            hidden = yes	
+	            fire_only_once = yes	
+	            trigger = {
+		                  country_exists = LAT
+		                  country_exists = EST
+		                  LAT = { 
+		                        has_completed_focus = LAT_Support_Baltic_Democracy
+		                        has_democratic_government = yes
+		                        }
+		                  EST = { 
+		                        democratic > 0.5
+		                        NOT = { has_democratic_government = yes }
+		                        }
+	                      }
+	            immediate = {
+	                        LAT = { country_event = { id = latvia.80 }}
+	                        }
+	           
+	            option = { name = latvia.79.a } 	
+}
+
+# Estonian Democratic Uprising Latvia
+country_event = {
+	            id = latvia.80
+	            title = latvia.80.t
+	            desc = latvia.80.d
+	            picture = GFX_country_event_latvia_34
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.80.a
+	                     EST = { country_event = { id = latvia.81 }}
+	                     add_political_power = -50
+	                     }
+	            option = {
+	                     name = latvia.80.b
+	                     }
+}
+
+# Estonian Democratic Uprising
+country_event = {
+	            id = latvia.81
+	            title = latvia.81.t
+	            desc = latvia.81.d
+	            picture = GFX_country_event_latvia_34
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.81.a
+	                     set_politics = {
+	                                    ruling_party = democratic
+                                        elections_allowed = yes
+	                                    }
+	                     }
+	            option = {
+	                     name = latvia.81.b
+	                     random_list = {
+			                           60 = { EST = { create_wargoal = {
+			                                                           type = annex_everything
+			                                                           target = LAT
+			                                                           }
+			                                        }
+			                                }
+			                           40 = { EST = { start_civil_war = {
+	                                                                    ideology = democratic
+							                                            size = 0.5
+							                                            }
+							                        }
+							                }
+		                               }
+	                     }
+}
+
+# Lithuania Democratic Uprising TRIGGER
+country_event = {
+	            id = latvia.82
+	            hidden = yes	
+	            fire_only_once = yes	
+	            trigger = {
+		                  country_exists = LAT
+		                  country_exists = LIT
+		                  LAT = { 
+		                        has_completed_focus = LAT_Support_Baltic_Democracy
+		                        has_democratic_government = yes
+		                        }
+		                  LIT = { 
+		                        democratic > 0.5
+		                        NOT = { has_democratic_government = yes }
+		                        }
+	                      }
+	            immediate = {
+	                        LAT = { country_event = { id = latvia.83 }}
+	                        }
+	           
+	            option = { name = latvia.82.a } 	
+}
+
+# Lithuania Democratic Uprising Latvia
+country_event = {
+	            id = latvia.83
+	            title = latvia.83.t
+	            desc = latvia.83.d
+	            picture = GFX_country_event_latvia_35
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.83.a
+	                     LIT = { country_event = { id = latvia.84 }}
+	                     add_political_power = -50
+	                     }
+	            option = {
+	                     name = latvia.83.b
+	                     }
+}
+
+# Lithuania Democratic Uprising
+country_event = {
+	            id = latvia.84
+	            title = latvia.84.t
+	            desc = latvia.84.d
+	            picture = GFX_country_event_latvia_35
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.84.a
+	                     set_politics = {
+	                                    ruling_party = democratic
+                                        elections_allowed = yes
+	                                    }
+	                     }
+	            option = {
+	                     name = latvia.84.b
+	                     random_list = {
+			                           60 = { LIT = { create_wargoal = {
+			                                                           type = annex_everything
+			                                                           target = LAT
+			                                                           }
+			                                        }
+			                                }
+			                           40 = { LIT = { start_civil_war = {
+	                                                                    ideology = democratic
+							                                            size = 0.5
+							                                            }
+							                        }
+							                }
+		                               }
+	                     }
+}
+
+# Finland Democratic Uprising TRIGGER
+country_event = {
+	            id = latvia.85
+	            hidden = yes	
+	            fire_only_once = yes	
+	            trigger = {
+		                  country_exists = LAT
+		                  country_exists = FIN
+		                  LAT = { 
+		                        has_completed_focus = LAT_Support_Finnish_Democracy
+		                        has_democratic_government = yes
+		                        }
+		                  FIN = { 
+		                        democratic > 0.5
+		                        NOT = { has_democratic_government = yes }
+		                        }
+	                      }
+	            immediate = {
+	                        LAT = { country_event = { id = latvia.86 }}
+	                        }
+	           
+	            option = { name = latvia.85.a } 	
+}
+
+# Finland Democratic Uprising Latvia
+country_event = {
+	            id = latvia.86
+	            title = latvia.86.t
+	            desc = latvia.86.d
+	            picture = GFX_country_event_latvia_36
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.86.a
+	                     FIN = { country_event = { id = latvia.87 }}
+	                     add_political_power = -50
+	                     }
+	            option = {
+	                     name = latvia.86.b
+	                     }
+}
+
+# Finland Democratic Uprising
+country_event = {
+	            id = latvia.87
+	            title = latvia.87.t
+	            desc = latvia.87.d
+	            picture = GFX_country_event_latvia_36
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.87.a
+	                     set_politics = {
+	                                    ruling_party = democratic
+                                        elections_allowed = yes
+	                                    }
+	                     }
+	            option = {
+	                     name = latvia.87.b
+	                     random_list = {
+			                           60 = { FIN = { create_wargoal = {
+			                                                           type = annex_everything
+			                                                           target = LAT
+			                                                           }
+			                                        }
+			                                }
+			                           40 = { FIN = { start_civil_war = {
+	                                                                    ideology = democratic
+							                                            size = 0.5
+							                                            }
+							                        }
+							                }
+		                               }
+	                     }
+}
+
+# Invitetation to Baltic Democratic Alliance Estonia
+country_event = {
+	            id = latvia.88
+	            title = latvia.88.t
+	            desc = latvia.88.d
+	            picture = GFX_country_event_latvia_37
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.88.a
+	                     LAT = { 
+	                           add_to_faction = EST
+	                           country_event = { id = latvia.91 }
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.88.b
+	                     LAT = { 
+	                           country_event = { id = latvia.92 }
+	                           }
+	                     }
+}
+
+# Invitetation to Baltic Democratic Alliance Lithuania
+country_event = {
+	            id = latvia.89
+	            title = latvia.89.t
+	            desc = latvia.89.d
+	            picture = GFX_country_event_latvia_37
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.89.a
+	                     LAT = { 
+	                           add_to_faction = LIT
+	                           country_event = { id = latvia.93 }
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.89.b
+	                     LAT = { 
+	                           country_event = { id = latvia.94 }
+	                           }
+	                     }
+}
+
+# Invitetation to Baltic Democratic Alliance Finland
+country_event = {
+	            id = latvia.90
+	            title = latvia.90.t
+	            desc = latvia.90.d
+	            picture = GFX_country_event_latvia_37
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.90.a
+	                     LAT = { 
+	                           add_to_faction = FIN
+	                           country_event = { id = latvia.95 }
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.90.b
+	                     LAT = { 
+	                           country_event = { id = latvia.96 }
+	                           }
+	                     }
+}
+
+# Estonia Accepts Baltic Democratic Alliance
+country_event = {
+	            id = latvia.91
+	            title = latvia.91.t
+	            desc = latvia.91.d
+	            picture = GFX_country_event_latvia_34
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.91.a
+	                     }
+}
+
+# Estonia Declined Baltic Democratic Alliance
+country_event = {
+	            id = latvia.92
+	            title = latvia.92.t
+	            desc = latvia.92.d
+	            picture = GFX_country_event_latvia_34
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.92.a
+	                     }
+}
+
+# Lithuania Accepts Baltic Democratic Alliance
+country_event = {
+	            id = latvia.93
+	            title = latvia.93.t
+	            desc = latvia.93.d
+	            picture = GFX_country_event_latvia_35
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.93.a
+	                     }
+}
+
+# Lithuania Declined Baltic Democratic Alliance
+country_event = {
+	            id = latvia.94
+	            title = latvia.94.t
+	            desc = latvia.94.d
+	            picture = GFX_country_event_latvia_35
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.94.a
+	                     }
+}
+
+# Finland Accepts Baltic Democratic Alliance
+country_event = {
+	            id = latvia.95
+	            title = latvia.95.t
+	            desc = latvia.95.d
+	            picture = GFX_country_event_latvia_36
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.95.a
+	                     }
+}
+
+# Finland Declined Baltic Democratic Alliance
+country_event = {
+	            id = latvia.96
+	            title = latvia.96.t
+	            desc = latvia.96.d
+	            picture = GFX_country_event_latvia_36
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.96.a
+	                     }
+}
+
+# Invite Finland to Baltic Entente
+country_event = {
+	            id = latvia.97
+	            title = latvia.97.t
+	            desc = latvia.97.d
+	            picture = GFX_country_event_latvia_14
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.97.a
+	                     LAT = { country_event = latvia.98 }
+	                     }
+	            option = {
+	                     name = latvia.97.b
+	                     LAT = { country_event = latvia.99 }
+	                     }
+}
+
+# Finland accepts to join Baltic Entente
+country_event = {
+	            id = latvia.98
+	            title = latvia.98.t
+	            desc = latvia.98.d
+	            picture = GFX_country_event_latvia_15
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.98.a
+	                     LAT = { add_to_faction = FIN }
+	                     }
+}
+
+# Finland declines to join Baltic Entente
+country_event = {
+	            id = latvia.99
+	            title = latvia.99.t
+	            desc = latvia.99.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.99.a
+	                     }
+}
+
+# Invite Poland to Baltic Entente
+country_event = {
+	            id = latvia.100
+	            title = latvia.100.t
+	            desc = latvia.100.d
+	            picture = GFX_country_event_latvia_14
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.100.a
+	                     LAT = { country_event = latvia.101 }
+	                     }
+	            option = {
+	                     name = latvia.100.b
+	                     LAT = { country_event = latvia.102 }
+	                     }
+}
+
+# Poland accepts to join Baltic Entente
+country_event = {
+	            id = latvia.101
+	            title = latvia.101.t
+	            desc = latvia.101.d
+	            picture = GFX_country_event_latvia_15
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.101.a
+	                     LAT = { add_to_faction = POL }
+	                     }
+}
+
+# Poland declines to join Baltic Entente
+country_event = {
+	            id = latvia.102
+	            title = latvia.102.t
+	            desc = latvia.102.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.102.a
+	                     }
+}
+
+# Invite Czechia to Baltic Entente
+country_event = {
+	            id = latvia.103
+	            title = latvia.103.t
+	            desc = latvia.103.d
+	            picture = GFX_country_event_latvia_14
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.103.a
+	                     LAT = { country_event = latvia.104 }
+	                     }
+	            option = {
+	                     name = latvia.103.b
+	                     LAT = { country_event = latvia.105 }
+	                     }
+}
+
+# Czechia accepts to join Baltic Entente
+country_event = {
+	            id = latvia.104
+	            title = latvia.104.t
+	            desc = latvia.104.d
+	            picture = GFX_country_event_latvia_15
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.104.a
+	                     LAT = { add_to_faction = CZE }
+	                     }
+}
+
+# Czechia declines to join Baltic Entente
+country_event = {
+	            id = latvia.105
+	            title = latvia.105.t
+	            desc = latvia.105.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.105.a
+	                     }
+}
+
+# Invite Hungary to Baltic Entente
+country_event = {
+	            id = latvia.106
+	            title = latvia.106.t
+	            desc = latvia.106.d
+	            picture = GFX_country_event_latvia_14
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.106.a
+	                     LAT = { country_event = latvia.107 }
+	                     }
+	            option = {
+	                     name = latvia.106.b
+	                     LAT = { country_event = latvia.108 }
+	                     }
+}
+
+# Hungary accepts to join Baltic Entente
+country_event = {
+	            id = latvia.107
+	            title = latvia.107.t
+	            desc = latvia.107.d
+	            picture = GFX_country_event_latvia_15
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.107.a
+	                     LAT = { add_to_faction = HUN }
+	                     }
+}
+
+# Hungary declines to join Baltic Entente
+country_event = {
+	            id = latvia.108
+	            title = latvia.108.t
+	            desc = latvia.108.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.108.a
+	                     }
+}
+
+# Invite Romania to Baltic Entente
+country_event = {
+	            id = latvia.109
+	            title = latvia.109.t
+	            desc = latvia.109.d
+	            picture = GFX_country_event_latvia_14
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.109.a
+	                     LAT = { country_event = latvia.110 }
+	                     }
+	            option = {
+	                     name = latvia.109.b
+	                     LAT = { country_event = latvia.111 }
+	                     }
+}
+
+# Romania accepts to join Baltic Entente
+country_event = {
+	            id = latvia.110
+	            title = latvia.110.t
+	            desc = latvia.110.d
+	            picture = GFX_country_event_latvia_15
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.110.a
+	                     LAT = { add_to_faction = ROM }
+	                     }
+}
+
+# Romania declines to join Baltic Entente
+country_event = {
+	            id = latvia.111
+	            title = latvia.111.t
+	            desc = latvia.111.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.111.a
+	                     }
+}
+
+# Invite Yugoslavia to Baltic Entente
+country_event = {
+	            id = latvia.112
+	            title = latvia.112.t
+	            desc = latvia.112.d
+	            picture = GFX_country_event_latvia_14
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.112.a
+	                     LAT = { country_event = latvia.113 }
+	                     }
+	            option = {
+	                     name = latvia.112.b
+	                     LAT = { country_event = latvia.114 }
+	                     }
+}
+
+# Yugoslavia accepts to join Baltic Entente
+country_event = {
+	            id = latvia.113
+	            title = latvia.113.t
+	            desc = latvia.113.d
+	            picture = GFX_country_event_latvia_15
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.113.a
+	                     LAT = { add_to_faction = YUG }
+	                     }
+}
+
+# Yugoslavia declines to join Baltic Entente
+country_event = {
+	            id = latvia.114
+	            title = latvia.114.t
+	            desc = latvia.114.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.114.a
+	                     }
+}
+
+# Invite Bulgaria to Baltic Entente
+country_event = {
+	            id = latvia.115
+	            title = latvia.115.t
+	            desc = latvia.115.d
+	            picture = GFX_country_event_latvia_14
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.115.a
+	                     LAT = { country_event = latvia.116 }
+	                     }
+	            option = {
+	                     name = latvia.115.b
+	                     LAT = { country_event = latvia.117 }
+	                     }
+}
+
+# Bulgaria accepts to join Baltic Entente
+country_event = {
+	            id = latvia.116
+	            title = latvia.116.t
+	            desc = latvia.116.d
+	            picture = GFX_country_event_latvia_15
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.116.a
+	                     LAT = { add_to_faction = BUL }
+	                     }
+}
+
+# Bulgaria declines to join Baltic Entente
+country_event = {
+	            id = latvia.117
+	            title = latvia.117.t
+	            desc = latvia.117.d
+	            picture = GFX_country_event_latvia_16
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.117.a
+	                     }
+}
+
+# Baltia demands Vilnius and other land from Poland
+country_event = {
+	            id = latvia.118
+	            title = latvia.118.t
+	            desc = latvia.118.d
+	            picture = GFX_country_event_latvia_8
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.118.a
+	                     LAT = {
+	                           country_event = latvia.119
+	                           transfer_state = 784
+                               transfer_state = 96
+	                           transfer_state = 95
+	                           transfer_state = 97
+	                           transfer_state = 94
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.118.b
+	                     LAT = { country_event = latvia.120 }
+	                     }
+}
+
+# Baltia demands Vilnius and other land from Poland Succes
+country_event = {
+	            id = latvia.119
+	            title = latvia.119.t
+	            desc = latvia.119.d
+	            picture = GFX_country_event_latvia_24
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.119.a
+	                     }
+}
+
+# Baltia demands Vilnius and other land from Poland Failed
+country_event = {
+	            id = latvia.120
+	            title = latvia.120.t
+	            desc = latvia.120.d
+	            picture = GFX_country_event_latvia_8
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.120.a
+	                     POL = { country_event = latvia.121 }
+	                     add_stability = -0.01
+	                     }
+	            option = {
+	                     name = latvia.120.b
+	                     create_wargoal = {
+			                              type = annex_everything
+			                              target = POL
+			                              }
+	                     }
+	            option = {
+	                     name = latvia.120.c
+	                     }
+}
+
+# Baltia demands Vilnius from Poland
+country_event = {
+	            id = latvia.121
+	            title = latvia.121.t
+	            desc = latvia.121.d
+	            picture = GFX_country_event_latvia_8
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.121.a
+	                     LAT = {
+	                           country_event = latvia.122
+                               transfer_state = 96
+                               add_stability = -0.01
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.121.b
+	                     LAT = { country_event = latvia.123 }
+	                     }
+}
+
+# Baltia demands Vilnius from Poland Succes
+country_event = {
+	            id = latvia.122
+	            title = latvia.122.t
+	            desc = latvia.122.d
+	            picture = GFX_country_event_latvia_24
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.122.a
+	                     }
+}
+
+# Baltia demands Vilnius and other land from Poland Failed
+country_event = {
+	            id = latvia.123
+	            title = latvia.123.t
+	            desc = latvia.123.d
+	            picture = GFX_country_event_latvia_8
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.123.a
+	                     create_wargoal = {
+			                              type = annex_everything
+			                              target = POL
+			                              }
+	                     }
+	            option = {
+	                     name = latvia.123.b
+	                     }
+}
+
+# Baltia demands Prussia from Germany
+country_event = {
+	            id = latvia.124
+	            title = latvia.124.t
+	            desc = latvia.124.d
+	            picture = GFX_country_event_latvia_8
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.124.a
+	                     LAT = {
+	                           country_event = latvia.125
+                               transfer_state = 5
+                               transfer_state = 763
+	                           }
+	                     }
+	            option = {
+	                     name = latvia.124.b
+	                     LAT = { country_event = latvia.126 }
+	                     }
+}
+
+# Baltia demands Prussia from Germany Succes
+country_event = {
+	            id = latvia.125
+	            title = latvia.125.t
+	            desc = latvia.125.d
+	            picture = GFX_country_event_latvia_24
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.125.a
+	                     }
+}
+
+# Baltia demands Prussia from Germany Failed
+country_event = {
+	            id = latvia.126
+	            title = latvia.126.t
+	            desc = latvia.126.d
+	            picture = GFX_country_event_latvia_8
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.126.a
+	                     create_wargoal = {
+			                              type = annex_everything
+			                              target = GER
+			                              }
+	                     }
+	            option = {
+	                     name = latvia.126.b
+	                     }
+}
+
+# Latvia requests Gloster Gladiators from UK
+country_event = {
+	            id = latvia.127
+	            title = latvia.127.t
+	            desc = latvia.127.d
+	            picture = GFX_country_event_latvia_38
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.127.a
+	                     LAT = { country_event = { id = latvia.128 }}
+	                     add_political_power = 52
+	                     }
+	            option = {
+	                     name = latvia.127.b
+	                     LAT = { country_event = { id = latvia.129 }}
+	                     }
+}
+
+# Latvia requests Gloster Gladiators from UK sucesfull
+country_event = {
+	            id = latvia.128
+	            title = latvia.128.t
+	            desc = latvia.128.d
+	            picture = GFX_country_event_latvia_38
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.128.a
+	                     add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 26 producer = ENG }
+	                     }
+	            option = {
+	                     name = latvia.128.b
+	                     add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 50 producer = ENG }
+	                     add_political_power = -48
+	                     ENG = { add_political_power = 48 }
+	                     }
+	            option = {
+	                     name = latvia.128.c
+	                     add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 100 producer = ENG }
+	                     add_political_power = -148
+	                     ENG = { add_political_power = 148 }
+	                     }
+}
+
+# Latvia requests Gloster Gladiators from UK unsuccesful
+country_event = {
+	            id = latvia.129
+	            title = latvia.129.t
+	            desc = latvia.129.d
+	            picture = GFX_country_event_latvia_38
+	            is_triggered_only = yes	
+	         
+	            option = {
+	                     name = latvia.129.a
+	                     }
+}

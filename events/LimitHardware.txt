@@ -1,0 +1,69 @@
+﻿###########################
+# Political Events
+###########################
+
+add_namespace = limit_hardware
+
+# Less building start
+country_event = {
+	id = limit_hardware.3
+	title = limit_hardware.3.t
+	desc = limit_hardware.3.d
+	picture = GFX_report_event_generic_train
+	hidden = yes
+	trigger = {
+		date > 1939.1.9
+		not {
+			has_country_flag = flag_dyn_building
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	immediate = {
+		set_variable = { var_dyn_goods_factor = 0 }
+		add_dynamic_modifier = {
+			modifier = dynamic_modifier_less_building
+		}
+		set_country_flag = flag_dyn_building
+	}
+	option = {
+		name = limit_hardware.3.a
+	}
+}
+
+# Less building continuos
+country_event = {
+	id = limit_hardware.4
+	title = limit_hardware.4.t
+	desc = limit_hardware.4.d
+	picture = GFX_report_event_generic_train
+	hidden = yes
+	trigger = {
+		has_country_flag = flag_dyn_building
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	immediate = {
+		set_variable = { var_divisor = num_of_civilian_factories }
+		set_variable = { var_c = num_of_civilian_factories }
+		add_to_variable = { var_divisor = num_of_military_factories }
+		set_variable = { var_m = num_of_military_factories }
+		set_variable = { var_dividendo = num_battalions }
+		divide_variable = { var_dividendo = 100 }
+		set_variable = { var_goods_factor = var_dividendo }
+		divide_variable = { var_goods_factor = var_divisor }
+		clamp_variable = {
+			var = var_goods_factor
+			max = 0.6
+		}
+		set_variable = { var_dyn_goods_factor = var_goods_factor }
+	}
+
+	option = {
+		name = limit_hardware.4.a
+	}
+}

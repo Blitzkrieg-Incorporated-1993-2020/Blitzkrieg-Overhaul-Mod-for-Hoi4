@@ -1,0 +1,2813 @@
+﻿###########################
+# USA Events
+###########################
+
+add_namespace = usa
+
+
+#todo- add Anglo-Persian Oil Company events for Iran, and let Britain puppet it via event and build more oil fields there
+#todo- also add event for Anglo-Persian Oil Company to be reorganized into BP and expand Burgan Field to get Kuwait oil (completed in 1946 irl) in event of CSA choosing Germany
+
+# Amelia Eartharts wants to join the USAAC
+country_event = {
+	id = usa.1
+	title = usa.1.t
+	desc = usa.1.d
+	picture = GFX_report_event_usa_amelia_earhart_airplane
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		has_war = yes
+		NOT = { has_global_flag = earhart_disappeared }
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = { # Let her join
+		name = usa.1.a
+		add_political_power = -10
+		add_ace = {
+			name = "Amelia"
+			surname = "Earhart"
+			callsign = "Revenant"
+			type = fighter_genius
+			is_female = yes
+		}
+		set_country_flag = amelia_active_ace
+	}
+	option = { # Refuse
+		name = usa.1.b
+	}
+}
+
+# World Police
+country_event = {
+	id = usa.2
+	title = usa.2.t
+	desc = usa.2.d
+	picture = GFX_report_event_usa_heavy_cruiser
+
+	is_triggered_only = yes
+
+	
+	option = { 
+		name = usa.2.a
+		every_other_country = {
+			limit = {
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
+			save_event_target_as = war_target
+			ROOT = {
+				create_wargoal = { type = annex_everything target = event_target:war_target }
+			}
+		}
+	}
+
+}
+
+# Pearl Harbor Gambit
+country_event = {
+	id = usa.3
+	title = usa.3.t
+	desc = usa.3.d
+	picture = GFX_report_event_usa_pearl_harbor_airphoto
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		USA = {
+			focus_progress = {
+				focus = USA_pearl_harbor_gambit
+				progress > 0.1
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 21
+		modifier = {
+			factor = 0.5
+			USA = {
+				focus_progress = {
+					focus = USA_pearl_harbor_gambit
+					progress > 0.6
+				}
+			}
+		}
+	}
+
+	option = {
+		name = usa.3.a
+		create_wargoal = {
+			type = take_state
+			target = USA
+			generator = { 629 } # Hawaii
+		}
+	}
+}
+
+# Destroyers for Bases
+country_event = {
+	id = usa.4
+	title = usa.4.t
+	desc = usa.4.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = usa.4.a
+		custom_effect_tooltip = usa.4.a.tt
+		hidden_effect = {
+			ENG = {	load_oob = "ENG_destroyers_for_bases" }
+			ENG = {
+				if = { limit = { 696 = { is_controlled_by = ENG } }
+					remove_state_core = 696
+				}
+				if = { limit = { 331 = { is_controlled_by = ENG } }
+					remove_state_core = 331
+				}
+				if = { limit = { 308 = { is_controlled_by = ENG } } 
+					remove_state_core = 308
+				}
+				if = { limit = { 693 = { is_controlled_by = ENG } } 
+					remove_state_core = 693
+				}
+				if = { limit = { 689 = { is_controlled_by = ENG } } 
+					remove_state_core = 689
+				}
+				if = { limit = { 691 = { is_controlled_by = ENG } } 
+					remove_state_core = 691
+				}
+			}
+			CAN = { load_oob = "CAN_destroyers_for_bases" }
+		}
+		USA = {
+			if = { limit = { 696 = { is_controlled_by = ENG } }
+				transfer_state = 696
+			}
+			if = { limit = { 331 = { is_controlled_by = ENG } }
+				transfer_state = 331
+			}
+			if = { limit = { 308 = { is_controlled_by = ENG } } 
+				transfer_state = 308
+			}
+			if = { limit = { 693 = { is_controlled_by = ENG } } 
+				transfer_state = 693
+			}
+			if = { limit = { 689 = { is_controlled_by = ENG } } 
+				transfer_state = 689
+			}
+			if = { limit = { 691 = { is_controlled_by = ENG } } 
+				transfer_state = 691
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = destroyers_for_bases_opinion
+			}
+		}
+	}
+
+	option = {
+		name = usa.4.b
+		USA = { country_event = { id = usa.5 days = 1 } }
+		ai_chance = { factor = 0 }
+	}
+
+}
+
+# Britain refuses offer
+country_event = {
+	id = usa.5
+	title = usa.5.t
+	desc = usa.5.d
+	picture = GFX_report_event_usa_destroyers
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.5.a
+	}
+}
+
+# Election of 1936: Roosevelt vs Alf Landon
+country_event = {
+	id = usa.6
+	title = usa.6.t
+	desc = usa.6.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = USA
+		OR = {
+			social_democracy > 0.4
+			democratic > 0.4
+			conservative > 0.4
+		}
+		date > 1936.1.1
+		date < 1937.1.1
+	}
+	
+	option = { 	
+		name = usa.6.a
+		trigger = { NOT = { has_country_flag = USA_election_1936_focus } }
+		ai_chance = {
+			factor = 75
+		}		
+		#add_ideas = new_deal
+		add_political_power = -100
+	}
+
+	option = { 
+		name = usa.6.b
+		trigger = { NOT = { has_country_flag = USA_election_1936_focus } }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		if = {
+			limit = {
+				has_idea = standard_oil_california_im
+			}
+			add_political_power = 150
+		}
+		if = {
+			limit = {
+				NOT = { has_idea = standard_oil_california_im }
+			}
+			add_ideas = standard_oil_california_im
+		}
+		if = {
+			limit = {  
+				has_idea = usa_packed_court
+			}
+			remove_ideas = usa_packed_court
+		}
+		set_politics = {
+			ruling_party = conservative
+			elections_allowed = yes
+		}
+		add_popularity = {
+		    ideology = conservative
+		    popularity = 0.2
+		}
+		create_country_leader = {
+			name = "Alf Landon"
+			desc = "POLITICS_ALF_LANDON_DESC"
+			picture = "portrait_USA_alf_landon.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				staunch_constitutionalist
+			}
+		}
+	}
+	
+	option = { 	
+		name = usa.6.c
+		trigger = { has_country_flag = USA_election_1936_focus }
+		ai_chance = {
+			factor = 100
+		}		
+		#add_ideas = new_deal
+		add_political_power = 350
+	}
+}
+
+# Election of 1940: Roosevelt vs Wendell Wilkie
+country_event = {
+	id = usa.7
+	title = usa.7.t
+	desc = usa.7.d
+	picture = GFX_report_event_usa_election_roosevelt_wilkie
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = USA
+		OR = {
+			social_democracy > 0.4
+			democratic > 0.4
+			conservative > 0.4
+		}
+		date > 1940.1.1
+		date < 1941.1.1
+		has_country_leader = { id = 1776 ruling_only = yes name = "Franklin Delano Roosevelt" } 
+	}
+	
+	option = {
+		name = usa.7.a
+		ai_chance = {
+			factor = 75
+		}
+		add_political_power = 40
+		add_stability = 0.1
+		#remove_ideas = great_depression
+	}
+
+	option = {
+		name = usa.7.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}	
+		set_politics = {
+			ruling_party = conservative
+			elections_allowed = yes
+		}
+		add_popularity = {
+		    ideology = conservative
+		    popularity = 0.15
+		}
+		remove_ideas = new_deal
+		add_ideas = wilkies_new_deal
+		retire_ideology_leader = conservative
+		create_country_leader = {
+			name = "Wendell Wilkie"
+			desc = "POLITICS_WENDELL_WILKIE_DESC"
+			picture = "Portrait_USA_Wendell_Willkie.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				
+			}
+		}
+		if = {
+			limit = {  
+				has_idea = usa_packed_court
+			}
+			remove_ideas = usa_packed_court
+		}
+		add_stability = -0.1
+		#remove_ideas = great_depression
+	}
+}
+
+# Election of 1940: Roosevelt vs Landon (Incumbent)
+country_event = {
+	id = usa.8
+	title = usa.8.t
+	desc = usa.8.d
+	picture = GFX_report_event_usa_election_landon_roosevelt
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = USA
+		OR = {
+			social_democracy > 0.4
+			democratic > 0.4
+			conservative > 0.4
+		}
+		date > 1940.1.1
+		date < 1941.1.1
+		NOT = { has_country_leader = { id = 1776 ruling_only = yes name = "Franklin Delano Roosevelt" }  }
+	}
+	
+	option = { 
+		name = usa.8.a
+		add_political_power = 250
+		add_stability = -0.1
+		#remove_ideas = great_depression
+	}
+
+	option = { 
+		name = usa.8.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}	
+		set_politics = {
+			ruling_party = conservative
+			elections_allowed = yes
+		}
+		add_popularity = {
+		    ideology = conservative
+		    popularity = 0.15
+		}
+		#remove_ideas = great_depression
+		add_stability = 0.2
+	}
+}
+
+# Election of 1944: Roosevelt vs Thomas E. Dewey
+country_event = {
+	id = usa.9
+	title = usa.9.t
+	desc = usa.9.d
+	picture = GFX_report_event_usa_election_roosevelt_dewey
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = USA
+		OR = {
+			social_democracy > 0.4
+			democratic > 0.4
+			conservative > 0.4
+		}
+		date > 1944.1.1
+		date < 1945.1.1
+		has_country_leader = { id = 1776 ruling_only = yes name = "Franklin Delano Roosevelt" } 
+		has_war = no
+	}
+	
+	option = {
+		name = usa.9.a
+		ai_chance = {
+			factor = 75
+		}
+		add_political_power = -100
+	}
+
+	option = { 
+		name = usa.9.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = conservative
+			elections_allowed = yes
+		}
+		add_popularity = {
+		    ideology = conservative
+		    popularity = 0.15
+		}
+		remove_ideas = new_deal
+		create_country_leader = {
+			name = "Thomas E. Dewey"
+			desc = "POLITICS_THOMAS_DEWEY_DESC"
+			picture = "Portrait_USA_Generic_2.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				
+			}
+		}
+		if = {
+			limit = {  
+				has_idea = usa_packed_court
+			}
+			remove_ideas = usa_packed_court
+		}
+	}
+}
+
+# Election of 1944: Roosevelt vs Incumbent
+country_event = {
+	id = usa.10
+	title = usa.10.t
+	desc = usa.10.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = USA
+		OR = {
+			social_democracy > 0.4
+			democratic > 0.4
+			conservative > 0.4
+		}
+		date > 1944.1.1
+		date < 1945.1.1
+		NOT = { has_country_leader = { id = 1776 ruling_only = yes name = "Franklin Delano Roosevelt" }  }
+	}
+	
+	option = { 
+		name = usa.10.a
+		add_political_power = 100
+	}
+
+	option = { 
+		name = usa.10.b
+		#add_ideas = new_deal
+		set_politics = {
+			ruling_party = conservative
+			elections_allowed = yes
+		}
+		add_popularity = {
+		    ideology = conservative
+		    popularity = 0.15
+		}
+		if = {
+			limit = { has_idea = wilkies_new_deal }
+			remove_ideas = wilkies_new_deal
+		}
+		retire_country_leader = yes
+	}
+}
+
+# Election of 1944: Roosevelt vs MacArthur
+country_event = {
+	id = usa.11
+	title = usa.11.t
+	desc = usa.11.d
+	picture = GFX_report_event_usa_election_roosevelt_macarthur
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = USA
+		OR = {
+			social_democracy > 0.4
+			democratic > 0.4
+			conservative > 0.4
+		}
+		date > 1944.1.1
+		date < 1945.1.1
+		has_idea = new_deal
+		OR = {
+			has_war = no
+			has_country_flag = macarthur_candidate
+		}
+	}
+	
+	option = {
+		name = usa.11.a
+		ai_chance = {
+			factor = 25
+		}	
+		add_political_power = 10
+	}
+
+	option = { 
+		name = usa.11.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		remove_ideas = new_deal
+		set_politics = {
+			ruling_party = conservative
+			elections_allowed = yes
+		}
+		add_popularity = {
+		    ideology = conservative
+		    popularity = 0.15
+		}
+		create_country_leader = {
+			name = "Douglas MacArthur"
+			desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
+			picture = "Portrait_USA_Douglas_MacArthur.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				
+			}
+		}
+		remove_unit_leader = 57
+		if = {
+			limit = {  
+				has_idea = usa_packed_court
+			}
+			remove_ideas = usa_packed_court
+		}
+	}
+}
+
+# Election of 1944: MacArthur Candidate?
+country_event = {
+	id = usa.12
+	title = usa.12.t
+	desc = usa.12.d
+	picture = GFX_report_event_usa_macarthur_speech
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = USA
+		OR = {
+			social_democracy > 0.4
+			democratic > 0.4
+			conservative > 0.4
+		}
+		date > 1944.1.1
+		date < 1945.1.1
+		has_idea = new_deal
+		has_war = yes
+	}
+	
+	option = { 
+		name = usa.12.a
+		country_event = { id = usa.9 }
+	}
+
+	option = { 
+		name = usa.12.b
+		country_event = { id = usa.11 }
+	}
+}
+
+# Roosevelt Dies
+country_event = {
+	id = usa.13
+	title = usa.13.t
+	desc = usa.13.d
+	picture = GFX_report_event_usa_funeral
+
+	trigger = {
+		tag = USA
+		date > 1945.1.1
+		has_country_leader = { id = 1776 ruling_only = yes name = "Franklin Delano Roosevelt" } 
+		has_government = democratic
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 121
+	}
+	
+	option = {
+		name = usa.13.a
+		#add_political_power = -40
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Harry S. Truman"
+			desc = "POLITICS_HARRY_TRUMAN_DESC"
+			picture = "Portrait_USA_Harry_Truman.dds"
+			expire = "1965.1.1"
+			ideology = liberalism
+			traits = {
+				
+			}
+		}
+	}
+}
+
+# Fascist US reacts to Commienazis 
+country_event = {
+	id = usa.14
+	title = usa.14.t
+	desc = usa.14.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = USA
+		has_government = fascism
+		is_puppet = no
+	}
+	
+	option = { 
+		name = usa.14.a
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		set_political_party = {
+			ideology = democratic
+			popularity = 0.5
+		}
+		remove_ideas = great_depression
+		add_timed_idea = { idea = fascism_defeated days = 730 }
+		if = {
+			limit = {
+				ENG = {
+					is_faction_leader = yes
+					NOT = { has_war_with = USA }
+				}
+			}
+			ENG = { add_to_faction = USA }
+			USA = {
+				add_ai_strategy = {
+					type = alliance
+					id = "ENG"
+					value = 200
+				}
+			}
+		}
+		add_opinion_modifier = { target = GER modifier = unholy_alliance }
+	}
+
+	option = {
+		name = usa.14.b
+		ai_chance = { factor = 0 }
+	}
+}
+
+#DO NOT USE USA.15 AS EVENT ID
+#It will make the event text pop up as the name or requirement for two radar technologies for Finland if they are Fascist.
+
+
+# USA option to intervene in war
+# Hidden event to get scopes set up 
+country_event = {
+	id = usa.16
+
+	is_triggered_only = yes
+	
+	hidden = yes
+
+	immediate = {
+		save_event_target_as = being_attacked
+		USA = {
+			country_event = { id = usa.17 }
+		}
+	}
+}
+
+# USA option to intervene in war 
+country_event = {
+	id = usa.17
+	title = usa.17.t
+	desc = usa.17.d
+	picture = GFX_report_event_usa_macarthur_speech
+
+	is_triggered_only = yes
+	
+	#Intervene ultimatum war
+	option = { 
+		name = usa.17.a
+	
+		#Need to use FROM FROM scope since the one sending the event is the nation under attack
+		ai_chance = {
+			factor = 20			
+			modifier = {
+				factor = 0.2
+				FROM = {
+					FROM = {
+						strength_ratio = {
+							tag = USA
+							ratio > 0.8
+						}
+					}
+				}
+			}		
+		}
+
+		custom_effect_tooltip = usa.17.a_tt
+		FROM = { FROM = { country_event = { id = usa.18 days = 2 } } }
+	}
+
+	#Don't Intervene
+	option = {
+		name = usa.17.b
+
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				FROM = {
+					FROM = {
+						strength_ratio = {
+							tag = USA
+							ratio < 0.5
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Country response to USA intervening
+country_event = {
+	id = usa.18
+	title = usa.18.t
+	desc = usa.18.d
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+	
+	#Go to war with USA
+	option = { 
+		name = usa.18.a
+
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.5
+				strength_ratio = {
+					tag = USA
+					ratio < 0.7
+				}
+				is_in_faction = yes
+			}
+			modifier = {
+				factor = 5
+				strength_ratio = {
+					tag = USA
+					ratio > 0.7
+				}
+			}
+		}
+
+		event_target:being_attacked = {
+			FROM = {
+				add_to_war = {
+					targeted_alliance = PREV
+					enemy = ROOT
+				}
+			}
+		}
+
+		#ROOT = {
+		#	declare_war_on = {
+		#		target = FROM
+		#	}
+		#}
+		hidden_effect = {
+			news_event = { id = news.157 days = 2 }
+		}
+	}
+
+	#Back down
+	option = {
+		name = usa.18.b
+
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 10
+				strength_ratio = {
+					tag = USA
+					ratio < 0.7
+				}
+				is_in_faction = no
+			}			
+		}
+
+		custom_effect_tooltip = usa.18.b_tt
+		hidden_effect = {
+			event_target:being_attacked = { white_peace = ROOT }
+			news_event = { id = news.158 days = 2 }
+		}
+	}
+}
+country_event = {
+	id = usa.19
+	title = usa.19.t
+
+	is_triggered_only = yes
+	
+	hidden = yes
+
+	immediate = {
+		USA = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ROOT
+			}
+		}
+	}
+}
+
+# US supports democracy 
+country_event = {
+	id = usa.20
+	title = usa.20.t
+	desc = usa.20.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = usa_influence_fired
+	}
+
+	option = {
+		name = usa.20.a		
+		custom_effect_tooltip = usa.20.a_tt
+	}
+}
+
+# US supports communism
+country_event = {
+	id = usa.21
+	title = usa.20.t
+	desc = usa.21.d
+	picture = GFX_report_event_usa_election_generic
+	
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = usa_influence_fired
+	}
+
+	option = {
+		name = usa.20.a
+		custom_effect_tooltip = usa.20.a_tt
+	}
+}
+
+# US supports fascism
+country_event = {
+	id = usa.22
+	title = usa.20.t
+	desc = usa.22.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = usa_influence_fired
+	}
+
+	option = {
+		name = usa.20.a	
+		custom_effect_tooltip = usa.20.a_tt
+	}
+
+}
+
+# US extends influence to protection. Will meddle in wars
+country_event = {
+	id = usa.23
+	title = usa.23.t
+	desc = usa.23.d
+	picture = GFX_report_event_usa_heavy_cruiser
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.23.a
+		custom_effect_tooltip = usa.23.a_tt
+	}
+
+}
+
+
+# Communist US reacts to Commienazis 
+country_event = {
+	id = usa.24
+	title = usa.24.t
+	desc = usa.24.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = USA
+		has_government = communism 
+		is_puppet = no
+	}
+	
+	option = { 
+		name = usa.24.a
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		set_political_party = {
+			ideology = democratic
+			popularity = 0.5
+		}
+		remove_ideas = great_depression
+		add_timed_idea = { idea = communism_defeated days = 730 }
+		if = {
+			limit = {
+				ENG = {
+					is_faction_leader = yes
+					NOT = { has_war_with = USA }
+				}
+			}
+			ENG = { add_to_faction = USA }
+			USA = {
+				add_ai_strategy = {
+					type = alliance
+					id = "ENG"
+					value = 200
+				}
+			}
+		}
+		add_opinion_modifier = { target = GER modifier = unholy_alliance }
+		add_opinion_modifier = { target = SOV modifier = unholy_alliance }
+	}
+
+	option = {
+		name = usa.24.b
+		ai_chance = { factor = 0 }
+	}
+}
+
+
+add_namespace = americamod
+
+
+
+# Usefulness of Rockets Recognized
+country_event = {
+	id = americamod.1
+	title = americamod.1.t
+	desc = americamod.1.d
+	picture = GFX_report_event_usa_heavy_cruiser
+
+	fire_only_once = yes
+	
+	trigger = {
+		has_idea = qian_xuesen
+	}
+
+	mean_time_to_happen = {
+		days = 100
+	}
+
+	option = {
+		name = americamod.1.a
+		set_country_flag = usefulness_of_rockets_recognized
+		add_tech_bonus = {
+			ahead_reduction = 1
+			category = rocketry
+		}
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+# In Trouble for Long
+country_event = {
+	id = usa.90
+	title = usa.90.t
+	desc = usa.90.d
+	picture = GFX_report_event_huey_long
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		OR = {
+			has_completed_focus = USA_political_chaos
+			focus_progress = {
+				focus = USA_political_chaos
+				progress > 0.1
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = usa.90.a
+		country_event = { id = usa.92 days = 1 }
+	}
+}
+
+
+#Bounce
+country_event = {
+	id = usa.91
+	title = usa.91.t
+	desc = usa.91.d
+	picture = GFX_report_event_huey_long
+
+	fire_only_once = yes
+	
+	#is_triggered_only = yes
+
+	trigger = {
+		tag = FAS
+		#has_completed_focus = USA_political_chaos
+	}
+
+	#mean_time_to_happen = {
+	#	days = 1
+	#}
+
+	option = {
+		name = usa.91.a
+		FAS = { country_event = { id = usa.99 days = 1 } }
+		ACO = { country_event = { id = usa.99 days = 1 } }
+		CSA = { country_event = { id = usa.99 days = 1 } }
+	}
+}
+
+
+
+#Southern Grumblings
+country_event = {
+	id = usa.92
+	title = usa.92.t
+	desc = usa.92.d
+	picture = GFX_report_event_huey_long
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	#trigger = {
+	#	tag = USA
+	#	has_completed_focus = USA_political_chaos
+	#}
+
+	option = {
+		name = usa.92.a
+		hidden_effect = { country_event = { id = usa.93 days = 3 } }
+	}
+}
+
+
+
+
+
+#The Confederacy Leaves the Union
+country_event = {
+	id = usa.93
+	title = usa.93.t
+	desc = usa.93.d
+	picture = GFX_report_event_huey_long
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = { # Play as CSA
+		name = usa.93.a
+		trigger = { is_ai = no }
+		
+		hidden_effect = {
+			set_global_flag = american_civil_war_begun
+			every_country = {
+				limit = { 
+					is_subject_of = ROOT 
+					NOT = {
+						OR = {
+							has_autonomy_state = autonomy_imperial_dominion
+							has_autonomy_state = autonomy_crown_colony
+							has_autonomy_state = autonomy_royal_protectorate
+							has_autonomy_state = autonomy_integrated_region
+						}
+					}
+				}
+				USA = { end_puppet = PREV }
+			}
+            every_country = {
+                limit = { is_guaranteed_by = ROOT }
+                ROOT = {
+	                diplomatic_relation = {
+	                    country = PREV
+	                    relation = guarantee
+	                    active = no
+	                }
+                }
+            }
+			add_popularity = {
+			    ideology = neutrality
+			    popularity = 0.4
+			}
+			add_popularity = {
+			    ideology = democratic
+			    popularity = -0.2
+			}
+			add_popularity = {
+			    ideology = conservative
+			    popularity = -0.1
+			}
+			CSA = {
+				transfer_state = 364
+				transfer_state = 365
+				transfer_state = 366
+				transfer_state = 367
+				transfer_state = 370
+				transfer_state = 371
+				transfer_state = 845
+				transfer_state = 858
+				transfer_state = 375
+				transfer_state = 851
+				transfer_state = 852
+				transfer_state = 845
+			}
+			every_state = {
+				limit = { is_core_of = USA }
+				CSA = { add_state_core = PREV }
+			}
+			every_state = {
+				limit = { 
+					OR = { 
+						is_claimed_by = USA
+						AND = {
+							OWNER = { tag = USA } 
+							NOT = { is_core_of = USA }
+						} 
+					}
+				}
+				CSA = { add_state_claim = PREV }
+			}
+			country_event = { id = usa.94 days = 5 }
+			CSA = {	load_oob = "CSA_1936" } 
+			transfer_units_fraction= {
+			    target = CSA
+			    size = 0.2
+			    stockpile_ratio = 0.3
+			    army_ratio = 0.2
+			    navy_ratio = 0.1
+			    air_ratio = 0.2
+			    keep_unit_leaders_trigger = {
+			   	}
+			}
+		}
+		CSA = { change_tag_from = ROOT }
+		hidden_effect = {
+			add_timed_idea = {
+				idea = monarchist_influence
+			}
+			declare_war_on = {
+				target = CSA
+				type = annex_everything
+			}
+			add_ideas = usa_the_second_american_civil_war
+			CSA = { add_ideas = usa_the_second_american_civil_war }
+			USA = { add_threat = -5 }
+			
+			load_oob = "USA_washington"
+			load_oob = "USA_denver"
+			CSA = {	load_oob = "USA_carolina" }
+			CSA = {	load_oob = "USA_carolina" }
+			CSA = {	load_oob = "USA_texas" }
+		}
+	}
+	
+	option = { #AI Release CSA
+		name = usa.93.b
+		
+		hidden_effect = {
+			every_country = {
+				limit = { 
+					is_subject_of = ROOT 
+					NOT = {
+						OR = {
+							has_autonomy_state = autonomy_imperial_dominion
+							has_autonomy_state = autonomy_crown_colony
+							has_autonomy_state = autonomy_royal_protectorate
+							has_autonomy_state = autonomy_integrated_region
+						}
+					}
+				}
+				USA = { end_puppet = PREV }
+			}
+            every_country = {
+                limit = { is_guaranteed_by = ROOT }
+                ROOT = {
+	                diplomatic_relation = {
+	                    country = PREV
+	                    relation = guarantee
+	                    active = no
+	                }
+                }
+            }
+			add_popularity = {
+			    ideology = neutrality
+			    popularity = 0.3
+			}
+			add_popularity = {
+			    ideology = democratic
+			    popularity = -0.2
+			}
+			add_popularity = {
+			    ideology = conservative
+			    popularity = -0.1
+			}
+			add_popularity = {
+			    ideology = fascism
+			    popularity = -0.05
+			}
+			CSA = {
+				transfer_state = 364
+				transfer_state = 365
+				transfer_state = 366
+				transfer_state = 367
+				transfer_state = 370
+				transfer_state = 371
+				transfer_state = 845
+				transfer_state = 858
+				transfer_state = 375
+				transfer_state = 851
+				transfer_state = 852
+				transfer_state = 845
+			}
+			every_state = {
+				limit = { is_core_of = USA }
+				CSA = { add_state_core = PREV }
+			}
+			every_state = {
+				limit = { 
+					OR = { 
+						is_claimed_by = USA
+						AND = {
+							OWNER = { tag = USA } 
+							NOT = { is_core_of = USA }
+						} 
+					}
+				}
+				CSA = { add_state_claim = PREV }
+			}
+			CSA = {	load_oob = "CSA_1936" }
+			country_event = { id = usa.94 days = 1 }
+			transfer_units_fraction= {
+			    target = CSA
+			    size = 0.5
+			    stockpile_ratio = 0.4
+			    army_ratio = 0.3
+			    navy_ratio = 0.2
+			    air_ratio = 0.3
+			    keep_unit_leaders_trigger = {
+			   	}
+			}
+		}
+		add_timed_idea = {
+			idea = monarchy_influence
+			days = 1080
+		}
+		declare_war_on = {
+			target = CSA
+			type = annex_everything
+		}
+		add_ideas = usa_the_second_american_civil_war
+		CSA = { add_ideas = usa_the_second_american_civil_war }
+		USA = { add_threat = -5 }
+		
+		hidden_effect = {
+			load_oob = "USA_washington"
+			load_oob = "USA_denver"
+			CSA = {	load_oob = "USA_carolina" }
+			CSA = {	load_oob = "USA_carolina" }
+			CSA = {	load_oob = "USA_texas" }
+		}
+	}
+}
+
+
+#Buisness Plot Grumblings
+country_event = {
+	id = usa.94
+	title = usa.94.t
+	desc = usa.94.d
+	picture = GFX_report_event_huey_long
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = usa.94.a
+		
+		add_stability = -0.05
+		hidden_effect = {
+			country_event = { id = usa.95 days = 1 }
+		}
+		
+	}
+}
+
+
+#MacArthur Takes Over
+country_event = {
+	id = usa.95
+	title = usa.95.t
+	desc = usa.95.d
+	picture = GFX_report_event_huey_long
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = usa.95.a
+		
+		kill_country_leader = yes
+		set_cosmetic_tag = USA_federal
+		load_focus_tree = fas_focus
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = yes
+		}
+		create_country_leader = {
+			name = "Douglas MacArthur"
+			desc = "POLITICS_Douglas_MacArthur_DESC"
+			picture = "Portrait_USA_Douglas_MacArthur.dds"
+			expire = "1947.1.1"
+			ideology = despotism
+			traits = {
+				
+			}
+		}
+		hidden_effect = {
+			country_event = { id = usa.96 days = 1 }
+		}
+		
+	}
+}
+
+
+
+
+#Grumblings - particularly from Henry Wallace
+country_event = {
+	id = usa.96
+	title = usa.96.t
+	desc = usa.96.d
+	picture = GFX_report_event_huey_long
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = usa.96.a
+		add_stability = -0.1
+		country_event = { id = usa.97 days = 5 }
+	}
+}
+
+
+country_event = {
+	id = usa.97
+	title = usa.97.t
+	desc = usa.97.d
+	picture = GFX_report_event_huey_long
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	#trigger = {
+	#	country_exists = CSA
+	#}
+	
+	#mean_time_to_happen = {
+	#	days = 3
+	#}
+	
+	option = { # Play as ACO
+		name = usa.97.a
+		trigger = { is_ai = no }
+		
+		hidden_effect = {
+			add_popularity = {
+			    ideology = democratic
+			    popularity = -0.1
+			}
+			add_popularity = {
+			    ideology = conservative
+			    popularity = -0.1
+			}
+			add_popularity = {
+			    ideology = unionism
+			    popularity = -0.1
+			}
+			add_popularity = {
+			    ideology = communism
+			    popularity = -0.1
+			}
+			ACO = {
+				transfer_state = 377
+				transfer_state = 386
+				transfer_state = 385
+				transfer_state = 379
+				transfer_state = 378
+				transfer_state = 853
+				transfer_state = 854
+				transfer_state = 855
+				transfer_state = 1064
+
+				transfer_state = 261
+				transfer_state = 856
+				transfer_state = 393
+				transfer_state = 394
+				transfer_state = 395
+				transfer_state = 396
+				transfer_state = 357
+				transfer_state = 358
+				transfer_state = 839
+				transfer_state = 840
+			}
+			every_state = {
+				limit = { is_core_of = USA }
+				ACO = { add_state_core = PREV }
+			}
+			every_state = {
+				limit = { 
+					OR = { 
+						is_claimed_by = USA
+						AND = {
+							OWNER = { tag = USA } 
+							NOT = { is_core_of = USA }
+						} 
+					}
+				}
+				ACO = { add_state_claim = PREV }
+			}
+			every_state = {
+				limit = {
+					OWNER = { tag = USA } 
+					OR = {
+						state = 463
+						state = 629
+						is_island_state = yes
+					}
+				}
+				ACO = { transfer_state = PREV }
+			}
+			ACO = { change_tag_from = ROOT }
+			ACO = { country_event = { id = usa.98 days = 3 } }
+			ACO = {	load_oob = "ACO_1936" }
+			transfer_units_fraction= {
+			    target = ACO
+			    size = 0.5
+			    stockpile_ratio = 0.4
+			    army_ratio = 0.5
+			    navy_ratio = 0.7
+			    air_ratio = 0.3
+			    keep_unit_leaders_trigger = {
+			   	}
+			}
+		}
+		ACO = { change_tag_from = ROOT }
+		hidden_effect = {
+			declare_war_on = {
+				target = ACO
+				type = annex_everything
+			}
+			ACO = {
+				declare_war_on = {
+					target = CSA
+					type = annex_everything
+				}
+			}
+			ACO = { add_ideas = usa_the_second_american_civil_war }
+			USA = { add_threat = -5 }
+			ACO = { add_threat = -5 }
+		}
+			
+	}
+	
+	option = { #AI Release ACO
+		name = usa.97.b
+		
+		hidden_effect = {
+			add_popularity = {
+			    ideology = democratic
+			    popularity = -0.1
+			}
+			add_popularity = {
+			    ideology = conservative
+			    popularity = -0.1
+			}
+			add_popularity = {
+			    ideology = unionism
+			    popularity = -0.1
+			}
+			add_popularity = {
+			    ideology = communism
+			    popularity = -0.1
+			}
+			ACO = {
+				transfer_state = 377
+				transfer_state = 386
+				transfer_state = 385
+				transfer_state = 379
+				transfer_state = 378
+				transfer_state = 853
+				transfer_state = 854
+				transfer_state = 855
+				transfer_state = 1064
+
+				transfer_state = 261
+				transfer_state = 856
+				transfer_state = 393
+				transfer_state = 394
+				transfer_state = 395
+				transfer_state = 396
+				transfer_state = 357
+				transfer_state = 358
+				transfer_state = 839
+				transfer_state = 840
+			}
+			every_state = {
+				limit = { is_core_of = USA }
+				ACO = { add_state_core = PREV }
+			}
+			every_state = {
+				limit = { 
+					OR = { 
+						is_claimed_by = USA
+						AND = {
+							OWNER = { tag = USA } 
+							NOT = { is_core_of = USA }
+						} 
+					}
+				}
+				ACO = { add_state_claim = PREV }
+			}
+			every_state = {
+				limit = {
+					OWNER = { tag = USA } 
+					OR = {
+						state = 463
+						state = 629
+						is_island_state = yes
+					}
+				}
+				ACO = { transfer_state = PREV }
+			}
+			ACO = {	load_oob = "ACO_1936" }
+			ACO = { country_event = { id = usa.98 days = 3 } }
+			transfer_units_fraction= {
+			    target = ACO
+			    size = 0.5
+			    stockpile_ratio = 0.4
+			    army_ratio = 0.5
+			    navy_ratio = 0.7
+			    air_ratio = 0.3
+			    keep_unit_leaders_trigger = {
+			   	}
+			}
+		}
+		declare_war_on = {
+			target = ACO
+			type = annex_everything
+		}
+		ACO = {
+			declare_war_on = {
+				target = CSA
+				type = annex_everything
+			}
+		}
+		ACO = { add_ideas = usa_the_second_american_civil_war }
+		USA = { add_threat = -5 }
+		ACO = { add_threat = -5 }
+	}
+}
+
+
+country_event = {
+	id = usa.98
+	title = usa.98.t
+	desc = usa.98.d
+	picture = GFX_report_event_huey_long
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	#trigger = {
+		#country_exists = CSA
+		#country_exists = ACO
+	#}
+	
+	option = { # Play as Commies
+		name = usa.98.a
+		trigger = { is_ai = no }
+		hidden_effect = {
+			add_popularity = {
+			    ideology = unionism
+			    popularity = -0.1
+			}
+			add_popularity = {
+			    ideology = communism
+			    popularity = -0.2
+			}
+			every_state = {
+				limit = { is_core_of = USA }
+				FAS = { add_state_core = PREV }
+			}
+			every_state = {
+				limit = { 
+					OR = { 
+						is_claimed_by = USA
+						AND = {
+							OWNER = { tag = USA } 
+							NOT = { is_core_of = USA }
+						} 
+					}
+				}
+				FAS = { add_state_claim = PREV }
+			}
+			random_list = {
+				50 = {
+					FAS = {
+						set_country_flag = commies_in_the_east
+						transfer_state = 261
+						transfer_state = 856
+						transfer_state = 393
+						transfer_state = 394
+						transfer_state = 395
+						transfer_state = 396
+						transfer_state = 357
+						transfer_state = 358
+						transfer_state = 839
+						transfer_state = 840
+						load_oob = "USA_newyork"
+						load_oob = "USA_chicago"
+						load_oob = "USA_chicago"
+						ACO = {	load_oob = "USA_california" }
+						ACO = {	load_oob = "USA_california" }
+					}
+					transfer_units_fraction= {
+					    target = FAS
+					    size = 0.3
+					    stockpile_ratio = 0.5
+					    army_ratio = 0
+					    navy_ratio = 0
+					    air_ratio = 0.4
+					    keep_unit_leaders_trigger = {
+					   	}
+					}
+				}
+				50 = {
+					FAS = {
+						set_country_flag = commies_in_the_west
+						transfer_state = 377
+						transfer_state = 386
+						transfer_state = 385
+						transfer_state = 379
+						transfer_state = 378
+						transfer_state = 853
+						transfer_state = 854
+						transfer_state = 855
+						transfer_state = 1064
+						load_oob = "USA_california"
+						load_oob = "USA_california"
+						ACO = {	load_oob = "USA_newyork" }
+						ACO = {	load_oob = "USA_chicago" }
+						ACO = {	load_oob = "USA_chicago" }
+					}
+					transfer_units_fraction= {
+					    target = FAS
+					    size = 0.3
+					    stockpile_ratio = 0.5
+					    army_ratio = 0
+					    navy_ratio = 0.8
+					    air_ratio = 0.4
+					    keep_unit_leaders_trigger = {
+					   	}
+					}
+					every_state = {
+						limit = {
+							OWNER = { tag = ACO } 
+							OR = {
+								state = 463
+								state = 629
+								is_island_state = yes
+							}
+						}
+						FAS = { transfer_state = PREV }
+					}
+				}
+			}
+		}
+		FAS = { change_tag_from = ROOT }
+		FAS = { add_ideas = usa_the_second_american_civil_war }
+		hidden_effect = {
+			declare_war_on = {
+				target = FAS
+				type = annex_everything
+			}
+			USA = {
+				declare_war_on = {
+					target = FAS
+					type = annex_everything
+				}
+			}
+			FAS = {
+				declare_war_on = {
+					target = CSA
+					type = annex_everything
+				}
+			}
+			USA = {	load_oob = "USA_denver" }
+			USA = {	load_oob = "USA_washington" }
+		}
+	}
+	
+	option = { #AI Releases Commies
+		name = usa.98.b
+		hidden_effect = {
+			add_popularity = {
+			    ideology = unionism
+			    popularity = -0.1
+			}
+			add_popularity = {
+			    ideology = communism
+			    popularity = -0.2
+			}
+			every_state = {
+				limit = { is_core_of = USA }
+				FAS = { add_state_core = PREV }
+			}
+			every_state = {
+				limit = { 
+					OR = { 
+						is_claimed_by = USA
+						AND = {
+							OWNER = { tag = USA } 
+							NOT = { is_core_of = USA }
+						} 
+					}
+				}
+				FAS = { add_state_claim = PREV }
+			}
+			random_list = {
+				50 = {
+					FAS = {
+						set_country_flag = commies_in_the_east
+						transfer_state = 261
+						transfer_state = 856
+						transfer_state = 393
+						transfer_state = 394
+						transfer_state = 395
+						transfer_state = 396
+						transfer_state = 357
+						transfer_state = 358
+						transfer_state = 839
+						transfer_state = 840
+						load_oob = "USA_newyork"
+						load_oob = "USA_chicago"
+						load_oob = "USA_chicago"
+						ACO = {	load_oob = "USA_california" }
+						ACO = {	load_oob = "USA_california" }
+					}
+					transfer_units_fraction= {
+					    target = FAS
+					    size = 0.3
+					    stockpile_ratio = 0.5
+					    army_ratio = 0
+					    navy_ratio = 0
+					    air_ratio = 0.4
+					    keep_unit_leaders_trigger = {
+					   	}
+					}
+				}
+				50 = {
+					FAS = {
+						set_country_flag = commies_in_the_west
+						transfer_state = 377
+						transfer_state = 386
+						transfer_state = 385
+						transfer_state = 379
+						transfer_state = 378
+						transfer_state = 853
+						transfer_state = 854
+						transfer_state = 855
+						transfer_state = 1064
+						load_oob = "USA_california"
+						load_oob = "USA_california"
+						ACO = {	load_oob = "USA_newyork" }
+						ACO = {	load_oob = "USA_chicago" }
+						ACO = {	load_oob = "USA_chicago" }
+					}
+					transfer_units_fraction= {
+					    target = FAS
+					    size = 0.3
+					    stockpile_ratio = 0.5
+					    army_ratio = 0
+					    navy_ratio = 0.8
+					    air_ratio = 0.4
+					    keep_unit_leaders_trigger = {
+					   	}
+					}
+					every_state = {
+						limit = {
+							OWNER = { tag = ACO } 
+							OR = {
+								state = 463
+								state = 629
+								is_island_state = yes
+							}
+						}
+						FAS = { transfer_state = PREV }
+					}
+				}
+			}
+		}
+		declare_war_on = {
+			target = FAS
+			type = annex_everything
+		}
+		USA = {
+			declare_war_on = {
+				target = FAS
+				type = annex_everything
+			}
+		}
+		FAS = {
+			declare_war_on = {
+				target = CSA
+				type = annex_everything
+			}
+		}
+		FAS = { add_ideas = usa_the_second_american_civil_war }
+		hidden_effect = {
+			USA = {	load_oob = "USA_denver" }
+			USA = {	load_oob = "USA_washington" }
+		}
+	}
+}
+
+country_event = {
+	id = usa.100
+	title = usa.100.t
+	desc = usa.100.d
+	picture = GFX_report_event_usa_amelia_earhart_airplane
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { # Friends with the Soviets
+		name = usa.100.a
+		set_global_flag = us_companies_allowed_in_soviet_union
+		USA = { add_opinion_modifier = { target = SOV modifier = us_soviet_cooperation } }
+		SOV = { add_opinion_modifier = { target = USA modifier = us_soviet_cooperation } }
+	}
+	option = { # Screw the Soviets
+		name = usa.100.b
+		
+	}
+}
+
+country_event = {
+	id = usa.101
+	title = usa.101.t
+	desc = usa.101.d
+	picture = GFX_report_event_usa_amelia_earhart_airplane
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { # Dust Bowl
+		name = usa.101.a
+		add_stability = 0.05
+	}
+}
+
+country_event = {
+	id = usa.102
+	title = usa.102.t
+	desc = usa.102.d
+	picture = GFX_report_event_usa_amelia_earhart_airplane
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { # Begin Polio Research
+		name = usa.102.a
+		USA = { country_event = { id = usa.103 days = 100 } }
+	}
+}
+
+country_event = {
+	id = usa.103
+	title = usa.103.t
+	desc = usa.103.d
+	picture = GFX_report_event_usa_amelia_earhart_airplane
+
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = { # Polio Research
+		name = usa.103.a
+		
+		random_list = {
+			90 = { USA = { add_political_power = -25 country_event = { id = usa.103 days = 365 } } }
+			10 = { USA = { add_political_power = 25 country_event = { id = usa.104 days = 365 } } }
+		}
+	}
+}
+
+country_event = {
+	id = usa.104
+	title = usa.104.t
+	desc = usa.104.d
+	picture = GFX_report_event_usa_amelia_earhart_airplane
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { # Polio Cure
+		name = usa.104.a
+		remove_ideas = usa_polio_epidemic
+		add_stability = 0.05
+		add_political_power = 350
+	}
+}
+
+
+country_event = {
+	id = usa.105
+	title = usa.105.t
+	desc = usa.105.d
+	picture = GFX_report_event_usa_amelia_earhart_airplane
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { # Packing the Court Fight
+		name = usa.105.a
+		#available = {
+		#	date < 1936.07.04
+		#}
+		add_political_power = -200
+		add_stability = -0.05
+		hidden_effect = {
+			USA = { country_event = { id = usa.106 days = 145 } }
+		}
+	}
+	
+	option = { # Packing the Court Retreat
+		name = usa.105.b
+		add_stability = 0.05
+	}
+}
+
+
+
+
+country_event = {
+	id = usa.106
+	title = usa.106.t
+	desc = usa.106.d
+	picture = GFX_report_event_usa_amelia_earhart_airplane
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { # Packing the Court Fight
+		name = usa.106.a
+		
+		add_country_leader_trait = american_strongman
+		remove_country_leader_trait = champion_of_the_common_man
+		#add_ideas = usa_packed_court
+	}
+	
+} 
+
+country_event = {
+	id = usa.107
+	title = usa.107.t
+	desc = usa.107.d
+	picture = GFX_report_event_stalin_01
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { # Meeting with Stalin
+		name = usa.107.a
+		country_event = usa.108
+		
+	}
+	
+} 
+
+country_event = {
+	id = usa.108
+	title = usa.108.t
+	desc = usa.108.d
+	picture = GFX_report_event_stalin_01
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { # Meeting with Stalin
+		name = usa.108.a
+		
+		add_stability = 0.05
+		add_political_power = -50
+	}
+	
+} 
+
+
+
+
+country_event = {
+	id = usa.199
+	title = usa.199.t
+	desc = usa.199.d
+	picture = GFX_report_event_usa_pearl_harbor_airphoto
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	#trigger = {
+		#has_defensive_war_with = JAP
+		#tag = USA
+	#}
+	
+	option = { #Pearl Harbor
+		name = usa.199.a
+		add_war_support = 0.1
+		
+		#add_ideas = usa_remember_pearl_harbor
+		
+		if = {
+			limit = { 
+				date < 1940.1.1 
+				date > 1936.1.1 }
+			add_manpower = -4500
+			destroy_ships = {
+				type = battleship
+				count = 8
+			}
+			destroy_ships = {
+				type = carrier
+				count = 2
+			}
+		}
+		if = {
+			limit = { 
+				date < 1941.1.1
+				date > 1940.1.1 }
+			add_manpower = -3400
+			destroy_ships = {
+				type = battleship
+				count = 6
+			}
+			destroy_ships = {
+				type = carrier
+				count = 1
+			}
+		}
+		if = {
+			limit = { 
+				date < 1942.1.1 
+				date > 1941.1.1 }
+			add_manpower = -2300
+			destroy_ships = {
+				type = battleship
+				count = 4
+			}
+		}
+		if = {
+			limit = { 
+				date < 1943.1.1
+				date > 1942.1.1  }
+			add_manpower = -1300
+			destroy_ships = {
+				type = battleship
+				count = 2
+			}
+		}
+		
+	}
+	
+}
+
+#Japanese Fun Times
+
+country_event = {
+	id = usa.200
+	title = usa.200.t
+	desc = usa.200.d
+	picture = GFX_report_event_usa_amelia_earhart_airplane
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { # Japanese Event Diplomatic Complaint
+		name = usa.200.a
+		add_war_support = -0.05
+		
+		#hidden_effect = {
+		#	USA = { add_country_flag = usa_successful_first_warning }
+		#}
+	}
+	
+}
+
+country_event = {
+	id = usa.201
+	title = usa.201.t
+	desc = usa.201.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { # Japanese Event Economic Pressure
+		name = usa.201.a
+		add_political_power = -50
+		
+		#hidden_effect = {
+		#	USA = { add_country_flag = usa_successful_first_warning }
+		#}
+	}
+	
+}
+
+
+country_event = {
+	id = usa.202
+	title = usa.202.t
+	desc = usa.202.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.202.a
+		add_war_support = -0.05
+		
+	}
+	
+}
+
+country_event = {
+	id = usa.203
+	title = usa.203.t
+	desc = usa.203.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.203.a
+		add_political_power = -25
+		
+	}
+	
+}
+
+country_event = {
+	id = usa.204
+	title = usa.204.t
+	desc = usa.204.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.204.a
+		add_political_power = -50
+		
+	}
+	
+}
+
+
+country_event = {
+	id = usa.205
+	title = usa.205.t
+	desc = usa.205.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.205.a
+		add_political_power = -75
+		
+	}
+	
+	option = { 
+		name = usa.205.b
+		
+		declare_war_on = {
+			target = USA
+			type = annex_everything
+		}
+		
+		USA = { country_event = { id = usa.199 days = 1 } }
+	}
+	
+}
+
+
+country_event = {
+	id = usa.206
+	title = usa.206.t
+	desc = usa.206.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.206.a
+		add_political_power = -100
+		
+	}
+	
+	option = { 
+		name = usa.206.b
+		add_political_power = 50
+		
+		declare_war_on = {
+			target = USA
+			type = annex_everything
+		}
+		
+		USA = { country_event = { id = usa.199 days = 1 } }
+	}
+	
+}
+
+
+country_event = {
+	id = usa.207
+	title = usa.207.t
+	desc = usa.207.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.207.a
+		add_political_power = -150
+		add_war_support = -0.05
+	}
+	
+	option = { 
+		name = usa.207.b
+		add_political_power = 100
+		
+		declare_war_on = {
+			target = USA
+			type = annex_everything
+		}
+		
+		USA = { country_event = { id = usa.199 days = 1 } }
+	}
+	
+}
+
+country_event = {
+	id = usa.208
+	title = usa.208.t
+	desc = usa.208.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.208.a
+		add_political_power = -150
+		add_war_support = -0.1
+	}
+	
+	option = { 
+		name = usa.208.b
+		add_political_power = 150
+		
+		declare_war_on = {
+			target = USA
+			type = annex_everything
+		}
+		
+		USA = { country_event = { id = usa.199 days = 1 } }
+	}
+	
+}
+
+country_event = {
+	id = usa.209
+	title = usa.209.t
+	desc = usa.209.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.209.a
+		add_political_power = -250
+		add_war_support = -0.2
+	}
+	
+	option = { 
+		name = usa.209.b
+		add_political_power = 150
+		add_war_support = 0.05
+		
+		declare_war_on = {
+			target = USA
+			type = annex_everything
+		}
+		
+		USA = { country_event = { id = usa.199 days = 1 } }
+	}
+	
+}
+
+country_event = {
+	id = usa.210
+	title = usa.210.t
+	desc = usa.210.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.210.a
+		add_political_power = -150
+		add_stability = -0.2
+	}
+	
+	option = { 
+		name = usa.210.b
+		add_political_power = 150
+		add_war_support = 0.1
+		
+		declare_war_on = {
+			target = USA
+			type = annex_everything
+		}
+		
+		USA = { country_event = { id = usa.199 days = 1 } }
+	}
+	
+}
+
+country_event = {
+	id = usa.211
+	title = usa.211.t
+	desc = usa.211.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.211.a
+		
+		declare_war_on = {
+			target = USA
+			type = annex_everything
+		}
+		
+		USA = { country_event = { id = usa.199 days = 1 } }
+	}
+	
+}
+
+
+
+
+country_event = {	#rubber drive
+	id = usa.212
+	title = usa.212.t
+	desc = usa.212.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.212.a
+		
+		add_resource = {
+			type = rubber
+			amount = 150
+			state = 369
+		}
+		
+		hidden_effect = { USA = { country_event = { id = usa.213 days = 365 } } }
+	}
+	
+}
+
+country_event = {
+	id = usa.213
+	title = usa.213.t
+	desc = usa.213.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.213.a
+		
+		add_resource = {
+			type = rubber
+			amount = -150
+			state = 369
+		}
+		
+		#hidden_effect = { USA = { country_event = { id = usa.213 days = 365 } } }
+	}
+	
+}
+
+
+
+
+
+country_event = {	#scrap drive
+	id = usa.214
+	title = usa.214.t
+	desc = usa.214.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.214.a
+		
+		add_resource = {
+			type = chromium
+			amount = 15
+			state = 369
+		}
+		add_resource = {
+			type = tungsten
+			amount = 35
+			state = 369
+		}
+		add_resource = {
+			type = aluminium
+			amount = 150
+			state = 369
+		}
+		add_resource = {
+			type = steel
+			amount = 450
+			state = 369
+		}
+		
+		hidden_effect = { USA = { country_event = { id = usa.215 days = 365 } } }
+	}
+	
+}
+
+country_event = {
+	id = usa.215
+	title = usa.215.t
+	desc = usa.215.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = usa.215.a
+		
+		add_resource = {
+			type = chromium
+			amount = -15
+			state = 369
+		}
+		add_resource = {
+			type = tungsten
+			amount = -35
+			state = 369
+		}
+		add_resource = {
+			type = aluminium
+			amount = -150
+			state = 369
+		}
+		add_resource = {
+			type = steel
+			amount = -450
+			state = 369
+		}
+		
+		#hidden_effect = { USA = { country_event = { id = usa.213 days = 365 } } }
+	}
+	
+}
+
+
+
+country_event = { #recession time
+	id = usa.216
+	title = usa.216.t
+	desc = usa.216.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		date > 1937.05.01
+	}
+	
+	option = { 
+		name = usa.216.a
+		
+		add_ideas = usa_recession
+		#add_timed_idea = { idea = usa_recession days = 1395 }
+		remove_ideas = usa_economic_recovery
+		
+	}
+	
+}
+
+
+
+
+
+country_event = { #Rape of Nanjing
+	id = usa.217
+	title = usa.217.t
+	desc = usa.217.d
+	picture = GFX_report_event_japanese_soldiers_01
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		JAP = { controls_state = 613 }
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = { 
+		name = usa.217.a
+		
+		JAP = { 
+			add_named_threat = { 
+			threat = 5 
+			name = GER_rhineland
+			}
+		}
+		add_war_support = 0.1
+		add_timed_idea = { idea = usa_chinese_aid days = 365 }
+	}
+	
+	option = { 
+		name = usa.217.b
+		
+		JAP = { 
+			add_named_threat = { 
+			threat = 5 
+			name = GER_rhineland
+			}
+		}
+		add_war_support = 0.05
+		add_political_power = 100
+	}
+	
+	option = { 
+		name = usa.217.c
+		
+	}
+	
+}
+
+country_event = { #UN
+	id = usa.218
+	title = usa.218.t
+	desc = usa.218.d
+	picture = GFX_report_event_japanese_soldiers_01
+
+	is_triggered_only = yes
+	
+	
+	option = { 
+		name = usa.218.a
+		ai_chance = { factor = 100 }
+		add_ai_strategy = {
+			type = alliance
+			id = USA
+			value = 200
+		}
+		USA = { add_to_faction = ROOT }
+		add_stability = 0.05
+	}
+	
+	option = { 
+		name = usa.218.b
+		add_stability = -0.05
+		
+	}
+	
+}
+
+
+country_event = { #Guarantee Democracy
+	id = usa.219
+	title = usa.219.t
+	desc = usa.219.d
+	picture = GFX_report_event_japanese_soldiers_01
+
+	is_triggered_only = yes
+	
+	
+	option = { 
+		name = usa.219.a
+		ai_chance = { factor = 95 }
+		
+		USA = { give_guarantee = ROOT }
+		add_stability = 0.05
+	}
+	
+	option = { 
+		name = usa.219.b
+		ai_chance = { factor = 5 }
+		add_stability = -0.05
+		
+	}
+	
+}
+
+country_event = { 
+	id = usa.220
+	title = usa.220.t
+	desc = usa.220.d
+	picture = GFX_report_event_japanese_soldiers_01
+
+	is_triggered_only = yes
+	
+	
+	option = { 
+		name = usa.220.a
+		
+		add_timed_idea = { idea = usa_recession3 days = 1095 }
+		add_stability = -0.05
+	}
+	
+}
+
+
+
+
+country_event = {
+	id = usa.666
+	title = usa.666.t
+	desc = usa.666.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		USA = {
+			casualties > 2000000
+		}
+	}
+
+	option = { #unfortunate!
+		name = usa.666.a
+		ai_chance = {
+			base = 100
+		}
+		set_country_flag = usa_suffered_2m_casualties
+
+	}
+
+}

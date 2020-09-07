@@ -1,0 +1,575 @@
+﻿add_namespace = bra
+add_namespace = election_BRA
+add_namespace = news_BRA
+
+country_event = {
+	id = bra.2
+	title = bra.2.t
+	desc = bra.2.d
+	picture = GFX_bra.2
+	
+	is_triggered_only = yes
+	
+	option = { #fasc
+		name = bra.2.a
+		ai_chance = { factor = 60 }
+		add_popularity = { ideology = fascism popularity = 0.1 }
+		add_popularity = { ideology = monarchism popularity = 0.05 }
+		country_event = { days = 1 id = bra.3 }
+	}
+	
+	option = { #com
+		name = bra.2.b
+		ai_chance = { factor = 10 }
+		add_popularity = { ideology = unionism popularity = 0.05 }
+		add_popularity = { ideology = communism popularity = 0.1 }
+		country_event = { days = 1 id = bra.3 }
+	}
+	
+	option = { #en
+		name = bra.2.c
+		ai_chance = { factor = 30 }
+		add_political_power = 75
+		add_popularity = { ideology = neutrality popularity = -0.05 }
+		country_event = { days = 1 id = bra.3 }
+	}
+	
+	option = { #dem
+		name = bra.2.e
+		ai_chance = { factor = 10 }
+		add_popularity = { ideology = conservative popularity = 0.15 }
+		add_popularity = { ideology = democratic popularity = 0.15 }
+		add_popularity = { ideology = social_democracy popularity = 0.05 }
+		country_event = { days = 1 id = bra.3 }
+	}
+}
+
+country_event = {
+	id = bra.3
+	title = bra.3.t
+	desc = bra.3.d
+	picture = GFX_bra.3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = bra.3.a
+		ai_chance = { factor = 100 }
+		add_popularity = { ideology = neutrality popularity = -0.1 }
+		add_ideas = bra_instabilidade
+		add_timed_idea = { idea = bra_polaca_idea days = 90 } 
+	}
+}
+
+#country_event = {
+#	id = bra.4
+#	title = bra.4.t
+#	desc = bra.4.d
+#	picture = GFX_bra.4
+#	
+#	fire_only_once = yes
+#	
+#	trigger = {
+#		tag = BRA
+#		has_government = neutrality
+#		has_country_flag = bra_suicidio_5
+#		has_idea = bra_instabilidade
+#	}
+#		
+#	option = {
+#		name = bra.4.a
+#		kill_country_leader = yes
+#		create_country_leader = {
+#			name = "Café Filho"
+#			desc = "POLITICS_CF_DESC"
+#			picture = "gfx/leaders/BRA/Café.dds"
+#			expire = "1965.1.1"
+#			ideology = despotism
+#			traits = {  }
+#		}
+#		add_national_unity = -0.1
+#		remove_ideas = bra_instabilidade
+#	}
+#}
+
+country_event = {
+	id = bra.5
+	title = bra.5.t
+	desc = bra.5.d
+	picture = GFX_bra.5
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = bra.5.a
+		ai_chance = { factor = 0 }
+		add_popularity = { ideology = monarchism popularity = 0.5 }
+		create_country_leader = {
+			name = "Pedro III"
+			desc = "POLITICS_DPIII_DESC"
+			picture = "gfx/leaders/BRA/DPIII.dds"
+			expire = "1965.1.1"
+			ideology = absolutism
+			traits = { vfb_trait_dompedro_1 vfb_trait_dompedro_3 }
+		}
+		set_politics = { ruling_party = monarchism elections_allowed = no }
+	}
+	
+	option = {
+		name = bra.5.b
+		ai_chance = { factor = 1 }
+		add_popularity = { ideology = fascism popularity = 0.3 }
+		set_cosmetic_tag = BRA_monarchy
+		create_country_leader = {
+			name = "Pedro III"
+			desc = "POLITICS_DPIII_DESC"
+			picture = "gfx/leaders/BRA/DPIII.dds"
+			expire = "1965.1.1"
+			ideology = falangism
+			traits = { vfb_trait_dompedro_1 vfb_trait_dompedro_2 }
+		}
+		set_politics = { ruling_party = fascism elections_allowed = no }
+	}
+}
+
+country_event = {
+	id = bra.6
+	title = bra.6.t
+	desc = bra.6.d
+	picture = GFX_bra.6
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = { factor = 20 }
+		name = bra.6.a
+		BRA = { add_to_faction = ROOT }
+		#add_ideas = bra_mercosul_outro
+	}
+	
+	option = {
+		ai_chance = { factor = 0 }
+		name = bra.6.b
+		add_opinion_modifier = { target = BRA modifier = bra_inimigo_modifier }
+	}
+}
+
+country_event = {
+	id = bra.7
+	title = bra.7.t
+	desc = bra.7.d
+	picture = GFX_bra.7
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = { factor = 20 }
+		name = bra.7.a
+		add_to_faction = BRA
+	}
+	
+	option = {
+		ai_chance = { factor = 0 }
+		name = bra.7.b
+		add_opinion_modifier = { target = BRA modifier = bra_inimigo_modifier }
+	}
+}
+
+country_event = {
+	id = bra.8
+	title = bra.8.t
+	desc = bra.8.d
+	picture = GFX_bra.8
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = { factor = 20 }
+		name = bra.8.a
+		BRA = { add_to_faction = ROOT }
+	}
+	
+	option = {
+		ai_chance = { factor = 0 }
+		name = bra.8.b
+		add_opinion_modifier = { target = BRA modifier = bra_inimigo_modifier }
+	}
+}
+
+country_event = {
+	id = bra.9
+	title = bra.9.t
+	desc = bra.9.d
+	picture = GFX_bra.9
+	
+	fire_only_once = yes
+	
+	trigger = { 
+		tag = BRA
+		num_divisions < 30
+		has_war = yes
+	}
+	
+	option = {
+		name = bra.9.a
+		hidden_effect = { load_oob = BRA_atacado }
+	}
+}
+
+country_event = {
+	id = bra.10
+	title = bra.10.t
+	desc = bra.10.d
+	picture = GFX_bra.10
+	
+	is_triggered_only = yes
+	fire_only_once = yes 
+	
+	option = {
+		name = bra.10.a
+		add_resource = { type = rubber amount = 256 state = 495 }
+		501 = { 
+			add_building_construction = { type = dockyard level = 2 instant_build = yes }
+			add_building_construction = { type = naval_base province = 5112 level = 3 instant_build = yes }
+		}
+		hidden_effect = {
+			496 = { 
+				add_building_construction = { type = naval_base province = 10999 level = 1 instant_build = yes }
+			}
+			497 = { 
+				add_building_construction = { type = naval_base province = 12933 level = 3 instant_build = yes }
+				add_building_construction = { type = naval_base province = 12853 level = 1 instant_build = yes }
+			}
+			498 = { 
+				add_building_construction = { type = naval_base province = 5168 level = 2 instant_build = yes }
+			}
+			499 = { 
+				add_building_construction = { type = naval_base province = 10946 level = 2 instant_build = yes }
+			}
+			503 = { 
+				add_building_construction = { type = naval_base province = 4533 level = 3 instant_build = yes }
+			}
+		}
+	}
+}
+
+#country_event = {
+#	id = bra.11
+#	title = bra.11.t
+#	desc = bra.11.d
+#	picture = GFX_bra.11
+#	
+#	fire_only_once = yes
+#	
+#	trigger = { 
+#		is_puppet_of = BRA
+#		NOT = { tag = BRA }
+#		NOT = { 
+#			OR = {
+#				has_idea = bra_ideology_boost_puppet_fascism
+#				has_idea = bra_ideology_boost_puppet_communism
+#				has_idea = bra_ideology_boost_puppet_democratic
+#				has_idea = bra_ideology_boost_puppet_neutrality
+#			}
+#		}
+#	}
+#	
+#	option = {
+#		name = bra.11.a
+#		
+#		hidden_effect = { set_cosmetic_tag = BRA_PUPPET_COSTAG }
+#		
+#		if = { 
+#			limit = { 
+#				BRA = { has_government = fascism }
+#				}
+#			add_ideas = bra_ideology_boost_puppet_fascism
+#		}
+#		
+#		if = { 
+#			limit = { 
+#				BRA = { has_government = communism }
+#				}
+#			add_ideas = bra_ideology_boost_puppet_communism
+#		}
+#		
+#		if = { 
+#			limit = { 
+#				BRA = { has_government = democratic }
+#				}
+#			add_ideas = bra_ideology_boost_puppet_democratic
+#		}
+#		
+#		if = { 
+#			limit = { 
+#				BRA = { has_government = neutrality }
+#				}
+#			add_ideas = bra_ideology_boost_puppet_neutrality
+#		}
+#	}
+#}
+#
+#country_event = {
+#	id = bra.12
+#	title = bra.12.t
+#	desc = bra.12.d
+#	picture = GFX_bra.12
+#	
+#	fire_only_once = yes
+#	
+#	trigger = { 
+#		NOT = { is_puppet_of = BRA }
+#		NOT = { tag = BRA }
+#		OR = {
+#			has_idea = bra_ideology_boost_puppet_fascism
+#			has_idea = bra_ideology_boost_puppet_communism
+#			has_idea = bra_ideology_boost_puppet_democratic
+#			has_idea = bra_ideology_boost_puppet_neutrality
+#		}
+#	}
+#	
+#	option = {
+#		name = bra.12.a
+#		
+#		hidden_effect = { 
+#			remove_ideas = bra_ideology_boost_puppet_fascism
+#			remove_ideas = bra_ideology_boost_puppet_communism 
+#			remove_ideas = bra_ideology_boost_puppet_democratic 
+#			remove_ideas = bra_ideology_boost_puppet_neutrality
+#			drop_cosmetic_tag = yes
+#		}
+#	}
+#}
+	
+country_event = {
+	id = bra.13
+	title = bra.13.t
+	desc = bra.13.d
+	picture = GFX_bra.13
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = bra.13.a
+		
+		kill_country_leader = yes
+		
+		hidden_effect = {
+			create_country_leader = {
+				name = "Eurico Gaspar Dutra"
+				desc = "POLITICS_DUTRA_DESC"
+				picture = "gfx/leaders/BRA/Dutra.dds"
+				expire = "1965.1.1"
+				ideology = moderatism
+				traits = {
+					
+				}
+			}
+		}
+		
+		set_politics = { ruling_party = communism elections_allowed = no }
+		
+		add_popularity = { ideology = communism popularity = 0.125 }
+		
+		add_political_power = 150
+	}
+}
+
+country_event = {
+	id = bra.14
+	title = bra.14.t
+	desc = bra.14.d
+	picture = GFX_bra.14
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = bra.14.a
+		
+		retire_country_leader = yes
+		
+		hidden_effect = {
+			create_country_leader = {
+				name = "Eurico Gaspar Dutra"
+				desc = "POLITICS_DUTRA_DESC"
+				picture = "gfx/leaders/BRA/Dutra.dds"
+				expire = "1965.1.1"
+				ideology = moderatism
+				traits = {
+					
+				}
+			}
+		}
+		
+		set_politics = { ruling_party = fascism elections_allowed = no }
+		
+		add_popularity = { ideology = fascism popularity = 0.125 }
+		
+		add_political_power = 150
+	}
+}
+
+country_event = {
+	id = bra.15
+	title = bra.15.t
+	desc = bra.15.d
+	picture = GFX_bra.15
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = bra.15.a
+		
+		add_ideas = BRA_filinto_muller
+		
+		set_party_name = { ideology = neutrality long_name = "Estado Novo" name = "Estado Novo" } 
+		
+		add_popularity = { ideology = neutrality popularity = 0.125 }
+		
+		add_political_power = 150
+	}
+}
+
+country_event = {
+	id = bra.16
+	title = bra.16.t
+	desc = bra.16.d
+	picture = GFX_bra.16
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = bra.16.a
+		
+		retire_country_leader = yes
+		
+		hidden_effect = {
+			create_country_leader = {
+				name = "Eurico Gaspar Dutra"
+				desc = "POLITICS_DUTRA_DESC"
+				picture = "gfx/leaders/BRA/Dutra.dds"
+				expire = "1965.1.1"
+				ideology = moderatism
+				traits = {
+					
+				}
+			}
+		}
+		
+		set_politics = { ruling_party = conservative elections_allowed = no }
+	
+		add_popularity = { ideology = conservative popularity = 0.125 }
+		
+		add_political_power = 150
+	}
+}
+	
+#country_event = {
+#	id = bra.17
+#	title = bra.17.t
+#	desc = bra.17.d
+#	picture = GFX_bra.9
+#	
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		tag = BRA
+#		OR = {
+#			has_idea = american_influence_defence_democratic
+#			has_idea = american_influence_drift_democratic
+#			has_idea = american_influence_defence_communism
+#			has_idea = american_influence_drift_communism
+#			has_idea = american_influence_defence_fascism
+#			has_idea = american_influence_drift_fascism
+#			has_idea = american_protection_drift_fascism
+#			has_idea = american_protection_defence_fascism
+#			has_idea = american_protection_drift_communism
+#			has_idea = american_protection_defence_communism
+#			has_idea = american_protection_drift_democratic
+#			has_idea = american_protection_defence_democratic
+#		}
+#	}
+#	
+#	option = {
+#		name = bra.17.a
+#		
+#		remove_ideas = american_influence_drift_democratic
+#		
+#		hidden_effect = {
+#			remove_ideas = american_influence_defence_democratic
+#			remove_ideas = american_influence_defence_communism
+#			remove_ideas = american_influence_drift_communism
+#			remove_ideas = american_influence_defence_fascism
+#			remove_ideas = american_influence_drift_fascism
+#			remove_ideas = american_protection_drift_fascism
+#			remove_ideas = american_protection_defence_fascism
+#			remove_ideas = american_protection_drift_communism
+#			remove_ideas = american_protection_defence_communism
+#			remove_ideas = american_protection_drift_democratic
+#			remove_ideas = american_protection_defence_democratic
+#		}
+#		
+#		add_political_power = -50
+#	}
+#}
+
+# Brasillia = Smoking Snakes
+country_event = {
+	id = bra.20
+	title = bra.20.t
+	desc = bra.20.d
+	picture = GFX_report_event_usa_pearl_harbor_airphoto
+
+	trigger = { 
+		tag = BRA
+		date > 1942.8.20
+		is_in_faction = no
+		any_country = {
+			is_major = yes
+			has_defensive_war_with = GER
+		}
+		any_country = {
+			is_major = yes
+			has_defensive_war_with = GER
+			NOT = { has_war_with = BRA }
+		}
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = bra.20.a
+		ai_chance = {
+			base = 1
+		}
+		destroy_ships = {
+			type = convoy
+			count = 200
+		}
+	}
+
+	option = {
+		name = bra.20.b
+		ai_chance = {
+			base = 99
+		}
+		destroy_ships = {
+			type = convoy
+			count = 200
+		}
+		BRA = { 
+			declare_war_on = {
+			    target = GER
+			    type = topple_government
+			}
+		}
+	}
+}
+	
+	

@@ -1,0 +1,779 @@
+﻿###########################
+# Philippines Events
+###########################
+
+add_namespace = phil
+
+#Demand immediate independence
+country_event = {
+	id = phil.1
+	title = phil.1.t
+	desc = phil.1.desc
+	picture = GFX_report_event_journalists_speech
+	
+	is_triggered_only = yes
+
+	option = {#agree
+		name =  phil.1.a
+		ai_chance = {
+			factor = 99
+		}
+		effect_tooltip = {
+			USA = { set_autonomy = { target = "PHI" autonomy_state = autonomy_free } }
+		}
+		"PHI" = { country_event = { id =  phil.2 } }
+
+	}
+
+	option = {#refuse
+		name =  phil.1.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_in_faction_with = "PHI"
+				factor = 0
+			}
+		}
+		"PHI" = { country_event = { id =  phil.3 } }
+	}
+}
+
+#USA accepts
+country_event = {
+	id = phil.2
+	title = phil.2.t
+	desc = phil.2.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = {#good
+		name = phil.2.a
+		USA = { set_autonomy = { target = "PHI" autonomy_state = autonomy_free } }
+		add_political_power = 100
+		hidden_effect = {
+			news_event = { id = phil_news.1 days = 1 }
+		}
+	}
+}
+
+#Refusal
+country_event = {
+	id = phil.3
+	title = phil.3.t
+	desc = phil.3.desc
+	picture = GFX_report_event_usa_heavy_cruiser
+	
+	is_triggered_only = yes
+
+	option = {# Fine
+		name = phil.3.a
+		ai_chance = {
+			factor = 20
+		}
+		add_opinion_modifier = {
+				target = USA
+				modifier = large_decrease
+			}
+	}
+
+	option = {# War
+		name = phil.3.b
+		ai_chance = {
+			factor = 80
+		}
+		USA = { set_autonomy = { target = "PHI" autonomy_state = autonomy_free }
+		if = { limit = { "PHI" = { is_in_faction = yes } } remove_from_faction = "PHI" }
+		declare_war_on = {
+				type = puppet_wargoal_focus
+				target = "PHI"
+			}
+		}
+		hidden_effect = {
+			news_event = { id = phil_news.2 days = 1 }
+		}
+	}
+}
+
+# Communists Revolt
+country_event = {
+	id = phil.4
+	title = phil.4.t	
+	desc = phil.4.desc
+	picture = GFX_new_event_gathering_protest
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = phil.4.a
+		if = { limit = { tag = INS } 
+		start_civil_war = {
+			ideology = communism
+			size = 0.6
+			states = { 672 668 669 673 789 790 791 794 }
+		} }
+		if = { limit = { tag = MAL } 
+		start_civil_war = {
+			ideology = communism
+			size = 0.6
+			states = { 796 333 768 769 785 }
+		} }
+	}
+	option = {
+		trigger = {
+			is_ai = no
+		}
+		name = phil.4.b
+		if = {
+			limit = {
+				has_government = democratic
+			}
+			start_civil_war = {
+				ruling_party = communism
+				ideology = democratic
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = conservative
+			}
+			start_civil_war = {
+				ruling_party = communism
+				ideology = conservative
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = social_democracy
+			}
+			start_civil_war = {
+				ruling_party = communism
+				ideology = social_democracy
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = fascism
+			}
+			start_civil_war = {
+				ruling_party = communism
+				ideology = fascism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = monarchism
+			}
+			start_civil_war = {
+				ruling_party = communism
+				ideology = monarchism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = neutrality
+			}
+			start_civil_war = {
+				ruling_party = communism
+				ideology = neutrality
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = unionism
+			}
+			start_civil_war = {
+				ruling_party = communism
+				ideology = unionism
+				size = 0.2
+			}
+		}
+	}
+}
+
+#PHI uprisings - end ins civil war
+country_event = {
+	id = phil.5
+	title = phil.5.t
+	desc = phil.5.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = {
+		name = phil.5.a
+		random_country = {
+			limit = {
+				original_tag = INS
+				has_government = communism
+			}
+			white_peace = HOL
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_increase
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = "ROOT"
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = "ROOT"
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = "ROOT"
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = "ROOT"
+				value = 100
+			}
+		}
+	}
+}
+
+#PHI uprisings - end mal civil war
+country_event = {
+	id = phil.6
+	title = phil.6.t
+	desc = phil.6.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = {
+		name = phil.6.a
+		random_country = {
+			limit = {
+				original_tag = MAL
+				has_government = communism
+			}
+			white_peace = ENG
+			if = { limit = { has_war_with = AST } white_peace = AST }
+			if = { limit = { has_war_with = CAN } white_peace = CAN }
+			if = { limit = { has_war_with = NZL } white_peace = NZL }
+			if = { limit = { has_war_with = RAJ } white_peace = RAJ }
+			if = { limit = { has_war_with = SAF } white_peace = SAF }
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_increase
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = "ROOT"
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = "ROOT"
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = "ROOT"
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = "ROOT"
+				value = 100
+			}
+		}
+	}
+}
+
+# PHI demands freedom for Indochina
+country_event = {
+	id  phil.7
+	title = phil.7.t
+	desc = phil.7.d
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = { # Accept demands
+		name = phil.7.a
+		ai_chance = {
+			factor = 25 
+			modifier = {
+				factor = 50
+				has_war = yes
+				any_enemy_country = {
+					strength_ratio = { 
+						tag = ROOT 
+						ratio < 0.4
+					}
+				}
+			}
+			modifier = {
+				factor = 75
+				16 = { NOT = { is_controlled_by = FRA } } #Paris	
+			}
+		} 
+		"PHI" = {
+			country_event = { days = 2 id = phil.8 }
+		}
+	}
+	option = { # Refuse
+		name = phil.7.b
+		ai_chance = { factor = 25 }
+		"PHI" = {
+			country_event = { days = 2 id = phil.9 }
+		}
+	}
+}
+
+# French Accept Demands
+country_event = {
+	id = phil.8
+	title = phil.8.t
+	desc = phil.8.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		hidden_effect = {
+		VIN = { set_cosmetic_tag = VIN_indochina }
+		VIN = {
+			set_politics = {
+
+				parties = {
+					social_democracy = { 
+						popularity = 80
+					}
+
+					fascism = {
+						popularity = 2
+					}
+			
+					communism = {
+						popularity = 18
+						#banned = no #default is no
+					}
+				}
+		
+				ruling_party = communism
+				last_election = "1935.9.15"
+				election_frequency = 72
+				elections_allowed = no
+				}
+			}		
+		}
+	}
+	
+	option = {
+		name = phil.8.a
+		hidden_effect = {
+		VIN = {
+			if = {
+				limit = {
+					286 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = VIN
+						}
+					}
+				}
+				transfer_state = 286
+				add_state_core = 286
+				286 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		if = {
+				limit = {
+					670 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = VIN
+						}
+					}
+				}
+				transfer_state = 670
+				add_state_core = 670
+			}
+		if = {
+				limit = {
+					671 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = VIN
+						}
+					}
+				}
+				transfer_state = 671
+				add_state_core = 671
+				286 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		if = {
+				limit = {
+					741 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = VIN
+						}
+					}
+				}
+				transfer_state = 741
+				add_state_core = 741
+			}
+		if = {
+				limit = {
+					765 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = VIN
+						}
+					}
+				}
+				transfer_state = 765
+				add_state_core = 765
+			}
+		if = {
+				limit = {
+					766 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = VIN
+						}
+					}
+				}
+				transfer_state = 766
+				add_state_core = 766
+			}
+		if = {
+				limit = {
+					786 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = VIN
+						}
+					}
+				}
+				transfer_state = 786
+				add_state_core = 786
+			}
+		if = {
+				limit = {
+					788 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = VIN
+						}
+					}
+				}
+				transfer_state = 788
+				add_state_core = 788
+			}
+		add_political_power = 300
+			}
+		}	
+		"PHI" = { if = { limit = { is_faction_leader = yes } add_to_faction = VIN } else = { give_guarantee = VIN } add_named_threat = { threat = 3 name = phil.8.t } }
+		}
+	
+}
+
+# French Reject Demands
+country_event = {
+	id = phil.9
+	title = phil.9.t
+	desc = phil.9.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = phil.9.a
+		ai_chance = { factor = 80 }
+		#hidden_effect = {
+		#	country_event = { days = 5 id = news.6 }
+		#}
+	}
+	
+	option = {
+		name = phil.9.b
+		ai_chance = { factor = 20 }
+		"PHI" = { 
+			declare_war_on = {
+				target = FRA
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+}
+
+# I Shall Return
+country_event = {
+	id = phil.10
+	title = phil.10.t
+	desc = phil.10.d
+	picture = GFX_report_event_usa_macarthur_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = phil.10.a
+		add_war_support = 0.05
+		army_experience = 10
+		navy_experience = 10
+		air_experience = 10
+	}
+}
+
+# I Have Returned
+country_event = {
+	id = phil.11
+	title = phil.11.t
+	desc = phil.11.d
+	picture = GFX_report_event_usa_macarthur_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = phil.11.a
+		add_political_power = 50
+	}
+}
+
+# Offer to protect the islands
+country_event = {
+	id = phil.12
+	title = phil.12.t
+	desc = phil.12.d
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = phil.12.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.1
+				"PHI" = { has_army_manpower = { size < 99999 } }
+			}
+		}
+		effect_tooltip = {
+			"PHI" = {
+				transfer_state = 638
+				transfer_state = 633
+				transfer_state = 646
+				transfer_state = 647
+				transfer_state = 684
+				}
+		}
+		"PHI" = {
+			country_event = { days = 2 id = phil.13 }
+		}
+	}
+	option = { # Refuse
+		name = phil.12.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.1
+				has_war_with = USA
+			}
+			modifier = {
+				factor = 2
+				has_war_with = JAP
+			}
+			modifier = {
+				factor = 0.1
+				"PHI" = { has_army_manpower = { size > 199999 } }
+			}
+			modifier = {
+				factor = 0
+				is_subject_of = "PHI"
+			}
+		}
+		"PHI" = {
+			country_event = { days = 2 id = phil.14 }
+		}
+	}
+}
+
+# FROM accepts
+country_event = {
+	id = phil.13
+	title = phil.13.t
+	desc = phil.13.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = {#good
+		name = phil.13.a
+		transfer_state = 638
+		transfer_state = 633
+		transfer_state = 646
+		transfer_state = 647
+		transfer_state = 684
+	}
+}
+
+#Refusal
+country_event = {
+	id = phil.14
+	title = phil.14.t
+	desc = phil.14.desc
+	picture = GFX_report_event_japanese_soldiers_03
+	
+	is_triggered_only = yes
+
+	option = {# Sad
+		name = phil.14.a
+		add_opinion_modifier = {
+				target = FROM
+				modifier = small_decrease
+			}
+	}
+}
+
+# Demand Sabah
+country_event = {
+	id = phil.15
+	title = phil.15.t
+	desc = phil.15.d
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = phil.15.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.1
+				"PHI" = { has_army_manpower = { size < 99999 } }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+			}
+		}
+		effect_tooltip = {
+			"PHI" = {
+				transfer_state = 785
+				}
+		}
+		"PHI" = {
+			country_event = { days = 3 id = phil.16 }
+		}
+		set_country_flag = gave_up_sabah
+	}
+	option = { # Refuse
+		name = phil.15.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				is_in_faction_with = USA
+			}
+			modifier = {
+				factor = 10
+				is_major = yes
+			}
+			modifier = {
+				factor = 0.2
+				has_war_with = JAP
+			}
+			modifier = {
+				factor = 0.1
+				tag = MAL
+				"PHI" = { has_army_manpower = { size > 199999 } }
+			}
+			modifier = {
+				factor = 0.1
+				tag = AST
+				"PHI" = { has_army_manpower = { size > 299999 } }
+			}
+		}
+		"PHI" = {
+			country_event = { days = 3 id = phil.17 }
+		}
+	}
+}
+
+# FROM accepts
+country_event = {
+	id = phil.16
+	title = phil.16.t
+	desc = phil.16.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = {#good
+		name = phil.16.a
+		transfer_state = 785
+		add_political_power = 50
+		hidden_effect = {
+			news_event = { id = phil_news.3 days = 1 }
+		}
+	}
+}
+
+#Refusal
+country_event = {
+	id = phil.17
+	title = phil.17.t
+	desc = phil.17.desc
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes
+
+	option = {# Take it
+		name = phil.17.a
+		ai_chance = {
+			factor = 100
+		}
+		create_wargoal = {
+					target = FROM
+					type = take_state_focus
+					generator = { 785 }
+				}
+		hidden_effect = {
+			news_event = { id = phil_news.4 days = 1 }
+		}
+	}
+	
+	option = {# Give it up
+		name = phil.17.b
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = -50
+	}
+}

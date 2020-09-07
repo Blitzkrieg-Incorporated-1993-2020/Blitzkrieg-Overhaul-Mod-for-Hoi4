@@ -1,0 +1,3868 @@
+﻿add_namespace = NOS_denmark
+
+#Rules of Neutrality Renewed
+country_event = {
+	id = NOS_denmark.1
+	title = NOS_denmark.1.t
+	desc = NOS_denmark.1.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #Agree
+		name = NOS_denmark.1.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0.01
+				AND ={
+					OR = {
+						has_government = fascism
+						OR = { has_government = unionism has_government = communism }
+					}
+					is_historical_focus_on = no
+				}
+			}
+		}
+		add_named_threat = { threat = -0.5 name = DEN_drsrn_threat }
+		if = {
+			limit = { DEN = { has_country_flag = drsrn_renewed } }
+			DEN = { country_event = {id = NOS_denmark.2 hours = 24} }
+		}
+		else_if = {
+			limit = { ICE = { has_country_flag = drsrn_renewed } }
+			ICE = { country_event = {id = NOS_denmark.2 hours = 24} }
+		}
+		else_if = {
+			limit = { NOR = { has_country_flag = drsrn_renewed } }
+			NOR = { country_event = {id = NOS_denmark.2 hours = 24} }
+		}
+		else_if = {
+			limit = { SWE = { has_country_flag = drsrn_renewed } }
+			SWE = { country_event = {id = NOS_denmark.2 hours = 24} }
+		}
+		else_if = {
+			limit = { FIN = { has_country_flag = drsrn_renewed } }
+			FIN = { country_event = {id = NOS_denmark.2 hours = 24} }
+		}		
+		add_ideas = drsrn_signatory
+		hidden_effect = {
+			set_country_flag = drsrn_renewed
+		}
+	}
+	
+	option = { #Disagree
+		name = NOS_denmark.1.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		if = {
+			limit = { DEN = { has_country_flag = drsrn_renewed } }
+			DEN = { country_event = {id = NOS_denmark.3 hours = 24} }
+		}
+		else_if = {
+			limit = { ICE = { has_country_flag = drsrn_renewed } }
+			ICE = { country_event = {id = NOS_denmark.3 hours = 24} }
+		}
+		else_if = {
+			limit = { NOR = { has_country_flag = drsrn_renewed } }
+			NOR = { country_event = {id = NOS_denmark.3 hours = 24} }
+		}
+		else_if = {
+			limit = { SWE = { has_country_flag = drsrn_renewed } }
+			SWE = { country_event = {id = NOS_denmark.3 hours = 24} }
+		}
+		else_if = {
+			limit = { FIN = { has_country_flag = drsrn_renewed } }
+			FIN = { country_event = {id = NOS_denmark.3 hours = 24} }
+		}
+	}
+}
+	#Yes to DRSRN renewal
+	country_event = {
+		id = NOS_denmark.2
+		title = NOS_denmark.2.t
+		desc = NOS_denmark.2.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.2.a
+			hidden_effect = {
+				news_event = { hours = 24 id = NOS_denmark.41 }
+			}
+		}
+		
+	}
+
+	#No to DRSRN renewal
+	country_event = {
+		id = NOS_denmark.3
+		title = NOS_denmark.3.t
+		desc = NOS_denmark.3.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.3.a
+			hidden_effect = {
+				news_event = { hours = 24 id = NOS_denmark.41 }
+			}
+		}
+	}
+	
+	#News of the DRSRN
+	news_event = {
+		id = NOS_denmark.41 #HIDDEN TRIGGER
+		hidden = yes
+		
+		is_triggered_only = yes
+		fire_only_once = yes
+		
+		immediate = {
+			news_event = { days = 7 id = NOS_denmark.4 }
+		}
+		
+		option = {
+			name = NOS_denmark.41.a
+		}
+	}	
+	#news_event = { ## MOVED TO END DUE TO SCRIPTED LOCALISATION CHARACTER LIMIT
+	#	id = NOS_denmark.4
+	#	title = NOS_denmark.4.t
+	#	desc = NOS_denmark.4.desc
+	#	picture = GFX_news_event_generic_sign_treaty1
+	#	
+	#	major = yes
+	#	is_triggered_only = yes
+	#	
+	#	option = { #Non-Signatories, Fascist
+	#		name = NOS_denmark.4.a
+	#		trigger = {
+	#			AND = {
+	#				has_government = fascism
+	#				NOT = {
+	#					has_country_flag = drsrn_renewed
+	#				}
+	#			}
+	#		}
+	#	}
+	#	option = { #Non-Signatories, Communist
+	#		name = NOS_denmark.4.b
+	#		trigger = {
+	#			AND = {
+	#				OR = { has_government = unionism has_government = communism }
+	#				NOT = {
+	#					has_country_flag = drsrn_renewed
+	#				}
+	#			}
+	#		}
+	#	}
+	#	option = { #Non-Signatories, other
+	#		name = NOS_denmark.4.c
+	#		trigger = {
+	#			NOT = {
+	#				has_country_flag = drsrn_renewed
+	#				has_government = fascism
+	#				OR = { has_government = unionism has_government = communism }
+	#			}
+	#		}
+	#	}
+	#	
+	#	option = { #Signatories
+	#		name = NOS_denmark.4.d
+	#		trigger = {
+	#			has_country_flag = drsrn_renewed
+	#		}
+	#		add_ideas = drsrn_signatory
+	#	}
+	#}
+	
+
+
+# DENMARK UNITES THE WORKERS
+news_event = {
+	id = NOS_denmark.5
+	title = NOS_denmark.5
+	desc = NOS_denmark.5.desc
+	picture = GFX_news_event_generic_rally2
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = { # Communist
+		name = NOS_denmark.5.a
+		trigger = {
+			OR = { has_government = unionism has_government = communism }
+		}
+	}
+	
+	option = { # Non-Communist
+		name = NOS_denmark.5.b
+		trigger = {
+			NOT = { OR = { has_government = unionism has_government = communism } }
+		}
+	}
+}
+
+#MONARCHY ENDS IN DENMARK
+news_event = {
+	id = NOS_denmark.6 # (HIDDEN)
+	hidden = yes
+	
+	major = no
+	is_triggered_only = yes
+	
+	immediate = {
+		random_list = {
+			34 = { 
+				DEN = { news_event = NOS_denmark.666 }
+				set_country_flag = dead_king
+			}
+			66 = { DEN = { news_event = NOS_denmark.777 } }
+		}
+	}
+	
+	option = {
+		name = NOS_denmark.6.a
+	}
+}
+	news_event = { # Dead King
+		id = NOS_denmark.666
+		title = NOS_denmark.666.t
+		desc = NOS_denmark.666.desc
+		
+		picture = GFX_news_event_generic_riot
+		
+		major = no
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.666.a
+		}
+	}
+	news_event = { #Live King
+		id = NOS_denmark.777
+		title = NOS_denmark.777.t
+		desc = NOS_denmark.777.desc
+		
+		picture = GFX_news_event_generic_riot
+		
+		major = no
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.777.a
+		}
+	}
+
+#DENMARK DEMANDS SCHELZWIG-HOLSTEIN
+country_event = {
+	id = NOS_denmark.7
+	title = NOS_denmark.7.t
+	desc = NOS_denmark.7.desc
+	picture = GFX_report_event_soldiers_marching
+	
+	is_triggered_only = yes
+	
+	option = { #Yes
+		name = NOS_denmark.7.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2
+				has_war = yes #allies are good
+			}
+			modifier = {
+				factor = 3
+				GER = { has_completed_focus = GER_denmark_friend } #Yay for Denmark
+			}
+		}
+		DEN = { country_event = { id = NOS_denmark.8 hours = 24 }}
+	}
+	option = { #No 
+		name = NOS_denmark.7.b
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0.75
+				has_war = yes #we cannot afford more enemies
+			}
+		}
+		DEN = { country_event = { id = NOS_denmark.9 hours = 24 }}
+	}
+}	
+	country_event = {
+		id = NOS_denmark.8
+		title = NOS_denmark.8.t
+		desc = NOS_denmark.8.desc
+		picture = GFX_report_event_generic_peaceful_annexation
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.8.a
+			
+			GER = {
+				add_to_faction = DEN
+			}
+			DEN = {
+				add_state_core = 796
+				transfer_state = 796
+			}
+		}
+	}
+	country_event = {
+		id = NOS_denmark.9
+		title = NOS_denmark.9.t
+		desc = NOS_denmark.9.desc
+		picture = GFX_report_event_soldiers_marching
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.9.a
+			
+			DEN = {	
+				add_state_core = 796	
+				create_wargoal = {
+					type = take_state_focus
+					target = GER
+					generator = { 796 }
+				}
+			}
+		}
+	}
+	
+country_event = {
+	id = NOS_denmark.10
+	title = NOS_denmark.10.t
+	desc = NOS_denmark.10.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #Yes
+		name = NOS_denmark.10.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2
+				has_war = yes #allies are good
+			}
+			modifier = {
+				factor = 3
+				GER = { has_completed_focus = GER_denmark_friend } #Yay for Denmark
+			}
+			modifier = {
+				factor = 100 
+				GER = { surrender_progress > 0.1 } # HELP HELP HELP
+			}				
+		}
+		DEN = { country_event = { id = NOS_denmark.11 hours = 24 }}
+	}
+	option = { #No 
+		name = NOS_denmark.10.b
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0.5
+				has_war = yes #we cannot afford more enemies
+			}
+		}
+		DEN = { country_event = { id = NOS_denmark.12 hours = 24 }}
+	}
+}
+	#country_event = { # SCRAPPED FOR NOW
+	#	id = NOS_denmark.11
+	#	title = NOS_denmark.11.t
+	#	desc = NOS_denmark.11.desc
+	#	picture = GFX_report_event_generic_sign_treaty1
+	#	
+	#	is_triggered_only = yes
+	#	
+	#	option = {
+	#		name = NOS_denmark.11.a
+	#		custom_effect_tooltip = "NOTHING YET"		
+	#	}
+	#}
+	country_event = {
+		id = NOS_denmark.12
+		title = NOS_denmark.12.t
+		desc = NOS_denmark.12.desc
+		picture = GFX_report_event_soldiers_marching
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.12.a
+			
+			DEN = {	
+				add_state_core = 796	
+				create_wargoal = {
+					type = take_state_focus
+					target = GER
+					generator = { 796 }
+				}
+			}
+		}
+	}
+	
+
+# DANISH TANK COMPETITION
+country_event = {
+	id = NOS_denmark.13
+	title = NOS_denmark.13.t
+	desc = NOS_denmark.13.desc
+	picture = GFX_report_event_tank_factory
+	
+	is_triggered_only = yes
+	
+	option = { #light tanks
+		name = NOS_denmark.13.a
+		trigger = {
+			OR = {
+				GER = {
+					has_tech = improved_light_tank
+				}
+				FRA = {
+					has_tech = improved_light_tank
+				}
+				ENG = {
+					has_tech = improved_light_tank
+				}
+				USA = {
+					has_tech = improved_light_tank
+				}
+				ITA = {
+					has_tech = improved_light_tank
+				}
+			}
+		}
+		ai_chance = {
+			factor = 33
+			modifier = {
+				has_tech = improved_light_tank
+				add = 10
+			}
+			modifier = {
+				has_tech = advanced_light_tank
+				add = 10
+			}
+			modifier = {
+				has_tech = improved_medium_tank #Medium is better
+				add = -30
+			}
+			modifier = {
+				has_tech = advanced_medium_tank #Medium is better
+				add = -13
+			}
+			
+		}
+		country_event = NOS_denmark.14
+		hidden_effect = {
+			DEN = { set_country_flag = DEN_light_tanks }
+		}
+	}
+	
+	option = { #medium tanks
+		name = NOS_denmark.13.b
+		trigger = {
+			OR = {
+				GER = {
+					has_tech = improved_medium_tank
+				}
+				FRA = {
+					has_tech = improved_medium_tank
+				}
+				ENG = {
+					has_tech = improved_medium_tank
+				}
+				USA = {
+					has_tech = improved_medium_tank
+				}
+				ITA = {
+					has_tech = improved_medium_tank
+				}
+			}
+		}
+		ai_chance = {
+			factor = 33
+			modifier = {
+				has_tech = improved_medium_tank
+				add = 10
+			}
+			modifier = {
+				has_tech = advanced_medium_tank
+				add = 10
+			}
+			
+		}
+		country_event = NOS_denmark.15
+		hidden_effect = {
+			DEN = { set_country_flag = DEN_medium_tanks }
+		}
+	}
+	
+	option = { #Heavy tanks
+		name = NOS_denmark.13.c
+		trigger = {
+			OR = {
+				GER = {
+					has_tech = improved_heavy_tank
+				}
+				FRA = {
+					has_tech = improved_heavy_tank
+				}
+				ENG = {
+					has_tech = improved_heavy_tank
+				}
+				USA = {
+					has_tech = improved_heavy_tank
+				}
+				ITA = {
+					has_tech = improved_heavy_tank
+				}
+			}
+		}
+		ai_chance = {
+			factor = 33
+			modifier = {
+				has_tech = improved_heavy_tank
+				add = 10
+			}
+			modifier = {
+				has_tech = advanced_heavy_tank
+				add = 10
+			}
+			modifier = {
+				has_tech = super_heavy_tank #Investment
+				add = 66 
+			}
+		}
+		country_event = NOS_denmark.16
+		hidden_effect = {
+			DEN = { set_country_flag = DEN_heavy_tanks }
+		}
+	}
+	
+	option = { #failsafe
+		name = NOS_denmark.13.d
+		
+		army_experience = 50
+	}
+				
+}
+
+	country_event = { #Light Tanks
+		id = NOS_denmark.14
+		title = NOS_denmark.14.t
+		desc = NOS_denmark.14.desc
+		
+		picture = GFX_report_event_tank_factory
+		
+		is_triggered_only = yes
+		
+		option = { #Select German Tank
+			name = "[DEN_german_tank]"
+			trigger = {
+				GER = { has_tech = basic_light_tank }
+				NOT = { has_war_with = GER }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = GER
+				}
+				modifier = {
+					factor = 2
+					GER = { has_government = ROOT }
+				}
+				modifier = {
+					GER = {
+						has_tech = improved_light_tank
+					}
+					add = 10
+				}
+				modifier = {
+					GER = {
+						has_tech = advanced_light_tank
+					}
+					add = 10
+				}
+			}
+			GER = { 
+				country_event = NOS_denmark.17
+			}
+		}
+		
+		option = { #Select French Tank
+			name = "[DEN_french_tank]"
+			trigger = {
+				FRA = { has_tech = basic_light_tank }
+				NOT = { has_war_with = FRA }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = FRA
+				}
+				modifier = {
+					factor = 2
+					FRA = { has_government = ROOT }
+				}
+				modifier = {
+					FRA = {
+						has_tech = improved_light_tank
+					}
+					add = 10
+				}
+				modifier = {
+					FRA = {
+						has_tech = advanced_light_tank
+					}
+					add = 10
+				}
+			}
+			FRA = { 
+				country_event = NOS_denmark.17
+			}
+		}
+		
+		option = { #Select English Tank
+			name = "[DEN_english_tank]"
+			trigger = {
+				ENG = { has_tech = basic_light_tank }
+				NOT = { has_war_with = ENG }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = ENG
+				}
+				modifier = {
+					factor = 2
+					ENG = { has_government = ROOT }
+				}
+				modifier = {
+					ENG = {
+						has_tech = improved_light_tank
+					}
+					add = 10
+				}
+				modifier = {
+					ENG = {
+						has_tech = advanced_light_tank
+					}
+					add = 10
+				}
+			}
+			ENG = { 
+				country_event = NOS_denmark.17
+			}
+		}
+		
+		option = { #Select American Tank
+			name = "[DEN_american_tank]"
+			trigger = {
+				USA = { has_tech = basic_light_tank }
+				NOT = { has_war_with = USA }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = USA
+				}
+				modifier = {
+					factor = 2
+					USA = { has_government = ROOT }
+				}
+				modifier = {
+					USA = {
+						has_tech = improved_light_tank
+					}
+					add = 10
+				}
+				modifier = {
+					USA = {
+						has_tech = advanced_light_tank
+					}
+					add = 10
+				}
+			}
+			USA = { 
+				country_event = NOS_denmark.17
+			}
+		}
+		
+		option = { #Select Italian Tank
+			name = "[DEN_italian_tank]"
+			trigger = {
+				ITA = { has_tech = basic_light_tank }
+				NOT = { has_war_with = ITA }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = ITA
+				}
+				modifier = {
+					factor = 2
+					ITA = { has_government = ROOT }
+				}
+				modifier = {
+					ITA = {
+						has_tech = improved_light_tank
+					}
+					add = 10
+				}
+				modifier = {
+					ITA = {
+						has_tech = advanced_light_tank
+					}
+					add = 10
+				}
+			}
+			ITA = { 
+				country_event = NOS_denmark.17
+			}
+		}
+	}
+	country_event = { #Medium Tanks
+		id = NOS_denmark.15
+		title = NOS_denmark.15.t
+		desc = NOS_denmark.desc
+		
+		picture = GFX_report_event_tank_factory
+		
+		is_triggered_only = yes
+		
+		option = { #Select German Tank
+			name = "[DEN_german_tank]"
+			trigger = {
+				GER = { has_tech = basic_medium_tank }
+				NOT = { has_war_with = GER }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = GER
+				}
+				modifier = {
+					factor = 2
+					GER = { has_government = ROOT }
+				}
+				modifier = {
+					GER = {
+						has_tech = improved_medium_tank
+					}
+					add = 10
+				}
+				modifier = {
+					GER = {
+						has_tech = advanced_medium_tank
+					}
+					add = 10
+				}
+			}
+			GER = { 
+				country_event = NOS_denmark.17
+			}
+		}
+		
+		option = { #Select French Tank
+			name = "[DEN_french_tank]"
+			trigger = {
+				FRA = { has_tech = basic_medium_tank }
+				NOT = { has_war_with = FRA }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = FRA
+				}
+				modifier = {
+					factor = 2
+					FRA = { has_government = ROOT }
+				}
+				modifier = {
+					FRA = {
+						has_tech = improved_medium_tank
+					}
+					add = 10
+				}
+				modifier = {
+					FRA = {
+						has_tech = advanced_medium_tank
+					}
+					add = 10
+				}
+			}
+			FRA = { 
+				country_event = NOS_denmark.17
+			}
+		}
+		
+		option = { #Select English Tank
+			name = "[DEN_english_tank]"
+			trigger = {
+				ENG = { has_tech = basic_medium_tank }
+				NOT = { has_war_with = ENG }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = ENG
+				}
+				modifier = {
+					factor = 2
+					OR = {
+						ENG = { has_government = ROOT }
+					}
+				}
+				modifier = {
+					ENG = {
+						has_tech = improved_medium_tank
+					}
+					add = 10
+				}
+				modifier = {
+					ENG = {
+						has_tech = advanced_medium_tank
+					}
+					add = 10
+				}
+			}
+			ENG = { 
+				country_event = NOS_denmark.17
+			}
+		}
+		
+		option = { #Select American Tank
+			name = "[DEN_american_tank]"
+			trigger = {
+				USA = { has_tech = basic_medium_tank }
+				NOT = { has_war_with = USA }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = USA
+				}
+				modifier = {
+					factor = 2
+					USA = { has_government = ROOT }
+				}
+				modifier = {
+					USA = {
+						has_tech = improved_medium_tank
+					}
+					add = 10
+				}
+				modifier = {
+					USA = {
+						has_tech = advanced_medium_tank
+					}
+					add = 10
+				}
+			}
+			USA = { 
+				country_event = NOS_denmark.17
+			}
+		}
+		
+		option = { #Select Italian Tank
+			name = "[DEN_italian_tank]"
+			trigger = {
+				ITA = { has_tech = basic_medium_tank }
+				NOT = { has_war_with = ITA }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = ITA
+				}
+				modifier = {
+					factor = 2
+					ITA = { has_government = ROOT }
+				}
+				modifier = {
+					ITA = {
+						has_tech = improved_medium_tank
+					}
+					add = 10
+				}
+				modifier = {
+					ITA = {
+						has_tech = advanced_medium_tank
+					}
+					add = 10
+				}
+			}
+			ITA = { 
+				country_event = NOS_denmark.17
+			}
+		}
+	}
+	
+	country_event = { #Heavy Tanks
+		id = NOS_denmark.16
+		title = NOS_denmark.16.t
+		desc = NOS_denmark.desc
+		
+		picture = GFX_report_event_tank_factory
+		
+		is_triggered_only = yes
+		
+		option = { #Select German Tank
+			name = "[DEN_german_tank]"
+			trigger = {
+				GER = { has_tech = basic_heavy_tank }
+				NOT = { has_war_with = GER }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = GER
+				}
+				modifier = {
+					factor = 2
+					GER = { has_government = ROOT }
+				}
+				modifier = {
+					GER = {
+						has_tech = super_heavy_tank
+					}
+					add = 10
+				}
+				modifier = {
+					GER = {
+						has_tech = improved_heavy_tank
+					}
+					add = 10
+				}
+				modifier = {
+					GER = {
+						has_tech = advanced_heavy_tank
+					}
+					add = 10
+				}
+			}
+			GER = { 
+				country_event = NOS_denmark.17
+			}
+		}
+		
+		option = { #Select French Tank
+			name = "[DEN_french_tank]"
+			trigger = {
+				FRA = { has_tech = basic_heavy_tank }
+				NOT = { has_war_with = FRA }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = FRA
+				}
+				modifier = {
+					factor = 2
+					FRA = { has_government = ROOT }
+				}
+				modifier = {
+					FRA = {
+						has_tech = super_heavy_tank
+					}
+					add = 10
+				}
+				modifier = {
+					FRA = {
+						has_tech = improved_heavy_tank
+					}
+					add = 10
+				}
+				modifier = {
+					FRA = {
+						has_tech = advanced_heavy_tank
+					}
+					add = 10
+				}
+			}
+			FRA = { 
+				country_event = NOS_denmark.17
+			}
+		}
+		
+		option = { #Select English Tank
+			name = "[DEN_english_tank]"
+			trigger = {
+				ENG = { has_tech = basic_heavy_tank }
+				NOT = { has_war_with = ENG }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = ENG
+				}
+				modifier = {
+					factor = 2
+					ENG = { has_government = ROOT }
+				}
+				modifier = {
+					ENG = {
+						has_tech = super_heavy_tank
+					}
+					add = 10
+				}
+				modifier = {
+					ENG = {
+						has_tech = improved_heavy_tank
+					}
+					add = 10
+				}
+				modifier = {
+					ENG = {
+						has_tech = advanced_heavy_tank
+					}
+					add = 10
+				}
+			}
+			ENG = { 
+				country_event = NOS_denmark.17
+			}
+		}
+		
+		option = { #Select American Tank
+			name = "[DEN_american_tank]"
+			trigger = {
+				USA = { has_tech = basic_heavy_tank }
+				NOT = { has_war_with = USA }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = USA
+				}
+				modifier = {
+					factor = 2
+					USA = { has_government = ROOT }
+				}
+				modifier = {
+					USA = {
+						has_tech = super_heavy_tank
+					}
+					add = 10
+				}
+				modifier = {
+					USA = {
+						has_tech = improved_heavy_tank
+					}
+					add = 10
+				}
+				modifier = {
+					USA = {
+						has_tech = advanced_heavy_tank
+					}
+					add = 10
+				}
+			}
+			USA = { 
+				country_event = NOS_denmark.17
+			}
+		}
+		
+		option = { #Select Italian Tank
+			name = "[DEN_italian_tank]"
+			trigger = {
+				ITA = { has_tech = basic_heavy_tank }
+				NOT = { has_war_with = ITA }
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 10
+					is_in_faction_with = ITA
+				}
+				modifier = {
+					factor = 2
+					ITA = { has_government = ROOT }				
+				}
+				modifier = {
+					ITA = {
+						has_tech = super_heavy_tank
+					}
+					add = 10
+				}
+				modifier = {
+					ITA = {
+						has_tech = improved_heavy_tank
+					}
+					add = 10
+				}
+				modifier = {
+					ITA = {
+						has_tech = advanced_heavy_tank
+					}
+					add = 10
+				}
+			}
+			ITA = { 
+				country_event = NOS_denmark.17
+			}
+		}
+	}	
+	country_event = { # Notified of selection
+		id = NOS_denmark.17
+		title = NOS_denmark.17.t
+		desc = NOS_denmark.17.desc
+		picture = GFX_report_event_tank_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.17.a
+			ai_chance = {
+				factor = 90
+				modifier = {
+					factor = 0.5
+					has_war = yes
+				}
+				modifier = {
+					factor = 0
+					has_war_with = DEN
+				}
+			}
+			DEN = { 
+				country_event = NOS_denmark.18
+				add_opinion_modifier = { target = ROOT modifier = DEN_tank_won }
+			}
+			hidden_effect = {
+				set_country_flag = DEN_tank_won_flag 
+			}
+			add_opinion_modifier = { target = DEN modifier = DEN_tank_won }
+			if = {
+				limit = { DEN = { has_country_flag = DEN_light_tanks } }
+				if = {
+					limit = {
+						has_tech = basic_light_tank
+						NOT = { has_tech = improved_light_tank }
+					}
+					create_production_license = {
+						target = DEN
+						equipment = {
+							type = light_tank_equipment_1
+							
+						}
+						cost_factor = 0
+					}
+				}
+				if = {
+					limit = {
+						has_tech = improved_light_tank
+						NOT = { has_tech = advanced_light_tank }
+					}
+					create_production_license = {
+						target = DEN
+						equipment = {
+							type = light_tank_equipment_2
+						}
+						cost_factor = 0
+					}
+				}
+				if = {
+					limit = {
+						has_tech = advanced_light_tank
+					}
+					create_production_license = {
+						target = DEN
+						equipment = {
+							type = light_tank_equipment_3
+						}
+						cost_factor = 0
+					}
+				}
+			}
+			if = {
+				limit = { DEN = { has_country_flag = DEN_medium_tanks } }
+				if = {
+					limit = {
+						has_tech = basic_medium_tank
+						NOT = { has_tech = improved_medium_tank }
+					}
+					create_production_license = {
+						target = DEN
+						equipment = {
+							type = medium_tank_equipment_1
+							
+						}
+						cost_factor = 0
+					}
+				}
+				if = {
+					limit = {
+						has_tech = improved_medium_tank
+						NOT = { has_tech = advanced_medium_tank }
+					}
+					create_production_license = {
+						target = DEN
+						equipment = {
+							type = medium_tank_equipment_2
+						}
+						cost_factor = 0
+					}
+				}
+				if = {
+					limit = {
+						has_tech = advanced_medium_tank
+					}
+					create_production_license = {
+						target = DEN
+						equipment = {
+							type = medium_tank_equipment_3
+						}
+						cost_factor = 0
+					}
+				}
+			}
+			if = {
+				limit = { DEN = { has_country_flag = DEN_heavy_tanks } }
+				if = {
+					limit = {
+						has_tech = basic_heavy_tank
+						NOT = { has_tech = improved_heavy_tank }
+					}
+					create_production_license = {
+						target = DEN
+						equipment = {
+							type = heavy_tank_equipment_1
+							
+						}
+						cost_factor = 0
+					}
+				}
+				if = {
+					limit = {
+						has_tech = improved_heavy_tank
+						NOT = {
+							OR = {
+								has_tech = advanced_heavy_tank
+								has_tech = super_heavy_tank
+							}
+						}
+					}
+					create_production_license = {
+						target = DEN
+						equipment = {
+							type = heavy_tank_equipment_2
+						}
+						cost_factor = 0
+					}
+				}
+				if = {
+					limit = {
+						has_tech = advanced_heavy_tank
+						NOT = { has_tech = super_heavy_tank }
+					}
+					create_production_license = {
+						target = DEN
+						equipment = {
+							type = heavy_tank_equipment_3
+						}
+						cost_factor = 0
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_tech = advanced_heavy_tank }
+						has_tech = super_heavy_tank
+					}
+					create_production_license = {
+						target = DEN
+						equipment = {
+							type = super_heavy_tank_equipment_1
+						}
+						cost_factor = 0
+					}
+				}
+				if = {
+					limit = {
+						has_tech = advanced_heavy_tank
+						has_tech = super_heavy_tank
+					}
+					create_production_license = {
+						target = DEN
+						equipment = {
+							type = super_heavy_tank_equipment_1
+						}
+						cost_factor = 0
+					}
+					create_production_license = {
+						target = DEN
+						equipment = {
+							type = heavy_tank_equipment_3
+						}
+						cost_factor = 0
+					}
+				}
+			}			
+		}
+		option = {
+			name = NOS_denmark.17.b
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 0
+					is_in_faction_with = DEN
+				}
+			}
+			
+			DEN = { country_event = NOS_denmark.19 }
+		}
+	}	
+	country_event = {
+		id = NOS_denmark.18
+		title = NOS_denmark.18.t
+		desc = NOS_denmark.18.desc
+		picture = GFX_report_event_tank_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.18.a
+		}
+	}	
+	
+	country_event = {
+		id = NOS_denmark.19
+		title = NOS_denmark.19.t
+		desc = NOS_denmark.19.desc
+		picture = GFX_report_event_tank_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.19.a
+			army_experience = 10
+		}
+	}
+
+# Denmark Forms Nordic Pact
+
+country_event = {
+	id = NOS_denmark.20
+	title = NOS_denmark.20.t
+	desc = { #Both Democratic or Neutral
+		text = NOS_denmark.20.desc
+		trigger = {
+			OR = {
+				OR = { has_government = monarchism has_government = neutrality }
+				has_democratic_government = yes
+			}
+		}
+	}
+	desc = { #Norway is fascist/communist
+		text = NOS_denmark.20.desc2
+		trigger = {
+			AND = {
+				NOT = { OR = { has_government = monarchism has_government = neutrality } }
+				NOT = { has_democratic_government = yes }
+			}
+		}
+	}
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = alliance_applicant
+			FROM = {
+				save_event_target_as = alliance_inviter
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = { #We'll Join
+		name = NOS_denmark.20.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0.1
+				OR = {
+					NOR = { has_government = fascism }
+					NOR = { OR = { has_government = unionism has_government = communism } }
+				}
+			}
+			modifier = {
+				factor = 100 #ohshitohshitohshit
+				GER = {
+					focus_progress = { focus = GER_weserubung progress > 0}
+				}
+			}
+		}
+		if = {
+			limit = { DEN = { is_in_faction = no } }
+			DEN = {	create_faction = DEN_NOR_alliance }
+			FROM = { add_to_faction = ROOT }
+			hidden_effect = {
+				set_country_flag = alliance_applicant@ROOT
+				FROM = { set_country_flag = alliance_inviter@ROOT }
+			}
+		}
+		if = {
+			limit = { DEN = { is_in_faction = yes } }
+			FROM = { add_to_faction = ROOT }
+			hidden_effect = {
+				set_country_flag = alliance_applicant@ROOT
+				FROM = { set_country_flag = alliance_inviter@ROOT }
+				news_event = { id = news.289 hours = 12 }
+			}
+		}
+		hidden_effect = {
+			add_ai_strategy = {
+				type = alliance
+				id = "DEN"
+				value = 200
+			}
+		}
+		DEN = { country_event = NOS_denmark.21 }
+	}
+	
+	option = { # Bugger Off
+		name = NOS_denmark.20.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 3
+				is_historical_focus_on = yes #You will not screw up the timeline!
+			}
+		}
+		DEN = { country_event = NOS_denmark.22 }
+	}
+	
+}
+	country_event = { # Joined
+		id = NOS_denmark.21
+		title = NOS_denmark.21.t
+		desc = NOS_denmark.21.desc
+		picture = GFX_report_event_generic_sign_treaty3
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.21.a
+		}
+	}
+	country_event = { # Refused
+		id = NOS_denmark.22
+		title = NOS_denmark.22.t
+		desc = NOS_denmark.22.desc
+		picture = GFX_report_event_generic_sign_treaty3
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.22.a
+		}
+	}
+	
+	
+# DENMARK BEGINS SCANDINAVIAN REVOLUTIONS
+country_event = {
+	id = NOS_denmark.23
+	title = NOS_denmark.23.t
+	desc = NOS_denmark.23.desc
+	picture = GFX_report_event_generic_riot
+	
+	is_triggered_only = yes
+	
+	option = { # Join the revolution, ends the game
+		name = NOS_denmark.23.a
+		trigger = { 
+			NOT = { OR = {
+				NOT = { has_completed_focus = FIN_unthinkable }
+				NOT = { has_completed_focus = ICE_sup_com }
+				NOT = { has_completed_focus = NOR_go_communist }
+				NOT = { has_completed_focus = SWE_inernational_com }
+			} }
+			OR = {
+				is_ai = no
+				AND = {
+					is_subject = no
+					OR = {
+						OR = { has_government = unionism has_government = communism }
+						communism > 0.9
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		DEN = { annex_country = { target = ROOT transfer_troops = yes } }
+		custom_effect_tooltip = GAME_OVER_TT					
+	}			
+	option = { # Fight the revolution
+		name = NOS_denmark.23.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					OR = { has_government = unionism has_government = communism }
+					communism > 0.9
+				}
+			}
+		}
+		DEN = {
+			declare_war_on = {
+				target = ROOT
+				type = annex_everything				
+			}
+		}
+		custom_effect_tooltip = NOS_denmark.23.b_tt
+		hidden_effect = {
+			if = {
+				limit = { tag = NOR }
+				set_capital = 144
+				if = {
+					limit = { 						
+						communism > 0.75 
+						NOT = { has_completed_focus = NOR_go_communist }
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.75
+						capital = 144
+						states = { 143 142 110 }
+						states_filter = {
+							owner = { original_tag = NOR }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = NOR OR = { has_government = unionism has_government = communism } }
+						set_capital = 110
+						set_equipment_fraction = 0.75
+						set_stability = 0.9
+						set_war_support = 0.8
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.25
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+				if = {
+					limit = { 
+						communism > 0.5 
+						communism < 0.75
+						NOT = { has_completed_focus = NOR_go_communist }
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.5
+						capital = 144
+						states = { 142 110 }
+						states_filter = {
+							owner = { original_tag = NOR }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = NOR OR = { has_government = unionism has_government = communism } }
+						set_capital = 110
+						set_equipment_fraction = 0.5
+						set_stability = 0.9
+						set_war_support = 0.8
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.5
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+				if = {
+					limit = { 
+						communism > 0.25 
+						communism < 0.5
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.25
+						capital = 110
+						states = { 142 }
+						states_filter = {
+							owner = { original_tag = NOR }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = NOR OR = { has_government = unionism has_government = communism } }
+						set_capital = 142
+						set_equipment_fraction = 0.25
+						set_stability = 0.75
+						set_war_support = 0.75
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.75
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+			}
+			if = {
+				limit = { tag = SWE }
+				set_capital = 666
+				if = {
+					limit = { 
+						communism > 0.75
+						NOT = { has_completed_focus = SWE_inernational_com }
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.75
+						capital = 124
+						states = { 138 139 140 141 38 }
+						states_filter = {
+							owner = { original_tag = SWE }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = SWE OR = { has_government = unionism has_government = communism } }
+						set_capital = 138
+						set_equipment_fraction = 0.75
+						set_stability = 0.75
+						set_war_support = 0.75
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.25
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+				if = {
+					limit = { 
+						communism > 0.66
+						communism < 0.75
+						NOT = { has_completed_focus = SWE_inernational_com }
+			 		}
+					start_civil_war = {
+						ideology = communism
+						size = 0.66
+						capital = 124
+						states = { 138 139 140 141 }
+						states_filter = {
+							owner = { original_tag = SWE }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = SWE OR = { has_government = unionism has_government = communism } }
+						set_capital = 138
+						set_equipment_fraction = 0.66
+						set_stability = 0.75
+						set_war_support = 0.75
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.34
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+				if = {					
+					limit = { 
+						communism > 0.5
+						communism < 0.66
+						NOT = { has_completed_focus = SWE_inernational_com }
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.5
+						capital = 138
+						states = { 138 139 140 }
+						states_filter = {
+							owner = { original_tag = SWE }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = SWE OR = { has_government = unionism has_government = communism } }
+						set_capital = 138
+						set_equipment_fraction = 0.5
+						set_stability = 0.75
+						set_war_support = 0.75
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.5
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+				if = {
+					limit = { 
+						communism > 0.25 
+						communism < 0.5
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.25
+						capital = 141
+						states = { 138 139 }
+						states_filter = {
+							owner = { original_tag = SWE }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = SWE OR = { has_government = unionism has_government = communism } }
+						set_capital = 138
+						set_equipment_fraction = 0.25
+						set_stability = 0.5
+						set_war_support = 0.5
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.75
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+				if = {
+					limit = { 
+						communism > 0.1 
+						communism < 0.25
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.1
+						capital = 141
+						states = { 138 }
+						states_filter = {
+							owner = { original_tag = SWE }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = SWE OR = { has_government = unionism has_government = communism } }
+						set_capital = 138
+						set_equipment_fraction = 0.1
+						set_stability = 0.5
+						set_war_support = 0.5
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.9
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+			}
+			if = {
+				limit = { tag = FIN }
+				set_capital = 111
+				if = {
+					limit = { 
+						communism > 0.75 
+						NOT = { has_completed_focus = FIN_unthinkable }
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.75
+						capital = 111
+						states = { 145 147 148 149 150 722  }
+						states_filter = {
+							owner = { original_tag = FIN }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = FIN OR = { has_government = unionism has_government = communism } }
+						set_capital = 148
+						set_equipment_fraction = 0.75
+						set_stability = 0.75
+						set_war_support = 0.75
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.25
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+				if = {
+					limit = { 
+						communism > 0.66 
+						communism < 0.75
+						NOT = { has_completed_focus = FIN_unthinkable }
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.66
+						capital = 111
+						states = { 145 147 148 149 722 }
+						states_filter = {
+							owner = { original_tag = FIN }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = FIN OR = { has_government = unionism has_government = communism } }
+						set_capital = 148
+						set_equipment_fraction = 0.66
+						set_stability = 0.75
+						set_war_support = 0.75
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.34
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+				if = {
+					limit = { 
+						communism > 0.5 
+						communism < 0.66
+						NOT = { has_completed_focus = FIN_unthinkable }
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.5
+						capital = 111
+						states = { 145 148 149 722 }
+						states_filter = {
+							owner = { original_tag = FIN }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = FIN OR = { has_government = unionism has_government = communism } }
+						set_capital = 148
+						set_equipment_fraction = 0.5
+						set_stability = 0.75
+						set_war_support = 0.75
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.5
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+				if = {
+					limit = { 
+						communism > 0.33 
+						communism < 0.5
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.33
+						capital = 111
+						states = { 145 148 149 }
+						states_filter = {
+							owner = { original_tag = FIN }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = FIN OR = { has_government = unionism has_government = communism } }
+						set_capital = 148
+						set_equipment_fraction = 0.34
+						set_stability = 0.66
+						set_war_support = 0.66
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.66
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+				if = {
+					limit = { 
+						communism > 0.25 
+						communism < 0.33
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.25
+						capital = 111
+						states = { 145 149 }
+						states_filter = {
+							owner = { original_tag = FIN }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = FIN OR = { has_government = unionism has_government = communism } }
+						set_capital = 148
+						set_equipment_fraction = 0.25
+						set_stability = 0.66
+						set_war_support = 0.66
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.75
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+				if = {
+					limit = { 
+						communism > 0.1 
+						communism < 0.25
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.1
+						capital = 111
+						states = { 145 }
+						states_filter = {
+							owner = { original_tag = FIN }
+						}
+					}
+					random_other_country = {
+						limit = { original_tag = FIN OR = { has_government = unionism has_government = communism } }
+						set_capital = 145
+						set_equipment_fraction = 0.1
+						set_stability = 0.5
+						set_war_support = 0.5
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no			
+						}
+						country_event = NOS_denmark.24 #Annexes them immediately
+					}
+					set_equipment_fraction = 0.9
+					add_popularity = {
+						ideology = communism
+						popularity = -1
+					}
+				}
+			}
+		}
+	}
+}
+	country_event = {
+		id = NOS_denmark.24
+		title = NOS_denmark.24.t
+		desc = NOS_denmark.24.desc
+		picture = GFX_report_event_generic_riot
+		
+		hidden = yes
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.24.a
+			DEN = { annex_country = { target = ROOT transfer_troops = yes } }
+		}
+	}
+	
+	
+#Death of Thorvald Stauning
+country_event = {
+	id = NOS_denmark.25
+	title = NOS_denmark.25.t
+	desc = NOS_denmark.25.desc
+	picture = GFX_report_event_europe_funeral
+	
+	fire_only_once = yes
+	
+	trigger = {
+		date > 1942.1.1
+		original_tag = DEN
+		OR = {
+			has_country_leader = { id = 10002 ruling_only = no name = "Thorvald Stauning" }
+			has_country_leader = { id = 10005 ruling_only = no name = "Thorvald Stauning" }						
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 45
+	}
+	
+	immediate = {
+		set_country_flag = death_stauning
+	}
+	
+	option = {
+		name = NOS_denmark.25.a
+		if = {
+			limit = { 
+				NOT = { has_global_flag = fall_of_denmark }
+				OR = {
+					has_country_leader = { id = 10002 ruling_only = yes name = "Thorvald Stauning" }
+					has_country_leader = { id = 10005 ruling_only = yes name = "Thorvald Stauning" }					
+				}
+			}
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "Erik Scavenius"
+				desc = "POLITICS_ERIK_SCAVENIUS_DESC"
+				picture = "Portrait_Denmark_Erik_Scavenius.dds"
+				expire = "1965.1.1"
+				ideology = neutral_socialism
+				
+				id = 10006 #Scavenius
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { has_global_flag = fall_of_denmark }
+				OR = {
+					has_country_leader = { id = 10002 ruling_only = no name = "Thorvald Stauning" }
+					has_country_leader = { id = 10005 ruling_only = no name = "Thorvald Stauning" }					
+				}
+			}
+			custom_effect_tooltip = DEN_death_stauning
+			create_country_leader = {
+				name = "Erik Scavenius"
+				desc = "POLITICS_ERIK_SCAVENIUS_DESC"
+				picture = "Portrait_Denmark_Erik_Scavenius.dds"
+				expire = "1965.1.1"
+				ideology = neutral_socialism
+				
+				id = 10006 #Scavenius
+			}
+		}
+		if = {
+			limit = { 
+				has_global_flag = fall_of_denmark
+				OR = {
+					has_country_leader = { id = 10002 ruling_only = yes name = "Thorvald Stauning" }
+					has_country_leader = { id = 10005 ruling_only = yes name = "Thorvald Stauning" }					
+				}
+			}
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "Erik Scavenius"
+				desc = "POLITICS_ERIK_SCAVENIUS_DESC"
+				picture = "Portrait_Denmark_Erik_Scavenius.dds"
+				expire = "1965.1.1"
+				ideology = socialism
+				
+				id = 10006 #Scavenius
+			}
+		}
+		if = {
+			limit = { 
+				has_global_flag = fall_of_denmark
+				OR = {
+					has_country_leader = { id = 10002 ruling_only = no name = "Thorvald Stauning" }
+					has_country_leader = { id = 10005 ruling_only = no name = "Thorvald Stauning" }					
+				}
+			}
+			custom_effect_tooltip = DEN_death_stauning
+			create_country_leader = {
+				name = "Erik Scavenius"
+				desc = "POLITICS_ERIK_SCAVENIUS_DESC"
+				picture = "Portrait_Denmark_Erik_Scavenius.dds"
+				expire = "1965.1.1"
+				ideology = socialism
+				
+				id = 10006 #Scavenius
+			}
+		}		
+	}
+}
+
+#Scandinavian Guarantees for Denmark
+country_event = {
+	id = NOS_denmark.26
+	title = NOS_denmark.26.t
+	desc = NOS_denmark.26.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #Agree
+		name = NOS_denmark.26.a
+		trigger = {
+			OR = {
+				has_war = no
+				is_in_faction = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				is_in_faction_with = DEN
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		give_guarantee = DEN
+		diplomatic_relation = { country = DEN relation = non_aggression_pact }
+		DEN = { country_event = NOS_denmark.27 }
+	}
+	option = { #Refuse
+		name = NOS_denmark.26.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0.5
+				is_in_faction_with = DEN
+			}
+		}
+		DEN = { country_event = NOS_denmark.28 }
+	}
+	option = { # Agree in exchange for joining them in war
+		name = NOS_denmark.26.c
+		trigger = {
+			has_war = yes
+			OR = {
+				is_faction_leader = yes
+				is_in_faction = no
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+		DEN = { country_event = NOS_denmark.29 }
+	}
+}
+	country_event = { # Country Agreed
+		id = NOS_denmark.27
+		title = NOS_denmark.27.t
+		desc = NOS_denmark.27.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.27.a
+		}
+	}
+	country_event = { # Country Refused
+		id = NOS_denmark.28
+		title = NOS_denmark.28.t
+		desc = NOS_denmark.28.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.28.a
+		}
+	}
+	country_event = { # If We join War
+		id = NOS_denmark.29
+		title = NOS_denmark.29.t
+		desc = NOS_denmark.29.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = { # Join War
+			name = NOS_denmark.29.a
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					is_historical_focus_on = yes
+				}
+			}
+			if = {
+				limit = { FROM = { is_faction_leader = yes } }
+				DEN = { add_to_faction = FROM }
+			}
+			if = {
+				limit = { FROM = { is_faction_leader = no } }
+				FROM = { create_faction = SCA_DEF_alliance }
+				DEN = { add_to_faction = FROM }
+			}
+		}
+		option = { # Refuse
+			name = NOS_denmark.29.b
+			ai_chance = {
+				factor = 11
+			}
+			FROM = { country_event = NOS_denmark.30 }
+		}	
+	}
+		country_event = { # Country Refused
+			id = NOS_denmark.30
+			title = NOS_denmark.30.t
+			desc = NOS_denmark.30.desc
+			picture = GFX_report_event_generic_read_write
+			
+			is_triggered_only = yes
+			
+			option = {
+				name = NOS_denmark.30.a
+			}
+		}
+	
+		
+	
+### DANISH SURRENDER IN 2 HOURS
+
+# Denmark cannot win
+country_event = {
+	id = NOS_denmark.100
+	title = NOS_denmark.100.t
+	desc = NOS_denmark.100.desc
+	picture = GFX_report_event_german_troops
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	#trigger = { # Now fired from on_actions
+	#	tag = DEN
+	#	is_subject = no
+	#	has_civil_war = no
+	#	has_war_with = GER
+	#	NOT = { has_government = fascism }
+	#	NOT = { has_democratic_government = yes }
+	#	GER = { is_faction_leader = yes }
+	#	GER = { is_subject = no }
+	#}
+	#mean_time_to_happen = {
+	#	days = 1
+	#}
+	
+	option = { #Surrender
+		name = NOS_denmark.100.a
+		ai_chance = {
+			base = 10
+		}
+		
+		GER = { country_event = NOS_denmark.101 }
+	}
+	
+	option = { #Never Give Up
+		name = NOS_denmark.100.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10
+				is_in_faction = yes
+			}
+			modifier = {
+				factor = 5
+				has_democratic_government = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_completed_focus = DEN_remain_neutrality
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+	country_event = { #Germany asked about Danish Surrender offer
+		id = NOS_denmark.101
+		title = NOS_denmark.101.t
+		desc = NOS_denmark.101.desc
+		picture = GFX_report_event_german_troops
+		
+		is_triggered_only = yes	
+		
+		option = { #Accept surrender
+			name = NOS_denmark.101.a
+			ai_chance = {
+				base = 100
+			}
+			
+			effect_tooltip = {
+				puppet = DEN
+			}
+			
+			DEN = { country_event = NOS_denmark.102 }
+		}
+		option = { #We will take it, all of it
+			name = NOS_denmark.101.b
+			ai_chance = {
+				base = 1
+				modifier = {
+					factor = 0
+					is_historical_focus_on = yes
+				}
+			}
+			
+			add_political_power = -120
+			add_war_support = -0.1
+			DEN = { country_event = { id = NOS_denmark.103 hours = 6 } }
+		}
+	}
+	
+	country_event = {
+		id = NOS_denmark.102
+		title = NOS_denmark.102.t
+		desc = NOS_denmark.102.desc
+		picture = GFX_report_event_german_troops
+		
+		is_triggered_only = yes
+		
+		immediate = { 
+			hidden_effect ={
+				set_cosmetic_tag = DEN_free
+				set_global_flag = fall_of_denmark
+				news_event = { id = NOS_denmark.104 hours = 24  }
+			}
+		}
+		
+		option = { #Become Association of Free Danes
+			name = NOS_denmark.102.a
+			
+			custom_effect_tooltip = NOS_denmark.102.a_tt			
+			hidden_effect = {
+				set_capital = 101
+				start_civil_war = {
+					ideology = social_democracy
+					size = 1
+					capital = 101
+					states = { 37 99 }
+					states_filter = {
+						owner = { original_tag = DEN }
+					}
+				}
+				random_other_country = {
+					limit = {
+						original_tag = DEN
+						NOT = { tag = DEN }
+					}
+					set_capital = 37
+					set_equipment_fraction = 1
+					set_war_support = 0.1
+					if = { 
+						limit = { has_country_leader = { id = 10006 ruling_only = no name = "Erik Scavenius" } }
+						create_country_leader = {
+							name = "Erik Scavenius"
+							desc = "POLITICS_ERIK_SCAVENIUS_DESC"
+							picture = "Portrait_Denmark_Erik_Scavenius.dds"
+							expire = "1965.1.1"
+							ideology = socialism
+							
+							id = 10007 # Occupied Scavenius
+						}
+					}
+					else = {
+						create_country_leader = {
+							name = "Thorvald Stauning"
+							desc = "POLITICS_THORVALD_STAUNING_DESC"
+							picture = "Portrait_Denmark_Thorvald_Stauning.dds"
+							expire = "1965.1.1"
+							ideology = socialism
+							
+							id = 10005 # Occupied Stauning
+						}
+					}
+					create_country_leader = {
+						name = "Peter Munch"
+						desc = "POLITICS_PETER_MUNCH_DESC"
+						picture = "gfx/leaders/ENG/Portrait_Britain_Andrew_Cunningham.dds"
+						expire = "1965.1.1"
+						ideology = neutral_socialism
+					}
+					create_country_leader = {
+						name = "Frits Clausen"
+						desc = "POLITICS_FRITS_CLAUSEN_DESC"
+						picture = "gfx/leaders/YUG/portrait_milutin_nedic.dds"
+						expire = "1965.1.1"
+						ideology = nazism
+						traits = {
+							#
+						}
+						
+						id = 10003 # Occupied Clausen
+					}
+					if = {
+						limit = { DEN = { NOT = { has_completed_focus = DEN_com_oust_sov } } }
+						create_country_leader = {
+							name = "Aksel Larsen"
+							desc = "POLITICS_AKSEL_LARSEN_DESC"
+							picture = "gfx/leaders/AST/Portrait_Australia_Earle_Page.dds"
+							expire = "1965.1.1"
+							ideology = stalinism
+							traits = {
+								#
+							}
+							id = 10004 # Occupied Larsen
+						}
+					}
+					else = {
+						create_country_leader = {
+							name = "Kai Moltke"
+							desc = POLITICS_KAI_MOLTKE_DESC
+							picture = "gfx/leaders/ITA/Portrait_Italy_Generic_1.dd"
+							expire = "1965.1.1"
+							ideology = anarchist_communism
+							traits = { }
+						}
+					}
+					GER = {
+						puppet = PREV
+						set_autonomy = { target = PREV autonomy_state = autonomy_reichsprotectorate }
+					}
+					set_politics = {
+						ruling_party = democratic
+						last_election = "1939.4.3"
+						election_frequency = 48
+						elections_allowed = yes					
+					}
+					set_popularities = {
+						democratic = 72
+						fascism = 6
+						communism = 8
+						neutrality = 14
+					}
+					hidden_effect = {
+						add_ideas = DEN_hidden_taken
+					}
+				}
+				set_equipment_fraction = 0
+				create_country_leader = {
+					name = "Henrik Kauffmann"
+					desc = POLITICS_HENRIK_KAUFFMANN_DESC
+					picture = "gfx/leaders/SCA/Portrait_SCA_Henrik_Kauffmann.dds"
+					expire = "1965.1.1"
+					ideology = socialism
+					traits = { }
+				}
+				create_country_leader = {
+					name = "Eske Brun"
+					desc = POLITICS_ESKE_BRUN
+					picture = gfx/leaders/CZE/Portrait_Czech_Klement_Gottwald.dds
+					expire = "1965.1.1"
+					ideology = neutral_socialism
+					traits = { }
+				}
+				create_country_leader = {
+					name = "Kai Nielsen"
+					desc = POLITICS_KAI_NIELSEN
+					picture = gfx/leaders/NOR/Portrait_Norway_Vidkun_Quisling.dds
+					expire = "1965.1.1"
+					ideology = nazism
+					traits = { }
+				}
+				create_country_leader = {
+					name = "Augo Lynge"
+					desc = POLITICS_AUGO_LYNGE
+					picture = gfx/leaders/YUG/Portrait_Yugoslavia_Milan_Grol.dds
+					expire = "1965.1.1"
+					ideology = leninism
+					traits = { }
+				}
+				create_corps_commander = {
+					name = "Eske Brun"
+					portrait_path = gfx/leaders/CZE/Portrait_Czech_Klement_Gottwald.dds
+					traits = { adaptable winter_specialist winter_expert commando trait_mountaineer }
+					skill = 2
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 1
+					logistics_skill = 1
+				}
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 72
+					fascism = 6
+					communism = 8
+					neutrality = 14
+				}
+			}
+		}
+		option = { # Become Occupied Denmark
+			name = NOS_denmark.102.b
+			trigger = { is_ai = no }
+			
+			custom_effect_tooltip = NOS_denmark.102.b_tt
+			hidden_effect = {
+				set_capital = 101
+				start_civil_war = {
+					ideology = democratic
+					size = 1
+					capital = 101
+					states = { 37 99 }
+					states_filter = {
+						owner = { original_tag = DEN }
+					}
+				}
+				random_other_country = {
+					limit = {
+						original_tag = DEN
+						NOT = { tag = DEN }
+					}
+					set_capital = 37
+					set_equipment_fraction = 1
+					set_war_support = 0.1
+					set_party_name = { ideology = democratic long_name = "Socialdemokratiet" name = Socialdemokratiet }
+					set_party_name = { ideology = neutrality long_name = "Radikale Venstre" name = "Radikale Venstre" }
+					if = { 
+						limit = { has_country_leader = { id = 10006 ruling_only = no name = "Erik Scavenius" } }
+						create_country_leader = {
+							name = "Erik Scavenius"
+							desc = "POLITICS_ERIK_SCAVENIUS_DESC"
+							picture = "Portrait_Denmark_Erik_Scavenius.dds"
+							expire = "1965.1.1"
+							ideology = socialism
+							
+							id = 10007 # Occupied Scavenius
+						}
+					}
+					else = {
+						create_country_leader = {
+							name = "Thorvald Stauning"
+							desc = "POLITICS_THORVALD_STAUNING_DESC"
+							picture = "Portrait_Denmark_Thorvald_Stauning.dds"
+							expire = "1965.1.1"
+							ideology = socialism
+							
+							id = 10005 # Occupied Stauning
+						}
+					}
+					create_country_leader = {
+						name = "Peter Munch"
+						desc = "POLITICS_PETER_MUNCH_DESC"
+						picture = "gfx/leaders/ENG/Portrait_Britain_Andrew_Cunningham.dds"
+						expire = "1965.1.1"
+						ideology = neutral_socialism
+					}
+					create_country_leader = {
+						name = "Frits Clausen"
+						desc = "POLITICS_FRITS_CLAUSEN_DESC"
+						picture = "gfx/leaders/YUG/portrait_milutin_nedic.dds"
+						expire = "1965.1.1"
+						ideology = nazism
+						traits = {
+							#
+						}
+						
+						id = 10003 # Occupied Clausen
+					}
+					if = {
+						limit = { DEN = { NOT = { has_completed_focus = DEN_com_oust_sov } } }
+						create_country_leader = {
+							name = "Aksel Larsen"
+							desc = "POLITICS_AKSEL_LARSEN_DESC"
+							picture = "gfx/leaders/AST/Portrait_Australia_Earle_Page.dds"
+							expire = "1965.1.1"
+							ideology = stalinism
+							traits = {
+								#
+							}
+							id = 10004 # Occupied Larsen
+						}
+					}
+					else = {
+						create_country_leader = {
+							name = "Kai Moltke"
+							desc = POLITICS_KAI_MOLTKE_DESC
+							picture = "gfx/leaders/ITA/Portrait_Italy_Generic_1.dd"
+							expire = "1965.1.1"
+							ideology = anarchist_communism
+							traits = { }
+						}
+					}
+					GER = {
+						puppet = PREV
+						set_autonomy = { target = PREV autonomy_state = autonomy_reichsprotectorate }
+					}
+					set_politics = {
+						ruling_party = democratic
+						last_election = "1939.4.3"
+						election_frequency = 48
+						elections_allowed = yes				
+					}
+					set_popularities = {
+						democratic = 72
+						fascism = 6
+						communism = 8
+						neutrality = 14
+					}
+					hidden_effect = {
+						add_ideas = DEN_hidden_taken
+					}
+					change_tag_from = DEN
+				}
+				set_equipment_fraction = 0
+				set_party_name = { ideology = democratic long_name = "Association of Free Danes" name = AFD }
+				set_party_name = { ideology = neutrality long_name = "Free Denmark" name = "Free Denmark" }
+				set_party_name = { ideology = communism long_name = "Greenland Communist Party" name = GCP }
+				set_party_name = { ideology = fascism long_name = "Polar Party" name = "Polar Party" }
+				create_country_leader = {
+					name = "Henrik Kauffmann"
+					desc = POLITICS_HENRIK_KAUFFMANN_DESC
+					picture = "gfx/leaders/SCA/Portrait_SCA_Henrik_Kauffmann.dds"
+					expire = "1965.1.1"
+					ideology = socialism
+					traits = { }
+				}
+				create_country_leader = {
+					name = "Eske Brun"
+					desc = POLITICS_ESKE_BRUN
+					picture = gfx/leaders/CZE/Portrait_Czech_Klement_Gottwald.dds
+					expire = "1965.1.1"
+					ideology = neutral_socialism
+					traits = { }
+				}
+				create_country_leader = {
+					name = "Kai Nielsen"
+					desc = POLITICS_KAI_NIELSEN
+					picture = gfx/leaders/NOR/Portrait_Norway_Vidkun_Quisling.dds
+					expire = "1965.1.1"
+					ideology = nazism
+					traits = { }
+				}
+				create_country_leader = {
+					name = "Augo Lynge"
+					desc = POLITICS_AUGO_LYNGE
+					picture = gfx/leaders/YUG/Portrait_Yugoslavia_Milan_Grol.dds
+					expire = "1965.1.1"
+					ideology = leninism
+					traits = { }
+				}
+				create_corps_commander = {
+					name = "Eske Brun"
+					portrait_path = gfx/leaders/CZE/Portrait_Czech_Klement_Gottwald.dds
+					traits = { adaptable winter_specialist winter_expert commando trait_mountaineer }
+					skill = 2
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 1
+					logistics_skill = 1
+				}
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 72
+					fascism = 6
+					communism = 8
+					neutrality = 14
+				}
+				set_stability = 1
+				set_war_support = 1
+			}
+		}
+	}
+	
+	country_event = { #Germany Refuses
+		id = NOS_denmark.103
+		title = NOS_denmark.103.t
+		desc = NOS_denmark.103.desc
+		picture = GFX_report_event_german_troops
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.103.a
+			
+			add_war_support = 0.25
+		}
+	}
+
+news_event = { # Germany Accepts
+	id = NOS_denmark.104
+	title = NOS_denmark.104.t
+	desc = NOS_denmark.104.desc
+	picture = GFX_news_event_german_soldiers
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	option = {
+		name = NOS_denmark.104.a
+		trigger = {
+			tag = DEN
+		}		
+	}
+	option = {
+		name = NOS_denmark.104.b
+		trigger = {
+			original_tag = DEN
+			NOT = { tag = DEN }
+		}		
+	}
+	option = {
+		name = NOS_denmark.104.c
+		trigger = {
+			NOT = { original_tag = DEN }
+			OR = {
+				tag = GER
+				is_in_faction_with = GER
+			}
+		}		
+	}
+	option = {
+		name = NOS_denmark.104.d
+		trigger = {
+			NOT = { original_tag = DEN }
+			has_democratic_government = yes
+			NOT = { 
+				tag = GER
+				is_in_faction_with = GER 
+			}
+		}		
+	}
+	option = {
+		name = NOS_denmark.104.e
+		trigger = {
+			NOT = { 
+				original_tag = DEN 
+				tag = GER
+				is_in_faction_with = GER
+				has_democratic_government = yes
+			}
+		}		
+	}
+}
+
+
+#Occupation of the Faroe Islands
+country_event = {
+	id = NOS_denmark.105
+	title = NOS_denmark.105.t
+	desc = NOS_denmark.105.desc
+	picture = GFX_report_event_british_in_faroe
+	
+	fire_only_once = yes
+	
+	trigger = {
+		ENG = { has_war_with = GER }
+		ENG = { NOT = { has_war_with = DEN } }
+		ENG = { # No Sea Lion
+			surrender_progress < 0.01
+		}
+		DEN = { has_capitulated = yes owns_state = 337 controls_state = 337 }
+		tag = ENG
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = NOS_denmark.105.a
+		ai_chance = {
+			factor = 10
+		}
+			
+		ENG = {
+			transfer_state = 337
+		}
+		DEN = { country_event = NOS_denmark.106 }
+	}
+	option = {
+		name = NOS_denmark.105.b
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+	country_event = {
+		id = NOS_denmark.106
+		title = NOS_denmark.106.t
+		desc = NOS_denmark.106.desc
+		picture = GFX_report_event_british_in_faroe
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = NOS_denmark.106.a
+		}
+	}
+	country_event = { # Return of Faroe Islands
+		id = NOS_denmark.107
+		title = NOS_denmark.107.t
+		desc = NOS_denmark.107.desc
+		picture = GFX_report_event_british_in_faroe
+		
+		fire_only_once = yes
+		
+		trigger = {
+			ENG = { has_war = no }
+			country_exists = DEN
+			DEN = { has_civil_war = no }
+			ENG = { owns_state = 337 controls_state = 337 }
+			tag = ENG
+		}
+		
+		option = { #Return
+			name = NOS_denmark.107.a
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 0.1
+					OR = {
+						has_government = fascism
+						AND = {
+							OR = { has_government = unionism has_government = communism }
+							DEN = { NOT = { OR = { has_government = unionism has_government = communism } } }
+						}
+					}
+				}
+			}
+			transfer_state = 337
+			DEN = { country_event = NOS_denmark.108 }
+		}
+		option = { #Retain
+			name = NOS_denmark.107.b
+			ai_chance = {
+				factor = 0
+				modifier = {
+					add = 1
+					has_government = fascism
+					is_historical_focus_on = no
+				}
+			}
+			trigger = { NOT = { has_democratic_government = yes } }
+			add_political_power = -120
+		}
+	}
+		country_event = {
+			id = NOS_denmark.108
+			title = NOS_denmark.108.t
+			desc = NOS_denmark.108.desc
+			picture = GFX_report_event_british_in_faroe
+			
+			is_triggered_only = yes
+			
+			option = {
+				name = NOS_denmark.108.a
+			}
+		}
+		country_event = {
+			id = NOS_denmark.109
+			title = NOS_denmark.109.t
+			desc = NOS_denmark.109.desc
+			picture = GFX_report_event_british_in_faroe
+			
+			is_triggered_only = yes
+			
+			option = {
+				name = NOS_denmark.a
+				DEN = {
+					create_wargoal = {
+						type = take_state_focus
+						target = ENG
+						generator = { 337 }
+					}
+				}
+			}
+		}
+
+	
+### OCCUPIED EVENTS
+
+#Christian X rides alone
+country_event = {
+	id = NOS_denmark.110
+	title = NOS_denmark.110.t
+	desc = NOS_denmark.110.desc
+	picture = GFX_report_event_christian_x_rides
+	
+	trigger = {
+		original_tag = DEN
+		has_global_flag  = fall_of_denmark
+		NOT = { DEN = { has_country_flag = dead_king } }
+		NOT = { has_government = fascism }
+		has_idea = DEN_christian_x
+		NOT = { has_country_flag = DEN_x_rides }
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = DEN_x_rides
+		}
+	}
+	
+	option = {
+		name = NOS_denmark.110.a		
+		swap_ideas = {
+			remove_idea = DEN_christian_x
+			add_idea = DEN_christian_x_unity
+		}
+		hidden_effect = {
+			every_other_country = {
+				limit = { 
+					original_tag = DEN
+					NOT = { has_idea = DEN_christian_x_unity }
+				}
+				country_event = NOS_denmark.110
+			}
+		}
+	}
+}
+
+#Rebellion/Partisans
+country_event = { #Not Harsh
+	id = NOS_denmark.111
+	title = NOS_denmark.111.t
+	desc = NOS_denmark.111.desc
+	picture = GFX_report_event_generic_riot
+	
+	trigger = {
+		NOT = { has_country_flag = DEN_harsh }
+		original_tag = DEN
+		is_subject_of = GER
+		NOT = { fascism > 0.33 }
+		NOT = {  
+			OR = { 
+				has_idea = partisan_activities 
+				has_idea = partisan_activities2 
+			} 
+		}
+	}
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = { #Oh darn, how unfortunate
+		name = NOS_denmark.111.a
+		ai_chance = {
+			factor = 10
+		}
+		add_ideas = partisan_activities
+		hidden_effect = { 
+			clr_country_flag = DEN_harsh
+		}
+	}
+	option = { #Harsh Measures Will be taken
+		name = NOS_denmark.111.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 20
+				fascism > 0.5
+			}
+		}
+		add_political_power = -100
+		add_ideas = partisan_activities2
+		hidden_effect = {
+			set_country_flag = DEN_harsh
+		}
+	}
+}
+country_event = { #Harsh
+	id = NOS_denmark.1111
+	title = NOS_denmark.111.t
+	desc = NOS_denmark.111.desc
+	picture = GFX_report_event_generic_riot
+	
+	trigger = {
+		has_country_flag = DEN_harsh
+		original_tag = DEN
+		is_subject_of = GER
+		NOT = { fascism > 0.33 }
+		NOT = {  
+			OR = { 
+				has_idea = partisan_activities 
+				has_idea = partisan_activities2 
+			} 
+		}
+	}
+	mean_time_to_happen = {
+		days = 60
+	}
+	
+	option = { #Oh darn, how unfortunate
+		name = NOS_denmark.111.a
+		ai_chance = {
+			factor = 10
+		}
+		add_ideas = partisan_activities
+		hidden_effect = { 
+			clr_country_flag = DEN_harsh
+		}
+	}
+	option = { #Harsh Measures Will be taken
+		name = NOS_denmark.111.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 20
+				fascism > 0.5
+			}
+		}
+		add_political_power = -100
+		add_ideas = partisan_activities2
+		hidden_effect = {
+			set_country_flag = DEN_harsh
+		}
+	}
+}
+	country_event = { #Removes Partisan Effects
+		id = NOS_denmark.112
+		title = NOS_denmark.112.t
+		desc = NOS_denmark.112.desc
+		picture = GFX_report_event_generic_riot
+		
+		hidden = yes
+		
+		trigger = {
+			OR = { 
+				has_idea = partisan_activities 
+				has_idea = partisan_activities2 
+			}
+		}
+		
+		mean_time_to_happen = {
+			days = 45
+		}
+		
+		option = {
+			name = NOS_denmark.112.a
+			remove_ideas = partisan_activities
+			remove_ideas = partisan_activities2
+		}
+	}
+	
+#The Jewish/Partisan Question/Crisis, (August Crisis, 1943)
+country_event = {
+	id = NOS_denmark.113
+	title = NOS_denmark.113.t
+	desc = NOS_denmark.113.desc
+	picture = GFX_report_event_germany_politician_handshake
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = DEN
+		is_subject_of = GER
+		GER = { surrender_progress > 0.05 }
+	}
+	
+	mean_time_to_happen = {
+		days = 180
+	}
+	
+	option = { # We respect all Danes
+		name = NOS_denmark.113.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.1
+				has_government = fascism
+			}
+		}
+		add_autonomy_ratio = {
+			value = -0.5
+			localization = NOS_denmark.t
+		}
+		add_political_power = 100
+		add_opinion_modifier = { target = GER modifier = DEN_outrageous_demands }
+		GER = {
+			effect_tooltip = { add_political_power = -150 }
+			add_opinion_modifier = { target = DEN modifier = DEN_refused_demands }
+			country_event = { days = 2 id = NOS_denmark.114 }
+		}		
+		hidden_effect = {
+			set_country_flag = DEN_harsh
+		}	
+	}
+	
+	option = { # Cowardly Way Out
+		name = NOS_denmark.113.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				add = 10
+				is_historical_focus_on = no
+				fascism > 0.4
+			}
+		}
+		add_political_power = 200
+		add_autonomy_ratio = {
+			value = 0.1
+			localization = NOS_denmark.113.t
+		}
+		add_popularity = { ideology = fascism popularity = 0.15 }
+		GER = {
+			add_political_power = 100
+			add_opinion_modifier = { target = DEN modifier = DEN_acquiesed }
+		}		
+		hidden_effect = {
+			add_ideas = DEN_cracked_down
+			set_country_flag = DEN_harsh
+		}
+	}
+}
+	country_event = { #German Response
+		id = NOS_denmark.114
+		title = NOS_denmark.114.t
+		desc = NOS_denmark.114.desc
+		picture = GFX_report_event_germany_politician_handshake
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			add_political_power = -150
+		}			
+		
+		option = { # How dare they!
+			name = NOS_denmark.114.a
+			ai_chance = {
+				factor = 2
+			}
+			add_political_power = -200
+			GER = { remove_ideas = DEN_cream_front }
+			custom_effect_tooltip = NOS_denmark.114.a.tt
+			hidden_effect = {				
+				GER = { annex_country = { target = FROM transfer_troops = no } }
+				GER = { country_event = NOS_denmark.116 }
+				if = {
+					limit = { country_exists = DEN }
+					DEN = { country_event = NOS_denmark.117 }
+				}
+				news_event = NOS_denmark.118 
+			}
+		}
+		option = { # Petulant Children
+			name = NOS_denmark.114.b
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					is_historical_focus_on = yes
+				}
+			}
+			DEN = { 
+				add_autonomy_ratio = {
+					value = -0.2
+					localization = NOS_denmark.114.t
+				}
+			}
+			hidden_effect = { DEN = { set_country_flag = DEN_harsh } }
+		}			
+	}
+				
+						
+
+country_event = { # Telegram Crisis
+	id = NOS_denmark.115
+	title = NOS_denmark.115.t
+	desc = NOS_denmark.115.desc
+	picture = GFX_report_event_christian_x_rides
+		
+	fire_only_once = yes
+
+	trigger = {
+		original_tag = DEN
+		is_subject_of = GER
+		NOT = { has_idea = DEN_christian_x_fascist }
+		fascism < 0.5
+		OR = {
+			date > 1936.9.26
+			date > 1937.9.26
+			date > 1938.9.26
+			date > 1939.9.26
+			date > 1940.9.26
+			date > 1941.9.26
+			date > 1942.9.26
+			date > 1943.9.26
+			date > 1944.9.26
+			date > 1945.9.26
+			date > 1946.9.26
+			date > 1947.9.26
+			date > 1948.9.26
+			date > 1949.9.26
+			date > 1950.9.26
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+	
+	option = { # Hehehe... Don't Kill Me
+		name = NOS_denmark.115.a
+		add_autonomy_ratio = {
+			value = -0.25
+			localization = NOS_denmark.115.t
+		}
+		add_stability = 0.10
+		
+		hidden_effect = {
+			set_country_flag = DEN_harsh
+		}
+	}
+}
+
+# Germany Gets the Danish Flotilla
+country_event = {
+	id = NOS_denmark.116
+	title = NOS_denmark.116.t
+	desc = NOS_denmark.116.desc
+	picture = GFX_report_event_germany_politician_handshake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NOS_denmark.116.a
+		hidden_effect = {
+			GER = { load_oob = GER_den_stolen }
+		}
+	}
+}
+
+# Denmark Gets Free Danish Forces
+country_event = {
+	id = NOS_denmark.117
+	title = NOS_denmark.117.t
+	desc = NOS_denmark.117.desc
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NOS_denmark.116.a
+		hidden_effect = {
+			DEN = { load_oob = DEN_free_corps }
+		}
+	}
+}
+
+# News of Denmark's Annexation
+news_event = {
+	id = NOS_denmark.118
+	title = NOS_denmark.118.t
+	desc = NOS_denmark.118.desc
+	picture = GFX_news_event_germany_victory
+	
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = NOS_denmark.118.a
+		trigger = { is_in_faction_with = GER }
+	}
+	option = {
+		name = NOS_denmark.118.b
+		trigger = { is_in_faction_with = DEN }
+	}
+	option = {
+		name = NOS_denmark.118.c
+		trigger = {
+			OR = {
+				NOT = { is_in_faction_with = GER }
+				NOT = { is_in_faction_with = DEN }
+			}
+		}
+	}
+}
+
+#Liberation of Denmark
+news_event = {
+	id = NOS_denmark.119 #HIDDEN TRIGGER
+	hidden = yes
+	
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		has_global_flag = fall_of_denmark
+		37 = { CONTROLLER = { 
+			has_war_with = GER
+			NOT = { has_war_with = DEN }
+			}
+		}
+		99 = { CONTROLLER = { 
+			has_war_with = GER 
+			NOT = { has_war_with = DEN }
+			}
+		}
+		NOT = { DEN = { has_country_leader = { id = 10003 ruling_only = no name = "Frits Clausen" } } }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		news_event = { hours = 2 id = NOS_denmark.120 }
+	}
+	
+	option = {
+		name = NOS_denmark.119.a
+	}
+}
+	news_event = {
+		id = NOS_denmark.120
+		title = NOS_denmark.120.t
+		desc = NOS_denmark.120.desc
+		picture = GFX_news_event_63
+		
+		is_triggered_only = yes
+		major = yes
+		
+		option = {
+			name = NOS_denmark.120.a
+			trigger = { 
+				NOT = { tag = DEN }
+				NOT = { is_in_faction_with = GER }
+			}
+		}
+		option = {
+			name = NOS_denmark.120.a
+			trigger = { 
+				NOT = { tag = DEN }
+				is_in_faction_with = GER
+			}
+		}
+		option = {
+			name = NOS_denmark.120.c
+			trigger = { tag = DEN }
+			if = {
+				limit = { has_cosmetic_tag = DEN_free }
+				drop_cosmetic_tag = yes
+			}
+			set_party_name = { ideology = democratic long_name = "Socialdemokratiet" name = "Socialdemokratiet" }
+			set_party_name = { ideology = neutrality long_name = "Radikale Venstre" name = "Radikale Venstre" }
+			set_party_name = { ideology = communism long_name = "Danmarks Kommunistiske Parti" name = "DKP" }
+			set_party_name = { ideology = fascism long_name = "Danmarks Nationalsocialistiske Arbejderparti" name = "DNSAP" }
+			if = { 
+				limit = { has_country_flag = death_stauning }
+				create_country_leader = {
+					name = "Erik Scavenius"
+					desc = "POLITICS_ERIK_SCAVENIUS_DESC"
+					picture = "Portrait_Denmark_Erik_Scavenius.dds"
+					expire = "1965.1.1"
+					ideology = socialism
+				}
+			}
+			if = { 
+				limit = { NOT = { has_country_flag = death_stauning } }
+				create_country_leader = {
+					name = "Thorvald Stauning"
+					desc = "POLITICS_THORVALD_STAUNING_DESC"
+					picture = "Portrait_Denmark_Thorvald_Stauning.dds"
+					expire = "1965.1.1"
+					ideology = socialism
+				}
+			}
+			create_country_leader = {
+				name = "Peter Munch"
+				desc = "POLITICS_PETER_MUNCH_DESC"
+				picture = gfx/leaders/ENG/Portrait_Britain_Andrew_Cunningham.dds
+				expire = "1965.1.1"
+				ideology = neutral_socialism
+			}
+			create_country_leader = {
+				name = "Frits Clausen"
+				desc = "POLITICS_FRITS_CLAUSEN_DESC"
+				picture = "gfx/leaders/YUG/portrait_milutin_nedic.dds"
+				expire = "1965.1.1"
+				ideology = nazism
+				traits = {
+					#
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	#Where's the string concatonation #Why is there a scripted localisation character limit
+	news_event = {
+		id = NOS_denmark.4
+		title = NOS_denmark.4.t
+		desc = {
+			text = NOS_denmark.4.desc1 #"Today the governments of Denmark and Norway met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+				NOT = {
+					ICE = { has_country_flag = drsrn_renewed }
+					FIN = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc2 #"Today the governments of Denmark and Iceland met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }
+				NOT = {
+					NOR = { has_country_flag = drsrn_renewed }
+					FIN = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc3 #"Today the governments of Denmark and Finland met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				NOT = {
+					ICE = { has_country_flag = drsrn_renewed }
+					NOR = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc4 #"Today the governments of Denmark and Sweden met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+				NOT = {
+					ICE = { has_country_flag = drsrn_renewed }
+					FIN = { has_country_flag = drsrn_renewed }
+					NOR = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc5 #"Today the governments of Norway and Iceland met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				ICE = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+				NOT = {
+					DEN = { has_country_flag = drsrn_renewed }				
+					FIN = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}			
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc6 #"Today the governments of Iceland and Finland met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				NOT = {
+					DEN = { has_country_flag = drsrn_renewed }
+					NOR = { has_country_flag = drsrn_renewed }				
+					SWE = { has_country_flag = drsrn_renewed }			}			
+				
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc7 #"Today the governments of Iceland and Sweden met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				ICE = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+				NOT = {
+					DEN = { has_country_flag = drsrn_renewed }
+					NOR = { has_country_flag = drsrn_renewed }				
+					FIN = { has_country_flag = drsrn_renewed }			}			
+				
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc8 #"Today the governments of Norway and Sweden met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+				trigger = {			
+				NOR = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+				NOT = {
+					DEN = { has_country_flag = drsrn_renewed }
+					ICE = { has_country_flag = drsrn_renewed }				
+					FIN = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc9 #"Today the governments of Norway and Finland met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {			
+				NOR = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				NOT = {
+					DEN = { has_country_flag = drsrn_renewed }
+					ICE = { has_country_flag = drsrn_renewed }				
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc10 #"Today the governments of Sweden and Finland met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {			
+				SWE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				NOT = {
+					DEN = { has_country_flag = drsrn_renewed }
+					ICE = { has_country_flag = drsrn_renewed }				
+					NOR = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc11 #"Today the governments of Denmark, Iceland, and Norway met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }
+				NOT = {
+					FIN = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc12 #"Today the governments of Denmark, Norway, and Finland met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				NOT = {
+					ICE = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc13 #"Today the governments of Denmark, Sweden, and Norway met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+				NOT = {
+					ICE = { has_country_flag = drsrn_renewed }
+					FIN = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc14 #"Today the governments of Denmark, Sweden, and Finland met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				NOT = {
+					ICE = { has_country_flag = drsrn_renewed }
+					NOR = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc15 #"Today the governments of Denmark, Sweden, and Iceland met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }
+				NOT = {
+					FIN = { has_country_flag = drsrn_renewed }
+					NOR = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc16 #"Today the governments of Denmark, Finland, and Iceland met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				NOT = {
+					SWE = { has_country_flag = drsrn_renewed }
+					NOR = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc17 #"Today the governments of Iceland, Finland, and Sweden met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+				NOT = {
+					DEN = { has_country_flag = drsrn_renewed }
+					NOR = { has_country_flag = drsrn_renewed }			
+				}						
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc18 #"Today the governments of Iceland, Finland, and Norway met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+				NOT = {
+					SWE = { has_country_flag = drsrn_renewed }
+					DEN = { has_country_flag = drsrn_renewed }			
+				}						
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc19 #"Today the governments of Finland, Sweden, and Iceland met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				FIN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+				NOT = {
+					FIN = { has_country_flag = drsrn_renewed }
+					NOR = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc20 #"Today the governments of Denmark, Iceland, Finland and Norway met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				NOT = {
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc21 #"Today the governments of Sweden, Iceland, Finland and Norway met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				SWE = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				NOT = {
+					DEN = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc22 #"Today the governments of Denmark, Iceland, Finland and Sweden met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				NOT = {
+					NOR = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc23 #"Today the governments of Denmark, Norway, Finland and Sweden met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				NOT = {
+					ICE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc24 #"Today the governments of Denmark, Norway, Iceland and Sweden met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }
+				NOT = {
+					FIN = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc25 #"Today the governments of Denmark, Iceland, Finland, Norway and Sweden met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc26 #"Denmark's government was hit with a nasty surprise today when every one of the other scandinavian countries refused to meet in order to renew the rules of similar neutrality that had been signed in 1912. What this means for the Scandinavian countries is yet unknown, but most political pundits agree that such a decision can only mean that war and strife are brewing in the north."
+			trigger = {
+				DEN = { has_country_flag = drsrn_renewed }
+				NOT = {
+					NOR = { has_country_flag = drsrn_renewed }
+					ICE = { has_country_flag = drsrn_renewed }
+					FIN = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc27 #"Norway's government was hit with a nasty surprise today when every one of the other scandinavian countries refused to meet in order to renew the rules of similar neutrality that had been signed in 1912. What this means for the Scandinavian countries is yet unknown, but most political pundits agree that such a decision can only mean that war and strife are brewing in the north."
+			trigger = {
+				NOR = { has_country_flag = drsrn_renewed }
+				NOT = {
+					DEN = { has_country_flag = drsrn_renewed }
+					ICE = { has_country_flag = drsrn_renewed }
+					FIN = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc28 #"Iceland's government was hit with a nasty surprise today when every one of the other scandinavian countries refused to meet in order to renew the rules of similar neutrality that had been signed in 1912. What this means for the Scandinavian countries is yet unknown, but most political pundits agree that such a decision can only mean that war and strife are brewing in the north."
+			trigger = {
+				ICE = { has_country_flag = drsrn_renewed }
+				NOT = {
+					NOR = { has_country_flag = drsrn_renewed }
+					DEN = { has_country_flag = drsrn_renewed }
+					FIN = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc29 #"Finland's government was hit with a nasty surprise today when every one of the other scandinavian countries refused to meet in order to renew the rules of similar neutrality that had been signed in 1912. What this means for the Scandinavian countries is yet unknown, but most political pundits agree that such a decision can only mean that war and strife are brewing in the north."
+			trigger = {
+			FIN = { has_country_flag = drsrn_renewed }
+				NOT = {
+					NOR = { has_country_flag = drsrn_renewed }
+					DEN = { has_country_flag = drsrn_renewed }
+					ICE = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		desc = {
+			text = NOS_denmark.4.desc30 #"Sweden's government was hit with a nasty surprise today when every one of the other scandinavian countries refused to meet in order to renew the rules of similar neutrality that had been signed in 1912. What this means for the Scandinavian countries is yet unknown, but most political pundits agree that such a decision can only mean that war and strife are brewing in the north."
+			trigger = {
+				SWE = { has_country_flag = drsrn_renewed }
+				NOT = {
+					NOR = { has_country_flag = drsrn_renewed }
+					DEN = { has_country_flag = drsrn_renewed }
+					ICE = { has_country_flag = drsrn_renewed }
+					FIN = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}		
+		
+		picture = GFX_news_event_generic_sign_treaty1
+		
+		major = yes
+		is_triggered_only = yes
+		
+		option = { #Non-Signatories, Fascist
+			name = NOS_denmark.4.a
+			trigger = {
+				AND = {
+					has_government = fascism
+					NOT = {
+						has_country_flag = drsrn_renewed
+					}
+				}
+			}
+		}
+		option = { #Non-Signatories, Communist
+			name = NOS_denmark.4.b
+			trigger = {
+				AND = {
+					OR = { has_government = unionism has_government = communism }
+					NOT = {
+						has_country_flag = drsrn_renewed
+					}
+				}
+			}
+		}
+		option = { #Non-Signatories, other
+			name = NOS_denmark.4.c
+			trigger = {
+				NOT = {
+					has_country_flag = drsrn_renewed
+					has_government = fascism
+					OR = { has_government = unionism has_government = communism }
+				}
+			}
+		}
+		
+		option = { #Signatories
+			name = NOS_denmark.4.d
+			trigger = {
+				has_country_flag = drsrn_renewed
+			}			
+		}
+	}

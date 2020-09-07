@@ -1,0 +1,2949 @@
+﻿###########################
+# Canadian TFV events Events
+###########################
+
+add_namespace = tfv_canada
+add_namespace = canada_vanilla
+
+# Completed CAN_north_american_alliance.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.1
+	title = tfv_canada.1.t	# Canada asks US to create a faction.
+	desc = tfv_canada.1.d	#
+	picture = GFX_report_event_canada_patriation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.1.a # US Accepts the faction proposal
+		trigger = {
+			TAG = USA
+		}
+		
+		ai_chance = {
+			base = 100
+		}
+		
+		effect_tooltip = {
+			CAN  = { 
+				if = {
+					limit = {
+						AST = {
+							is_in_faction_with = USA
+							is_faction_leader = yes
+						}
+					}
+					AST = {
+						add_to_faction = CAN
+					}
+				}
+				else = {
+					create_faction = "north_american_alliance"
+					add_to_faction = USA
+				}
+			}
+		}
+		
+		add_ideas = CAN_north_american_democracy
+		
+		CAN = {
+			country_event = { id = tfv_canada.2 }
+		}
+	}
+	
+	option = {
+		name = tfv_canada.1.b # anyone Rejects the faction proposal
+	
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 0
+				tag = USA
+			}
+			modifier = {
+				add = 10
+				OR = {
+					AND = {
+						communism > 0.1
+						communism < 0.3
+					}
+					AND = {
+						fascism > 0.1
+						fascism < 0.3
+					}
+				}
+			}
+			modifier = {
+				add = 40
+				OR = {
+					AND = {
+						communism > 0.3
+						communism < 0.5
+					}
+					AND = {
+						fascism > 0.3
+						fascism < 0.5
+					}
+				}
+			}
+			modifier = {
+				add = 90
+				OR = {
+					communism > 0.5
+					fascism > 0.5
+				}
+			}
+		}
+		
+		set_country_flag = CAN_faction_denied
+		
+		CAN = {
+			country_event = { id = tfv_canada.3 }
+		}
+	}
+	
+	option = {
+		name = tfv_canada.1.c # other country accepts canadian proposal
+		
+		trigger = {
+			NOT = { TAG = USA }
+		}
+		
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0.9
+				OR = {
+					AND = {
+						communism > 0.1
+						communism < 0.3
+					}
+					AND = {
+						fascism > 0.1
+						fascism < 0.3
+					}
+				}
+			}
+			modifier = {
+				factor = 0.6
+				OR = {
+					AND = {
+						communism > 0.3
+						communism < 0.5
+					}
+					AND = {
+						fascism > 0.3
+						fascism < 0.5
+					}
+				}
+			}
+			modifier = {
+				factor = 0.1
+				OR = {
+					communism > 0.5
+					fascism > 0.5
+				}
+			}
+		}
+		
+		effect_tooltip = {
+			
+		}
+		
+		add_ideas = CAN_north_american_democracy
+		
+		CAN = {
+			country_event = { id = tfv_canada.4 hours = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.2
+	title = tfv_canada.2.t	#
+	desc = tfv_canada.2.d	#
+	picture = GFX_report_event_canadian_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.2.a
+		
+		if = {
+			limit = {
+				AST = {
+					is_in_faction_with = USA
+					is_faction_leader = yes
+				}
+			}
+			AST = {
+				add_to_faction = CAN
+			}
+		}
+		else = {
+			create_faction = "north_american_alliance"
+			add_to_faction = USA
+		}
+		
+		add_ideas = CAN_north_american_democracy
+		
+		news_event = { id = news.246 hours = 6 }
+	}
+}
+
+country_event = {
+	id = tfv_canada.3
+	title = tfv_canada.3.t	#
+	desc = tfv_canada.3.d	#
+	picture = GFX_report_event_king_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.3.a
+	}
+}
+
+country_event = {
+	id = tfv_canada.4
+	title = tfv_canada.4.t	#
+	desc = tfv_canada.4.d	#
+	picture = GFX_report_event_canadian_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.4.a
+		
+		if = {
+			limit = {
+				AST = { 
+					is_in_faction_with = USA
+					is_faction_leader = yes
+				}
+			}
+			AST = {
+				add_to_faction = FROM
+			}
+		}
+		else = {
+			add_to_faction = FROM
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.5		#for ppl not in faction who went dem
+	title = tfv_canada.5.t	
+	desc = tfv_canada.5.d	
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = no
+	
+	trigger = {
+		OR = {
+			tag = MEX
+			tag = GUA
+			tag = HON
+			tag = ELS
+			tag = NIC
+			tag = COS
+			tag = "PAN"
+			tag = CUB
+			tag = HAI
+			tag = DOM
+		}
+		has_democratic_government = yes
+		NOT = {
+			is_in_faction_with = CAN
+			has_country_flag = CAN_faction_denied
+			has_country_flag = CAN_was_in_faction_before
+		}
+		CAN = { has_completed_focus = CAN_north_american_alliance }
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = tfv_canada.5.a
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		add_ideas = CAN_north_american_democracy
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.6 }
+			}
+		}
+		
+	}
+	
+	option = {
+		name = tfv_canada.5.b
+		
+		ai_chance = {
+			factor = 0
+		}
+		
+		set_country_flag = CAN_faction_denied
+		
+#		hidden_effect = {
+#			CAN = {
+#				country_event = { id = tfv_canada.7 }
+#			}
+#		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.6		#yes
+	title = tfv_canada.6.t	
+	desc = tfv_canada.6.d	
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.6.a
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		if = {
+			limit = {
+				AST = { 
+					is_in_faction_with = USA
+					is_faction_leader = yes
+				}
+			}
+			AST = {
+				add_to_faction = FROM
+			}
+		}
+		else = {
+			add_to_faction = FROM
+		}
+		
+		if = {
+			limit = {
+				has_completed_focus = CAN_refuge_for_scientists
+			}
+			FROM = { add_to_tech_sharing_group = us_research }
+		}
+		
+		if = {
+			limit = {	
+				has_completed_focus = CAN_habakkuk_carrier
+			}
+			FROM = {
+				add_tech_bonus = {
+					name = CAN_habakkuk_carrier
+					bonus = 0.5
+					uses = 2
+					category = cv_tech
+				}
+			}
+		}
+		
+		FROM = { set_country_flag = CAN_was_in_faction_before }
+	}
+	
+	option = {
+		name = tfv_canada.6.b
+		
+		ai_chance = {
+			factor = 0
+		}
+		
+		FROM = { set_country_flag = CAN_faction_denied }
+		
+		hidden_effect = {
+			FROM = {
+				country_event = { id = tfv_canada.8 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.7		#Any North American country denied
+	title = tfv_canada.7.t	
+	desc = tfv_canada.7.d	
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.7.a
+	}
+}
+
+country_event = {
+	id = tfv_canada.8		#Canada Denied
+	title = tfv_canada.8.t	
+	desc = tfv_canada.8.d	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.8.a
+		
+		remove_ideas = CAN_north_american_democracy
+	}
+}
+
+
+
+# Completed CAN_join_comintern.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.10
+	title = tfv_canada.10.t	# Canada asks CCCP for membership in Comintern
+	desc = tfv_canada.10.d	#
+	picture = GFX_report_event_stalin_meeting
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.10.a # CCCP accepts Canadian membership
+		
+		ai_chance = {
+			base = 100
+		}
+		
+		effect_tooltip = {
+			add_to_faction = CAN
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.11 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_canada.10.b # CCCP denies the request.
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.12 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.11
+	title = tfv_canada.11.t	#
+	desc = tfv_canada.11.d	#
+	picture = GFX_report_event_canadian_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.11.a
+		SOV = {
+			add_to_faction = CAN
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.12
+	title = tfv_canada.12.t	#
+	desc = tfv_canada.12.d	#
+	picture = GFX_report_event_generic_rally_3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.12.a
+	}
+}
+
+# Completed CAN_join_germany.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.20
+	title = tfv_canada.20.t	# Canada asks Germany for membership in Axis
+	desc = tfv_canada.20.d	#
+	picture = GFX_report_event_canadian_tank
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.20.a # Germany accepts Canadian membership
+		
+		ai_chance = {
+			base = 100
+		}
+		
+		effect_tooltip = {
+			add_to_faction = CAN
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.21 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_canada.20.b # Germany rejects Canadian membership
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.22 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.21
+	title = tfv_canada.21.t	# 
+	desc = tfv_canada.21.d	#
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.21.a # Germany accepts Canadian membership
+		
+		GER = {
+			add_to_faction = CAN
+			random_country = {
+				limit = {
+					original_tag = MEX
+					is_in_faction_with = CAN
+					has_government = fascism
+				}
+				GER = { add_to_faction = PREV }
+			} 
+		}
+		if = {
+			limit = {
+				GER = {
+					has_war = yes
+				}
+			}
+			news_event = { id = news.247 hours = 6 }		
+		}
+		if = {
+			limit = {
+				GER = {
+					has_war = no
+				}
+			}
+			news_event = { id = news.252 hours = 6 }
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.22
+	title = tfv_canada.22.t	# 
+	desc = tfv_canada.22.d	#
+	picture = GFX_report_event_canadian_artillery
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.22.a # Germany rejects Canadian membership
+	}
+}
+
+# Completed CAN_support_a_synarchist_baja.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.30
+	title = tfv_canada.30.t	# Mexican civil war starts.
+	desc = tfv_canada.30.d	#
+	picture = GFX_report_event_mex_civil_war
+	
+	fire_only_once = yes
+
+	trigger = {
+		original_tag = MEX
+		has_defensive_war = no
+		NOT = { has_government = fascism }
+		has_idea = synarchist_support_surge
+		fascism > 0.3
+	}
+
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 0.5
+			fascism > 0.5			
+		}
+	}
+	
+	option = { # Support Nationalists
+		name = tfv_canada.30.a
+		trigger = { is_ai = no }
+		hidden_effect = {
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = neutrality
+				size = 0.5
+			}
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+					OR = { has_government = monarchism has_government = neutrality }
+				}
+				set_equipment_fraction = 0.3
+				set_stability = 0.9
+				set_war_support = 0.8
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.35
+				}
+			}
+			news_event = { hours = 6 id = news.250 }
+			
+			set_equipment_fraction = 0.3
+			set_stability = 0.9
+			set_war_support = 0.8
+			
+			add_popularity = {
+				ideology = fascism
+				popularity = 1
+			}
+			
+			remove_ideas = synarchist_support_surge
+		}
+		custom_effect_tooltip = mex_nationalists_chosen
+	}
+	option = { # Support Republicans
+		name = tfv_canada.30.b
+		hidden_effect = {
+			start_civil_war = {
+				ideology = fascism
+				size = 0.5
+			}
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+					has_government = fascism
+				}
+				set_equipment_fraction = 0.3
+				set_stability = 0.9
+				set_war_support = 0.8
+			}
+			news_event = { hours = 6 id = news.250 }
+			
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.5
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = -1
+			}
+			set_equipment_fraction = 0.3
+			set_stability = 0.9
+			set_war_support = 0.8
+			
+			remove_ideas = synarchist_support_surge
+		}
+		custom_effect_tooltip = mex_republicans_chosen
+	}
+	
+	option = {
+		name = tfv_canada.30.c # Peacefully let the fascists form the government
+		
+		trigger = {
+			fascism > 0.5
+		}
+		
+		ai_chance = {
+			base = 5
+		}
+		
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		remove_ideas = synarchist_support_surge
+		add_ideas = shattered_government
+	}
+}
+
+# Completed CAN_skewer_the_eagle.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.40
+	title = tfv_canada.40.t # Canada proposes alliance with Mexico to surround the US.
+	desc = tfv_canada.40.d	#
+	picture = GFX_report_event_canadian_artillery
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.40.a
+		
+		ai_chance = {
+			base = 100
+		}
+		
+		effect_tooltip = {
+			if = { 
+				limit = {
+					CAN = { is_in_faction = no }
+				}
+				create_faction = "northern_sovereignty_coalition"
+				random_country = {
+					limit = {
+						original_tag = MEX
+						has_government = fascism
+					}
+					CAN = { add_to_faction = PREV }
+				}
+			}
+			if = {
+				limit = {
+					CAN = { is_in_faction = yes}
+				}
+				random_country = {
+					limit = {
+						original_tag = MEX
+						has_government = fascism
+					}
+					CAN = { add_to_faction = PREV }
+				}
+			}
+			add_state_core = 375 # Texas
+			add_state_core = 378 # California
+			add_state_core = 379 # Nevada
+			add_state_core = 377 # Arizona
+			add_state_core = 380 # Utah
+			add_state_core = 382 # Colorado
+			add_state_core = 376 # New Mexico
+			add_state_claim = 375 # Texas
+			add_state_claim = 378 # California
+			add_state_claim = 379 # Nevada
+			add_state_claim = 377 # Arizona
+			add_state_claim = 380 # Utah
+			add_state_claim = 382 # Colorado
+			add_state_claim = 376 # New Mexico
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.41 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_canada.40.b
+	
+		ai_chance = {
+			base = 0
+		}
+	
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.42 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.41
+	title = tfv_canada.41.t
+	desc = tfv_canada.41.d
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.41.a
+		if = { 
+			limit = {
+				is_in_faction = no
+			}
+			create_faction = "northern_sovereignty_coalition"
+			random_country = {
+				limit = {
+					original_tag = MEX
+					has_government = fascism
+				}
+				add_to_faction = PREV
+			}
+		}
+		if = {
+			limit = {
+				is_in_faction = yes
+			}
+			random_country = {
+				limit = {
+					original_tag = MEX
+					has_government = fascism
+				}
+				add_to_faction = PREV
+			}
+		}
+		
+		
+		FROM = {
+			add_state_core = 375 # Texas
+			add_state_core = 378 # California
+			add_state_core = 379 # Nevada
+			add_state_core = 377 # Arizona
+			add_state_core = 380 # Utah
+			add_state_core = 382 # Colorado
+			add_state_core = 376 # New Mexico
+			add_state_claim = 375 # Texas
+			add_state_claim = 378 # California
+			add_state_claim = 379 # Nevada
+			add_state_claim = 377 # Arizona
+			add_state_claim = 380 # Utah
+			add_state_claim = 382 # Colorado
+			add_state_claim = 376 # New Mexico
+		}
+		
+		news_event = { id = news.249 hours = 6 }
+	}
+}
+
+country_event = {
+	id = tfv_canada.42
+	title = tfv_canada.42.t
+	desc = tfv_canada.42.desc
+	picture = GFX_report_event_american_hunger_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.42.a
+	}
+}
+
+
+
+# mean_time_to_happen after Completion of CAN_forced_quebec_conscription.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.50
+	title = tfv_canada.50.t	# Factory sabotaged
+	desc = tfv_canada.50.d	#
+	picture = GFX_report_event_generic_factory
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CAN
+		has_completed_focus = CAN_forced_quebec_conscription
+		any_owned_state = {
+			industrial_complex > 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = tfv_canada.50.a
+		set_country_flag = can_quebec_sabotage_1
+		
+		random_owned_state = {
+			limit = {
+				industrial_complex > 0
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 0.7
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.51
+	title = tfv_canada.51.t
+	desc = tfv_canada.51.d
+	picture = GFX_report_event_generic_factory
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CAN
+		has_country_flag = can_quebec_sabotage_1
+		has_completed_focus = CAN_forced_quebec_conscription
+		any_owned_state = {
+			arms_factory > 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = tfv_canada.51.a
+		set_country_flag = can_quebec_sabotage_2
+		random_owned_state = {
+			limit = {
+				arms_factory > 0
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 0.5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.52
+	title = tfv_canada.52.t
+	desc = tfv_canada.52.d
+	picture = GFX_report_event_generic_factory
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CAN
+		has_country_flag = can_quebec_sabotage_2
+		has_completed_focus = CAN_forced_quebec_conscription
+		any_owned_state = {
+			arms_factory > 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = tfv_canada.52.a
+		set_country_flag = can_quebec_sabotage_3
+		random_owned_state = {
+			limit = {
+				arms_factory > 0
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 0.6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.53
+	title = tfv_canada.53.t
+	desc = tfv_canada.53.d
+	picture = GFX_report_event_RCMP
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CAN
+		has_country_flag = can_quebec_sabotage_3
+		has_completed_focus = CAN_forced_quebec_conscription
+		any_owned_state = {
+			arms_factory > 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	option = {
+		name = tfv_canada.53.a
+		clr_country_flag = can_quebec_sabotage_1
+		clr_country_flag = can_quebec_sabotage_2
+		clr_country_flag = can_quebec_sabotage_3
+		random_owned_state = {
+			limit = {
+				arms_factory > 0
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 0.4
+			}
+		}
+	}
+}
+
+# Completed CAN_demand_labrador_and_newfoundland.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.60
+	title = tfv_canada.60.t # Fascist or Communist CAN demads Labrador and Newfoundland from ENG
+	desc = tfv_canada.60.d	#
+	picture = GFX_report_event_canadian_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { # Agree to demands
+		name = tfv_canada.60.a
+		
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_war_with = CAN
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 331
+				}
+				CAN = {
+					transfer_state = 331
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 332
+				}
+				CAN = {
+					transfer_state = 332
+				}
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					ENG = {
+						controls_state = 331
+						controls_state = 332
+					}
+				}
+				CAN = { set_country_flag = CAN_labrador_and_newfoundland_was_british }
+			}
+			CAN = {
+				country_event = { id = tfv_canada.61 }
+			}
+		}
+	}
+	
+	option = { # Refuse
+		name = tfv_canada.60.b
+		
+		ai_chance = {
+			base = 0
+			modifier = {
+				factor = 100
+				has_war_with = CAN
+			}
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.62 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.61
+	title = tfv_canada.61.t
+	desc = tfv_canada.61.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.61.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 331 }
+			}
+			transfer_state = 331
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 332 }
+			}
+			transfer_state = 332
+		}
+		
+		if = {
+			limit = {
+				owns_state = 331
+				owns_state = 332
+			}
+			set_country_flag = CAN_has_recieved_labrador_and_newfoundland
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = CAN_labrador_and_newfoundland_was_british
+				}
+				news_event = { id = news.248 hours = 6 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.62
+	title = tfv_canada.62.t
+	desc = tfv_canada.62.d
+	picture = GFX_report_event_canada_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.62.a
+		
+		create_wargoal = {
+			type = take_state_focus
+			target = FROM
+			generator = { 331 332 }
+		}
+	}
+}
+
+# Completed CAN North America Act
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.63
+	title = tfv_canada.63.t # Democratic
+	desc = tfv_canada.63.d	#
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = { # Agree #you will
+		name = tfv_canada.63.a
+		
+		ai_chance = {
+			base = 100
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					OR = {
+						controls_state = 331
+						USA = {
+							controls_state = 331
+						}
+					}
+				}
+				CAN = {
+					transfer_state = 331
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						controls_state = 332
+					}
+				}
+				CAN = {
+					transfer_state = 332
+				}
+			}
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.64 }
+			}
+		}
+	}
+}
+
+#british north american act
+country_event = {
+	id = tfv_canada.64
+	title = tfv_canada.64.t
+	desc = tfv_canada.64.d
+	picture = GFX_report_event_canada_treaty
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.64.a
+		
+		if = {
+			limit = {
+				NOT = { controls_state = 331 }
+				OR = {
+					FROM = { controls_state = 331 }
+					any_country = {
+						original_tag = USA
+						controls_state = 331
+					}
+				}
+			}
+			transfer_state = 331
+		}
+		if = {
+			limit = {
+				NOT = { controls_state = 332 }
+				FROM = { controls_state = 332 }
+			}
+			transfer_state = 332
+		}
+		
+		if = {
+			limit = {
+				owns_state = 331
+				owns_state = 332
+			}
+			set_country_flag = CAN_has_recieved_labrador_and_newfoundland
+		}
+		
+		hidden_effect = {
+			news_event = { id = tfvo_news.5 hours = 6 }
+		}
+	}
+}
+
+#North American Act non triggered
+country_event = {
+	id = tfv_canada.65
+	
+	fire_only_once = yes
+
+	hidden = yes
+	
+	trigger = {
+		CAN = {
+			controls_state = 331
+			controls_state = 332
+			NOT = { 
+				has_country_flag = CAN_has_recieved_labrador_and_newfoundland
+			}
+		}
+	}
+	
+	immediate = {
+		CAN = {
+			country_event = { id = tfv_canada.64 }
+		}
+	}
+	option = {
+		name = tfv_canada.65.a
+	}
+}
+
+#Britain went Fascist what do we do
+#They must Perish
+country_event = {
+	id = tfv_canada.66
+	title = tfv_canada.66.t
+	desc = tfv_canada.66.d
+	picture = GFX_report_event_canadian_soldiers
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.66.a
+		
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0.75
+				ENG = {
+					is_ai = no
+				}
+			}
+		}
+		
+		custom_effect_tooltip = CAN_this_may_lead_to_war_tt
+		
+		if = {
+			limit = {
+				NOT = { controls_state = 331 }
+				OR = {
+					any_country = {
+						original_tag = ENG
+						controls_state = 331
+					}
+					any_country = {
+						original_tag = USA
+						controls_state = 331
+					}
+				}
+			}
+			transfer_state = 331
+		}
+		if = {
+			limit = {
+				NOT = { controls_state = 332 }
+				any_country = {
+					original_tag = ENG
+					controls_state = 332
+				}
+			}
+			transfer_state = 332
+		}
+		
+		if = {
+			limit = {
+				owns_state = 331
+				owns_state = 332
+			}
+			set_country_flag = CAN_has_recieved_labrador_and_newfoundland
+		}
+		
+		set_autonomy = {
+			target = CAN
+			autonomy_state = autonomy_free
+		}
+		
+		random_country = {
+			limit = {
+				original_tag = ENG
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = CAN_seized_labrador_and_newfoundland
+			}
+			country_event = { id = tfv_canada.68 }
+			if = {
+				limit = {
+					CAN = {
+						is_subject_of = PREV
+					}
+				}
+				set_autonomy = {
+					target = CAN
+					autonomy_state = autonomy_free
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_canada.66.b
+		
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 25
+				ENG = {
+					is_ai = no
+				}
+			}
+		}
+	}
+}
+
+#Britain goes Fascist
+country_event = {
+	id = tfv_canada.67
+	
+	fire_only_once = yes
+
+	hidden = yes
+	
+	trigger = {
+		any_country = {
+			original_tag = ENG
+			has_government = fascism
+			has_civil_war = no
+			OR = {
+				controls_state = 331
+				controls_state = 332
+			}
+		}
+		CAN = {
+			NOT = { has_completed_focus = CAN_swastika_clubs }
+			has_democratic_government = yes
+		}
+	}
+	
+	immediate = {
+		CAN = {
+			country_event = { id = tfv_canada.66 }
+		}
+	}
+	option = {
+		name = tfv_canada.67.a
+	}
+}
+
+country_event = {
+	id = tfv_canada.68
+	title = tfv_canada.68.t
+	desc = tfv_canada.68.d
+	picture = GFX_report_event_canadian_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.68.a
+		
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.5
+				CAN = {
+					is_ai = no
+				}
+			}
+		}
+		
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = FROM
+		}
+	}
+	
+	option = {
+		name = tfv_canada.68.b
+		
+		ai_chance = {
+			base = 90
+			modifier = {
+				add = 5
+				CAN = {
+					is_ai = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.70
+	title = tfv_canada.70.t # Fascist or Communist CAN demands Alaska
+	desc = tfv_canada.70.d	#
+	picture = GFX_report_event_canadian_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { # Agree to demands
+		name = tfv_canada.70.a
+		
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_war_with = CAN
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 463
+				}
+				CAN = {
+					transfer_state = 463
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 650
+				}
+				CAN = {
+					transfer_state = 650
+				}
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					USA = {
+						controls_state = 463
+					}
+				}
+				CAN = { set_country_flag = CAN_alaska_was_american }
+			}
+			CAN = {
+				country_event = { id = tfv_canada.71 }
+			}
+		}
+	}
+	
+	option = { # Refuse
+		name = tfv_canada.70.b
+		
+		ai_chance = {
+			base = 0
+			modifier = {
+				factor = 100
+				has_war_with = CAN
+			}
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.72 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.71
+	title = tfv_canada.71.t
+	desc = tfv_canada.71.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.61.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 463 }
+			}
+			transfer_state = 463
+			add_state_core = 463
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 650 }
+			}
+			transfer_state = 650
+			add_state_core = 650
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = CAN_alaska_was_american
+				}
+				news_event = { id = tfvo_news.4 hours = 6 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.72
+	title = tfv_canada.72.t
+	desc = tfv_canada.72.d
+	picture = GFX_report_event_canada_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.72.a
+		
+		add_state_core = 463
+		add_state_core = 650
+	}
+}
+
+country_event = {
+	id = tfv_canada.80 						#American Loans
+	title = tfv_canada.80.t 
+	desc = tfv_canada.80.d	
+	picture = GFX_report_event_generic_usa_treaty
+	
+	is_triggered_only = yes
+	
+	option = { 								# Agree to loans
+		name = tfv_canada.80.a
+		
+		ai_chance = {
+			base = 100
+		}
+		
+		custom_effect_tooltip =  CAN_accept_loans_tt
+		
+		add_ideas = CAN_canadian_loans
+		
+		set_country_flag = canadian_loans
+
+		CAN = {
+			country_event = { id = tfv_canada.81 hours = 3}
+		}
+		hidden_effect = {
+			news_event = { id = tfvo_news.6 hours = 6 }
+		}
+	}
+	
+	option = { 								# Refuse loans
+		name = tfv_canada.80.b
+		
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 20
+				date > 1940.1.01
+			}
+		}
+		
+		CAN = {
+			country_event = { id = tfv_canada.82 hours = 3 }
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.81						#US accepts loans
+	title = tfv_canada.81.t
+	desc = tfv_canada.81.d
+	picture = GFX_report_event_generic_usa_treaty
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.81.a
+		
+		ai_chance = {
+			base = 50
+		}
+		
+		effect_tooltip = {
+			USA = {
+				add_ideas = CAN_canadian_loans
+			}
+		}
+		
+		add_ideas = CAN_raised_taxes
+		
+	}
+	
+	option = {
+		name = tfv_canada.81.b
+		
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 20
+				has_idea = CAN_great_depression_1
+			}
+			modifier = {
+				add = 10
+				has_idea = CAN_great_depression_2
+			}
+		}
+		
+		effect_tooltip = {
+			USA = {
+				add_ideas = CAN_canadian_loans
+			}
+		}
+		random_list = {
+			20 = { #Nothing
+				modifier = {
+					add = 5
+					has_idea = CAN_great_depression_1
+				}
+				modifier = {
+					add = 2
+					has_idea = CAN_great_depression_2
+				}
+			}
+		
+			80 = { #Inflation
+				modifier = {
+					add = -5
+					has_idea = CAN_great_depression_1
+				}
+				modifier = {
+					add = -2
+					has_idea = CAN_great_depression_2
+				}
+				effect_tooltip = {
+					add_ideas = CAN_rampant_inflation
+				}
+				set_country_flag = CAN_inflation
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.82						#US denys loans
+	title = tfv_canada.82.t
+	desc = tfv_canada.82.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.82.a
+	}
+}
+
+country_event = {
+	id = tfv_canada.83						#Inflation
+	title = tfv_canada.83.t
+	desc = tfv_canada.83.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = no
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CAN
+		USA = {
+			has_idea = CAN_canadian_loans
+		}
+		has_country_flag = CAN_inflation
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = tfv_canada.83.a
+		
+		ai_chance = {
+			base = 100
+		}
+		set_country_flag = CAN_inflation_2
+		
+		add_ideas = CAN_rampant_inflation
+		add_ideas = CAN_raised_taxes
+		
+		hidden_effect = {
+			news_event = { id = tfvo_news.7 hours = 6 }
+		}
+	}
+	
+	option = {
+		name = tfv_canada.83.b
+		
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 20
+				date > 1940.1.01
+			}
+			modifier = {
+				add = 20
+				has_idea = CAN_great_depression_1
+			}
+			modifier = {
+				add = 10
+				has_idea = CAN_great_depression_2
+			}
+		}
+		
+		custom_effect_tooltip =  CAN_cut_loans_tt
+		
+		effect_tooltip = {
+			USA = {
+				remove_ideas = CAN_canadian_loans
+			}
+		}
+		
+		set_country_flag = CAN_inflation_2
+		
+		add_ideas = CAN_rampant_inflation
+		
+		USA = {
+			country_event = { id = tfv_canada.86 }
+		}
+		hidden_effect = {
+			news_event = { id = tfvo_news.7 hours = 6 }
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.84						#Remove Inflation
+	title = tfv_canada.84.t
+	desc = tfv_canada.84.d
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = no
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CAN
+		has_country_flag = CAN_inflation_2
+	}
+	
+	mean_time_to_happen = {
+		days = 120
+	}
+
+	option = {
+		name = tfv_canada.84.a
+		clr_country_flag = CAN_inflation_2
+		clr_country_flag = CAN_inflation
+		remove_ideas = CAN_rampant_inflation
+		hidden_effect = {
+			news_event = { id = tfvo_news.8 hours = 6 }
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.86						#Canada cuts loans (from inflation)
+	title = tfv_canada.86.t
+	desc = tfv_canada.86.d
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		
+	}
+
+	option = {
+		name = tfv_canada.86.a 
+		remove_ideas = CAN_canadian_loans
+	}
+}
+
+country_event = {
+	id = tfv_canada.90						#Colonial Canada
+	title = tfv_canada.90.t
+	desc = tfv_canada.90.d
+	picture = GFX_report_event_generic_usa_treaty
+	
+	is_triggered_only = yes
+	
+	option = {								# Agree to proposal
+		name = tfv_canada.90.a
+		
+		ai_chance = {
+			base = 100
+			modifier = {
+				add = -10
+				date > 1941.12.07
+			}
+			modifier = {
+				add = -5
+				has_war_with = JAP
+			}
+			modifier = {
+				add = -10
+				NOT = { has_full_control_of_state = 638 }
+			}
+			modifier = {
+				add = -5
+				NOT = { has_full_control_of_state = 632 }
+			}
+			modifier = {
+				add = -5
+				NOT = { has_full_control_of_state = 642 }
+			}
+			modifier = {
+				add = -10
+				NOT = { has_full_control_of_state = 631 }
+			}
+			modifier = {
+				add = -5
+				NOT = { has_full_control_of_state = 642 }
+			}
+			modifier = {
+				add = -5
+				NOT = { has_full_control_of_state = 630 }
+			}
+			modifier = {
+				add = -20
+				NOT = { has_full_control_of_state = 629 }
+			}
+			modifier = {
+				add = -1
+				has_war_with = SOV
+			}
+		}
+		
+		effect_tooltip = {
+			CAN = {
+				transfer_state = 463
+				transfer_state = 727
+				add_state_core = 463
+			}
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.91 }
+				set_country_flag = CAN_payment_accepted
+			}
+		}
+	}
+	
+	option = {								# Refuse proposal
+		name = tfv_canada.90.b
+		
+		trigger = {
+			CAN = {
+				NOT = {
+					AND = {
+						has_country_flag = CAN_immigration_denied
+						has_country_flag = CAN_industry_denied
+					}
+				}
+			}
+		}
+		
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 10
+				date > 1942.12.07
+			}
+			modifier = {
+				add = 10
+				has_war_with = JAP
+			}
+			modifier = {
+				add = 10
+				NOT = { has_full_control_of_state = 638 }
+			}
+			modifier = {
+				add = 5
+				NOT = { has_full_control_of_state = 632 }
+			}
+			modifier = {
+				add = 5
+				NOT = { has_full_control_of_state = 642 }
+			}
+			modifier = {
+				add = 10
+				NOT = { has_full_control_of_state = 631 }
+			}
+			modifier = {
+				add = 5
+				NOT = { has_full_control_of_state = 642 }
+			}
+			modifier = {
+				add = 5
+				NOT = { has_full_control_of_state = 630 }
+			}
+			modifier = {
+				add = 20
+				NOT = { has_full_control_of_state = 629 }
+			}
+			modifier = {
+				add = 1
+				has_war_with = SOV
+			}
+		}
+		
+		custom_effect_tooltip =  CAN_us_deny_payments_tt
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.92 }
+				set_country_flag = CAN_land_denied
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.91						#US give Alaska and Line Islands
+	title = tfv_canada.91.t
+	desc = tfv_canada.91.d
+	picture = GFX_report_event_generic_usa_treaty
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+	
+	}
+
+	option = {
+		name = tfv_canada.91.a
+		
+		transfer_state = 463
+		transfer_state = 727
+		
+		add_state_core = 463
+		
+		hidden_effect = {
+			news_event = { id = tfvo_news.9 hours = 6 }
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.92						#USA Deny Land
+	title = tfv_canada.92.t
+	desc = tfv_canada.92.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		
+	}
+
+	option = {
+		name = tfv_canada.92.a
+		add_political_power = 100
+		clr_country_flag = CAN_payment_selected
+	}
+}
+
+country_event = {
+	id = tfv_canada.93						#Canada wants industrial assistance
+	title = tfv_canada.93.t
+	desc = tfv_canada.93.d
+	picture = GFX_report_event_generic_usa_treaty
+	
+	is_triggered_only = yes
+	
+	option = {								# Agree to proposal
+		name = tfv_canada.93.a
+		
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = .25
+				has_manpower < 1000
+			}
+			modifier = {
+				factor = .5
+				has_manpower < 50000
+			}
+			modifier = {
+				factor = .75
+				has_manpower < 100000
+			}
+		}
+		
+		add_timed_idea = { 
+			idea = CAN_industrial_assistance_to_canada
+			days = 365
+		}
+		
+		effect_tooltip = {
+			CAN = {
+				add_timed_idea = { 
+					idea = CAN_industrial_assistance
+					days = 365
+				}
+			}
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.94 }
+				set_country_flag = CAN_payment_accepted
+			}
+		}
+	}
+	
+	option = {								# Refuse proposal
+		name = tfv_canada.93.b
+		
+		trigger = {
+			CAN = {
+				NOT = {
+					AND = {
+						has_country_flag = CAN_immigration_denied
+						if = {
+							limit = {
+								USA = { has_full_control_of_state = 463 }
+								USA = { has_full_control_of_state = 727 }
+								is_in_faction_with = USA
+							}
+							has_country_flag = CAN_land_denied
+						}
+					}
+				}
+			}
+		}
+		
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 75
+				has_manpower < 1000
+			}
+			modifier = {
+				factor = 50
+				has_manpower < 50000
+			}
+			modifier = {
+				factor = 25
+				has_manpower < 100000
+			}
+		}
+		
+		custom_effect_tooltip =  CAN_us_deny_payments_tt
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.95 }
+				set_country_flag = CAN_industry_denied
+			}
+		}
+	}
+}
+
+country_event = {							#US gives Industrial loans
+	title = tfv_canada.94.t
+	desc = tfv_canada.94.d
+	picture = GFX_report_event_generic_usa_treaty
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+	
+	}
+
+	option = {
+		name = tfv_canada.94.a
+		add_timed_idea = { 
+			idea = CAN_industrial_assistance
+			days = 365
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.95						#US refuses Industrial loans
+	title = tfv_canada.95.t
+	desc = tfv_canada.95.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		
+	}
+
+	option = {
+		name = tfv_canada.95.a
+		add_political_power = 100
+		clr_country_flag = CAN_payment_selected
+	}
+}
+
+country_event = {
+	id = tfv_canada.96						#Canada wants people
+	title = tfv_canada.96.t
+	desc = tfv_canada.96.d
+	picture = GFX_report_event_generic_usa_treaty
+	
+	is_triggered_only = yes
+	
+	option = {								#Allow Immigration
+		name = tfv_canada.96.a
+		
+		ai_chance = {
+			base = 100
+			modifier = {
+				add = -75
+				has_idea = undisturbed_isolation
+			}
+			modifier = {
+				add = -50
+				has_idea = isolation
+			}
+			modifier = {
+				add = -25
+				has_idea = civilian_economy
+			}
+		}
+		
+		add_timed_idea = { 
+			idea = CAN_immigration_to_canada
+			days = 365
+		}
+		
+		effect_tooltip = {
+			CAN = {
+				add_timed_idea = { 
+					idea = CAN_american_immigrants
+					days = 365
+				}
+			}
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.97 }
+				set_country_flag = CAN_payment_accepted
+			}
+		}
+	}
+	
+	option = {								#nah Fam
+		name = tfv_canada.96.b
+		
+		trigger = {
+			CAN = {
+				NOT = {
+					AND = {
+						has_country_flag = CAN_industry_denied
+						if = {
+							limit = {
+								USA = { has_full_control_of_state = 463 }
+								USA = { has_full_control_of_state = 727 }
+								is_in_faction_with = USA
+							}
+							has_country_flag = CAN_land_denied
+						}
+					}
+				}
+			}
+		}
+		
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 75
+				has_idea = undisturbed_isolation
+			}
+			modifier = {
+				add = 50
+				has_idea = isolation
+			}
+			modifier = {
+				add = 25
+				has_idea = civilian_economy
+			}
+		}
+		
+		custom_effect_tooltip =  CAN_us_deny_payments_tt
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.98 }
+				set_country_flag = CAN_immigration_denied
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.97						#US allows immigrants
+	title = tfv_canada.97.t
+	desc = tfv_canada.97.d
+	picture = GFX_report_event_generic_usa_treaty
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+	
+	}
+
+	option = {
+		name = tfv_canada.97.a
+		add_timed_idea = { 
+			idea = CAN_american_immigrants
+			days = 365
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.98						#US refuses to give immigrants
+	title = tfv_canada.98.t
+	desc = tfv_canada.98.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		
+	}
+
+	option = {
+		name = tfv_canada.98.a
+		add_political_power = 100
+		clr_country_flag = CAN_payment_selected
+	}
+}
+
+#Canada's Flag
+country_event = {
+	id = tfv_canada.100
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		CAN = {
+			is_subject = no
+			OR = {
+				has_democratic_government = yes
+				OR = { has_government = monarchism has_government = neutrality }
+			}
+			NOT = { has_country_flag = CAN_has_chosen_a_flag }
+		}
+	}
+	
+	immediate = {
+		CAN = {
+			country_event = { id = tfv_canada.101 }
+		}
+	}
+	
+	option = {
+		name = tfv_canada.100.a
+	}
+}
+
+country_event = {
+	id = tfv_canada.101
+	title = tfv_canada.101.t
+	desc = tfv_canada.101.d
+	picture = GFX_report_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	
+	}
+	
+	option = {
+		name = tfv_canada.101.a
+		ai_chance = {
+			base = 100
+		}
+		custom_effect_tooltip =  CAN_maple_leaf_tt
+		drop_cosmetic_tag = yes
+		set_country_flag = CAN_has_chosen_a_flag
+	}
+	
+	option = {
+		name = tfv_canada.101.b
+		ai_chance = {
+			base = 0
+		}
+		custom_effect_tooltip =  CAN_canadian_red_ensign_tt
+		hidden_effect = {
+			set_cosmetic_tag = CAN_UK
+		}
+		set_country_flag = CAN_has_chosen_a_flag
+	}
+}
+
+# Completed CAN_demand_saint_pierre_and_miquelon
+# Canadian national focus
+country_event = {							# Canada demands Saint Pierre and Miquelon
+	id = tfv_canada.110
+	title = tfv_canada.110.t
+	desc = tfv_canada.110.d	
+	picture = GFX_report_event_canada_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.110.a 			#Accept Canada's proposal
+		
+		ai_chance = {
+			base = 95
+			modifier = {
+				add = 3
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+				}
+			}
+			modifier = {
+				add = 30
+				has_capitulated = yes
+			}
+			modifier = {
+				factor = 0
+				has_war_with = CAN
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 730
+				}
+				CAN = {
+					transfer_state = 730
+					add_state_core = 730
+				}
+			}
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.111 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_canada.110.b 			#Refuse Canada's demands
+		
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = -3
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+				}
+			}
+			modifier = {
+				factor = 0
+				has_capitulated = yes
+			}
+			modifier = {
+				factor = 100
+				has_war_with = CAN
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 730
+				}
+				CAN = {
+					add_state_core = 730
+				}
+			}
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.112 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.111
+	title = tfv_canada.111.t	# Anyone gives up Saint Pierre and Miquelon
+	desc = tfv_canada.111.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.111.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 730 }
+			}
+			transfer_state = 730
+			add_state_core = 730
+		}
+
+		#news_event = {
+		#	id = tfvo_news.2 hours = 2
+		#}
+	}
+}
+
+country_event = {
+	id = tfv_canada.112
+	title = tfv_canada.112.t	# Anyone refused to give up Saint Pierre and Miquelon
+	desc = tfv_canada.112.d
+	picture = GFX_report_event_canadian_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.112.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 730 }
+			}
+			add_state_core = 730
+		}
+	}
+}
+
+# Completed CAN_demand_saint_pierre_and_miquelon
+# Canadian national focus
+country_event = {							# Canada demands Saint Pierre and Miquelon
+	id = tfv_canada.110
+	title = tfv_canada.110.t
+	desc = tfv_canada.110.d	
+	picture = GFX_report_event_canada_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.110.a 			#Accept Canada's proposal
+		
+		ai_chance = {
+			base = 95
+			modifier = {
+				add = 3
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+				}
+			}
+			modifier = {
+				add = 30
+				has_capitulated = yes
+			}
+			modifier = {
+				factor = 0
+				has_war_with = CAN
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 730
+				}
+				CAN = {
+					transfer_state = 730
+					add_state_core = 730
+				}
+			}
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.111 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_canada.110.b 			#Refuse Canada's demands
+		
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = -3
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+				}
+			}
+			modifier = {
+				factor = 0
+				has_capitulated = yes
+			}
+			modifier = {
+				factor = 100
+				has_war_with = CAN
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 730
+				}
+				CAN = {
+					add_state_core = 730
+				}
+			}
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.112 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.111
+	title = tfv_canada.111.t	# Anyone gives up Saint Pierre and Miquelon
+	desc = tfv_canada.111.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.111.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 730 }
+			}
+			transfer_state = 730
+			add_state_core = 730
+		}
+
+		#news_event = {
+		#	id = tfvo_news.2 hours = 2
+		#}
+	}
+}
+
+country_event = {
+	id = tfv_canada.112
+	title = tfv_canada.112.t	# Anyone refused to give up Saint Pierre and Miquelon
+	desc = tfv_canada.112.d
+	picture = GFX_report_event_canadian_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.112.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 730 }
+			}
+			add_state_core = 730
+		}
+	}
+}
+
+# Completed CAN_demand_nordic_islands
+# Canadian national focus
+country_event = {							# Canada demands the Nordic Islands
+	id = tfv_canada.113
+	title = tfv_canada.113.t
+	desc = tfv_canada.113.d	
+	picture = GFX_report_event_canada_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.113.a 			#Accept Canada's proposal
+		
+		ai_chance = {
+			base = 95
+			modifier = {
+				add = 3
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+				}
+			}
+			modifier = {
+				add = 30
+				has_capitulated = yes
+			}
+			modifier = {
+				factor = 0
+				has_war_with = CAN
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 101
+				}
+				CAN = {
+					transfer_state = 101
+					add_state_core = 101
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 100
+				}
+				CAN = {
+					transfer_state = 100
+					add_state_core = 100
+				}
+			}
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.114 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_canada.113.b 			#Refuse Canada's demands
+		
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = -3
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+				}
+			}
+			modifier = {
+				factor = 0
+				has_capitulated = yes
+			}
+			modifier = {
+				factor = 100
+				has_war_with = CAN
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 101
+				}
+				CAN = {
+					add_state_core = 101
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 100
+				}
+				CAN = {
+					add_state_core = 100
+				}
+			}
+		}
+		
+		hidden_effect = {
+			CAN = {
+				country_event = { id = tfv_canada.115 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.114
+	title = tfv_canada.114.t	# Anyone gives up Nordic Islands
+	desc = tfv_canada.114.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.114.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 101 }
+			}
+			transfer_state = 101
+			add_state_core = 101
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 100 }
+			}
+			transfer_state = 100
+			add_state_core = 100
+		}
+
+		#news_event = {
+		#	id = tfvo_news.2 hours = 2
+		#}
+	}
+}
+
+country_event = {
+	id = tfv_canada.115
+	title = tfv_canada.115.t	# Anyone refused to give up Saint Pierre and Miquelon
+	desc = tfv_canada.115.d
+	picture = GFX_report_event_canadian_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.115.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 101 }
+			}
+			add_state_core = 101
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 100 }
+			}
+			add_state_core = 100
+		}
+	}
+}
+
+#from Canadian Decisions
+country_event = {
+	id = tfv_canada.120 			#Canada take Britains people
+	title = tfv_canada.120.t	
+	desc = tfv_canada.120.d	
+	picture = GFX_report_event_usa_destroyers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_canada.120.a
+		add_opinion_modifier = {
+			target = CAN
+			modifier = CAN_accepted_british_refugees
+		}
+		if = {
+			limit = {
+				any_owned_state = {	
+					state_population > 1000000
+				}
+			}
+			random_owned_state = {
+				prioritize = { 126 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -40000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+		}
+		else = {
+			random_owned_state = {
+				prioritize = { 126 }
+				add_manpower = -40000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+		}
+	}
+}
+
+# Ronnie the Bren Gun Girl
+# Triggered by Women in the Workforce decision
+
+country_event = {
+	id = canada_vanilla.1
+	title = canada_vanilla.1.title
+	desc = canada_vanilla.1.desc
+	
+	picture = GFX_report_event_canada_ronnie
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada_vanilla.1.opt
+	}
+}
+

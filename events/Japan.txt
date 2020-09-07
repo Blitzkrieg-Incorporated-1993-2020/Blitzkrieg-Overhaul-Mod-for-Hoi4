@@ -1,0 +1,5445 @@
+###########################
+# Japanese Events
+###########################
+
+add_namespace = japan
+
+
+
+# Chinese Refuse Concessions
+country_event = {
+	id = japan.1
+	title = china.1.t
+	desc = japan.1.d
+	picture = GFX_report_event_chinese_soldiers_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.1.a
+		add_war_support = 0.05
+		declare_war_on = {
+			target = CHI
+			type = puppet_wargoal_focus
+		}
+		every_country = {
+			limit = {
+				is_subject_of = JAP
+			}
+   			add_to_war = { 
+				targeted_alliance = JAP
+				enemy = CHI
+				hostility_reason = asked_to_join
+			}
+		}
+		hidden_effect = {
+			add_ideas = JAP_intervene_in_china_5
+			every_country = {
+				limit = { is_subject_of = JAP }
+	   			add_ideas = JAP_intervene_in_china_5
+			}
+			country_event = { days = 5 id = news.1 }
+		}
+		if = {
+			limit = {
+				has_country_leader = { id = 700 ruling_only = yes }
+			}
+			remove_country_leader_trait = imperial_sanction
+		}
+	}
+}
+# Chinese Concessions
+country_event = {
+	id = japan.2
+	title = china.1.t
+	desc = japan.2.d
+	picture = GFX_report_event_chinese_soldiers_running
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.2.a
+		effect_tooltip = {
+			set_truce = { target = FROM days = 180 }
+		}
+		hidden_effect = {
+			country_event = { days = 5 id = news.2 }
+		}
+		JAP = {
+			transfer_state = 608
+			transfer_state = 614
+			transfer_state = 597
+			transfer_state = 902
+			transfer_state = 1027
+			transfer_state = 743
+		}  
+		CHI = {
+			end_puppet = MEN
+		}
+		JAP = { 
+			puppet = MEN
+			if = {
+				limit = {
+					has_dlc = "Together for Victory"
+				} 
+				set_autonomy = {
+					target = MEN
+					autonomous_state = autonomy_imperial_client
+				}
+			}
+		} 
+		MEN = {
+			set_cosmetic_tag = MEN_mbg 
+			create_country_leader = {
+				name = "Prince Demchugdongrub"
+				desc = "POLITICS_DEMCHUGDONGRUB_DESC"
+				picture = "gfx/leaders/MON/Portrait_Demchugdongrub.tga"
+				expire = "1965.1.1"
+				ideology = rexism
+				traits = {
+					spirit_of_genghis
+				}
+			}
+		}
+	}
+}
+
+# Soviets Push Back And Win
+country_event = {
+	id = japan.3
+	title = japan.3.t
+	desc = japan.3.d
+	picture = GFX_report_event_soviet_soldiers_tank
+	
+	is_triggered_only = yes
+	
+	option = {
+		if = {
+			limit = { 
+			714 = { 
+				OR = {
+					is_owned_by = JAP
+					is_owned_by = MAN
+				} 
+				any_neighbor_state = { is_owned_by = SOV } }
+			} 
+			714 = { add_manpower = -30000 }
+		}		
+		if = {
+			limit = {
+				NOT = {
+					714 = {
+						OR = {
+							is_owned_by = JAP
+							is_owned_by = MAN
+						}
+						any_neighbor_state = { is_owned_by = SOV } 
+					}
+				}
+			}
+			random_owned_state = {
+				limit = { any_neighbor_state = { is_owned_by = SOV } }
+				add_manpower = -30000
+			}
+		}
+
+		army_experience = 5
+		add_tech_bonus = {
+			name = japan.3.t #test_the_ussr_focus
+			bonus = 0.5
+			uses = 1
+			category = cat_anti_tank
+		}
+		name = japan.3.a
+		SOV = {
+			country_event = { id = soviet.2 }
+		}
+	}
+}
+# Soviets Push Back And Lose
+country_event = {
+	id = japan.4
+	title = japan.4.t
+	desc = japan.4.d
+	picture = GFX_report_event_japanese_soldiers_01
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.4.a
+		if = {
+			limit = { 
+			714 = { 
+				OR = {
+					is_owned_by = JAP
+					is_owned_by = MAN					
+				}
+				any_neighbor_state = { is_owned_by = SOV } }
+			} 
+			714 = { add_manpower = -20000 }
+		}		
+		if = {
+			limit = {
+				NOT = {
+					714 = {
+						OR = {
+							is_owned_by = JAP							
+							is_owned_by = MAN						
+						}
+						any_neighbor_state = { is_owned_by = SOV } 
+					}
+				}
+			}
+			random_owned_state = {
+				limit = { any_neighbor_state = { is_owned_by = SOV } }
+				add_manpower = -20000
+			}
+		}
+		army_experience = 15
+		add_tech_bonus = {
+			name = japan.4.t #test_the_ussr_focus
+			bonus = 0.5
+			uses = 1
+			category = cat_grand_battle_plan
+		}		
+		SOV = {
+			country_event = { id = soviet.3 }
+		}
+	}
+}
+
+# Soviets Yield
+country_event = {
+	id = japan.5
+	title = japan.5.t
+	desc = japan.5.d
+	picture = GFX_report_event_soviet_soldiers_tank
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.5.a
+		add_war_support = 0.05
+		hidden_effect = {
+			country_event = { days = 5 id = news.9 }
+		}
+	}
+}
+
+# French Accept Demands
+country_event = {
+	id = japan.6
+	title = japan.6.t
+	desc = japan.6.d
+	picture = GFX_report_event_japanese_soldiers_02
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.6.a
+		hidden_effect = {
+			news_event = { days = 5 id = news.5 }
+			load_oob = "JAP_bismarck"
+		}
+		JAP = {
+			if = {
+				limit = {
+					VIN = {
+						exists = yes 
+						is_subject_of = FRA
+					}
+				}
+				JAP = { set_country_flag = occupy_nam }
+				annex_country = {
+			    	target = VIN
+			    	transfer_troops = no
+			    } 
+			} 
+			if = {
+				limit = {
+					286 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 286
+			}
+			if = {
+				limit = {
+					1080 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 1080
+			}
+			if = {
+				limit = {
+					1081 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 1081
+			}
+			if = {
+				limit = {
+					1082 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 1082
+			}
+			if = {
+				limit = {
+					670 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 670
+			}
+			if = {
+				limit = {
+					671 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 671
+			}
+			if = {
+				limit = {
+					1078 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 1078
+			}
+			if = {
+				limit = {
+					1079 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 1079
+			}
+			if = {
+				limit = {
+					741 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 741
+			}
+			if = {
+				limit = {
+					1084 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 1084
+			}
+			if = {
+				limit = {
+					1085 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 1085
+			}
+			add_named_threat = { threat = 3 name = france.1.t }
+		}
+	}
+}
+
+# French Reject Demands
+country_event = {
+	id = japan.7
+	title = japan.7.t
+	desc = japan.7.d
+	picture = GFX_report_event_japanese_soldiers_03
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.7.a
+		hidden_effect = {
+			country_event = { days = 5 id = news.6 }
+		}
+	}
+}
+
+# Germany Agrees to Withdraw Falkenhausen
+country_event = {
+	id = japan.8
+	title = japan.8.t
+	desc = japan.8.d
+	picture = GFX_report_event_german_detained_china
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.8.a
+	}
+}
+
+# Germany Refuses to Withdraw Falkenhausen
+country_event = {
+	id = japan.9
+	title = japan.9.t
+	desc = japan.9.d
+	picture = GFX_report_event_german_advisors_remain
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.9.a
+	}
+	#option = { # Withdraw from the Anti-Comintern Pact
+	#	name = japan.9.b
+	#}
+}
+
+# USA condemns our war 
+country_event = {
+	id = japan.10
+	title = japan.10.t
+	desc = japan.10.d
+	picture = GFX_report_event_FDR_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.10.a
+		USA = { 
+			add_opinion_modifier = { target = JAP modifier = condemn_aggression }
+		}
+	}
+}
+
+# Pressure Siam to become a puppet
+country_event = {
+	id = japan.11
+	title = japan.11.t
+	desc = japan.11.d
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.11.a
+		SIA = { 
+			country_event = { id = japan.12 }
+		}
+	}
+
+	option = {
+		name = japan.11.b
+		ai_chance = { factor = 0 }
+	}
+}
+
+# Siam event from Japan: Become puppet or not
+country_event = {
+	id = japan.12
+	title = japan.12.t
+	desc = japan.12.d
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.12.a
+		ai_chance = {
+			factor = 90 
+			modifier = {
+				#If they have a fighting chance, they should stand their ground
+				factor = 0
+				strength_ratio = {
+					tag = JAP
+					ratio > 0.75
+				}
+			}
+		}
+		JAP = { 
+			country_event = { id = japan.13 }
+			effect_tooltip = { 
+				puppet = SIA
+				if = {
+					limit = { has_dlc = "Together for Victory" } 
+					set_autonomy = { target = SIA autonomous_state = autonomy_imperial_tributary } 
+				} 
+			}
+		}
+	}
+
+	option = {
+		name = japan.12.b
+		ai_chance = { factor = 10 }
+		JAP = { 
+			country_event = { id = japan.14 }
+			effect_tooltip = {
+				declare_war_on = {
+					target = SIA
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+	}
+}
+
+# Siam accepts and is puppeted
+country_event = {
+	id = japan.13
+	title = japan.13.t
+	desc = japan.13.d
+	picture = GFX_report_event_japanese_siam_politicians
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.13.a
+		puppet = SIA
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			} 
+			set_autonomy = {
+				target = SIA
+				autonomous_state = autonomy_imperial_tributary
+			}
+		}
+	}
+}
+
+# Siam refuses, nations go to war 
+country_event = {
+	id = japan.14
+	title = japan.14.t
+	desc = japan.14.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.14.a
+		declare_war_on = {
+			target = SIA
+			type = puppet_wargoal_focus
+		}
+	}
+}
+
+# Indian national army 
+country_event = {
+	id = japan.15
+	title = japan.15.t
+	desc = japan.15.d
+	picture = GFX_report_event_indian_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.15.a
+		hidden_effect = {
+			load_oob = "JAP_Indian_National_Army_reinforcement"
+		}
+		custom_effect_tooltip = JAP_Indian_National_Army_arrives
+		add_manpower = 10000
+		set_global_flag = indian_national_army_setup
+		RAJ = {
+			add_stability = -0.2
+			if = {
+				limit = { has_dlc = "Together for Victory" }
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.05
+				}
+				else = {
+					add_ideas = RAJ_azad_hind 
+					ENG = {
+						country_event = { id = britain.19 }
+					}
+				}
+			}
+		}
+	}
+}
+
+# China event from Japan: Become puppet or not
+country_event = {
+	id = japan.16
+	title = japan.16.t
+	desc = japan.16.d
+	picture = GFX_report_event_asian_politicians
+	
+	is_triggered_only = yes
+	
+	#Accept - become puppet
+	option = {
+		name = japan.16.a
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0
+				strength_ratio = {
+					tag = JAP
+					ratio > 0.10
+				}
+				is_historical_focus_on = yes
+			}
+		}
+		JAP = { 
+			country_event = { id = japan.17 }
+			effect_tooltip = { puppet = CHI }
+		}
+	}
+
+	option = {
+		name = japan.16.b
+		ai_chance = { factor = 40 }
+		JAP = { 
+			country_event = { id = japan.18 }
+			effect_tooltip = {
+				if = {
+					limit = {
+						JAP = {	is_ai = yes }
+					}
+					declare_war_on = {
+						type = take_state
+						target = CHI
+						generator = owned_states
+					}
+					every_other_country = {
+						limit = {
+							is_puppet_of = ROOT
+						}
+						add_to_war = {
+							targeted_alliance = ROOT
+							enemy = CHI
+						}
+					}
+					if = {
+						limit = {
+							PGR = {
+								is_puppet_of = CHI
+							}
+						}
+						PGR = {
+							add_to_war = {
+								targeted_alliance = CHI
+								enemy = JAP
+							}
+						}
+					}
+					else = {
+						create_wargoal = {
+							type = take_state
+							target = CHI
+							generator = owned_states
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# China accepts and is puppeted
+country_event = {
+	id = japan.17
+	title = japan.17.t
+	desc = japan.17.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.17.a
+		puppet = CHI
+		add_named_threat = { threat = 20 name = chinese_puppet_focus }
+		hidden_effect = {
+			news_event = { hours = 6 id = news.210 }
+		}
+	}
+}
+
+# China refuses, gain cb
+country_event = {
+	id = japan.18
+	title = japan.18.t
+	desc = japan.18.d
+	picture = GFX_report_event_chinese_soldiers_02
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.18.a
+		if = {
+			limit = { 
+				is_ai = yes
+			}
+			declare_war_on = {
+				type = take_state
+				target = CHI
+				generator = owned_states
+			}
+			if = {
+				limit = {
+					PGR = {
+						is_puppet_of = CHI
+					}
+				}
+				PGR = {
+					add_to_war = {
+						targeted_alliance = CHI
+						enemy = JAP
+					}
+				}
+			}
+			else = {
+				create_wargoal = {
+					type = take_state
+					target = CHI
+					generator = owned_states
+				}
+			}
+		}
+	}
+}
+
+# UK - Malaya Invasion
+country_event = {
+	id = japan.19
+	title = japan.19.t
+	desc = japan.19.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = japan.19.a
+		ai_chance = {
+			base = 1
+		}
+		JAP = { 
+			annex_country = {
+		    	target = MAL
+		    	transfer_troops = no
+		    } 
+		}
+		JAP = { 
+			annex_country = {
+		    	target = INS
+		    	transfer_troops = no
+		    } 
+		} 
+		if = {
+			limit = {
+				SIA = {
+					is_in_faction_with = JAP
+				}
+			}
+			SIA = {
+				transfer_state = 336
+				transfer_state = 980
+				transfer_state = 981
+			}
+		} 
+	}
+
+	option = {
+		name = japan.19.b
+		ai_chance = {
+			base = 99
+		}
+		JAP = { 
+			declare_war_on = {
+			    target = MAL
+			    type = annex_everything
+			}
+		}
+		if = {
+			limit = {
+				MAL = {
+					is_in_faction_with = ENG
+				}
+			}
+			MAL = {
+				add_to_war = {
+					targeted_alliance = ENG
+					enemy = JAP
+				}
+			}
+			every_country = {
+				limit = {
+					is_subject_of = ENG
+					NOT = { has_autonomy_state = autonomy_imperial_dominion }
+					NOT = { has_autonomy_state = autonomy_free_regime }
+					NOT = { has_autonomy_state = autonomy_protected_state }
+				}
+	   			add_to_war = { 
+					targeted_alliance = ENG
+					enemy = JAP
+					hostility_reason = asked_to_join
+				}
+			}
+			every_country = {
+				limit = {
+					is_subject_of = ENG
+					has_autonomy_state = autonomy_imperial_dominion
+					is_ai = yes
+				}
+	   			add_to_war = { 
+					targeted_alliance = ENG
+					enemy = JAP
+					hostility_reason = asked_to_join
+				}
+			}
+		}
+		if = {
+			limit = {
+				AST = {
+					is_in_faction_with = ENG
+				}
+			}
+			AST = {
+				add_to_war = {
+					targeted_alliance = ENG
+					enemy = JAP
+				}
+			}
+		}
+		if = {
+			limit = {
+				RAJ = {
+					is_in_faction_with = ENG
+				}
+			}
+			RAJ = {
+				add_to_war = {
+					targeted_alliance = ENG
+					enemy = JAP
+				}
+			}
+		}
+		if = {
+			limit = {
+				HOL = {
+					is_in_faction_with = ENG
+				}
+			} 
+			HOL = {
+				add_to_war = {
+					targeted_alliance = ENG
+					enemy = JAP
+				}
+			}
+		} 
+		if = {
+			limit = {
+				SIA = {
+					is_in_faction_with = JAP
+				}
+			} 
+			SIA = {
+				add_to_war = {
+					targeted_alliance = JAP
+					enemy = ENG
+				}
+			}
+		} 
+		if = {
+			limit = {
+				INS = {
+					is_in_faction_with = ENG
+				}
+			}
+			INS = {
+				add_to_war = {
+					targeted_alliance = ENG
+					enemy = JAP
+				}
+			}
+		}
+		hidden_effect = {
+			news_event = { id = japan.72 days = 1 }
+			if = {
+				limit = {
+					JAP = { 
+						is_ai = yes
+					}
+					INS = {
+						OR = {
+							is_in_faction_with = ENG
+							is_subject_of = ENG
+						}
+					}
+				}
+				333 = { 
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 1306
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 4282
+						instant_build = yes
+					}
+				}
+				672 = { 
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 7384
+						instant_build = yes
+					}
+				}
+				523 = { 
+					add_building_construction = {
+						type = naval_base
+						level = 4
+						province = 1310
+						instant_build = yes
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					is_subject_of = ENG
+					NOT = { has_autonomy_state = autonomy_imperial_dominion }
+					NOT = { has_autonomy_state = autonomy_free_regime }
+					NOT = { has_autonomy_state = autonomy_protected_state }
+				}
+       			add_to_war = { 
+					targeted_alliance = ENG
+					enemy = JAP
+					hostility_reason = asked_to_join
+				}
+			}
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+					is_ai = yes
+				}
+       			add_to_war = { 
+					targeted_alliance = ENG
+					enemy = JAP
+					hostility_reason = asked_to_join
+				}
+			}
+		}
+	}
+}
+
+# US - Pearl Harbor
+country_event = {
+	id = japan.20
+	title = japan.20.t
+	desc = japan.20.d
+	picture = GFX_report_event_usa_pearl_harbor_airphoto
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = {
+		name = japan.20.a
+		ai_chance = {
+			base = 1
+		}
+		set_global_flag = pearlharbor
+		destroy_ships = {
+			type = ship_hull_light_1
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_light_2
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_light_3
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_light_4
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_cruiser_1
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_cruiser_2
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_cruiser_3
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_cruiser_4
+			count = 3
+		}
+		if = {
+			limit = {
+				PHI = {
+					OR = {
+						is_in_faction_with = ENG
+						is_subject_of = USA
+					}
+				}
+			}
+			JAP = { 
+				annex_country = {
+			    	target = PHI
+			    	transfer_troops = no
+			    } 
+			}
+		}
+		hidden_effect = {
+			628 = { 
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					province = 7423
+					instant_build = yes
+				}
+			}
+			623 = { 
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					province = 7439
+					instant_build = yes
+				}
+			}
+			624 = { 
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					province = 4288
+					instant_build = yes
+				}
+			}
+			625 = { 
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					province = 1340
+					instant_build = yes
+				}
+			}
+			627 = { 
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					province = 1293
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = japan.20.b
+		ai_chance = {
+			base = 99
+			modifier = {
+		    	factor = 0
+				NOS_has_civil_war = yes
+			} 
+		}
+		destroy_ships = {
+			type = ship_hull_light_1
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_light_2
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_light_3
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_light_4
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_cruiser_1
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_cruiser_2
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_cruiser_3
+			count = 3
+		}
+		destroy_ships = {
+			type = ship_hull_cruiser_4
+			count = 3
+		}
+		USA = { 
+			declare_war_on = {
+			    target = JAP
+			    type = topple_government
+			}
+		}
+		every_country = {
+			limit = {
+				is_subject_of = USA
+			}
+   			add_to_war = { 
+				targeted_alliance = USA
+				enemy = JAP
+				hostility_reason = asked_to_join
+			}
+		}
+		hidden_effect = { 
+			if = {
+				limit = { 
+					MAL = {
+						owns_state = 336
+					}
+					JAP = { 
+						has_war_with = MAL
+						NOT = {
+							fully_controls_state = 336
+						} 
+					}
+				}
+				#JAP = { set_state_controller = 336 }
+			}
+			if = {
+				limit = {
+					JAP = { 
+						is_ai = yes
+					}
+					PHI = {
+						OR = {
+							is_in_faction_with = ENG
+							is_subject_of = USA
+						}
+					}
+				} 
+				PHI = {
+		   			add_to_war = { 
+						targeted_alliance = USA
+						enemy = JAP
+						hostility_reason = asked_to_join
+					}
+				}
+				JAP = {
+					if = {
+						limit = { is_ai = yes }
+						#load_oob = "JAP_philipines"
+					}
+				}
+				628 = { 
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 7423
+						instant_build = yes
+					}
+				}
+				623 = { 
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 7439
+						instant_build = yes
+					}
+				}
+				624 = { 
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 4288
+						instant_build = yes
+					}
+				}
+				625 = { 
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 1340
+						instant_build = yes
+					}
+				}
+				627 = { 
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 1293
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+# USSR - Demand Far East
+country_event = {
+	id = japan.27
+	title = japan.27.t
+	desc = japan.27.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = japan.27.a
+		ai_chance = {
+			base = 95
+		}
+		hidden_effect = {
+			JAP = {
+				country_event = { id = japan.28 hours = 1 } 
+			}
+		}
+	}
+	option = {
+		name = japan.27.b
+		ai_chance = {
+			base = 5
+		}
+		hidden_effect = {
+			country_event = { id = japan.29 hours = 1 } 
+		}
+	}
+}
+
+# JAP - USSR says NO U 		# USSR - Demand Far East
+country_event = {
+	id = japan.28
+	title = japan.28.t
+	desc = japan.28.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = japan.28.a
+		ai_chance = {
+			base = 100
+		} 
+		JAP = {
+			create_wargoal = {
+	  			type = annex_everything
+	  			target = SOV
+	  		}
+		}
+	}
+}
+
+
+# JAP - USSR says FINE		# USSR - Demand Far East
+country_event = {
+	id = japan.29
+	title = japan.29.t
+	desc = japan.29.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = japan.29.a
+		ai_chance = {
+			base = 100
+		} 
+		JAP = { 
+			transfer_state = 408 
+			transfer_state = 409
+			transfer_state = 655
+		}
+	}
+}
+
+## USA Surrender Japs ##
+
+country_event = {
+	id = japan.30
+	title = japan.30.t
+	desc = japan.30.desc
+	picture = GFX_report_event_japanese_soldiers_03 
+
+	trigger = {
+		tag = JAP
+		has_government = fascism
+		has_war_with = USA
+		OR = {
+			JAP = { surrender_progress > 0 }
+			AND = {
+				has_global_flag = JAP_in_axis
+				has_global_flag = had_yalta_conference
+				OR = {
+					GER = { surrender_progress > 0.1 }
+					GER = { exists = no }
+					NOT = { GER = { has_war_with = USA } }
+				}
+			}
+		}
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = japan.30.a
+		ai_chance = {
+			base = 1
+		}
+		USA = {
+			country_event = {
+			    id = japan.35
+			    days = 3
+			    random = 12
+			}
+		}
+	}
+	option = {
+		name = japan.30.b
+		ai_chance = {
+			base = 99
+		}  
+		USA = {
+			news_event = {
+			    id = japan.31
+			    days = 5
+			    random = 15
+			}
+		}
+	}
+}
+
+
+## USA Japs say no u ##
+
+country_event = {
+	id = japan.31
+	title = japan.31.t
+	desc = japan.31.desc
+	picture = GFX_report_event_japanese_soldiers_03 
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = japan.31.a
+		ai_chance = {
+			base = 100
+		}  
+		USA = { set_country_flag = warned_japs }
+	}
+}
+
+
+# Offer Surrender to the Americans? #
+
+country_event = {
+	id = japan.32
+	title = japan.32.t
+	desc = japan.32.desc
+	picture = GFX_report_event_japanese_soldiers_01 
+	
+	trigger = {
+		tag = JAP
+		has_government = fascism
+		has_war_with = USA
+		USA = {
+			has_country_flag = warned_japs
+			has_democratic_government = yes
+			nuclear_reactor > 1
+			has_war_with = JAP
+		}
+		OR = {
+			645 = { NOT = { is_owned_by = JAP } }
+			645 = {
+				is_owned_by = JAP
+				NOT = { is_fully_controlled_by = JAP }
+			}
+		}
+		OR = {
+			646 = { NOT = { is_owned_by = JAP } }
+			646 = {
+				is_owned_by = JAP
+				NOT = { is_fully_controlled_by = JAP }
+			}
+		}
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = japan.32.a
+		ai_chance = {
+			factor = 10
+
+		  	modifier = {
+		    	factor = 2
+		    	has_war_with = SOV
+		  	}
+		}
+		USA = {
+			country_event = {
+			    id = japan.35
+			    days = 5
+			    random = 15
+			}
+		}
+	}
+
+	option = {
+		name = japan.32.b
+		ai_chance = {
+			base = 90
+		}
+		USA = {
+			country_event = {
+			    id = japan.33
+			    days = 5
+			    random = 15
+			}
+		}
+	}
+}
+
+# The Empire of Japan has offered an Armistice #
+
+country_event = {
+	id = japan.33
+	title = japan.33.t
+	desc = japan.33.desc
+	picture = GFX_report_event_japanese_chinese_surrender
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = japan.33.a
+		ai_chance = {
+			base = 1
+		}
+		if = {
+			limit = {
+				CHI = { has_war_with = JAP }
+				524 = {
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			CHI = { transfer_state = 524 }
+		}
+		if = {
+			limit = {
+				CHI = { has_war_with = JAP }
+				608 = { is_owned_by = CHI }
+				MAN = { is_subject_of = JAP }
+			}
+			CHI = {
+				annex_country = {
+	    			target = MAN
+	    			transfer_troops = no
+	 			}
+	 			if = {
+	 				limit = {
+	 					745 = {
+	 						OWNER = {
+	 							OR = {
+	 								tag = JAP
+	 								is_in_faction_with = JAP
+	 								is_subject_of = JAP
+	 							}
+	 						}
+	 					}
+	 				}
+	 				CHI = { transfer_state = 745 }
+	 			}
+	 			if = {
+	 				limit = {
+	 					609 = {
+	 						OWNER = {
+	 							OR = {
+	 								tag = JAP
+	 								is_in_faction_with = JAP
+	 								is_subject_of = JAP
+	 							}
+	 						}
+	 					}
+	 				}
+	 				CHI = { transfer_state = 609 }
+	 			}
+			}
+		}
+		if = {
+			limit = {
+				PRC = { has_war_with = JAP }
+				608 = { is_owned_by = PRC }
+				MAN = { is_subject_of = JAP }
+			}
+			PRC = {
+				annex_country = {
+	    			target = MAN
+	    			transfer_troops = yes
+	 			}
+	 			if = {
+	 				limit = {
+	 					745 = {
+	 						OWNER = {
+	 							OR = {
+	 								tag = JAP
+	 								is_in_faction_with = JAP
+	 								is_subject_of = JAP
+	 							}
+	 						}
+	 					}
+	 				}
+	 				PRC = { transfer_state = 745 }
+	 			}
+	 			if = {
+	 				limit = {
+	 					609 = {
+	 						OWNER = {
+	 							OR = {
+	 								tag = JAP
+	 								is_in_faction_with = JAP
+	 								is_subject_of = JAP
+	 							}
+	 						}
+	 					}
+	 				}
+	 				PRC = { transfer_state = 609 }
+	 			}
+			}
+		} 
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				328 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 328 }
+		}
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				717 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 717 }
+		}
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				714 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 714 }
+		}
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				761 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 761 }
+		}
+		if = {
+			limit = {
+				JAP = { owns_state = 647 }
+			}
+			USA = { transfer_state = 647 }
+		}
+		if = {
+			limit = {
+				JAP = { owns_state = 648 }
+			}
+			USA = { transfer_state = 648 }
+		}
+		if = {
+			limit = {
+				JAP = { owns_state = 633 }
+			}
+			USA = { transfer_state = 633 }
+		}
+		if = {
+			limit = {
+				JAP = { owns_state = 684 }
+			}
+			USA = { transfer_state = 684 }
+		}
+		if = {
+    		limit = {
+    			SOV = { OR = { has_government = unionism has_government = communism } }
+    			USA = { NOT = { OR = { has_government = unionism has_government = communism } } }
+    			527 = {
+    				OWNER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    				CONTROLLER = {
+    					NOT = {
+	    					OR = { has_government = unionism has_government = communism }
+    					}
+    				}
+    			}
+    		} 
+    		USA = { transfer_state = 527 } 
+    		USA = { transfer_state = 907 }
+    		USA = { transfer_state = 908 }  
+    		USA = { transfer_state = 909 } 
+    		USA = { transfer_state = 1109 } 
+		} 
+		if = {
+    		limit = {
+    			SOV = { OR = { has_government = unionism has_government = communism } }
+    			USA = { NOT = { OR = { has_government = unionism has_government = communism } } }
+    			527 = {
+    				OWNER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    				CONTROLLER = {
+    					OR = { has_government = unionism has_government = communism }
+    				}
+    			}
+    		} 
+    		SOV = { transfer_state = 527 } 
+    		SOV = { transfer_state = 907 }
+    		SOV = { transfer_state = 908 }  
+    		SOV = { transfer_state = 909 } 
+    		SOV = { transfer_state = 1109 } 
+		} 
+		if = {
+    		limit = {
+    			SOV = { OR = { has_government = unionism has_government = communism } }
+    			USA = { NOT = { OR = { has_government = unionism has_government = communism } } }
+    			525 = {
+    				OWNER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    				CONTROLLER = {
+    					NOT = {
+	    					OR = { has_government = unionism has_government = communism }
+    					}
+    				}
+    			}
+    		} 
+    		USA = { transfer_state = 525 } 
+		} 
+		if = {
+    		limit = {
+    			SOV = { OR = { has_government = unionism has_government = communism } }
+    			USA = { NOT = { OR = { has_government = unionism has_government = communism } } }
+    			525 = {
+    				OWNER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    				CONTROLLER = {
+    					OR = { has_government = unionism has_government = communism }
+    				}
+    			}
+    		} 
+    		SOV = { transfer_state = 525 } 
+    		SOV = { transfer_state = 903 } 
+    		SOV = { transfer_state = 904 } 
+    		SOV = { transfer_state = 905 } 
+    		SOV = { transfer_state = 903 } 
+    		SOV = { transfer_state = 903 } 
+    		SOV = { transfer_state = 903 } 
+    		SOV = { transfer_state = 1108 } 
+		} 
+		if = {
+			limit = {
+				CHI = { has_war_with = JAP }
+			}
+			every_state = {
+				limit = {
+					is_owned_by = JAP
+					is_core_of = CHI
+				}
+				CHI = { transfer_state = PREV }
+			}
+		}
+		if = {
+			limit = {
+				INS = { has_capitulated = yes }
+				158 = {
+    				CONTROLLER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    			}
+			}
+			JAP = {
+				annex_country = {
+	    			target = INS
+	    			transfer_troops = no
+	 			}
+	 		}
+		}
+		if = {
+			limit = {
+				PHI = { has_capitulated = yes }
+				160 = {
+    				CONTROLLER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    			}
+			}
+			JAP = {
+				annex_country = {
+	    			target = PHI
+	    			transfer_troops = no
+	 			}
+	 		}
+		}
+		if = {
+			limit = {
+				MAL = { has_capitulated = yes }
+				336 = {
+    				CONTROLLER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    			}
+			}
+			JAP = {
+				annex_country = {
+	    			target = MAL
+	    			transfer_troops = no
+	 			}
+	 		}
+		}
+		if = {
+			limit = {
+				BRM = { has_capitulated = yes }
+				288 = {
+    				CONTROLLER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    			}
+			}
+			JAP = {
+				annex_country = {
+	    			target = BRM
+	    			transfer_troops = no
+	 			}
+	 		}
+		}
+		every_state = {
+			limit = {
+				is_owned_by = AST
+				NOT = { is_core_of = AST }
+				CONTROLLER = {
+					OR = {
+						tag = JAP
+						is_subject_of = JAP
+					}
+				}
+			}
+       		JAP = { 
+       			transfer_state = PREV
+       		}
+		} 
+		if = {
+			limit = {
+				CHI = { has_war_with = JAP }
+				RGR = { exists = yes }
+			}
+			CHI = {
+				annex_country = {
+	    			target = RGR
+	    			transfer_troops = no
+	 			}
+			}
+		}
+		if = {
+			limit = {
+				PRC = { has_war_with = JAP }
+				MEN = { is_subject_of = JAP }
+			}
+			PRC = {
+				annex_country = {
+	    			target = MEN
+	    			transfer_troops = yes
+	 			}
+			}
+		}
+		every_country = {
+			limit = {
+				has_war_with = JAP
+				is_major = yes
+			}
+			white_peace = {
+				tag = JAP
+			}
+		}
+ 		news_event = {
+			id = bce_news.14
+			days = 0
+			random = 2 
+		}
+	}
+	option = {
+		name = japan.33.b
+		ai_chance = {
+			base = 99
+		}  
+		USA = { 
+			set_country_flag = unconditional_surrender
+		}
+	}
+}
+
+# Offer Full Surrender to the Americans? #
+
+country_event = {
+	id = japan.34
+	title = japan.34.t
+	desc = japan.34.desc
+	picture = GFX_report_event_japanese_soldiers_02
+	
+	trigger = {
+		tag = JAP
+		has_government = fascism
+		has_war_with = USA
+		USA = {
+			has_country_flag = warned_japs
+			has_country_flag = unconditional_surrender
+			has_democratic_government = yes
+			nuclear_reactor > 2
+			has_war_with = JAP
+		}
+		OR = {
+			645 = { NOT = { is_owned_by = JAP } }
+			645 = {
+				is_owned_by = JAP
+				NOT = { is_fully_controlled_by = JAP }
+			}
+		}
+		OR = {
+			646 = { NOT = { is_owned_by = JAP } }
+			646 = {
+				is_owned_by = JAP
+				NOT = { is_fully_controlled_by = JAP }
+			}
+		}
+        OR = {
+            JAP = { has_country_flag = tokyo_destroyed }
+            JAP = { has_country_flag = nagasaki_destroyed }
+            JAP = { has_country_flag = hiroshima_destroyed }
+        }
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	option = {
+		name = japan.34.a
+		ai_chance = {
+			factor = 1
+
+		  	modifier = {
+		    	factor = 1.5
+		    	has_war_with = SOV
+		  	}
+		  	modifier = {
+		    	factor = 5
+				OR = {
+					JAP = {
+						has_country_flag = tokyo_destroyed
+						has_country_flag = hiroshima_destroyed
+					}
+					JAP = {
+						has_country_flag = nagasaki_destroyed
+						has_country_flag = tokyo_destroyed
+					}
+					JAP = {
+						has_country_flag = nagasaki_destroyed
+						has_country_flag = hiroshima_destroyed
+					}
+				}
+		  	}
+		  	modifier = {
+		    	factor = 100
+				JAP = {
+					has_country_flag = tokyo_destroyed
+					has_country_flag = hiroshima_destroyed
+					has_country_flag = nagasaki_destroyed
+				}
+		  	}
+		}
+		USA = { country_event = japan.35 }
+	}
+	option = {
+		name = japan.34.b
+		ai_chance = {
+			factor = 2
+		}
+	}
+}
+
+# Hirohito Surrenders #
+
+country_event = {
+	id = japan.35
+	title = japan.35.t
+	desc = japan.35.desc
+	picture = GFX_report_event_japanese_chinese_surrender
+
+	is_triggered_only = yes
+ 
+	option = {
+		name = japan.35.a
+		ai_chance = {
+			base = 100
+		}
+		JAP = { 
+            add_popularity = { ideology = democratic popularity = 0.8 }
+			set_politics = {
+				ruling_party = democratic
+			}
+		}
+		random_country = {
+			limit= {
+				original_tag = BRM
+				has_government = fascism
+				is_subject_of = JAP
+			}
+			BRM = {
+				annex_country = { target = PREV }
+			}
+		}
+		random_country = {
+			limit= {
+				original_tag = PHI
+				has_government = fascism
+				is_subject_of = JAP
+			}
+			PHI = {
+				annex_country = { target = PREV }
+			}
+		}
+		if = {
+			limit = {
+				CHI = { has_war_with = JAP }
+				524 = {
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			CHI = { transfer_state = 524 }
+		}
+		if = {
+			limit = {
+				CHI = { has_war_with = JAP }
+				608 = { is_owned_by = CHI }
+				MAN = { is_subject_of = JAP }
+			}
+			CHI = {
+				annex_country = {
+	    			target = MAN
+	    			transfer_troops = no
+	 			}
+	 			if = {
+	 				limit = {
+	 					745 = {
+	 						OWNER = {
+	 							OR = {
+	 								tag = JAP
+	 								is_in_faction_with = JAP
+	 								is_subject_of = JAP
+	 							}
+	 						}
+	 					}
+	 				}
+	 				CHI = { transfer_state = 745 }
+	 			}
+	 			if = {
+	 				limit = {
+	 					609 = {
+	 						OWNER = {
+	 							OR = {
+	 								tag = JAP
+	 								is_in_faction_with = JAP
+	 								is_subject_of = JAP
+	 							}
+	 						}
+	 					}
+	 				}
+	 				CHI = { transfer_state = 609 }
+	 			}
+			}
+		}
+		if = {
+			limit = {
+				PRC = { has_war_with = JAP }
+				608 = { is_owned_by = PRC }
+				MAN = { is_subject_of = JAP }
+			}
+			PRC = {
+				annex_country = {
+	    			target = MAN
+	    			transfer_troops = yes
+	 			}
+	 			if = {
+	 				limit = {
+	 					745 = {
+	 						OWNER = {
+	 							OR = {
+	 								tag = JAP
+	 								is_in_faction_with = JAP
+	 								is_subject_of = JAP
+	 							}
+	 						}
+	 					}
+	 				}
+	 				PRC = { transfer_state = 745 }
+	 			}
+	 			if = {
+	 				limit = {
+	 					609 = {
+	 						OWNER = {
+	 							OR = {
+	 								tag = JAP
+	 								is_in_faction_with = JAP
+	 								is_subject_of = JAP
+	 							}
+	 						}
+	 					}
+	 				}
+	 				PRC = { transfer_state = 609 }
+	 			}
+			}
+		} 
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				328 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 328 }
+		}
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				717 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 717 }
+		}
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				714 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 714 }
+		}
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				155 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 155 }
+		}
+		if = {
+			limit = {
+				JAP = { owns_state = 647 }
+			}
+			USA = { transfer_state = 647 }
+		}
+		if = {
+			limit = {
+				JAP = { owns_state = 648 }
+			}
+			USA = { transfer_state = 648 }
+		}
+		if = {
+			limit = {
+				JAP = { owns_state = 633 }
+			}
+			USA = { transfer_state = 633 }
+		}
+		if = {
+			limit = {
+				JAP = { owns_state = 684 }
+			}
+			USA = { transfer_state = 684 }
+		}
+		if = {
+    		limit = {
+    			SOV = { OR = { has_government = unionism has_government = communism } }
+    			USA = { NOT = { OR = { has_government = unionism has_government = communism } } }
+    			527 = {
+    				OWNER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    				CONTROLLER = {
+    					NOT = {
+	    					OR = { has_government = unionism has_government = communism }
+    					}
+    				}
+    			}
+    		} 
+    		USA = { transfer_state = 527 } 
+    		USA = { transfer_state = 907 }
+    		USA = { transfer_state = 908 }  
+    		USA = { transfer_state = 909 } 
+    		USA = { transfer_state = 1109 } 
+		} 
+		if = {
+    		limit = {
+    			SOV = { OR = { has_government = unionism has_government = communism } }
+    			USA = { NOT = { OR = { has_government = unionism has_government = communism } } }
+    			527 = {
+    				OWNER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    				CONTROLLER = {
+    					OR = { has_government = unionism has_government = communism }
+    				}
+    			}
+    		} 
+    		SOV = { transfer_state = 527 } 
+    		SOV = { transfer_state = 907 }
+    		SOV = { transfer_state = 908 }  
+    		SOV = { transfer_state = 909 } 
+    		SOV = { transfer_state = 1109 } 
+		} 
+		if = {
+    		limit = {
+    			SOV = { OR = { has_government = unionism has_government = communism } }
+    			USA = { NOT = { OR = { has_government = unionism has_government = communism } } }
+    			525 = {
+    				OWNER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    				CONTROLLER = {
+    					NOT = {
+	    					OR = { has_government = unionism has_government = communism }
+    					}
+    				}
+    			}
+    		} 
+    		USA = { transfer_state = 525 } 
+		} 
+		if = {
+    		limit = {
+    			SOV = { OR = { has_government = unionism has_government = communism } }
+    			USA = { NOT = { OR = { has_government = unionism has_government = communism } } }
+    			525 = {
+    				OWNER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    				CONTROLLER = {
+    					OR = { has_government = unionism has_government = communism }
+    				}
+    			}
+    		} 
+    		SOV = { transfer_state = 525 } 
+    		SOV = { transfer_state = 903 } 
+    		SOV = { transfer_state = 904 } 
+    		SOV = { transfer_state = 905 } 
+    		SOV = { transfer_state = 903 } 
+    		SOV = { transfer_state = 903 } 
+    		SOV = { transfer_state = 903 } 
+    		SOV = { transfer_state = 1108 } 
+		}  
+		if = {
+			limit = {
+				CHI = { has_war_with = JAP }
+			}
+			every_state = {
+				limit = {
+					is_owned_by = JAP
+					is_core_of = CHI
+				}
+				CHI = { transfer_state = PREV }
+			}
+		}
+		if = {
+			limit = { JAP = { has_country_flag = occupy_nam } }
+			VIN = {
+				JAP = { release = PREV }
+				FRA = { puppet = PREV }
+			}
+		}
+		if = {
+			limit = {
+				CHI = { has_war_with = JAP }
+				RGR = { exists = yes }
+			}
+			CHI = {
+				annex_country = {
+	    			target = RGR
+	    			transfer_troops = no
+	 			}
+			}
+		}
+		if = {
+			limit = {
+				PRC = { has_war_with = JAP }
+				MEN = { is_subject_of = JAP }
+			}
+			PRC = {
+				annex_country = {
+	    			target = MEN
+	    			transfer_troops = yes
+	 			}
+			}
+		}
+ 		JAP = { set_country_flag = occupied_indefinitely }
+		USA = {
+			set_country_flag = occupy_jap
+			annex_country = {
+    			target = JAP
+    			transfer_troops = no
+ 			}
+ 		}
+	}
+}
+
+## Preparation for the Arcadia Conference ##
+
+country_event = {
+	id = japan.36
+	title = japan.36.t
+	desc = japan.36.desc
+	picture = GFX_report_event_usa_pearl_harbor_airphoto
+	
+	trigger = {
+		date > 1941.12.20
+		tag = USA 
+		NOT = { has_war_with = SOV }
+		SOV = { has_war_with = GER }
+		ENG = { 
+			has_democratic_government = yes
+			has_war_with = GER 
+			has_war_with = JAP
+		}
+		USA = {
+			has_democratic_government = yes
+			is_in_faction_with = ENG
+			has_war_with = JAP
+			has_war_with = GER
+		}
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = japan.36.a
+		ai_chance = {
+			base = 99
+		} 
+		CHI = { 
+			country_event = {
+			    id = japan.37
+			    days = 10
+			}
+		}
+		SOV = { 
+			country_event = {
+			    id = japan.38
+			    days = 10
+			}
+		}
+	}
+	option = {
+		name = japan.36.b
+		ai_chance = {
+			factor = 1
+
+		  	modifier = {
+		    	factor = 200
+		    	has_war_with = SOV
+		    }
+		}
+		USA = { 
+			country_event = {
+			    id = japan.39
+			    days = 20
+			}
+		}
+	}
+}
+
+
+## The Americans have invited us to Washington to solidify an Alliance ##
+
+country_event = {
+	id = japan.37
+	title = japan.37.t
+	desc = japan.37.desc
+	picture = GFX_report_event_japanese_soldiers_03
+
+	is_triggered_only = yes
+
+	option = {
+		name = japan.37.a
+		ai_chance = {
+			base = 0
+		} 
+	}
+	option = {
+		name = japan.37.b
+		ai_chance = {
+			factor = 100
+		}
+		CHI = { set_country_flag = agree_to_arcadia }
+	}
+}
+
+
+## The Americans have invited us to Washington to solidify an Alliance ##
+
+country_event = {
+	id = japan.38
+	title = japan.38.t
+	desc = japan.38.desc
+	picture = GFX_report_event_stalin_02
+
+	is_triggered_only = yes
+
+	option = {
+		name = japan.38.a
+		ai_chance = {
+			base = 0
+		} 
+		USA = {
+			country_event = {
+			    id = japan.39
+			    days = 10
+			}
+		}
+	}
+	option = {
+		name = japan.38.b
+		ai_chance = {
+			factor = 100
+		}
+		USA = {
+			country_event = {
+			    id = japan.40
+			    days = 10
+			}
+		}
+	}
+}
+
+## The Arcadia Conference ##
+
+news_event = {
+	id = japan.39
+	title = japan.39.t
+	desc = japan.39.desc
+	picture = GFX_news_event_fdr_churchill
+
+	is_triggered_only = yes
+
+	option = {
+		name = japan.39.a
+		ai_chance = {
+			base = 0
+		} 
+		#does jack shit
+	}
+	option = {
+		name = japan.39.b
+		ai_chance = {
+			factor = 100
+		}
+		USA = {
+			create_faction = un 
+		}
+		every_country = {
+			limit = {
+				is_in_faction_with = ENG
+				NOT = { tag = ENG }
+				is_subject = no
+			}
+			USA = {
+				add_to_faction = PREV
+			}
+		}
+		ENG = {
+			dismantle_faction = yes 
+			leave_faction = yes 
+		}
+ 		USA = {
+			add_to_faction = ENG
+		}
+		if = {
+			limit = {
+				CHI = { has_country_flag = agree_to_arcadia }
+			}
+			every_country = {
+				limit = {
+					is_in_faction_with = CHI
+					NOT = { tag = CHI }
+					is_subject = no
+				}
+				USA = {
+					add_to_faction = PREV
+				}
+			}
+			CHI = {
+				dismantle_faction = yes 
+				leave_faction = yes 
+			}
+	 		USA = { add_to_faction = CHI }
+		}
+		news_event = {
+			id = bce_news.16
+			days = 1
+		}
+	}
+}
+
+## The Arcadia Conference ##
+
+news_event = {
+	id = japan.40
+	title = japan.40.t
+	desc = japan.40.desc
+	picture = GFX_news_event_potsdam
+
+	is_triggered_only = yes
+
+	option = {
+		name = japan.40.a
+		ai_chance = {
+			base = 0
+		} 
+		#does jack shit
+	}
+	option = {
+		name = japan.40.b
+		ai_chance = {
+			factor = 100
+		}
+		USA = {
+			create_faction = un 
+		} 
+		if = {
+			limit = {
+				USA = { has_war_with = JAP }
+				NOT = { SOV = { has_war_with = JAP } }
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = SOV
+						is_subject_of = SOV
+					}
+				} 
+				add_ideas = european_focus
+			}
+		}
+		every_country = {
+			limit = {
+				NOT = { tag = ENG }
+				NOT = { tag = SOV }
+				is_subject = no
+				OR = {
+					is_in_faction_with = ENG
+					is_in_faction_with = SOV 
+				}
+			}
+			USA = {
+				add_to_faction = PREV
+			} 
+		}
+		ENG = { dismantle_faction = yes }
+		SOV = { dismantle_faction = yes }
+ 		USA = {
+			add_to_faction = ENG 
+			add_to_faction = SOV
+		}
+		if = {
+			limit = {
+				CHI = { has_country_flag = agree_to_arcadia }
+			}
+			every_country = {
+				limit = {
+					is_in_faction_with = CHI
+					NOT = { tag = CHI }
+					is_subject = no
+				}
+				USA = {
+					add_to_faction = PREV
+				}
+			}
+			CHI = { dismantle_faction = yes }
+	 		USA = { add_to_faction = CHI }
+		}
+		news_event = {
+			id = bce_news.16
+			days = 1
+			random = 0
+		}
+ 	}
+}
+
+# Fate of Korea (USSR) #
+
+country_event = {
+	id = japan.41
+	title = japan.41.t
+	desc = japan.41.desc
+	picture = GFX_report_event_stalin_propaganda
+
+	trigger = {
+		tag = SOV
+		SOV = { 
+			owns_state = 525
+			owns_state = 527
+		}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 120
+	}
+
+	option = {
+		name = japan.41.a
+		ai_chance = {
+			base = 95
+		}
+		PRK = {
+			add_state_core = 525
+			add_state_core = 903
+			add_state_core = 904
+			add_state_core = 905
+			add_state_core = 906
+			add_state_core = 910
+			add_state_core = 911
+			add_state_core = 1108
+			add_state_core = 527
+			add_state_core = 907
+			add_state_core = 908
+			add_state_core = 909
+			add_state_core = 1034
+			add_state_core = 1033
+		}
+		SOV = {  
+			release = PRK
+			give_guarantee = PRK
+		}
+		news_event = {
+			id = bce_news.20
+			days = 0
+			random = 2
+		}
+	}
+	option = {
+		name = japan.41.b
+		ai_chance = {
+			base = 0
+		}  
+		PRK = {
+			add_state_core = 525
+			add_state_core = 903
+			add_state_core = 904
+			add_state_core = 905
+			add_state_core = 906
+			add_state_core = 910
+			add_state_core = 911
+			add_state_core = 1108
+			add_state_core = 527
+			add_state_core = 907
+			add_state_core = 908
+			add_state_core = 909
+			add_state_core = 1034
+			add_state_core = 1033
+		}
+		SOV = {  
+			release_puppet = PRK
+		}
+		news_event = {
+			id = bce_news.20
+			days = 0
+			random = 2
+		}
+	}
+	option = {
+		name = japan.41.c
+		ai_chance = {
+			base = 5
+		}  
+		SOV = {  
+			release = KOR
+		}
+		KOR = { 
+			add_ideas = {
+			    undisturbed_isolation
+			}
+            add_popularity = { ideology = neutrality popularity = 0.8 }
+			set_politics = {
+				ruling_party = neutrality
+			}
+		}
+		news_event = {
+			id = bce_news.21
+			days = 0
+			random = 2
+		}
+	}
+}
+
+country_event = {
+	id = japan.42
+	title = japan.42.t
+	desc = japan.42.desc
+	picture = GFX_report_event_usa_election_generic
+
+	trigger = {
+		tag = USA
+		USA = { 
+			owns_state = 525
+			owns_state = 527
+		}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 120
+	}
+
+	option = {
+		name = japan.42.a
+		ai_chance = {
+			base = 95
+		}
+		USA = {  
+			release = KOR
+			give_guarantee = KOR 
+		}
+		news_event = {
+			id = bce_news.22
+			days = 0
+			random = 2
+		}
+	}
+	option = {
+		name = japan.42.b
+		ai_chance = {
+			base = 0
+		}  
+		KOR = {  
+			release_puppet = KOR
+		}
+		news_event = {
+			id = bce_news.23
+			days = 0
+			random = 2
+		}
+	}
+	option = {
+		name = japan.42.c
+		ai_chance = {
+			base = 5
+		}  
+		USA = {  
+			release = KOR
+		}
+		KOR = {
+            add_popularity = { ideology = neutrality popularity = 0.8 }
+			set_politics = {
+				ruling_party = neutrality
+			}
+		}
+		KOR = {
+			add_ideas = {
+			    undisturbed_isolation
+			} 
+		}
+		news_event = {
+			id = bce_news.21
+			days = 0
+			random = 2
+		}
+	}
+}
+
+country_event = {
+	id = japan.43
+	title = japan.43.t
+	desc = japan.43.desc
+	picture = GFX_report_event_stalin_propaganda
+
+	trigger = {
+		tag = USA
+		USA = { 
+			owns_state = 525
+		}
+		SOV = { 
+			owns_state = 527
+		}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 120
+	}
+
+	option = {
+		name = japan.43.a
+		ai_chance = {
+			base = 95
+		}
+		SOV = {  
+			country_event = japan.44
+		}
+	}
+	option = {
+		name = japan.43.b
+		ai_chance = {
+			base = 5
+		}  
+		SOV = {  
+			country_event = japan.45
+		}
+	}
+	option = {
+		name = japan.43.c
+		ai_chance = {
+			base = 0
+		}  
+		SOV = {  
+			country_event = japan.46
+		}
+	}
+}
+
+country_event = {
+	id = japan.44
+	title = japan.44.t
+	desc = japan.44.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = japan.44.a
+		ai_chance = {
+			base = 2
+		}
+		set_global_flag = united_democratic_korea
+		USA = {  
+			country_event = japan.49
+		}
+	}
+	option = {
+		name = japan.44.b
+		ai_chance = {
+			base = 8
+		}  
+		USA = {  
+			country_event = japan.47
+		}
+	}
+	option = {
+		name = japan.44.c
+		ai_chance = {
+			base = 90
+		}  
+		USA = {  
+			country_event = japan.48
+		}
+	}
+}
+
+country_event = {
+	id = japan.45
+	title = japan.45.t
+	desc = japan.45.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = japan.45.a
+		ai_chance = {
+			base = 10
+		}
+		set_global_flag = united_neutral_korea
+		USA = {  
+			country_event = japan.49
+		}
+	} 
+	option = {
+		name = japan.45.b
+		ai_chance = {
+			base = 90
+		}  
+		USA = {  
+			country_event = japan.48
+		}
+	}
+}
+
+country_event = {
+	id = japan.46
+	title = japan.46.t
+	desc = japan.46.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = japan.46.a
+		ai_chance = {
+			base = 100
+		}
+		set_global_flag = united_communist_korea
+		USA = {  
+			country_event = japan.49
+		}
+	}
+}
+
+news_event = {
+	id = japan.47
+	title = japan.47.t
+	desc = japan.47.desc
+	picture = GFX_news_event_soviet_congress
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = japan.47.a
+		ai_chance = {
+			base = 15
+		}
+		set_global_flag = united_neutral_korea
+		SOV = {  
+			country_event = japan.50
+		}
+	} 
+	option = {
+		name = japan.47.b
+		ai_chance = {
+			base = 85
+		}  
+		SOV = {  
+			country_event = japan.51
+		}
+	}
+}
+
+news_event = {
+	id = japan.48
+	title = japan.48.t
+	desc = japan.48.desc
+	picture = GFX_news_event_soviet_congress
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = japan.48.a
+		ai_chance = {
+			base = 2
+		}
+		set_global_flag = united_communist_korea
+		SOV = {  
+			country_event = japan.50
+		}
+	} 
+	option = {
+		name = japan.48.b
+		ai_chance = {
+			base = 98
+		}  
+		SOV = {  
+			country_event = japan.51
+		}
+	}
+}
+
+news_event = {
+	id = japan.49
+	title = japan.49.t
+	desc = japan.49.desc
+	picture = GFX_news_event_soviet_congress
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = japan.49.a
+		ai_chance = {
+			base = 100
+		}
+		set_global_flag = korea_discussion_success
+		if = {
+    		limit = {
+       	 		has_global_flag = united_democratic_korea
+    		}  
+    		SOV = { give_guarantee = KOR } 
+    		USA = { give_guarantee = KOR }    
+    		KOR = {
+    			transfer_state = 525
+				transfer_state = 903
+				transfer_state = 904
+				transfer_state = 905
+				transfer_state = 906
+				transfer_state = 910
+				transfer_state = 911
+				transfer_state = 1108
+				transfer_state = 527
+				transfer_state = 907
+				transfer_state = 908
+				transfer_state = 909
+				transfer_state = 1034
+				transfer_state = 1033
+    		}
+		}
+		news_event = {
+			id = bce_news.22
+			days = 0
+			random = 2
+		}
+		if = {
+    		limit = {
+       	 		has_global_flag = united_communist_korea
+    		}     
+    		SOV = { give_guarantee = PRK } 
+    		USA = { give_guarantee = PRK } 
+    		PRK = {
+    			transfer_state = 525
+				transfer_state = 903
+				transfer_state = 904
+				transfer_state = 905
+				transfer_state = 906
+				transfer_state = 910
+				transfer_state = 911
+				transfer_state = 1108
+				transfer_state = 527
+				transfer_state = 907
+				transfer_state = 908
+				transfer_state = 909
+				transfer_state = 1034
+				transfer_state = 1033
+				add_state_core = 525
+				add_state_core = 903
+				add_state_core = 904
+				add_state_core = 905
+				add_state_core = 906
+				add_state_core = 910
+				add_state_core = 911
+				add_state_core = 1108
+				add_state_core = 527
+				add_state_core = 907
+				add_state_core = 908
+				add_state_core = 909
+				add_state_core = 1034
+				add_state_core = 1033
+    		}
+		}
+		news_event = {
+			id = bce_news.20
+			days = 0
+			random = 2
+		}
+		if = {
+    		limit = {
+       	 		has_global_flag = united_neutral_korea
+    		}    
+    		SOV = { give_guarantee = KOR } 
+    		USA = { give_guarantee = KOR }  
+    		KOR = {
+    			transfer_state = 525
+    			transfer_state = 527 
+            	add_popularity = { ideology = neutrality popularity = 0.8 }
+				set_politics = {
+					ruling_party = neutrality
+				}
+			}
+			KOR = {
+				add_ideas = {
+				    undisturbed_isolation
+				} 
+			}
+		}
+		news_event = {
+			id = bce_news.21
+			days = 0
+			random = 2
+		} 
+	}
+}
+
+news_event = {
+	id = japan.50
+	title = japan.50.t
+	desc = japan.50.desc
+	picture = GFX_news_event_usa_congress
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = japan.50.a
+		ai_chance = {
+			base = 100
+		}
+		set_global_flag = korea_discussion_success 
+		if = {
+    		limit = {
+       	 		has_global_flag = united_communist_korea
+    		}  
+    		SOV = { give_guarantee = PRK } 
+    		USA = { give_guarantee = PRK } 
+    		PRK = {
+    			transfer_state = 525
+				transfer_state = 903
+				transfer_state = 904
+				transfer_state = 905
+				transfer_state = 906
+				transfer_state = 910
+				transfer_state = 911
+				transfer_state = 1108
+				transfer_state = 527
+				transfer_state = 907
+				transfer_state = 908
+				transfer_state = 909
+				transfer_state = 1034
+				transfer_state = 1033
+				add_state_core = 525
+				add_state_core = 903
+				add_state_core = 904
+				add_state_core = 905
+				add_state_core = 906
+				add_state_core = 910
+				add_state_core = 911
+				add_state_core = 1108
+				add_state_core = 527
+				add_state_core = 907
+				add_state_core = 908
+				add_state_core = 909
+				add_state_core = 1034
+				add_state_core = 1033
+    		}
+		}
+		news_event = {
+			id = bce_news.20
+			days = 0
+			random = 2
+		}
+		if = {
+    		limit = {
+       	 		has_global_flag = united_neutral_korea
+    		}     
+    		SOV = { give_guarantee = KOR } 
+    		USA = { give_guarantee = KOR } 
+    		KOR = {
+    			transfer_state = 525
+				transfer_state = 903
+				transfer_state = 904
+				transfer_state = 905
+				transfer_state = 906
+				transfer_state = 910
+				transfer_state = 911
+				transfer_state = 1108
+				transfer_state = 527
+				transfer_state = 907
+				transfer_state = 908
+				transfer_state = 909
+				transfer_state = 1034
+				transfer_state = 1033
+            	add_popularity = { ideology = neutrality popularity = 0.8 }
+				set_politics = {
+					ruling_party = neutrality
+				}
+			}
+			KOR = {
+				add_ideas = {
+				    undisturbed_isolation
+				} 
+			}
+		}
+		news_event = {
+			id = bce_news.21
+			days = 0
+			random = 2
+		}
+	}
+}
+
+news_event = {
+	id = japan.51
+	title = japan.51.t
+	desc = japan.51.desc
+	picture = GFX_news_event_usa_congress
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+		set_global_flag = korea_discussion_fail
+	}
+
+	option = {
+		name = japan.51.a
+		ai_chance = {
+			base = 100
+		}
+		news_event = {
+			id = bce_news.24
+			days = 0
+			random = 2
+		}
+	}
+}
+
+news_event = {
+	id = japan.52
+	title = japan.52.t
+	desc = japan.52.desc
+	picture = GFX_news_event_usa_congress
+
+	trigger = {
+		date > 1952.01.13
+		tag = USA
+		USA = {
+			has_country_flag = occupy_jap
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 75
+	}
+
+	option = {
+		name = japan.52.a
+		ai_chance = {
+			base = 5
+		}
+	}
+
+	option = {
+		name = japan.52.b
+		ai_chance = {
+			base = 95
+		}
+		USA = {
+			release = JAP
+    		give_guarantee = JAP
+			clr_country_flag = occupy_jap
+		}
+		if = {
+    		limit = {
+				FRA = {
+					has_country_flag = occupy_jap
+				}
+			}
+			FRA = {
+				country_event = {
+				    id = japan.53
+				    days = 2
+				    random = 7
+				}
+			}
+		}
+		if = {
+    		limit = {
+				ENG = {
+					has_country_flag = occupy_jap
+				}
+			}
+			ENG = {
+				country_event = {
+				    id = japan.53
+				    days = 2
+				    random = 7
+				}
+			}
+		}
+		if = {
+    		limit = {
+				CHI = {
+					has_country_flag = occupy_jap
+				}
+			}
+			CHI = {
+				country_event = {
+				    id = japan.53
+				    days = 2
+				    random = 7
+				}
+			}
+		}
+		if = {
+    		limit = {
+				SOV = {
+					has_country_flag = occupy_jap
+				}
+			}
+			SOV = {
+				country_event = {
+				    id = japan.54
+				    days = 2
+				    random = 7
+				}
+			}
+		}
+		news_event = {
+			id = bce_news.27
+			days = 0
+			random = 2
+		}
+	}
+}
+
+news_event = {
+	id = japan.53
+	title = japan.53.t
+	desc = japan.53.desc
+	picture = GFX_news_event_usa_congress
+
+	is_triggered_only = yes
+
+	option = {
+		name = japan.53.a
+		ai_chance = {
+			base = 0
+		}
+		if = {
+    		limit = {
+				tag = FRA 
+			}
+			FRA = {
+				set_country_flag = occupy_jap_continued 
+			}
+		}
+		if = {
+    		limit = {
+				tag = ENG 
+			}
+			ENG = {
+				set_country_flag = occupy_jap_continued 
+			}
+		}
+		if = {
+    		limit = {
+				tag = CHI
+			}
+			CHI = {
+				set_country_flag = occupy_jap_continued 
+			}
+		}
+	}
+
+	option = {
+		name = japan.53.b
+		ai_chance = {
+			base = 100
+		}
+		if = {
+			limit = {
+				tag = FRA 
+			}
+			FRA = {
+				release = JAP
+				clr_country_flag = occupy_jap
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			ENG = {
+				release = JAP
+				clr_country_flag = occupy_jap
+			}
+		}
+		if = {
+			limit = {
+				tag = CHI 
+			}
+			CHI = {
+				release = JAP
+				clr_country_flag = occupy_jap
+			}
+		}
+	}
+}
+
+country_event = {
+	id = japan.54
+	title = japan.54.t
+	desc = japan.54.desc
+	picture = GFX_report_event_stalin_propaganda
+
+	is_triggered_only = yes
+
+	option = {
+		name = japan.54.a
+		ai_chance = {
+			base = 0
+		}
+		if = {
+    		limit = {
+				tag = SOV
+			}
+			SOV = {
+				set_country_flag = occupy_jap_continued 
+			}
+		}
+	}
+
+	option = {
+		name = japan.54.b
+		ai_chance = {
+			base = 10
+		}
+		if = {
+			limit = {
+				tag = SOV
+			}
+			SOV = {
+				release = JAP
+				clr_country_flag = occupy_jap
+			}
+		}
+	}
+	option = {
+		name = japan.54.c
+		ai_chance = {
+			base = 90
+		}
+		if = {
+    		limit = {
+				tag = SOV
+			}
+			SOV = {
+				set_country_flag = occupy_jap_PRJ
+			}
+		}
+	}
+}
+
+news_event = {
+	id = japan.55
+	title = japan.55.t
+	desc = japan.55.desc
+	picture = GFX_news_event_iwo_jima
+
+	is_triggered_only = yes
+
+	option = {
+		name = japan.55.a
+		ai_chance = {
+			base = 100
+		}
+		JAP = { 
+            add_popularity = { ideology = democratic popularity = 0.8 }
+			set_politics = {
+				ruling_party = democratic
+			}
+		}
+		random_country = {
+			limit= {
+				original_tag = BRM
+				has_government = fascism
+				is_subject_of = JAP
+			}
+			BRM = {
+				annex_country = { target = PREV }
+			}
+		}
+		random_country = {
+			limit= {
+				original_tag = PHI
+				has_government = fascism
+				is_subject_of = JAP
+			}
+			PHI = {
+				annex_country = { target = PREV }
+			}
+		}
+		if = {
+			limit = {
+				CHI = { has_war_with = JAP }
+				RGR = { exists = yes }
+			}
+			CHI = {
+				annex_country = {
+	    			target = RGR
+	    			transfer_troops = no
+	 			}
+			}
+		}
+		if = {
+			limit = {
+				PRC = { has_war_with = JAP }
+				MEN = { is_subject_of = JAP }
+			}
+			PRC = {
+				annex_country = {
+	    			target = MEN
+	    			transfer_troops = yes
+	 			}
+			}
+		}
+		if = {
+			limit = {
+				CHI = { has_war_with = JAP }
+				524 = {
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			CHI = { transfer_state = 524 }
+		}
+		if = {
+			limit = {
+				CHI = { has_war_with = JAP }
+				608 = { is_owned_by = CHI }
+				MAN = { is_subject_of = JAP }
+			}
+			CHI = {
+				annex_country = {
+	    			target = MAN
+	    			transfer_troops = no
+	 			}
+	 			if = {
+	 				limit = {
+	 					745 = {
+	 						OWNER = {
+	 							OR = {
+	 								tag = JAP
+	 								is_in_faction_with = JAP
+	 								is_subject_of = JAP
+	 							}
+	 						}
+	 					}
+	 				}
+	 				CHI = { transfer_state = 745 }
+	 			}
+	 			if = {
+	 				limit = {
+	 					609 = {
+	 						OWNER = {
+	 							OR = {
+	 								tag = JAP
+	 								is_in_faction_with = JAP
+	 								is_subject_of = JAP
+	 							}
+	 						}
+	 					}
+	 				}
+	 				CHI = { transfer_state = 609 }
+	 			}
+			}
+		}
+		if = {
+			limit = {
+				PRC = { has_war_with = JAP }
+				608 = { is_owned_by = PRC }
+				MAN = { is_subject_of = JAP }
+			}
+			PRC = {
+				annex_country = {
+	    			target = MAN
+	    			transfer_troops = yes
+	 			}
+	 			if = {
+	 				limit = {
+	 					745 = {
+	 						OWNER = {
+	 							OR = {
+	 								tag = JAP
+	 								is_in_faction_with = JAP
+	 								is_subject_of = JAP
+	 							}
+	 						}
+	 					}
+	 				}
+	 				PRC = { transfer_state = 745 }
+	 			}
+	 			if = {
+	 				limit = {
+	 					609 = {
+	 						OWNER = {
+	 							OR = {
+	 								tag = JAP
+	 								is_in_faction_with = JAP
+	 								is_subject_of = JAP
+	 							}
+	 						}
+	 					}
+	 				}
+	 				PRC = { transfer_state = 609 }
+	 			}
+			}
+		} 
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				328 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 328 }
+		}
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				1026 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 1026 }
+		}
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				717 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 717 }
+		}
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				1024 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 1024 }
+		}
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				714 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 714 }
+		}
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				155 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 155 }
+		}
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				808 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 808 }
+		}
+		if = {
+			limit = {
+				SOV = { has_war_with = JAP }
+				994 = {
+					is_claimed_by = SOV
+					OWNER = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 994 }
+		}
+		if = {
+			limit = {
+				JAP = { owns_state = 647 }
+			}
+			USA = { transfer_state = 647 }
+		}
+		if = {
+			limit = {
+				JAP = { owns_state = 648 }
+			}
+			USA = { transfer_state = 648 }
+		}
+		if = {
+			limit = {
+				JAP = { owns_state = 633 }
+			}
+			USA = { transfer_state = 633 }
+		}
+		if = {
+			limit = {
+				JAP = { owns_state = 684 }
+			}
+			USA = { transfer_state = 684 }
+		}
+		if = {
+    		limit = {
+    			SOV = { OR = { has_government = unionism has_government = communism } }
+    			USA = { NOT = { OR = { has_government = unionism has_government = communism } } }
+    			527 = {
+    				OWNER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    				CONTROLLER = {
+    					NOT = {
+	    					OR = { has_government = unionism has_government = communism }
+    					}
+    				}
+    			}
+    		} 
+    		USA = { transfer_state = 527 } 
+    		USA = { transfer_state = 907 }
+    		USA = { transfer_state = 908 }  
+    		USA = { transfer_state = 909 } 
+    		USA = { transfer_state = 1109 } 
+		} 
+		if = {
+    		limit = {
+    			SOV = { OR = { has_government = unionism has_government = communism } }
+    			USA = { NOT = { OR = { has_government = unionism has_government = communism } } }
+    			527 = {
+    				OWNER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    				CONTROLLER = {
+    					OR = { has_government = unionism has_government = communism }
+    				}
+    			}
+    		} 
+    		SOV = { transfer_state = 527 } 
+    		SOV = { transfer_state = 907 }
+    		SOV = { transfer_state = 908 }  
+    		SOV = { transfer_state = 909 } 
+    		SOV = { transfer_state = 1109 } 
+		} 
+		if = {
+    		limit = {
+    			SOV = { OR = { has_government = unionism has_government = communism } }
+    			USA = { NOT = { OR = { has_government = unionism has_government = communism } } }
+    			525 = {
+    				OWNER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    				CONTROLLER = {
+    					NOT = {
+	    					OR = { has_government = unionism has_government = communism }
+    					}
+    				}
+    			}
+    		} 
+    		USA = { transfer_state = 525 } 
+		} 
+		if = {
+    		limit = {
+    			SOV = { OR = { has_government = unionism has_government = communism } }
+    			USA = { NOT = { OR = { has_government = unionism has_government = communism } } }
+    			525 = {
+    				OWNER = {
+    					OR = {
+    						tag = JAP
+    						is_subject_of = JAP
+    					}
+    				}
+    				CONTROLLER = {
+    					OR = { has_government = unionism has_government = communism }
+    				}
+    			}
+    		} 
+    		SOV = { transfer_state = 525 } 
+    		SOV = { transfer_state = 903 } 
+    		SOV = { transfer_state = 904 } 
+    		SOV = { transfer_state = 905 } 
+    		SOV = { transfer_state = 903 } 
+    		SOV = { transfer_state = 903 } 
+    		SOV = { transfer_state = 903 } 
+    		SOV = { transfer_state = 1108 } 
+		} 
+		if = {
+			limit = {
+				CHI = { has_war_with = JAP }
+			}
+			every_state = {
+				limit = {
+					is_owned_by = JAP
+					is_core_of = CHI
+				}
+				CHI = { transfer_state = PREV }
+			}
+		}
+		if = {
+			limit = { JAP = { has_country_flag = occupy_nam } }
+			VIN = {
+				JAP = { release = PREV }
+				FRA = { puppet = PREV }
+			}
+		}
+		if = {
+    		limit = {
+    			NOT = {
+    				SOV = { controls_state = 536 }
+    				SOV = { controls_state = 533 }
+    				SOV = { controls_state = 534 }
+    				SOV = { controls_state = 282 }
+    				SOV = { controls_state = 535 }
+    				SOV = { controls_state = 532 }
+    				SOV = { controls_state = 531 }
+    				SOV = { controls_state = 529 }
+    				SOV = { controls_state = 528 }
+    				SOV = { controls_state = 530 }
+    			}
+    		}
+    		if = {
+    			limit = {
+    				CHI = { has_war_with = JAP }
+    			}
+	    		CHI = {
+					set_country_flag = occupy_jap
+	    			transfer_state = 528
+	    			transfer_state = 962
+	    			transfer_state = 966
+	    			transfer_state = 967
+	    			transfer_state = 968
+					transfer_state = 529
+					transfer_state = 530
+					transfer_state = 969
+				}
+    		}
+    		if = {
+    			limit = {
+    				ENG = { has_war_with = JAP }
+    			}
+				ENG = {
+					set_country_flag = occupy_jap
+					transfer_state = 531
+					transfer_state = 965
+					transfer_state = 532
+					transfer_state = 534
+					transfer_state = 963
+					transfer_state = 535
+				}
+			}
+ 			JAP = { set_country_flag = occupied_indefinitely }
+			USA = {
+				set_country_flag = occupy_jap
+				annex_country = {
+	    			target = JAP
+	    			transfer_troops = no
+	 			}
+	 		}
+    	}
+    	if = {
+    		limit = {
+    			SOV = { controls_state = 536 }
+    			NOT = {
+    				SOV = { controls_state = 533 }
+    				SOV = { controls_state = 534 }
+    				SOV = { controls_state = 282 }
+    				SOV = { controls_state = 535 }
+    				SOV = { controls_state = 532 }
+    				SOV = { controls_state = 531 }
+    				SOV = { controls_state = 529 }
+    				SOV = { controls_state = 528 }
+    				SOV = { controls_state = 530 }
+    			}
+    		}
+    		if = {
+    			limit = {
+    				SOV = { has_war_with = JAP }
+    			}
+	    		SOV = {
+					set_country_flag = occupy_jap
+	    			transfer_state = 536
+	    		}
+	    	}
+    		if = {
+    			limit = {
+    				CHI = { has_war_with = JAP }
+    			}
+	    		CHI = {
+					set_country_flag = occupy_jap
+	    			transfer_state = 528
+	    			transfer_state = 962
+	    			transfer_state = 966
+	    			transfer_state = 967
+	    			transfer_state = 968
+					transfer_state = 529
+					transfer_state = 530
+					transfer_state = 969
+				}
+			}
+    		if = {
+    			limit = {
+    				ENG = { has_war_with = JAP }
+    			}
+				ENG = {
+					set_country_flag = occupy_jap
+					transfer_state = 531
+					transfer_state = 965
+					transfer_state = 532
+					transfer_state = 534
+					transfer_state = 963
+					transfer_state = 535
+				}
+			}
+ 			JAP = { set_country_flag = occupied_indefinitely }
+			USA = {
+				set_country_flag = occupy_jap
+				annex_country = {
+	    			target = JAP
+	    			transfer_troops = no
+	 			}
+	 		}
+    	}
+    	if = {
+    		limit = {
+    			SOV = { controls_state = 536 }
+				SOV = { controls_state = 533 }
+				SOV = { controls_state = 534 }
+    			NOT = {
+    				SOV = { controls_state = 282 }
+    				SOV = { controls_state = 535 }
+    				SOV = { controls_state = 532 }
+    				SOV = { controls_state = 531 }
+    				SOV = { controls_state = 529 }
+    				SOV = { controls_state = 528 }
+    				SOV = { controls_state = 530 }
+    			}
+    		}
+    		if = {
+    			limit = {
+    				SOV = { has_war_with = JAP }
+    			}
+	    		SOV = {
+					set_country_flag = occupy_jap
+	    			transfer_state = 536
+	    			transfer_state = 533
+					transfer_state = 534
+					transfer_state = 963
+	    		}
+	    	}
+    		if = {
+    			limit = {
+    				CHI = { has_war_with = JAP }
+    			}
+	    		CHI = {
+					set_country_flag = occupy_jap
+					transfer_state = 530
+					transfer_state = 969
+				}
+			}
+    		if = {
+    			limit = {
+    				ENG = { has_war_with = JAP }
+    			}
+				ENG = {
+					set_country_flag = occupy_jap
+	    			transfer_state = 528
+	    			transfer_state = 962
+	    			transfer_state = 966
+	    			transfer_state = 967
+	    			transfer_state = 968
+					transfer_state = 529
+				}
+			}
+ 			JAP = { set_country_flag = occupied_indefinitely }
+			USA = {
+				set_country_flag = occupy_jap
+				annex_country = {
+	    			target = JAP
+	    			transfer_troops = no
+	 			}
+	 		}
+    	}
+    	if = {
+    		limit = {
+    			SOV = { controls_state = 536 }
+				SOV = { controls_state = 533 }
+				SOV = { controls_state = 534 }
+				SOV = { controls_state = 282 }
+				SOV = { controls_state = 535 }
+				SOV = { controls_state = 532 }
+    			NOT = {
+    				SOV = { controls_state = 531 }
+    				SOV = { controls_state = 529 }
+    				SOV = { controls_state = 528 }
+    				SOV = { controls_state = 530 }
+    			}
+    		}
+    		if = {
+    			limit = {
+    				SOV = { has_war_with = JAP }
+    			}
+	    		SOV = {
+					set_country_flag = occupy_jap
+	    			transfer_state = 536
+	    			transfer_state = 533
+					transfer_state = 534
+					transfer_state = 963
+	    			transfer_state = 282
+					transfer_state = 964
+	    			transfer_state = 535
+					transfer_state = 532
+	    		}
+	    	}
+    		if = {
+    			limit = {
+    				CHI = { has_war_with = JAP }
+    			}
+	    		CHI = {
+					set_country_flag = occupy_jap
+					transfer_state = 530
+					transfer_state = 969
+				}
+			}
+    		if = {
+    			limit = {
+    				ENG = { has_war_with = JAP }
+    			}
+				ENG = {
+					set_country_flag = occupy_jap
+	    			transfer_state = 528
+	    			transfer_state = 962
+	    			transfer_state = 966
+	    			transfer_state = 967
+	    			transfer_state = 968
+					transfer_state = 529
+				}
+			}
+ 			JAP = { set_country_flag = occupied_indefinitely }
+			USA = {
+				set_country_flag = occupy_jap
+				annex_country = {
+	    			target = JAP
+	    			transfer_troops = no
+	 			}
+	 		}
+    	}
+    	if = {
+    		limit = {
+    			SOV = { controls_state = 536 }
+				SOV = { controls_state = 533 }
+				SOV = { controls_state = 534 }
+				SOV = { controls_state = 282 }
+				SOV = { controls_state = 535 }
+				SOV = { controls_state = 532 }
+				SOV = { controls_state = 531 }
+				SOV = { controls_state = 529 }
+    			NOT = {
+    				SOV = { controls_state = 528 }
+    				SOV = { controls_state = 530 }
+    			}
+    		}
+    		SOV = {
+				set_country_flag = occupy_jap
+    			transfer_state = 536
+    			transfer_state = 533
+				transfer_state = 534
+				transfer_state = 963
+    			transfer_state = 282
+				transfer_state = 964
+    			transfer_state = 535
+				transfer_state = 532
+    			transfer_state = 531
+				transfer_state = 965
+				transfer_state = 529
+    		}  
+			ENG = {
+				set_country_flag = occupy_jap
+    			transfer_state = 530
+				transfer_state = 969
+			}
+ 			JAP = { set_country_flag = occupied_indefinitely }
+			USA = {
+				set_country_flag = occupy_jap
+				annex_country = {
+	    			target = JAP
+	    			transfer_troops = no
+	 			}
+	 		}
+    	}
+    	if = {
+    		limit = {
+    			SOV = { controls_state = 536 }
+				SOV = { controls_state = 533 }
+				SOV = { controls_state = 534 }
+				SOV = { controls_state = 282 }
+				SOV = { controls_state = 535 }
+				SOV = { controls_state = 532 }
+				SOV = { controls_state = 531 }
+				SOV = { controls_state = 529 }
+				SOV = { controls_state = 528 }
+				SOV = { controls_state = 530 }
+    			NOT = {
+    				SOV = { controls_state = 526 }
+    				SOV = { controls_state = 645 }
+    			}
+    		}
+    		SOV = {
+				set_country_flag = occupy_jap
+    			transfer_state = 536
+    			transfer_state = 533
+				transfer_state = 534
+				transfer_state = 963
+    			transfer_state = 282
+				transfer_state = 964
+    			transfer_state = 535
+				transfer_state = 532
+    			transfer_state = 531
+    			transfer_state = 528
+    			transfer_state = 962
+    			transfer_state = 966
+    			transfer_state = 967
+    			transfer_state = 968
+				transfer_state = 529
+    			transfer_state = 530
+				transfer_state = 969
+    		} 
+ 			JAP = { set_country_flag = occupied_indefinitely }
+			USA = {
+				set_country_flag = occupy_jap
+				annex_country = {
+	    			target = JAP
+	    			transfer_troops = no
+	 			}
+	 		}
+    	}
+    	if = {
+    		limit = {
+    			SOV = { controls_state = 536 }
+				SOV = { controls_state = 533 }
+				SOV = { controls_state = 534 }
+				SOV = { controls_state = 282 }
+				SOV = { controls_state = 535 }
+				SOV = { controls_state = 532 }
+				SOV = { controls_state = 531 }
+				SOV = { controls_state = 529 }
+				SOV = { controls_state = 528 }
+				SOV = { controls_state = 530 }
+				SOV = { controls_state = 645 }
+    			NOT = {
+    				SOV = { controls_state = 526 }
+    			}
+    		}
+    		SOV = {
+				set_country_flag = occupy_jap
+    			transfer_state = 536
+    			transfer_state = 533
+				transfer_state = 534
+				transfer_state = 963
+    			transfer_state = 282
+				transfer_state = 964
+    			transfer_state = 535
+				transfer_state = 532
+    			transfer_state = 531
+				transfer_state = 965
+				transfer_state = 529
+    			transfer_state = 645
+    			transfer_state = 530
+    		} 
+ 			JAP = { set_country_flag = occupied_indefinitely }
+			USA = {
+				set_country_flag = occupy_jap
+				annex_country = {
+	    			target = JAP
+	    			transfer_troops = no
+	 			}
+	 		}
+    	}
+    	if = {
+    		limit = {
+    			SOV = { controls_state = 536 }
+				SOV = { controls_state = 533 }
+				SOV = { controls_state = 534 }
+				SOV = { controls_state = 282 }
+				SOV = { controls_state = 535 }
+				SOV = { controls_state = 532 }
+				SOV = { controls_state = 531 }
+				SOV = { controls_state = 529 }
+				SOV = { controls_state = 528 }
+				SOV = { controls_state = 530 }
+				SOV = { controls_state = 526 }
+    			NOT = {
+    				SOV = { controls_state = 645 }
+    			}
+    		}
+    		SOV = {
+				set_country_flag = occupy_jap
+    			transfer_state = 536
+    			transfer_state = 533
+				transfer_state = 534
+				transfer_state = 963
+    			transfer_state = 282
+				transfer_state = 964
+    			transfer_state = 535
+				transfer_state = 532
+    			transfer_state = 531
+    			transfer_state = 528
+    			transfer_state = 962
+    			transfer_state = 966
+    			transfer_state = 967
+    			transfer_state = 968
+				transfer_state = 529
+    			transfer_state = 530
+				transfer_state = 969
+    		} 
+ 			JAP = { set_country_flag = occupied_indefinitely }
+			USA = {
+				set_country_flag = occupy_jap
+				annex_country = {
+	    			target = JAP
+	    			transfer_troops = no
+	 			}
+	 		}
+    	}
+    	if = {
+    		limit = {
+    			SOV = { controls_state = 536 }
+				SOV = { controls_state = 533 }
+				SOV = { controls_state = 534 }
+				SOV = { controls_state = 282 }
+				SOV = { controls_state = 535 }
+				SOV = { controls_state = 532 }
+				SOV = { controls_state = 531 }
+				SOV = { controls_state = 529 }
+				SOV = { controls_state = 528 }
+				SOV = { controls_state = 530 }
+				SOV = { controls_state = 645 }
+				SOV = { controls_state = 526 } 
+    		} 
+ 			JAP = { set_country_flag = occupied_indefinitely }
+			SOV = {
+				set_country_flag = occupy_jap
+				annex_country = {
+	    			target = JAP
+	    			transfer_troops = no
+	 			}
+	 		}
+    	}
+		news_event = {
+			id = bce_news.13
+			days = 0
+			random = 2
+		}
+	}
+}
+
+## USSR makes Communist Japan ##
+
+news_event = {
+	id = japan.56
+	title = japan.56.t
+	desc = japan.56.desc
+	picture = GFX_report_event_prj_party_flag
+
+	trigger = {
+		date > 1954.11.22
+		tag = SOV
+		SOV = {
+			has_country_flag = occupy_jap_PRJ
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 200
+	}
+
+	option = {
+		name = japan.56.a
+		ai_chance = {
+			base = 100 
+		}
+		PRJ = {
+			add_state_core = 528
+			add_state_core = 962
+			add_state_core = 966
+			add_state_core = 967
+			add_state_core = 968
+			add_state_core = 526
+			add_state_core = 971
+			add_state_core = 645
+			add_state_core = 530
+			add_state_core = 969
+			add_state_core = 529
+			add_state_core = 531
+			add_state_core = 965
+			add_state_core = 532
+			add_state_core = 535
+			add_state_core = 282
+			add_state_core = 964
+			add_state_core = 534
+			add_state_core = 963
+			add_state_core = 533
+			add_state_core = 536  
+			add_state_core = 526
+			add_state_core = 971
+			add_state_core = 645  
+		}
+		SOV = { 
+			release_puppet = PRJ
+			clr_country_flag = occupy_jap_PRJ
+		}
+	}
+} 
+
+### GXC invitation
+country_event = {
+	id = japan.57
+	title = japan.57.t
+	desc = japan.57.d
+	picture = GFX_thisgfxiswrong
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.57.a
+		ai_chance = { base = 5 }
+		
+		add_political_power = 100
+		
+		add_popularity = {
+			ideology = democratic 
+			popularity = 0.1
+		}
+		
+		JAP = { 
+			add_to_faction = GXC 
+		
+			country_event = japan.58
+		}
+	}
+	
+	
+	option = {
+		name = umc_jcd.110.b
+		ai_chance = { base = 0 }
+		
+		JAP = { 
+			country_event = japan.59
+		}
+	}
+}
+
+### GXC Accepts
+country_event = {
+	id = japan.58
+	title = japan.58.t
+	desc = japan.58.d
+	picture = GFX_thisgfxiswrong
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.58.a
+		ai_chance = { base = 5 }
+		
+		add_political_power = 100
+		
+		effect_tooltip = { 
+			JAP = { 
+				add_to_faction = GXC 
+			}
+		}
+	}
+}
+
+### GXC Rejects
+country_event = {
+	id = japan.59
+	title = japan.59.t
+	desc = japan.59.d
+	picture = GFX_thisgfxiswrong
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.59.a
+		ai_chance = { base = 5 }
+		
+		add_political_power = 100
+	}
+	
+	
+	option = {
+		name = japan.59.b
+		ai_chance = { base = 0 }
+		
+		add_war_support = 0.05
+		
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = GXC
+		}
+	}
+}
+
+# Suiyuan Invasion Suceeds
+country_event = {
+	id = japan.60
+	title = japan.60.t
+	desc = japan.60.d
+	picture = GFX_report_event_chinese_soldiers_01
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = japan.60.a
+		ai_chance = {
+			base = 100
+		}
+		MEN = {
+			transfer_state = 621
+		}
+		PRC = {
+			set_country_flag = JAP_invades_suiyuan_SUC
+		}
+	}
+}
+
+# Suiyuan Invasion Fails
+country_event = {
+	id = japan.61
+	title = japan.61.t
+	desc = japan.61.d
+	picture = GFX_report_event_chinese_soldiers_01
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = japan.61.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# CHI - Warlord Capitulation
+country_event = {
+	id = japan.64
+	hidden = yes
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	trigger = {
+		CHI = { has_war_with = JAP }
+		OR = {
+			AND = {
+				tag = SHX
+				is_subject_of = CHI
+				OR = {
+					has_capitulated = yes
+					AND = {
+						RGR = { exists = no }
+						CHI = { owns_state = 608 }
+						CHI = { surrender_progress > 0.35 }
+					}
+					AND = {
+						RGR = { exists = no }
+						NOT = { CHI = { owns_state = 608 } }
+						CHI = { surrender_progress > 0.25 }
+					}
+					AND = {
+						CHI = { owns_state = 608 }
+						CHI = { surrender_progress > 0.15 }
+						RGR = {
+							exists = yes
+							is_subject_of = JAP
+						}
+					}
+					AND = {
+						NOT = { CHI = { owns_state = 608 } }
+						CHI = { surrender_progress > 0.05 }
+						RGR = {
+							exists = yes
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			AND = {
+				tag = YUN
+				is_subject_of = CHI
+				OR = {
+					has_capitulated = yes
+					AND = {
+						RGR = { exists = no }
+						CHI = { owns_state = 608 }
+						CHI = { surrender_progress > 0.4 }
+					}
+					AND = {
+						RGR = { exists = no }
+						NOT = { CHI = { owns_state = 608 } }
+						CHI = { surrender_progress > 0.3 }
+					}
+					AND = {
+						CHI = { owns_state = 608 }
+						CHI = { surrender_progress > 0.2 }
+						RGR = {
+							exists = yes
+							is_subject_of = JAP
+						}
+					}
+					AND = {
+						NOT = { CHI = { owns_state = 608 } }
+						CHI = { surrender_progress > 0.1 }
+						RGR = {
+							exists = yes
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			AND = {
+				tag = GXC
+				is_subject_of = CHI
+				OR = {
+					has_capitulated = yes
+					AND = {
+						RGR = { exists = no }
+						CHI = { owns_state = 608 }
+						CHI = { surrender_progress > 0.5 }
+					}
+					AND = {
+						RGR = { exists = no }
+						NOT = { CHI = { owns_state = 608 } }
+						CHI = { surrender_progress > 0.4 }
+					}
+					AND = {
+						CHI = { owns_state = 608 }
+						CHI = { surrender_progress > 0.3 }
+						RGR = {
+							exists = yes
+							is_subject_of = JAP
+						}
+					}
+					AND = {
+						NOT = { CHI = { owns_state = 608 } }
+						CHI = { surrender_progress > 0.2 }
+						RGR = {
+							exists = yes
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			AND = {
+				tag = XSM
+				is_subject_of = CHI
+				OR = {
+					has_capitulated = yes
+					AND = {
+						RGR = { exists = no }
+						CHI = { owns_state = 608 }
+						CHI = { surrender_progress > 0.8 }
+					}
+					AND = {
+						RGR = { exists = no }
+						NOT = { CHI = { owns_state = 608 } }
+						CHI = { surrender_progress > 0.7 }
+					}
+					AND = {
+						CHI = { owns_state = 608 }
+						CHI = { surrender_progress > 0.6 }
+						RGR = {
+							exists = yes
+							is_subject_of = JAP
+						}
+					}
+					AND = {
+						NOT = { CHI = { owns_state = 608 } }
+						CHI = { surrender_progress > 0.5 }
+						RGR = {
+							exists = yes
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			AND = {
+				tag = SIK
+				is_subject_of = CHI
+				OR = {
+					has_capitulated = yes
+					AND = {
+						RGR = { exists = no }
+						CHI = { owns_state = 608 }
+						CHI = { surrender_progress > 0.9 }
+					}
+					AND = {
+						RGR = { exists = no }
+						NOT = { CHI = { owns_state = 608 } }
+						CHI = { surrender_progress > 0.8 }
+					}
+					AND = {
+						CHI = { owns_state = 608 }
+						CHI = { surrender_progress > 0.7 }
+						RGR = {
+							exists = yes
+							is_subject_of = JAP
+						}
+					}
+					AND = {
+						NOT = { CHI = { owns_state = 608 } }
+						CHI = { surrender_progress > 0.6 }
+						RGR = {
+							exists = yes
+							is_subject_of = JAP
+						}
+					}
+				}
+			}
+			AND = {
+				tag = RGR
+				has_war_with = CHI
+				has_capitulated = yes
+				is_subject_of = JAP
+			}
+		}
+	} 
+	
+	immediate = {
+		if = {
+			limit = { JAP = { has_war_with = PRC } PRC = { NOT = { has_war_with = CHI } num_divisions < 40 } }
+			PRC = { load_oob = "CHI_warlord_support" }
+		}
+		if = {
+			limit = {
+				tag = SHX
+			}
+			SHX = { country_event = { id = kmt.74 hours = 3 } }
+		}
+		if = {
+			limit = {
+				tag = YUN
+			}
+			YUN = { country_event = { id = kmt.74 hours = 3 } }
+		}
+		if = {
+			limit = {
+				tag = GXC
+			}
+			GXC = { country_event = { id = kmt.74 hours = 3 } }
+			CHI = { load_oob = "CHI_warlord_support" }
+		}
+		if = {
+			limit = {
+				tag = XSM
+			}
+			XSM = { country_event = { id = kmt.74 hours = 3 } }
+			CHI = { load_oob = "CHI_warlord_support" }
+		}
+		if = {
+			limit = {
+				tag = SIK
+			}
+			SIK = { country_event = { id = kmt.74 hours = 3 } }
+			CHI = { load_oob = "CHI_warlord_support" }
+		}
+		if = {
+			limit = {
+				tag = RGR
+			}
+			CHI = {
+				annex_country = {
+			    	target = RGR
+			    	transfer_troops = no
+			    } 
+			}
+	       	every_state = {
+	       		limit = {
+	       			is_core_of = RGR
+	       		}
+	       		RGR = { 
+	       			remove_state_core = PREV
+	       		}
+	       	}
+	       	every_state = {
+	       		limit = {
+	       			is_claimed_by = RGR
+	       		}
+	       		RGR = { 
+	       			remove_state_claim = PREV
+	       		}
+	       	}
+			if = {
+				limit = {
+					PRC = {
+						has_capitulated = no
+					}
+				}
+				every_state = {
+					limit = {
+						is_owned_by = PRC
+					}
+					PRC = {
+						set_state_controller = PREV
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+	}
+}
+
+# JAP - Continue NAP
+country_event = {
+	id = japan.66
+	hidden = yes
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	trigger = { 
+		tag = JAP 
+		has_global_flag = 2sinjapwar_stalemate
+		date < 1944.1.1
+		OR = {
+			CHI = { 
+				NOT = {
+					has_non_aggression_pact_with = JAP
+					has_war_with = JAP
+				}
+			}
+			PRC = { 
+				NOT = {
+					has_non_aggression_pact_with = JAP
+					has_war_with = JAP
+				}
+			}
+		}
+	} 
+
+	option = {
+		name = japan.66.a
+		ai_chance = {
+			base = 100
+		}
+		JAP = {
+			diplomatic_relation = { country = CHI relation = non_aggression_pact }
+			diplomatic_relation = { country = PRC relation = non_aggression_pact }
+		}
+	}
+}
+
+# CHI - OOB because retardation
+country_event = {
+	id = japan.67
+	hidden = yes
+
+	mean_time_to_happen = {
+		days = 500
+	}
+
+	trigger = {
+		tag = CHI
+		has_capitulated = no
+		NOT = { has_war_with = PRC }
+		is_ai = yes
+		controls_state = 605
+		num_divisions < 300
+		PRC = {
+			has_capitulated = no
+			controls_state = 622
+			num_divisions < 300
+		}
+	} 
+	
+	immediate = {
+		#CHI = { load_oob = "CHI_stupid" }
+		if = {
+			limit = {
+				PRC = { is_ai = yes }
+			}
+			#PRC = { load_oob = "PRC_stupid" }
+		}
+	}
+
+	option = {
+	}
+}
+
+# CHI - Warlord Thanos Snap
+country_event = {
+	id = japan.68
+	hidden = yes
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	trigger = {
+		OR = {
+			AND ={
+				any_state = { is_core_of = GXC }
+				GXC = { exists = no }
+			}
+			AND ={
+				any_state = { is_core_of = YUN }
+				YUN = { exists = no }
+			}
+			AND ={
+				any_state = { is_core_of = XSM }
+				XSM = { exists = no }
+			}
+			AND ={
+				any_state = { is_core_of = SHX }
+				SHX = { exists = no }
+			}
+			AND ={
+				any_state = { is_core_of = RGR }
+				RGR = { exists = no }
+			}
+		}
+	} 
+	
+	immediate = {
+		if = {
+			limit = {
+				YUN = { exists = no }
+			}
+	       	every_state = {
+	       		limit = {
+	       			is_core_of = YUN
+	       		}
+	       		YUN = { 
+	       			remove_state_core = PREV
+	       		}
+	       	}
+	       	every_state = {
+	       		limit = {
+	       			is_claimed_by = YUN
+	       		}
+	       		YUN = { 
+	       			remove_state_claim = PREV
+	       		}
+	       	}
+		}
+		if = {
+			limit = {
+				GXC = { exists = no }
+			}
+	       	every_state = {
+	       		limit = {
+	       			is_core_of = GXC
+	       		}
+	       		GXC = { 
+	       			remove_state_core = PREV
+	       		}
+	       	}
+	       	every_state = {
+	       		limit = {
+	       			is_claimed_by = GXC
+	       		}
+	       		GXC = { 
+	       			remove_state_claim = PREV
+	       		}
+	       	}
+		}
+		if = {
+			limit = {
+				XSM = { exists = no }
+			}
+	       	every_state = {
+	       		limit = {
+	       			is_core_of = XSM
+	       		}
+	       		XSM = { 
+	       			remove_state_core = PREV
+	       		}
+	       	}
+	       	every_state = {
+	       		limit = {
+	       			is_claimed_by = XSM
+	       		}
+	       		XSM = { 
+	       			remove_state_claim = PREV
+	       		}
+	       	}
+		}
+		if = {
+			limit = {
+				SHX = { exists = no }
+			}
+	       	every_state = {
+	       		limit = {
+	       			is_core_of = SHX
+	       		}
+	       		SHX = { 
+	       			remove_state_core = PREV
+	       		}
+	       	}
+	       	every_state = {
+	       		limit = {
+	       			is_claimed_by = SHX
+	       		}
+	       		SHX = { 
+	       			remove_state_claim = PREV
+	       		}
+	       	}
+		}
+		if = {
+			limit = {
+				RGR = { exists = no }
+			}
+	       	every_state = {
+	       		limit = {
+	       			is_core_of = RGR
+	       		}
+	       		RGR = { 
+	       			remove_state_core = PREV
+	       		}
+	       	}
+	       	every_state = {
+	       		limit = {
+	       			is_claimed_by = RGR
+	       		}
+	       		RGR = { 
+	       			remove_state_claim = PREV
+	       		}
+	       	}
+		}
+	}
+
+	option = {
+	}
+}
+
+# JAP - We're Fucked
+country_event = {
+	id = japan.69
+	hidden = yes
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	trigger = {
+		tag = JAP
+		date > 1944.1.1
+		has_idea = for_the_emperor_idea2
+		OR = {
+			has_war_with = ENG
+			has_war_with = USA
+		}
+	} 
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_idea = for_the_emperor_idea2
+			}
+			swap_ideas = {
+				add_idea = for_the_emperor_defense_1_idea
+				remove_idea = for_the_emperor_idea2
+			}
+		}
+	}
+
+	option = {
+	}
+}
+
+news_event = {
+	id = japan.71
+	title = bce_news.43.t
+	desc = bce_news.43.d
+	picture = GFX_news_event_generic_bombers
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = bce_news.43.a
+		trigger = { 
+			NOT = { has_government = fascism }
+			NOT = { tag = JAP }
+		}
+	}
+
+	option = {
+		name = bce_news.43.b
+		trigger = { 
+			has_government = fascism
+			NOT = { tag = JAP }
+		}
+	}
+
+	option = {
+		name = "Tora! Tora! Tora!"
+		trigger = { 
+			tag = JAP
+		}
+	}
+}
+
+news_event = {
+	id = japan.72
+	title = bce_news.42.t
+	desc = bce_news.42.d
+	picture = GFX_news_event_japanese_army_parade
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = bce_news.42.a
+		trigger = {
+			NOT = { has_government = fascism }
+		}
+	}
+
+	option = {
+		name = bce_news.42.b
+		trigger = { 
+			has_government = fascism
+		}
+	}
+}
+
+# Mongol Coup Discovered and Stopped
+country_event = {
+	id = japan.73
+	title = japan.73.t
+	desc = japan.73.desc
+	picture = GFX_report_event_chinese_soldiers_01
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = japan.74.a
+		add_political_power = -100
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = CHI
+		}
+	}
+}
+
+# Successful Jap Mongol Coup
+country_event = {
+	id = japan.74
+	title = japan.74.t
+	desc = japan.74.desc
+	picture = GFX_report_event_chinese_soldiers_01
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = japan.74.a
+		if = {
+			limit = {
+				MEN = { exists = yes is_subject_of = JAP }
+			}
+			MEN = {
+				annex_country = {
+			    	target = MON
+			    	transfer_troops = yes
+			    } 
+			}
+		}
+		else = {
+			JAP = { puppet = MON }
+		}
+	}
+}
+
+# Japan wants Stalin for Tripartite Pact
+country_event = {
+	id = japan.75
+	title = japan.75.t
+	desc = japan.75.desc
+	picture = GFX_report_event_soviet_german_soldier_handshake
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = japan.75.a
+		ai_chance = { 
+			base = 5
+			modifier = {
+		    	factor = 0
+				is_historical_focus_on = yes 
+			} 
+		}
+		SOV = { country_event = japan.76 days = 1 }
+	}
+
+	option = {
+		name = japan.75.b
+		ai_chance = { base = 5 }
+		JAP = { country_event = japan.77 days = 1 }
+	}
+}
+
+# Germany Invites Stalin to Triple Alliance
+country_event = {
+	id = japan.76
+	title = japan.76.t
+	desc = japan.76.desc
+	picture = GFX_report_event_molotov_signing_pact
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = japan.76.a
+		ai_chance = { 
+			base = 5
+			modifier = {
+		    	factor = 3
+				is_historical_focus_on = yes 
+				has_global_flag = sov_yes_pact
+			} 
+		}
+		GER = { country_event = japan.78 days = 1 }
+	}
+
+	option = {
+		name = japan.76.b
+		ai_chance = { base = 5 }
+		GER = { country_event = japan.79 days = 1 }
+		JAP = { country_event = japan.79 days = 1 }
+	}
+}
+
+# Hitler says you're dumb and you should die
+country_event = {
+	id = japan.77
+	title = japan.77.t
+	desc = japan.77.desc
+	picture = GFX_report_event_hitler_parade
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = japan.77.a
+	}
+}
+
+# Stalin says he'll do Triple Alliance
+country_event = {
+	id = japan.78
+	title = japan.78.t
+	desc = japan.78.desc
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = japan.78.a
+		FROM = { give_guarantee = ROOT }
+		ROOT = { give_guarantee = FROM }
+		JAP = { give_guarantee = FROM }
+		FROM = { give_guarantee = JAP }
+		ITA = { give_guarantee = FROM }
+		FROM = { give_guarantee = ITA }
+	}
+}
+
+# Stalin says go die
+country_event = {
+	id = japan.79
+	title = japan.79.t
+	desc = japan.79.desc
+	picture = GFX_report_event_stalin_01
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = japan.79.a
+	}
+}
+
+# JAP - Indon Capitulation
+country_event = {
+	id = japan.62
+	hidden = yes
+
+	trigger = {
+		OR = {
+			AND = {
+				JAP = { has_war_with = INS }
+				INS = { has_capitulated = yes }
+				335 = {
+					controller = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+						}
+					}
+				}
+			}
+		}
+	} 
+	
+	fire_only_once = yes
+
+	immediate = {
+		every_state = {
+			limit = {
+				is_owned_by = INS
+			}
+			JAP = {
+				set_state_controller = PREV
+			}
+		}
+	}
+
+	option = {
+	}
+}
+
+# JAP - Malayan Capitulation
+country_event = {
+	id = japan.21
+	title = japan.21.t
+	desc = japan.21.d
+	picture = GFX_report_event_generic_sign_treaty2
+	hidden = yes
+
+	trigger = {
+		OR = {
+			AND = {
+				JAP = { has_war_with = MAL }
+				MAL = { has_capitulated = yes }
+				336 = {
+					controller = {
+						OR = {
+							tag = JAP
+							is_in_faction_with = JAP
+						}
+					}
+				}
+			}
+		}
+	} 
+	
+	fire_only_once = yes
+
+	immediate = {
+		every_state = {
+			limit = {
+				is_owned_by = MAL
+			}
+			JAP = {
+				set_state_controller = PREV
+			}
+		}
+	}
+
+	option = {
+	}
+}

@@ -1,0 +1,6508 @@
+﻿add_namespace = NOS_benelux
+
+
+#Benelux News
+news_event = {
+	id = NOS_benelux.97
+	title = NOS_benelux.97.t
+	desc = NOS_benelux.97.d
+	picture = GFX_news_event_creation_benelux
+
+	major = yes
+	is_triggered_only = yes
+	#Together we stand strong!
+	option = {
+		name = NOS_benelux.97.a
+		trigger = {
+			OR = {
+				tag = LUX
+				tag = BEL
+				tag = HOL
+			}
+		}
+	}
+
+
+	#others
+	option = {
+		name = NOS_benelux.97.b
+		trigger = {
+			NOT = {
+				OR = {
+					tag = LUX
+					tag = BEL
+					tag = HOL
+				}	
+			}
+		}
+	}
+}
+#Formation of the Benelux Failed
+news_event = {
+	id = NOS_benelux.98
+	title = NOS_benelux.98.t
+	desc = NOS_benelux.98.d
+	picture = GFX_news_event_generic_sign_treaty1
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = NOS_benelux.98.a
+		trigger = {
+			OR = {
+				tag = HOL
+				tag = BEL
+				tag = LUX
+			}
+		}
+	}
+	option = {
+		name = NOS_benelux.98.b
+		trigger = {
+			NOT = {
+				OR = {
+					tag = LUX
+					tag = BEL
+					tag = HOL
+				}	
+			}
+		}
+	}
+}
+#rename city in independent Congo
+country_event = {
+	id = NOS_benelux.99
+	title = NOS_benelux.99.t
+	desc = NOS_benelux.99.d
+	picture = GFX_report_event_journalists_speech
+	trigger = {
+		
+		tag = COG
+		
+		NOT =  {
+			has_country_leader = { ruling_only = yes name = "Pierre Ryckmans" }
+			has_country_leader = { ruling_only = yes name = "Albert Decoster" }					
+			has_government = fascism
+			has_global_flag = COG_renamed_cities
+		}
+	}		
+	mean_time_to_happen = {
+			days = 180
+		}
+
+	option = { #a great idea!
+		name = NOS_benelux.99.a
+		ai_chance = {
+			base = 100
+		}
+		#if Decoster is communist leader, Kinshasa = Jacquemotteville, Lubumbashi = Decosterville Kisangani = Marxbourg
+		set_province_name = { id = 5117 name = "Kinshasa"}
+		set_province_name = { id = 191 name = "Lubumbashi"}
+		set_province_name = { id = 1950 name = "Kisangani"}
+		295 = { set_state_name = "Kinshasa" }
+		718 = { set_state_name = "Kisangani" }		
+		set_global_flag = COG_renamed_cities
+		clr_global_flag = COG_renamed_cities_decoster
+	}
+
+	option = { #rather not
+		name = NOS_benelux.99.b
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+country_event = {
+	id = NOS_benelux.100
+	title = NOS_benelux.100.t
+	desc = NOS_benelux.100.d
+	picture = GFX_report_event_journalists_speech
+	trigger = {	
+			OR ={
+				AND ={
+					BEL ={		
+						controls_state = 295
+						controls_state = 718
+						controls_state = 538
+					}
+					295 = { is_owned_by = BEL }
+					718 = { is_owned_by = BEL }	
+					538 = { is_owned_by = BEL }	
+				}		
+				AND = {
+					COG = {
+						OR ={
+							is_puppet_of = BEL
+							has_government = fascism
+						}
+						controls_state = 295
+						controls_state = 718
+						controls_state = 538
+					}
+						295 = { is_owned_by = COG }
+						718 = { is_owned_by = COG }
+						538 = { is_owned_by = COG }					
+				}			
+			}
+			OR = {
+				has_global_flag = COG_renamed_cities
+				has_global_flag = COG_renamed_cities_decoster
+			}
+		}
+	mean_time_to_happen = {
+			days = 100
+		}
+	option = { #a great idea!
+		name = NOS_benelux.100.a
+		ai_chance = {
+			base = 100
+		}
+		reset_province_name = 5117
+		reset_province_name = 191
+		reset_province_name = 1950
+		295 = { set_state_name = "Leopoldville" }
+		718 = { set_state_name = "Stanleyville" }	
+		clr_global_flag = COG_renamed_cities
+		clr_global_flag = COG_renamed_cities_decoster
+		if = {
+			limit = {
+				has_cosmetic_tag = COG_COM
+			}
+			drop_cosmetic_tag = yes
+		}
+	}
+}
+#fighter competition - initial choice for Belgium
+country_event = {
+	id = NOS_benelux.101
+	title = NOS_benelux.101.t
+	desc = NOS_benelux.101.desc 
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+
+	option = {# light fighter
+		name = NOS_benelux.101.a
+		trigger = {
+			OR = {
+				GER = {
+					is_available_fighter_BEL = yes
+				}
+				FRA = {
+					is_available_fighter_BEL = yes
+					}					
+				
+				ITA = {
+					is_available_fighter_BEL = yes
+					}					
+				
+				ENG = {
+					is_available_fighter_BEL = yes
+					}					
+				
+				USA = {
+					is_available_fighter_BEL = yes
+					}
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_tech = fighter1
+				add = -10
+			}
+			modifier = {
+				has_tech = fighter2
+				add = -10
+			}
+			modifier = {
+				has_tech = fighter3
+				factor = 0
+			}
+		}
+		country_event = NOS_benelux.102 
+		
+	}
+	option = {# heavy fighter
+		name = NOS_benelux.101.b
+		trigger = {
+			OR = {
+				GER = {
+					is_available_heavy_fighter_BEL = yes
+
+				}
+				FRA = {
+					is_available_heavy_fighter_BEL = yes
+
+				}
+				ITA = {
+					is_available_heavy_fighter_BEL = yes
+
+				}
+				ENG = {
+					is_available_heavy_fighter_BEL = yes
+				
+				}
+				USA = {
+					is_available_heavy_fighter_BEL = yes
+					
+				}
+			}
+		}
+		country_event = NOS_benelux.103 
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_tech = heavy_fighter1
+				add = -10
+			}
+			modifier = {
+				has_tech = heavy_fighter2
+				add = -10
+			}
+			modifier = {
+				has_tech = heavy_fighter3
+				factor = 0
+			}
+		}
+	}
+}
+
+#Fighter competition - Belgium is looking for a light fighter
+country_event = {
+	id = NOS_benelux.102
+	title = NOS_benelux.102.t
+	desc = {
+		text = NOS_benelux.102.desc_light_fighter
+		trigger = {
+			NOT = { 
+				has_country_flag = GER_fighter_refused
+				has_country_flag = ENG_fighter_refused
+				has_country_flag = USA_fighter_refused
+				has_country_flag = FRA_fighter_refused
+				has_country_flag = ITA_fighter_refused
+			} 
+		}
+	}
+	desc = {
+		text = NOS_benelux.102.desc_light_fighter_refused
+		trigger = {
+			OR = {
+		 		has_country_flag = GER_fighter_refused
+				has_country_flag = ENG_fighter_refused
+				has_country_flag = USA_fighter_refused
+				has_country_flag = FRA_fighter_refused
+				has_country_flag = ITA_fighter_refused
+		 	}
+		}
+	}
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+
+	option = {# Select German Plane
+		name = NOS_benelux.102.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = GER
+				factor = 10
+			}
+			modifier = {
+				has_completed_focus = BEL_go_right
+				GER = { has_government = fascism }
+				factor = 5
+			}
+			modifier = {
+				GER = {
+					has_tech = fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					GER = { has_tech = fighter1}
+					BEL = { NOT = { has_tech = fighter1 } }
+				}
+				AND = {
+					GER = { has_tech = fighter2}
+					BEL = { NOT = { has_tech = fighter2 } }
+				}
+				AND = {
+					GER = { has_tech = fighter3}
+					BEL = { NOT = { has_tech = fighter3 } }
+				}
+			}
+			NOT = { has_war_with = GER }
+			NOT = { has_country_flag = GER_fighter_refused }
+		}
+		GER = { country_event = NOS_benelux.104 }	
+	}
+
+	option = {# select italian plane
+		name = NOS_benelux.102.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				is_in_faction_with = ITA
+				factor = 10
+			}
+			modifier = {
+				ITA = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				ITA = {
+					has_tech = fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ITA = { has_tech = fighter1}
+					BEL = { NOT = { has_tech = fighter1 } }
+				}
+				AND = {
+					ITA = { has_tech = fighter2}
+					BEL = { NOT = { has_tech = fighter2 } }
+				}
+				AND = {
+					ITA = { has_tech = fighter3}
+					BEL = { NOT = { has_tech = fighter3 } }
+				}
+			}
+			NOT = { has_war_with = ITA }
+			NOT = { has_country_flag = ITA_fighter_refused }
+		}
+		ITA = { country_event = NOS_benelux.104 }	
+	}
+
+	option = {# select french plane
+		name = NOS_benelux.102.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = FRA
+				factor = 10
+			}
+			modifier = {
+				FRA = { has_government = ROOT }
+				factor = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					FRA = { has_tech = fighter1}
+					BEL = { NOT = { has_tech = fighter1 } }
+				}
+				AND = {
+					FRA = { has_tech = fighter2}
+					BEL = { NOT = { has_tech = fighter2 } }
+				}
+				AND = {
+					FRA = { has_tech = fighter3}
+					BEL = { NOT = { has_tech = fighter3 } }
+				}
+			}
+			NOT = { has_war_with = FRA }
+			NOT = { has_country_flag = FRA_fighter_refused }
+			
+		}
+		FRA = { country_event = NOS_benelux.104 }	
+	}
+	option = {# select british plane
+		name = NOS_benelux.102.d
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ENG
+				factor = 10
+			}
+			modifier = {
+				ENG = { has_government = ROOT }
+				factor = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ENG = { has_tech = fighter1}
+					BEL = { NOT = { has_tech = fighter1 } }
+				}
+				AND = {
+					ENG = { has_tech = fighter2}
+					BEL = { NOT = { has_tech = fighter2 } }
+				}
+				AND = {
+					ENG = { has_tech = fighter3}
+					BEL = { NOT = { has_tech = fighter3 } }
+				}
+			}
+			NOT = { has_war_with = ENG }
+			NOT = { has_country_flag = ENG_fighter_refused }
+		}
+		ENG = { country_event = NOS_benelux.104 }	
+	}
+	option = {# select american plane
+		name = NOS_benelux.102.e
+		ai_chance = {
+			factor = 25
+			modifier = {
+				is_in_faction_with = USA
+				factor = 10
+			}
+			modifier = {
+				USA = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				USA = {
+					has_tech = fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					USA = { has_tech = fighter1}
+					BEL = { NOT = { has_tech = fighter1 } }
+				}
+				AND = {
+					USA = { has_tech = fighter2}
+					BEL = { NOT = { has_tech = fighter2 } }
+				}
+				AND = {
+					USA = { has_tech = fighter3}
+					BEL = { NOT = { has_tech = fighter3 } }
+				}
+			}
+			NOT = { has_war_with = USA }
+			NOT = { has_country_flag = USA_fighter_refused }
+			NOT = { #to prevent overflow issues
+				AND = {
+					GER = {
+						is_available_fighter_BEL = yes
+					}
+					FRA = {
+						is_available_fighter_BEL = yes
+					}
+					ITA = {
+						is_available_fighter_BEL = yes
+					}
+					ENG = {
+						is_available_fighter_BEL = yes
+					}
+				}
+			}
+		}
+		USA = { country_event = NOS_benelux.104 }	
+	}
+	option = {# failsafe
+		name = NOS_benelux.102.f	
+		trigger = {
+			OR = {
+				has_country_flag = GER_fighter_refused
+				has_country_flag = ITA_fighter_refused
+				has_country_flag = ENG_fighter_refused
+				has_country_flag = FRA_fighter_refused
+				has_country_flag = USA_fighter_refused
+			}
+		}
+		air_experience = 50
+	}
+
+}
+
+
+#Fighter competition - Yugoslavia is looking for a heavy fighter
+country_event = {
+	id = NOS_benelux.103
+	title = NOS_benelux.103.t
+	desc = {
+		text = NOS_benelux.103.desc_heavy_fighter
+		trigger = {
+			NOT = { 
+				has_country_flag = GER_heavy_fighter_refused
+				has_country_flag = ENG_heavy_fighter_refused
+				has_country_flag = USA_heavy_fighter_refused
+				has_country_flag = FRA_heavy_fighter_refused
+				has_country_flag = ITA_heavy_fighter_refused
+			} 
+		}
+	}
+	desc = {
+		text = NOS_benelux.103.desc_heavy_fighter_refused
+		trigger = {
+			OR = {
+		 		has_country_flag = GER_heavy_fighter_refused
+				has_country_flag = ENG_heavy_fighter_refused
+				has_country_flag = USA_heavy_fighter_refused
+				has_country_flag = FRA_heavy_fighter_refused
+				has_country_flag = ITA_heavy_fighter_refused
+		 	}
+		}
+	}
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+
+	option = {# Select German Plane
+		name = NOS_benelux.103.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = GER
+				factor = 10
+			}
+			modifier = {
+				GER = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				GER = {
+					has_tech = heavy_fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = heavy_fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = heavy_fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					GER = { has_tech = heavy_fighter1}
+					BEL = { NOT = { has_tech = heavy_fighter1 } }
+				}
+				AND = {
+					GER = { has_tech = heavy_fighter2}
+					BEL = { NOT = { has_tech = heavy_fighter2 } }
+				}
+				AND = {
+					GER = { has_tech = heavy_fighter3}
+					BEL = { NOT = { has_tech = heavy_fighter3 } }
+				}
+			}
+			NOT = { has_war_with = GER }
+			NOT = { has_country_flag = GER_heavy_fighter_refused }
+		}
+		GER = { country_event = NOS_benelux.109 }	
+	}
+
+	option = {# select italian plane
+		name = NOS_benelux.103.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ITA
+				factor = 10
+			}
+			modifier = {
+				ITA = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				ITA = {
+					has_tech = heavy_fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = heavy_fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = heavy_fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ITA = { has_tech = heavy_fighter1}
+					BEL = { NOT = { has_tech = heavy_fighter1 } }
+				}
+				AND = {
+					ITA = { has_tech = heavy_fighter2}
+					BEL = { NOT = { has_tech = heavy_fighter2 } }
+				}
+				AND = {
+					ITA = { has_tech = heavy_fighter3}
+					BEL = { NOT = { has_tech = heavy_fighter3 } }
+				}
+			}
+			NOT = { has_war_with = ITA }
+			NOT = { has_country_flag = ITA_heavy_fighter_refused }
+		}
+		ITA = { country_event = NOS_benelux.109 }	
+	}
+
+	option = {# select french plane
+		name = NOS_benelux.103.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = FRA
+				factor = 10
+			}
+			modifier = {
+				FRA = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				FRA = {
+					has_tech = heavy_fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = heavy_fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = heavy_fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					FRA = { has_tech = heavy_fighter1}
+					BEL = { NOT = { has_tech = heavy_fighter1 } }
+				}
+				AND = {
+					FRA = { has_tech = heavy_fighter2}
+					BEL = { NOT = { has_tech = heavy_fighter2 } }
+				}
+				AND = {
+					FRA = { has_tech = heavy_fighter3}
+					BEL = { NOT = { has_tech = heavy_fighter3 } }
+				}
+			}
+			NOT = { has_war_with = FRA }
+			NOT = { has_country_flag = FRA_heavy_fighter_refused }
+			
+		}
+		FRA = { country_event = NOS_benelux.109 }	
+	}
+	option = {# select british plane
+		name = NOS_benelux.103.d
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ENG
+				factor = 10
+			}
+			modifier = {
+				ENG = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				ENG = {
+					has_tech = heavy_fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = heavy_fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = heavy_fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ENG = { has_tech = heavy_fighter1}
+					BEL = { NOT = { has_tech = heavy_fighter1 } }
+				}
+				AND = {
+					ENG = { has_tech = heavy_fighter2}
+					BEL = { NOT = { has_tech = heavy_fighter2 } }
+				}
+				AND = {
+					ENG = { has_tech = heavy_fighter3}
+					BEL = { NOT = { has_tech = heavy_fighter3 } }
+				}
+			}
+			NOT = { has_war_with = ENG }
+			NOT = { has_country_flag = ENG_heavy_fighter_refused }
+		}
+		ENG = { country_event = NOS_benelux.109 }	
+	}
+	option = {# select american plane
+		name = NOS_benelux.103.e
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = USA
+				factor = 10
+			}
+			modifier = {
+				USA = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				USA = {
+					has_tech = heavy_fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = heavy_fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = heavy_fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					USA = { has_tech = heavy_fighter1}
+					BEL = { NOT = { has_tech = heavy_fighter1 } }
+				}
+				AND = {
+					USA = { has_tech = heavy_fighter2}
+					BEL = { NOT = { has_tech = heavy_fighter2 } }
+				}
+				AND = {
+					USA = { has_tech = heavy_fighter3}
+					BEL = { NOT = { has_tech = heavy_fighter3 } }
+				}
+			}
+			NOT = { has_war_with = USA }
+			NOT = { has_country_flag = USA_heavy_fighter_refused }
+			NOT = { #to prevent overflow issues
+				AND = {
+					GER = {
+						is_available_heavy_fighter_BEL = yes
+					}
+					FRA = {
+						is_available_heavy_fighter_BEL = yes
+					}
+					ITA = {
+						is_available_heavy_fighter_BEL = yes
+					}
+					ENG = {
+						is_available_heavy_fighter_BEL = yes
+					}
+				}
+			}
+		}
+		USA = { country_event = NOS_benelux.109 }	
+	}
+	option = {# failsafe
+		name = NOS_benelux.102.f	
+		trigger = {
+			OR = {
+				has_country_flag = GER_heavy_fighter_refused
+				has_country_flag = ITA_heavy_fighter_refused
+				has_country_flag = ENG_heavy_fighter_refused
+				has_country_flag = FRA_heavy_fighter_refused
+				has_country_flag = USA_heavy_fighter_refused
+			}
+		}
+		air_experience = 50
+	}
+
+}
+
+#fighter competition - light fighter competition winner gets a choice whether to permit license production
+country_event = {
+	id = NOS_benelux.104
+	title = NOS_benelux.104.t
+	desc = NOS_benelux.104.desc 
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+
+	option = {# certainly
+		name = NOS_benelux.104.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				has_war = yes
+				factor = 0.5
+			}
+		}
+		BEL = { country_event = NOS_benelux.106 }
+		add_relation_modifier = {
+			target = BEL
+			modifier = free_license # name is from static_modifiers.txt
+		}
+		if = {
+			limit = {
+				has_tech = fighter1
+				NOT = { has_tech = fighter2 }
+			}
+			create_production_license = {
+				target = BEL 
+				equipment = {
+					type = fighter_equipment_1
+					
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = fighter2
+				NOT = { has_tech = fighter3 }
+			}
+			create_production_license = {
+				target = BEL 
+				equipment = {
+					type = fighter_equipment_2
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = fighter3
+			}
+			create_production_license = {
+				target = BEL 
+				equipment = {
+					type = fighter_equipment_3
+				}
+				cost_factor = 0
+			}
+		}
+	}
+
+	option = {# no
+		name = NOS_benelux.104.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_in_faction_with = BEL
+				factor = 0
+			}
+		}
+		if = {
+			limit = { tag = GER }
+			BEL = { set_country_flag = GER_fighter_refused }
+		}
+		if = {
+			limit = { tag = ITA }
+			BEL = { set_country_flag = ITA_fighter_refused }
+		}
+		if = {
+			limit = { tag = FRA }
+			BEL = { set_country_flag = FRA_fighter_refused }
+		}
+		if = {
+			limit = { tag = ENG }
+			BEL = { set_country_flag = ENG_fighter_refused }
+		}
+		if = {
+			limit = { tag = USA }
+			BEL = { set_country_flag = USA_fighter_refused }
+		}
+		BEL = { country_event = NOS_benelux.102 }
+		reverse_add_opinion_modifier = { target = BEL modifier = refused_help }
+	}
+}
+
+#fighter competition - heavy fighter competition winner gets a choice whether to permit license production
+country_event = {
+	id = NOS_benelux.105
+	title = NOS_benelux.105.t
+	desc = NOS_benelux.105.desc 
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+
+	option = {# certainly
+		name = NOS_benelux.105.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				has_war = yes
+				factor = 0.5
+			}
+		}
+		BEL = { country_event = NOS_benelux.106 }
+		if = {
+			limit = {
+				has_tech = heavy_fighter1
+				NOT = { has_tech = heavy_fighter2 }
+			}
+			create_production_license = {
+				target = BEL 
+				equipment = {
+					type = heavy_fighter_equipment_1
+				}
+				cost_factor = 1
+			}
+		}
+		if = {
+			limit = {
+				has_tech = heavy_fighter2
+				NOT = { has_tech = heavy_fighter3 }
+			}
+			create_production_license = {
+				target = BEL 
+				equipment = {
+					type = heavy_fighter_equipment_2	
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = heavy_fighter3
+			}
+			create_production_license = {
+				target = BEL 
+				equipment = {
+					type = heavy_fighter_equipment_3
+				}
+				cost_factor = 0
+			}
+		}
+		
+	}
+
+	option = {# no
+		name = NOS_benelux.105.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_in_faction_with = BEL
+				factor = 0
+			}
+		}
+		if = {
+			limit = { tag = GER }
+			BEL = { set_country_flag = GER_heavy_fighter_refused }
+		}
+		if = {
+			limit = { tag = ITA }
+			BEL = { set_country_flag = ITA_heavy_fighter_refused }
+		}
+		if = {
+			limit = { tag = FRA }
+			BEL = { set_country_flag = FRA_heavy_fighter_refused }
+		}
+		if = {
+			limit = { tag = ENG }
+			BEL = { set_country_flag = ENG_heavy_fighter_refused }
+		}
+		if = {
+			limit = { tag = USA }
+			BEL = { set_country_flag = USA_heavy_fighter_refused }
+		}
+		BEL = { country_event = NOS_benelux.103 }
+		reverse_add_opinion_modifier = { target = BEL modifier = refused_help }
+	}
+}
+
+#fighter competition - license production approved
+country_event = {
+	id = NOS_benelux.106
+	title = NOS_benelux.106.t
+	desc = NOS_benelux.106.desc 
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+
+	option = {# neat
+		name = NOS_benelux.106.a
+		
+	}
+}	
+#bomber competition - initial choice for Yugoslavia
+country_event = {
+	id = NOS_benelux.107
+	title = NOS_benelux.107.t
+	desc = NOS_benelux.107.desc 
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {# CAS
+		name = NOS_benelux.107.a
+		trigger = {
+			OR = {
+				GER = {
+					is_available_cas_BEL = yes
+				}
+				FRA = {
+					is_available_cas_BEL = yes
+				}
+				ITA = {
+					is_available_cas_BEL = yes
+				}
+				ENG = {
+					is_available_cas_BEL = yes
+				}
+				USA = {
+					is_available_cas_BEL = yes
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_tech = CAS1
+				add = -10
+			}
+			modifier = {
+				has_tech = CAS2
+				add = -10
+			}
+			modifier = {
+				has_tech = CAS3
+				factor = 0
+			}
+		}
+		country_event = NOS_benelux.108 	
+	}
+
+	option = {# TAC
+		name = NOS_benelux.107.b
+		trigger = {
+			OR = {
+				GER = {
+					is_available_tac_BEL = yes
+				}
+				FRA = {
+					is_available_tac_BEL = yes
+				}
+				ITA = {
+					is_available_tac_BEL = yes
+				}
+				ENG = {
+					is_available_tac_BEL = yes
+				}
+				USA = {
+					is_available_tac_BEL = yes
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_tech = tactical_bomber1
+				add = -10
+			}
+			modifier = {
+				has_tech = tactical_bomber2
+				add = -10
+			}
+			modifier = {
+				has_tech = tactical_bomber3
+				factor = 0
+			}
+		}
+		country_event = NOS_benelux.109
+	}
+}
+
+#Bomber competition - Belgium is looking for a CAS
+country_event = {
+	id = NOS_benelux.108
+	title = NOS_benelux.108.t
+	desc = {
+		text = NOS_benelux.108.desc_cas
+		trigger = {
+			NOT = { 
+				has_country_flag = GER_CAS_refused
+				has_country_flag = ENG_CAS_refused
+				has_country_flag = USA_CAS_refused
+				has_country_flag = FRA_CAS_refused
+			} 
+		}
+	}
+	desc = {
+		text = NOS_benelux.108.desc_cas_refused
+		trigger = {
+			OR = {
+		 		has_country_flag = GER_CAS_refused
+				has_country_flag = ENG_CAS_refused
+				has_country_flag = USA_CAS_refused
+				has_country_flag = FRA_CAS_refused
+		 	}
+		}
+	}
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {# Select German Plane
+		name = NOS_benelux.108.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = GER
+				factor = 10
+			}
+			modifier = {
+				GER = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				GER = {
+					has_tech = CAS1
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = CAS2
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = CAS3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					GER = { has_tech = CAS1}
+					BEL = { NOT = { has_tech = CAS1 } }
+				}
+				AND = {
+					GER = { has_tech = CAS2}
+					BEL = { NOT = { has_tech = CAS2 } }
+				}
+				AND = {
+					GER = { has_tech = CAS3}
+					BEL = { NOT = { has_tech = CAS3 } }
+				}
+			}
+			NOT = { has_war_with = GER }
+			NOT = { has_country_flag = GER_CAS_refused }
+		}
+		GER = { country_event = NOS_benelux.110 }	
+	}
+
+	option = {# select french plane
+		name = NOS_benelux.108.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = FRA
+				factor = 10
+			}
+			modifier = {
+				FRA = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				FRA = {
+					has_tech = CAS1
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = CAS2
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = CAS3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					FRA = { has_tech = CAS1}
+					BEL = { NOT = { has_tech = CAS1 } }
+				}
+				AND = {
+					FRA = { has_tech = CAS2}
+					BEL = { NOT = { has_tech = CAS2 } }
+				}
+				AND = {
+					FRA = { has_tech = CAS3}
+					BEL = { NOT = { has_tech = CAS3 } }
+				}
+			}
+			NOT = { has_war_with = FRA }
+			NOT = { has_country_flag = FRA_CAS_refused }
+		}
+		FRA = { country_event = NOS_benelux.110 }	
+	}
+	option = {# select british plane
+		name = NOS_benelux.108.d
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ENG
+				factor = 10
+			}
+			modifier = {
+				ENG = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				ENG = {
+					has_tech = CAS1
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = CAS2
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = CAS3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ENG = { has_tech = CAS1}
+					BEL = { NOT = { has_tech = CAS1 } }
+				}
+				AND = {
+					ENG = { has_tech = CAS2}
+					BEL = { NOT = { has_tech = CAS2 } }
+				}
+				AND = {
+					ENG = { has_tech = CAS3}
+					BEL = { NOT = { has_tech = CAS3 } }
+				}
+			}
+			NOT = { has_war_with = ENG }
+			NOT = { has_country_flag = ENG_CAS_refused }
+		}
+		ENG = { country_event = NOS_benelux.110 }	
+	}
+	option = {# select american plane
+		name = NOS_benelux.108.e
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = USA
+				factor = 10
+			}
+			modifier = {
+				USA = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				USA = {
+					has_tech = CAS1
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = CAS2
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = CAS3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					USA = { has_tech = CAS1}
+					BEL = { NOT = { has_tech = CAS1 } }
+				}
+				AND = {
+					USA = { has_tech = CAS2}
+					BEL = { NOT = { has_tech = CAS2 } }
+				}
+				AND = {
+					USA = { has_tech = CAS3}
+					BEL = { NOT = { has_tech = CAS3 } }
+				}
+			}
+			NOT = { has_war_with = USA }
+			NOT = { has_country_flag = USA_CAS_refused }
+			NOT = { #to prevent overflow issues
+				AND = {
+					GER = {
+						is_available_cas_BEL = yes
+					}
+					FRA = {
+						is_available_cas_BEL = yes
+					}
+					ITA = {
+						is_available_cas_BEL = yes
+					}
+					ENG = {
+						is_available_cas_BEL = yes
+					}
+				}
+			}
+		}
+		USA = { country_event = NOS_benelux.110 }	
+	}
+	option = {# failsafe
+		name = NOS_benelux.102.f	
+		trigger = {
+			OR = {
+				has_country_flag = GER_fighter_refused
+				has_country_flag = ITA_fighter_refused
+				has_country_flag = ENG_fighter_refused
+				has_country_flag = FRA_fighter_refused
+				has_country_flag = USA_fighter_refused
+			}
+		}
+		air_experience = 50
+	}
+
+}
+#Fighter competition - Yugoslavia is looking for a tacbomber
+country_event = {
+	id = NOS_benelux.109
+	title = NOS_benelux.109.t
+	desc = {
+		text = NOS_benelux.109.desc_tac
+		trigger = {
+			NOT = { 
+				has_country_flag = GER_tactical_bomber_refused
+				has_country_flag = ENG_tactical_bomber_refused
+				has_country_flag = USA_tactical_bomber_refused
+				has_country_flag = FRA_tactical_bomber_refused
+				has_country_flag = ITA_tactical_bomber_refused
+			} 
+		}
+	}
+	desc = {
+		text = NOS_benelux.109.desc_tac_refused
+		trigger = {
+			OR = {
+		 		has_country_flag = GER_tactical_bomber_refused
+				has_country_flag = ENG_tactical_bomber_refused
+				has_country_flag = USA_tactical_bomber_refused
+				has_country_flag = FRA_tactical_bomber_refused
+				has_country_flag = ITA_tactical_bomber_refused
+		 	}
+		}
+	}
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {# Select German Plane
+		name = NOS_benelux.109.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = GER
+				factor = 10
+			}
+			modifier = {
+				GER = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				GER = {
+					has_tech = tactical_bomber1
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = tactical_bomber2
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = tactical_bomber3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					GER = { has_tech = tactical_bomber1}
+					BEL = { NOT = { has_tech = tactical_bomber1 } }
+				}
+				AND = {
+					GER = { has_tech = tactical_bomber2}
+					BEL = { NOT = { has_tech = tactical_bomber2 } }
+				}
+				AND = {
+					GER = { has_tech = tactical_bomber3}
+					BEL = { NOT = { has_tech = tactical_bomber3 } }
+				}
+			}
+			NOT = { has_war_with = GER }
+			NOT = { has_country_flag = GER_tactical_bomber_refused }
+		}
+		GER = { country_event = NOS_benelux.111 }	
+	}
+
+	option = {# select italian plane
+		name = NOS_benelux.109.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ITA
+				factor = 10
+			}
+			modifier = {
+				ITA = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				ITA = {
+					has_tech = tactical_bomber1
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = tactical_bomber2
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = tactical_bomber3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ITA = { has_tech = tactical_bomber1}
+					BEL = { NOT = { has_tech = tactical_bomber1 } }
+				}
+				AND = {
+					ITA = { has_tech = tactical_bomber2}
+					BEL = { NOT = { has_tech = tactical_bomber2 } }
+				}
+				AND = {
+					ITA = { has_tech = tactical_bomber3}
+					BEL = { NOT = { has_tech = tactical_bomber3 } }
+				}
+			}
+			NOT = { has_war_with = ITA }
+			NOT = { has_country_flag = ITA_tactical_bomber_refused }
+		}
+		ITA = { country_event = NOS_benelux.111 }	
+	}
+
+	option = {# select french plane
+		name = NOS_benelux.109.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = FRA
+				factor = 10
+			}
+			modifier = {
+				FRA = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				FRA = {
+					has_tech = tactical_bomber1
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = tactical_bomber2
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = tactical_bomber3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					FRA = { has_tech = tactical_bomber1}
+					BEL = { NOT = { has_tech = tactical_bomber1 } }
+				}
+				AND = {
+					FRA = { has_tech = tactical_bomber2}
+					BEL = { NOT = { has_tech = tactical_bomber2 } }
+				}
+				AND = {
+					FRA = { has_tech = tactical_bomber3}
+					BEL = { NOT = { has_tech = tactical_bomber3 } }
+				}
+			}
+			NOT = { has_war_with = FRA }
+			NOT = { has_country_flag = FRA_tactical_bomber_refused }
+		}
+		FRA = { country_event = NOS_benelux.111 }	
+	}
+	option = {# select british plane
+		name = NOS_benelux.109.d
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ENG
+				factor = 10
+			}
+			modifier = {
+				ENG = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				ENG = {
+					has_tech = tactical_bomber1
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = tactical_bomber2
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = tactical_bomber3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ENG = { has_tech = tactical_bomber1}
+					BEL = { NOT = { has_tech = tactical_bomber1 } }
+				}
+				AND = {
+					ENG = { has_tech = tactical_bomber2}
+					BEL = { NOT = { has_tech = tactical_bomber2 } }
+				}
+				AND = {
+					ENG = { has_tech = tactical_bomber3}
+					BEL = { NOT = { has_tech = tactical_bomber3 } }
+				}
+			}
+			NOT = { has_war_with = ENG }
+			NOT = { has_country_flag = ENG_tactical_bomber_refused }
+		}
+		ENG = { country_event = NOS_benelux.111 }	
+	}
+	option = {# select american plane
+		name = NOS_benelux.109.e
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = USA
+				factor = 10
+			}
+			modifier = {
+				USA = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				USA = {
+					has_tech = tactical_bomber1
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = tactical_bomber2
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = tactical_bomber3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					USA = { has_tech = tactical_bomber1}
+					BEL = { NOT = { has_tech = tactical_bomber1 } }
+				}
+				AND = {
+					USA = { has_tech = tactical_bomber2}
+					BEL = { NOT = { has_tech = tactical_bomber2 } }
+				}
+				AND = {
+					USA = { has_tech = tactical_bomber3}
+					BEL = { NOT = { has_tech = tactical_bomber3 } }
+				}
+			}
+			NOT = { has_war_with = USA }
+			NOT = { has_country_flag = USA_tactical_bomber_refused }
+			NOT = { #to prevent overflow issues
+				AND = {
+					GER = {
+						is_available_tac_BEL = yes
+					}
+					FRA = {
+						is_available_tac_BEL = yes
+					}
+					ITA = {
+						is_available_tac_BEL = yes
+					}
+					ENG = {
+						is_available_tac_BEL = yes
+					}
+				}
+			}
+		}
+		USA = { country_event = NOS_benelux.111 }	
+	}
+	option = {# failsafe
+		name = NOS_benelux.151.f	
+		trigger = {
+			OR = {
+				has_country_flag = GER_fighter_refused
+				has_country_flag = ITA_fighter_refused
+				has_country_flag = ENG_fighter_refused
+				has_country_flag = FRA_fighter_refused
+				has_country_flag = USA_fighter_refused
+			}
+		}
+		air_experience = 50
+	}
+
+}
+
+#bomber competition - CAS competition winner gets a choice whether to permit license production
+country_event = {
+	id = NOS_benelux.110
+	title = NOS_benelux.110.t
+	desc = NOS_benelux.110.desc 
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {# certainly
+		name = NOS_benelux.110.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				has_war = yes
+				factor = 0.5
+			}
+		}
+		BEL = { country_event = NOS_benelux.112 }
+		if = {
+			limit = {
+				has_tech = CAS1
+				NOT = { has_tech = CAS2 }
+			}
+			create_production_license = {
+				target = BEL 
+				equipment = {
+					type = CAS_equipment_1
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = CAS2
+				NOT = { has_tech = CAS3 }
+			}
+			create_production_license = {
+				target = BEL 
+				equipment = {
+					type = CAS_equipment_2	
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = CAS3
+			}
+			create_production_license = {
+				target = BEL 
+				equipment = {
+					type = CAS_equipment_3
+				}
+				cost_factor = 0
+			}
+		}
+	}
+
+	option = {# no
+		name = NOS_benelux.110.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_in_faction_with = BEL
+				factor = 0
+			}
+		}
+		if = {
+			limit = { tag = GER }
+			BEL = { set_country_flag = GER_CAS_refused }
+		}
+		if = {
+			limit = { tag = ITA }
+			BEL = { set_country_flag = ITA_CAS_refused }
+		}
+		if = {
+			limit = { tag = FRA }
+			BEL = { set_country_flag = FRA_CAS_refused }
+		}
+		if = {
+			limit = { tag = ENG }
+			BEL = { set_country_flag = ENG_CAS_refused }
+		}
+		if = {
+			limit = { tag = USA }
+			BEL = { set_country_flag = USA_CAS_refused }
+		}
+		BEL = { country_event = NOS_benelux.108 }
+		reverse_add_opinion_modifier = { target = BEL modifier = refused_help }
+	}
+}
+
+#bomber competition - tac bomber competition winner gets a choice whether to permit license production
+country_event = {
+	id = NOS_benelux.111
+	title = NOS_benelux.111.t
+	desc = NOS_benelux.111.desc 
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {# certainly
+		name = NOS_benelux.111.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				has_war = yes
+				factor = 0.5
+			}
+		}
+		BEL = { country_event = NOS_benelux.112 }
+		if = {
+			limit = {
+				has_tech = tactical_bomber1
+				NOT = { has_tech = tactical_bomber2 }
+			}
+			create_production_license = {
+				target = BEL 
+				equipment = {
+					type = tac_bomber_equipment_1
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = tactical_bomber2
+				NOT = { has_tech = tactical_bomber3 }
+			}
+			create_production_license = {
+				target = BEL 
+				equipment = {
+					type = tac_bomber_equipment_2	
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = tactical_bomber3
+			}
+			create_production_license = {
+				target = BEL 
+				equipment = {
+					type = tac_bomber_equipment_3
+				}
+				cost_factor = 0
+			}
+		}
+	}
+
+	option = {# no
+		name = NOS_benelux.111.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_in_faction_with = BEL
+				factor = 0
+			}
+		}
+		if = {
+			limit = { tag = GER }
+			BEL = { set_country_flag = GER_tactical_bomber_refused }
+		}
+		if = {
+			limit = { tag = ITA }
+			BEL = { set_country_flag = ITA_tactical_bomber_refused }
+		}
+		if = {
+			limit = { tag = FRA }
+			BEL = { set_country_flag = FRA_tactical_bomber_refused }
+		}
+		if = {
+			limit = { tag = ENG }
+			BEL = { set_country_flag = ENG_tactical_bomber_refused }
+		}
+		if = {
+			limit = { tag = USA }
+			BEL = { set_country_flag = USA_tactical_bomber_refused }
+		}
+		BEL = { country_event = NOS_benelux.109 }
+		reverse_add_opinion_modifier = { target = BEL modifier = refused_help }
+	}
+}
+
+#bomber competition - license production approved
+country_event = {
+	id = NOS_benelux.112
+	title = NOS_benelux.112.t
+	desc = NOS_benelux.112.desc 
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {# neat
+		name = NOS_benelux.112.a
+		
+	}
+}
+
+country_event = {
+	id = NOS_benelux.113
+	title = NOS_benelux.113.t
+	desc = NOS_benelux.113.desc 
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {# joint dev of CAS 2 with Belgium
+		ai_chance = {
+			factor = 5
+			modifier = {
+				ITA = {
+					has_government = fascism
+					has_war = yes
+				}
+				factor = 0.5
+			}
+			modifier = { ##avoid paradox
+				ITA = {
+					has_war_with = BEL
+				}
+				factor = 0
+			}			
+		}		
+		name = NOS_benelux.113.a
+		air_experience = 2
+        add_tech_bonus = {
+            name = CAS_bonus
+            bonus = 0.3
+            ahead_reduction = 0.4
+            uses = 1
+            category = cas_bomber
+            }
+		create_equipment_variant = { 
+			name = "Caproni Ca.335 Maestrale" 
+			type = cas_equipment_1 
+			upgrades = { 
+				plane_cas_upgrade = 4 
+				plane_engine_upgrade = 1
+				plane_reliability_upgrade = 4 
+			}
+		} 		
+		create_production_license = {
+			target = BEL 
+			equipment = {
+					type = cas_equipment_1
+				}
+				cost_factor = 0
+			}	
+		BEL = {
+			create_equipment_variant = { 
+				name = "Sabca S.47" 
+				type =  cas_equipment_1
+				upgrades = { 
+					plane_cas_upgrade = 4 
+					plane_engine_upgrade = 1 
+					plane_reliability_upgrade = 4 
+				}
+			}				
+			air_experience = 40
+			country_event = NOS_benelux.114
+			}		
+	}
+	option = {# Autarcia! Avanti Savoia!
+		name = NOS_benelux.113.b
+		BEL = {country_event = NOS_benelux.108}
+		
+	}	
+}
+country_event = {
+	id = NOS_benelux.114
+	title = NOS_benelux.114.t
+	desc = NOS_benelux.114.desc 
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {# neat
+		name = NOS_benelux.114.a
+        add_tech_bonus = {
+            name = CAS_bonus
+            bonus = 0.25
+            uses = 1
+            category = cas_bomber
+            }		
+		air_experience = 5
+		
+	}
+}
+# french guarantee at the beginning of the game
+country_event = {
+	id = NOS_benelux.115
+	title = NOS_benelux.115.t
+	desc = NOS_benelux.115.desc 
+	picture = GFX_report_event_map_benelux
+	
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		date > 1936.01.02	
+	}
+
+	option = {
+		name = NOS_benelux.115.a
+		set_country_flag = BEL_declared_neutrality
+		FRA = {
+			diplomatic_relation = {
+				country = BEL
+				relation = guarantee
+				active = yes
+			}		
+		}			
+	}
+}
+#remove french guarantee
+country_event = {
+	id = NOS_benelux.116
+	title = NOS_benelux.116.t
+	desc = NOS_benelux.116.desc 
+	picture = GFX_report_event_map_benelux
+	
+	fire_only_once = yes
+	trigger = {
+		tag = BEL
+		OR = {
+			has_country_flag = BEL_declared_neutrality
+			OR = { has_government = monarchism has_government = neutrality }
+			has_government = fascism
+			FRA = {OR = { has_government = monarchism has_government = neutrality }}
+			FRA = {has_government = fascism}
+			has_country_flag = BEL_king_martial_law
+			}
+	}
+	mean_time_to_happen = {
+			days = 5
+		}
+	option = {
+		name = NOS_benelux.116.a
+		FRA = {
+			diplomatic_relation = {
+				country = BEL
+				relation = guarantee
+				active = no
+			}
+		}	
+		hidden_effect = {
+				FRA = {	
+					news_event = { hours = 6 id = NOS_benelux.117 }
+					}
+				ENG = {	
+					news_event = { hours = 6 id = NOS_benelux.117 }
+					}
+				GER = {	
+					news_event = { hours = 6 id = NOS_benelux.117 }
+					}
+				HOL = {	
+					news_event = { hours = 6 id = NOS_benelux.117 }
+					}
+				}
+			}			
+		}
+# news to the french: remove french guarantee
+news_event = {
+	id = NOS_benelux.117
+	title = NOS_benelux.117.t
+	desc = NOS_benelux.117.desc 
+	picture = GFX_news_events_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	option = {# that's their decision
+		name = NOS_benelux.117.a
+		trigger = {
+			TAG = FRA
+		}
+	}
+	option = {# we will respect that decision
+		name = NOS_benelux.117.b
+		trigger = {
+			NOT = {
+				TAG = FRA
+				TAG = GER
+			}
+		}	
+	}
+	option = {# interresting
+		name = NOS_benelux.117.c
+		trigger = {
+				TAG = GER
+			}
+		}	
+	}
+#flemish tension over french guarantees
+country_event = {
+	id = NOS_benelux.118
+	title = NOS_benelux.118.t
+	desc = NOS_benelux.118.desc 
+	picture = GFX_report_event_Van_Zeeland_government
+	
+	trigger = {
+		tag = BEL
+		has_completed_focus = BEL_democratic_influence
+		NOT = {
+			has_country_flag = BEL_declared_neutrality
+		}
+	}	
+	fire_only_once = yes
+	mean_time_to_happen = {
+			days = 20
+		}
+		
+	option = {# bend to their will
+		name = NOS_benelux.118.a
+		set_country_flag = BEL_declared_neutrality
+		FRA = {
+			diplomatic_relation = {
+				country = BEL
+				relation = guarantee
+				active = no
+			}
+		}
+		add_ideas = neutrality_idea
+	}
+	option = {# refuse their demands
+		name = NOS_benelux.118.b
+		trigger = {
+			NOT ={
+				FRA = { has_completed_focus = FRA_revise_versailles
+				}
+			}	
+		}		
+		add_political_power = -20	
+		add_timed_idea = {
+			idea = FRA_disjointed_government
+			days = 200
+		}		
+	}	
+}
+#Spaak and socialist group resign due to neutrality debate, Janson PM of catholic - liberal coalition
+country_event = {
+	id = NOS_benelux.119
+	title = NOS_benelux.119.t
+	desc = NOS_benelux.119.desc 
+	picture = GFX_report_event_Van_Zeeland_government
+	
+	trigger = {
+		tag = BEL
+		has_completed_focus = BEL_democratic_influence
+		has_idea = FRA_disjointed_government
+		NOT = {
+			has_country_flag = BEL_declared_neutrality
+		}
+	}	
+	
+	mean_time_to_happen = {
+			days = 90
+		}
+		
+	option = {# bend to their will
+		name = NOS_benelux.119.a
+		add_political_power = -10
+		FRA = {
+			diplomatic_relation = {
+				country = BEL
+				relation = guarantee
+				active = no
+			}		
+		}
+		add_ideas = neutrality_idea
+		set_country_flag = BEL_declared_neutrality		
+	}
+	option = {# refuse to accept their demands
+		name = NOS_benelux.119.b
+		trigger = {
+			NOT ={
+				FRA = { has_completed_focus = FRA_revise_versailles
+				}
+			}	
+		}
+		add_political_power = -30	
+		remove_ideas = FRA_disjointed_government
+		remove_ideas = BEL_peacetime_national_union
+		create_country_leader = {
+			name = "Paul-Emile Janson"
+			desc = "Paul-Emile Janson"
+			picture = "portrait_Janson.dds"
+			expire = "1939.1.1"
+			ideology = liberalism
+			traits = {
+			}
+		}
+		if = {
+			limit = {
+				has_idea = BEL_paul-henri_spaak
+				NOT = {has_idea = BEL_gaston_eyskens}
+				}
+				swap_ideas = { remove_idea = BEL_paul-henri_spaak add_idea = BEL_gaston_eyskens } 
+			}
+		if = {
+			limit = {
+				has_idea = BEL_paul-henri_spaak
+				has_idea = BEL_gaston_eyskens
+				}
+				remove_ideas = BEL_paul-henri_spaak
+				add_political_power = 150
+			}			
+		set_country_flag = BEL_neutrality_debate_over
+		custom_effect_tooltip = BEL_neutrality_debate_over_tooltip
+		}	
+	}
+	# Join the french entente?
+country_event = {
+	id = NOS_benelux.120
+	title = NOS_benelux.120.t
+	desc = NOS_benelux.120.desc 
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+
+	option = {# Join the french entente
+		name = NOS_benelux.120.a
+		FRA = {
+			add_to_faction = ROOT
+			ROOT = {
+				add_ai_strategy = {
+					type = alliance
+					id = "FRA"
+					value = 200
+					}
+				}
+			}
+		add_ideas = BEL_french_advisors			
+		}
+	option = {# Join the allies then
+		name = NOS_benelux.120.b
+			ENG = { 
+				country_event = { id = NOS_benelux.8 } 
+			}		
+		}
+	}	
+	# Fascist meeting disturbed by communists
+country_event = {
+	id = NOS_benelux.121
+	title = NOS_benelux.121.t
+	desc = NOS_benelux.121.desc 
+	picture = GFX_report_event_generic_riot
+	
+	trigger = {
+		tag = BEL
+		OR = {
+			has_completed_focus = BEL_go_left
+			AND = {
+				has_completed_focus = BEL_form_coalition_government
+				communism > 0.05				
+			}
+		}
+		NOT = {has_idea = BEL_fascism_banned}
+		fascism > 0.04
+		NOT = { OR = { has_government = monarchism has_government = neutrality }}
+		NOT = {has_country_flag = BEL_king_martial_law}
+	}
+	mean_time_to_happen = {
+			days = 191
+			modifier = {
+				factor = 1.50
+				has_completed_focus = BEL_form_coalition_government
+			}			
+		}
+	option = {
+		name = NOS_benelux.121.a
+		trigger = {
+			has_completed_focus = BEL_go_left
+			}		
+			add_political_power = -2
+			random_list = { #communism grow
+				25 = { }
+				25 = { 
+					add_popularity = {
+					ideology = communism
+					popularity = 0.0075
+					} 
+				}				
+				25 = { 
+					add_popularity = {
+					ideology = communism
+					popularity = 0.01
+					} 
+				}
+				25 = { 
+					add_popularity = {
+					ideology = communism
+					popularity = 0.015
+					} 
+				}				
+			}		
+		}
+	option = {# intervene
+		name = NOS_benelux.121.b
+			trigger = {
+				OR = {
+					has_completed_focus = BEL_form_coalition_government
+					NOT = { has_country_flag = BEL_1936_election}
+				}
+			}		
+			add_political_power = -2			
+		}		
+	}
+	#great strike
+country_event = {
+	id = NOS_benelux.122
+	title = NOS_benelux.122.t
+	desc = NOS_benelux.122.desc 
+	picture = GFX_report_event_worker_protests
+	
+	trigger = {
+		tag = BEL
+		has_completed_focus = BEL_go_left
+		communism > 0.15
+		NOT = { OR = { has_government = monarchism has_government = neutrality }}
+		NOT = {has_country_flag = BEL_king_martial_law}
+		has_war = no
+	}
+	mean_time_to_happen = {
+			days = 316
+		}
+	option = {# necessary damage
+		name = NOS_benelux.122.a
+			ai_chance = {
+				factor = 98
+			}		
+			add_political_power = -10
+			add_popularity = {
+				ideology = communism
+				popularity = 0.03
+				}
+		add_timed_idea = {
+			idea = BEL_factory_strikes
+			days = 2
+			}				
+		}
+	option = {# necessary damage
+		name = NOS_benelux.123.b
+		trigger = { communism > 0.35 }
+			ai_chance = {
+				factor = 2
+			}		
+			add_political_power = -200
+			set_country_flag = BEL_king_martial_law
+			country_event = { hours = 15 id = NOS_benelux.152 }			
+		}		
+	}	
+	# communist march on Brussels
+country_event = {
+	id = NOS_benelux.123
+	title = NOS_benelux.123.t
+	desc = NOS_benelux.123.desc 
+	picture = GFX_report_event_generic_riot
+	
+	trigger = {
+		tag = BEL
+		has_completed_focus = BEL_go_left
+		communism > 0.30
+		NOT = { OR = { has_government = monarchism has_government = neutrality }}
+		NOT = {has_country_flag = BEL_king_martial_law}
+		has_war = no
+	}
+	mean_time_to_happen = {
+			days = 340
+		}
+	option = {# necessary damage
+		name = NOS_benelux.123.a
+			ai_chance = {
+				factor = 98
+			}		
+			add_political_power = -50
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_timed_idea = {
+				idea = BEL_factory_strikes
+				days = 10
+			}
+			random_list = {
+				80 = { }
+				20 = { BEL = { country_event = { id = NOS_benelux.124 } } }
+			}			
+		}
+	option = {# necessary damage
+		name = NOS_benelux.123.b
+		trigger = { communism > 0.35 }
+			ai_chance = {
+				factor = 2
+			}		
+			add_political_power = -200
+			set_country_flag = BEL_king_martial_law
+			country_event = { hours = 15 id = NOS_benelux.152 }			
+		}		
+	}
+	#Xavier Relecom arrested during strikes
+country_event = {
+	id = NOS_benelux.124
+	title = NOS_benelux.124.t
+	desc = NOS_benelux.124.desc 
+	picture = GFX_report_event_relecom_arrested
+	is_triggered_only = yes
+	option = {# necessary damage
+		name = NOS_benelux.124.a
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.02
+			}			
+		}
+	}	
+	#successful rexist meeting
+country_event = {
+	id = NOS_benelux.125
+	title = NOS_benelux.125.t
+	desc = NOS_benelux.125.desc 
+	picture = GFX_report_event_degrelle_speaking
+	
+	trigger = {
+		tag = BEL
+		OR = {
+			NOT = { has_country_flag = BEL_1936_election}
+			has_completed_focus = BEL_go_right
+			AND = {
+				has_completed_focus = BEL_form_coalition_government
+				date < 1939.6.1
+			}
+		}
+		NOT = {has_country_flag = BEL_king_martial_law}
+		NOT = {has_idea = BEL_fascism_banned}
+		NOT = { has_government = fascism}
+		has_war = no
+	}
+	mean_time_to_happen = {
+			days = 170
+			modifier = {
+				factor = 1.6
+				has_completed_focus = BEL_form_coalition_government
+			}			
+		}
+	option = {# necessary damage
+		name = NOS_benelux.125.a
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.01
+			}
+			random_list = { #degrelle arrested for disturbing public order
+				80 = { }
+				10 = { BEL = { country_event = { id = NOS_benelux.129 } } }
+				10 = { BEL = { country_event = { id = NOS_benelux.130 } } }
+			}			
+		}
+	}
+	#massive rexist meeting
+country_event = {
+	id = NOS_benelux.126
+	title = NOS_benelux.126.t
+	desc = NOS_benelux.126.desc 
+	picture = GFX_report_event_meeting_rex
+	
+	trigger = {
+		tag = BEL
+		has_completed_focus = BEL_go_right
+		fascism > 0.16
+		NOT = { has_government = fascism}
+		has_war = no
+		NOT = {has_idea = BEL_fascism_banned}
+		NOT = {has_country_flag = BEL_king_martial_law}
+	}
+	mean_time_to_happen = {
+		days = 210			
+	}
+	option = {# necessary damage
+		name = NOS_benelux.126.a
+			ai_chance = {
+				factor = 98
+			}		
+			add_political_power = -10
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}				
+		}
+	option = {# monarchist reaction
+		name = NOS_benelux.126.b
+		trigger = { fascism > 0.40 }
+			ai_chance = {
+				factor = 2
+			}		
+			add_political_power = -200
+			set_country_flag = BEL_king_martial_law
+			country_event = { hours = 15 id = NOS_benelux.152 }
+			hidden_effect = {
+				news_event = { hours = 48 id = NOS_benelux.146 }
+			}			
+		}		
+	}
+	#massive dinaso meeting
+country_event = {
+	id = NOS_benelux.127
+	title = NOS_benelux.127.t
+	desc = NOS_benelux.127.desc 
+	picture = GFX_report_event_dietsche_militie
+	
+	trigger = {
+		tag = BEL
+		has_completed_focus = BEL_go_right
+		fascism > 0.15
+		NOT = { has_government = fascism}
+		has_war = no
+		NOT = {has_global_flag = van_severen_killed}
+		NOT = {has_idea = BEL_fascism_banned}
+		NOT = {has_country_flag = BEL_king_martial_law}
+	}	
+	mean_time_to_happen = {
+		days = 210			
+	}	
+
+	option = {# necessary damage
+		name = NOS_benelux.127.a
+			add_political_power = -10
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}				
+		}
+	}	
+	#repression of anti fascist movement by goons
+country_event = {
+	id = NOS_benelux.128
+	title = NOS_benelux.128.t
+	desc = NOS_benelux.128.desc 
+	picture = GFX_report_event_generic_riot
+	
+	trigger = {
+		tag = BEL
+		has_completed_focus = BEL_go_right
+		fascism > 0.15
+		NOT = { has_government = fascism}
+		has_war = no
+		NOT = {has_idea = BEL_fascism_banned}
+		NOT = {has_country_flag = BEL_king_martial_law}
+	}
+	mean_time_to_happen = {
+			days = 178
+		}
+	option = {# necessary damage
+		name = NOS_benelux.128.a
+			add_timed_idea = {
+				idea = BEL_repair_damages
+				days = 15
+			}
+			if = {
+				limit = {
+					communism > 0.12
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = -0.01
+				}				
+			}
+		}
+	option = {# intervene
+		name = NOS_benelux.128.b
+			add_political_power = -10
+			add_timed_idea = {
+				idea = BEL_repair_damages
+				days = 5
+			}
+			if = {
+				limit = {
+					communism > 0.12
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = -0.01
+				}				
+			}
+		}		
+	}
+	#Degrelle arrested because of troubles
+country_event = {
+	id = NOS_benelux.129
+	title = NOS_benelux.129.t
+	desc = NOS_benelux.129.desc 
+	picture = GFX_report_event_degrelle_arrested
+	is_triggered_only = yes
+	option = {# necessary damage
+		name = NOS_benelux.129.a
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.01
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.01
+			}			
+		}
+	}
+#people afraid of fascism
+country_event = {
+	id = NOS_benelux.130
+	title = NOS_benelux.130.t
+	desc = NOS_benelux.130.desc 
+	picture = GFX_report_event_degrelle_speaking
+	is_triggered_only = yes
+	option = {# necessary damage
+		name = NOS_benelux.130.a
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.01
+			}			
+		}
+	}	
+# Belgium arrests fascists
+country_event = {
+	id = NOS_benelux.131
+	title = NOS_benelux.131.t
+	desc = NOS_benelux.131.desc
+	picture = GFX_report_event_dietsche_militie
+
+
+	trigger = {
+		tag = BEL
+		GER = { has_government = fascism }
+		has_democratic_government = yes
+		fascism < 0.5
+		has_war_with = GER
+	}
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {	days = 1 }
+
+	option = {
+		ai_chance = {	factor = 10 }
+		add_political_power = -20
+		name = NOS_benelux.131.a
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.15
+		}
+		add_ideas = BEL_fascism_banned
+	}
+	option = {
+		ai_chance = {	factor = 0.5 }
+		add_political_power = -50
+		name = NOS_benelux.131.b
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.15
+		}
+		#add_warsupport? or directly shocktroops?
+		#decided for fixed manpower number based on fascism popularity at the moment of the invasion
+		#reduce balance a bit
+		#add mobilization speed for 6 months
+		#for RT56: add small shocktroops tech?
+		add_ideas = BEL_dinaso_shocktroops_in_the_army
+		set_country_flag = dinaso_shocktroops_in_the_army
+	}	
+	option = {
+		ai_chance = {	factor = 0 }
+		name = NOS_benelux.131.c
+		add_political_power = 20
+	}
+}	
+#syndicalist support
+country_event = {
+	id = NOS_benelux.132
+	title = NOS_benelux.132.t
+	desc = NOS_benelux.132.desc 
+	picture = GFX_report_event_generic_rally2
+	
+	trigger = {
+		tag = BEL
+		has_completed_focus = BEL_go_left
+		NOT = { OR = { has_government = monarchism has_government = neutrality }}
+		NOT = {has_country_flag = BEL_king_martial_law}
+	}
+	mean_time_to_happen = {
+			days = 280			
+		}
+	option = {
+		name = NOS_benelux.132.a		
+			add_popularity = {
+				ideology = communism
+				popularity = 0.01
+			}			
+		}		
+	}	
+	#Bourgeois counter revolutionnaries
+country_event = {
+	id = NOS_benelux.133
+	title = NOS_benelux.133.t
+	desc = NOS_benelux.133.desc 
+	picture = GFX_report_event_generic_rally
+	
+	trigger = {
+		tag = BEL
+		has_completed_focus = BEL_go_left
+		NOT = { OR = { has_government = monarchism has_government = neutrality }}
+		NOT = {has_country_flag = BEL_king_martial_law}
+	}
+	mean_time_to_happen = {
+			days = 325			
+		}
+	option = {
+		name = NOS_benelux.133.a
+		trigger = {
+			has_completed_focus = BEL_go_left
+			}		
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.02
+			}			
+		}		
+	}
+country_event = {
+	id = NOS_benelux.134
+	title = NOS_benelux.134.t
+	desc = NOS_benelux.134.desc 
+	picture = GFX_report_event_fascists_posing
+	
+	trigger = {
+		tag = BEL
+		has_completed_focus = BEL_go_left
+		NOT = { OR = { has_government = monarchism has_government = neutrality }}
+		NOT = {has_country_flag = BEL_king_martial_law}
+	}
+	mean_time_to_happen = {
+			days = 270			
+		}
+	option = {
+		name = NOS_benelux.133.a
+		trigger = {
+			has_completed_focus = BEL_go_left
+			}		
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}			
+		}		
+	}
+	#democratic support
+country_event = {
+	id = NOS_benelux.135
+	title = NOS_benelux.135.t
+	desc = NOS_benelux.135.desc 
+	picture = GFX_report_event_generic_rally
+	
+	trigger = {
+		tag = BEL
+		OR = {
+			has_completed_focus = BEL_deterrence
+			has_completed_focus = BEL_democratic_influence
+		}	
+		has_democratic_government = yes
+		has_war = no
+		date > 1938.06.01	
+		date < 1944.01.01
+	}
+	mean_time_to_happen = {
+			days = 270			
+		}
+	option = {
+		name = NOS_benelux.135.a		
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.02
+			}			
+		}		
+	}
+country_event = {
+	id = NOS_benelux.136
+	title = NOS_benelux.136.t
+	desc = NOS_benelux.136.desc 
+	picture = GFX_report_event_force_publique
+	
+	is_triggered_only = yes
+	option = {
+		name = NOS_benelux.136.a
+			ai_chance = {
+				factor = 20
+			}
+			add_political_power = 20
+			if = { 
+				limit = {
+					has_dlc = "Together for Victory"
+					}
+				COG = {
+					add_autonomy_ratio = {
+						value = -0.050
+						localization = belgian_investments
+					}
+				}	
+			}			
+			hidden_effect = {
+				COG = {
+					country_event = {
+						id = NOS_benelux.137 days = 1
+					}
+				}
+				set_country_flag = BEL_promised_rifles_COG
+			}			
+		}
+	option = {
+		name = NOS_benelux.136.b
+			ai_chance = {
+				factor = 2
+			}
+			add_political_power = -10
+			if = { 
+				limit = {
+					has_dlc = "Together for Victory"
+					}
+				COG = {
+					add_autonomy_ratio = {
+						value = -0.025
+						localization = congolese_self_reliance
+					}
+				}	
+			}			
+			hidden_effect = {
+				COG = {
+					country_event = {
+						id = NOS_benelux.167 days = 10
+					}
+				}
+			}
+		}		
+	option = {
+		name = NOS_benelux.136.c
+			ai_chance = {
+				factor = 2
+			}
+			add_political_power = -30
+			if = { 
+				limit = {
+					has_dlc = "Together for Victory"
+					}
+				COG = {
+					add_autonomy_ratio = {
+						value = 0.075
+						localization = congolese_self_reliance
+					}
+				}	
+			}			
+			hidden_effect = {
+			COG = {
+				country_event = {
+					id = NOS_benelux.138 days = 1
+				}
+			}
+		}
+	}		
+}
+
+country_event = {
+	id = NOS_benelux.137
+	title = NOS_benelux.137.t
+	desc = NOS_benelux.137.desc 
+	picture = GFX_report_event_force_publique
+	
+	is_triggered_only = yes
+	option = {
+		name = NOS_benelux.137.a
+		
+		}		
+	}
+
+country_event = {
+	id = NOS_benelux.138
+	title = NOS_benelux.138.t
+	desc = NOS_benelux.138.desc 
+	picture = GFX_report_event_force_publique
+	
+	is_triggered_only = yes
+	option = {
+		name = NOS_benelux.138.a
+		add_political_power = 30
+		}		
+	}
+country_event = {
+	id = NOS_benelux.139
+	title = NOS_benelux.139.t
+	desc = NOS_benelux.139.desc 
+	picture = GFX_report_event_merchant_ship_01
+	mean_time_to_happen = {	days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = BEL
+		 	has_equipment = { infantry_equipment > 320 }
+			has_country_flag = BEL_promised_rifles_COG
+	}
+	option = {
+		name = NOS_benelux.139.a
+			send_equipment = {
+				target = COG
+				type = infantry_equipment
+				amount = 300
+			}
+			set_country_flag = BEL_rifles_COG_1
+			COG = {
+				country_event = {
+					id = NOS_benelux.143 days = 1
+					}
+				}			
+		}
+	option = {
+		ai_chance = {
+			base = 0
+		}
+		name = NOS_benelux.139.b
+		add_political_power = -75
+		COG = {
+			add_autonomy_ratio = {
+			value = 0.15
+			localization = congolese_self_reliance
+			}
+		}
+		COG = {
+			country_event = {
+				id = NOS_benelux.142 days = 1
+				}
+			}			
+		}		
+	}
+country_event = {
+	id = NOS_benelux.140
+	title = NOS_benelux.140.t
+	desc = NOS_benelux.140.desc 
+	picture = GFX_report_event_merchant_ship_01
+	mean_time_to_happen = {	days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = BEL
+		has_equipment = { infantry_equipment > 320 }
+		has_country_flag = BEL_rifles_COG_1
+	}
+	option = {
+		name = NOS_benelux.140.a
+			send_equipment = {
+				target = COG
+				type = infantry_equipment
+				amount = 300
+			}
+			set_country_flag = BEL_rifles_COG_2
+			COG = {
+				country_event = {
+					id = NOS_benelux.144 days = 1
+					}
+				}			
+		}		
+	}
+country_event = {
+	id = NOS_benelux.141
+	title = NOS_benelux.141.t
+	desc = NOS_benelux.141.desc 
+	picture = GFX_report_event_merchant_ship_01
+	mean_time_to_happen = {	days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = BEL
+		 	has_equipment = { infantry_equipment > 320 }
+			has_country_flag = BEL_rifles_COG_2
+	}
+	option = {
+		name = NOS_benelux.141.a
+		send_equipment = {
+			target = COG
+			type = infantry_equipment
+			amount = 300
+		}
+		COG = {
+			country_event = {
+				id = NOS_benelux.145 days = 1
+				}
+			}			
+		}		
+	}
+country_event = { #Congo informed that Belgium refused to send the rifles at the last minute
+	id = NOS_benelux.142
+	title = NOS_benelux.142.t
+	desc = NOS_benelux.142.desc 
+	picture = GFX_report_event_force_publique
+	
+	is_triggered_only = yes
+	option = {
+		name = NOS_benelux.142.a
+		
+		}		
+	}
+country_event = { #Rifles - First Shipment
+	id = NOS_benelux.143
+	title = NOS_benelux.143.t
+	desc = NOS_benelux.143.desc 
+	picture = GFX_report_event_merchant_ship_01
+	
+	is_triggered_only = yes
+	option = {
+		name = NOS_benelux.143.a
+		custom_effect_tooltip = BEL_congo_rifle_delivery_tooltip
+		
+		}		
+	}
+country_event = { #Rifles - Second Shipment
+	id = NOS_benelux.144
+	title = NOS_benelux.144.t
+	desc = NOS_benelux.144.desc 
+	picture = GFX_report_event_merchant_ship_01
+	
+	is_triggered_only = yes
+	option = {
+		name = NOS_benelux.144.a
+		custom_effect_tooltip = BEL_congo_rifle_delivery_tooltip
+		
+		}		
+	}
+country_event = { #Rifles - Third Shipment
+	id = NOS_benelux.145
+	title = NOS_benelux.145.t
+	desc = NOS_benelux.145.desc 
+	picture = GFX_report_event_merchant_ship_01
+	
+	is_triggered_only = yes
+	option = {
+		name = NOS_benelux.145.a
+		custom_effect_tooltip = BEL_congo_rifle_delivery_tooltip
+		
+		}		
+	}
+# Leopold III declares emergency against fascists, beginning of neutrality tree - News
+news_event = {
+	id = NOS_benelux.146
+	title = NOS_benelux.146.t
+	desc = NOS_benelux.146.desc
+	picture = GFX_news_event_leopold_III_positive
+	is_triggered_only = yes	
+	major = yes
+	
+	option = {
+		name = NOS_benelux.146.a
+		trigger = {
+			NOT = {
+				TAG = BEL
+			}
+		}
+	}
+	option = {
+		name = NOS_benelux.146.b
+		trigger = { TAG = BEL }
+	}
+}
+# Leopold III declares emergency against communists, beginning of neutrality tree - News
+news_event = {
+	id = NOS_benelux.147
+	title = NOS_benelux.147.t
+	desc = NOS_benelux.147.desc
+	picture = GFX_news_event_leopold_III_positive
+	is_triggered_only = yes	
+	major = yes
+	
+	option = {
+		name = NOS_benelux.147.a
+		trigger = {
+			NOT = {
+				TAG = BEL
+			}
+		}
+	}
+	option = {
+		name = NOS_benelux.147.b
+		trigger = { TAG = BEL }
+	}
+}
+country_event = { # propose non aggression to the british to disallow intervention in Belgium
+	id = NOS_benelux.148
+	title = NOS_benelux.148.t
+	desc = NOS_benelux.148.desc
+	picture = GFX_report_event_leopold_britain
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NOS_benelux.148.a	#Accept
+		ai_chance = {
+			factor = 98
+		}
+		diplomatic_relation = { country = BEL relation = non_aggression_pact }
+		add_opinion_modifier = { target = BEL modifier = ENG_BEL_non_aggression_pact_signed }
+		set_country_flag = ENG_BEL_non_aggression_pact_signed
+		set_country_flag = { flag = ENG_BEL_non_aggression_pact_time_limit days = 365 value = 1 }	
+	}
+	option = {
+		name = NOS_benelux.148.b	#Refuse
+		ai_chance = {
+			factor = 2
+		}
+		
+		add_political_power = -20
+		BEL = {
+			country_event = { days = 1 id = NOS_benelux.149 }
+			}
+		}
+	}
+country_event = { #pact refused
+	id = NOS_benelux.149
+	title = NOS_benelux.149.t
+	desc = NOS_benelux.149.desc 
+	picture = GFX_report_event_belgium_war
+	is_triggered_only = yes
+
+	option = {
+		name = NOS_benelux.149.a		
+		add_political_power = 75				
+		}		
+	}
+country_event = { #leopoldist propaganda
+	id = NOS_benelux.150
+	title = NOS_benelux.150.t
+	desc = NOS_benelux.150.desc 
+	picture = GFX_report_event_leopoldist_propaganda
+	fire_only_once = yes
+	trigger = {
+		tag = BEL
+		has_completed_focus = BEL_king_reaction	
+		OR = { has_government = monarchism has_government = neutrality }
+	}
+	mean_time_to_happen = {
+			days = 270			
+		}
+	option = {
+		name = NOS_benelux.150.a		
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.03
+			}			
+		}		
+	}
+country_event = {
+	id = NOS_benelux.151
+	title = NOS_benelux.151.t
+	desc = NOS_benelux.151.desc 
+	picture = GFX_report_event_belgium_war
+	
+	trigger = {
+		tag = BEL
+		has_democratic_government = yes
+		ENG ={
+			OR = {
+				focus_progress = {
+					focus = ENG_belgium_security
+					progress > 0
+				}
+				has_completed_focus = ENG_belgium_security
+			}
+		}
+		NOT = {has_country_flag = BEL_king_martial_law}
+		has_war = no
+	}
+	mean_time_to_happen = {
+			days = 2
+		}
+	# declare martial law
+	option = {
+		name = NOS_benelux.151.a
+			ai_chance = {
+				factor = 30
+			}		
+			add_political_power = -150
+			set_country_flag = BEL_king_martial_law
+
+			country_event = { hours = 15 id = NOS_benelux.152 }			
+		}
+	option = {# do nothing
+		name = NOS_benelux.151.b
+			ai_chance = {
+				factor = 70
+			}				
+		}		
+	}
+country_event = { #Martial Law -->crackdown
+	id = NOS_benelux.152
+	title = NOS_benelux.152.t
+	desc = NOS_benelux.152.desc 
+	picture = GFX_report_event_relecom_arrested
+	
+	is_triggered_only = yes
+	# declare matial law
+	option = {
+		name = NOS_benelux.152.a
+			remove_ideas = BEL_pillarized_society
+			if = { 
+				limit = {
+					has_idea = internationalism
+				}
+				remove_ideas = internationalism
+			}
+			if = { 
+				limit = {
+					has_idea = BEL_volunteer_corps
+				}
+				remove_ideas = BEL_volunteer_corps
+			}
+			if = { 
+				limit = {
+					has_idea = BEL_nationalism
+				}
+				remove_ideas = BEL_nationalism
+			}
+			if = { 
+				limit = {
+					has_idea = nationalism
+				}
+				remove_ideas = nationalism
+			}
+			if = { 
+				limit = {
+					has_idea = military_youth_focus
+				}
+				remove_ideas = military_youth_focus
+			}
+			if = { 
+				limit = {
+					has_idea = BEL_ai_communism_bonus
+				}
+				remove_ideas = BEL_ai_communism_bonus
+			}
+			if = { 
+				limit = {
+					has_idea = BEL_ai_fascism_bonus
+				}
+				remove_ideas = BEL_ai_fascism_bonus
+			}
+			if = { 
+				limit = {
+					has_idea = BEL_dinaso_shocktroops_in_the_army
+				}
+				remove_ideas = BEL_dinaso_shocktroops_in_the_army
+			}						
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			add_ideas = neutrality_idea
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.3
+			}
+			if = { 
+				limit = {
+					OR = {
+						has_idea_with_trait = communist_revolutionary
+						has_idea_with_trait = fascist_demagogue
+					}
+				}
+				remove_ideas_with_trait = communist_revolutionary
+				remove_ideas_with_trait = fascist_demagogue
+			}
+			add_ideas = BEL_auguste_lippens
+			ENG = { country_event = { id = NOS_benelux.148 } }			
+			hidden_effect = {
+				news_event = { hours = 48 id = NOS_benelux.146 }
+			}			
+		}		
+	}
+country_event = { #democracy restored, pillarization returns
+	id = NOS_benelux.153
+	title = NOS_benelux.153.t
+	desc = NOS_benelux.153.desc 
+	picture = GFX_report_event_generic_rally_3
+	trigger = {
+		tag = BEL
+		has_democratic_government = yes
+		has_completed_focus = BEL_restore_constitution
+		NOT = { has_idea = BEL_pillarized_society }
+	}
+	mean_time_to_happen = {
+			days = 72
+		}	
+	option = {
+		name = NOS_benelux.153.a		
+		add_political_power = 20
+		add_ideas = BEL_pillarized_society		
+		}		
+	}
+	# follow NOS_benelux.74, access to the italian faction.
+country_event = { 
+	id = NOS_benelux.154
+	title = NOS_benelux.74.t
+	desc = NOS_benelux.74.d
+	picture = GFX_report_event_journalists_speech
+
+	is_triggered_only = yes
+		
+	option = {
+		name = NOS_benelux.74-2.a
+		ITA = { add_to_faction = COG }
+		COG = {
+			add_ai_strategy = {
+				type = alliance
+				id = "ITA"
+				value = 200
+			}
+		}
+	}
+	option = {
+		name = NOS_benelux.74-2.b
+		ai_chance = { factor = 0 }
+		COG = {
+			add_opinion_modifier = {
+				target = ITA
+				modifier = GER_join_axis_reject
+			}
+		}
+	}
+}
+country_event = { # renew non aggression with the british TEST!
+	id = NOS_benelux.155
+	title = NOS_benelux.148.t
+	desc = NOS_benelux.148.desc
+	picture = GFX_report_event_leopold_britain
+	
+	trigger = {
+		tag = ENG
+		has_country_flag = ENG_BEL_non_aggression_pact_signed
+		has_completed_focus = ENG_belgium_security
+		OR = {
+			has_democratic_government = yes
+			OR = { has_government = monarchism has_government = neutrality }
+		}
+		NOT = {
+			has_country_flag = ENG_BEL_non_aggression_pact_signed2
+			has_country_flag = ENG_BEL_non_aggression_pact_time_limit
+		}
+		
+	}
+	mean_time_to_happen = {
+		days = 2
+	}		
+	option = {
+		name = NOS_benelux.148.a	#Accept
+		ai_chance = {
+			factor = 98
+		}
+		diplomatic_relation = { country = BEL relation = non_aggression_pact }	
+		set_country_flag = ENG_BEL_non_aggression_pact_signed2
+	}
+	option = {
+		name = NOS_benelux.148.b	#Refuse
+		ai_chance = {
+			factor = 2
+		}
+		
+		add_political_power = -20
+		BEL = {
+			country_event = { days = 1 id = NOS_benelux.149 }
+			}
+		set_country_flag = ENG_BEL_non_aggression_pact_signed2
+	}
+		
+}
+
+country_event = { # we are flanders!
+	id = NOS_benelux.156
+	title = NOS_benelux.156.t
+	desc = NOS_benelux.156.desc
+	picture = GFX_report_event_flemish_lion
+	
+	trigger = {
+		tag = BEL
+		owns_state = 6
+		NOT = {owns_state = 34}
+		BEL = { has_civil_war = no } 
+		
+	}
+	mean_time_to_happen = {
+		days = 2
+	}	
+	option = {
+		name = NOS_benelux.156.a	#democratic
+		trigger = {
+			has_democratic_government = yes
+		}
+		random_owned_controlled_state = {
+			VLA = { transfer_state = PREV }
+		}
+		BEL = {
+			VLA = {
+				transfer_technology = yes
+				set_capital = 6
+			}
+			every_army_leader = {
+				limit = { has_trait = flemish }
+				set_nationality = VLA
+			}
+			every_army_leader = {
+				limit = { has_trait = walloon }
+				set_nationality = WLL
+			}			
+		}	
+		VLA = { #send the flemish techs to wallonia to be sure that they both receive it
+			WLL = {
+				transfer_technology = yes
+			}
+		}		
+		if = {
+			limit = {
+				COG = { is_subject_of = BEL }  
+			}
+			VLA = { 
+				puppet = COG						  
+			}
+			COG = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 10
+					fascism = 16
+					communism = 1
+					neutrality = 73
+				}
+				create_country_leader = {
+					name = "Pierre Ryckmans"
+					desc = "Pierre Ryckmans, Governor General of the Belgian Congo"
+					picture = "gfx/leaders/COG/Pierre_Ryckmans.dds"
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+					}
+				}				
+			}			
+		}
+		VLA = { annex_country = { target = BEL transfer_troops = yes } change_tag_from = BEL }	
+		
+		if = {
+			limit = {
+				BEL = { is_subject = yes }  
+			}
+			BEL = { 
+				OVERLORD = { 
+					puppet = VLA						 
+				} 
+			}
+		}
+		
+		VLA = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			set_popularities = {
+				democratic = 72
+				fascism = 24
+				communism = 3
+				neutrality = 1
+			}		
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_achille_van_acker
+				}
+			}
+			VLA = { add_ideas = BEL_achille_van_acker } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gaston_eyskens
+				}
+			}
+			VLA = { add_ideas = BEL_gaston_eyskens } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gustaaf_sap
+				}
+			}
+			VLA = { add_ideas = BEL_gustaaf_sap } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_oscar_michiels
+				}
+			}
+			VLA = { add_ideas = BEL_oscar_michiels } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_victor_van_strydonck_de_burkel
+				}
+			}
+			VLA = { add_ideas = BEL_victor_van_strydonck_de_burkel } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jules_iserentant
+				}
+			}
+			VLA = { add_ideas = BEL_jules_iserentant } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_etienne_glorie
+				}
+			}
+			VLA = { add_ideas = BEL_etienne_glorie } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = VLA_auguste_baesens
+				}
+			}
+			VLA = { add_ideas = VLA_auguste_baesens } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_olivier_derousseaux
+				}
+			}
+			VLA = { add_ideas = VLA_alexis_vander_veken } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gustave_fromont
+				}
+			}
+			VLA = { add_ideas = BEL_constant_de_wulf } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_robert_desmet
+				}
+			}
+			VLA = { add_ideas = BEL_robert_desmet } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_paul_van_waesberghe
+				}
+			}
+			VLA = { add_ideas = BEL_paul_van_waesberghe } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_raoul_overstraeten
+				}
+			}
+			VLA = { add_ideas = BEL_raoul_overstraeten } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = renard
+				}
+			}
+			VLA = { add_ideas = renard } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = frc_BEL
+				}
+			}
+			VLA = { add_ideas = zeebrugge_smederijen } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = fn_trucks
+				}
+			}
+			VLA = { add_ideas = brossel } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = boel_zonen
+				}
+			}
+			VLA = { add_ideas = boel_zonen } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = cockerill_naval
+				}
+			}
+			VLA = { add_ideas = cockerill_naval } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = solvay
+				}
+			}
+			VLA = { add_ideas = solvay } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = Cockerill_industry
+				}
+			}
+			VLA = { add_ideas = katoen_natie } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_miesse_tank
+				}
+			}
+			VLA = { add_ideas = BEL_miesse_tank } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_familleureux
+				}
+			}
+			VLA = { add_ideas = BEL_miesse_tank } 
+		}		
+		hidden_effect = {
+			news_event = { hours = 6 id = NOS_benelux.158 }
+		}		
+	}
+	option = {
+		name = NOS_benelux.156.b	#fascist
+		trigger = {
+			has_government = fascism
+		}
+		random_owned_controlled_state = {
+			VLA = { transfer_state = PREV }
+		}
+		BEL = {
+			VLA = {
+				transfer_technology = yes
+				set_capital = 6
+			}
+			every_army_leader = {
+				limit = { has_trait = flemish }
+				set_nationality = VLA
+			}
+			every_army_leader = {
+				limit = { has_trait = walloon }
+				set_nationality = WLL
+			}			
+		}	
+		VLA = { #send the flemish techs to wallonia to be sure that they both receive it
+			WLL = {
+				transfer_technology = yes
+			}
+		}		
+		if = {
+			limit = {
+				COG = { is_subject_of = BEL }  
+			}
+			VLA = { 
+				puppet = COG						  
+			}
+		}
+		VLA = { annex_country = { target = BEL transfer_troops = yes } change_tag_from = BEL }	
+		if = {
+			limit = {
+				BEL = { is_subject = yes }  
+			}
+			BEL = { 
+				OVERLORD = { 
+					puppet = VLA						 
+				} 
+			}
+		}		
+		
+		VLA = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}	
+			set_popularities = {
+				democratic = 31
+				fascism = 62
+				communism = 1
+				neutrality = 6
+			}	
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_achille_van_acker
+				}
+			}
+			VLA = { add_ideas = BEL_achille_van_acker } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gaston_eyskens
+				}
+			}
+			VLA = { add_ideas = BEL_gaston_eyskens } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gustaaf_sap
+				}
+			}
+			VLA = { add_ideas = BEL_gustaaf_sap } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_oscar_michiels
+				}
+			}
+			VLA = { add_ideas = BEL_oscar_michiels } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_victor_van_strydonck_de_burkel
+				}
+			}
+			VLA = { add_ideas = BEL_victor_van_strydonck_de_burkel } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jules_iserentant
+				}
+			}
+			VLA = { add_ideas = BEL_jules_iserentant } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_etienne_glorie
+				}
+			}
+			VLA = { add_ideas = BEL_etienne_glorie } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = VLA_auguste_baesens
+				}
+			}
+			VLA = { add_ideas = VLA_auguste_baesens } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_olivier_derousseaux
+				}
+			}
+			VLA = { add_ideas = VLA_alexis_vander_veken } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gustave_fromont
+				}
+			}
+			VLA = { add_ideas = BEL_constant_de_wulf } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_robert_desmet
+				}
+			}
+			VLA = { add_ideas = BEL_robert_desmet } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_paul_van_waesberghe
+				}
+			}
+			VLA = { add_ideas = BEL_paul_van_waesberghe } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_raoul_overstraeten
+				}
+			}
+			VLA = { add_ideas = BEL_raoul_overstraeten } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = renard
+				}
+			}
+			VLA = { add_ideas = renard } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = frc_BEL
+				}
+			}
+			VLA = { add_ideas = zeebrugge_smederijen } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = fn_trucks
+				}
+			}
+			VLA = { add_ideas = brossel } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = boel_zonen
+				}
+			}
+			VLA = { add_ideas = boel_zonen } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = cockerill_naval
+				}
+			}
+			VLA = { add_ideas = cockerill_naval } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = solvay
+				}
+			}
+			VLA = { add_ideas = solvay } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = Cockerill_industry
+				}
+			}
+			VLA = { add_ideas = katoen_natie } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_miesse_tank
+				}
+			}
+			VLA = { add_ideas = BEL_miesse_tank } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_familleureux
+				}
+			}
+			VLA = { add_ideas = BEL_miesse_tank } 
+		}		
+	}
+	option = {
+		name = NOS_benelux.156.c	#communist
+		trigger = {
+			OR = { has_government = monarchism has_government = neutrality }
+		}
+		random_owned_controlled_state = {
+			VLA = { transfer_state = PREV }
+		}
+		if = {
+			limit = {
+				COG = { is_subject_of = BEL }  
+			}
+			VLA = { 
+				puppet = COG						  
+			}
+		}
+		BEL = {
+			VLA = {
+				transfer_technology = yes
+				set_capital = 6
+			}
+			every_army_leader = {
+				limit = { has_trait = flemish }
+				set_nationality = VLA
+			}
+			every_army_leader = {
+				limit = { has_trait = walloon }
+				set_nationality = WLL
+			}			
+		}	
+		VLA = { #send the flemish techs to wallonia to be sure that they both receive it
+			WLL = {
+				transfer_technology = yes
+			}
+		}		
+		VLA = { annex_country = { target = BEL transfer_troops = yes } change_tag_from = BEL }	
+		if = {
+			limit = {
+				BEL = { is_subject = yes }  
+			}
+			BEL = { 
+				OVERLORD = { 
+					puppet = VLA						 
+				} 
+			}
+		}		
+		
+		VLA = {
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			set_popularities = {
+				democratic = 33
+				fascism = 4
+				communism = 62
+				neutrality = 1
+			}		
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_achille_van_acker
+				}
+			}
+			VLA = { add_ideas = BEL_achille_van_acker } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gaston_eyskens
+				}
+			}
+			VLA = { add_ideas = BEL_gaston_eyskens } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gustaaf_sap
+				}
+			}
+			VLA = { add_ideas = BEL_gustaaf_sap } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_oscar_michiels
+				}
+			}
+			VLA = { add_ideas = BEL_oscar_michiels } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_victor_van_strydonck_de_burkel
+				}
+			}
+			VLA = { add_ideas = BEL_victor_van_strydonck_de_burkel } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jules_iserentant
+				}
+			}
+			VLA = { add_ideas = BEL_jules_iserentant } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_etienne_glorie
+				}
+			}
+			VLA = { add_ideas = BEL_etienne_glorie } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = VLA_auguste_baesens
+				}
+			}
+			VLA = { add_ideas = VLA_auguste_baesens } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_olivier_derousseaux
+				}
+			}
+			VLA = { add_ideas = VLA_alexis_vander_veken } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gustave_fromont
+				}
+			}
+			VLA = { add_ideas = BEL_constant_de_wulf } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_robert_desmet
+				}
+			}
+			VLA = { add_ideas = BEL_robert_desmet } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_paul_van_waesberghe
+				}
+			}
+			VLA = { add_ideas = BEL_paul_van_waesberghe } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_raoul_overstraeten
+				}
+			}
+			VLA = { add_ideas = BEL_raoul_overstraeten } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = renard
+				}
+			}
+			VLA = { add_ideas = renard } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = frc_BEL
+				}
+			}
+			VLA = { add_ideas = zeebrugge_smederijen } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = fn_trucks
+				}
+			}
+			VLA = { add_ideas = brossel } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = boel_zonen
+				}
+			}
+			VLA = { add_ideas = boel_zonen } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = cockerill_naval
+				}
+			}
+			VLA = { add_ideas = cockerill_naval } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = solvay
+				}
+			}
+			VLA = { add_ideas = solvay } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = Cockerill_industry
+				}
+			}
+			VLA = { add_ideas = katoen_natie } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_miesse_tank
+				}
+			}
+			VLA = { add_ideas = BEL_miesse_tank } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_familleureux
+				}
+			}
+			VLA = { add_ideas = BEL_miesse_tank } 
+		}		
+		hidden_effect = {
+			news_event = { hours = 6 id = NOS_benelux.158 }
+		}		
+	}
+	option = {
+		name = NOS_benelux.156.d	#neutrality
+		trigger = {
+			OR = { has_government = monarchism has_government = neutrality }
+		}
+		random_owned_controlled_state = {
+			VLA = { transfer_state = PREV }
+		}
+		BEL = {
+			VLA = {
+				transfer_technology = yes
+				set_capital = 6
+			}
+			every_army_leader = {
+				limit = { has_trait = flemish }
+				set_nationality = VLA
+			}
+			every_army_leader = {
+				limit = { has_trait = walloon }
+				set_nationality = WLL
+			}			
+		}		
+		VLA = {
+			WLL = {
+				transfer_technology = yes
+			}
+		}		
+		if = {
+			limit = {
+				COG = { is_subject_of = BEL }  
+			}
+			VLA = { 
+				puppet = COG						  
+			}
+		}
+		VLA = { annex_country = { target = BEL transfer_troops = yes } change_tag_from = BEL }	
+		if = {
+			limit = {
+				BEL = { is_subject = yes }  
+			}
+			BEL = { 
+				OVERLORD = { 
+					puppet = VLA						 
+				} 
+			}
+		}
+		
+		VLA = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+				parties = {
+					neutrality = {
+						popularity = 51
+					}
+					democratic = { 
+						popularity = 33
+					}
+
+					fascism = {
+						popularity = 14
+					}
+					
+					communism = {
+						popularity = 2
+					}
+				}
+			}		
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_achille_van_acker
+				}
+			}
+			VLA = { add_ideas = BEL_achille_van_acker } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gaston_eyskens
+				}
+			}
+			VLA = { add_ideas = BEL_gaston_eyskens } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gustaaf_sap
+				}
+			}
+			VLA = { add_ideas = BEL_gustaaf_sap } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_oscar_michiels
+				}
+			}
+			VLA = { add_ideas = BEL_oscar_michiels } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_victor_van_strydonck_de_burkel
+				}
+			}
+			VLA = { add_ideas = BEL_victor_van_strydonck_de_burkel } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jules_iserentant
+				}
+			}
+			VLA = { add_ideas = BEL_jules_iserentant } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_etienne_glorie
+				}
+			}
+			VLA = { add_ideas = BEL_etienne_glorie } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = VLA_auguste_baesens
+				}
+			}
+			VLA = { add_ideas = VLA_auguste_baesens } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_olivier_derousseaux
+				}
+			}
+			VLA = { add_ideas = VLA_alexis_vander_veken } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gustave_fromont
+				}
+			}
+			VLA = { add_ideas = BEL_constant_de_wulf } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_robert_desmet
+				}
+			}
+			VLA = { add_ideas = BEL_robert_desmet } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_paul_van_waesberghe
+				}
+			}
+			VLA = { add_ideas = BEL_paul_van_waesberghe } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_raoul_overstraeten
+				}
+			}
+			VLA = { add_ideas = BEL_raoul_overstraeten } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = renard
+				}
+			}
+			VLA = { add_ideas = renard } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = frc_BEL
+				}
+			}
+			VLA = { add_ideas = zeebrugge_smederijen } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = fn_trucks
+				}
+			}
+			VLA = { add_ideas = brossel } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = boel_zonen
+				}
+			}
+			VLA = { add_ideas = boel_zonen } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = cockerill_naval
+				}
+			}
+			VLA = { add_ideas = cockerill_naval } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = solvay
+				}
+			}
+			VLA = { add_ideas = solvay } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = Cockerill_industry
+				}
+			}
+			VLA = { add_ideas = katoen_natie } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_miesse_tank
+				}
+			}
+			VLA = { add_ideas = BEL_miesse_tank } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_familleureux
+				}
+			}
+			VLA = { add_ideas = BEL_miesse_tank } 
+		}		
+		hidden_effect = {
+			news_event = { hours = 6 id = NOS_benelux.158 }
+		}		
+	}	
+}
+country_event = { # we are wallonia!
+	id = NOS_benelux.157
+	title = NOS_benelux.157.t
+	desc = NOS_benelux.157.desc
+	picture = GFX_report_event_congres_wallon
+	
+	trigger = {
+		tag = BEL
+		owns_state = 34
+		NOT = {owns_state = 6}
+		BEL = { has_civil_war = no } 
+		
+	}
+	mean_time_to_happen = {
+		days = 2
+	}	
+	option = {
+		name = NOS_benelux.157.a	#democratic
+		trigger = {
+			has_democratic_government = yes
+		}
+		random_owned_controlled_state = {
+			WLL = { transfer_state = PREV }
+		}
+		BEL = {
+			WLL = {
+				transfer_technology = yes
+				set_capital = 34
+			}
+			every_army_leader = {
+				limit = { has_trait = flemish }
+				set_nationality = VLA
+			}
+			every_army_leader = {
+				limit = { has_trait = walloon }
+				set_nationality = WLL
+			}			
+		}	
+		WLL = {
+			VLA = {
+				transfer_technology = yes
+			}
+		}				
+		if = {
+			limit = {
+				COG = { is_subject_of = BEL }  
+			}
+			WLL = { 
+				puppet = COG						  
+			}
+			COG = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+					parties = {
+						neutrality = {
+							popularity = 73
+						}
+						democratic = { 
+							popularity = 10
+						}
+
+						fascism = {
+							popularity = 15
+						}
+						
+						communism = {
+							popularity = 2
+						}
+					}
+				}
+				create_country_leader = {
+					name = "Pierre Ryckmans"
+					desc = "Pierre Ryckmans, Governor General of the Belgian Congo"
+					picture = "gfx/leaders/COG/Pierre_Ryckmans.dds"
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+					}
+				}				
+			}
+		}
+		WLL = { annex_country = { target = BEL transfer_troops = yes } change_tag_from = BEL }	
+		
+		if = {
+			limit = {
+				BEL = { is_subject = yes }  
+			}
+			BEL = { 
+				OVERLORD = { 
+					puppet = WLL						 
+				} 
+			}
+		}
+		
+		WLL = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				parties = {
+					neutrality = {
+						popularity = 1
+					}
+					democratic = { 
+						popularity = 69
+					}
+
+					fascism = {
+						popularity = 18
+					}
+					
+					communism = {
+						popularity = 12
+					}
+				}
+			}		
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_achille_van_acker
+				}
+			}
+			WLL = { add_ideas = WLL_Jules_Mahieu } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_julien_lahaut
+				}
+			}
+			WLL = { add_ideas = BEL_julien_lahaut } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_joris_van_severen
+				}
+			}
+			WLL = { add_ideas = BEL_Victor_Matthys } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_henri_denis
+				}
+			}
+			WLL = { add_ideas = BEL_henri_denis } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gustave_joassart
+				}
+			}
+			WLL = { add_ideas = BEL_gustave_joassart } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_Pierre_Daye
+				}
+			}
+			WLL = { add_ideas = BEL_Pierre_Daye } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_Jose_Streel
+				}
+			}
+			WLL = { add_ideas = BEL_Jose_Streel } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_xavier_relecom
+				}
+			}
+			WLL = { add_ideas = BEL_xavier_relecom } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_andor_berei
+				}
+			}
+			WLL = { add_ideas = BEL_andor_berei } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_henri_glineur
+				}
+			}
+			WLL = { add_ideas = BEL_henri_glineur } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jean_terfve
+				}
+			}
+			WLL = { add_ideas = BEL_jean_terfve } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_oscar_michiels
+				}
+			}
+			WLL = { add_ideas = BEL_olivier_derousseaux2 } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_victor_van_strydonck_de_burkel
+				}
+			}
+			WLL = { add_ideas = BEL_gustave_fromont2 } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jules_iserentant
+				}
+			}
+			WLL = { add_ideas = BEL_paul_hiernaux } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_paul_hiernaux
+				}
+			}
+			WLL = { add_ideas = BEL_paul_hiernaux } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_henri_decarpentrie
+				}
+			}
+			WLL = { add_ideas = BEL_henri_decarpentrie } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = VLA_auguste_baesens
+				}
+			}
+			WLL = { add_ideas = BEL_jules_pire } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_olivier_derousseaux
+				}
+			}
+			WLL = { add_ideas = BEL_yvan_gerard } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_robert_desmet
+				}
+			}
+			WLL = { add_ideas = BEL_andre_becquet } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jean_de_lannoy
+				}
+			}
+			WLL = { add_ideas = BEL_jean_de_lannoy } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_raoul_overstraeten
+				}
+			}
+			WLL = { add_ideas = BEL_jules_henri_vincotte } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = avions_fairey
+				}
+			}
+			WLL = { add_ideas = avions_fairey } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = renard
+				}
+			}
+			WLL = { add_ideas = avions_fairey } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = sabca
+				}
+			}
+			WLL = { add_ideas = sabca } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = fn_herstol
+				}
+			}
+			WLL = { add_ideas = fn_herstol } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = frc_BEL
+				}
+			}
+			WLL = { add_ideas = frc_BEL } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = fn_trucks
+				}
+			}
+			WLL = { add_ideas = fn_trucks } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = Cockerill_industry
+				}
+			}
+			WLL = { add_ideas = Cockerill_industry } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = srb_bel
+				}
+			}
+			WLL = { add_ideas = WLL_ACEC } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = solvay
+				}
+			}
+			WLL = { add_ideas = Cockerill_industry } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_miesse_tank
+				}
+			}
+			WLL = { add_ideas = BEL_familleureux } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_familleureux
+				}
+			}
+			WLL = { add_ideas = BEL_familleureux } 
+		}		
+		hidden_effect = {
+			news_event = { hours = 6 id = NOS_benelux.159 }
+		}		
+	}
+	option = {
+		name = NOS_benelux.157.b	#fascist
+		trigger = {
+			has_government = fascism
+		}
+		random_owned_controlled_state = {
+			WLL = { transfer_state = PREV }
+		}
+		BEL = {
+			WLL = {
+				transfer_technology = yes
+				set_capital = 34
+			}
+			every_army_leader = {
+				limit = { has_trait = flemish }
+				set_nationality = VLA
+			}
+			every_army_leader = {
+				limit = { has_trait = walloon }
+				set_nationality = WLL
+			}			
+		}
+		WLL = {
+			VLA = {
+				transfer_technology = yes
+			}
+		}		
+		if = {
+			limit = {
+				COG = { is_subject_of = BEL }  
+			}
+			WLL = { 
+				puppet = COG						  
+			}
+		}	
+		WLL = { annex_country = { target = BEL transfer_troops = yes } change_tag_from = BEL }	
+		if = {
+			limit = {
+				BEL = { is_subject = yes }  
+			}
+			BEL = { 
+				OVERLORD = { 
+					puppet = WLL						 
+				} 
+			}
+		}		
+	
+		WLL = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+				parties = {
+					neutrality = {
+						popularity = 5
+					}
+					democratic = { 
+						popularity = 31
+					}
+
+					fascism = {
+						popularity = 62
+					}
+					
+					communism = {
+						popularity = 2
+					}
+				}
+			}		
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_achille_van_acker
+				}
+			}
+			WLL = { add_ideas = WLL_Jules_Mahieu } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_julien_lahaut
+				}
+			}
+			WLL = { add_ideas = BEL_julien_lahaut } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_joris_van_severen
+				}
+			}
+			WLL = { add_ideas = BEL_Victor_Matthys } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_henri_denis
+				}
+			}
+			WLL = { add_ideas = BEL_henri_denis } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gustave_joassart
+				}
+			}
+			WLL = { add_ideas = BEL_gustave_joassart } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_Pierre_Daye
+				}
+			}
+			WLL = { add_ideas = BEL_Pierre_Daye } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_Jose_Streel
+				}
+			}
+			WLL = { add_ideas = BEL_Jose_Streel } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_xavier_relecom
+				}
+			}
+			WLL = { add_ideas = BEL_xavier_relecom } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_andor_berei
+				}
+			}
+			WLL = { add_ideas = BEL_andor_berei } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_henri_glineur
+				}
+			}
+			WLL = { add_ideas = BEL_henri_glineur } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jean_terfve
+				}
+			}
+			WLL = { add_ideas = BEL_jean_terfve } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_oscar_michiels
+				}
+			}
+			WLL = { add_ideas = BEL_olivier_derousseaux2 } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_victor_van_strydonck_de_burkel
+				}
+			}
+			WLL = { add_ideas = BEL_gustave_fromont2 } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jules_iserentant
+				}
+			}
+			WLL = { add_ideas = BEL_paul_hiernaux } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_paul_hiernaux
+				}
+			}
+			WLL = { add_ideas = BEL_paul_hiernaux } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_henri_decarpentrie
+				}
+			}
+			WLL = { add_ideas = BEL_henri_decarpentrie } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = VLA_auguste_baesens
+				}
+			}
+			WLL = { add_ideas = BEL_jules_pire } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_olivier_derousseaux
+				}
+			}
+			WLL = { add_ideas = BEL_yvan_gerard } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_robert_desmet
+				}
+			}
+			WLL = { add_ideas = BEL_andre_becquet } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jean_de_lannoy
+				}
+			}
+			WLL = { add_ideas = BEL_jean_de_lannoy } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_raoul_overstraeten
+				}
+			}
+			WLL = { add_ideas = BEL_jules_henri_vincotte } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = avions_fairey
+				}
+			}
+			WLL = { add_ideas = avions_fairey } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = renard
+				}
+			}
+			WLL = { add_ideas = avions_fairey } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = sabca
+				}
+			}
+			WLL = { add_ideas = sabca } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = fn_herstol
+				}
+			}
+			WLL = { add_ideas = fn_herstol } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = frc_BEL
+				}
+			}
+			WLL = { add_ideas = frc_BEL } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = fn_trucks
+				}
+			}
+			WLL = { add_ideas = fn_trucks } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_miesse_tank
+				}
+			}
+			WLL = { add_ideas = BEL_familleureux } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_familleureux
+				}
+			}
+			WLL = { add_ideas = BEL_familleureux } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = Cockerill_industry
+				}
+			}
+			WLL = { add_ideas = Cockerill_industry } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = srb_bel
+				}
+			}
+			WLL = { add_ideas = WLL_ACEC } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = solvay
+				}
+			}
+			WLL = { add_ideas = Cockerill_industry } 
+		}		
+		hidden_effect = {
+			news_event = { hours = 6 id = NOS_benelux.159 }
+		}		
+	}
+	option = {
+		name = NOS_benelux.157.c	#communist
+		trigger = {
+			OR = { has_government = monarchism has_government = neutrality }
+		}
+		random_owned_controlled_state = {
+			WLL = { transfer_state = PREV }
+		}
+		BEL = {
+			WLL = {
+				transfer_technology = yes
+				set_capital = 34
+			}
+			every_army_leader = {
+				limit = { has_trait = flemish }
+				set_nationality = VLA
+			}
+			every_army_leader = {
+				limit = { has_trait = walloon }
+				set_nationality = WLL
+			}			
+		}	
+		WLL = {
+			VLA = {
+				transfer_technology = yes
+			}
+		}		
+		if = {
+			limit = {
+				COG = { is_subject_of = BEL }  
+			}
+			WLL = { 
+				puppet = COG						  
+			}
+		}	
+		WLL = { annex_country = { target = BEL transfer_troops = yes } change_tag_from = BEL }	
+		if = {
+			limit = {
+				BEL = { is_subject = yes }  
+			}
+			BEL = { 
+				OVERLORD = { 
+					puppet = WLL						 
+				} 
+			}
+		}		
+	
+		WLL = {
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+				parties = {
+					neutrality = {
+						popularity = 1
+					}
+					democratic = { 
+						popularity = 33
+					}
+
+					fascism = {
+						popularity = 14
+					}
+					
+					communism = {
+						popularity = 52
+					}
+				}
+			}		
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_achille_van_acker
+				}
+			}
+			WLL = { add_ideas = WLL_Jules_Mahieu } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_julien_lahaut
+				}
+			}
+			WLL = { add_ideas = BEL_julien_lahaut } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_joris_van_severen
+				}
+			}
+			WLL = { add_ideas = BEL_Victor_Matthys } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_henri_denis
+				}
+			}
+			WLL = { add_ideas = BEL_henri_denis } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gustave_joassart
+				}
+			}
+			WLL = { add_ideas = BEL_gustave_joassart } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_Pierre_Daye
+				}
+			}
+			WLL = { add_ideas = BEL_Pierre_Daye } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_Jose_Streel
+				}
+			}
+			WLL = { add_ideas = BEL_Jose_Streel } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_xavier_relecom
+				}
+			}
+			WLL = { add_ideas = BEL_xavier_relecom } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_andor_berei
+				}
+			}
+			WLL = { add_ideas = BEL_andor_berei } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_henri_glineur
+				}
+			}
+			WLL = { add_ideas = BEL_henri_glineur } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jean_terfve
+				}
+			}
+			WLL = { add_ideas = BEL_jean_terfve } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_oscar_michiels
+				}
+			}
+			WLL = { add_ideas = BEL_olivier_derousseaux2 } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_victor_van_strydonck_de_burkel
+				}
+			}
+			WLL = { add_ideas = BEL_gustave_fromont2 } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jules_iserentant
+				}
+			}
+			WLL = { add_ideas = BEL_paul_hiernaux } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_paul_hiernaux
+				}
+			}
+			WLL = { add_ideas = BEL_paul_hiernaux } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_henri_decarpentrie
+				}
+			}
+			WLL = { add_ideas = BEL_henri_decarpentrie } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = VLA_auguste_baesens
+				}
+			}
+			WLL = { add_ideas = BEL_jules_pire } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_olivier_derousseaux
+				}
+			}
+			WLL = { add_ideas = BEL_yvan_gerard } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_robert_desmet
+				}
+			}
+			WLL = { add_ideas = BEL_andre_becquet } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jean_de_lannoy
+				}
+			}
+			WLL = { add_ideas = BEL_jean_de_lannoy } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_raoul_overstraeten
+				}
+			}
+			WLL = { add_ideas = BEL_jules_henri_vincotte } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = avions_fairey
+				}
+			}
+			WLL = { add_ideas = avions_fairey } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = renard
+				}
+			}
+			WLL = { add_ideas = avions_fairey } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = sabca
+				}
+			}
+			WLL = { add_ideas = sabca } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = fn_herstol
+				}
+			}
+			WLL = { add_ideas = fn_herstol } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = frc_BEL
+				}
+			}
+			WLL = { add_ideas = frc_BEL } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = fn_trucks
+				}
+			}
+			WLL = { add_ideas = fn_trucks } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = Cockerill_industry
+				}
+			}
+			WLL = { add_ideas = Cockerill_industry } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = srb_bel
+				}
+			}
+			WLL = { add_ideas = WLL_ACEC } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = solvay
+				}
+			}
+			WLL = { add_ideas = Cockerill_industry } 
+		}		
+		hidden_effect = {
+			news_event = { hours = 6 id = NOS_benelux.159 }
+		}		
+	}
+	option = {
+		name = NOS_benelux.157.d	#neutrality
+		trigger = {
+			OR = { has_government = monarchism has_government = neutrality }
+		}
+		random_owned_controlled_state = {
+			WLL = { transfer_state = PREV }
+		}
+		BEL = {
+			WLL = {
+				transfer_technology = yes
+				set_capital = 34
+			}
+			every_army_leader = {
+				limit = { has_trait = flemish }
+				set_nationality = VLA
+			}
+			every_army_leader = {
+				limit = { has_trait = walloon }
+				set_nationality = WLL
+			}			
+		}	
+		WLL = {
+			VLA = {
+				transfer_technology = yes
+			}
+		}		
+		if = {
+			limit = {
+				COG = { is_subject_of = BEL }  
+			}
+			WLL = { 
+				puppet = COG						  
+			}
+		}
+		WLL = { annex_country = { target = BEL transfer_troops = yes } change_tag_from = BEL }	
+		
+		if = {
+			limit = {
+				BEL = { is_subject = yes }  
+			}
+			BEL = { 
+				OVERLORD = { 
+					puppet = WLL						 
+				} 
+			}
+		}		
+		
+		WLL = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+				parties = {
+					neutrality = {
+						popularity = 51
+					}
+					democratic = { 
+						popularity = 25
+					}
+
+					fascism = {
+						popularity = 12
+					}
+					
+					communism = {
+						popularity = 10
+					}
+				}
+			}		
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_achille_van_acker
+				}
+			}
+			WLL = { add_ideas = WLL_Jules_Mahieu } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_julien_lahaut
+				}
+			}
+			WLL = { add_ideas = BEL_julien_lahaut } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_joris_van_severen
+				}
+			}
+			WLL = { add_ideas = BEL_Victor_Matthys } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_henri_denis
+				}
+			}
+			WLL = { add_ideas = BEL_henri_denis } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_gustave_joassart
+				}
+			}
+			WLL = { add_ideas = BEL_gustave_joassart } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_Pierre_Daye
+				}
+			}
+			WLL = { add_ideas = BEL_Pierre_Daye } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_Jose_Streel
+				}
+			}
+			WLL = { add_ideas = BEL_Jose_Streel } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_xavier_relecom
+				}
+			}
+			WLL = { add_ideas = BEL_xavier_relecom } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_andor_berei
+				}
+			}
+			WLL = { add_ideas = BEL_andor_berei } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_henri_glineur
+				}
+			}
+			WLL = { add_ideas = BEL_henri_glineur } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jean_terfve
+				}
+			}
+			WLL = { add_ideas = BEL_jean_terfve } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_oscar_michiels
+				}
+			}
+			WLL = { add_ideas = BEL_olivier_derousseaux2 } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_victor_van_strydonck_de_burkel
+				}
+			}
+			WLL = { add_ideas = BEL_gustave_fromont2 } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jules_iserentant
+				}
+			}
+			WLL = { add_ideas = BEL_paul_hiernaux } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_paul_hiernaux
+				}
+			}
+			WLL = { add_ideas = BEL_paul_hiernaux } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_henri_decarpentrie
+				}
+			}
+			WLL = { add_ideas = BEL_henri_decarpentrie } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = VLA_auguste_baesens
+				}
+			}
+			WLL = { add_ideas = BEL_jules_pire } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_olivier_derousseaux
+				}
+			}
+			WLL = { add_ideas = BEL_yvan_gerard } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_robert_desmet
+				}
+			}
+			WLL = { add_ideas = BEL_andre_becquet } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_jean_de_lannoy
+				}
+			}
+			WLL = { add_ideas = BEL_jean_de_lannoy } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_raoul_overstraeten
+				}
+			}
+			WLL = { add_ideas = BEL_jules_henri_vincotte } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = avions_fairey
+				}
+			}
+			WLL = { add_ideas = avions_fairey } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = renard
+				}
+			}
+			WLL = { add_ideas = avions_fairey } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = sabca
+				}
+			}
+			WLL = { add_ideas = sabca } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = fn_herstol
+				}
+			}
+			WLL = { add_ideas = fn_herstol } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = frc_BEL
+				}
+			}
+			WLL = { add_ideas = frc_BEL } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = fn_trucks
+				}
+			}
+			WLL = { add_ideas = fn_trucks } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_miesse_tank
+				}
+			}
+			WLL = { add_ideas = BEL_familleureux } 
+		}	
+		if = {
+			limit = {
+				BEL = {
+					has_idea = BEL_familleureux
+				}
+			}
+			WLL = { add_ideas = BEL_familleureux } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = renault_bel
+				}
+			}
+			WLL = { add_ideas = renault_bel } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = Cockerill_industry
+				}
+			}
+			WLL = { add_ideas = Cockerill_industry } 
+		}
+		if = {
+			limit = {
+				BEL = {
+					has_idea = srb_bel
+				}
+			}
+			WLL = { add_ideas = WLL_ACEC } 
+		}		
+		if = {
+			limit = {
+				BEL = {
+					has_idea = solvay
+				}
+			}
+			WLL = { add_ideas = Cockerill_industry } 
+		}		
+		hidden_effect = {
+			news_event = { hours = 6 id = NOS_benelux.159 }
+		}		
+	}	
+}	
+news_event = {
+	id = NOS_benelux.158
+	title = NOS_benelux.158.t
+	desc = NOS_benelux.158.desc
+	picture = GFX_news_event_flemish_lion
+	
+	major = yes
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = NOS_benelux.158.a
+	}
+}
+news_event = {
+	id = NOS_benelux.159
+	title = NOS_benelux.159.t
+	desc = NOS_benelux.159.desc
+	picture = GFX_news_event_congres_wallon
+	
+	major = yes
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = NOS_benelux.159.a
+	}
+}
+country_event = { # fix around maginot in case Flanders and/or wallonia exists.
+	id = NOS_benelux.160
+	title = NOS_benelux.160.t
+	desc = NOS_benelux.160.desc
+	picture = GFX_report_event_german_troops
+	
+	trigger = {
+		tag = GER
+		date < 1942.1.1
+		OR = {
+			VLA = { exists = yes }
+			WLL = { exists = yes }	
+		}
+		focus_progress = {
+			focus = GER_around_maginot
+			progress > 85
+		}			
+	}
+		
+	mean_time_to_happen = {
+		days = 2
+	}	
+	option = {
+		name = NOS_benelux.160.a	#democratic
+		if = {
+			limit = {
+				VLA = { exists = yes }
+			}
+			create_wargoal = {
+				target = VLA
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = {
+				WLL = { exists = yes }
+			}
+			create_wargoal = {
+				target = WLL
+				type = annex_everything
+			}
+		}		
+	}	
+}
+country_event = { # remove decoster if puppet of an african country
+	id = NOS_benelux.161
+	title = NOS_benelux.161.t
+	desc = NOS_benelux.161.desc
+	picture = GFX_report_event_force_publique
+	fire_only_once = yes
+	trigger = {
+		tag = COG
+		OR = {
+			is_puppet_of = ETH
+			is_puppet_of = SAF
+			is_puppet_of = MZB
+			is_puppet_of = ANG
+			is_puppet_of = LIB
+			has_completed_focus = COG_independence
+		}
+		if = {
+			limit ={
+				is_puppet = yes
+			}
+			OVERLORD = {
+				OR = { has_government = monarchism has_government = neutrality }
+			}			
+		}
+
+		OR = { has_government = monarchism has_government = neutrality }
+		has_country_leader = { ruling_only = yes name = "Albert Decoster" }		
+	}
+		
+	mean_time_to_happen = {
+		days = 30
+	}	
+	option = {
+		name = NOS_benelux.161.a	
+		retire_country_leader = yes
+		ai_chance = {
+			factor = 50
+		}		
+	}
+	option = {
+		name = NOS_benelux.161.b	
+		retire_country_leader = yes
+		set_country_flag = decoster_in_government
+		ai_chance = {
+			factor = 50
+		}		
+	}	
+	option = {
+		name = NOS_benelux.161.c
+		ai_chance = {
+			factor = 0
+		}		
+	}	
+}
+#rename city in independent Congo, albert Decoster
+country_event = {
+	id = NOS_benelux.162
+	title = NOS_benelux.162.t
+	desc = NOS_benelux.162.desc
+	picture = GFX_report_event_journalists_speech
+	trigger = {
+		tag = COG
+		has_country_leader = { ruling_only = yes name = "Albert Decoster" }		
+		OR = { has_government = monarchism has_government = neutrality }
+		NOT = {
+			OR = {
+				has_global_flag = COG_renamed_cities
+				has_global_flag = COG_renamed_cities_decoster
+			}
+		}
+		
+	}		
+	mean_time_to_happen = {
+			days = 180
+		}
+
+	option = { #a great idea!
+		name = NOS_benelux.162.a
+		ai_chance = {
+			base = 100
+		}
+		#if Decoster is communist leader, Kinshasa = Jacquemotteville, Lubumbashi = Decosterville Kisangani = Marxbourg
+		set_province_name = { id = 5117 name = "Jacquemotteville"}
+		set_province_name = { id = 191 name = "Decosterville"}
+		set_province_name = { id = 1950 name = "Marxbourg"}
+		295 = { set_state_name = "Jacquemotteville" }
+		718 = { set_state_name = "Marxbourg" }		
+		set_global_flag = COG_renamed_cities_decoster
+		clr_global_flag = COG_renamed_cities
+	}
+
+	option = { #rather not
+		name = NOS_benelux.162.b
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+country_event = { # renew non aggression with the british TEST! 2
+	id = NOS_benelux.163
+	title = NOS_benelux.148.t
+	desc = NOS_benelux.148.desc
+	picture = GFX_report_event_leopold_britain
+	
+	trigger = {
+		tag = ENG
+		has_country_flag = ENG_BEL_non_aggression_pact_signed
+		has_completed_focus = ENG_belgium_security
+		OR = {
+			has_democratic_government = yes
+			OR = { has_government = monarchism has_government = neutrality }
+		}
+		NOT = {
+			has_country_flag = ENG_BEL_non_aggression_pact_signed2
+			has_country_flag = ENG_BEL_non_aggression_pact_signed3
+			has_country_flag = ENG_BEL_non_aggression_pact_time_limit
+		}
+		
+	}
+	mean_time_to_happen = {
+		days = 2
+	}		
+	option = {
+		name = NOS_benelux.148.a	#Accept
+		ai_chance = {
+			factor = 98
+		}
+		diplomatic_relation = { country = BEL relation = non_aggression_pact }	
+		set_country_flag = ENG_BEL_non_aggression_pact_signed3
+	}
+	option = {
+		name = NOS_benelux.148.b	#Refuse
+		ai_chance = {
+			factor = 2
+		}
+		
+		add_political_power = -20
+		BEL = {
+			country_event = { days = 1 id = NOS_benelux.149 }
+			}
+		set_country_flag = ENG_BEL_non_aggression_pact_signed3
+	}
+		
+}
+country_event = { # experimental event for cosmetic tag COG disguised as an intro event, as the cosmetic tag thing works for generals names and not portrait it's removed at the moment
+	id = NOS_benelux.164
+	title = NOS_benelux.164.t
+	desc = NOS_benelux.164.desc
+	picture = GFX_report_event_force_publique
+	
+	trigger = {
+		tag = COG		
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 0
+	}		
+	option = {
+		name = NOS_benelux.164.a	#Accept
+		ai_chance = {
+			factor = 100
+		}	
+		#set_cosmetic_tag = COG_BEL
+	}		
+}
+country_event = { # albert canal
+	id = NOS_benelux.165
+	title = NOS_benelux.165.t
+	desc = NOS_benelux.165.desc
+	picture = GFX_report_event_albert_canal
+	
+	trigger = {
+		OR = {
+			tag = BEL
+			tag = VLA
+		}
+		date > 1939.15.2
+		has_idea = BEL_digging_of_the_albert_canal
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 30
+	}		
+	option = {
+		name = NOS_benelux.165.a	#Accept
+		ai_chance = {
+			factor = 100
+		}	
+		remove_ideas = BEL_digging_of_the_albert_canal
+		
+	}	
+}
+country_event = { # albert canal interrupted
+	id = NOS_benelux.166
+	title = NOS_benelux.166.t
+	desc = NOS_benelux.166.desc
+	picture = GFX_report_event_albert_canal
+	
+	trigger = {
+		OR = {
+			tag = BEL
+			tag = VLA
+		}
+		any_neighbor_country = {
+			OR = {
+				has_war_with = BEL
+				has_war_with = VLA
+			}	
+		}
+		has_idea = BEL_digging_of_the_albert_canal
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 30
+	}		
+	option = {
+		name = NOS_benelux.166.a	#Accept
+		ai_chance = {
+			factor = 100
+		}
+		remove_ideas = BEL_digging_of_the_albert_canal
+		set_global_flag = albert_canal_interrupted	
+		
+	}		
+}
+country_event = { # Belgium sent technical help for rifle manufacturing after we requested some rifles
+	id = NOS_benelux.167
+	title = NOS_benelux.167.t
+	desc = NOS_benelux.167.desc
+	picture = GFX_report_event_force_publique
+	
+	is_triggered_only = yes
+	fire_only_once = yes		
+	option = {
+		name = NOS_benelux.167.a	#Accept
+		ai_chance = {
+			factor = 100
+		}
+		add_tech_bonus = {
+            name = infantry_bonus
+            bonus = 0.25
+            uses = 1
+            category = infantry_weapons
+		}
+	}		
+}
+country_event = { # eben emael raid, fire with decision
+	id = NOS_benelux.168
+	title = NOS_benelux.168.t
+	desc = NOS_benelux.168.desc
+	picture = GFX_report_event_force_publique #change
+	
+	is_triggered_only = yes
+	option = {
+		name = NOS_benelux.167.a	#Accept
+		ai_chance = {
+			factor = 100
+		}
+		34 = {
+			if = {
+				limit = {
+					any_province_building_level = {
+						province = {
+							id = 11519
+						}
+						building = bunker
+						level > 0
+					}
+					any_province_building_level = {
+						province = {
+							id = 11519
+						}
+						building = bunker
+						level < 2
+					}					
+				}
+				damage_building = {
+					type = bunker
+					province = 11519
+					damage = 0.9
+				}	
+			}		
+			if = {
+				limit = {
+					any_province_building_level = {
+						province = {
+							id = 11519
+						}
+						building = bunker
+						level > 1
+					}
+					any_province_building_level = {
+						province = {
+							id = 11519
+						}
+						building = bunker
+						level < 3
+					}					
+				}
+				damage_building = {
+					type = bunker
+					province = 11519
+					damage = 0.9
+				}
+				remove_building = { type = bunker province = 11519 level = 1 }	
+			}
+			if = {
+				limit = {
+					any_province_building_level = {
+						province = {
+							id = 11519
+						}
+						building = bunker
+						level > 2
+					}
+					any_province_building_level = {
+						province = {
+							id = 11519
+						}
+						building = bunker
+						level < 4
+					}					
+				}
+				damage_building = {
+					type = bunker
+					province = 11519
+					damage = 0.9
+				}
+				remove_building = { type = bunker province = 11519 level = 2 }
+			}
+			if = {
+				limit = {
+					any_province_building_level = {
+						province = {
+							id = 11519
+						}
+						building = bunker
+						level > 3
+					}
+					any_province_building_level = {
+						province = {
+							id = 11519
+						}
+						building = bunker
+						level < 5
+					}					
+				}
+				damage_building = {
+					type = bunker
+					province = 11519
+					damage = 0.9
+				}
+				remove_building = { type = bunker province = 11519 level = 3 }
+			}
+			if = {
+				limit = {
+					any_province_building_level = {
+						province = {
+							id = 11519
+						}
+						building = bunker
+						level > 4
+					}
+					any_province_building_level = {
+						province = {
+							id = 11519
+						}
+						building = bunker
+						level < 6
+					}					
+				}
+				damage_building = {
+					type = bunker
+					province = 11519
+					damage = 0.9
+				}
+				remove_building = { type = bunker province = 11519 level = 4 }
+			}	
+			if = {
+				limit = {
+					any_province_building_level = {
+						province = {
+							id = 11519
+						}
+						building = bunker
+						level > 5
+					}
+				}
+				damage_building = {
+					type = bunker
+					province = 11519
+					damage = 0.9
+				}
+				remove_building = { type = bunker province = 11519 level = 4 }
+			}			
+		}
+		BEL = { country_event = { id = NOS_benelux.169 } }	
+	}
+}
+country_event = { # make belgium aware
+	id = NOS_benelux.169
+	title = NOS_benelux.169.t
+	desc = NOS_benelux.169.desc
+	picture = GFX_report_event_force_publique #change
+	
+	is_triggered_only = yes
+	option = {
+		name = NOS_benelux.169.a	#Accept
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = { # 3 events to make the recruitement of Dutch generals really dynamic
+	id = NOS_benelux.170
+	title = NOS_benelux.170.t
+	desc = NOS_benelux.170.desc
+	picture = GFX_report_event_force_publique #change
+	hidden = yes
+	trigger = {
+		has_decision = BEL_try_to_recruit_dutch_generals 
+	}
+	mean_time_to_happen = {
+		days = 7
+	}	
+	fire_only_once = yes
+	option = {
+		name = NOS_benelux.170.a	#Accept
+		ai_chance = {
+			factor = 100
+		}
+		country_event = { id = NOS_benelux.171 days = 7 }
+		random_list = {
+			30 = { }
+			70 = {
+				HOL = {
+					random_unit_leader  = { 
+						set_nationality = ROOT 
+					}	
+				}	
+			}
+		}		
+	}
+}
+country_event = { # 3 events to make the recruitement of Dutch generals really dynamic
+	id = NOS_benelux.171
+	title = NOS_benelux.171.t
+	desc = NOS_benelux.171.desc
+	picture = GFX_report_event_force_publique #change
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	option = {
+		name = NOS_benelux.171.a	#Accept
+		ai_chance = {
+			factor = 100
+		}
+		country_event = { id = NOS_benelux.172 days = 7 }
+		random_list = {
+			30 = { }
+			70 = {
+				HOL = {
+					random_unit_leader  = { 
+						set_nationality = ROOT 
+					}	
+				}	
+			}
+		}				
+	}
+}
+country_event = { # 3 events to make the recruitement of Dutch generals really dynamic
+	id = NOS_benelux.172
+	title = NOS_benelux.172.t
+	desc = NOS_benelux.172.desc
+	picture = GFX_report_event_force_publique #change
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	option = {
+		name = NOS_benelux.172.a	#Accept
+		ai_chance = {
+			factor = 100
+		}
+		random_list = {
+			30 = { }
+			70 = {
+				HOL = {
+					random_unit_leader  = { 
+						set_nationality = ROOT 
+					}	
+				}	
+			}
+		}		
+	}
+}
+country_event = { # 3 events to make the recruitement of Flemish generals really dynamic
+	id = NOS_benelux.173
+	title = NOS_benelux.173.t
+	desc = NOS_benelux.173.desc
+	picture = GFX_report_event_force_publique #change
+	hidden = yes
+	trigger = {
+		has_decision = HOL_try_to_recruit_flemish_generals 
+	}
+	mean_time_to_happen = {
+		days = 7
+	}	
+	fire_only_once = yes
+	option = {
+		name = NOS_benelux.170.a	#Accept
+		ai_chance = {
+			factor = 100
+		}
+		country_event = { id = NOS_benelux.174 days = 7 }
+		random_list = {
+			30 = { }
+			70 = {
+				VLA = {
+					random_unit_leader  = { 
+						set_nationality = ROOT 
+					}	
+				}	
+			}
+		}
+		random_list = {
+			30 = { }
+			70 = {
+				BEL = {
+					random_unit_leader  = { 
+						set_nationality = ROOT 
+					}	
+				}	
+			}
+		}		
+	}
+}
+country_event = { # 3 events to make the recruitement of Dutch generals really dynamic
+	id = NOS_benelux.174
+	title = NOS_benelux.174.t
+	desc = NOS_benelux.174.desc
+	picture = GFX_report_event_force_publique #change
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	option = {
+		name = NOS_benelux.174.a	#Accept
+		ai_chance = {
+			factor = 100
+		}
+		country_event = { id = NOS_benelux.175 days = 7 }
+		random_list = {
+			30 = { }
+			70 = {
+				VLA = {
+					random_unit_leader  = { 
+						set_nationality = ROOT 
+					}	
+				}	
+			}
+		}
+		random_list = {
+			30 = { }
+			70 = {
+				BEL = {
+					random_unit_leader  = { 
+						set_nationality = ROOT 
+					}	
+				}	
+			}
+		}				
+	}
+}
+country_event = { # 3 events to make the recruitement of Dutch generals really dynamic
+	id = NOS_benelux.175
+	title = NOS_benelux.175.t
+	desc = NOS_benelux.175.desc
+	picture = GFX_report_event_force_publique #change
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	option = {
+		name = NOS_benelux.175.a	#Accept
+		ai_chance = {
+			factor = 100
+		}
+		random_list = {
+			30 = { }
+			70 = {
+				VLA = {
+					random_unit_leader  = { 
+						set_nationality = ROOT 
+					}	
+				}	
+			}
+		}
+		random_list = {
+			30 = { }
+			70 = {
+				BEL = {
+					random_unit_leader  = { 
+						set_nationality = ROOT 
+					}	
+				}	
+			}
+		}		
+	}
+}

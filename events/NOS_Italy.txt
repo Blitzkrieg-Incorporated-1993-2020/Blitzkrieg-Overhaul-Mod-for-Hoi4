@@ -1,0 +1,193 @@
+add_namespace = italyfocus
+
+##Event: The Lisbon Conference
+country_event = {
+	id = italyfocus.1
+	title = italyfocus.1.title
+	desc = italyfocus.1.desc
+	picture = GFX_/media/get//hoi4/event_gfx/event_test
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = italyfocus.1.a
+		ai_chance = { factor = 1}
+ITA = { create_wargoal= { 
+type = annex_everything 
+target = POR
+} }
+ITA = { country_event
+= { days = 1 id = italyfocus.2 }
+	} }
+	option = {
+		name = italyfocus.1.b
+		ai_chance = { factor = 80}
+		ITA = { annex_country= {
+ target = POR 
+} }
+ITA = { country_event
+= { days = 1 id = italyfocus.3 }
+	} }
+}
+##Event: They agree!
+country_event = {
+	id = italyfocus.2
+	title = italyfocus.2.title
+	desc = italyfocus.2.desc
+	picture = GFX_/media/get//hoi4/event_gfx/event_test
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = italyfocus.2.a
+		ai_chance = { factor = 1}
+	}
+}
+##Event: They refused!
+country_event = {
+	id = italyfocus.3
+	title = italyfocus.3.title
+	desc = italyfocus.3.desc
+	picture = GFX_/media/get//hoi4/event_gfx/event_test
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = italyfocus.3.a
+		ai_chance = { factor = 1}
+	}
+}
+##Event: Italy wants to join the Comintern
+country_event = {
+	id = italyfocus.4
+	title = italyfocus.4.title
+	desc = italyfocus.4.desc
+	picture = GFX_/media/get//hoi4/event_gfx/event_test
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = italyfocus.4.a
+		ai_chance = { factor = 90}
+		SOV = { add_to_faction= ITA }
+	}
+	option = {
+		name = italyfocus.4.b
+		ai_chance = { factor = 1}
+	}
+}
+##Event: The Soldier King
+country_event = {
+	id = italyfocus.5
+	title = italyfocus.5.title
+	desc = italyfocus.5.desc
+	picture = GFX_/media/get//hoi4/event_gfx/event_test
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = italyfocus.5.a
+		ai_chance = { factor = 1}
+		create_country_leader= {
+ name = "Victor Emmanuel III"
+desc = ""
+picture = "victoremmanuel.tga"
+expire = "1965.1.1" 
+ideology = absolutism 
+traits = {
+	ITA_the_soldier_king
+}
+}
+remove_ideas = victor_emmanuel
+set_politics= {
+ ruling_party = monarchism 
+elections_allowed = no 
+}
+	}
+}
+##Event: The Vatican Raided!
+news_event = {
+	id = italyfocus.6
+	title = italyfocus.6.title
+	desc = italyfocus.6.desc
+	picture = GFX_/media/get//hoi4/event_gfx/news_event_kiev_ruins
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = italyfocus.6.a
+		ai_chance = { factor = 1}
+	}
+}
+##Event: The Liberation of Antonio Gramsci
+news_event = {
+	id = italyfocus.7
+	title = italyfocus.7.title
+	desc = italyfocus.7.desc
+	picture = GFX_/media/get//hoi4/event_gfx/news_event_generic_rally2
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = italyfocus.7.a
+		ai_chance = { factor = 1}
+	}
+}
+##Event: Portuguese invitation to the Union
+country_event = {
+	id = italyfocus.8
+	title = italyfocus.8.title
+	desc = italyfocus.8.desc
+	picture = GFX_/media/get//hoi4/event_gfx/event_test
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = italyfocus.8.a
+		ai_chance = { factor = 100}
+		ITA = { annex_country= {
+ target = POR 
+} }
+		ITA = { annex_country= {
+ target = SPR 
+} }
+ITA = { country_event
+= { days = 1 id = italyfocus.10 }
+	} }
+	option = {
+		name = italyfocus.8.b
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: They accepted!
+country_event = {
+	id = italyfocus.10
+	title = italyfocus.10.title
+	desc = italyfocus.10.desc
+	picture = GFX_/media/get//hoi4/event_gfx/event_test
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = italyfocus.10.a
+		ai_chance = { factor = 1}
+	}
+}

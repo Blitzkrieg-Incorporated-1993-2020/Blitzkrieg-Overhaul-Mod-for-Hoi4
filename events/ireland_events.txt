@@ -1,0 +1,226 @@
+add_namespace = ireland
+
+##Event: The Belfast conference
+country_event = {
+ id = ireland.1
+ title = ireland.1.title
+ desc = ireland.1.desc
+ picture = GFX_report_event_soviet_german_soldier_handshake
+ is_triggered_only = yes
+ fire_only_once = yes
+	option = {
+		name = ireland.1.a
+		ai_chance = { factor = 1}
+		IRE = {transfer_state= 119}
+add_to_faction= IRE
+IRE = {country_event= {
+id = ireland.2 
+} }
+	}
+	option = {
+		name = ireland.1.b
+		ai_chance = { factor = 99}
+	}
+}
+
+##Event: Britain accepts!
+country_event = {
+ id = ireland.2
+ title = ireland.2.title
+ desc = ireland.2.desc
+ picture = GFX_report_event_soviet_german_soldier_handshake
+ is_triggered_only = yes
+ fire_only_once = yes
+	option = {
+		name = ireland.2.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: The Rat
+country_event = {
+ id = ireland.3
+ title = ireland.3.title
+ desc = ireland.3.desc
+ picture = GFX_report_event_soldiers_marching
+ is_triggered_only = yes
+ fire_only_once = yes
+	option = {
+		name = ireland.3.a
+		ai_chance = { factor = 1}
+		kill_country_leader= yes
+	}
+	option = {
+		name = ireland.3.b
+		ai_chance = { factor = 1}
+		add_stability= 0.05
+kill_country_leader= yes
+	}
+	option = {
+		name = ireland.3.c
+		ai_chance = { factor = 10}
+		kill_country_leader= yes
+add_stability= -0.05
+add_war_support= 0.05
+	}
+}
+
+##Event: Irish troops storm Fermanagh!
+news_event = {
+ id = ireland.4
+ title = ireland.4.title
+ desc = ireland.4.desc
+ picture = GFX_news_event_ast_army
+ is_triggered_only = yes
+	option = {
+		name = ireland.4.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Ireland marches to Derry!
+country_event = {
+ id = ireland.5
+ title = ireland.5.title
+ desc = ireland.5.desc
+ picture = GFX_report_event_swedish_soldier
+ is_triggered_only = yes
+	option = {
+		name = ireland.5.a
+		ai_chance = { factor = 4}
+		create_wargoal= { 
+type = annex_everything 
+target = IRE
+}
+	}
+	option = {
+		name = ireland.5.b
+		ai_chance = { factor = 6}
+		add_political_power= -50
+add_stability= -0.02
+	}
+}
+
+##Event: The annexation of Northern Ireland
+country_event = {
+ id = ireland.6
+ title = ireland.6.title
+ desc = ireland.6.desc
+ picture = GFX_report_event_swedish_soldier
+ is_triggered_only = yes
+	option = {
+		name = ireland.6.a
+		ai_chance = { factor = 8}
+		create_wargoal= { 
+type = annex_everything 
+target = IRE
+}
+	}
+	option = {
+		name = ireland.6.b
+		ai_chance = { factor = 2}
+		add_political_power= -100
+add_stability= -0.05
+	}
+}
+
+##Event: Irish entry into the axis
+country_event = {
+ id = ireland.8
+ title = ireland.8.title
+ desc = ireland.8.desc
+ picture = GFX_report_event_soviet_purge_officers_02
+ is_triggered_only = yes
+	option = {
+		name = ireland.8.a
+		ai_chance = { factor = 10}
+		add_to_faction= IRE
+	}
+	option = {
+		name = ireland.8.b
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Germany declines.
+country_event = {
+ id = ireland.9
+ title = ireland.9.title
+ desc = ireland.9.desc
+ picture = GFX_report_event_south_africa_patrol
+ is_triggered_only = yes
+	option = {
+		name = ireland.9.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Irish entry into the comintern
+country_event = {
+ id = ireland.10
+ title = ireland.10.title
+ desc = ireland.10.desc
+ picture = GFX_report_event_chamberlain_announce
+ is_triggered_only = yes
+	option = {
+		name = ireland.10.a
+		ai_chance = { factor = 1}
+		add_to_faction= IRE
+	}
+}
+
+##Event: Ireland demands Scottish and Welsh independence.
+country_event = {
+ id = ireland.11
+ title = ireland.11.title
+ desc = ireland.11.desc
+ picture = GFX_report_event_king_speech
+ is_triggered_only = yes
+	option = {
+		name = ireland.11.a
+		ai_chance = { factor = 95}
+		add_stability= -0.01
+IRE = {country_event = {id = ireland.13 
+} }
+	}
+	option = {
+		name = ireland.11.b
+		ai_chance = { factor = 5}
+		add_stability= 0.15
+release_puppet= SCO
+release_puppet= WLS
+	}
+}
+
+##Event: Ireland requests purchase of Northern Ireland
+country_event = {
+ id = ireland.12
+ title = ireland.12.title
+ desc = ireland.12.desc
+ picture = GFX_report_event_saf_soldiers_2
+ is_triggered_only = yes
+	option = {
+		name = ireland.12.a
+		ai_chance = { factor = 10}
+		add_political_power= 300
+IRE = { transfer_state= 119 }
+	}
+	option = {
+		name = ireland.12.b
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Britain declines
+country_event = {
+ id = ireland.13
+ title = ireland.13.title
+ desc = ireland.13.desc
+ picture = GFX_report_event_japan_europe_pact
+ is_triggered_only = yes
+	option = {
+		name = ireland.13.a
+		ai_chance = { factor = 1}
+	}
+}
+
