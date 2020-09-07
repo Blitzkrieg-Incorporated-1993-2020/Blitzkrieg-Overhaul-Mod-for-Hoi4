@@ -1,0 +1,82 @@
+###############
+## communist_light_armor
+###############
+objectTypes = {	
+	pdxmesh = {
+		name = "communist_light_armor_mesh"
+		file = "gfx/models/units/tanks/communist_light_armor.mesh"
+
+		animation = { id = "attack"			type = "SOV_tank_light_attack_animation" }
+		animation = { id = "idle"			type = "SOV_tank_light_idle_animation" }
+		animation = { id = "move"			type = "SOV_tank_light_moving_animation" }
+		
+		scale = 0.9
+		
+	}
+}
+###############
+## communist_medium_armor
+###############
+objectTypes = {	
+	pdxmesh = {
+		name = "communist_medium_armor_mesh"
+		file = "gfx/models/units/tanks/communist_medium_armor.mesh"
+
+		animation = { id = "attack"			type = "SOV_tank_medium_attack_animation" }
+		animation = { id = "idle"			type = "SOV_tank_medium_idle_animation" }
+		animation = { id = "move"			type = "SOV_tank_medium_moving_animation" }
+		scale = 0.8
+	}
+}
+###############
+## communist_heavy_armor
+###############
+objectTypes = {	
+	pdxmesh = {
+		name = "communist_heavy_armor_mesh"
+		file = "gfx/models/units/tanks/communist_heavy_armor.mesh"
+
+		animation = { id = "attack"			type = "SOV_tank_heavy_attack_animation" }
+		animation = { id = "idle"			type = "SOV_tank_heavy_idle_animation" }
+		animation = { id = "move"			type = "SOV_tank_heavy_moving_animation" }
+		scale = 1.1
+	}
+}
+###############
+## communist_mechanized
+###############
+
+objectTypes = {	
+	pdxmesh = {
+		name = "communist_mechanized_frame_mesh"
+		file = "gfx/models/units/tanks/mechanized_frame.mesh"
+
+		animation = { id = "idle"			type = "motorized_frame_idle_animation" }
+		animation = { id = "move"			type = "motorized_frame_move_animation" }
+	}
+}
+
+objectTypes = {	
+	pdxmesh = {
+		name = "communist_mechanized_vehicle_mesh"
+		file = "gfx/models/units/tanks/communist_mechanized.mesh"
+
+		animation = { id = "idle"			type = "communist_mechanized_01_idle_animation" }
+		animation = { id = "move"			type = "communist_mechanized_01_move_animation" }
+	}
+}
+
+###############
+## communist_motorized
+###############
+
+objectTypes = {	
+	pdxmesh = {
+		name = "communist_motorized_mesh"
+		file = "gfx/models/units/vehicles/SOV_motorized_01.mesh"
+
+		animation = { id = "idle"			type = "SOV_motorized_01_idle_animation" }
+		animation = { id = "move"			type = "SOV_motorized_01_move_animation" }
+	}
+}
+
