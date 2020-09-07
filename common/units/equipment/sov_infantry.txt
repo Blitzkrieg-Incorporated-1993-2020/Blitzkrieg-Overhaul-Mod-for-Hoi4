@@ -1,0 +1,32 @@
+# All infantry equipment
+
+equipments = {
+	
+	# AK-47  ~1946
+	infantry_equipment_30 = {
+		year = 1946
+	
+		archetype = infantry_equipment
+		parent = infantry_equipment_3
+		#picture = SOV_kalashnikov_rifle_tech
+		priority = 10
+		
+		#Defensive Abilities
+		defense = 50
+		breakthrough = 10
+
+		#Offensive Abilities
+		soft_attack = 25
+		hard_attack = 3
+		ap_attack = 15
+		air_attack = 0
+		
+		reliability = 0.95
+		build_cost_ic = 0.5
+		resources = {
+			steel = 3
+		}
+	}
+	
+	
+}

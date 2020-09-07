@@ -1,0 +1,14 @@
+﻿USA = {
+	special_infantry = {
+        prefix = ""
+        generic = { "National Guard Division" }
+        generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+        unique = {}
+    }
+	allies_paramarine = {
+        prefix = ""
+        generic = { "US Paramarine Division" }
+        generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+        unique = {}
+    }
+}

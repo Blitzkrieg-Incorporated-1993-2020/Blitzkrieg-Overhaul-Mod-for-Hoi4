@@ -1,0 +1,127 @@
+ideas = {
+
+	convention = { 
+	
+		law = yes
+		use_list_view = yes
+
+		#Strict
+		convention_strict = {
+		    available = {
+			}
+			
+			modifier = {
+			    political_power_gain = 0.20
+                opinion_gain_monthly_factor = 0.25
+				experience_loss_factor = 0.25
+                war_support_factor = -0.10
+				resistance_target = -0.10
+				resistance_damage_to_garrison = -0.10
+			}
+			
+			cost = 100
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+   				factor = 5
+				modifier = {
+				    OR = {
+					has_government = fascism
+					has_government = communism
+					}
+					factor = 0.5
+				}
+   			}
+		}
+		
+		#Small violations
+		convention_small = {
+		
+			available = {
+				
+			}
+
+			cost = 100
+		
+			modifier = {
+				supply_consumption_factor = 0.05
+                attrition = 0.1
+                army_attack_factor = 0.05
+				army_defence_factor = 0.05
+                experience_loss_factor = -0.10
+                resistance_damage_to_garrison = 0.05  
+                resistance_target = 0.05				
+			}
+			
+			cost = 100
+			
+			cancel_if_invalid = yes
+
+			ai_will_do = {
+   				factor = 5
+
+   				modifier = {
+					has_government = democratic
+					factor = 0.5
+				}
+   			}
+		}
+		
+		#Severe viol.
+		convention_severe = {
+		
+		available = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+			
+			modifier = {
+                supply_consumption_factor = 0.10
+                attrition = 0.10
+                army_attack_factor = 0.10
+				army_defence_factor = 0.10
+                experience_loss_factor = -0.20
+                resistance_damage_to_garrison = 0.1 
+				resistance_target = 0.10
+			}
+
+			cost = 100
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 0.5
+   			}
+		}
+		
+		convention_no = {
+		
+		available = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+			
+			modifier = {
+				supply_consumption_factor = 0.15
+                attrition = 0.15
+                army_attack_factor = 0.15
+				army_defence_factor = 0.15
+                experience_loss_factor = -0.25
+                resistance_damage_to_garrison = 0.20
+				resistance_target = 0.15
+			}
+
+			cost = 100
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 0.5
+   			}
+		}
+		
+	}
+}

@@ -1,0 +1,6 @@
+sub_unit_categories = {
+	category_faction_infantry
+	category_faction_mobile_infantry
+	category_faction_mechanized_infantry
+	category_faction_tanks
+}

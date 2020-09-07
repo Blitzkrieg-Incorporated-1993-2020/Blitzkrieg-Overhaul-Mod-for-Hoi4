@@ -1,0 +1,1398 @@
+ideas = {
+
+	country = {
+	    
+		SPR_to_the_bitter_end = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+			
+			cancel = {
+				OR = {
+					has_capitulated = yes
+				}
+			}
+				
+			removal_cost = -1
+
+			picture = generic_victors_of_ww1
+			
+			research_bonus = {
+				land_doctrine = 0.05
+			}
+			modifier = {
+				surrender_limit = 0.12
+				conscription = 0.1
+				war_support_factor = -0.05
+			}
+		}
+
+		SPA_bsq_victory = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				industrial_capacity_factory = 0.2
+				production_factory_max_efficiency_factor = 0.25
+			}
+		}
+		
+        SPR_concessions = {
+
+			picture = SOV_scientist_defect
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.1
+				consumer_goods_factor = 0.1
+			}
+		}
+		
+		SPR_ed_profit = {
+			removal_cost = -1
+			allowed = {
+				always = no # Unlocked via focus
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+
+			picture = generic_research_bonus
+	
+			modifier = {
+				research_speed_factor = 0.1
+			}
+	
+		}
+		
+		SPR_f_boom = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+		
+		SPR_outflow = {
+
+			picture = ROM_king_carol_emptied_accounts
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				consumer_goods_factor = 0.15
+				production_speed_buildings_factor = -0.1
+			}
+		}
+		
+		SPR_bailout = {
+
+			picture = ROM_king_carol_emptied_accounts
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+		
+		SPR_strike = {
+
+			picture = FRA_matignon_agreements
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				production_speed_buildings_factor = -0.5
+				consumer_goods_factor = 0.5
+				production_factory_max_efficiency_factor = -0.2
+				industrial_capacity_factory = -0.3
+			}
+		}
+		
+		SPR_depression = {
+
+			picture = great_depression
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.1
+			}
+		}
+		
+		SPR_broke = {
+
+			picture = great_depression
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = 0.15 instant = yes
+				}
+			}
+		}
+		
+		SPR_militarized = {
+
+			picture = idea_general_staff
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.2
+			}
+		}
+		
+		SPR_postwar1 = {
+
+			picture = great_depression
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				production_speed_buildings_factor = -0.5
+				consumer_goods_factor = 0.5
+				political_power_cost = 1
+				research_speed_factor = -0.3
+				production_factory_max_efficiency_factor = -0.2
+				industrial_capacity_factory = -0.3
+				MONTHLY_POPULATION = -0.25
+			}
+		}
+		
+		SPR_postwar2 = {
+
+			picture = great_depression
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				production_speed_buildings_factor = -0.3
+				consumer_goods_factor = 0.25
+				political_power_cost = 0.5
+				research_speed_factor = -0.1
+				production_factory_max_efficiency_factor = -0.1
+				industrial_capacity_factory = -0.2
+				MONTHLY_POPULATION = -0.1
+			}
+		}
+		
+		SPR_texaco = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = SOV_scientist_defect
+			
+			modifier = { 
+                industrial_capacity_factory = 0.075 				
+			}
+		}
+		
+		SPR_postwar3 = {
+
+			picture = ast_all_in
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.1
+			}
+		}
+		
+		SPR_c_budget = {
+
+			picture = HUN_treaty_of_triannon
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				production_speed_arms_factory_factor = 0.15
+			    industrial_capacity_factory = 0.1 
+				production_speed_industrial_complex_factor = -0.1
+			}
+		}
+		
+		SPR_l_budget = {
+
+			picture = HUN_treaty_of_triannon
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				production_speed_industrial_complex_factor = 0.15
+				political_power_factor = -0.25
+			}
+		}
+		
+		SPR_sd_budget = {
+
+			picture = HUN_treaty_of_triannon
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				political_power_factor = 0.5
+				production_speed_infrastructure_factor = 0.1
+				production_speed_arms_factory_factor = -0.1
+				
+			}
+		}
+		
+		SPR_rationing = {
+
+			picture = raj_risk_of_famine
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				MONTHLY_POPULATION = 0.2
+			}
+		}
+		
+		SPR_social = {
+
+			picture = SOV_scientist_defect
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+			    stability_factor = 0.1
+				conscription = 0.01
+			}
+		}
+		
+		SPR_revenges = {
+
+			picture = vittoria_mutilata
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				conscription = 0.015
+			}
+		}
+		
+		MEX_revenge = {
+
+			picture = vittoria_mutilata
+
+			allowed = {
+				original_tag = MEX
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				conscription = 0.03
+			}
+		}
+		
+		SPR_agrarian = {
+
+			picture = new_deal
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				conscription = 0.01
+				trade_opinion_factor = 0.2
+			}
+		}
+		SPR_democrat = {
+
+			picture = generic_democratic_drift_bonus
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				democratic_drift = 0.1
+				neutrality_drift = 0.1
+			}
+		}
+		
+		SPR_king = {
+
+			picture = ast_abandon_the_westminster_system
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				neutrality_drift = 0.1
+			}
+		}
+		
+		SPR_church = {
+
+			picture = ENG_the_war_to_end_all_wars
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				political_power_factor = 0.1
+				drift_defence_factor = 0.5
+				conscription = 0.015
+			}
+		}
+		
+		SPR_marxist = {
+
+			picture = socialist_science_focus
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05 
+				production_speed_infrastructure_factor = 0.2
+                conscription = 0.015				
+			}
+		}
+		
+		SPR_worker = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = trotskyite_plot_purged
+			
+			modifier = {
+				justify_war_goal_time = -0.25
+				enemy_partisan_effect = -0.25
+			}
+		}
+		
+		alfonso = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = victor_emmanuel
+			
+			modifier = {
+				unity_factor = 0.05				
+			}
+		}
+		
+		SPR_p_army = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = home_of_revolution
+			
+			modifier = {
+				industrial_capacity_factory = 0.05 
+                political_power_gain = 0.15 
+				drift_defence_factor = 0.5 				
+			}
+		}
+		
+		armas_secas = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = vittoria_mutilata
+			
+			modifier = {
+				industry_repair_factor = 0.2 
+				production_speed_industrial_complex_factor = 0.075
+				production_factory_max_efficiency_factor = 0.05 				
+			}
+		}
+		
+		SPR_values = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = FRA_scw_intervention_nationalists_focus
+			
+			modifier = {
+				army_morale_factor = 0.1
+                unity_factor = 0.05
+				army_core_defence_factor = 0.1				
+			}
+		}
+		
+		SPR_apol = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_victors_of_ww1
+			
+			modifier = {
+			    unity_factor = 0.05
+				political_power_factor = 0.1				
+			}
+			research_bonus = {
+				land_doctrine = 0.1
+			}
+		}
+		
+		SPR_works = {
+			
+			
+			allowed = {
+				always = no 
+			}
+            
+            allowed_civil_war = {
+				always = yes
+			}
+            
+            removal_cost = -1
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		
+		SPR_ile = {
+			removal_cost = -1
+			allowed = {
+				always = no # Unlocked via focus
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+
+			picture = generic_research_bonus
+	
+			modifier = {
+				research_speed_factor = 0.05
+			}
+	
+		}
+		
+		SPR_no_pasaran_idea = {
+
+			picture = generic_wall_line
+
+			allowed = {
+				always = no
+				has_civil_war = yes
+			}
+
+			modifier = {
+				army_defence_factor = 0.05
+			}
+		}
+		
+		SPR_revolution = {
+			
+			
+			allowed = {
+				always = no
+				has_civil_war = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_volunteer_expidition_bonus
+			
+			modifier = {
+				conscription = 0.03
+                training_time_army_factor = -0.25 				
+			}
+		}
+		
+		SPR_revolution2 = {
+			
+			
+			allowed = {
+				always = no
+				has_civil_war = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_volunteer_expidition_bonus
+			
+			modifier = {
+				conscription = 0.03
+                training_time_army_factor = -0.25
+                land_reinforce_rate = 0.05
+                out_of_supply_factor = -0.05  				
+			}
+		}
+		
+		SPR_revolution3 = {
+			
+			
+			allowed = {
+				always = no
+				has_civil_war = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_volunteer_expidition_bonus
+			
+			modifier = {
+				conscription = 0.03
+                training_time_army_factor = -0.25
+                land_reinforce_rate = 0.05
+                out_of_supply_factor = -0.1
+                army_core_attack_factor = 0.05   				
+			}
+		}
+		
+		SPR_royal1 = {
+
+			picture = ast_abandon_the_westminster_system
+
+			allowed = {
+				always = no
+				has_civil_war = yes
+			}
+
+			modifier = {
+				conscription_factor = 0.1
+                cavalry_attack_factor = 0.05
+                cavalry_defence_factor = 0.05 				
+			}
+		}
+		
+		SPR_royal2 = {
+
+			picture = ast_abandon_the_westminster_system
+
+			allowed = {
+				always = no
+				has_civil_war = yes
+			}
+
+			modifier = {
+				conscription_factor = 0.1
+                cavalry_attack_factor = 0.15
+                cavalry_defence_factor = 0.075
+                army_core_defence_factor = 0.1  				
+			}
+		}
+		
+		SPR_ejercito1 = {
+			
+			cancel = {
+				date > 1938.6.1
+			}
+			
+			allowed = {
+				always = no
+				has_civil_war = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_volunteer_expidition_bonus
+			
+			modifier = {
+				conscription = 0.02 
+                army_core_defence_factor = 0.075
+				army_core_attack_factor = 0.075 
+				army_morale_factor = 0.1  				
+			}
+		}
+		
+		SPR_ejercito2 = {
+			
+			cancel = {
+				date > 1938.6.1
+			}
+			
+			allowed = {
+				always = no
+				has_civil_war = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_volunteer_expidition_bonus
+			
+			modifier = {
+				conscription = 0.02 
+                army_core_defence_factor = 0.15
+				army_core_attack_factor = 0.075 
+				army_morale_factor = 0.15  				
+			}
+		}
+		
+		SPR_regime1 = {
+
+			picture = FRA_national_mobilization_focus
+			allowed = {
+				always = no
+				has_civil_war = yes
+			}
+
+			modifier = {
+				political_power_gain = 0.1
+			}
+		}
+		
+		SPR_regime2 = {
+
+			picture = FRA_national_mobilization_focus
+			allowed = {
+				always = no
+				has_civil_war = yes
+			}
+
+			modifier = {
+				political_power_gain = 0.1
+				foreign_subversive_activites = -0.50
+                war_support_factor = 0.2
+                drift_defence_factor = 0.3 				
+			}
+		}
+		
+		SPR_regime3 = {
+
+			picture = FRA_national_mobilization_focus
+			allowed = {
+				always = no
+				has_civil_war = yes
+			}
+
+			modifier = {
+				political_power_gain = 0.1
+				foreign_subversive_activites = -0.50
+                war_support_factor = 0.2
+                drift_defence_factor = 0.3
+                army_core_attack_factor = 0.75			
+			}
+		}
+		
+		SPR_mutinies = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = FRA_scw_intervention_nationalists_focus
+			
+			modifier = { 
+                army_org_factor = -0.2
+                recon_factor = -0.4
+                naval_hit_chance = -0.15
+                spotting_chance = -0.1 				
+			}
+		}
+		
+		SPR_militias = {
+			
+			
+			allowed = {
+				always = no
+				has_civil_war = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = FRA_scw_intervention_republicans_focus
+			
+			modifier = {
+			    experience_gain_army_factor = 0.4 
+				conscription_factor = 0.5
+				training_time_army_factor = -0.25 
+                army_org_factor = -0.1
+                recon_factor = -0.15
+                spotting_chance = -0.1 				
+			}
+		}
+		
+		SPR_militias2 = {
+			
+			
+			allowed = {
+				always = no
+				has_civil_war = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = FRA_scw_intervention_republicans_focus
+			
+			modifier = {
+			    experience_gain_army_factor = 0.1 
+				conscription_factor = 0.2
+				training_time_army_factor = -0.1 
+                army_org_factor = -0.05
+                recon_factor = -0.05				
+			}
+		}
+		
+		SPR_riots = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = FRA_scw_intervention_republicans_focus
+			
+			modifier = {
+				political_power_factor = -0.5				
+			}
+		}
+		
+		SPR_polarization = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_disjointed_gov
+			
+			modifier = {
+				stability_factor = -0.3			
+			}
+		}
+		
+		SPR_fighterfoc1 = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_air_bonus
+			
+			equipment_bonus = {
+				fighter = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+		
+		SPR_fighterfoc2 = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_air_bonus
+			
+			equipment_bonus = {
+				fighter = {
+					build_cost_ic = -0.15 instant = yes
+				}
+			}
+		}
+		
+		SPR_bomberfoc1 = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_air_bonus
+			
+			equipment_bonus = {
+				tactical_bomber = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				strategic_bomber = {
+					build_cost_ic = -0.05 instant = yes
+				}
+			}
+		}
+		
+		SPR_bomberfoc2 = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_air_bonus
+			
+			equipment_bonus = {
+				tactical_bomber = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				strategic_bomber = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				nav_bomber = {
+					build_cost_ic = -0.05 instant = yes
+				}
+			}
+		}
+		
+		SPR_old_guard = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = ast_volunteer_defence_corps
+			
+			research_bonus = {
+				land_doctrine = -0.5
+			}
+		}
+		
+		SPR_old_guard2 = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_morale_bonus
+			
+			research_bonus = {
+				land_doctrine = -0.2
+			}
+		}
+		
+		SPR_riots2 = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = FRA_scw_intervention_republicans_focus
+			
+			modifier = {
+				political_power_factor = -0.25				
+			}
+		}
+		
+		SPR_funds = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = FRA_scw_intervention_republicans_focus
+			
+			modifier = {
+			    subversive_activites_upkeep = -0.5
+		        drift_defence_factor = 0.15			
+			}
+		}
+		
+		SPR_zamora = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			picture = SPR_zamora
+			
+			removal_cost = -1
+			
+			
+			modifier = {
+				democratic_acceptance = 10				
+			}
+		}
+
+	}
+
+	political_advisor = {
+
+		SPA_luis_valdes_cavanillas = {
+
+			picture = generic_army_europe_2
+
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+			traits = { prince_of_terror }
+		}
+
+		SPA_tomas_garciano_goni = {
+
+			picture = generic_political_advisor_europe_1
+
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+			traits = { compassionate_gentleman }
+		}
+
+		SPA_fidel_davila_arrondo = {
+
+			picture = generic_army_europe_1
+
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+			traits = { war_industrialist }
+		}
+	}
+
+	theorist = {
+
+	SPA_jose_enrique_varela = {
+				
+				
+		allowed = {
+			is_literally_spain = yes
+			has_government = fascism
+		}
+		
+		picture = generic_army_europe_3
+		
+		research_bonus = {
+			land_doctrine = 0.07
+		}
+		
+		traits = { military_theorist }
+	}
+
+	SPA_emilio_herrera = {
+				
+				
+		allowed = {
+			is_literally_spain = yes
+			has_government = fascism
+		}
+		
+		picture = generic_air_europe_3
+		
+		research_bonus = {
+			air_doctrine = 0.07
+		}
+		
+		traits = { air_warfare_theorist }
+	}
+}
+	# MILITARY
+	army_chief = {
+		
+
+		SPA_miguel_cabanellas_ferrer = {
+			
+			picture = generic_army_europe_3
+			
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+
+			
+			traits = { army_chief_old_guard }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SPA_ricardo_rada = {
+			
+			picture = generic_army_europe_1
+			
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+
+			
+			traits = { army_chief_defensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SPA_emilio_mola_vidal = {
+			
+			picture = generic_army_europe_2
+			
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+	air_chief = {
+
+		SPA_alfredo_kindelan_duany = {
+			
+			picture = generic_air_europe_1
+			
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+
+			
+			traits = { air_chief_ground_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SPA_juan_yague_blanco = {
+			
+			picture = generic_air_europe_3
+			
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+
+			
+			traits = { air_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	navy_chief = {
+		
+
+		SPA_salvador_moreno_fernandez = {
+			
+			picture = generic_navy_europe_1
+			
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+
+			
+			traits = { navy_chief_decisive_battle_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SPA_fransisco_moreno_fernandez = {
+			
+			picture = generic_navy_europe_2
+			
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+
+			
+			traits = { navy_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SPA_luis_carrero_blanco = {
+			
+			picture = generic_navy_europe_1
+			
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+
+			
+			traits = { navy_chief_old_guard }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	
+	high_command = {
+		SPA_emilio_esteban_infantes = {
+			
+			
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+
+			
+			traits = { army_logistics_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		SPA_agustin_munoz_grandes = {
+			
+			
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	
+		SPA_joaquin_garcia_morato = {
+			
+			
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+
+			
+			traits = { air_air_combat_training_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		SPA_angel_salas_larrazabal = {
+			
+			
+			allowed = {
+				is_literally_spain = yes
+				has_government = fascism
+			}
+			
+
+			
+			traits = { air_strategic_bombing_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

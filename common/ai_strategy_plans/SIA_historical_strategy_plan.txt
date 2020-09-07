@@ -1,0 +1,35 @@
+#####-----> SIA: Historical AI Behavior <><> <><> <><> <><> <><>
+
+SIA_historical_plan = {
+	name = "SIA: Siam Historical AI Plan"
+	desc = "Historical behavior for Siam."
+	
+	enable = {
+		original_tag = SIA
+		OR = {
+			is_historical_focus_on = yes
+		}
+	}
+	
+	#To be done: Add historical focus progression.
+	
+	ai_national_focuses = {
+		SIA_radicalisation_against_china
+		SIA_the_siamese_kingdom
+		SIA_siam
+		SIA_mussolini_fascism
+		SIA_new_thai_nationalism
+		SIA_alliance_with_japan	
+	}				
+
+	#Keep small, as it is used as a factor for some things, such as research needs.
+	#Recommended around 1.0. Useful for relation between plans.
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+#####-----> End of File <><> <><> <><> <><> <><>

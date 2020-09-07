@@ -1,0 +1,2348 @@
+ideas = {
+	political_advisor = {
+		MEX_eduardo_hay = {
+			picture = aduardo.dds
+			available = {
+				has_completed_focus = MEX_CAB
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { popular_figurehead }
+		}
+		agustin_olachea = {
+			picture = Olachea.dds
+			available = {
+				has_completed_focus = MEX_CAB
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { quartermaster_general }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		#Fransisco L. Urquizo, head of war industry department between 1945-46.
+		urquizo = {
+			picture = Urquizo.dds
+			available = {
+				has_completed_focus = MEX_CAB
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { war_industrialist }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		MEX_plutarco_e_calles = {
+			picture = calles.dds
+			available = {
+				OR = {
+					NOT = {has_completed_focus = Exile_Calles}
+					has_autocratic_government = yes
+				}
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { prince_of_terror }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		abelardo = {
+			picture = abelardo.dds
+			available = {
+				has_completed_focus = MEX_CAB
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { captain_of_industry }
+		}
+		# Marcelino Inurreta de la Fuente - Mexican intelligence head. replaced with El Campo nacho.
+		MEX_MARC = {
+			picture = generic_political_advisor_south_america_3
+			available = {
+				has_completed_focus = MEX_DFS
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { backroom_backstabber }
+		}
+		# Pablo Quiroga Trevino - he was education minister who implemented the socialist education. soothed tenstions.
+		MEX_PAB = {
+			picture = generic_political_advisor_south_america_1
+			available = {
+				has_completed_focus = MEX_CAB
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { silent_workhorse }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		# General Miguel G. Santa Ana - purchasing manager for SEDENA
+		MEX_SANTA = {
+			picture = generic_political_advisor_south_america_2
+			available = {
+				has_completed_focus = MEX_CAB
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { armaments_organizer }
+		}
+		# fransisco Castillo - external relations 
+		Castillo = {
+			picture = generic_political_advisor_south_america_3
+			available = {
+				has_completed_focus = MEX_CAB
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { smooth_talking_charmer }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		MEX_almazan = {
+			picture = Almazan.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+				NOT = {
+					OR = {
+						has_country_flag = juan_is_dead
+						has_country_flag = juan_loses
+					}
+				}
+			}
+			traits = { fortification_engineer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		MEX_eduardo_saurez = {
+			picture = generic_political_advisor_south_america_3
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			traits = { financial_expert }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	theorist = {
+		MEX_Alfonso_Tabon = {
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			picture = generic_political_advisor_south_america_1
+			research_bonus = {
+				cat_operational_integrity = 0.10
+			}
+			traits = { assault_avaition }
+		}
+		MEX_Manuel_Sandoval_Vallarta = {
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			picture = generic_political_advisor_south_america_1
+			research_bonus = {
+				nuclear = 0.10
+			}
+			traits = { nuclear_scientist }
+		}
+		Alfonso_C_Rivera = {
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			picture = Alfonso.dds
+			research_bonus = {
+				cat_strategic_destruction = 0.10
+			}
+			traits = { victory_through_airpower }
+		}
+		# Juan Guillermo Villasana - designs CAS, and Anahuac Helix
+		MEX_Juan = {
+			picture = Juan2.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			traits = { dive_bomber }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		eduardo_hay = {
+			picture = aduardo.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			research_bonus = {
+				cat_grand_battle_plan = 0.10
+			}
+			traits = { grand_battle_plan_expert }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		enrique_estrada = {
+			picture = Enrique.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			research_bonus = {
+				cat_superior_firepower = 0.10
+			}
+			traits = { superior_firepower_expert }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		# Gustavo Adolfo Salinas Camiña first airman to do a naval strike.
+		Salinas2 = {
+			picture = Camina.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			research_bonus = {
+				cat_base_strike = 0.10
+			}
+			traits = { naval_aviation_pioneer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		Luis_F_Cubillas2 = {
+			picture = Luis.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			research_bonus = {
+				cat_battlefield_support = 0.10
+			}
+			traits = { close_air_support_proponent }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		cardenas2 = {
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+				NOT = {
+					has_autocratic_government = yes
+				}
+			}
+			picture = Cardenas.dds
+			research_bonus = {
+				cat_mass_assault = 0.10
+			}
+			traits = { mass_assault_expert }
+		}
+		matias2 = {
+			picture = Matias.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			research_bonus = {
+				cat_mobile_warfare = 0.10
+			}
+			traits = { mobile_warfare_expert }
+		}
+		# Rafael Ponce de León
+		# Francisco Santarini Tognoli - director of TNCA, lots of experience in foreign wars too.
+	}
+	army_chief = {
+		#Enemy of Cardenas, but an expert on reform.
+		Joaquin_Amaro = {
+			picture = Amaro.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				OR = {
+					NOT = {
+					has_socialist_government = yes
+					}
+				}
+			}
+			traits = { army_chief_reform_3 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		#Andrés Figueroa. Did the purge, reformed the military on meritocracy. 
+		Andres_Figueroa = {
+			picture = Figeroa.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			traits = { army_chief_organizational_3 }
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		#heavily expanded the military.
+		Miguel_Comacho = {
+			picture = generic_army_europe_2
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			traits = { army_chief_drill_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		manuel = {
+			picture = generic_army_europe_2
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			traits = { army_chief_maneuver_2 }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		#Pablo Macías Valenzuela, he was in charge of defence of the pacific coast. should move to actual general.
+		MEX_pablo_m_valenzuela = {
+			picture = generic_army_europe_3
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			traits = {army_chief_defensive_1}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		# Jesús Agustín Castro Rivera
+		#heroic symbol to Mexico, gives giant boost to morale.
+		cardenas = {
+			picture = Cardenas.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				AND = {
+					has_completed_focus = Purge_Corruption
+					MEX = { NOT = {has_autocratic_government = yes}}
+				}
+			}
+			traits = {army_chief_morale_3}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		#wrathful
+		Maximino3 = {
+			picture = maximino.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+				MEX = { has_autocratic_government = yes }
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			traits = { army_chief_offensive_1 }
+		}
+		#Gilberto Limon -unknown acts.
+	}
+	air_chief = {
+		#Juan Francisco Azcárate Pino
+		Juan_Azcarate = {
+			picture = Juan_Azcarate.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			traits = { air_chief_reform_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		Luis_F_Cubillas = {
+			picture = Luis.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			traits = { air_chief_ground_support_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		#this ace, another friend of Luis, did night missions to send aid to spain.
+		Alfonso_C_Rivera2 = {
+			picture = Alfonso.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			traits = { air_chief_night_operations_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		fierro = {
+			picture = Fierro.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			traits = { air_chief_safety_3 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	navy_chief = {
+		# Heriberto Jara Corona - first secretary of navy. didn't do anything scandalous but also furthere power.
+		Heriberto = {
+			picture = Corona.dds
+			available = {
+				has_completed_focus = SEMAR
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { navy_chief_old_guard }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		# Raúl López Sánchez - great administrator
+		lopez = {
+			picture = Lopez.dds
+			available = {
+				has_completed_focus = SEMAR
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { navy_chief_reform_1 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	high_command = {
+		MEX_rex_applegate  = {
+			picture = generic_political_advisor_south_america_1
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				is_in_faction_with = USA
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			traits = { army_commando_3 }
+		}
+		MEX_candido_aguilar  = {
+			picture = generic_political_advisor_south_america_3
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				NOT = {
+					has_idea = MEX_rex_applegate
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			traits = { army_commando_2 }
+		}
+		Maximino2 = {
+			picture = maximino.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			traits = { army_logistics_2 }
+		}
+		# Matias Ramos - Cardenas hater.
+		matias = {
+			picture = Matias.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			traits = {army_cavalry_1}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		#was the guy responsible for organization strategic bombing runs on Guatemala during the late 50s.
+		MEX_Alfonso_Cruz_Rivera = {
+			picture = Alfonso.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			traits = { air_strategic_bombing_1 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		# Gustavo Adolfo Salinas Camiña first airman to do a naval strike.
+		Salinas = {
+			picture = Camina.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+			has_completed_focus = Purge_Corruption
+			}
+			traits = { air_naval_strike_3 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		#led a failed coup, he focused on infantry but was defeated by the airforce raids.
+		MEX_Escobar = {
+			picture = Escobar.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				MEX = { has_country_flag = escobar_returns }
+			}
+			traits = { army_infantry_2 }
+				ai_will_do = {
+					factor = 100
+				}
+		}
+		# mexican air idol.
+		MEX_Gustavo_L_Gonzalez = {
+			picture = generic_army_europe_3
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { air_close_air_support_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		antonio = {
+			picture = antonio.dds
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { air_air_superiority_1 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		enrique_estrada2 = {
+			picture = Enrique.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			traits = { army_artillery_2 }
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		#built air colleges.
+		agustin_olachea2 = {
+			picture = Olachea.dds
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { air_air_combat_training_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		#David J Borga Guajardo - no info - airman
+		# merchant marine - Alberto J. Pawling
+		pawling1 = {
+			picture = generic_army_europe_1
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { navy_anti_submarine_1 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		# hector Meixueiro - commanded various destroyers. HAS NO NAME YET.
+		hector = {
+			picture = generic_political_advisor_south_america_2
+			available = {
+				has_completed_focus = Purge_Corruption
+			}
+			allowed = {
+				original_tag = MEX
+			}
+			traits = { navy_screen_1 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	industrial_concern = {
+		PEMEX = {
+			picture = PEMEX.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				AND = {
+					has_completed_focus = PEMEX
+					MEX = {NOT = {has_autocratic_government = yes}}
+				}
+			}
+			research_bonus = {
+				industry = 0.10
+			}
+			traits = { state_oil }
+			modifier = {
+				#equiv to 1 resource tech.
+				local_resources_factor = 0.10
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		aguila = {
+			picture = PEMEX.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				AND = {
+					has_completed_focus = PEMEX
+					MEX = {has_autocratic_government = yes}
+				}
+			}
+			research_bonus = {
+				industry = 0.10
+			}
+			traits = { refinery_concern }
+			modifier = {
+				# fascists were corporatists.
+				production_speed_industrial_complex_factor = 0.05
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		TELMEX = {
+			picture = TELMEX.dds
+			allowed = {
+				original_tag = MEX
+			}			
+			research_bonus = {
+				electronics = 0.10
+			}
+			available = {
+				date > 1947.1.1
+			}
+			modifier = {
+				# Bonus to radar because radar doubles as comm towers in the game files.
+				production_speed_radar_station_factor = 0.05
+			}
+			traits = { electronics_concern }
+		}
+		AHMSA = {
+			picture = AHMSA.dds
+			allowed = {
+				original_tag = MEX
+			}			
+			research_bonus = {
+				industry = 0.10
+			}
+			modifier = {
+				# Bonus to civ factory construction and infra, as it produced steel machinery and bridge parts.
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+			}
+			traits = { industrial_concern }
+		}
+		league = {
+			picture = Fabrica.dds
+			allowed = {
+				original_tag = MEX
+			}			
+			research_bonus = {
+				electronics = 0.10
+			}
+			modifier = {
+			}
+			traits = { electronics_concern }
+		}
+		# Comisión Federal de Electricidad - began 1937, responsible for nuclear energy construction.
+		electridad = {
+			picture = electric.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = electric
+			}
+			research_bonus = {
+				nuclear = 0.05
+			}
+			modifier = {
+			}
+			traits = { state_energy }
+		}
+		railroad = {
+			picture = railroad.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = MEX_RAIL
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_infrastructure_factor = 0.2
+			}
+			traits = { state_rail }
+		}
+	}
+	aircraft_manufacturer = {
+		# MARISCRAFT - little info, but there is a plane
+		designer = yes
+		tga = {
+			picture = TGA.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = reform_fam
+			}
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			traits = { plane_production }
+			equipment_bonus = {
+				fighter_equipment = {
+					#built licensed and biplanes.
+					build_cost_ic = -0.10 instant = yes
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		Azcarate = {
+			picture = azcarate.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = reform_fam
+			}
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			traits = { plane_firepower }
+			equipment_bonus = {
+				# worked on bombers, mostly.
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		Juan = {
+			picture = Juan.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = reform_fam
+			}
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			traits = { plane_stability }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		# Compañía Aeronáutica de Baja California - built long range CAS.
+		baja = {
+			picture = Roberto.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = reform_fam
+			}
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			traits = { fuel_efficient_aircraft_manufacturer }
+			equipment_bonus = {
+				CAS_equipment = {
+					air_range = 0.1
+				}
+				cv_CAS_equipment = {
+					air_range = 0.1
+				}
+				nav_bomber_equipment = {
+					air_range = 0.1
+				}
+				cv_nav_bomber_equipment = {
+					air_range = 0.1
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		# Angel Lascurian
+		Angel = {
+			picture = lascurian.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = reform_fam
+			}
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			traits = { plane_agility }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	materiel_manufacturer = {
+		designer = yes
+		fabrica_nacional_armas = {
+			picture = Fabrica.dds
+			allowed = {
+				original_tag = MEX
+			}
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			equipment_bonus = {
+				# rifles (mauser 98k) and light artillery
+			}
+			traits = { State_Gun }
+			modifier = {
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		Obregon = {
+			picture = generic_infantry_equipment_manufacturer_2
+			allowed = {
+				original_tag = MEX
+			}
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			equipment_bonus = {
+				# rifles (mauser 98k) and light artillery
+			}
+			traits = { quality }
+			modifier = {
+			}
+		}
+		Grupo_Ramirez = {
+			picture = Ramirez.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				OR = {
+					date > 1946.1.1
+				}
+			}
+			research_bonus = {
+				motorized_equipment = 0.10
+			}
+			equipment_bonus = {
+				# reliable, cheap autos.
+			}
+			traits = { truck }
+		}
+		VAM2 = {
+			picture = VAM.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {	
+				OR = {
+					has_completed_focus = Vive_Pancho_Villa
+					date > 1946.1.1
+				}
+			}
+			research_bonus = {
+				motorized_equipment = 0.10
+			}
+			equipment_bonus = {
+				#mass production
+			}
+			traits = { state_car }
+		}
+		comesa = {	
+			picture = generic_artillery_manufacturer_1
+			allowed = {
+				original_tag = MEX
+			}
+			research_bonus = {
+				artillery = 0.10
+			}
+			equipment_bonus = {
+				# artillery equipment, very little info
+				artillery_equipment = {
+					build_cost_ic = -0.10 instant = yes
+				}
+			}
+			traits = { artillery_manufacturer }
+		}
+		Mendoza = {
+			picture = Mendoza.dds
+			allowed = {
+				original_tag = MEX
+			}
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			equipment_bonus = {
+				# reliable, cheap guns.
+			}
+			traits = { quantity }
+		}
+	}
+	
+	tank_manufacturer = {
+	designer = yes
+		TGA2 = {
+			picture = TGA.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {	
+				has_completed_focus = Vive_Mexico 
+			}			
+			research_bonus = {
+				armor = 0.10
+			}
+			traits = { tank_firepower }
+		}
+		Grupo_Ramirez2 = {
+			picture = Ramirez.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {	
+					date > 1946.1.1
+			}
+			research_bonus = {
+				armor = 0.10
+			}
+			equipment_bonus = {
+				# reliable autos.
+			}
+			traits = { tank_reliability }
+		}
+		VAM = {
+			picture = VAM.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				OR = {
+					has_completed_focus = Vive_Pancho_Villa
+					date > 1946.1.1
+				}
+			}
+			research_bonus = {
+				armor = 0.10
+			}
+			equipment_bonus = {
+				# mass production
+			}
+			traits = { tank_production }
+		}
+	}
+	
+	#############
+	##SHIPYARDS##
+	#############
+	
+	naval_manufacturer = {
+		designer = yes
+		MEX_ASTIMAR = {
+			picture = Fabrica.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = SEMAR
+			}
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			traits = { coastal_defence_naval_manufacturer }
+			modifier = {
+			}
+		}
+		rodriguez = {
+			picture = rodriguez.dds
+			allowed = {
+				original_tag = MEX
+			}
+			available = {
+				has_completed_focus = SEMAR
+			}
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			traits = { raiding_fleet_naval_manufacturer }
+			modifier = {
+				
+			}
+		}
+		#Cantiere navale fratelli Orlando - defunct in 1949.
+		Odero = {
+			allowed = {
+			original_tag = MEX
+			}
+			picture = generic_naval_manufacturer_1
+			available = {
+				OR = {
+					AND = {
+					has_completed_focus = mex_ships
+					ITA = { exists = yes }
+					ITA = { has_war = no }
+					}
+					AND = {
+					has_completed_focus = mex_ships
+					ITA = { is_in_faction_with = MEX }
+					}
+				}
+			}
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			traits = { atlantic_fleet_naval_manufacturer }
+			modifier = {
+			}
+		}
+		# Echevarrieta shipyards, made convoy escorts and submarines. Mostly convoy escorts.
+		Echevarrieta = {
+			picture = generic_naval_manufacturer_2
+			allowed = { original_tag = MEX }
+			research_bonus = { naval_equipment = 0.10 }
+			available = {
+				OR = {
+					AND = {
+					has_completed_focus = mex_ships
+					SPR = { exists = yes }
+					SPR = { has_war = no }
+					}
+					AND = {
+					has_completed_focus = mex_ships
+					SPR = { is_in_faction_with = MEX }
+					}
+				}
+			}
+			traits = { convoy_escort_naval_manufacturer }
+			modifier = {
+			}
+		}
+		yokosuka_naval_arsenal2 = {
+			picture = yokosuka_naval_arsenal
+			allowed = {
+				original_tag = MEX 
+			}
+			available = {
+				OR = {
+					AND = {
+					has_completed_focus = mex_ships
+					JAP = { exists = yes }
+					JAP = { has_war = no }
+					}
+					AND = {
+					has_completed_focus = mex_ships
+					JAP = { is_in_faction_with = MEX }
+					}
+				}
+			}
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			traits = { pacific_fleet_naval_manufacturer } #built best CVs
+			equipment_bonus = {
+				# 
+			}
+		}
+	}
+	
+	#############
+	##MODIFIERS##
+	#############
+	
+	country = {
+		curse = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = -0.50
+			}
+		}
+		porfirismo = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				fascism_drift = 0.01
+				fascism_acceptance = 10
+			}
+		}
+		jenkins = {
+			picture = GFX_idea_jenkins
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				democratic_drift = -0.01
+				conservative_drift = -0.01
+				drift_defence_factor = 0.1
+			}
+		}
+		maximato = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_cost = 1
+				stability_factor = -0.25
+				army_morale_factor = -1
+			}
+		}
+		# STARTING NO DLC
+		sexenio = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = GFX_idea_sexenio
+			removal_cost = -1
+			modifier = {
+				training_time_army_factor = -0.1
+			}
+		}
+		# WITH DEATH OR DISHONOR
+		sexenio2 = {
+			picture = GFX_idea_sexenio
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				training_time_army_factor = -0.1
+				license_armor_purchase_cost = -0.1
+				license_air_purchase_cost = -0.1
+			}
+		}
+		# UPGRADED DOD
+		sexenio3 = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_sexenio
+			modifier = {
+				training_time_army_factor = -0.1
+				license_armor_purchase_cost = -0.25
+				license_air_purchase_cost = -0.25
+			}
+		}
+		# STATIC DEFENSE - DOD
+		sexenio4 = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_sexenio
+			modifier = {
+				training_time_army_factor = -0.1
+				license_armor_purchase_cost = -0.25
+				license_air_purchase_cost = -0.25
+				production_speed_bunker_factor = 0.1
+				production_speed_coastal_bunker_factor = 0.1
+			}
+		}
+		# STATIC DEFENSE NO DLC
+		sexenio5 = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_sexenio
+			modifier = {
+				training_time_army_factor = -0.1
+				production_speed_bunker_factor = 0.1
+				production_speed_coastal_bunker_factor = 0.1
+			}
+		}
+		#FLEXIBLE DEFENSE DLC
+		sexenio6 = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_sexenio
+			modifier = {
+				training_time_army_factor = -0.10
+				license_armor_purchase_cost = -0.25
+				license_air_purchase_cost = -0.25
+			}
+			equipment_bonus = {
+				CAS_equipment = {
+					air_ground_attack = 0.1
+				}
+			}
+		}
+		#FLEXIBLE DEFENSE NO DLC
+		sexenio7 = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_sexenio
+			modifier = {
+				training_time_army_factor = -0.1
+				production_speed_bunker_factor = 0.1
+				production_speed_coastal_bunker_factor = 0.1
+			}
+		}
+		MEX_DN-I = {
+			picture = generic_volunteer_expedition_bonus
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.10
+				attrition = -0.05
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+		#other
+		MEX_DN-I2 = {
+			picture = generic_volunteer_expedition_bonus
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.10
+				attrition = -0.10
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.2
+			}
+		}
+		#facist
+		MEX_DN-I3 = {
+			picture = generic_volunteer_expedition_bonus
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.10
+				attrition = -0.05
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				industrial_capacity_factory  = 0.1
+			}
+		}
+		MEX_DN-II = {			
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_pp_unity_bonus
+			modifier = {
+				stability_weekly = 0.01 
+			}
+		}
+		DFS = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = DFS.dds
+			modifier = {
+				drift_defence_factor = 0.1
+				enemy_justify_war_goal_time = 0.25
+				compliance_gain = -0.05
+				foreign_subversive_activites = -0.1
+			}
+		}
+		sedena = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = SEDENA.dds
+			modifier = {
+				send_volunteer_divisions_required = -1
+				send_volunteers_tension = -1
+			}
+			rule = {
+				can_create_factions = yes
+			}
+		}
+		chemical = {
+			
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			picture = chemical.dds
+	
+			modifier = {
+				army_attack_factor = 0.05
+			}
+		}
+		PRM = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PRM
+			modifier = {
+				social_democracy_drift = 0.05
+			}
+		}
+		MEX_PRM2 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PRM
+			modifier = {
+				social_democracy_drift = 0.05
+				political_power_cost = -0.25
+				trade_opinion_factor = 0.25
+			}
+		}
+		#Start
+		MEX_PRM3 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PRM
+			modifier = {
+				social_democracy_drift = 0.05
+				political_power_cost = -0.50
+			}
+		}
+		#unions
+		MEX_PRM4 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PRM
+			modifier = {
+				social_democracy_drift = 0.1
+				political_power_cost = -0.50
+				local_resources_factor = 0.10
+			}
+		}
+		#inst
+		MEX_PRM5 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PRM
+			modifier = {
+				social_democracy_drift = 0.1
+				political_power_cost = -0.50
+				consumer_goods_factor = -0.05 
+				foreign_subversive_activites = -0.05
+			}
+		}
+		MEX_PRM6 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PRM
+			modifier = {
+				social_democracy_drift = 0.1
+				political_power_cost = -0.50
+				local_resources_factor = 0.20
+			}
+		}
+		#inst2
+		MEX_PRM7 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PRM
+			modifier = {
+				social_democracy_drift = 0.1
+				political_power_cost = -0.75
+				foreign_subversive_activites = -0.1
+				consumer_goods_factor = -0.05 
+			}
+		}
+		porfirato = {
+			picture = GFX_idea_porfirato
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				fascism_drift = 0.1
+				fascism_acceptance = 85
+			}
+		}
+		MEX_porfirato2 = {
+			picture = GFX_idea_porfirato
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				fascism_drift = 0.1
+				fascism_acceptance = 85
+				trade_opinion_factor = 0.25
+			}
+		}
+		#start
+		MEX_porfirato3 = {
+			picture = GFX_idea_porfirato
+			allowed_civil_war = {
+				always = yes
+			}
+			allowed_civil_war = {
+				has_autocratic_government = yes
+			}
+			removal_cost = -1
+			modifier = {
+				fascism_drift = 0.1
+				fascism_acceptance = 85
+				trade_opinion_factor = 0.50
+				drift_defence_factor = 0.1
+			}
+		}
+		#unions
+		MEX_porfirato4 = {
+			picture = GFX_idea_porfirato
+			allowed_civil_war = {
+				always = yes
+			}
+			allowed_civil_war = {
+				has_autocratic_government = yes
+			}
+			removal_cost = -1
+			modifier = {
+				fascism_drift = 0.1
+				fascism_acceptance = 85
+				political_power_cost = -0.25
+				local_resources_factor = 0.10
+				trade_opinion_factor = 1
+				drift_defence_factor = 0.1
+			}
+		}
+		#unions 2
+		MEX_porfirato6 = {
+			picture = GFX_idea_porfirato
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				fascism_drift = 0.05
+				fascism_acceptance = 85
+				political_power_cost = -0.50
+				local_resources_factor = 0.20
+				trade_opinion_factor = 1.5
+				drift_defence_factor = 0.1
+			}
+		}
+		#caciques
+		MEX_porfirato5 = {
+			picture = GFX_idea_porfirato
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				fascism_drift = 0.05
+				fascism_acceptance = 85
+				trade_opinion_factor = 0.5
+				drift_defence_factor = 0.1
+				trade_opinion_factor = 1
+				army_core_defence_factor = 0.05
+				foreign_subversive_activites = -0.05
+			}
+		}
+		#caciques 2
+		MEX_porfirato7 = {
+			picture = GFX_idea_porfirato
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				fascism_drift = 0.05
+				fascism_acceptance = 85
+				trade_opinion_factor = 1.5
+				drift_defence_factor = 0.1
+				army_core_defence_factor = 0.10
+				foreign_subversive_activites = -0.1
+			}
+		}
+		
+		cardenismo = {
+			picture = GFX_idea_cardenismo
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				communism_drift = 0.10
+				communism_acceptance = 85
+			}
+		}
+		MEX_cardenismo2 = {
+			picture = GFX_idea_cardenismo
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				communism_drift = 0.05
+				communism_acceptance = 85
+				trade_opinion_factor = 0.25
+			}
+		}
+		#start
+		MEX_cardenismo3 = {
+			picture = GFX_idea_cardenismo
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				communism_drift = 0.05
+				communism_acceptance = 85
+				political_power_cost = -0.25
+				trade_opinion_factor = 0.25
+			}
+		}
+		#unions
+		MEX_cardenismo4 = {
+			picture = GFX_idea_cardenismo
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				communism_drift = 0.05
+				communism_acceptance = 85
+				political_power_cost = -0.50
+				trade_opinion_factor = 0.25
+				industrial_capacity_factory  = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		#institution
+		MEX_cardenismo5 = {
+			picture = GFX_idea_cardenismo
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				communism_drift = 0.05
+				communism_acceptance = 85
+				political_power_cost = -0.25
+				trade_opinion_factor = 0.25
+				global_building_slots_factor = 0.1
+				conversion_cost_civ_to_mil_factor= -0.1
+			}
+		}
+		#unions 2
+		MEX_cardenismo6 = {
+			picture = GFX_idea_cardenismo
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				communism_drift = 0.05
+				communism_acceptance = 85
+				political_power_cost = -0.50
+				trade_opinion_factor = 0.25
+				industrial_capacity_factory  = 0.1
+				industrial_capacity_dockyard = 0.1
+				foreign_subversive_activites = -0.10
+			}
+		}
+		# inst2
+		MEX_cardenismo7 = {
+			picture = GFX_idea_cardenismo
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				communism_drift = 0.05
+				communism_acceptance = 85
+				political_power_cost = -0.50
+				trade_opinion_factor = 0.50
+				global_building_slots_factor = 0.2
+				conversion_cost_civ_to_mil_factor= -0.2
+			}
+		}
+		MEX_PAN = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PAN
+			modifier = {
+				democratic_drift = 0.05
+				democratic_acceptance = 85
+				conservative_drift = 0.05
+				conservative_acceptance = 85
+			}
+		}
+		MEX_PAN2 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PAN
+			modifier = {
+				democratic_drift = 0.05
+				democratic_acceptance = 100
+				conservative_drift = 0.05
+				conservative_acceptance = 100
+				trade_opinion_factor = 0.25
+			}
+		}
+		#START
+		MEX_PAN3 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PAN
+			modifier = {
+				democratic_drift = 0.05
+				democratic_acceptance = 100
+				conservative_drift = 0.05
+				conservative_acceptance = 100
+				political_power_cost = -0.25
+				trade_opinion_factor = 0.50
+			}
+		}
+		#death
+		MEX_PAN4 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PAN
+			modifier = {
+				democratic_drift = 0.05
+				democratic_acceptance = 100
+				conservative_drift = 0.05
+				conservative_acceptance = 100
+				political_power_cost = -0.25
+				trade_opinion_factor = 1
+				foreign_subversive_activites = -0.05
+				global_building_slots_factor = 0.1
+			}
+		}
+		#death2
+		MEX_PAN6 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PAN
+			modifier = {
+				democratic_drift = 0.05
+				democratic_acceptance = 100
+				conservative_drift = 0.05
+				conservative_acceptance = 100
+				political_power_cost = -0.50
+				trade_opinion_factor = 1
+				foreign_subversive_activites = -0.1
+				global_building_slots_factor = 0.2
+			}
+		}
+		# witchhunt
+		MEX_PAN5 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PAN
+			modifier = {
+				democratic_drift = 0.05
+				democratic_acceptance = 100
+				conservative_drift = 0.05
+				conservative_acceptance = 100
+				drift_defence_factor = 0.10
+				trade_opinion_factor = 1
+				political_power_cost = -0.75
+				consumer_goods_factor = -0.05
+			}
+		}
+		# witch2
+		MEX_PAN7 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GFX_idea_PAN
+			modifier = {
+				democratic_drift = 0.05
+				democratic_acceptance = 100
+				conservative_drift = 0.05
+				conservative_acceptance = 100
+				drift_defence_factor = 0.10
+				political_power_cost = -1
+				trade_opinion_factor = 1.5
+				production_speed_industrial_complex_factor = 0.05
+				consumer_goods_factor = -0.10
+			}
+		}
+		miracle = {
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = GFX_idea_miracle
+			modifier = {
+				MONTHLY_POPULATION = 0.25
+				production_speed_industrial_complex_factor = 0.05
+				global_building_slots_factor = 0.1
+				consumer_goods_factor = -0.05 
+			}
+		}
+		MEX_miracle2 = {
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = GFX_idea_miracle
+			modifier = {
+				MONTHLY_POPULATION = 0.50
+				production_speed_industrial_complex_factor = 0.05
+				global_building_slots_factor = 0.1
+				consumer_goods_factor = -0.05 
+			}
+		}
+		piaso = {
+			picture = generic_intel_bonus
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.25
+			}
+		}
+		cientificos = {
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_research_bonus
+			modifier = {
+				local_resources_factor = 0.10
+				consumer_goods_factor = -0.05 
+			}
+		}
+		MEX_cientificos2 = {
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_research_bonus
+			modifier = {
+				local_resources_factor = 0.20
+				consumer_goods_factor = -0.10 
+			}
+		}
+		synarchist_support_surge = {
+			allowed = {
+				always = no # Triggered via event
+			}
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				stability_factor = -0.05
+				fascism_drift = 0.05
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		MEX_constable_army = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_army_problems
+			modifier = {
+				max_dig_in = 1
+				army_defence_factor = 0.05
+				army_org_factor = -0.10
+				production_speed_infrastructure_factor = 0.05
+				compliance_gain = -0.1
+				army_leader_cost_factor = 1000
+				max_planning = -0.25
+				planning_speed = -0.25
+				stability_factor = -0.20
+				training_time_army_factor = 0.20
+				army_morale_factor = -0.10
+				
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		#fascist
+		MEX_constable_army2 = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_army_problems
+			modifier = {
+				max_dig_in = 5
+				army_defence_factor = 0.10
+				production_speed_infrastructure_factor = 0.10
+				compliance_gain = -0.25
+				army_leader_cost_factor = 1000
+				max_planning = -0.10
+				planning_speed = -0.10
+				stability_factor = -0.10
+				training_time_army_factor = 0.10
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		#other
+		MEX_constable_army3 = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_army_problems
+			modifier = {
+				max_dig_in = 5
+				army_defence_factor = 0.05
+				production_speed_infrastructure_factor = 0.10
+				compliance_gain = -0.1
+				army_leader_cost_factor = 100
+				max_planning = -0.10
+				planning_speed = -0.10
+				political_power_cost = -0.25
+				
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		#mandatory FASCIST
+		MEX_constable_army4 = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_army_problems
+			modifier = {
+				max_dig_in = 5
+				army_defence_factor = 0.10
+				production_speed_infrastructure_factor = 0.10
+				compliance_gain = -0.25
+				
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		# mandatory OTHER
+		MEX_constable_army5 = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_army_problems
+			modifier = {
+				max_dig_in = 5
+				army_defence_factor = 0.10
+				production_speed_infrastructure_factor = 0.10
+				compliance_gain = -0.1
+				political_power_cost = -0.25
+				
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		# partial FASCIST
+		MEX_constable_army6 = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_army_problems
+			modifier = {
+				max_dig_in = 5
+				army_defence_factor = 0.10
+				army_org_factor = -0.05
+				production_speed_infrastructure_factor = 0.15
+				compliance_gain = -0.1
+				army_leader_cost_factor = 1
+				
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		# PARTIAL OTHER
+		MEX_constable_army7 = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_army_problems
+			modifier = {
+				max_dig_in = 5
+				army_defence_factor = 0.10
+				army_org_factor = -0.05
+				production_speed_infrastructure_factor = 0.10
+				compliance_gain = -0.25
+				army_leader_cost_factor = 100
+				max_planning = -0.05
+				planning_speed = -0.05
+				stability_factor = -0.05
+				training_time_army_factor = 0.05
+				
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		MEX_small_aviation_industry = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_bomber_production_diverted
+			equipment_bonus = {
+				tac_bomber_equipment = { 
+					build_cost_ic = 0.50 instant = yes 
+				}
+				jet_tac_bomber_equipment = { 
+					build_cost_ic = 1 instant = yes 
+				}
+				strat_bomber_equipment = { 
+					build_cost_ic = 1 instant = yes 
+				}
+				transport_plane_equipment = { 
+					build_cost_ic = 0.50 instant = yes 
+				}
+				jet_strat_bomber_equipment = { 
+					build_cost_ic = 1 instant = yes 
+				}
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		MEX_small_aviation_industry2 = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_bomber_production_diverted
+			equipment_bonus = {
+				tac_bomber_equipment = { 
+					build_cost_ic = 0.25 instant = yes 
+				}
+				jet_tac_bomber_equipment = { 
+					build_cost_ic = 0.50 instant = yes 
+				}
+				strat_bomber_equipment = { 
+					build_cost_ic = 0.25 instant = yes 
+				}
+				jet_strat_bomber_equipment = { 
+					build_cost_ic = 0.50 instant = yes 
+				}
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		MEX_embargo = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = PEMEX.dds
+			modifier = {
+				political_power_cost = 0.5
+				consumer_goods_factor = 0.1
+				stability_weekly = -0.01
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		MEX_idea_expanded_mining_industry = {
+			picture = generic_exploit_mines
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				local_resources_factor = 0.10
+			}
+		}
+		MEX_forbidden_chemicals = {
+			picture = generic_exploit_mines
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.10 instant = yes
+				}
+			}
+		}
+		MEX_literacy = {
+			picture = generic_constitutional_guarantees
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.20
+			}
+		}
+		#Socialist Education
+		MEX_literacy2 = {
+			picture = generic_central_management
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+		#fascist education
+		MEX_literacy3 = {
+			picture = generic_local_self_management
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.1
+				consumer_goods_factor = 0.05
+			}
+		}
+	}
+}

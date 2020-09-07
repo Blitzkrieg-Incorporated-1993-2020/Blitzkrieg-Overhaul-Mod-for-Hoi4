@@ -1,0 +1,4613 @@
+focus_tree = {
+	id = Liberia
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = LIB
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 1775 y = 1250 }
+	
+	
+	focus = {
+		id = LIB_alone
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
+		cost = 10.00
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		mutually_exclusive = {
+			focus = LIB_trade_concessions
+		}
+		
+		x = 33
+		y = 0
+		
+		completion_reward = {
+			add_political_power = -100
+			add_stability = -0.1
+			ENG = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_broke_ties
+				}
+			}
+			FRA = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_broke_ties
+				}
+			}
+			HOL = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_broke_ties
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_trade_concessions
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		mutually_exclusive = {
+			focus = LIB_alone
+		}
+		
+		x = 11
+		y = 0
+		
+		completion_reward = {
+			add_political_power = 100
+			HOL = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_trade_concessions_opinion
+				}
+			}
+			DEN = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_trade_concessions_opinion
+				}
+			}
+			SWE = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_trade_concessions_opinion
+				}
+			}
+			GER = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_trade_concessions_opinion
+				}
+			}
+			POL = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_trade_concessions_opinion
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_greenback
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_dark_focus_greenback
+		cost = 10.00
+		ai_will_do = {
+			factor = 9
+		}
+		
+		prerequisite = {
+			focus = LIB_trade_concessions
+		}
+		
+		x = 8
+		y = 1
+		
+		completion_reward = {
+			add_stability = 0.1
+			add_ideas = LIB_greenback_idea
+			if = {
+				limit = { 
+					OR = {
+						has_idea = export_focus
+						has_idea = free_trade
+					}
+				}
+				add_political_power = 100
+			}
+			else = {				
+				add_ideas = export_focus
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt	
+		}
+	}
+	focus = {
+		id = LIB_fix_militia
+		search_filters = { FOCUS_FILTER_MANPOWER } 
+		icon = GFX_goal_generic_defence
+		cost = 15.00
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_us_training
+		}
+		prerequisite = {
+			focus = LIB_officer_schools
+		}
+		mutually_exclusive = {
+			focus = LIB_focus_mil
+		}
+		
+		available = {
+			custom_trigger_tooltip ={
+				tooltip = LIB_has_raised_militia_tt
+				NOT = { has_country_flag = LIB_has_raised_militia }
+			}
+		}
+		
+		x = 9
+		y = 4
+		
+		completion_reward = {
+			custom_effect_tooltip = LIB_fix_militia_tt
+			hidden_effect = { set_country_flag = LIB_fixed_militia }
+		}
+	}
+	focus = {
+		id = LIB_secure_US
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_focus_chi_mission_to_the_us
+		cost = 10.00
+		ai_will_do = {
+			base = 20
+		}
+		
+		prerequisite = {
+			focus = LIB_trade_concessions
+		}
+		
+		available = {
+			any_country = {
+				custom_trigger_tooltip = {
+					tooltip = tag_america
+					is_literally_america = yes 
+				}
+				is_major = yes
+				NOT = { has_war_with = ROOT }
+				custom_trigger_tooltip = {
+					tooltip = same_ideology_group
+					OR = {
+						AND = {
+							PREV.PREV = { has_democratic_government = yes }
+							ROOT = { has_democratic_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_socialist_government = yes }
+							ROOT = { has_socialist_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_autocratic_government = yes }
+							ROOT = { has_autocratic_government = yes }
+						}
+					}
+				}
+			}
+		}
+		cancel_if_invalid = yes
+		
+		x = 11
+		y = 1
+		
+		completion_reward = {
+			random_country = {
+				limit = {
+					is_literally_america = yes
+					is_major = yes
+					OR = {
+						AND = {
+							PREV.PREV = { has_democratic_government = yes }
+							ROOT = { has_democratic_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_socialist_government = yes }
+							ROOT = { has_socialist_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_autocratic_government = yes }
+							ROOT = { has_autocratic_government = yes }
+						}
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_ties
+				}
+				country_event = { id = NOS_liberia.6 hours = 6 }
+			}
+			custom_effect_tooltip = LIB_secure_US_tt
+			effect_tooltip = {
+				random_country = {
+					limit = {
+						is_literally_america = yes
+						is_major = yes
+						OR = {
+							AND = {
+								PREV.PREV = { has_democratic_government = yes }
+								ROOT = { has_democratic_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_socialist_government = yes }
+								ROOT = { has_socialist_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_autocratic_government = yes }
+								ROOT = { has_autocratic_government = yes }
+							}
+						}
+					}
+					give_guarantee = ROOT
+				}
+			}
+			hidden_effect = {
+				random_country = {
+					limit = {
+						is_literally_america = yes
+						is_major = yes
+						OR = {
+							AND = {
+								PREV.PREV = { has_democratic_government = yes }
+								ROOT = { has_democratic_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_socialist_government = yes }
+								ROOT = { has_socialist_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_autocratic_government = yes }
+								ROOT = { has_autocratic_government = yes }
+							}
+						}
+					}
+					country_event = { id = NOS_liberia.6 hours = 6 } 
+				}
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_firestone_invest
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL } 
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		ai_will_do = {
+			base = 11
+		}
+		
+		prerequisite = {
+			focus = LIB_secure_US
+		}
+		
+		available = {
+			has_idea = LIB_firestone_company
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				298 = {
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+		
+		x = 4
+		y = 2
+		
+		completion_reward = {
+			298 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 5
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 5
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_5_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_neep
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		icon = GFX_focus_focus_generic_industry_1
+		cost = 10.00
+		ai_will_do = {
+			base = 1
+		}
+		
+		prerequisite = {
+			focus = LIB_firestone_invest
+		}
+		mutually_exclusive = {
+			focus = LIB_american_steel
+		}
+		
+		available = {
+			NOT = { has_war_with = HOL }
+			HOL = {
+				exists = yes
+				has_capitulated = no
+			}
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		x = 3
+		y = 3
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_dutch_ind_tech
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			298 = {
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_american_steel
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		icon = GFX_goal_generic_construction
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_firestone_invest
+		}
+		mutually_exclusive = {
+			focus = LIB_neep
+		}
+		
+		available = {
+			DARK_will_dem_USA_support = yes
+		}
+		
+		x = 5
+		y = 3
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_usa_ind_tech
+				bonus = 0.75
+				uses = 1
+				category = industry
+			}
+			298 = {
+				add_resource = {
+					type = steel
+					amount = 3
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_dutch_investment
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL } 
+		icon = GFX_goal_generic_consumer_goods
+		cost = 10.00
+		ai_will_do = {
+			base = 15
+		}
+		
+		prerequisite = {
+			focus = LIB_neep
+		}
+		
+		available = {
+			NOT = { has_war_with = HOL }
+			HOL = {
+				exists = yes
+				has_capitulated = no
+			}
+		}
+		
+		x = 3
+		y = 4
+		
+		completion_reward = {
+			add_political_power = 100
+			add_ideas = LIB_dutch_investment_idea
+		}
+	}
+	focus = {
+		id = LIB_expand_rubber
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_focus_generic_rubber
+		cost = 10.00
+		ai_will_do = {
+			factor = 5
+		}
+		
+		prerequisite = {
+			focus = LIB_firestone_invest
+		}
+		
+		available = {
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		x = 7
+		y = 3
+		
+		completion_reward = {
+			298 = {
+				add_resource = {
+					type = rubber
+					amount = 4
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 5
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 5
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_5_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_foreign_tech2
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		icon = GFX_focus_research2
+		cost = 10.00
+		ai_will_do = {
+			factor = 13
+		}
+		
+		prerequisite = {
+			focus = LIB_trade_concessions
+		}
+		
+		x = 18
+		y = 1
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = LIB_modern_guns
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		icon = GFX_focus_secret_rearmament
+		cost = 10
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 10
+				OR = {
+					threat > 25
+					has_war = yes
+				}
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_foreign_tech2
+		}
+		x = 19
+		y = 2
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_imported_guns_tech
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1000 producer = USA }
+		}
+	}
+	focus = {
+		id = LIB_modern_arty
+		icon = GFX_goal_generic_army_artillery2
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		cost = 10
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 10
+				OR = {
+					threat > 25
+					has_war = yes
+				}
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_modern_guns
+		}
+		
+		x = 19
+		y = 3
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_imported_arty_tech
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 500 producer = USA }
+		}
+	}
+	focus = {
+		id = LIB_auto_tech
+		icon = GFX_goal_generic_production2
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		cost = 10
+		ai_will_do = {
+			factor = 8
+			modifier = {
+				factor = 10
+				OR = {
+					threat > 25
+					has_war = yes
+				}
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_foreign_tech2
+		}
+		prerequisite = {
+			focus = LIB_end_negotiations
+		}
+		
+		available = {
+			any_country = {
+				custom_trigger_tooltip = {
+					tooltip = tag_america
+					is_literally_america = yes 
+				}
+				is_major = yes
+				has_tech = motorised_infantry
+				NOT = { has_war_with = ROOT }
+				custom_trigger_tooltip = {
+					tooltip = same_ideology_group
+					OR = {
+						AND = {
+							PREV.PREV = { has_democratic_government = yes }
+							ROOT = { has_democratic_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_socialist_government = yes }
+							ROOT = { has_socialist_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_autocratic_government = yes }
+							ROOT = { has_autocratic_government = yes }
+						}
+					}
+				}
+			}
+			DARK_will_dem_USA_support = yes
+		}
+		cancel_if_invalid = yes
+		
+		x = 17
+		y = 3
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_imported_motor_tech
+				bonus = 0.5
+				uses = 1
+				category = motorized_equipment
+			}
+			add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 250 producer = USA }
+		}
+	}
+	focus = {
+		id = LIB_armor_tech
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		icon = GFX_focus_NZL_bob_semple_tank
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		prerequisite = {
+			focus = LIB_auto_tech
+		}
+		
+		x = 17
+		y = 4
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_imp_tank_tech
+				bonus = 0.5
+				ahead_reduction = -1
+				uses = 2
+				category = armor
+			}
+			if = {
+				limit = { 
+					has_war = yes
+					any_country = {
+						custom_trigger_tooltip = {
+							tooltip = tag_america
+							is_literally_america = yes 
+						}
+						is_major = yes
+						is_in_faction_with = ROOT
+						NOT = { has_war_with = ROOT }
+						custom_trigger_tooltip = {
+							tooltip = same_ideology_group
+							OR = {
+								AND = {
+									PREV.PREV = { has_democratic_government = yes }
+									ROOT = { has_democratic_government = yes }
+								}
+								AND = {
+									PREV.PREV = { has_socialist_government = yes }
+									ROOT = { has_socialist_government = yes }
+								}
+								AND = {
+									PREV.PREV = { has_autocratic_government = yes }
+									ROOT = { has_autocratic_government = yes }
+								}
+							}
+						}
+					}
+				}
+				if = {
+					limit = { 
+						any_country = {
+							custom_trigger_tooltip = {
+								tooltip = tag_america
+								is_literally_america = yes 
+							}
+							is_major = yes
+							has_tech = basic_medium_tank
+							is_in_faction_with = ROOT
+							NOT = { has_war_with = ROOT }
+							custom_trigger_tooltip = {
+								tooltip = same_ideology_group
+								OR = {
+									AND = {
+										PREV.PREV = { has_democratic_government = yes }
+										ROOT = { has_democratic_government = yes }
+									}
+									AND = {
+										PREV.PREV = { has_socialist_government = yes }
+										ROOT = { has_socialist_government = yes }
+									}
+									AND = {
+										PREV.PREV = { has_autocratic_government = yes }
+										ROOT = { has_autocratic_government = yes }
+									}
+								}
+							}
+						}
+					}
+					add_equipment_to_stockpile = { type = medium_tank_equipment amount = 100 producer = USA }
+					else = {
+						add_equipment_to_stockpile = { type = light_tank_equipment amount = 100 producer = USA }
+					}
+				}
+			}
+		}				
+	}
+	focus = {
+		id = LIB_us_mil_coop
+		search_filters = { FOCUS_FILTER_MANPOWER } 
+		icon = GFX_dark_focus_african_recruits
+		cost = 10.00
+		ai_will_do = {
+			factor = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_secure_US
+		}
+		
+		available = {
+			DARK_will_dem_USA_support = yes
+		}
+		cancel_if_invalid = yes
+		
+		x = 11
+		y = 2
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = LIB_corrupt_army1
+				add_idea = LIB_corrupt_army2
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_us_training
+		search_filters = { FOCUS_FILTER_MANPOWER } 
+		icon = GFX_goal_generic_more_territorial_claims
+		cost = 15.00
+		ai_will_do = {
+			factor = 9
+		}
+		
+		prerequisite = {
+			focus = LIB_us_mil_coop
+		}
+		
+		available = {
+			DARK_will_dem_USA_support = yes
+		}
+		cancel_if_invalid = yes
+		
+		x = 10
+		y = 3
+		
+		completion_reward = {
+			add_ideas = LIB_US_training_idea
+			if = {
+				limit = { NOT = { has_idea = LIB_corrupt_army3 } }
+				swap_ideas = {
+					remove_idea = LIB_corrupt_army2
+					add_idea = LIB_corrupt_army3
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = LIB_corrupt_army3
+					add_idea = LIB_corrupt_army4
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_military_infra
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		ai_will_do = {
+			base = 11
+		}
+		
+		prerequisite = {
+			focus = LIB_american_steel
+		}
+		prerequisite = {
+			focus = LIB_us_training
+		}
+		
+		available = {
+			controls_state = 298
+			DARK_will_dem_USA_support = yes			
+		}
+		cancel_if_invalid = yes
+		
+		x = 6
+		y = 4
+		
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 5
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 5
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_5_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_expand_gold
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construction2
+		cost = 10.00
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0.1
+				has_war = yes
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_dutch_investment
+			focus = LIB_military_infra
+		}
+		
+		available = {
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		x = 5
+		y = 5
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = LIB_dutch_investment_idea }
+				swap_ideas = {
+					remove_idea = LIB_dutch_investment_idea
+					add_idea = LIB_dutch_investment_idea2
+				}
+			}
+			else = {
+				add_ideas = LIB_gold_mining
+			}
+		}
+	}
+	focus = {
+		id = LIB_us_roads
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		ai_will_do = {
+			factor = 8
+		}
+		
+		prerequisite = {
+			focus = LIB_military_infra
+		}
+		
+		available = {
+			controls_state = 298
+			DARK_will_dem_USA_support = yes
+		}
+		cancel_if_invalid = yes
+		
+		x = 8
+		y = 5
+		
+		completion_reward = {
+			298 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 5
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 5
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_5_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_officer_schools
+		search_filters = { FOCUS_FILTER_MANPOWER } 
+		icon = GFX_focus_generic_military_academy
+		cost = 15.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_us_mil_coop
+		}
+		
+		available= {
+			DARK_will_dem_USA_support = yes
+		}
+		cancel_if_invalid = yes
+		
+		x = 12
+		y = 3
+		
+		completion_reward = {
+			add_ideas = LIB_US_officers_idea
+			if = {
+				limit = { NOT = { has_idea = LIB_corrupt_army3 } }
+				swap_ideas = {
+					remove_idea = LIB_corrupt_army2
+					add_idea = LIB_corrupt_army3
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = LIB_corrupt_army3
+					add_idea = LIB_corrupt_army4
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_focus_mil
+		search_filters = { FOCUS_FILTER_MANPOWER } 
+		icon = GFX_goal_generic_military_sphere
+		cost = 15.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_us_training
+		}
+		prerequisite = {
+			focus = LIB_officer_schools
+		}
+		mutually_exclusive = {
+			focus = LIB_fix_militia
+		}
+		
+		x = 11
+		y = 4
+		
+		completion_reward = {			
+			custom_effect_tooltip = LIB_focus_mil_tt
+			
+			hidden_effect = {
+				remove_ideas = { 
+					LIB_US_training_idea 
+					LIB_US_officers_idea
+				}
+				add_ideas = LIB_trained_force		
+			}			 
+		}
+	}
+	focus = {
+		id = LIB_pay_on_time
+		search_filters = { FOCUS_FILTER_MANPOWER } 
+		icon = GFX_focus_generic_treaty
+		cost = 10.00
+		ai_will_do = {
+			factor = 20
+		}
+		
+		prerequisite = {
+			focus = LIB_fix_militia
+			focus = LIB_focus_mil
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 10
+		y = 5
+		
+		completion_reward = {
+			remove_ideas = LIB_corrupt_army4
+			add_ideas = LIB_pay_incentive
+		}
+	}
+	focus = {
+		id = LIB_neutrality_focus
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 10.00
+		ai_will_do = {
+			factor = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_trade_concessions
+		}
+		
+		bypass = {
+			OR = {
+				has_war = yes
+				has_socialist_government = yes
+				has_government = fascism
+			}
+		}
+		
+		x = 15
+		y = 1
+		
+		completion_reward = {
+			add_political_power = 150
+			add_ideas = neutrality_idea
+		}
+	}
+	focus = {
+		id = LIB_us_backed_neutrality
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_dark_focus_befriend_america
+		cost = 10.00
+		ai_will_do = {
+			factor = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_secure_US
+		}
+		prerequisite = {
+			focus = LIB_neutrality_focus
+		}
+		
+		available = {
+			any_country = {
+				is_literally_america = yes
+				ROOT = { 
+					OR = {
+						is_in_faction_with = PREV
+						is_guaranteed_by = PREV
+						is_subject_of = PREV 
+					}
+				}
+			}
+		}
+		
+		bypass = {
+			has_war = yes
+		}			
+		
+		x = 14
+		y = 2
+		
+		completion_reward = {
+			add_political_power = 100
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_end_negotiations
+		icon = GFX_focus_generic_diplomatic_treaty
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		cost = 10.00
+		ai_will_do = {
+			base = 11
+		}
+		
+		prerequisite = {
+			focus = LIB_neutrality_focus
+		}
+		prerequisite = {
+			focus = LIB_secure_US
+		}
+		
+		available = {
+			NOT = { has_government = neutrality }
+			NOT = { has_government = monarchism }
+		}
+		
+		x = 16
+		y = 2
+		
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = LIB_anti_fascism
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		cost = 20.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_us_backed_neutrality
+			focus = LIB_end_negotiations
+		}
+		
+		available = {
+			NOT = { has_government = fascism }
+		}
+		cancel_if_invalid = yes
+		
+		x = 15
+		y = 3
+		
+		completion_reward = {
+			add_political_power = 100
+			every_country = {
+				limit = { has_government = fascism }
+				hidden_effect = {
+					remove_opinion_modifier = {
+						target = ROOT
+						modifier = LIB_trade_concessions_opinion
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_hates
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = embargo
+				}
+				reverse_add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_hatred
+				}
+			}
+			every_country = {	
+				limit = {
+					NOT = { has_government = fascism }
+					OR = {
+						has_democratic_government = yes
+						AND = {
+							is_in_faction = yes
+							fascism < 0.3
+						}
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_likes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_us_tech
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH } 
+		icon = GFX_goal_tfv_generic_tech_sharing
+		cost = 15.00
+		ai_will_do = {
+			base = 13
+		}
+		
+		prerequisite = {
+			focus = LIB_officer_schools
+		}
+		prerequisite = {
+			focus = LIB_anti_fascism
+		}
+		
+		available = {
+			DARK_will_dem_USA_support = yes
+		}
+		cancel_if_invalid = yes
+		
+		x = 13
+		y = 4
+		
+		completion_reward = {
+			add_to_tech_sharing_group = LIB_USA_cooperation
+			effect_tooltip = {
+				USA = { add_to_tech_sharing_group = LIB_USA_cooperation }
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						is_literally_america = yes
+						OR = {
+							has_democratic_government = yes
+							has_socialist_government = yes
+						}
+						NOT = {
+							has_war_with = ROOT
+						}
+						ROOT = { 
+							OR = {
+								is_in_faction_with = PREV
+								is_guaranteed_by = PREV
+								is_subject_of = PREV 
+							}
+						}
+					}
+					add_to_tech_sharing_group = LIB_USA_cooperation
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_mil_sup
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_dark_focus_american_deal
+		cost = 10.00
+		ai_will_do = {
+			base = 7
+			modifier = {
+				factor = 10
+				OR = {
+					threat > 0.25
+					has_war = yes
+				}
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_us_tech
+		}
+		
+		available = {
+			DARK_will_dem_USA_support = yes
+		}
+		cancel_if_invalid = yes
+		
+		x = 13
+		y = 5
+		
+		completion_reward = {
+			add_ideas = LIB_us_lend_lease
+			add_relation_modifier = {
+					target = USA
+					modifier = LIB_us_lend_lease_license
+				}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_air_nav
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_dark_focus_american_aviation
+		cost = 20.00
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 100
+				threat > 0.33
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_anti_fascism
+		}
+		prerequisite = {
+			focus = LIB_us_tech
+		}
+		
+		available = {
+			controls_state = 298
+			DARK_will_dem_USA_support = yes
+		}
+		cancel_if_invalid = yes
+		
+		bypass = {
+			has_war = yes
+			any_other_country = {
+				is_literally_america = yes
+				ROOT = { 
+					OR = {
+						is_in_faction_with = PREV
+						is_guaranteed_by = PREV
+						is_subject_of = PREV 
+					}
+				}
+			}
+		}
+		
+		x = 15
+		y = 5
+		
+		completion_reward = {
+			effect_tooltip = {
+				give_military_access = USA
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						is_literally_america = yes
+						OR = {
+							has_democratic_government = yes
+							has_socialist_government = yes
+						}
+						NOT = {
+							has_war_with = ROOT
+						}
+						ROOT = { 
+							OR = {
+								is_in_faction_with = PREV
+								is_guaranteed_by = PREV
+								is_subject_of = PREV 
+							}
+						}
+					}
+					diplomatic_relation = {
+						country = LIB
+						relation = military_access
+						active = yes
+					}
+				}
+			}
+			298 = {
+				add_building_construction = {
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}			
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_areas_defense
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_dark_focus_american_liberian_cooperation
+		cost = 20.00
+		ai_will_do = {
+			base = 9
+			modifier = {
+				factor = 100
+				threat > 0.5
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_air_nav
+		}
+		prerequisite = {
+			focus = LIB_mil_sup
+		}
+		prerequisite = {
+			focus = LIB_focus_mil
+			focus = LIB_fix_militia
+		}
+		
+		available = {
+			DARK_will_dem_USA_support = yes
+			OR = {
+				has_war = yes
+				USA = { has_war = yes }
+			}
+		}
+		cancel_if_invalid = yes
+		
+		x = 13
+		y = 7
+		
+		completion_reward = {
+			remove_ideas = neutrality_idea
+			every_country = {
+				limit = {
+					is_literally_america = yes
+					OR = {
+						has_democratic_government = yes
+						has_socialist_government = yes
+					}
+					NOT = {
+						has_war_with = ROOT
+					}
+					ROOT = { 
+						OR = {
+							is_in_faction_with = PREV
+							is_guaranteed_by = PREV
+							is_subject_of = PREV 
+						}
+					}
+				}
+				diplomatic_relation = {
+					country = LIB
+					relation = non_aggression_pact
+					active = yes
+				}
+			}
+			298 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 15
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 15
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_15_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_interior_airfields
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_air_production
+		cost = 10.00
+		ai_will_do = {
+			factor = 5
+		}
+		
+		prerequisite = {
+			focus = LIB_areas_defense
+		}
+		
+		available = {
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		x = 15
+		y = 8
+
+		completion_reward = {
+			298 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 5
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 5
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_5_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_air_tech
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		icon = GFX_goal_generic_air_fighter2
+		cost = 10.00
+		ai_will_do = {
+			base = 2
+		}
+		
+		prerequisite = {
+			focus = LIB_air_nav
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 16
+		y = 6
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_air_techs
+				bonus = 0.5
+				uses = 3
+				category = air_equipment
+			}
+		}
+	}
+	focus = {
+		id = LIB_establish_air_doc
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		icon = GFX_goal_generic_air_doctrine
+		cost = 10.00
+		ai_will_do = [
+			base = 1
+		}
+		
+		prerequisite = {
+			focus = LIB_air_tech
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 16
+		y = 7
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_air_techs
+				bonus = 0.5
+				uses = 3
+				category = air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = LIB_leave_league
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_alone
+		}
+		
+		x = 32
+		y = 1
+		
+		completion_reward = {
+			add_political_power = -70
+			add_stability = -0.1
+			add_popularity = { ideology = conservative popularity = -0.1 }
+			DARK_leave_league_effect = yes			
+		}
+	}
+	focus = {
+		id = LIB_end_firestone
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_focus_generic_rubber
+		cost = 10.00
+		ai_will_do = {
+			factor = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_alone
+		}
+		
+		x = 34
+		y = 1
+		
+		completion_reward = {
+			add_political_power = -70
+			add_stability = -0.2
+			remove_ideas = LIB_firestone_company
+			effect_tooltip = { add_ideas = LIB_economic_disaster_1 }
+			LIB = { news_event = { id = NOS_liberia.102 hours = 24 } }
+			USA = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_ended_firestone
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = embargo
+				}
+				news_event = { id = NOS_liberia.102 hours = 24 }
+			}
+		}
+	}
+	focus = {
+		id = LIB_failed_state
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_focus_generic_strike_at_democracy3
+		cost = 10.00
+		ai_will_do = {
+			factor = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_leave_league
+		}
+		prerequisite = {
+			focus = LIB_end_firestone
+		}
+		
+		x = 33
+		y = 2
+
+		completion_reward = {
+			add_political_power = -100
+			add_stability = -0.2
+			remove_ideas = LIB_home_of_the_free
+			add_ideas = LIB_isolation
+			custom_effect_tooltip = LIB_start_civil_war_prep_tt
+		}
+	}
+	focus = {
+		id = LIB_recruit_americo
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_goal_generic_improve_relations
+		cost = 10.00
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = LIB_failed_state
+		}
+		
+		available = {
+			NOT = { has_completed_focus = LIB_revolution }
+		}
+		
+		x = 30
+		y = 3
+		
+		completion_reward = {
+			custom_effect_tooltip = LIB_recruited_americos_tt
+		}
+	}
+	focus = {
+		id = LIB_new_leader
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 10.00
+		ai_will_do = {
+			factor = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_failed_state
+		}
+		
+		x = 32
+		y = 3
+		
+		completion_reward = {
+			country_event = NOS_liberia.9
+		}
+	}
+	focus = {
+		id = LIB_recruit_kru
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_failed_state
+		}
+		
+		available = {
+			NOT = { has_completed_focus = LIB_revolution }
+		}
+		
+		x = 34
+		y = 3
+		
+		completion_reward = {
+			custom_effect_tooltip = LIB_recruited_tribes_tt
+		}
+	}
+	focus = {
+		id = LIB_disciplined_force
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_focus_generic_military_mission
+		cost = 10.00
+		ai_will_do = {
+			factor = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_failed_state
+		}
+		
+		available = {
+			NOT = { has_completed_focus = LIB_revolution }
+		}
+		
+		x = 36
+		y = 3
+		
+		completion_reward = {
+			custom_effect_tooltip = LIB_recuited_discipline_tt
+		}
+	}
+	focus = {
+		id = LIB_revolution
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_focus_generic_strike_at_democracy2
+		cost = 20.00
+		ai_will_do = {
+			factor = 5
+		}
+		
+		prerequisite = {
+			focus = LIB_recruit_americo
+			focus = LIB_recruit_kru
+			focus = LIB_disciplined_force
+		}
+		prerequisite = {
+			focus = LIB_new_leader
+		}
+		
+		available = {
+			has_civil_war = no
+			has_democratic_government = yes
+		}
+		cancel_if_invalid = yes
+		
+		bypass = {
+			OR = {
+				has_civil_war = yes
+				NOT = { has_democratic_government = yes }
+			}
+		}
+		
+		x = 33
+		y = 4
+		
+		completion_reward = {
+			custom_effect_tooltip = LIB_start_a_civil_war_tt				
+			if = {
+				limit = {
+					OR = {
+						has_idea = disarmed_nation
+						has_idea = volunteer_only
+					}
+				}
+				add_ideas = limited_conscription
+			}
+			else = {
+				add_war_support = 0.1
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = war_economy
+						has_idea = tot_economic_mobilisation
+					}					
+				}
+				add_war_support = 0.1
+			}
+			else = {
+				add_ideas = war_economy
+			}
+			hidden_effect = { #Create Variables
+				set_variable = { LIB_var_civil_war_democratic_rebel = 0 }
+				set_variable = { LIB_var_civil_war_neutrality_rebel = 0 }
+				set_variable = { LIB_var_civil_war_fascism_rebel = 0 }
+				set_variable = { LIB_var_civil_war_communism_rebel = 0 }
+				if = {
+					limit = { air_base > 0 }
+					set_country_flag = LIB_has_airport
+				}						
+			}
+			hidden_effect = { #Hinterland Integration
+				if = {
+					limit = { 
+						has_country_flag = LIB_will_lower_hinterland_1 
+						OR = {
+							has_idea = LIB_hinterland_problems_1
+							has_idea = LIB_hinterland_problems_2
+							has_idea = LIB_hinterland_problems_3
+						}
+					}
+					activate_decision = LIB_integrate_hinterlands_decision_3
+					if = {
+						limit = { has_country_leader = { id = 30001 ruling_only = no } }
+						add_to_variable = { LIB_var_civil_war_fascism_rebel = 0.10 }
+						add_to_variable = { LIB_var_civil_war_communism_rebel = 0.05 }
+					}
+					else = {
+						add_to_variable = { LIB_var_civil_war_fascism_rebel = 0.05 }
+						add_to_variable = { LIB_var_civil_war_communism_rebel = 0.10 }
+					}
+				}
+				if = {
+					limit = { 
+						has_country_flag = LIB_will_lower_hinterland_2 
+						OR = {
+							has_idea = LIB_hinterland_problems_1
+							has_idea = LIB_hinterland_problems_2
+							has_idea = LIB_hinterland_problems_3
+						}
+					}
+					activate_decision = LIB_integrate_hinterlands_decision_1
+					if = {
+						limit = { has_country_leader = { id = 30001 ruling_only = no } }
+						add_to_variable = { LIB_var_civil_war_fascism_rebel = 0.10 }
+						add_to_variable = { LIB_var_civil_war_communism_rebel = 0.05 }
+					}
+					else = {
+						add_to_variable = { LIB_var_civil_war_fascism_rebel = 0.05 }
+						add_to_variable = { LIB_var_civil_war_communism_rebel = 0.10 }
+					}
+				}
+			}
+			hidden_effect = { #Americo-Liberal Integration
+				if = {
+					limit = { has_country_flag = LIB_yes_reps_flag }					
+					if = {
+						limit = { has_country_leader = { id = 30001 ruling_only = no } }
+						add_to_variable = { LIB_var_civil_war_fascism_rebel = 0.10 }
+						add_to_variable = { LIB_var_civil_war_communism_rebel = 0.10 }
+						add_to_variable = { LIB_var_civil_war_neutrality_rebel = -0.05 }
+						add_to_variable = { LIB_var_civil_war_democratic_rebel = -0.10 }
+					}
+					else = {
+						add_to_variable = { LIB_var_civil_war_fascism_rebel = 0.10 }
+						add_to_variable = { LIB_var_civil_war_communism_rebel = 0.10 }
+						add_to_variable = { LIB_var_civil_war_neutrality_rebel = -0.05 }
+						add_to_variable = { LIB_var_civil_war_democratic_rebel = -0.10 }
+					}
+				}
+				else_if = {
+					limit = { has_country_flag = LIB_some_reps_flag }
+					if = {
+						limit = { has_country_leader = { id = 30001 ruling_only = no } }
+						add_to_variable = { LIB_var_civil_war_fascism_rebel = 0.05 }
+						add_to_variable = { LIB_var_civil_war_communism_rebel = 0.05 }
+						add_to_variable = { LIB_var_civil_war_neutrality_rebel = 0 }
+						add_to_variable = { LIB_var_civil_war_democratic_rebel = -0.05 }
+					}
+					else = {
+						add_to_variable = { LIB_var_civil_war_fascism_rebel = 0.05 }
+						add_to_variable = { LIB_var_civil_war_communism_rebel = 0.05 }
+						add_to_variable = { LIB_var_civil_war_neutrality_rebel = 0 }
+						add_to_variable = { LIB_var_civil_war_democratic_rebel = -0.05 }
+					}
+				}
+				else_if = {
+					limit = { has_country_flag = LIB_no_reps_flag }
+					
+					if = {
+						limit = { has_country_leader = { id = 30001 ruling_only = no } }
+						add_to_variable = { LIB_var_civil_war_fascism_rebel = -0.10 }
+						add_to_variable = { LIB_var_civil_war_communism_rebel = -0.05 }
+						add_to_variable = { LIB_var_civil_war_neutrality_rebel = 0.05 }
+						add_to_variable = { LIB_var_civil_war_democratic_rebel = 0.10 }
+					}
+					else = {						
+						add_to_variable = { LIB_var_civil_war_fascism_rebel = -0.05 }
+						add_to_variable = { LIB_var_civil_war_communism_rebel = -0.10 }
+						add_to_variable = { LIB_var_civil_war_neutrality_rebel = 0.05 }
+						add_to_variable = { LIB_var_civil_war_democratic_rebel = 0.10 }
+					}
+				}
+			}			
+			hidden_effect = { #Army Discipline
+				if = {
+					limit = { has_completed_focus = LIB_disciplined_force }
+					swap_ideas = {
+						remove_idea = LIB_corrupt_army1
+						add_idea = LIB_corrupt_army2
+					}
+				}
+				if = {
+					limit = { has_country_flag = LIB_discipline_1 }
+					add_to_variable = { LIB_var_civil_war_democratic_rebel = -5 }
+					if = {
+						limit = { has_idea = LIB_corrupt_army1 }
+						swap_ideas = {
+							remove_idea = LIB_corrupt_army1
+							add_idea = LIB_corrupt_army2
+						}
+					}
+					else_if = {
+						limit = { has_idea = LIB_corrupt_army2 }
+						swap_ideas = {
+							remove_idea = LIB_corrupt_army2
+							add_idea = LIB_corrupt_army3
+						}
+					}
+				}
+				if = {
+					limit = { has_country_flag = LIB_discipline_2 }
+					add_to_variable = { LIB_var_civil_war_democratic_rebel = -5 }
+					if = {
+						limit = { has_idea = LIB_corrupt_army2 }
+						swap_ideas = {
+							remove_idea = LIB_corrupt_army2
+							add_idea = LIB_corrupt_army3
+						}
+					}
+					else_if = {
+						limit = { has_idea = LIB_corrupt_army3 }
+						swap_ideas = {
+							remove_idea = LIB_corrupt_army3
+							add_idea = LIB_corrupt_army4
+						}
+					}
+					load_oob = LIB_disciplined_force					
+				}
+				else = {
+					load_oob = LIB_undisciplined_force
+				}
+			}
+			hidden_effect = { #Set-up rebel government
+				if = { 
+					limit = { has_government = fascism }
+					add_popularity = { ideology = fascism popularity = 0.2 }
+					add_popularity = { ideology = communism popularity = 0.1 }
+				}
+				else_if = {
+					limit = { has_socialist_government = yes }
+					add_popularity = { ideology = fascism popularity = 0.1 }
+					add_popularity = { ideology = communism popularity = 0.2 }
+				}
+				if = {
+					limit = { has_completed_focus = LIB_recruit_americo }
+					add_popularity = { ideology = neutrality popularity = 0.1 }
+				}
+				add_popularity = { ideology = democratic popularity = LIB_var_civil_war_democratic_rebel }
+				add_popularity = { ideology = neutrality popularity = LIB_var_civil_war_neutrality_rebel }
+				if = { 
+					limit = { has_government = fascism }
+					add_popularity = { ideology = communism popularity = LIB_var_civil_war_communism_rebel }
+					add_popularity = { ideology = fascism popularity = LIB_var_civil_war_fascism_rebel }
+				}
+				else_if = {
+					limit = { has_socialist_government = yes }
+					add_popularity = { ideology = fascism popularity = LIB_var_civil_war_fascism_rebel }
+					add_popularity = { ideology = communism popularity = LIB_var_civil_war_communism_rebel }
+				}
+				
+				news_event = { id = NOS_liberia.104 hours = 24 }
+			}
+			hidden_effect = { #Remove the random airport
+				if = {
+					limit = { NOT = { has_country_flag = LIB_has_airport } }
+					every_country = {
+						limit = { original_tag = LIB }
+						every_owned_state = {
+							remove_building = {
+								type = air_base
+								level = 1
+							}
+						}
+					}
+				}
+				clr_country_flag = LIB_has_airport
+			}
+		}
+	}
+	focus = {
+		id = LIB_detente
+		search_filters = { FOCUS_FILTER_STABILITY } 
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 10.00
+		ai_will_do = {
+			factor = 1
+		}
+		
+		prerequisite = {
+			focus = LIB_revolution
+		}
+		mutually_exclusive = {
+			focus = LIB_stands_alone
+		}
+		
+		available = {
+			OR = {
+				has_civil_war = no
+				any_other_country = {
+					original_tag = LIB
+					NOT = { tag = LIB }
+					has_capitulated = yes
+				}
+			}
+		}
+		cancel_if_invalid = yes
+		
+		x = 22
+		y = 5
+		
+		completion_reward = {
+			add_stability = 0.1
+			remove_ideas = LIB_isolation
+			DARK_revert_leave_league_effect = yes			
+		}
+	}
+	focus = {
+		id = LIB_soviets
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_dark_focus_seek_help_from_soviet
+		cost = 10.00
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				has_socialist_government = yes
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_detente
+		}
+		
+		available = {
+			country_exists = SOV
+			SOV = { is_faction_leader = yes }
+			NOT = { has_war_with = SOV }
+			SOV = { is_subject = no }
+			is_in_faction = no
+			OR = {
+				is_subject = no
+				has_socialist_government = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = LIB_not_getting_nazi_help_tt
+				NOT = { has_country_flag = LIB_getting_nazi_help }
+			}
+		}
+		cancel_if_invalid = yes
+		
+		bypass = {
+			is_in_faction = yes
+		}
+		
+		x = 21
+		y = 6
+		
+		completion_reward = {
+			SOV = { 
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_asked_for_help
+				}
+				country_event = { id = NOS_liberia.40 hours = 24 }
+			}
+		}
+	}
+	focus = {
+		id = LIB_rightful_rulers
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_dark_focus_seek_help_from_germany
+		cost = 10.00
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				has_government = fascism
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_detente
+		}
+		
+		available = {
+			country_exists = GER
+			GER = { is_faction_leader = yes }
+			NOT = { has_war_with = GER }
+			GER = { is_subject = no }
+			is_in_faction = no
+			OR = {
+				is_subject = no
+				has_government = fascism
+			}
+			custom_trigger_tooltip = {
+				tooltip = LIB_not_getting_soviet_help_tt
+				NOT = { has_country_flag = LIB_getting_soviet_help }
+			}
+		}
+		cancel_if_invalid = yes
+		
+		bypass = {
+			is_in_faction = yes
+		}
+		
+		x = 23
+		y = 6
+		
+		completion_reward = {
+			GER = { 
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_asked_for_help
+				}
+				country_event = { id = NOS_liberia.44 hours = 24 }
+			}
+		}
+	}
+	focus = {
+		id = LIB_foreign_tech
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		icon = GFX_goal_generic_scientific_exchange
+		cost = 10.00
+		ai_will_do = {
+			factor = 20
+		}
+		
+		prerequisite = {
+			focus = LIB_rightful_rulers
+			focus = LIB_soviets
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 19
+		y = 7
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = LIB_new_foreign_invest
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 10.00
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				OR = { 
+					has_idea = LIB_economic_disaster_1
+					has_idea = LIB_economic_disaster_2
+				}
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_soviets
+			focus = LIB_rightful_rulers
+		}
+		
+		available = {
+			controls_state = 298		
+		}
+		cancel_if_invalid = yes
+		
+		x = 25
+		y = 7
+		
+		completion_reward = {			
+			add_ideas = LIB_foreign_investment_idea
+			298 = {
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+				add_resource = {
+					type = steel
+					amount = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_stands_alone
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		icon = GFX_goal_generic_demand_territory
+		cost = 10.00
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_revolution
+		}
+		mutually_exclusive = {
+			focus = LIB_detente
+		}
+		
+		available = {
+			is_subject = no
+			OR = {
+				is_faction_leader = yes
+				is_in_faction = no
+			}
+			OR = {
+				has_government = fascism
+				has_socialist_government = yes
+			}
+			OR = {
+				has_civil_war = no
+				any_other_country = {
+					original_tag = LIB
+					NOT = { tag = LIB }
+					has_capitulated = yes
+				}
+			}
+		}
+		cancel_if_invalid = yes
+		
+		x = 44
+		y = 5
+		
+		completion_reward = {
+			add_political_power = 150
+			set_rule = {
+				can_create_factions = yes
+				can_join_factions = no
+			}
+		}
+	}
+	focus = {
+		id = LIB_create_navy
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 10.00
+		ai_will_do = {
+			factor = 5
+		}
+		
+		prerequisite = {
+			focus = LIB_stands_alone
+			focus = LIB_detente
+		}
+		
+		x = 37
+		y = 6
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_new_navy_tech
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			add_tech_bonus = {
+				name = LIB_new_navy_tech
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+			add_tech_bonus = {
+				name = LIB_new_navy_tech
+				bonus = 0.5
+				uses = 1
+				category = cl_tech
+			}
+			add_tech_bonus = {
+				name = LIB_new_navy_tech
+				bonus = 0.5
+				uses = 1
+				category = ca_tech
+			}
+			add_tech_bonus = {
+				name = LIB_new_navy_tech
+				bonus = 0.5
+				uses = 1
+				category = bc_tech
+			}
+			add_tech_bonus = {
+				name = LIB_new_navy_tech
+				bonus = 0.5
+				uses = 1
+				category = bb_tech
+			}
+			add_tech_bonus = {
+				name = LIB_new_navy_tech
+				bonus = 0.5
+				uses = 1
+				category = shbb_tech
+			}
+			add_tech_bonus = {
+				name = LIB_new_navy_tech
+				bonus = 0.5
+				uses = 1
+				category = cv_tech
+			}
+			add_tech_bonus = {
+				name = LIB_new_navy_tech
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+			add_tech_bonus = {
+				name = LIB_new_navy_tech
+				bonus = 0.5
+				uses = 1
+				category = tp_tech
+			}			
+		}
+	}
+	focus = {
+		id = LIB_work_for_all
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construction2
+		cost = 10.00
+		ai_will_do = {
+			base = 15
+		}
+		
+		prerequisite = {
+			focus = LIB_detente
+			focus = LIB_stands_alone
+		}
+		
+		available = {
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		x = 28
+		y = 6
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = LIB_economic_disaster_1 }
+				swap_ideas = {
+					remove_idea = LIB_economic_disaster_1
+					add_idea = LIB_economic_disaster_2
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_economic_disaster_2 }
+				remove_ideas = LIB_economic_disaster_2
+			}
+			else = {
+				add_political_power = 100
+			}
+			298 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_anti_civ_facs
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_focus_focus_generic_industry_1
+		cost = 10.00
+		ai_will_do = {
+			base = 11
+		}
+		
+		prerequisite = {
+			focus = LIB_work_for_all
+		}
+		
+		available = {
+			controls_state = 298
+		}
+		cancel_if_invalid = yes	
+
+		bypass = {
+			298 = {
+				free_building_slots = {
+					building = industrial_complex
+					size < 1
+					include_locked = yes
+				}
+			}
+		}
+		
+		x = 27
+		y = 7
+		
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_anti_mil_facs
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		ai_will_do = {
+			base = 11
+		}
+		
+		prerequisite = {
+			focus = LIB_work_for_all
+		}
+		
+		available = {
+			controls_state = 298
+		}
+		cancel_if_invalid = yes	
+
+		bypass = {
+			298 = {
+				free_building_slots = {
+					building = arms_factory
+					size < 1
+					include_locked = yes
+				}
+			}
+		}
+		
+		x = 29
+		y = 7
+		
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_ind_port
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 15.00
+		ai_will_do = {
+			base = 7
+		}
+		
+		prerequisite = {
+			focus = LIB_create_navy
+		}
+		
+		available = {
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		bypass = {
+			298 = {
+				free_building_slots = {
+					building = dockyard
+					size < 1
+					include_locked = yes
+				}
+			}			
+		}
+		
+		x = 37
+		y = 7
+		
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					province = 7959
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_ind_nav_doc
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 10.00
+		ai_will_do = {
+			base = 6
+		}
+		
+		prerequisite = {
+			focus = LIB_ind_port
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 37
+		y = 8
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_ind_naval_doc_tech
+				bonus = 0.5
+				uses = 3
+				category = naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = LIB_form_airforce
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		icon = GFX_goal_generic_build_airforce
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_stands_alone
+			focus = LIB_detente
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 40
+		y = 6
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_new_air_tech
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			add_tech_bonus = {
+				name = LIB_new_air_tech
+				bonus = 0.5
+				uses = 1
+				category = light_air
+			}
+			add_tech_bonus = {
+				name = LIB_new_air_tech
+				bonus = 0.5
+				uses = 1
+				category = medium_air
+			}
+			add_tech_bonus = {
+				name = LIB_new_air_tech
+				bonus = 0.5
+				uses = 1
+				category = heavy_air
+			}
+		}
+	}
+	focus = {
+		id = LIB_ind_airports
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_air_production
+		cost = 10.00
+		ai_will_do = {
+			base = 8
+		}
+		
+		prerequisite = {
+			focus = LIB_form_airforce
+		}
+		
+		available = {
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		bypass = {
+			298 = {
+				free_building_slots = {
+					building = air_base
+					size < 1
+				}
+			}
+		}
+		
+		x = 40
+		y = 7
+		
+		completion_reward = {
+			298 = {
+				if = {
+					limit = { is_capital = yes }
+					add_building_construction = {
+						type = air_base
+						level = 3
+						instant_build = yes
+					}
+				}
+				else = {
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_develop_air_doc
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		icon = GFX_goal_generic_air_doctrine
+		cost = 10.00
+		ai_will_do = {
+			base = 8
+		}
+		
+		prerequisite = {
+			focus = LIB_ind_airports
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 40
+		y = 8
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_ind_air_doc_tech
+				bonus = 0.5
+				uses = 3
+				category = air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = LIB_prepare_struggle
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+		icon = GFX_goal_generic_small_arms
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_stands_alone
+		}
+		
+		available = {
+			has_war = no
+		}
+		cancel_if_invalid = yes
+		
+		bypass = {
+			has_war = yes
+		}
+		
+		x = 43
+		y = 6
+		
+		completion_reward = {
+			add_war_support = 0.05
+			add_timed_idea = { idea = LIB_waiting_for_war days = 1080 }
+		}
+	}
+	focus = {
+		id = LIB_workers_revolution
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		icon = GFX_focus_ger_great_red_menace
+		cost = 10.00
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_prepare_struggle
+		}
+		mutually_exclusive = {
+			focus = LIB_crusader_kings
+		}
+		
+		available = {
+			is_major = yes
+			has_socialist_government = yes
+			OR = {
+				is_subject = no
+				has_war = yes
+			}
+		}
+		cancel_if_invalid = yes
+		
+		x = 43
+		y = 7
+		
+		completion_reward = {
+			custom_effect_tooltip = LIB_prepare_for_revolution_tt
+			hidden_effect = {
+				set_country_flag = LIB_the_revolution_begins
+				every_state = {
+					limit = { is_on_continent = Africa }
+					LIB = { add_state_claim = PREV }
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_crusader_kings
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		icon = GFX_goal_generic_major_war
+		cost = 10.00
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_prepare_struggle
+		}
+		mutually_exclusive = {
+			focus = LIB_workers_revolution
+		}
+		
+		available = {
+			is_major = yes
+			has_autocratic_government = yes
+			OR = {
+				is_subject = no
+				has_war = yes
+			}
+		}
+		cancel_if_invalid = yes
+		
+		x = 45
+		y = 7
+		
+		completion_reward = {
+			custom_effect_tooltip = LIB_prepare_for_revolution_tt
+			hidden_effect = {
+				set_country_flag = LIB_the_crusade_begins
+				every_state = {
+					limit = { is_on_continent = Africa }
+					LIB = { add_state_claim = PREV }
+				}
+				set_variable = { LIB_num_owned_african_states = 0 }
+			}
+		}
+	}
+	focus = {
+		id = LIB_cannot_be_ignored
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10.00
+		ai_will_do = {
+			factor = 100
+		}
+		
+		prerequisite = {
+			focus = LIB_crusader_kings
+			focus = LIB_workers_revolution
+		}
+		
+		available = {
+			is_major = yes
+			custom_trigger_tooltip = {
+				tooltip = LIB_has_half_of_africa_tt
+				check_variable = {
+					var = LIB_num_owned_african_states
+					value = 33
+					compare = greater_than
+				}
+			}
+		}
+		cancel_if_invalid = no		
+		available_if_capitulated = yes
+		
+		x = 44
+		y = 8			
+		
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_on_continent = africa
+					NOT = { is_core_of = ROOT }
+				}
+				add_claim_by = ROOT
+			}
+			add_ideas = LIB_african_empire_idea
+			remove_ideas = LIB_isolation
+			custom_effect_tooltip = DARK_can_join_factions_tt
+			hidden_effect = {
+				set_rule = {
+					can_join_factions = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_hegemony
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		icon = GFX_dark_focus_liberian_africa
+		cost = 10.00
+		ai_will_do = {
+			factor = 100
+		}
+		
+		prerequisite = {
+			focus = LIB_soviets
+			focus = LIB_rightful_rulers
+		}
+		
+		available = {
+			is_subject = no
+			num_of_controlled_states > 50
+		}
+		cancel_if_invalid = yes
+		
+		x = 23
+		y = 7
+		
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_on_continent = africa
+					NOT = { is_core_of = ROOT }
+				}
+				add_claim_by = ROOT
+			}
+			add_ideas = LIB_hegemony_idea
+			set_rule = { can_create_factions = yes }
+		}
+	}
+	focus = {
+		id = LIB_foreign_training
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_focus_generic_military_academy
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_soviets
+			focus = LIB_rightful_rulers
+		}
+		
+		available = {
+			OR = {
+				is_in_faction = yes
+				custom_trigger_tooltip = {
+					tooltip = LIB_getting_any_help_tt
+					OR = {
+						has_country_flag = LIB_getting_nazi_help
+						has_country_flag = LIB_getting_soviet_help
+					}
+				}
+			}
+		}
+		cancel_if_invalid = yes		
+		available_if_capitulated = yes
+		
+		x = 21
+		y = 7
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = LIB_corrupt_army1 }
+				swap_ideas = {
+					remove_idea = LIB_corrupt_army1
+					add_idea = LIB_corrupt_army2
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_corrupt_army2 }
+				swap_ideas = {
+					remove_idea = LIB_corrupt_army2
+					add_idea = LIB_corrupt_army3
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_corrupt_army3 }
+				remove_ideas = LIB_corrupt_army3
+			}
+			army_experience = 25
+			add_ideas = LIB_foreign_training_idea
+		}
+	}
+	focus = {
+		id = LIB_alone_tech
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_focus_research
+		cost = 10.00
+		ai_will_do = {
+			base = 25
+		}
+		prerequisite = {
+			focus = LIB_stands_alone
+		}
+		
+		available = {
+			OR = {
+				num_of_factories > 30
+				any_other_country = {
+					is_in_faction_with = ROOT
+					num_of_factories > 50
+				}
+			}
+		}
+		cancel_if_invalid = no
+		available_if_capitulated = yes
+		
+		x = 45
+		y = 6
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = LIB_ind_corps
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_production2
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 10
+				has_war = no
+			}
+		}
+		
+		prerequisite = {
+			focus = LIB_anti_civ_facs
+		}
+		prerequisite = {
+			focus = LIB_anti_mil_facs
+		}
+		
+		x = 29
+		y = 8
+		
+		completion_reward = {
+			add_political_power = 100
+			add_ideas = LIB_domestic_industry
+		}
+	}
+	focus = {
+		id = LIB_reform_army
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 10.00
+		ai_will_do = {
+			base = 12
+		}
+		
+		prerequisite = {
+			focus = LIB_stands_alone
+			focus = LIB_detente
+		}
+		
+		x = 32
+		y = 6
+
+		completion_reward = {
+			if = {
+				limit = { has_idea = LIB_corrupt_army1 }
+				swap_ideas = {
+					remove_idea = LIB_corrupt_army1
+					add_idea = LIB_corrupt_army2
+				}
+				army_experience = 25
+			}
+			else_if = {
+				limit = { has_idea = LIB_corrupt_army2 }
+				swap_ideas = {
+					remove_idea = LIB_corrupt_army2
+					add_idea = LIB_corrupt_army3
+				}
+				army_experience = 25
+			}
+			else_if = {
+				limit = { has_idea = LIB_corrupt_army3 }
+				remove_ideas = LIB_corrupt_army3
+				army_experience = 25
+			}
+			else = {
+				army_experience = 50
+			}
+		}
+	}
+	focus = {
+		id = LIB_marines_focus
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 10.00
+		ai_will_do = {
+			base = 1
+		}
+		
+		prerequisite = {
+			focus = LIB_reform_army
+		}
+		prerequisite = {
+			focus = LIB_create_navy
+		}
+		
+		x = 35
+		y = 7
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_marine_tech_bonus
+				bonus = 0.5
+				ahead_reduction = -1
+				uses = 2
+				category = marine_tech
+			}
+			custom_effect_tooltip = DARK_set_jungle_marines_tt
+			hidden_effect = { set_technology = { DARK_jungle_marines = 1 } }
+		}
+	}
+	focus = {
+		id = LIB_ind_war_studies
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_special_forces
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_reform_army
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 33
+		y = 7
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_ind_war_studies_tech
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}				
+	}
+	focus = {
+		id = LIB_reinvite_firestone
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 10.00
+		ai_will_do = {
+			base = 11
+		}
+		
+		prerequisite = {
+			focus = LIB_new_foreign_invest
+		}
+		prerequisite = {
+			focus = LIB_anti_civ_facs
+		}
+		mutually_exclusive = {
+			focus = LIB_national_rubber
+		}
+		
+		available = {
+			any_country = {
+				custom_trigger_tooltip = {
+					tooltip = tag_america
+					is_literally_america = yes 
+				}
+				is_major = yes
+				NOT = { has_war_with = ROOT }
+				custom_trigger_tooltip = {
+					tooltip = same_ideology_group
+					OR = {
+						AND = {
+							PREV.PREV = { has_democratic_government = yes }
+							ROOT = { has_democratic_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_socialist_government = yes }
+							ROOT = { has_socialist_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_autocratic_government = yes }
+							ROOT = { has_autocratic_government = yes }
+						}
+					}
+				}
+			}
+		}
+		cancel_if_invalid = yes
+		
+		x = 25
+		y = 8
+		
+		completion_reward = {
+			random_country = {
+				limit = {
+					is_literally_america = yes
+					is_major = yes
+					OR = {
+						AND = {
+							PREV.PREV = { has_democratic_government = yes }
+							ROOT = { has_democratic_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_socialist_government = yes }
+							ROOT = { has_socialist_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_autocratic_government = yes }
+							ROOT = { has_autocratic_government = yes }
+						}
+					}
+				}
+				remove_opinion_modifier = {
+					target = LIB
+					modifier = LIB_ended_firestone
+				}
+				remove_opinion_modifier = {
+					target = LIB
+					modifier = embargo
+				}
+			}
+			if = {
+				limit = { has_idea = LIB_economic_disaster_1 }
+				swap_ideas = {
+					remove_idea = LIB_economic_disaster_1
+					add_idea = LIB_economic_disaster_2
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_economic_disaster_2 }
+				remove_ideas = LIB_economic_disaster_2
+			}
+			298 = {
+				add_resource = {
+					type = rubber
+					amount = 4
+				}
+			}
+			add_ideas = LIB_firestone_company
+			add_timed_idea = { idea = LIB_firestone_reparations days = 360 }
+		}
+	}
+	focus = {
+		id = LIB_expand
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_focus_research
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_national_rubber
+			focus = LIB_ind_corps
+		}
+		
+		available = {
+			num_of_factories > 10
+		}
+		cancel_if_invalid = yes
+		available_if_capitulated = yes
+		
+		x = 28
+		y = 9
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = LIB_national_rubber
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_focus_generic_rubber
+		cost = 10.00
+		ai_will_do = {
+			base = 9
+		}
+		
+		prerequisite = {
+			focus = LIB_anti_civ_facs
+		}
+		mutually_exclusive = {
+			focus = LIB_reinvite_firestone
+		}
+		
+		x = 27
+		y = 8
+		
+		completion_reward = {			
+			298 = {
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+			}
+			add_ideas = LIB_national_rubber_company
+		}
+	}
+	focus = {
+		id = LIB_army_inno
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_military_sphere
+		cost = 10.00
+		ai_will_do = {
+			base = 2
+		}
+		prerequisite = {
+			focus = LIB_reform_army
+		}
+		x = 31
+		y = 7
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_army_inno_tech
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				name = LIB_army_inno_tech
+				bonus = 0.5
+				uses = 1
+				category = support_tech
+			}
+			add_tech_bonus = {
+				name = LIB_army_inno_tech
+				bonus = 0.5
+				uses = 1
+				category = artillery
+				category = rocketry
+			}
+			add_tech_bonus = {
+				name = LIB_army_inno_tech
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+	focus = {
+		id = LIB_company_innovations
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_production
+		cost = 10.00
+		ai_will_do = {
+			factor = 9
+			modifier = {
+				factor = 10
+				has_war = no
+			}
+		}
+		prerequisite = {
+			focus = LIB_ind_corps
+		}
+		prerequisite = {
+			focus = LIB_army_inno
+		}
+		
+		x = 31
+		y = 9
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_corporate_tech_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+			add_tech_bonus = {
+				name = LIB_corporate_tech_bonus
+				bonus = 0.5
+				uses = 2
+				category = electronics
+			}
+		}
+	}
+	focus = {
+		id = LIB_develop_land_doctrine
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_army_doctrines
+		cost = 10.00
+		ai_will_do = {
+			base = 12
+		}
+		
+		prerequisite = {
+			focus = LIB_ind_war_studies
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 33
+		y = 8
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_developed_land_doc
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = LIB_combined_tech
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_focus_research2
+		cost = 10.00
+		ai_will_do = {
+			base = 100
+		}
+		
+		prerequisite = {
+			focus = LIB_develop_land_doctrine
+		}
+		prerequisite = {
+			focus = LIB_ind_nav_doc
+		}
+		prerequisite = {
+			focus = LIB_develop_air_doc
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 36
+		y = 9
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = LIB_combined_arms
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_focus_generic_combined_arms
+		cost = 10.00
+		prerequisite = {
+			focus = LIB_develop_land_doctrine
+		}
+		prerequisite = {
+			focus = LIB_ind_nav_doc
+		}
+		prerequisite = {
+			focus = LIB_develop_air_doc
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 38
+		y = 9
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_combined_docs
+				bonus = 0.5
+				uses = 3
+				category = land_doctrine
+				category = air_doctrine
+				category = naval_doctrine
+			}
+			add_tech_bonus = {
+				name = LIB_combined_tech_bonus
+				bonus = 0.5
+				uses = 3
+				category = armor
+				category = infantry_weapons
+				category = motorized_equipment
+				category = artillery
+				category = rocketry				
+				category = naval_equipment
+				category = air_equipment
+			}
+		}
+	}
+	focus = {
+		id = LIB_mining_exp
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_focus_generic_steel
+		cost = 15.00
+		ai_will_do = {
+			base = 1
+		}
+		
+		prerequisite = {
+			focus = LIB_reinvite_firestone
+			focus = LIB_national_rubber
+		}
+		
+		x = 26
+		y = 9
+		
+		select_effect = {
+			298 = {
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+			}
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = LIB_on_select_steel_tt
+			298 = {
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+			}
+			298 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}			
+		}
+	}
+	focus = {
+		id = LIB_gold_mining_exp
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construction2
+		cost = 10.00
+		ai_will_do = {
+			base = 1
+		}
+		
+		prerequisite = {
+			focus = LIB_reinvite_firestone
+			focus = LIB_national_rubber
+		}
+		
+		x = 26
+		y = 10
+		
+		select_effect = {
+			298 = {
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_ideas = LIB_gold_mining
+		}
+	}
+	focus = {
+		id = LIB_establish_iron_comp
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construction2
+		cost = 10.00
+		ai_will_do = {
+			base = 1
+		}
+		prerequisite = {
+			focus = LIB_mining_advances
+		}
+		x = 5
+		y = 10
+		
+		completion_reward = {
+			298 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_interior_infra
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		ai_will_do = {
+			base = 7
+		}
+		
+		prerequisite = {
+			focus = LIB_areas_defense
+		}
+		prerequisite = {
+			focus = LIB_expand_gold
+		}
+		
+		available = {
+			DARK_will_dem_USA_support = yes
+		}
+		cancel_if_invalid = yes
+		
+		x = 6
+		y = 8
+		
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 5
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 5
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_5_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_us_mil_facs
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_us_construction
+		}
+		prerequisite = {
+			focus = LIB_interior_infra
+		}
+		
+		available = {
+			DARK_will_dem_USA_support = yes
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		x = 10
+		y = 9
+		
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_us_construction
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_military_infra
+			focus = LIB_us_firestone
+		}
+		prerequisite = {
+			focus = LIB_areas_defense
+		}
+		
+		available = {
+			DARK_will_dem_USA_support = yes
+		}
+		cancel_if_invalid = yes
+		
+		x = 12
+		y = 8
+		
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_dutch_roads
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		ai_will_do = {
+			base = 12
+		}
+		
+		prerequisite = {
+			focus = LIB_dutch_investment
+		}
+		
+		available = {
+			NOT = { has_war_with = HOL }
+			HOL = {
+				exists = yes
+				has_capitulated = no
+			}
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				298 = {
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}				
+		
+		x = 3
+		y = 5
+		
+		completion_reward = {
+			298 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_port
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 10.00
+		ai_will_do = {
+			factor = 20
+		}
+		
+		prerequisite = {
+			focus = LIB_us_construction
+		}
+		
+		available = {
+			DARK_will_dem_USA_support = yes
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		x = 15
+		y = 9
+		
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					province = 7959
+					level = 3
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = LIB_begin_freeport_project_tt
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 15
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 15
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_15_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_navy
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 10.00
+		ai_will_do = {
+			base = 1
+		}
+		
+		prerequisite = {
+			focus = LIB_port
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 16
+		y = 10
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_navy_tech_bonus
+				bonus = 0.5
+				uses = 3
+				category = naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = LIB_nav_tech
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10.00
+		ai_will_do = {
+			base = 1
+		}
+		prerequisite = {
+			focus = LIB_navy
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 16
+		y = 11
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_behind_ship_tech
+				bonus = 0.5
+				uses = 6
+				category = naval_equipment
+			}
+		}
+	}
+	focus = {
+		id = LIB_end_neutrality
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		icon = GFX_goal_generic_military_deal
+		cost = 10.00
+		ai_will_do = {
+			base = 5
+		}
+		
+		prerequisite = {
+			focus = LIB_areas_defense
+		}
+		
+		available = {
+			is_subject = no
+			is_in_faction = no
+			any_country = {
+				custom_trigger_tooltip = {
+					tooltip = tag_america
+					is_literally_america = yes 
+				}
+				is_major = yes
+				has_war = yes
+				NOT = { has_war_with = ROOT }
+				custom_trigger_tooltip = {
+					tooltip = same_ideology_group
+					OR = {
+						AND = {
+							PREV.PREV = { has_democratic_government = yes }
+							ROOT = { has_democratic_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_socialist_government = yes }
+							ROOT = { has_socialist_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_autocratic_government = yes }
+							ROOT = { has_autocratic_government = yes }
+						}
+					}
+				}
+			}
+		}
+		cancel_if_invalid = yes
+		
+		bypass = {
+			OR = {
+				has_war = yes
+				is_in_faction = yes
+			}
+		}
+		
+		x = 13
+		y = 9
+		
+		completion_reward = {
+			add_war_support = 0.1
+			random_country = {
+				limit = {
+					is_literally_america = yes
+					is_major = yes
+					has_war = yes
+					is_faction_leader = yes
+					OR = {
+						AND = {
+							PREV.PREV = { has_democratic_government = yes }
+							ROOT = { has_democratic_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_socialist_government = yes }
+							ROOT = { has_socialist_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_autocratic_government = yes }
+							ROOT = { has_autocratic_government = yes }
+						}
+					}
+				}
+				country_event = generic.2
+			}
+			if = {
+				limit = { 
+					any_country = {
+						custom_trigger_tooltip = {
+							tooltip = tag_america
+							is_literally_america = yes 
+						}
+						is_major = yes
+						has_war = yes
+						is_in_faction = yes
+						is_faction_leader = no
+						NOT = { has_war_with = ROOT }
+						custom_trigger_tooltip = {
+							tooltip = same_ideology_group
+							OR = {
+								AND = {
+									PREV.PREV = { has_democratic_government = yes }
+									ROOT = { has_democratic_government = yes }
+								}
+								AND = {
+									PREV.PREV = { has_socialist_government = yes }
+									ROOT = { has_socialist_government = yes }
+								}
+								AND = {
+									PREV.PREV = { has_autocratic_government = yes }
+									ROOT = { has_autocratic_government = yes }
+								}
+							}
+						}
+					}
+				}
+				every_other_country = {
+					limit = { 
+						is_faction_leader = yes
+						any_country = {
+							custom_trigger_tooltip = {
+								tooltip = tag_america
+								is_literally_america = yes 
+							}
+							is_in_faction_with = PREV
+							is_major = yes
+							has_war = yes
+							NOT = { has_war_with = ROOT }
+							custom_trigger_tooltip = {
+								tooltip = same_ideology_group
+								OR = {
+									AND = {
+										PREV.PREV = { has_democratic_government = yes }
+										ROOT = { has_democratic_government = yes }
+									}
+									AND = {
+										PREV.PREV = { has_socialist_government = yes }
+										ROOT = { has_socialist_government = yes }
+									}
+									AND = {
+										PREV.PREV = { has_autocratic_government = yes }
+										ROOT = { has_autocratic_government = yes }
+									}
+								}
+							}
+						}
+					}
+					country_event = generic.2
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = -10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_subtract_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_old_claims
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10.00
+		ai_will_do = {
+			base = 15
+		}
+		prerequisite = {
+			focus = LIB_end_neutrality
+		}
+		
+		available = {
+			OR = {
+				has_war_with = ENG
+				has_war_with = FRA
+				has_war_with = VCF
+				298 = {
+					any_neighbor_state = {
+						OWNER = { has_government = fascism }
+					}
+				}
+			}
+		}
+		available_if_capitulated = yes
+		
+		x = 14
+		y = 10
+		
+		completion_reward = {
+			if = {
+				limit = {
+					OR = {
+						has_war_with = FRA
+						556 = { OWNER = { has_war_with = ROOT } }
+					}
+				}
+				556 = {
+					add_claim_by = ROOT
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_war_with = ENG
+						700 = { OWNER = { has_war_with = ROOT } }
+					}
+				}
+				700 = {
+					add_claim_by = ROOT
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_war_with = ENG
+						274 = { OWNER = { has_war_with = ROOT } }
+					}
+				}
+				274 = {
+					add_claim_by = ROOT
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_allied_advances
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_focus_research
+		cost = 10.00
+		ai_will_do = {
+			base = 100
+		}
+		
+		prerequisite = {
+			focus = LIB_end_neutrality
+		}
+		
+		available = {
+			OR = {
+				is_in_faction = yes
+				is_subject = yes
+			}
+		}
+		cancel_if_invalid = yes
+		available_if_capitulated = yes
+		
+		x = 12
+		y = 10
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = LIB_mining_advances
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_focus_research
+		cost = 10.00
+		ai_will_do = {
+			base = 25
+		}
+		
+		prerequisite = {
+			focus = LIB_expand_gold
+		}
+		prerequisite = {
+			focus = LIB_interior_infra
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 5
+		y = 9
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = LIB_mil_doc
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_army_doctrines
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_pay_on_time
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 10
+		y = 6
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = LIB_ind_land_doc
+				bonus = 0.5
+				uses = 3
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = LIB_special_forces
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_special_forces
+		cost = 10.00
+		ai_will_do = {
+			base = 1
+		}
+		
+		prerequisite = {
+			focus = LIB_mil_doc
+		}
+		
+		x = 9
+		y = 7
+		
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				category = mountaineers_tech
+				category = marine_tech
+				category = para_tech
+			}
+		}
+	}
+	focus = {
+		id = LIB_jungle_training
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 10.00
+		ai_will_do = {
+			base = 11
+		}
+		
+		prerequisite = {
+			focus = LIB_mil_doc
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 11
+		y = 7
+		
+		completion_reward = {
+			add_ideas = LIB_jungle_training_idea
+			custom_effect_tooltip = DARK_jungle_training_tt
+			hidden_effect = { set_technology = { DARK_jungle_training_tech = 1 } }
+		}
+	}
+	focus = {
+		id = LIB_dutch_factories
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		ai_will_do = {
+			base = 11
+		}
+		
+		prerequisite = {
+			focus = LIB_dutch_roads
+		}
+		prerequisite = {
+			focus = LIB_expand_gold
+		}
+		
+		available = {
+			NOT = { has_war_with = HOL }
+			HOL = {
+				exists = yes
+				has_capitulated = no
+			}
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		x = 4
+		y = 6
+		
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_dutch_iron
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_focus_generic_steel
+		cost = 10.00
+		ai_will_do = {
+			base = 11
+		}
+		
+		prerequisite = {
+			focus = LIB_dutch_factories
+		}
+		
+		available = {
+			NOT = { has_war_with = HOL }
+			HOL = {
+				exists = yes
+				has_capitulated = no
+			}
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		x = 4
+		y = 7		
+		
+		completion_reward = {
+			298 = {
+				add_resource = {
+					type = steel
+					amount = 13
+				}
+			}
+		}
+	}
+	focus = {
+		id = LIB_us_iron
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_focus_generic_steel
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_us_roads
+		}
+		prerequisite = {
+			focus = LIB_areas_defense
+		}
+		
+		available = {
+			DARK_will_dem_USA_support = yes
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		x = 8
+		y = 8
+		
+		completion_reward = {
+			298 = {
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_smelting
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 10.00
+		ai_will_do = {
+			base = 5
+		}
+		
+		prerequisite = {
+			focus = LIB_us_iron
+		}
+		prerequisite = {
+			focus = LIB_interior_infra
+		}
+		
+		available = {
+			DARK_will_dem_USA_support = yes
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		x = 7
+		y = 9
+		
+		completion_reward = {
+			298 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_10_influence_tt
+		}
+	}
+	focus = {
+		id = LIB_us_firestone
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_focus_generic_rubber
+		cost = 10.00
+		ai_will_do = {
+			base = 10
+		}
+		
+		prerequisite = {
+			focus = LIB_us_roads
+			focus = LIB_expand_gold
+		}
+		
+		available = {
+			DARK_will_dem_USA_support = yes
+			controls_state = 298
+		}
+		cancel_if_invalid = yes
+		
+		x = 7
+		y = 7
+		
+		completion_reward = {
+			298 = {
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = 5
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 5
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_add_5_influence_tt
+		}
+	}
+}
+
+#search_filters = { FOCUS_FILTER_STABILITY } 
+#search_filters = { FOCUS_FILTER_INDUSTRY } 
+#search_filters = { FOCUS_FILTER_POLITICAL } 
+#search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+#search_filters = { FOCUS_FILTER_STABILITY } 
+#search_filters = { FOCUS_FILTER_RESEARCH } 
+#search_filters = { FOCUS_FILTER_ANNEXATION }

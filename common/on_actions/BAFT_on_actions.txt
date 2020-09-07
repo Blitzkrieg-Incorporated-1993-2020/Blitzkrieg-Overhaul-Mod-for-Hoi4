@@ -1,0 +1,1112 @@
+on_actions = {
+	
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					tag = JAP
+					surrender_progress > 0.9
+					has_war_with = USA
+					has_government = fascism
+				}
+				USA = { country_event = { id = japan.55 } }
+			}
+			if = {
+				limit = {
+					tag = JAP
+					has_idea = JAP_intervene_in_china_1
+					OR = {
+						date > 1939.1.1
+						AND = {
+							date < 1939.1.1
+							RGR = { exists = no }
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.4 }
+						}
+						AND = {
+							date < 1939.1.1
+							RGR = { exists = no }
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.3 }
+						}
+						AND = {
+							date < 1939.1.1
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.2 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+						AND = {
+							date < 1939.1.1
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.1 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+					}
+				}
+				add_ideas = stalemate_in_china
+				remove_ideas = JAP_intervene_in_china_1
+				every_country = {
+					limit = {
+						NOT = { has_idea = JAP_intervene_in_china_1 }
+						OR = {
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+					add_ideas = stalemate_in_china
+				}
+			}
+			if = {
+				limit = {
+					tag = JAP
+					has_idea = JAP_intervene_in_china_2
+					OR = {
+						date > 1939.1.1
+						AND = {
+							date < 1939.1.1
+							RGR = { exists = no }
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.4 }
+						}
+						AND = {
+							date < 1939.1.1
+							RGR = { exists = no }
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.3 }
+						}
+						AND = {
+							date < 1939.1.1
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.2 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+						AND = {
+							date < 1939.1.1
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.1 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+					}
+				}
+				add_ideas = stalemate_in_china
+				remove_ideas = JAP_intervene_in_china_2
+				every_country = {
+					limit = {
+						NOT = { has_idea = JAP_intervene_in_china_2 }
+						OR = {
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+					add_ideas = stalemate_in_china
+				}
+			}
+			if = {
+				limit = {
+					tag = JAP
+					has_idea = JAP_intervene_in_china_3
+					OR = {
+						date > 1939.1.1
+						AND = {
+							date < 1939.1.1
+							RGR = { exists = no }
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.4 }
+						}
+						AND = {
+							date < 1939.1.1
+							RGR = { exists = no }
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.3 }
+						}
+						AND = {
+							date < 1939.1.1
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.2 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+						AND = {
+							date < 1939.1.1
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.1 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+					}
+				}
+				add_ideas = stalemate_in_china
+				remove_ideas = JAP_intervene_in_china_3
+				every_country = {
+					limit = {
+						NOT = { has_idea = JAP_intervene_in_china_3 }
+						OR = {
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+					add_ideas = stalemate_in_china
+				}
+			}
+			if = {
+				limit = {
+					tag = JAP
+					has_idea = JAP_intervene_in_china_4
+					OR = {
+						date > 1939.1.1
+						AND = {
+							date < 1939.1.1
+							RGR = { exists = no }
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.4 }
+						}
+						AND = {
+							date < 1939.1.1
+							RGR = { exists = no }
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.3 }
+						}
+						AND = {
+							date < 1939.1.1
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.2 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+						AND = {
+							date < 1939.1.1
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.1 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+					}
+				}
+				add_ideas = stalemate_in_china
+				remove_ideas = JAP_intervene_in_china_4
+				every_country = {
+					limit = {
+						NOT = { has_idea = JAP_intervene_in_china_4 }
+						OR = {
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+					add_ideas = stalemate_in_china
+				}
+			}
+			if = {
+				limit = {
+					tag = JAP
+					has_idea = JAP_intervene_in_china_5
+					OR = {
+						date > 1939.1.1
+						AND = {
+							date < 1939.1.1
+							RGR = { exists = no }
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.4 }
+						}
+						AND = {
+							date < 1939.1.1
+							RGR = { exists = no }
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.3 }
+						}
+						AND = {
+							date < 1939.1.1
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.2 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+						AND = {
+							date < 1939.1.1
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.1 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+					}
+				}
+				add_ideas = stalemate_in_china
+				remove_ideas = JAP_intervene_in_china_5
+				every_country = {
+					limit = {
+						NOT = { has_idea = JAP_intervene_in_china_5 }
+						OR = {
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+					add_ideas = stalemate_in_china
+				}
+			}
+			if = {
+				limit = {
+					tag = JAP
+					has_war_with = CHI
+					has_completed_focus = JAP_intervene_in_china
+					NOT = { has_completed_focus = JAP_make_the_push_west }
+					has_idea = stalemate_in_china
+					OR = {
+						AND = {
+							any_state = {
+								is_core_of = RGR
+								NOT = { state = 596 }
+								NOT = { is_fully_controlled_by = RGR }
+							}
+							OR = {
+								AND = {
+									RGR = { exists = no }
+									CHI = { owns_state = 608 }
+									CHI = { surrender_progress < 0.55 }
+								}
+								AND = {
+									RGR = { exists = no }
+									NOT = { CHI = { owns_state = 608 } }
+									CHI = { surrender_progress < 0.45 }
+								}
+								AND = {
+									CHI = { owns_state = 608 }
+									CHI = { surrender_progress < 0.35 }
+									RGR = {
+										exists = yes
+										is_subject_of = JAP
+									}
+								}
+								AND = {
+									NOT = { CHI = { owns_state = 608 } }
+									CHI = { surrender_progress < 0.25 }
+									RGR = {
+										exists = yes
+										is_subject_of = JAP
+									}
+								}
+							}
+						}
+						AND = {
+							has_war_with = PRC
+							NOT = { PRC = { has_war_with = CHI } }
+							any_state = {
+								is_coastal = yes
+								OWNER = { tag = PRC }
+								controller = { tag = PRC }
+							}
+							OR = {
+								AND = {
+									RGR = { exists = no }
+									CHI = { owns_state = 608 }
+									CHI = { surrender_progress < 0.55 }
+								}
+								AND = {
+									RGR = { exists = no }
+									NOT = { CHI = { owns_state = 608 } }
+									CHI = { surrender_progress < 0.45 }
+								}
+								AND = {
+									CHI = { owns_state = 608 }
+									CHI = { surrender_progress < 0.35 }
+									RGR = {
+										exists = yes
+										is_subject_of = JAP
+									}
+								}
+								AND = {
+									NOT = { CHI = { owns_state = 608 } }
+									CHI = { surrender_progress < 0.25 }
+									RGR = {
+										exists = yes
+										is_subject_of = JAP
+									}
+								}
+							}
+						}
+						AND = {
+							date < 1939.1.1
+							RGR = { exists = no }
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress < 0.45 }
+						}
+						AND = {
+							date < 1939.1.1
+							RGR = { exists = no }
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress < 0.35 }
+						}
+						AND = {
+							date < 1939.1.1
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress < 0.25 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+						AND = {
+							date < 1939.1.1
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress < 0.15 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+					}
+				}
+				set_global_flag = ffs_japan
+				every_country = {
+					limit = {
+						has_idea = stalemate_in_china
+					}
+					add_ideas = JAP_intervene_in_china_1
+					remove_ideas = stalemate_in_china
+				}
+			}
+			if = {
+				limit = {
+					tag = JAP
+					has_war_with = CHI
+					has_completed_focus = JAP_intervene_in_china
+					NOT = { has_completed_focus = JAP_make_the_push_west }
+					has_global_flag = ffs_japan
+					NOT = {
+						OR = {
+							AND = {
+								any_state = {
+									is_core_of = RGR
+									NOT = { state = 596 }
+									NOT = { is_fully_controlled_by = RGR }
+								}
+								OR = {
+									AND = {
+										RGR = { exists = no }
+										CHI = { owns_state = 608 }
+										CHI = { surrender_progress < 0.55 }
+									}
+									AND = {
+										RGR = { exists = no }
+										NOT = { CHI = { owns_state = 608 } }
+										CHI = { surrender_progress < 0.45 }
+									}
+									AND = {
+										CHI = { owns_state = 608 }
+										CHI = { surrender_progress < 0.35 }
+										RGR = {
+											exists = yes
+											is_subject_of = JAP
+										}
+									}
+									AND = {
+										NOT = { CHI = { owns_state = 608 } }
+										CHI = { surrender_progress < 0.25 }
+										RGR = {
+											exists = yes
+											is_subject_of = JAP
+										}
+									}
+								}
+							}
+							AND = {
+								has_war_with = PRC
+								NOT = { PRC = { has_war_with = CHI } }
+								any_state = {
+									is_coastal = yes
+									OWNER = { tag = PRC }
+									any_country = { 
+										NOT = { has_full_control_of_state = PREV }
+										OR = { tag = JAP is_in_faction_with = JAP is_subject_of = JAP } 
+									}
+								}
+								OR = {
+									AND = {
+										RGR = { exists = no }
+										CHI = { owns_state = 608 }
+										CHI = { surrender_progress < 0.55 }
+									}
+									AND = {
+										RGR = { exists = no }
+										NOT = { CHI = { owns_state = 608 } }
+										CHI = { surrender_progress < 0.45 }
+									}
+									AND = {
+										CHI = { owns_state = 608 }
+										CHI = { surrender_progress < 0.35 }
+										RGR = {
+											exists = yes
+											is_subject_of = JAP
+										}
+									}
+									AND = {
+										NOT = { CHI = { owns_state = 608 } }
+										CHI = { surrender_progress < 0.25 }
+										RGR = {
+											exists = yes
+											is_subject_of = JAP
+										}
+									}
+								}
+							}
+							AND = {
+								date < 1939.1.1
+								RGR = { exists = no }
+								CHI = { owns_state = 608 }
+								CHI = { surrender_progress < 0.53 }
+							}
+							AND = {
+								date < 1939.1.1
+								RGR = { exists = no }
+								NOT = { CHI = { owns_state = 608 } }
+								CHI = { surrender_progress < 0.43 }
+							}
+							AND = {
+								date < 1939.1.1
+								CHI = { owns_state = 608 }
+								CHI = { surrender_progress < 0.33 }
+								RGR = {
+									exists = yes
+									is_subject_of = JAP
+								}
+							}
+							AND = {
+								date < 1939.1.1
+								NOT = { CHI = { owns_state = 608 } }
+								CHI = { surrender_progress < 0.23 }
+								RGR = {
+									exists = yes
+									is_subject_of = JAP
+								}
+							}
+						}
+					}
+				}
+				clr_global_flag = ffs_japan
+				add_ideas = stalemate_in_china
+				remove_ideas = JAP_intervene_in_china_1
+				every_country = {
+					limit = {
+						NOT = { has_idea = JAP_intervene_in_china_1 }
+						OR = {
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+					add_ideas = stalemate_in_china
+				}
+			}
+			if = {
+				limit = {
+					tag = JAP
+					has_idea = JAP_westward_offensive
+					OR = {
+						AND = {
+							RGR = { exists = no }
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.6 }
+						}
+						AND = {
+							RGR = { exists = no }
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.5 }
+						}
+						AND = {
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.4 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+						AND = {
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.3 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						has_idea = JAP_westward_offensive
+					}
+					add_ideas = stalemate_in_china
+					remove_ideas = JAP_westward_offensive
+				}
+			}
+			if = {
+				limit = {
+					tag = JAP
+					has_war_with = CHI
+					has_completed_focus = JAP_make_the_push_west
+					has_idea = stalemate_in_china
+					OR = {
+						AND = {
+							any_state = {
+								is_core_of = RGR
+								NOT = { state = 596 }
+								NOT = { is_fully_controlled_by = RGR }
+							}
+							OR = {
+								AND = {
+									RGR = { exists = no }
+									CHI = { owns_state = 608 }
+									CHI = { surrender_progress < 0.65 }
+								}
+								AND = {
+									RGR = { exists = no }
+									NOT = { CHI = { owns_state = 608 } }
+									CHI = { surrender_progress < 0.55 }
+								}
+								AND = {
+									CHI = { owns_state = 608 }
+									CHI = { surrender_progress < 0.45 }
+									RGR = {
+										exists = yes
+										is_subject_of = JAP
+									}
+								}
+								AND = {
+									NOT = { CHI = { owns_state = 608 } }
+									CHI = { surrender_progress < 0.35 }
+									RGR = {
+										exists = yes
+										is_subject_of = JAP
+									}
+								}
+							}
+						}
+						AND = {
+							has_war_with = PRC
+							NOT = { PRC = { has_war_with = CHI } }
+							any_state = {
+								is_coastal = yes
+								OWNER = { tag = PRC }
+								any_country = { 
+									NOT = { has_full_control_of_state = PREV }
+									OR = { tag = JAP is_in_faction_with = JAP is_subject_of = JAP } 
+								}
+							}
+							OR = {
+								AND = {
+									RGR = { exists = no }
+									CHI = { owns_state = 608 }
+									CHI = { surrender_progress < 0.65 }
+								}
+								AND = {
+									RGR = { exists = no }
+									NOT = { CHI = { owns_state = 608 } }
+									CHI = { surrender_progress < 0.55 }
+								}
+								AND = {
+									CHI = { owns_state = 608 }
+									CHI = { surrender_progress < 0.45 }
+									RGR = {
+										exists = yes
+										is_subject_of = JAP
+									}
+								}
+								AND = {
+									NOT = { CHI = { owns_state = 608 } }
+									CHI = { surrender_progress < 0.35 }
+									RGR = {
+										exists = yes
+										is_subject_of = JAP
+									}
+								}
+							}
+						}
+						AND = {
+							date < 1943.1.1
+							RGR = { exists = no }
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress < 0.55 }
+						}
+						AND = {
+							date < 1943.1.1
+							RGR = { exists = no }
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress < 0.45 }
+						}
+						AND = {
+							date < 1943.1.1
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress < 0.35 } 
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+						AND = {
+							date < 1943.1.1
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress < 0.25 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+					}
+				}
+				set_global_flag = ffs_japan2
+				every_country = {
+					limit = {
+						has_idea = stalemate_in_china
+					}
+					add_ideas = JAP_westward_offensive
+					remove_ideas = stalemate_in_china
+				}
+			}
+			if = {
+				limit = {
+					tag = JAP
+					has_war_with = CHI
+					has_completed_focus = JAP_make_the_push_west
+					has_global_flag = ffs_japan2
+					NOT = {
+						OR = {
+							AND = {
+								any_state = {
+									is_core_of = RGR
+									NOT = { state = 596 }
+									NOT = { is_fully_controlled_by = RGR }
+								}
+								OR = {
+									AND = {
+										RGR = { exists = no }
+										CHI = { owns_state = 608 }
+										CHI = { surrender_progress < 0.65 }
+									}
+									AND = {
+										RGR = { exists = no }
+										NOT = { CHI = { owns_state = 608 } }
+										CHI = { surrender_progress < 0.55 }
+									}
+									AND = {
+										CHI = { owns_state = 608 }
+										CHI = { surrender_progress < 0.45 }
+										RGR = {
+											exists = yes
+											is_subject_of = JAP
+										}
+									}
+									AND = {
+										NOT = { CHI = { owns_state = 608 } }
+										CHI = { surrender_progress < 0.35 }
+										RGR = {
+											exists = yes
+											is_subject_of = JAP
+										}
+									}
+								}
+							}
+							AND = {
+								has_war_with = PRC
+								NOT = { PRC = { has_war_with = CHI } }
+								any_state = {
+									is_coastal = yes
+									OWNER = { tag = PRC }
+									any_country = { 
+										NOT = { has_full_control_of_state = PREV }
+										OR = { tag = JAP is_in_faction_with = JAP is_subject_of = JAP } 
+									}
+								}
+								OR = {
+									AND = {
+										RGR = { exists = no }
+										CHI = { owns_state = 608 }
+										CHI = { surrender_progress < 0.65 }
+									}
+									AND = {
+										RGR = { exists = no }
+										NOT = { CHI = { owns_state = 608 } }
+										CHI = { surrender_progress < 0.55 }
+									}
+									AND = {
+										CHI = { owns_state = 608 }
+										CHI = { surrender_progress < 0.45 }
+										RGR = {
+											exists = yes
+											is_subject_of = JAP
+										}
+									}
+									AND = {
+										NOT = { CHI = { owns_state = 608 } }
+										CHI = { surrender_progress < 0.35 }
+										RGR = {
+											exists = yes
+											is_subject_of = JAP
+										}
+									}
+								}
+							}
+							AND = {
+								date < 1943.1.1
+								RGR = { exists = no }
+								CHI = { owns_state = 608 }
+								CHI = { surrender_progress < 0.63 }
+							}
+							AND = {
+								date < 1943.1.1
+								RGR = { exists = no }
+								NOT = { CHI = { owns_state = 608 } }
+								CHI = { surrender_progress < 0.53 }
+							}
+							AND = {
+								date < 1943.1.1
+								CHI = { owns_state = 608 }
+								CHI = { surrender_progress < 0.43 } 
+								RGR = {
+									exists = yes
+									is_subject_of = JAP
+								}
+							}
+							AND = {
+								date < 1943.1.1
+								NOT = { CHI = { owns_state = 608 } }
+								CHI = { surrender_progress < 0.33 }
+								RGR = {
+									exists = yes
+									is_subject_of = JAP
+								}
+							}
+						}
+					}
+				}
+				clr_global_flag = ffs_japan2
+				add_ideas = stalemate_in_china
+				remove_ideas = JAP_westward_offensive
+				every_country = {
+					limit = {
+						NOT = { has_idea = JAP_westward_offensive }
+						OR = {
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+					add_ideas = stalemate_in_china
+				}
+			}
+			if = {
+				limit = {
+					tag = JAP
+					has_idea = JAP_ichi_go
+					OR = {
+						date > 1945.1.1
+						AND = {
+							RGR = { exists = no }
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.7 }
+						}
+						AND = {
+							RGR = { exists = no }
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.6 }
+						}
+						AND = {
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress > 0.5 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+						AND = {
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress > 0.4 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						has_idea = JAP_ichi_go
+					}
+					add_ideas = stalemate_in_china
+					remove_ideas = JAP_ichi_go
+				}
+			}
+			if = {
+				limit = {
+					tag = JAP
+					has_war_with = CHI
+					has_completed_focus = JAP_push_inland
+					has_idea = stalemate_in_china
+					OR = {
+						AND = {
+							any_state = {
+								is_core_of = RGR
+								NOT = { state = 596 }
+								NOT = { is_fully_controlled_by = RGR }
+							}
+							OR = {
+								AND = {
+									RGR = { exists = no }
+									CHI = { owns_state = 608 }
+									CHI = { surrender_progress < 0.75 }
+								}
+								AND = {
+									RGR = { exists = no }
+									NOT = { CHI = { owns_state = 608 } }
+									CHI = { surrender_progress < 0.65 }
+								}
+								AND = {
+									CHI = { owns_state = 608 }
+									CHI = { surrender_progress < 0.55 }
+									RGR = {
+										exists = yes
+										is_subject_of = JAP
+									}
+								}
+								AND = {
+									NOT = { CHI = { owns_state = 608 } }
+									CHI = { surrender_progress < 0.45 }
+									RGR = {
+										exists = yes
+										is_subject_of = JAP
+									}
+								}
+							}
+						}
+						AND = {
+							has_war_with = PRC
+							NOT = { PRC = { has_war_with = CHI } }
+							any_state = {
+								is_coastal = yes
+								OWNER = { tag = PRC }
+								any_country = { 
+									NOT = { has_full_control_of_state = PREV }
+									OR = { tag = JAP is_in_faction_with = JAP is_subject_of = JAP } 
+								}
+							}
+							OR = {
+								AND = {
+									RGR = { exists = no }
+									CHI = { owns_state = 608 }
+									CHI = { surrender_progress < 0.75 }
+								}
+								AND = {
+									RGR = { exists = no }
+									NOT = { CHI = { owns_state = 608 } }
+									CHI = { surrender_progress < 0.65 }
+								}
+								AND = {
+									CHI = { owns_state = 608 }
+									CHI = { surrender_progress < 0.55 }
+									RGR = {
+										exists = yes
+										is_subject_of = JAP
+									}
+								}
+								AND = {
+									NOT = { CHI = { owns_state = 608 } }
+									CHI = { surrender_progress < 0.45 }
+									RGR = {
+										exists = yes
+										is_subject_of = JAP
+									}
+								}
+							}
+						}
+						AND = {
+							date < 1945.1.1
+							RGR = { exists = no }
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress < 0.65 }
+						}
+						AND = {
+							date < 1945.1.1
+							RGR = { exists = no }
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress < 0.55 }
+						}
+						AND = {
+							date < 1945.1.1
+							CHI = { owns_state = 608 }
+							CHI = { surrender_progress < 0.45 } 
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+						AND = {
+							date < 1945.1.1
+							NOT = { CHI = { owns_state = 608 } }
+							CHI = { surrender_progress < 0.35 }
+							RGR = {
+								exists = yes
+								is_subject_of = JAP
+							}
+						}
+					}
+				}
+				set_global_flag = ffs_japan3
+				every_country = {
+					limit = {
+						has_idea = stalemate_in_china
+					}
+					add_ideas = JAP_ichi_go
+					remove_ideas = stalemate_in_china
+				}
+			}
+			if = {
+				limit = {
+					tag = JAP
+					has_war_with = CHI
+					has_completed_focus = JAP_push_inland
+					has_global_flag = ffs_japan3
+					NOT = {
+						OR = {
+							AND = {
+								any_state = {
+									is_core_of = RGR
+									NOT = { state = 596 }
+									NOT = { is_fully_controlled_by = RGR }
+								}
+								OR = {
+									AND = {
+										RGR = { exists = no }
+										CHI = { owns_state = 608 }
+										CHI = { surrender_progress < 0.75 }
+									}
+									AND = {
+										RGR = { exists = no }
+										NOT = { CHI = { owns_state = 608 } }
+										CHI = { surrender_progress < 0.65 }
+									}
+									AND = {
+										CHI = { owns_state = 608 }
+										CHI = { surrender_progress < 0.55 }
+										RGR = {
+											exists = yes
+											is_subject_of = JAP
+										}
+									}
+									AND = {
+										NOT = { CHI = { owns_state = 608 } }
+										CHI = { surrender_progress < 0.45 }
+										RGR = {
+											exists = yes
+											is_subject_of = JAP
+										}
+									}
+								}
+							}
+							AND = {
+								has_war_with = PRC
+								NOT = { PRC = { has_war_with = CHI } }
+								any_state = {
+									is_coastal = yes
+									OWNER = { tag = PRC }
+									any_country = { 
+										NOT = { has_full_control_of_state = PREV }
+										OR = { tag = JAP is_in_faction_with = JAP is_subject_of = JAP } 
+									}
+								}
+								OR = {
+									AND = {
+										RGR = { exists = no }
+										CHI = { owns_state = 608 }
+										CHI = { surrender_progress < 0.75 }
+									}
+									AND = {
+										RGR = { exists = no }
+										NOT = { CHI = { owns_state = 608 } }
+										CHI = { surrender_progress < 0.65 }
+									}
+									AND = {
+										CHI = { owns_state = 608 }
+										CHI = { surrender_progress < 0.55 }
+										RGR = {
+											exists = yes
+											is_subject_of = JAP
+										}
+									}
+									AND = {
+										NOT = { CHI = { owns_state = 608 } }
+										CHI = { surrender_progress < 0.45 }
+										RGR = {
+											exists = yes
+											is_subject_of = JAP
+										}
+									}
+								}
+							}
+							AND = {
+								date < 1945.1.1
+								RGR = { exists = no }
+								CHI = { owns_state = 608 }
+								CHI = { surrender_progress < 0.73 }
+							}
+							AND = {
+								date < 1945.1.1
+								RGR = { exists = no }
+								NOT = { CHI = { owns_state = 608 } }
+								CHI = { surrender_progress < 0.63 }
+							}
+							AND = {
+								date < 1945.1.1
+								CHI = { owns_state = 608 }
+								CHI = { surrender_progress < 0.53 } 
+								RGR = {
+									exists = yes
+									is_subject_of = JAP
+								}
+							}
+							AND = {
+								date < 1945.1.1
+								NOT = { CHI = { owns_state = 608 } }
+								CHI = { surrender_progress < 0.43 }
+								RGR = {
+									exists = yes
+									is_subject_of = JAP
+								}
+							}
+						}
+					}
+				}
+				clr_global_flag = ffs_japan3
+				add_ideas = stalemate_in_china
+				remove_ideas = JAP_ichi_go
+				every_country = {
+					limit = {
+						NOT = { has_idea = JAP_ichi_go }
+						OR = {
+							is_in_faction_with = JAP
+							is_subject_of = JAP
+						}
+					}
+					add_ideas = stalemate_in_china
+				}
+			}
+		}
+	}
+}

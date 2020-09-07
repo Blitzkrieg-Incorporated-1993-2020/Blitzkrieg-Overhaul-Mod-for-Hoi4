@@ -1,0 +1,906 @@
+on_actions = {
+	
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					has_democratic_government = no
+					OR = {
+						has_country_flag = one_party_democracy
+						has_country_flag = two_party_democracy
+						has_country_flag = multi_party_democracy
+					}
+				}
+				clr_country_flag = one_party_democracy
+				clr_country_flag = two_party_democracy
+				clr_country_flag = multi_party_democracy
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = monarchism_rising }
+					NOT = { has_government = monarchism }
+					OR = {
+						has_idea = monarchy_influence
+					}
+				}
+				set_country_flag = monarchism_rising
+			}
+			if = {
+				limit = {
+					has_country_flag = monarchism_rising
+					NOT = { has_idea = monarchy_influence }
+					OR = {
+						has_government = monarchism
+						monarchism < 0.15
+					}
+				}
+				clr_country_flag = monarchism_rising
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = neutrality_rising }
+					NOT = { has_government = neutrality }
+					OR = {
+						has_idea = neutrality_influence
+					}
+				}
+				set_country_flag = neutrality_rising
+			}
+			if = {
+				limit = {
+					has_country_flag = neutrality_rising
+					NOT = { has_idea = neutrality_influence }
+					OR = {
+						has_government = neutrality
+						neutrality < 0.15
+					}
+				}
+				clr_country_flag = neutrality_rising
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = democratic_rising }
+					NOT = { has_democratic_government = yes }
+					OR = {
+						has_idea = democratic_influence
+					}
+				}
+				set_country_flag = democratic_rising
+			}
+			if = {
+				limit = {
+					has_country_flag = democratic_rising
+					NOT = { has_idea = democratic_influence }
+					OR = {
+						has_democratic_government = yes
+						AND = {
+							conservative < 0.15
+							democratic < 0.15
+							social_democracy < 0.15
+						}
+					}
+				}
+				clr_country_flag = democratic_rising
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = unionism_rising }
+					NOT = { has_government = unionism }
+					OR = {
+						has_idea = unionist_influence
+					}
+				}
+				set_country_flag = unionism_rising
+			}
+			if = {
+				limit = {
+					has_country_flag = unionism_rising
+					NOT = { has_idea = unionist_influence }
+					OR = {
+						has_government = unionism
+						unionism < 0.15
+					}
+				}
+				clr_country_flag = unionism_rising
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = communism_rising }
+					NOT = { has_government = communism }
+					OR = {
+						has_idea = communist_influence
+						has_idea = communist_partisans_recruiting
+					}
+				}
+				set_country_flag = communism_rising
+			}
+			if = {
+				limit = {
+					has_country_flag = communism_rising
+					NOT = { has_idea = communist_influence }
+					NOT = { has_idea = communist_partisans_recruiting }
+					OR = {
+						has_government = communism
+						communism < 0.15
+					}
+				}
+				clr_country_flag = communism_rising
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = fascism_rising }
+					NOT = { has_government = fascism }
+					OR = {
+						has_idea = fascist_influence
+						has_idea = fascist_assault_divisions
+						has_idea = HUN_strengthen_fascists
+					}
+				}
+				set_country_flag = fascism_rising
+			}
+			if = {
+				limit = {
+					has_country_flag = fascism_rising
+					NOT = { has_idea = fascist_influence }
+					NOT = { has_idea = fascist_assault_divisions }
+					NOT = { has_idea = HUN_strengthen_fascists }
+					OR = {
+						has_government = fascism
+						fascism < 0.15
+					}
+				}
+				clr_country_flag = fascism_rising
+			}
+			if = {
+				limit = {
+					NOS_has_civil_war = yes
+					NOT = { has_government = fascism }
+					NOT = { has_country_flag = referendum }
+					fascism > 0.55
+				}
+				country_event = { id = political.18 }
+				set_country_flag = referendum
+			}
+			if = {
+				limit = {
+					NOS_has_civil_war = yes
+					has_democratic_government = no
+					NOT = { has_country_flag = referendum }
+					OR = {
+						democratic > 0.6
+						conservative > 0.6
+						social_democracy > 0.6
+					}
+				}
+				country_event = { id = political.20 }
+				set_country_flag = referendum
+			}
+			if = {
+				limit = {
+					NOS_has_civil_war = yes
+					NOT = { has_government = communism }
+					NOT = { has_country_flag = referendum }
+					communism > 0.55
+				}
+				country_event = { id = political.19 }
+				set_country_flag = referendum
+			}
+			if = {
+				limit = {
+					NOS_has_civil_war = yes
+					NOT = { has_government = unionism }
+					NOT = { has_country_flag = referendum }
+					unionism > 0.55
+				}
+				country_event = { id = political.31 }
+				set_country_flag = referendum
+			}
+			if = {
+				limit = {
+					NOS_has_civil_war = yes
+					NOT = { has_government = monarchism }
+					NOT = { has_country_flag = referendum }
+					monarchism > 0.55
+				}
+				country_event = { id = political.36 }
+				set_country_flag = referendum
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							is_ai = yes
+							has_political_power < 1
+							original_tag = SOV
+							has_war_with = GER
+							controls_state = 219
+							is_winter = yes
+							NOT = { has_country_flag = winterpush_over_flag }
+							OR = {
+					            234 = { NOT = { is_controlled_by = SOV } }
+					            229 = { NOT = { is_controlled_by = SOV } }
+				            	205 = { NOT = { is_fully_controlled_by = SOV } }
+					            245 = { NOT = { is_fully_controlled_by = SOV } }
+					            238 = { NOT = { is_fully_controlled_by = SOV } }
+					            236 = { NOT = { is_fully_controlled_by = SOV } }
+					            217 = { NOT = { is_fully_controlled_by = SOV } }
+					            219 = { NOT = { is_fully_controlled_by = SOV } }
+					            229 = { NOT = { is_fully_controlled_by = SOV } }
+					            260 = { NOT = { is_fully_controlled_by = SOV } }
+					            AND = {
+				            		246 = { NOT = { is_fully_controlled_by = SOV } }
+				            		263 = { NOT = { is_fully_controlled_by = SOV } }
+					            }
+					        }
+						}
+						AND = {
+							has_country_flag = fall_blau_flag
+							NOT = { has_country_flag = stalingrad_time_flag }
+							is_summer = yes
+							is_ai = yes
+							has_political_power < 1
+						}
+						AND = {
+							is_ai = yes
+							has_political_power < 1
+							original_tag = SOV
+							has_war_with = GER
+							GER = { has_country_flag = citadel_flag }
+							is_winter = yes
+							NOT = {
+					            any_country = {
+					                has_full_control_of_state = 217
+					                OR = {
+					                    tag = GER
+					                    is_subject_of = GER
+					                }
+					            }
+					        }
+					        NOT = {
+					            any_country = {
+					                has_full_control_of_state = 229
+					                OR = {
+					                    tag = GER
+					                    is_subject_of = GER
+					                }
+					            }
+					        }
+						}
+						AND = {
+							date > 1944.1.1
+							NOT = { has_country_flag = bagration_time_flag }
+							is_summer = yes
+							is_ai = yes
+							has_political_power < 1
+						}
+					}
+				}
+				add_political_power = 100
+			}
+			if = {
+				limit = {
+					has_country_flag = winterpush_flag
+					OR = {
+	            		226 = { is_controlled_by = SOV }
+	            		202 = { is_controlled_by = SOV }
+	            		206 = { is_controlled_by = SOV }
+	            		13 = { is_controlled_by = SOV }
+	            		12 = { is_controlled_by = SOV }
+						AND = {
+						    234 = { is_controlled_by = SOV }
+				            229 = { is_controlled_by = SOV }
+				        	205 = { is_fully_controlled_by = SOV }
+				            245 = { is_fully_controlled_by = SOV }
+				            238 = { is_fully_controlled_by = SOV }
+				            236 = { is_fully_controlled_by = SOV }
+				            217 = { is_fully_controlled_by = SOV }
+				            219 = { is_fully_controlled_by = SOV }
+				            229 = { is_fully_controlled_by = SOV }
+				            260 = { is_fully_controlled_by = SOV }
+				            OR = {
+				        		246 = { is_fully_controlled_by = SOV }
+				        		263 = { is_fully_controlled_by = SOV }
+				            }
+						}
+					}
+				}
+				clr_country_flag = winterpush_flag
+			}
+			if = {
+				limit = {
+					tag = SOV
+					SOV = { is_ai = yes }
+					NOT = { has_country_flag = got_its_buff }
+				}
+				set_country_flag = got_its_buff
+				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 40000 producer = SOV }
+				add_equipment_to_stockpile = { type = support_equipment_1 amount = 100 producer = SOV }
+				add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 100 producer = SOV }
+				add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 250 producer = SOV }
+				add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 150 producer = SOV }
+			}
+			if = {
+				limit = {
+					tag = SOV
+					SOV = { is_ai = no }
+					NOT = { has_country_flag = got_its_buff }
+				}
+				set_country_flag = got_its_buff
+				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 25000 producer = SOV }
+				add_equipment_to_stockpile = { type = support_equipment_1 amount = 90 producer = SOV }
+				add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 90 producer = SOV }
+				add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 150 producer = SOV }
+				add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 100 producer = SOV }
+			}
+			if = {
+				limit = { 
+					has_idea = FRA_german_vassal 
+					is_subject = no
+					GER = { has_war = yes }
+					has_war = yes
+				}
+				GER = {
+					puppet = ROOT 
+					set_autonomy = { target = ROOT autonomy_state = autonomy_satellite_state }  
+				}
+			}
+			if = {
+				limit = {
+			        has_dlc = "Together for Victory"
+			        is_subject = yes
+			        NOT = { has_autonomy_state = autonomy_provisional_government }
+			        NOT = { has_country_flag = forced_into_puppet }
+			        NOT = { has_country_flag = original_puppet }
+			        OVERLORD = {
+			            is_in_democratic_faction = yes
+			            has_country_flag = original_puppets_secured
+			            OR = {
+			                has_country_flag = was_in_world_war
+			                has_country_flag = is_in_world_war
+			            }
+			        }
+				}
+		        OVERLORD = {
+		            set_autonomy = { target = ROOT autonomy_state = autonomy_provisional_government }
+		        }
+			}
+			if = {
+				limit = { 
+					has_constitutional_monarchy = yes
+					OR = {
+						has_government = monarchism 
+						has_government = communism 
+						has_government = unionism 
+					}
+				}
+				drop_cosmetic_tag = yes
+			}
+			####														 ## Russia becomes green
+			if = {
+				limit = {
+					original_tag = SOV
+					NOT = { OR = { has_cosmetic_tag = USSR has_cosmetic_tag = RUE } }
+					NOT = { has_socialist_government = yes }
+				}
+				set_cosmetic_tag = RUSSIA
+			}
+			####														 ## Russia becomes Red again
+			if = {
+				limit = {
+					original_tag = SOV
+					has_cosmetic_tag = RUSSIA
+					has_socialist_government = yes
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = { 
+					has_global_flag = scw_happening_now
+					any_country = {
+						is_literally_spain = yes
+						NOT = {
+							any_country = {
+								is_literally_spain = yes
+								has_war_with = PREV
+							}
+						}
+					}
+				}
+				clr_global_flag = scw_happening_now
+				every_country = {
+					limit = {
+						exists = yes
+						is_literally_spain = yes
+					}
+					drop_cosmetic_tag = yes
+					load_focus_tree = spain_focus
+					delete_unit_template_and_units = { division_template = "Brigada Legionario" }
+					delete_unit_template_and_units = { division_template = "Brigada Nacional" }
+					delete_unit_template_and_units = { division_template = "Columna Milicianos" }
+					set_war_support = 0.3
+				}
+				if = {
+					limit = { SPR = { exists = no } }
+					every_state = {
+						limit = { is_core_of = SPR }
+						SPR = { remove_state_core = PREV }
+					}
+					every_state = {
+						limit = { is_claimed_by = SPR }
+						SPR = { remove_state_claim = PREV }
+					}
+				}
+				if = {
+					limit = { SPS = { exists = no } }
+					every_state = {
+						limit = { is_core_of = SPS }
+						SPS = { remove_state_core = PREV }
+					}
+					every_state = {
+						limit = { is_claimed_by = SPS }
+						SPS = { remove_state_claim = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_state = { OR = { is_core_of = USA is_core_of = ACO is_core_of = CSA is_core_of = FAS } }
+					any_country = { is_literally_america = yes exists = yes }
+				}
+				if = {
+					limit = { USA = { exists = no } }
+					every_state = {
+						limit = { is_core_of = USA }
+						USA = { remove_state_core = PREV }
+					}
+					every_state = {
+						limit = { is_claimed_by = USA }
+						USA = { remove_state_claim = PREV }
+					}
+				}
+				if = {
+					limit = { ACO = { exists = no } }
+					every_state = {
+						limit = { is_core_of = ACO }
+						ACO = { remove_state_core = PREV }
+					}
+					every_state = {
+						limit = { is_claimed_by = ACO }
+						ACO = { remove_state_claim = PREV }
+					}
+				}
+				if = {
+					limit = { CSA = { exists = no NOT = { has_cosmetic_tag = CSA_dixie } } }
+					every_state = {
+						limit = { is_core_of = CSA }
+						CSA = { remove_state_core = PREV }
+					}
+					every_state = {
+						limit = { is_claimed_by = CSA }
+						CSA = { remove_state_claim = PREV }
+					}
+				}
+				if = {
+					limit = { FAS = { exists = no } }
+					every_state = {
+						limit = { is_core_of = FAS }
+						FAS = { remove_state_core = PREV }
+					}
+					every_state = {
+						limit = { is_claimed_by = FAS }
+						FAS = { remove_state_claim = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_literally_america = yes
+					is_ai = yes
+					any_country = {
+						is_literally_america = yes
+						OR = {
+							is_subject_of = ROOT
+							AND = {
+								is_subject = yes
+								is_in_faction_with = ROOT
+								OR = {
+									AND = {
+										PREV.PREV = { has_democratic_government = yes }
+										ROOT = { has_democratic_government = yes }
+									}
+									AND = {
+										PREV.PREV = { has_socialist_government = yes }
+										ROOT = { has_socialist_government = yes }
+									}
+									AND = {
+										PREV.PREV = { has_autocratic_government = yes }
+										ROOT = { has_autocratic_government = yes }
+									}
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						is_literally_america = yes
+						OR = {
+							is_subject_of = ROOT
+							AND = {
+								is_subject = yes
+								is_in_faction_with = ROOT
+								OR = {
+									AND = {
+										PREV.PREV = { has_democratic_government = yes }
+										ROOT = { has_democratic_government = yes }
+									}
+									AND = {
+										PREV.PREV = { has_socialist_government = yes }
+										ROOT = { has_socialist_government = yes }
+									}
+									AND = {
+										PREV.PREV = { has_autocratic_government = yes }
+										ROOT = { has_autocratic_government = yes }
+									}
+								}
+							}
+						}
+					}
+					ROOT = {
+						annex_country = {
+							target = PREV
+							transfer_troops = yes 
+			 			}
+					}
+				}
+			}
+			#### 															## Soviets end the war with Poland if it goes on too long and they do kinda good
+			if = {
+				limit = {
+			        original_tag = SOV
+			        NOT = { is_in_faction_with = GER }
+			        has_global_flag = SOV_fucked_poland
+			        has_country_flag = SOV_took_too_long_against_poland
+			        surrender_progress < 0.75
+				}
+		        clr_global_flag = SOV_fucked_poland
+		        GER = { transfer_state = 85 }
+		        GER = { transfer_state = 86 }
+		        GER = { transfer_state = 762 }
+		        every_country = {
+		            limit = {
+		                original_tag = SOV
+		            }
+		            white_peace = POL
+		        }
+	            SOV = {
+	                transfer_state = 96
+	                transfer_state = 784
+	                transfer_state = 95 
+	                transfer_state = 93
+	                transfer_state = 94 
+	            }
+		        every_state = {
+		            limit = { 
+		                is_core_of = POL
+		                is_owned_by = SOV
+		                OR = { 
+		                    state = 96
+		                    state = 95
+		                    state = 91
+		                    state = 93
+		                    state = 89
+		                    state = 94 
+		                    state = 784
+		                }
+		            }
+		            remove_core_of = POL
+		        }
+		        every_state = {
+		            limit = { 
+		                is_core_of = POL
+		                is_claimed_by = GER
+		            }
+		            remove_claim_by = GER
+		        }
+			}
+			#### 															## Soviets end the war with Poland if it goes on too long
+			if = {
+				limit = {
+			        original_tag = SOV
+			        NOT = { is_in_faction_with = GER }
+			        has_global_flag = SOV_fucked_poland
+			        has_country_flag = SOV_took_too_long_against_poland
+				}
+		        clr_global_flag = SOV_fucked_poland
+		        every_country = {
+		            limit = { original_tag = SOV }
+		            white_peace = POL
+		        }
+			}
+			if = {
+				limit = { 
+					NOT = { tag = GER }
+					OR = {
+						GER = { is_ai = no }
+						AND = {
+							UKR = { is_subject_of = GER }
+							BLR = { is_subject_of = GER }
+						}
+					}
+			        OR = {
+			            is_in_faction_with = GER
+			            is_subject_of = GER
+			        }
+			        GER = {
+			            is_faction_leader = yes
+			            has_government = fascism
+			            has_war_with = SOV
+			        }
+			        any_state = {
+			            is_owned_by = SOV
+			            is_fully_controlled_by = ROOT
+			            NOT = { is_core_of = ROOT }
+			            NOT = { is_claimed_by = ROOT }
+			        }
+				}
+				every_state = {
+				    limit = {
+				        is_fully_controlled_by = ROOT
+				        NOT = { is_core_of = ROOT }
+			            NOT = { is_claimed_by = ROOT }
+				        is_owned_by = SOV
+				    }
+				    GER = { set_state_controller = PREV }
+				}
+			}
+			if = {
+				limit = {
+					NOT = { tag = UKR }
+					UKR = { is_subject_of = GER }
+			        OR = {
+			            is_in_faction_with = GER
+			            is_subject_of = GER
+			        }
+			        GER = {
+			            is_faction_leader = yes
+			            has_government = fascism
+			            has_war_with = SOV
+			        }
+			        any_state = {
+			            is_owned_by = UKR
+			            is_fully_controlled_by = ROOT
+			            NOT = { is_core_of = ROOT }
+			            NOT = { is_claimed_by = ROOT }
+			        }
+				}
+				every_state = {
+				    limit = {
+			            is_owned_by = UKR
+			            is_fully_controlled_by = ROOT
+			            NOT = { is_core_of = ROOT }
+			            NOT = { is_claimed_by = ROOT }
+				    }
+				    UKR = { set_state_controller = PREV }
+				}
+			}
+			if = {
+				limit = {
+					NOT = { tag = BLR }
+					BLR = { is_subject_of = GER }
+			        OR = {
+			            is_in_faction_with = GER
+			            is_subject_of = GER
+			        }
+			        GER = {
+			            is_faction_leader = yes
+			            has_government = fascism
+			            has_war_with = SOV
+			        }
+			        any_state = {
+			            is_owned_by = BLR
+			            is_fully_controlled_by = ROOT
+			            NOT = { is_core_of = ROOT }
+			            NOT = { is_claimed_by = ROOT }
+			        }
+				}
+				every_state = {
+				    limit = {
+			            is_owned_by = BLR
+			            is_fully_controlled_by = ROOT
+			            NOT = { is_core_of = ROOT }
+			            NOT = { is_claimed_by = ROOT }
+				    }
+				    BLR = { set_state_controller = PREV }
+				}
+			}
+			if = {
+				limit = {
+					NOT = { tag = SOV }
+					has_war_with = GER
+					GER = { has_government = fascism }
+					GER = { is_faction_leader = yes }
+			        OR = {
+			            has_government = communism
+			            is_subject_of = SOV
+			        }
+			        SOV = {
+			            is_major = yes
+			            has_government = communism
+			            has_war_with = GER
+			        }
+			        any_state = {
+			            owner = { is_in_faction_with = GER }
+			            controller = { or = { has_government = communism is_subject_of = SOV } }
+			            is_on_continent = europe
+			            NOT = { is_core_of = ROOT }
+			            NOT = { is_claimed_by = ROOT }
+			        }
+				}
+				every_state = {
+				    limit = {
+			            owner = { is_in_faction_with = GER }
+			            is_fully_controlled_by = ROOT
+			            is_on_continent = europe
+			            NOT = { is_core_of = ROOT }
+			            NOT = { is_claimed_by = ROOT }
+				    }
+				    SOV = { set_state_controller = PREV }
+				}
+			}
+			if = {
+				limit = {
+					is_winter = yes
+					NOT = { has_idea = russian_winter }
+					NOT = { OR = { original_tag = RUS original_tag = SOV original_tag = FIN original_tag = SWE original_tag = NOR original_tag = ICE } }
+					any_country = {
+						OR = { original_tag = RUS original_tag = SOV original_tag = FIN original_tag = SWE original_tag = NOR original_tag = ICE }
+						has_defensive_war_with = ROOT
+						any_state = {
+							is_core_of = PREV
+							ROOT = { divisions_in_state = { state = PREV size > 0 } }
+							CONTROLLER = { has_war_with = PREV }
+						}
+					}
+				}
+				add_timed_idea = {
+				    idea = russian_winter
+				    days = 140
+				}
+			}
+			if = {
+				limit = {
+			        FRA = { is_in_faction = yes }
+			        FRA = { has_war_with = GER }
+			        has_global_flag = fall_of_france
+			        has_global_flag = d_day_begun
+			        NOT = { has_global_flag = d_day_fail }
+			        NOT = {
+						any_state = {
+							controller = {
+								NOT = {
+									OR = {
+										original_tag = GER
+										is_subject_of = GER
+									}
+								}
+							}
+						}
+			        }
+				}
+				clr_global_flag = d_day_begun
+				set_global_flag = d_day_fail
+			}
+			if = {
+				limit = {
+			        FRA = { is_in_faction = yes }
+			        FRA = { has_war_with = GER }
+			        has_global_flag = fall_of_france
+			        has_global_flag = d_day_begun2
+			        NOT = {
+			            any_state = {
+							controller = {
+								NOT = {
+									OR = {
+										original_tag = GER
+										is_subject_of = GER
+									}
+								}
+							}
+						}
+			        }
+				}
+				clr_global_flag = d_day_begun2
+				set_global_flag = d_day_fail
+			}
+			if = {
+				limit = {
+					has_country_flag = missing_core_territory
+					NOT = { any_state = { is_core_of = ROOT CONTROLLER = { has_war_with = ROOT } OWNER = { has_war_with = ROOT } } }
+				}
+				clr_country_flag = missing_core_territory
+			}
+			if = {
+				limit = {
+					has_country_flag = POL_uprising
+					num_divisions < 1
+					NOT = { 
+						any_state = { 
+							is_owned_by = ROOT 
+							controller = { tag = ROOT } 
+						}
+					}		
+				}
+				set_country_flag = failed_warsaw_uprising
+			}
+			if = {
+				limit = {
+					has_country_flag = failed_warsaw_uprising
+					controls_state = 10
+					any_country = {
+						is_major = yes
+						is_subject = no
+						is_in_faction_with = ROOT
+					}
+					any_country = {
+						is_major = yes
+						is_subject = no
+						is_in_faction_with = ROOT
+						divisions_in_state = {
+						    size > 5
+						    state = 10
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						is_major = yes
+						is_subject = no
+						is_in_faction_with = ROOT
+						divisions_in_state = {
+						    size > 5
+						    state = 10
+						}
+					}
+					puppet = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = failed_warsaw_uprising
+					controls_state = 10
+					any_country = {
+						is_subject = no
+						is_in_faction_with = ROOT
+					}
+					NOT = {
+						any_country = {
+							is_major = yes
+							is_subject = no
+							is_in_faction_with = ROOT
+						}
+					}
+					any_country = {
+						is_subject = no
+						is_in_faction_with = ROOT
+						divisions_in_state = {
+						    size > 5
+						    state = 10
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						is_subject = no
+						is_in_faction_with = ROOT
+						divisions_in_state = {
+						    size > 5
+						    state = 10
+						}
+					}
+					puppet = ROOT
+				}
+			}
+		}
+	}
+}

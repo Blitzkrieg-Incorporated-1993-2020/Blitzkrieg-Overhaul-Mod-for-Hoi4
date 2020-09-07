@@ -1,0 +1,57 @@
+autonomy_state = {
+	id = autonomy_provisional_government
+	
+	min_freedom_level = 0.85
+	use_overlord_color = yes
+
+	manpower_influence = 0.2
+	
+	rule = {
+		can_not_declare_war = yes
+		can_decline_call_to_war = no
+		can_be_spymaster = no
+		can_create_collaboration_government = no
+	}
+	
+	modifier = {
+		autonomy_manpower_share = 0.0
+		extra_trade_to_overlord_factor = 0.25
+		overlord_trade_cost_factor = -0.25
+		autonomy_gain = 2
+		master_ideology_drift = 0.3
+	}
+	
+	ai_subject_wants_higher = {
+		factor = 0.75
+	}
+	
+	ai_overlord_wants_lower = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = yes
+	}
+
+	allowed = {
+		has_dlc = "Together for Victory"
+		NOT = { has_country_flag = forced_into_puppet }
+		NOT = { has_country_flag = original_puppet }
+		OVERLORD = {
+       		is_in_democratic_faction = yes
+			has_country_flag = original_puppets_secured
+			OR = {
+				has_country_flag = was_in_world_war
+				has_country_flag = is_in_world_war
+			}
+		}
+	}
+
+	can_take_level = {
+		always = yes
+	}
+
+	can_lose_level = {
+		always = yes
+	}
+}

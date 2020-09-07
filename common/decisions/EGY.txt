@@ -1,0 +1,312 @@
+EGE_disestablish_british_influence = {
+    EGE_execute_the_servants = {
+        visible = {
+			NOT = {
+				has_country_flag = EGE_servants_executed
+				has_country_flag = EGE_politicians_deported
+			}
+        }
+		fire_only_once = yes
+		icon = GFX_decision_generic_prepare_civil_war
+        cost = 25
+        available = {
+            has_manpower > 500
+			has_idea = king_farouk_i
+        }
+        complete_effect = {
+            add_manpower = -500
+			ENG = {
+				add_opinion_modifier = { target = EGY modifier = small_decrease }
+			}
+        }
+		days_remove = 30
+        remove_effect = {
+            add_manpower = 500
+			swap_ideas = {
+				remove_idea = the_british_protectorate
+				add_idea = british_political_influence
+			}
+			set_country_flag = { flag = EGE_servants_executed value = 1 }
+        }
+    }
+	EGE_deport_the_politicians = {
+        visible = {
+			has_country_flag = EGE_servants_executed
+        }
+		fire_only_once = yes
+		icon = GFX_decision_eng_blackshirt_march
+        cost = 25
+        available = {
+            has_stability > 0.1
+        }
+        complete_effect = {
+			add_war_support = 0.05
+			ENG = {
+				add_opinion_modifier = { target = EGY modifier = small_decrease }
+			}
+        }
+		days_remove = 30
+        remove_effect = {
+			remove_ideas = british_political_influence
+			clr_country_flag = EGE_servants_executed
+			set_country_flag = { flag = EGE_politicians_deported value = 1 }
+        }
+    }
+	EGE_declare_independence = {
+        visible = {
+			has_completed_focus = EGE_purge_the_british
+        }
+		fire_only_once = yes
+		icon = GFX_decision_generic_form_nation
+        cost = 50
+        available = {
+            has_stability > 0.2
+			has_country_flag = EGE_politicians_deported
+			has_country_flag = EGE_makram_ebeid_assassinated
+			has_country_flag = EGE_military_reinstated
+        }
+        complete_effect = {
+			add_war_support = 0.1
+			ENG = {
+				add_opinion_modifier = { target = EGY modifier = small_decrease }
+			}
+        }
+		days_remove = 50
+        remove_effect = {
+			remove_ideas = resistance_to_british_occupation
+			ENG = {
+				end_puppet = EGY
+			}
+			ENG = {
+				diplomatic_relation = {
+					country = EGY
+					relation = guarantee
+					active = no
+				}
+			}
+        }
+    }
+	EGE_reinstate_traditional_military_trainers = {
+        visible = {
+			NOT = {
+				has_country_flag = EGE_military_reinstated
+			}
+        }
+		fire_only_once = yes
+		icon = GFX_decision_generic_army_support
+        cost = 25
+        available = {
+            has_manpower > 1000
+        }
+        complete_effect = {
+            add_manpower = -1000
+			ENG = {
+				add_opinion_modifier = { target = EGY modifier = small_decrease }
+			}
+        }
+		days_remove = 30
+        remove_effect = {
+            add_manpower = 1000
+			if = {
+				limit = {
+					has_idea = british_military_training
+				}
+				remove_ideas = british_military_training
+			}
+			add_war_support = 0.05
+			set_country_flag = { flag = EGE_military_reinstated value = 1 }
+        }
+    }
+	EGE_destabilise_the_wafd = {
+        visible = {
+			NOT = {
+				has_country_flag = EGE_wafd_destabilised
+				has_country_flag = EGE_makram_ebeid_assassinated
+			}
+        }
+		fire_only_once = yes
+		icon = GFX_decision_generic_break_treaty
+        cost = 25
+        available = {
+            conservative < 0.5
+        }
+		days_remove = 30
+        remove_effect = {		
+            if = {
+				limit = {
+					has_democratic_government = yes
+				}
+				kill_country_leader = yes
+				add_popularity = {
+					ideology = conservative
+					popularity = 0.4
+				}
+				add_ideas = democratic_influence
+				ROOT = { set_politics = { ruling_party = conservative elections_allowed = yes } }
+			}
+			create_country_leader = {
+				name = "Aly Maher Pasha"
+				desc = "POLITICS_ALY_MAHER_PASHA_DESC"
+				picture = "Portrait_Egypt_Aly_Maher_Pasha.dds"
+				expire = "1960.1.1"
+				ideology = conservatism
+				traits = {
+					#
+				}
+			}
+			add_timed_idea = {
+				idea = wafd_internal_collapse
+				days = 730
+			}
+			set_country_flag = { flag = EGE_wafd_destabilised value = 1 }
+        }
+    }
+	EGE_assassinate_makram_ebeid = {
+        visible = {
+			has_country_flag = EGE_wafd_destabilised
+        }
+		fire_only_once = yes
+		icon = GFX_decision_eng_support_imperialist_coup
+        cost = 25
+        available = {
+            has_manpower > 500
+        }
+		days_remove = 30
+		complete_effect = {
+			add_manpower = -500
+		}
+        remove_effect = {
+			add_manpower = 500
+            random_list = {
+				90 = { country_event = { id = egyptianempire.4 days = 2 } }
+				10 = { country_event = { id = egyptianempire.5 days = 2 } }
+			}
+			clr_country_flag = EGE_wafd_destabilised
+			set_country_flag = { flag = EGE_makram_ebeid_assassinated value = 1 }
+        }
+    }
+}
+EGE_a_flourishing_economy = {
+	EGE_attract_foreign_investors = {
+		icon = hol_attract_foreign_investors
+		visible = {
+			NOT = {
+				has_country_flag = EGE_foreign_investors_attracted
+			}
+		}
+		available = {
+			OR = {
+				has_idea = export_focus
+				has_idea = free_trade
+				is_in_faction_with = ITA
+				is_in_faction_with = ENG
+				is_in_faction_with = GER
+			}
+			NOT = {
+				has_war_with = ENG
+			}
+			has_capitulated = no
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 90
+		modifier = {
+			consumer_goods_factor = -0.05
+		}
+		remove_effect = {
+			set_country_flag = EGE_foreign_investors_attracted
+			add_ideas = a_flourishing_economy
+		}
+	}
+	EGE_expand_the_mines = {
+		icon = GFX_decision_generic_ignite_civil_war
+		visible = {
+			has_country_flag = EGE_foreign_investors_attracted
+			NOT = {
+				has_country_flag = EGE_mines_expanded
+			}
+		}
+		available = {
+			has_tech = construction2
+			has_tech = excavation1
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 90
+		modifier = {
+			consumer_goods_factor = 0.05
+			production_factory_efficiency_gain_factor = -0.05
+		}
+		remove_effect = {
+			set_country_flag = EGE_mines_expanded
+			swap_ideas = {
+				remove_idea = a_flourishing_economy
+				add_idea = a_flourishing_economy_2
+			}
+		}
+	}
+	EGE_legalise_slaves = {
+		icon = GFX_decision_eng_blackshirt_march
+		visible = {
+			has_country_flag = EGE_foreign_investors_attracted
+			has_country_flag = EGE_mines_expanded
+			NOT = {
+				has_country_flag = EGE_slaves_legalised
+			}
+		}
+		available = {
+			552 = {
+				state_population > 10000
+			}
+			456 = {
+				state_population > 100000
+			}
+			457 = {
+				state_population > 500
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 90
+		complete_effect = {
+			add_stability = -0.05
+			add_manpower = -5000
+		}
+		remove_effect = {
+			hidden_effect = {
+				ENG = {
+					add_opinion_modifier = { target = EGY modifier = medium_decrease }
+				}
+			}
+			set_country_flag = EGE_slaves_legalised
+			swap_ideas = {
+				remove_idea = a_flourishing_economy_2
+				add_idea = a_flourishing_economy_3
+			}
+		}
+	}
+	EGE_repurchase_the_suez = {
+		icon = GFX_decision_eng_trade_unions_demand
+		visible = {
+			NOT = {
+				has_country_flag = EGE_suez_purchased
+			}
+		}
+		available = {
+			ENG = {
+				797 = { is_owned_and_controlled_by = ENG }
+			}
+			has_country_flag = EGE_slaves_legalised
+			has_country_flag = EGE_mines_expanded
+			has_country_flag = EGE_foreign_investors_attracted
+		}
+		cost = 200
+		fire_only_once = yes
+		complete_effect = {
+			ENG = {
+				country_event = { id = britain.1003 hours = 6 }
+			}
+			set_country_flag = EGE_suez_purchased
+		}
+	}
+}

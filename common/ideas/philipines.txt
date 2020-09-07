@@ -1,0 +1,745 @@
+ideas = {
+
+	country = {
+	
+		PHI_developing_economy_0 = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			picture = generic_agrarian_society
+			
+			modifier = {
+				monthly_population = 0.05
+				production_factory_max_efficiency_factor = -0.1
+				conscription_factor = -0.2
+				economy_cost_factor = 0.5
+			}
+		}
+		
+		PHI_developing_economy_1 = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			picture = generic_agrarian_society
+			
+			modifier = {
+				monthly_population = 0.05
+				production_factory_max_efficiency_factor = -0.05
+				conscription_factor = -0.1
+				economy_cost_factor = 0.5				
+			}
+		}
+		
+		PHI_developing_economy_2 = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			picture = generic_agrarian_society
+			
+			modifier = {
+				monthly_population = 0.05
+				
+			}
+		}
+		
+		PHI_developing_economy_3 = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			picture = generic_agrarian_society
+			
+			modifier = {
+				monthly_population = 0.05
+				consumer_goods_factor = -0.1
+			}
+		}
+		
+		PHI_rudimentary_army = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			picture = chi_army_corruption
+			
+			modifier = {
+				army_org_factor = -0.1
+				max_command_power = -50
+			}
+		}
+		
+		PHI_conscript_army = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			picture = chi_army_corruption2
+			
+			modifier = {
+				conscription = 0.01
+				training_time_factor = -0.1
+			}
+		}
+		
+		PHI_elite_army = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			picture = chi_army_corruption3
+			
+			modifier = {
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.1
+			}
+		}
+		
+		PHI_fortification_focus = {
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = FRA_fortification_focus
+			
+			removal_cost = -1
+
+			modifier = {
+				production_speed_bunker_factor = 0.2
+				production_speed_coastal_bunker_factor = 0.2
+				army_core_defence_factor = 0.1
+			}
+		}
+		
+		PHI_naval_bomber_discount = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_air_bonus
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				nav_bomber_equipment = {
+					build_cost_ic = -0.15 instant = yes
+				}
+			}
+		}
+		
+		PHI_anti_japan_idea = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = chi_war_of_resistance3
+			
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.2
+			}
+			
+			modifier = {
+				war_support_factor = 0.1
+			}
+		}
+		
+		PHI_station_cast  = {
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			picture = office_of_strategic_services
+			
+			research_bonus = {
+				decryption_tech = 0.05
+			}			
+
+			modifier = {
+				decryption_factor = 0.2
+			}
+		}
+		
+		PHI_foreign_expeditions = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus
+			
+			modifier = {
+				send_volunteers_tension = -0.5
+				send_volunteer_divisions_required = -0.75
+				send_volunteer_size = 1
+			}
+		}
+		
+		PHI_independence_movement_idea = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+			
+			cancel = {
+				NOT = { is_subject_of = USA }
+			}
+
+			allowed_civil_war = {
+				
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				autonomy_gain = 1.0
+			}
+		}
+		
+		PHI_united_left = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+			
+			cancel = {
+				OR = { has_autocratic_government = yes	has_capitulated = yes }
+			}
+			
+			removal_cost = -1
+
+			picture = home_of_revolution
+			
+			modifier = {
+				communism_drift = 0.05
+				autonomy_gain = 4.0
+			}
+		}
+		
+		PHI_peoples_army_idea = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_socialist_government = yes
+			}
+			
+			cancel = {
+				has_autocratic_government = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_communist_army
+			
+			modifier = {
+				conscription = 0.02
+			}
+		}
+		
+		PHI_the_flying_spark_idea = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_socialist_government = yes
+			}
+			
+			cancel = {
+				has_autocratic_government = yes
+			}
+			
+			removal_cost = -1
+
+			picture = chi_war_of_resistance
+			
+			modifier = {
+				army_core_defence_factor = 0.1
+				no_supply_grace = 48
+				out_of_supply_factor = -0.2
+			}
+		}
+		
+		PHI_the_flying_spark_idea_japan = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_socialist_government = yes
+			}
+			
+			cancel = {
+				has_autocratic_government = yes
+			}
+			
+			removal_cost = -1
+
+			picture = chi_war_of_resistance2
+			
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+		
+		PHI_the_flying_spark_idea_usa = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_socialist_government = yes
+			}
+			
+			cancel = {
+				has_autocratic_government = yes
+			}
+			
+			removal_cost = -1
+
+			picture = chi_war_of_resistance3
+			
+			targeted_modifier = {
+				tag = USA
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+		
+		PHI_five_year_plan = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				 has_socialist_government = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_local_self_management
+
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		
+		PHI_export_communism = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_communism_drift_bonus
+
+			modifier = {
+				autonomy_gain = 1
+				democratic_drift = -0.03
+				social_democracy_drift = -0.03
+				conservative_drift = -0.03
+				communism_drift = 0.1
+			}
+		}
+		
+		PHI_makapili_idea = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_autocratic_government = yes
+			}
+			
+			cancel = {
+				NOT = { has_autocratic_government = yes }
+			}
+			
+			removal_cost = -1
+
+			picture = generic_manpower_bonus
+			
+			modifier = {
+				conscription = 0.01
+				compliance_gain = -0.1
+			}
+		}
+		
+		PHI_private_enterprises_idea = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_democratic_government = yes
+			}
+			
+			removal_cost = -1
+
+			picture = can_wartime_prices_and_trade_board
+			
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				production_speed_industrial_complex_factor = 0.05
+			}
+		}
+		
+		PHI_zaibatsus = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = jap_zaibatsu
+			
+			modifier = {
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		PHI_successful_resistance_idea	 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			cancel = {
+				has_war = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_morale_bonus
+			
+			modifier = {
+				army_morale_factor = 0.1
+				surrender_limit = 0.1
+			}
+		}
+		
+		PHI_soviet_advisers = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				 has_socialist_government = yes
+			}
+			
+			cancel = {
+				has_war_with = SOV
+			}
+
+			removal_cost = -1
+
+			picture = saf_soviet_advisers
+
+			modifier = {
+				army_org_Factor = 0.05
+				max_command_power = 20
+			}
+		}
+		
+		PHI_japanese_advisers = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				 has_autocratic_government = yes
+			}
+			
+			cancel = {
+				has_war_with = JAP
+			}
+
+			removal_cost = -1
+
+			picture = jap_militarism_shogun
+
+			modifier = {
+				command_power_gain_mult = 0.25
+			}
+			
+			research_bonus = { 
+				land_doctrine = 0.05
+				naval_doctrine = 0.05
+			}
+		}
+		
+		PHI_pacific_bulwark_idea = {
+
+			picture = generic_army_war_college
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_leader_start_defense_level = 1
+				military_leader_cost_factor = -0.25
+			}
+		}
+		
+		PHI_marxist_training_schools_idea = {
+
+			picture = generic_army_war_college
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_leader_start_logistics_level = 1
+				military_leader_cost_factor = -0.50
+			}
+		}
+		
+		PHI_arm_the_militia_idea = {
+
+			picture = generic_infantry_bonus
+
+			allowed = { original_tag = "PHI" }
+			
+			cancel = { has_autocratic_government = yes }
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		
+		PHI_air_training_scheme = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			cancel = { NOT = { is_in_faction_with = ENG } }
+
+			removal_cost = -1
+
+			picture = generic_air_bonus
+
+			equipment_bonus = {
+				fighter_equipment = {
+					air_range = 0.1
+					air_attack = 0.05
+					instant = yes
+				}
+				cv_fighter_equipment = {
+					air_range = 0.1
+					air_attack = 0.05
+					instant = yes
+				}
+				CAS_equipment = {
+					air_range = 0.1
+					air_ground_attack = 0.05
+					instant = yes
+				}
+				cv_CAS_equipment = {
+					air_range = 0.1
+					air_ground_attack = 0.05
+					instant = yes
+				}
+				cv_nav_bomber_equipment = {
+					air_range = 0.1
+					naval_strike_attack = 0.05
+					instant = yes
+				}
+				nav_bomber_equipment = {
+					air_range = 0.1
+					naval_strike_attack = 0.05
+					instant = yes
+				}
+				tac_bomber_equipment = {
+					air_range = 0.1
+					air_ground_attack = 0.05
+					instant = yes
+				}
+				heavy_fighter_equipment = {
+					air_range = 0.1
+					air_attack = 0.05
+					instant = yes
+				}
+				strat_bomber_equipment = {
+					air_range = 0.1
+					air_bombing = 0.05
+					instant = yes
+				}
+				transport_plane_equipment = {
+					air_range = 0.1
+					instant = yes
+				}
+			}
+
+			modifier = {
+				air_ace_generation_chance_factor = 0.10
+			}
+		}
+		
+		PHI_komopa_idea = {
+			picture = generic_political_support
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_autocratic_government = yes
+			}
+			
+			cancel = { OR = { has_socialist_government = yes has_capitulated = yes } }
+			
+			removal_cost = -1
+	
+
+			modifier = {
+				political_power_factor = 0.1
+				justify_war_goal_time = -0.25
+				democratic_drift = -0.01
+				social_democracy_drift = -0.01
+				conservative_drift = -0.01
+				communism_drift = -0.02
+			}
+		}
+		
+		PHI_japanese_tank_idea = {
+			picture = generic_acquire_tanks
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_autocratic_government = yes
+			}
+			
+			removal_cost = -1
+			
+			research_bonus = {
+				cat_heavy_armor = 0.10
+			}	
+			
+			equipment_bonus = {
+				medium_tank_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				heavy_tank_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+			}
+
+			modifier = {
+			}
+		}
+	}
+}

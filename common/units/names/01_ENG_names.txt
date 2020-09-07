@@ -1,0 +1,14 @@
+﻿ENG = {
+	special_mountaineers = {
+        prefix = ""
+        generic = { "Gurkhas Division" }
+        generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+        unique = {}
+    }
+	militia = {
+        prefix = ""
+        generic = { "Colonial Infantry Division" }
+        generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+        unique = {}
+    }
+}

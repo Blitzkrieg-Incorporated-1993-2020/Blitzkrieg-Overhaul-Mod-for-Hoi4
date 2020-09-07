@@ -1,0 +1,126 @@
+## enable_militia_tech
+## enable_special_infantry_tech
+## enable_special_mountaineers_tech
+## enable_rangers_tech
+
+technologies = {
+
+    enable_militia_tech = {
+        enable_subunits = {
+            militia
+        }
+
+        research_cost = 1
+        start_year = 1925
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    enable_special_infantry_tech = {
+        enable_subunits = {
+            special_infantry
+        }
+
+        research_cost = 1
+        start_year = 1925
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    enable_special_mountaineers_tech = {
+        enable_subunits = {
+            special_mountaineers
+        }
+
+        research_cost = 1
+        start_year = 1925
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    enable_rangers_tech = {
+        enable_subunits = {
+            rangers
+        }
+
+        research_cost = 1
+        start_year = 1940
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    #### COUNTRY SPECIFIC UNITS
+
+    enable_forca_cacadores_tech = {
+        enable_subunits = {
+            special_infantry
+        }
+
+        special_infantry = {
+            default_morale = 0.3
+            breakthrough = 1.00
+            maximum_speed = 0.25
+
+            ## light elite infantry
+            forest = {
+                attack = 0.1
+                movement = 0.2
+            }
+
+            hills = {
+                attack = 0.1
+                movement = 0.2
+            }
+
+            jungle = {
+                attack = 0.1
+                movement = 0.2
+            }
+
+            marsh = {
+                attack = 0.1
+                movement = 0.2
+            }
+        }
+
+        research_cost = 1
+        start_year = 1925
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+}

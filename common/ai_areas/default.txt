@@ -1,0 +1,379 @@
+areas = {
+
+	britannia = {
+
+		strategic_regions = {
+			4
+			3
+			2
+			1
+			16
+		}
+	}
+
+	iberia = {
+
+		strategic_regions = {
+			68
+			51
+			41
+			209
+			210
+		}
+	}
+
+	alps = {
+
+		strategic_regions = {
+			20
+			21
+			213
+		}
+	}
+
+	northern_france = {
+
+		strategic_regions = {
+			18
+			19
+			16
+			208
+		}
+	}
+
+	central_europe = {
+
+		strategic_regions = {
+			5
+			6
+			7
+			8
+			173
+			229
+		}
+	}
+
+	scandinavia = {
+
+		strategic_regions = {
+			9
+			10
+			11
+			191
+			192
+			45
+			161
+			219
+		}
+	}
+
+	italy = {
+
+		strategic_regions = {
+			23 # Italy
+			169
+			168
+			29
+			215
+		}
+	}
+
+	dalmatia = {
+
+		strategic_regions = {
+			24 # West Balcans
+			211
+		}
+	}
+
+	greece = {
+
+		strategic_regions = {
+			25 # Greece
+			202
+			69
+		}
+	}
+
+	eastern_europe = {
+
+		strategic_regions = {
+			39
+			38
+			26
+			27
+			22
+			214
+			220
+		}
+	}
+
+	ukraine = {
+
+		strategic_regions = {
+			130 # Ukraine
+		}
+	}
+
+	baltics = {
+
+		strategic_regions = { 
+			37  # Baltics
+		}
+	}
+
+	north_front = {
+
+		strategic_regions = {
+			132 # North Front 
+			12
+			13
+		}
+	}
+
+	central_russia = {
+
+		strategic_regions = {
+			131 # Blrus
+			133 # Mid Russia
+		}
+	}
+
+	transvolga = {
+
+		strategic_regions = {
+			40
+			150
+			138
+		}
+	}
+
+	kuban_region = {
+
+		strategic_regions = {
+			137 # Stalingad
+			135 # Kuban
+			134 # Caucuses
+		}
+	}
+
+	north_america = {
+
+		strategic_regions = {
+			225
+			227
+		}
+
+		continents = { 
+			north_america
+		}
+	}
+
+	south_america = {
+
+		continents = { 
+			south_america 
+		}
+	}
+
+	north_africa = {
+
+		strategic_regions = {
+			126
+			128
+			182
+			226
+		}
+	}
+
+	west_africa = {
+
+		strategic_regions = {
+			48
+			127
+			140
+		}
+	}
+
+	east_africa = {
+
+		strategic_regions = {
+			85
+			102
+			181
+			17
+			85
+			185
+			228
+		}
+	}
+
+	congo = {
+
+		strategic_regions = {
+			62
+			183
+			184
+		}
+	}
+
+	south_africa = {
+
+		strategic_regions = {
+			139
+		}
+	}
+
+	japan = {
+
+		strategic_regions = {
+			154 # Japan
+			76  # East China Sea
+			216
+			217
+			218
+		}
+	}
+
+	manchuria = {
+
+		strategic_regions = {
+			155
+			186
+			212
+		}
+	}
+
+	siberia = {
+
+		strategic_regions = {
+			152
+			14
+			147
+			151
+			149
+		}
+	}
+
+	southeast_asia = {
+
+		strategic_regions = {
+			142
+			189
+		}
+	}
+
+	central_asia = {
+
+		strategic_regions = {
+			145
+			136
+			146
+		}
+	}
+
+	india = {
+
+		strategic_regions = {
+			71
+			60
+			31
+			141
+			162
+			190
+			153
+		}
+	}
+
+	fareast = {
+
+		strategic_regions = {
+			148
+			79
+			87
+		}
+	}
+
+	inner_china = {
+
+		strategic_regions = {
+			144 # Western China 
+			200 # Qinghai
+		}
+	}
+
+	coastal_china = {
+
+		strategic_regions = { 
+			143 # Northern China
+			164 # Eastern China
+			165 # South China
+			221
+		}
+	}
+
+	indonesia = {
+
+		strategic_regions = {
+			93  # Java Sea 
+			158 # Sunda Islands
+			159 # Borneo
+			187 # Sumatra
+			188 # Malaya 
+		}
+	}
+
+	pacific = {
+
+		strategic_regions = {
+			105 # Hawaii
+			160 # Phillipines
+			180 # Micronesian Gap
+			97  # Eastern Micronesia
+			32  # South-Eastern Pacific
+			84  # Bismarck Sea
+			93  # Java Sea
+			95  # West Emperor Sea
+			94  # Mariana Region
+			177 # Western North Pacific
+			172 # Pacific Line Ridge
+			78  # Phillipine Sea
+			109 # Peruvian Coast
+			160 # Phillipines
+			158 # Sunda Islands
+			159 # Borneo
+			187 # Sumatra
+			188 # Malaya
+			83  # Solomon Sea
+			167 # New Guinea
+			91  # Arafura Sea
+			178 # West Polynesia
+			179 # French Polynesia
+			90  # Japanese Coast
+			88  # Bering Sea
+			101
+			99
+		}
+	}
+
+	middle_east = {
+
+		continents = { 
+			middle_east 
+		}
+	}
+
+	oceania = {
+
+		strategic_regions = {
+			156 # Australia
+			193 
+			194
+			195
+			157 # New Zealand
+			86  # Tasman Sea
+			98  # Great Australian Bight
+			81  # Coral Sea
+		}
+	}
+}

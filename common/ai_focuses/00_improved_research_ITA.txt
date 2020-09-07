@@ -1,0 +1,98 @@
+ai_focus_defense_ITA = {
+	research = {
+		defensive = 10.0	
+	}
+}
+
+ai_focus_aggressive_ITA = {
+	research = {
+		offensive = 10.0
+		motorized_equipment = 5.0
+		synth_resources = 5.0
+	}
+}
+
+ai_focus_war_production_ITA = {
+	research = {
+		industry = 40.0
+		construction_tech = 20.0
+		electronics = 20.0
+		computing_tech = 20.0	
+		synth_resources = 20.0
+	}
+}
+
+ai_focus_military_equipment_ITA = {
+	research = {
+		infantry_weapons = 160.0
+		infantry_tech = 80.0
+		night_vision = 40.0
+		support_tech = 10.0
+		artillery = 20.0
+		motorized_equipment = 20.0
+		armor = 1.0
+		cat_light_armor = 80.0
+		cat_medium_armor = 40.0
+		cat_heavy_armor = 20.0
+	}
+}
+
+ai_focus_military_advancements_ITA = {
+	research = {
+		land_doctrine = 80.0
+		radar_tech = 10.0
+		encryption_tech = 10.0
+		decryption_tech = 20.0
+		rocketry = 20.0
+		armor = 10.0
+		jet_technology = 20.0
+		nuclear = 1.0
+	}
+}
+
+ai_focus_peaceful_ITA = {
+	research = {
+		industry = 80.0
+		construction_tech = 40.0
+		electronics = 20.0
+		computing_tech = 20.0
+		synth_resources = 5.0
+	}
+}
+
+ai_focus_naval_ITA = {
+	research = {
+		naval_doctrine = 40.0
+		naval_equipment = 20.0
+		dd_tech = 40.0
+		cl_tech = 40.0
+		ca_tech = 40.0
+		bc_tech = 80.0
+		bb_tech = 80.0
+		shbb_tech = 10.0
+		cv_tech = 5.0
+		ss_tech = 80.0
+		tp_tech = 10.0
+		marine_tech = 10.0
+	}
+}
+
+ai_focus_naval_air_ITA = {
+	research = {
+		naval_air = 30.0
+	}
+}
+
+ai_focus_aviation_ITA = {
+	research = {
+		air_doctrine = 80.0
+		air_equipment = 20.0
+		cas_bomber = 40.0		
+		light_fighter = 160.0
+		naval_bomber = 20.0
+		cat_heavy_fighter = 40.0
+		tactical_bomber = 20.0
+		cat_strategic_bomber = 40.0
+		para_tech = 20.0
+	}
+}

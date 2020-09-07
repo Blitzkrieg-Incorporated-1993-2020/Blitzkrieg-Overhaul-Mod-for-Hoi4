@@ -1,0 +1,15 @@
+################
+##### LIT ######
+################
+LIT_rename_city = {
+
+	allowed = {
+		original_tag = LIT
+	}
+}
+LIT_create_duchy = {
+
+	allowed = {
+		original_tag = LIT
+	}
+}

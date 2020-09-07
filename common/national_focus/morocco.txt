@@ -1,0 +1,2691 @@
+focus_tree = {
+	id = morocco_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = MOR
+		}
+	}
+	
+	default = no
+
+
+
+	############################
+			## POLITICAL SECTION ###
+	############################
+
+	focus = {
+		id = MOR_sultan_diplomacy
+		icon = GFX_goal_generic_improve_relations
+		x = 4
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 120			
+		}
+	}
+
+	focus = {
+		id = MOR_nationalist_movement_pressure 
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = MOR_sultan_diplomacy }
+		mutually_exclusive = { focus = MOR_french_resident_governance }
+		x = 3
+		y = 1
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {
+			NOT = { FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties } }
+		}
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = MOR_moroccan_action_committee
+			}
+			add_opinion_modifier = { target = FRA modifier = MOR_support_independance }
+		}
+	}
+	
+	focus = {
+		id = MOR_french_resident_governance
+		icon = GFX_focus_chi_reach_out_to_france
+		prerequisite = { focus = MOR_sultan_diplomacy }
+		mutually_exclusive = { focus = MOR_nationalist_movement_pressure }
+		x = 5
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 27
+		}
+		
+		available = {
+			is_subject_of = FRA
+		}
+		
+		bypass = {
+			 FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties }
+		}
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = MOR_french_resident_governance
+			}
+			add_opinion_modifier = { target = FRA modifier = MOR_support_france }
+		}
+	}
+	
+	focus = {
+		id = MOR_moroccan_action_committee
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { 
+			focus = MOR_nationalist_movement_pressure
+			focus = MOR_french_resident_governance
+		}
+		x = 3
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = MOR_action_committee
+		}
+	}
+	
+	############################
+		 ### KINDA FRANCE FRIEND ####
+	############################
+	
+	focus = {
+		id = MOR_moroccans_advisors
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = MOR_french_resident_governance }
+		x = 5
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+		
+		available = {
+			OR = {
+				FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties }
+				AND = {
+					compare_autonomy_progress_ratio > 0.50
+					compare_autonomy_state > autonomy_crown_colony
+				}
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MOR_moroccans_advisors_tooltip
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = MOR_moroccans_advisors
+			}
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = MOR_marocco_reforms_plan
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = MOR_french_resident_governance }
+		x = 7
+		y = 2
+
+		cost = 10
+		
+		available = {
+			OR = {
+				FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties }
+				AND = {
+					compare_autonomy_progress_ratio > 0.75
+					compare_autonomy_state > autonomy_crown_colony
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = MOR_resident_general2
+				remove_idea = MOR_resident_general1
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_abolish_indigena_statut
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus =  MOR_marocco_reforms_plan }
+		x = 7
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+		
+		available = {
+			OR = {
+				FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties }
+				compare_autonomy_state > autonomy_protectorate
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = MOR_resident_general3
+				remove_idea = MOR_resident_general2
+			}
+		}
+	}
+
+	focus = {
+		id = MOR_representative_councils
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = MOR_moroccans_advisors }
+		prerequisite = { focus = MOR_abolish_indigena_statut }
+		x = 5
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		available = {
+			OR = {
+				FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties }
+				AND = {
+					compare_autonomy_progress_ratio > 0.25
+					compare_autonomy_state > autonomy_protectorate
+				}
+			}
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = MOR_resident_general4
+				remove_idea = MOR_resident_general3
+			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = MOR_messaoud_chiguer
+		}
+	}
+	
+	focus = {
+		id = MOR_technology_sharing
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = MOR_abolish_indigena_statut}
+		prerequisite = { focus = MOR_invite_instructors}
+		
+		available = {
+			OR = {
+				FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties }
+				AND = {
+					compare_autonomy_progress_ratio > 0.5
+					compare_autonomy_state > autonomy_protectorate
+				}
+			}
+		}
+		
+		x = 8
+		y = 4
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	############################
+		###### INDEPENDANCE ######
+	############################
+
+	focus = {
+		id = MOR_underground_rearmement
+		icon = GFX_focus_secret_rearmament
+		prerequisite = { focus = MOR_nationalist_movement_pressure }
+		x = 1
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {
+			NOT = { FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties } }
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3000 producer = FRA }
+			add_timed_idea = {
+				idea = HUN_secret_rearmament
+				days = 548
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_american_support
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = MOR_underground_rearmement }		
+		x = 0
+		y = 3
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		available = {
+			NOT = { has_war_with = USA }
+			NOT = { FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties } }
+		}
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = MOR_american_support
+			}
+			add_popularity = { ideology = democratic popularity = 0.1 }
+			USA = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_mission_to_the_us
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = "ROOT"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = "ROOT"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = "ROOT"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = "ROOT"
+					value = 100
+				}
+			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = MOR_messaoud_chiguer
+		}
+	}
+
+	focus = {
+		id = MOR_comintern_support
+		icon = GFX_focus_generic_join_comintern
+		prerequisite = { focus = MOR_underground_rearmement }		
+		x = 2
+		y = 3
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		available = {
+			NOT = { has_war_with = SOV }
+			NOT = { FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties } }
+		}
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = MOR_comintern_support
+			}
+			add_popularity = { ideology = communism popularity = 0.1 }
+			SOV = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_mission_to_the_soviet_union
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = "ROOT"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = "ROOT"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = "ROOT"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = "ROOT"
+					value = 100
+				}
+			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = MOR_mehdi_ben_barka
+		}
+	}
+
+	focus = {
+		id = MOR_axis_support
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = MOR_underground_rearmement }		
+		x = 4
+		y = 3
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		available = {
+			NOT = { has_war_with = GER }
+			NOT = { FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties } }
+		}
+		
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = MOR_axis_support
+			}
+			add_popularity = { ideology = fascism popularity = 0.1 }
+			GER = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_mission_to_germany
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = "ROOT"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = "ROOT"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = "ROOT"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = "ROOT"
+					value = 100
+				}
+			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = MOR_mohamed_el_yazidi
+		}
+	}
+
+	focus = {
+		id = MOR_independance
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { 
+			focus = MOR_comintern_support 
+			focus = MOR_axis_support 
+			focus = MOR_american_support 
+		}	
+		x = 1
+		y = 4
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		available = {
+			compare_autonomy_progress_ratio > 0.75
+			compare_autonomy_state > autonomy_crown_colony
+			is_subject_of = FRA
+			NOT = { has_idea = HUN_secret_rearmament }
+			NOT = { FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties } }
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MOR_independance_tooltip
+			if = {
+				limit = { is_in_faction_with = FRA }
+				FRA = { remove_from_faction = ROOT }
+			}
+			set_autonomy = {
+				target = MOR
+				autonomy_state = autonomy_free
+			}
+			remove_ideas = MOR_resident_general1
+			FRA= {
+				country_event = { days = 5 id = morocco.100 }
+			}
+			hidden_effect = {
+				every_army_leader = {
+					limit = { has_trait = old_guard }
+					set_nationality = FRA
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_militarism
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { 
+			focus = MOR_axis_support 
+			focus = MOR_comintern_support
+		}
+		x = 3
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {	
+			add_ideas = militarism_focus
+			
+			set_rule = { can_send_volunteers = yes }
+		}
+	}
+	
+	focus = {
+		id = MOR_land_nationalisation
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = MOR_independance }
+		x = 0
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_tooltip = {
+			every_state = {
+				limit = { has_state_flag = GER_industrial_effort_2IC }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = GER_industrial_effort_2IC
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = GER_industrial_effort_2IC
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = GER_industrial_effort_2IC
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_deterrence
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = MOR_independance }
+		
+		x = 2
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = deterrence
+		}
+	}
+	
+	focus = {
+		id = MOR_greater_morocco
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = MOR_land_nationalisation }
+		prerequisite = { focus = MOR_deterrence }
+		x = 1
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = FRA
+			}
+			557 = {
+				add_claim_by = MOR
+			}
+			514 = {
+				add_claim_by = MOR
+			}
+		}
+	}
+
+	
+	############################
+		#### POLITICAL COMMUN ######
+	############################
+	
+	focus = {
+		id = MOR_renegociate_fez_traity
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		prerequisite = { 
+			focus = MOR_independance 
+			focus = MOR_representative_councils
+		}
+		x = 4
+		y = 5
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {
+			OR = {
+				FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties }
+				AND = {
+					compare_autonomy_progress_ratio > 0.5
+					compare_autonomy_state > autonomy_protectorate
+				}
+			}
+		}
+
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = MOR_fes_traity2
+				remove_idea = MOR_fes_traity1
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_green_march
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = MOR_renegociate_fez_traity }
+		x = 3
+		y = 6
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {
+			OR = {
+				FRA = { has_completed_focus = FRA_rewrite_protectorate_treaties }
+				AND = {
+					compare_autonomy_progress_ratio > 0.75
+					compare_autonomy_state > autonomy_protectorate
+				}
+			}
+		}
+
+
+		completion_reward = {
+			remove_ideas = MOR_fes_traity2
+			custom_effect_tooltip = MOR_green_march_tooltip
+			290 = {
+				add_claim_by = MOR
+			}
+			699 = {
+				add_claim_by = MOR
+			}
+			SPR = {
+				country_event = { days = 5 id = morocco.101 }
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_arab_league
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = MOR_renegociate_fez_traity }
+		mutually_exclusive = { focus = MOR_french_alliance}
+		x = 5
+		y = 6
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		available = {
+	 		is_puppet = no
+			is_in_faction = no
+		}
+			 			
+
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			create_faction = "Arab League"
+		}
+	}
+	
+	focus = {
+		id = MOR_french_alliance
+		icon = GFX_FRA_alliance
+		prerequisite = { focus = MOR_renegociate_fez_traity }
+		prerequisite = { focus = MOR_representative_councils }
+		mutually_exclusive = { focus = MOR_arab_league}
+		x = 7
+		y = 6
+
+		cost = 10
+		
+		available = {
+	 		is_puppet = no
+			NOT = { has_war_with = FRA }
+	 		FRA= {
+	 			exists = yes
+	 			is_puppet = no
+				is_faction_leader = yes
+	 		}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			MOR= { country_event = france.17 }
+		}
+	}
+
+	############################
+			#### ARMY SECTION ######
+	############################
+
+	focus = {
+		id = MOR_modernisation_plan
+		icon = GFX_goal_generic_production
+		x = 10
+		y = 0
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = CHI_long_term_economic_planning
+		}
+	}
+	
+	focus = {
+		id = MOR_tiralleur_legacy
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = MOR_modernisation_plan }
+		x = 11
+		y = 1
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = RAJ_british_army_support
+				bonus = 0.5
+				uses = 1
+				category = support_tech
+			}
+		}
+	}
+
+	focus = {
+		id = MOR_artillery_effort
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = MOR_tiralleur_legacy }
+		x = 13
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = FRA_artillery_focus
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = ROM_modern_at_guns
+				bonus = 0.5
+				uses = 1
+				category = cat_anti_tank
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_french_training
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = MOR_modernisation_plan }
+		prerequisite = { focus = MOR_french_resident_governance }
+		mutually_exclusive = { focus = MOR_mechanization_doctrine }
+		x = 9
+		y = 2
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_army_leader = {
+				add_defense = 1
+			}
+			custom_effect_tooltip = available_chief_of_army
+			show_ideas_tooltip = maxime_weygand
+		}
+	}
+	
+	focus = {
+		id = MOR_invite_instructors
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = MOR_french_training }
+		x = 9
+		y = 3
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas =  philippe_fequant
+			add_ideas = jean_marie_abrial
+		}
+	}
+
+	focus = {
+		id = MOR_mechanization_doctrine
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = MOR_tiralleur_legacy }
+		mutually_exclusive = { focus = MOR_french_training }
+		x = 11
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_army_africa
+		icon = GFX_focus_RAJ_indian_gentlemen_offcers
+		x = 15
+		y = 0
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MOR_goumiers
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = MOR_army_africa }
+		x = 14
+		y = 1
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = MOR_spahis
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = MOR_army_africa }
+		x = 16
+		y = 1
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = SAF_desert_equipment
+		}
+	}
+
+	focus = {
+		id = MOR_expand_maroccan_division
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = MOR_goumiers }
+		prerequisite = { focus = MOR_spahis }
+		x = 15
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_autonomy_ratio = {
+				value = 0.05
+				localization = MOR_expand_maroccan_division
+			}
+			add_ideas = volunteer_only
+		}
+	}
+	
+	focus = {
+		id = MOR_retablish_army
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = MOR_expand_maroccan_division }
+		
+		x = 15
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 30
+		}
+		
+		available = {
+			if = {
+				compare_autonomy_state > autonomy_protectorate
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = MOR_retablish_army_tooltip
+			add_war_support = 0.05
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = MOR_retablish_army
+			}
+			add_ideas = limited_conscription
+		}
+	}
+	
+	focus = {
+		id = MOR_meknes_royal_military_academy
+		icon = GFX_focus_research
+		prerequisite = { focus = MOR_retablish_army }
+		x = 15
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = MOR_military_staff
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = MOR_retablish_army }
+		x = 14
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = MOR_military_staff_tooltip
+			add_ideas = MOR_mohamed_meziane
+		}
+	}
+	
+	focus = {
+		id = MOR_moroccans_officers
+		icon = GFX_goal_rhineland
+		prerequisite = { focus = MOR_retablish_army }
+		x = 16
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			create_corps_commander = {
+				name = "Assou Oubasslam"
+				portrait_path = "gfx/leaders/MOR/Portrait_Morocco_Assou.tga"
+				traits = {
+					war_hero
+					cavalry_officer
+					trait_mountaineer
+				}
+				skill = 2
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "Thani El Glaui"
+				traits = {
+					politically_connected
+				}
+				portrait_path = "gfx/leaders/MOR/Portrait_Morocco_El_Glaui.tga"
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 1
+			}
+
+		}
+	}
+	
+	focus = {
+		id = MOR_rabat_general_command_hq
+		icon = GFX_focus_chi_army_reform
+		prerequisite = { focus = MOR_meknes_royal_military_academy }
+		x = 15
+		y = 6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = RAJ_modernizing_army
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+
+	############################
+	######## AIR SECTION #######
+	############################
+
+	focus = {
+		id = MOR_air_atlas_compagny
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = MOR_expand_maroccan_division }
+		x = 12
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				name = RAJ_british_pilot_training
+				bonus = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MOR_sale_casablanca_aerodrome
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = MOR_air_atlas_compagny }
+		x = 11
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			random_state = {
+				limit = {
+					has_state_flag = RAJ_expand_air_bases_AB1
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_state = {
+				limit = {
+					has_state_flag = RAJ_expand_air_bases_AB2
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 0
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RAJ_expand_air_bases_AB1
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 0
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = RAJ_expand_air_bases_AB2
+			}
+		}
+	}
+
+	focus = {
+		id = MOR_license_foreign_design
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = MOR_air_atlas_compagny }
+		x = 13
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {			
+			add_ideas = HUN_license_foreign
+		}
+	}
+
+	focus = {
+		id = MOR_marrakech_royal_air_school
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { 
+			focus = MOR_sale_casablanca_aerodrome 
+			focus = MOR_license_foreign_design 
+		}
+		x = 12
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			if = {
+				compare_autonomy_state > autonomy_protectorate
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 1
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 1
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_buy_fighter
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = MOR_marrakech_royal_air_school }
+		x = 12
+		y = 6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = MOR_buy_fighter_tooltip
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 200 producer = FRA }
+			}
+		}
+	}
+
+
+	############################
+	  ######### INDUSTRY #########
+	############################
+
+	focus = {
+		id = MOR_morocco_railways_compagnies
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 21
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 7
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 461 }
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		
+	}
+	
+	focus = {
+		id = MOR_finish_youssoufia_safi_line
+		icon = GFX_goal_generic_construction
+		x = 23
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 7
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 462 }
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	focus = {
+		id = MOR_integrate_douars
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = MOR_morocco_railways_compagnies }
+		prerequisite = { focus = MOR_finish_youssoufia_safi_line }
+		x = 22
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			random_state = {
+				limit = {
+					has_state_flag = RAJ_industrial_expansion_IC
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 462 }
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RAJ_industrial_expansion_IC
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_ibn_rochd_university_hospital
+		icon = GFX_focus_research
+		prerequisite = { focus = MOR_integrate_douars }
+		x = 22
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	
+	focus = {
+		id = MOR_close_black_market
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = MOR_ibn_rochd_university_hospital }
+		x = 21
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+		
+		available = {
+			if = {
+				compare_autonomy_state > autonomy_protectorate
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = MOR_close_black_market_tooltip
+			add_political_power = 150	
+		}
+	}
+	
+
+	
+	focus = {
+		id = MOR_handle_the_makhyen
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = MOR_ibn_rochd_university_hospital }
+		x = 23
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+		
+		available = {
+			if = {
+				compare_autonomy_state > autonomy_protectorate
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = MOR_handle_the_makhyen_tooltip
+			add_ideas = low_economic_mobilisation
+		}
+	}
+	
+	focus = {
+		id = MOR_mulsim_jesuite_investissors
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = MOR_handle_the_makhyen }
+		x = 23
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 3 }
+		}
+	}
+	
+	focus = {
+		id = MOR_postal_service
+		icon = GFX_goal_generic_radar
+		prerequisite = { focus = MOR_mulsim_jesuite_investissors }
+		x = 23
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = UK_secret_focus
+				bonus = 0.5
+				uses = 3
+				category = electronics
+				category = radar_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_al_maghrib_bank
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = MOR_handle_the_makhyen }
+		x = 21
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = MOR_bank_reform
+		}
+	}
+	
+	focus = {
+		id = MOR_reintroduce_dirham
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = MOR_al_maghrib_bank }
+		x = 21
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = MOR_dirham
+		}
+	}
+	
+	focus = {
+		id = MOR_al_quaraouine_university
+		icon = GFX_focus_research2
+		prerequisite = { focus = MOR_close_black_market }
+		prerequisite = { focus = MOR_handle_the_makhyen }
+		x = 22
+		y = 6
+
+		cost = 10
+		
+		available = {
+			is_subject = no
+			num_of_factories > 30
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	############################
+		 ######### RIGHT #########
+	############################
+	
+	focus = {
+		id = MOR_french_investors
+		icon = GFX_focus_generic_concessions
+		x = 25
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+		
+		available = {
+			compare_autonomy_progress_ratio > 0.50
+			compare_autonomy_state > autonomy_crown_colony
+			is_subject_of = FRA
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			add_autonomy_ratio = {
+				value = -0.15
+				localization = RAJ_strengthen_ties_with_british_investors
+			}
+			random_state = {
+				limit = {
+					has_state_flag = RAJ_strengthen_ties_with_british_investors_AF1
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_state = {
+				limit = {
+					has_state_flag = RAJ_strengthen_ties_with_british_investors_AF2
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = -0.15
+				localization = RAJ_strengthen_ties_with_british_investors
+			}
+			random_owned_controlled_state = {
+				prioritize = {  }
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RAJ_strengthen_ties_with_british_investors_AF1
+			}
+			random_owned_controlled_state = {
+				prioritize = {  }
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RAJ_strengthen_ties_with_british_investors_AF2
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_pieds_noirs_settlers
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = MOR_french_investors }
+		x = 26
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			NOT = { has_war_with = FRA }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			every_state = {
+				limit = { has_state_flag = GER_industrial_effort_2_2IC }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = { is_fully_controlled_by = ROOT }
+				add_manpower = 26487
+				add_extra_state_shared_building_slots = 2
+				set_state_flag = MAN_invite_japanese_settlers_2IC
+			}
+			random_owned_state = {
+				limit = { is_fully_controlled_by = ROOT }
+				add_manpower = 31459
+				add_extra_state_shared_building_slots = 2
+				set_state_flag = MAN_invite_japanese_settlers_2IC
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_develop_phospate_mines
+		icon = GFX_goal_generic_construction2
+		prerequisite = { 
+			focus = MOR_finish_youssoufia_safi_line 
+			focus = MOR_french_investors
+		}
+		x = 24
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_metalworking_chimy_industries
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = MOR_develop_phospate_mines }
+		x = 25
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_start_military_equipment
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = MOR_metalworking_chimy_industries }
+		x = 25
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_found_fes_arsenal
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = MOR_start_military_equipment }
+		x = 25
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_employ_bulding_industry
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = MOR_develop_phospate_mines }
+		x = 27
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_maghania_wall
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = MOR_employ_bulding_industry }
+		x = 27
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			461 = {
+				add_building_construction = {
+					type = bunker
+					province = 989
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 7116
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 7958
+					level = 1
+					instant_build = yes
+				}
+			}
+			462 = {
+				add_building_construction = {
+					type = bunker
+					province = 7203
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 5046
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_naval_fortification
+		icon = GFX_focus_generic_coastal_fort
+		prerequisite = { focus = MOR_maghania_wall }
+		x = 27
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = { has_full_control_of_state = 461 }
+				461 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 7069
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_full_control_of_state = 462 }
+				462 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1102
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_ona_group
+		icon = GFX_goal_generic_construction2
+		prerequisite = { 
+			focus = MOR_found_fes_arsenal
+			focus = MOR_naval_fortification
+		}
+		x = 26
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
+		}
+	}
+
+	############################
+		######### LEFT #########
+	############################
+
+	focus = {
+		id = MOR_export_cans_fruits
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = MOR_morocco_railways_compagnies }
+		x = 19
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_textile_expertise
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = MOR_export_cans_fruits }
+		x = 20
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_expand_safi_commercial_port
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = MOR_export_cans_fruits }
+		x = 18
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			random_state = {
+				limit = {
+					has_state_flag = ROM_expand_the_galati_shipyards_AB
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					ROOT = { has_full_control_of_state = PREV }
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+				set_state_flag = ROM_expand_the_galati_shipyards_AB
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_protect_trade
+		icon = GFX_goal_generic_navy_anti_submarine
+		x = 18
+		y = 3
+		cost = 10
+		prerequisite = { focus = MOR_expand_safi_commercial_port }
+		prerequisite = { focus = MOR_expand_maroccan_division }
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = CHI_order_destroyers
+				bonus = 0.5
+				uses = 2
+				category = dd_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_invest_light_ships
+		icon = GFX_goal_generic_navy_cruiser
+	 	prerequisite = { focus = MOR_protect_trade }
+		x = 17
+		y = 4
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = improved_light_cruiser
+				technology = advanced_light_cruiser
+				technology = improved_heavy_cruiser
+				technology = advanced_heavy_cruiser
+			}
+		}
+		
+	}
+
+	focus = {
+		id = MOR_fedala_oil_rafineries 
+		icon = GFX_goal_generic_oil_refinery
+	 	prerequisite = { focus = MOR_protect_trade }
+		x = 19
+		y = 4
+		cost = 10
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			limit = {
+				has_full_control_of_state = 461
+			}
+			461 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_casablanca_royal_navy_school
+		icon = GFX_goal_generic_navy_doctrines_tactics
+	 	prerequisite = { 
+			focus = MOR_invest_light_ships 
+			focus = MOR_fedala_oil_rafineries
+		}
+		x = 18
+		y = 5
+		cost = 5
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			if = {
+				compare_autonomy_state > autonomy_protectorate
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 50
+			add_tech_bonus = {
+				name = FRA_naval_doctrine
+				bonus = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = MOR_control_gibraltar
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = MOR_casablanca_royal_navy_school }
+		x = 18
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = basic_battlecruiser
+				technology = basic_battleship
+				technology = improved_battleship
+				technology = advanced_battleship
+				technology = heavy_battleship
+				technology = heavy_battleship2
+				technology = early_carrier
+				technology = basic_carrier
+				technology = improved_carrier
+				technology = advanced_carrier
+			}
+		}
+	}
+	
+}		

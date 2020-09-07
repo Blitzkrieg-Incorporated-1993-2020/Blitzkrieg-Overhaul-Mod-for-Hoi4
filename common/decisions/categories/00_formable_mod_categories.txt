@@ -1,0 +1,141 @@
+form_nation_mod_category = {
+	icon = generic_formable_nations
+}
+
+form_scandinavia_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_scandinavia
+}
+
+form_nordic_league_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_nordic_league
+}
+
+form_gran_colombia_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_gran_colombia
+}
+
+form_austria_hungary_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_austria_hungary
+}
+
+form_commonwealth_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_commonwealth
+}
+
+form_united_netherlands_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_united_netherlands
+
+	allowed = {
+		has_dlc = "Waking the Tiger"
+		has_global_flag = form_united_netherlands_flag_locked
+	}
+}
+
+form_united_central_america_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_united_central_america
+}
+
+form_baltic_federation_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_baltic_federation
+}
+
+form_ottoman_empire_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_ottoman_empire
+}
+
+form_european_union_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_european_union
+}
+
+form_mutapa_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_mutapa
+}
+
+form_roman_empire_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_roman_empire
+}
+
+form_persian_empire_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_persian_empire
+}
+
+form_byzantine_empire_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_byzantine_empire
+}
+
+form_arabia_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_arabia
+}
+
+form_majapahit_empire_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_majapahit_empire
+}
+
+form_rattanakosin_kingdom_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_rattanakosin_kingdom
+}
+
+form_hre_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_hre
+}
+
+form_greater_german_reich_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_hre
+}

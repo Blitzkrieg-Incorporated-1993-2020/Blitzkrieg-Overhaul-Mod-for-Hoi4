@@ -1,0 +1,1057 @@
+### #  # ###  #  #  ### ### ###  #   #    ###  #### #     ##   ##   ##  ### ###  ##  #  #
+ #  ## # #  # #  # #     #  #  #  # #     #  # #    #    #  # #  # #  #  #   #  #  # ## #
+ #  # ## #  # #  #   #   #  ###    #      ###  ##   #    #  # #    ####  #   #  #  # # ##
+ #  #  # #  # #  #    #  #  #  #   #      #  # #    #    #  # #  # #  #  #   #  #  # #  #
+### #  # ###   ##  ###   #  #  #   #      #  # #### ####  ##   ##  #  #  #  ###  ##  #  #
+
+#Category only allowed for SOV
+
+SOV_industry_relocation = {
+
+	SOV_relocate_industry_from_moscow = {
+
+		icon = generic_construction
+
+		highlight_states = {
+			state = 219
+		}	
+
+		available = {
+			219 = { #Moscow
+				is_owned_and_controlled_by = ROOT
+				arms_factory > 5
+				industrial_complex > 1
+			} 
+			573 = { is_owned_and_controlled_by = ROOT } #Zlatoust
+			582 = { is_owned_and_controlled_by = ROOT } #Magnitogorsk
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 15
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			has_war = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					controls_state = 219
+				}
+				219 = { #Moscow
+					remove_building = {
+						type = arms_factory
+						level = 6
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 2
+					}
+				}
+				573 = { #Zlatoust
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+	
+					hidden_effect = {
+						damage_building = { type = arms_factory damage = 0.3 }
+						damage_building = { type = industrial_complex damage = 0.1 }
+					}
+				}
+				582 = { #Magnitogorsk
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				
+					hidden_effect = {
+						damage_building = { type = arms_factory damage = 0.3 }
+						damage_building = { type = industrial_complex damage = 0.1 }
+					}
+				}
+				custom_effect_tooltip = relocate_industry_repair
+			}
+			custom_effect_tooltip = SOV_relocate_industry_from_moscow_tt
+		}
+	}
+
+	SOV_relocate_industry_from_leningrad = {
+
+		icon = generic_construction
+
+		highlight_states = {
+			state = 195
+		}
+
+		available = {
+			195 = { #Leningrad
+				is_owned_and_controlled_by = SOV
+				arms_factory > 4
+				industrial_complex > 0
+			}
+			573 = { is_owned_and_controlled_by = ROOT } #Zlatoust
+			582 = { is_owned_and_controlled_by = ROOT } #Magnitogorsk
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 15
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			has_war = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					controls_state = 195
+				}
+				195 = { #Leningrad
+					remove_building = {
+						type = arms_factory
+						level = 5
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+	
+				573 = { #Zlatoust
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+	
+					hidden_effect = {			
+						damage_building = { type = arms_factory damage = 0.3 }
+					}
+				}
+				582 = { #Magnitogorsk
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+	
+					hidden_effect = {			
+						damage_building = { type = arms_factory damage = 0.2 }
+						damage_building = { type = industrial_complex damage = 0.1 }
+					}
+				}
+				custom_effect_tooltip = relocate_industry_repair
+			}
+			custom_effect_tooltip = SOV_relocate_industry_from_leningrad_tt
+		}
+	}
+
+	SOV_relocate_industry_from_smolensk = {
+
+		icon = generic_construction
+
+		highlight_states = {
+			state = 242
+		}
+
+		available = {
+			242 = { #Smolensk
+				is_owned_and_controlled_by = SOV
+				industrial_complex > 1
+			}
+			573 = { is_owned_and_controlled_by = ROOT } #Zlatoust
+			582 = { is_owned_and_controlled_by = ROOT } #Magnitogorsk
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 15
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			has_war = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					controls_state = 242
+				}
+				242 = { #Smolensk
+					remove_building = {
+						type = industrial_complex
+						level = 2
+					}
+				}
+				573 = { #Zlatoust
+					add_extra_state_shared_building_slots = 1				
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+	
+					hidden_effect = {			
+						damage_building = { type = industrial_complex damage = 0.1 }
+					}
+				}
+				582 = { #Magnitogorsk
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				
+					hidden_effect = {
+						damage_building = { type = industrial_complex damage = 0.1 }
+					}
+				}
+				custom_effect_tooltip = relocate_industry_repair
+			}
+			custom_effect_tooltip = SOV_relocate_industry_from_smolensk_tt
+		}
+	}
+	move_leningrad_aluminium_plant = { #195
+
+		icon = aluminium
+		
+		highlight_states = {
+			state = 195
+		}
+
+		allowed = {
+			#Everyone
+		}
+
+		available = {
+			has_full_control_of_state = 195
+			has_full_control_of_state = 569
+			
+		}
+
+		visible = {
+			controls_state = 195
+			controls_state = 569
+			195 = { has_state_flag = leningrad_aluminium_developed }
+			has_war = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 15
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					controls_state = 195
+				}
+				195 = {
+					add_resource = {
+						type = aluminium
+						amount = -12
+					}				
+				}
+				569 = {
+					add_resource = {
+						type = aluminium
+						amount = 12
+					}
+				}
+			}
+			custom_effect_tooltip = SOV_relocate_industry_from_leningrad_tt
+		}
+	}
+}
+
+operations = {
+
+	SOV_border_conflict_against_japan = {
+	
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			is_literally_russia = yes
+		}
+
+		available = {
+			has_border_war_with = JAP
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		days_remove = 45
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			is_literally_russia = yes
+		}
+		
+		modifier = {
+			#targeted_modifier = { tag = JAP attack_bonus_against = 0.45 } 
+			#targeted_modifier = { tag = JAP defense_bonus_against = 0.25 } 
+			army_attack_factor = 0.5
+			army_defence_factor = 0.5
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+
+	SOV_scorched_earth = {
+
+		icon = generic_scorched_earth
+
+		allowed = {
+			is_literally_russia = yes
+		}
+
+		available = {
+			has_war = yes
+			OR = {
+				surrender_progress > 0.01
+				202 = { is_core_of = ROOT NOT = { is_controlled_by = ROOT } }
+				206 = { is_core_of = ROOT NOT = { is_controlled_by = ROOT } }
+			}
+		}
+
+		cost = 15
+		fire_only_once = yes
+		visible = {
+			has_war = yes
+			any_enemy_country = {
+				is_major = yes
+				OR = {
+					has_idea = etgi_laws_leadership_structure_2
+					has_idea = etgi_laws_leadership_structure_3
+				}
+			}
+		}
+
+		complete_effect = {
+			set_country_flag = SOV_scorched_earth
+			unlock_decision_tooltip = SOV_scorched_earth_baltics
+			unlock_decision_tooltip = SOV_scorched_earth_byelorussia
+			unlock_decision_tooltip = SOV_scorched_earth_ukraine
+			unlock_decision_tooltip = SOV_scorched_earth_stalingrad
+			unlock_decision_tooltip = SOV_scorched_earth_caucasus
+			unlock_decision_tooltip = SOV_scorched_earth_moscow
+		}
+
+		ai_will_do = {
+			factor = 9000
+		}
+	}
+
+	SOV_scorched_earth_baltics = {
+
+		icon = generic_scorched_earth
+
+		allowed = {
+			has_country_flag = SOV_scorched_earth
+		}
+
+		available = {
+			has_war = yes
+		}
+
+		cost = 5
+		fire_only_once = yes
+		visible = {
+			OR = {
+				controls_state = 189
+				controls_state = 11
+				controls_state = 879
+				controls_state = 880
+				controls_state = 881
+				controls_state = 883
+				controls_state = 890
+				controls_state = 190
+				controls_state = 12
+				controls_state = 191
+				controls_state = 13
+			}
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					controls_state = 189
+				}
+				189 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 11
+				}
+				11 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 879
+				}
+				879 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 880
+				}
+				880 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 881
+				}
+				881 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 190
+				}
+				190 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 12
+				}
+				12 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 191
+				}
+				191 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 883
+				}
+				883 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 890
+				}
+				890 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 13
+				}
+				13 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_full_control_of_state = 189
+				has_full_control_of_state = 11
+				has_full_control_of_state = 879
+				has_full_control_of_state = 880
+				has_full_control_of_state = 881
+				has_full_control_of_state = 883
+				has_full_control_of_state = 890
+				has_full_control_of_state = 190
+				has_full_control_of_state = 12
+				has_full_control_of_state = 191
+				has_full_control_of_state = 13
+			}
+		}
+	}
+
+	SOV_scorched_earth_byelorussia = {
+
+		icon = generic_scorched_earth
+
+		allowed = {
+			has_country_flag = SOV_scorched_earth
+		}
+
+		available = {
+			has_war = yes
+		}
+
+		cost = 10
+		fire_only_once = yes
+		visible = {
+			any_state = {
+				is_core_of = BLR
+				is_controlled_by = ROOT
+			}
+		}
+
+		complete_effect = {
+			every_state = {
+				limit = {
+					is_core_of = BLR
+					is_controlled_by = ROOT
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = {
+					any_state = {
+						is_core_of = BLR
+						is_controlled_by = ROOT
+						NOT = { is_fully_controlled_by = ROOT }
+					}
+				}
+			}
+		}
+	}
+
+	SOV_scorched_earth_ukraine = {
+
+		icon = generic_scorched_earth
+
+		allowed = {
+			has_country_flag = SOV_scorched_earth
+		}
+
+		available = {
+			has_war = yes
+		}
+
+		cost = 15
+		fire_only_once = yes
+		visible = {
+			any_state = {
+				is_core_of = UKR
+				is_controlled_by = ROOT
+			}
+		}
+
+		complete_effect = {
+			every_state = {
+				limit = {
+					is_core_of = UKR
+					is_controlled_by = ROOT
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = {
+					any_state = {
+						is_core_of = UKR
+						is_controlled_by = ROOT
+						NOT = { is_fully_controlled_by = ROOT }
+					}
+				}
+			}
+		}
+	}
+
+	operation_countenance = {
+
+		icon = generic_operation
+
+		allowed = {
+			is_literally_russia = yes
+		}
+
+		available = {
+			NOT = { has_war_with = ENG }
+			ENG = { has_war_with = PER }
+		}
+	
+		cancel_trigger = {
+			PER = { has_capitulated = yes }
+		}
+
+		visible = {
+			PER = { is_neighbor_of = ROOT }
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 50
+	
+		cost = 10
+	
+		modifier = {
+		}
+
+		targeted_modifier = {
+			tag = PER
+			defense_bonus_against = 2
+			attack_bonus_against = 2
+		}
+
+		complete_effect = {
+			set_global_flag = joint_occupy_iran
+			if = {
+				limit = { NOT = { has_war_with = PER } }
+				declare_war_on = { target = PER type = puppet_wargoal_focus }
+			}
+		}
+	
+		remove_effect = {
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	winter_counteroffensive = {
+
+		icon = generic_operation
+
+		allowed = {
+			is_literally_russia = yes
+		}
+
+		cost = 25
+	
+		available = {
+			has_war_with = GER
+			controls_state = 219
+			custom_trigger_tooltip = {
+				tooltip = is_winter
+				is_winter = yes
+			}
+			NOT = {
+				OR = {
+            		226 = { is_controlled_by = ROOT }
+            		202 = { is_controlled_by = ROOT }
+            		207 = { is_controlled_by = ROOT }
+            		242 = { is_controlled_by = ROOT }
+            		203 = { is_controlled_by = ROOT }
+            		206 = { is_controlled_by = ROOT }
+            		13 = { is_controlled_by = ROOT }
+            		12 = { is_controlled_by = ROOT }
+				}
+			}
+			OR = {
+	            234 = { NOT = { is_controlled_by = ROOT } }
+	            229 = { NOT = { is_controlled_by = ROOT } }
+            	205 = { NOT = { is_fully_controlled_by = ROOT } }
+	            245 = { NOT = { is_fully_controlled_by = ROOT } }
+	            238 = { NOT = { is_fully_controlled_by = ROOT } }
+	            236 = { NOT = { is_fully_controlled_by = ROOT } }
+	            217 = { NOT = { is_fully_controlled_by = ROOT } }
+	            219 = { NOT = { is_fully_controlled_by = ROOT } }
+	            229 = { NOT = { is_fully_controlled_by = ROOT } }
+	            260 = { NOT = { is_fully_controlled_by = ROOT } }
+	            AND = {
+            		246 = { NOT = { is_fully_controlled_by = ROOT } }
+            		263 = { NOT = { is_fully_controlled_by = ROOT } }
+	            }
+	        }
+		}
+	
+		cancel_trigger = {
+			hidden_trigger = {
+				OR = {
+            		226 = { is_controlled_by = ROOT }
+            		202 = { is_controlled_by = ROOT }
+            		203 = { is_controlled_by = ROOT }
+            		206 = { is_controlled_by = ROOT }
+            		207 = { is_controlled_by = ROOT }
+            		242 = { is_controlled_by = ROOT }
+            		13 = { is_controlled_by = ROOT }
+            		12 = { is_controlled_by = ROOT }
+					AND = {
+					    234 = { is_controlled_by = ROOT }
+			            229 = { is_controlled_by = ROOT }
+			        	205 = { is_fully_controlled_by = ROOT }
+			            245 = { is_fully_controlled_by = ROOT }
+			            238 = { is_fully_controlled_by = ROOT }
+			            236 = { is_fully_controlled_by = ROOT }
+			            217 = { is_fully_controlled_by = ROOT }
+			            219 = { is_fully_controlled_by = ROOT }
+			            229 = { is_fully_controlled_by = ROOT }
+			            260 = { is_fully_controlled_by = ROOT }
+			            OR = {
+			        		246 = { is_fully_controlled_by = ROOT }
+			        		263 = { is_fully_controlled_by = ROOT }
+			            }
+					}
+				}
+			}
+		}
+
+		visible = {
+			has_war_with = GER
+		}
+	
+		days_remove = 90
+	
+		modifier = {
+			army_speed_factor = 0.7
+			army_org_Factor = 0.9
+			winter_attrition = -3
+			army_core_attack_factor = 5
+		}
+
+		targeted_modifier = {
+			tag = FIN
+			attack_bonus_against = -1
+			defense_bonus_against = -1
+		}
+
+		remove_effect = {
+			clr_country_flag = winterpush_flag
+		}
+
+		fire_only_once = yes
+	
+        complete_effect = {
+        	set_country_flag = winterpush_flag
+        	set_country_flag = winterpush_over_flag
+        }
+
+		ai_will_do = {
+			factor = 9000
+		}
+	}
+
+	SOV_order_227 = {
+
+		icon = generic_army_support
+
+		allowed = {
+			is_literally_russia = yes
+		}
+
+		available = {
+			OR = {
+				surrender_progress > 0.35
+				AND = { 
+					surrender_progress > 0.05
+					any_enemy_country = {
+						UKR = { is_subject_of = PREV }
+						BLR = { is_subject_of = PREV }
+					}
+				}
+			}
+		}
+
+		cost = 25
+		fire_only_once = yes
+		visible = {
+			any_enemy_country = {
+				is_major = yes
+			}
+		}
+
+		days_remove = 720
+
+		modifier = {
+			army_core_defence_factor = 0.75
+		}
+
+		ai_will_do = {
+			factor = 9000
+		}
+	}
+
+	operation_uranus = {
+
+		icon = generic_operation
+
+		allowed = {
+			is_literally_russia = yes
+		}
+
+		available = {
+			has_war_with = GER
+			GER = { has_country_flag = citadel_flag }
+			custom_trigger_tooltip = {
+				tooltip = is_winter
+				is_winter = yes
+			}
+			NOT = {
+	            any_country = {
+	                has_full_control_of_state = 217
+	                OR = {
+	                    tag = GER
+	                    is_subject_of = GER
+	                }
+	            }
+	        }
+	        NOT = {
+	            any_country = {
+	                has_full_control_of_state = 229
+	                OR = {
+	                    tag = GER
+	                    is_subject_of = GER
+	                }
+	            }
+	        }
+		}
+
+		cancel_trigger = {
+			hidden_trigger = {
+				OR = {
+            		226 = { is_controlled_by = ROOT }
+            		202 = { is_controlled_by = ROOT }
+            		206 = { is_controlled_by = ROOT }
+            		13 = { is_controlled_by = ROOT }
+            		12 = { is_controlled_by = ROOT }
+					AND = {
+					    234 = { is_controlled_by = ROOT }
+			            229 = { is_controlled_by = ROOT }
+			            220 = { is_fully_controlled_by = ROOT }
+			        	205 = { is_fully_controlled_by = ROOT }
+			            245 = { is_fully_controlled_by = ROOT }
+			            238 = { is_fully_controlled_by = ROOT }
+			            236 = { is_fully_controlled_by = ROOT }
+			            217 = { is_fully_controlled_by = ROOT }
+			            219 = { is_fully_controlled_by = ROOT }
+			            229 = { is_fully_controlled_by = ROOT }
+			            260 = { is_fully_controlled_by = ROOT }
+			            OR = {
+			        		246 = { is_fully_controlled_by = ROOT }
+			        		263 = { is_fully_controlled_by = ROOT }
+			            }
+					}
+				}
+			}
+		}
+
+		visible = {
+			has_war_with = GER
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 150
+	
+		cost = 25
+	
+		modifier = {
+			army_speed_factor = 0.8
+			army_org_Factor = 0.7
+			winter_attrition = -2
+			army_core_attack_factor = 2
+		}
+
+		targeted_modifier = {
+			tag = FIN
+			attack_bonus_against = -1
+			defense_bonus_against = -1
+		}
+
+		complete_effect = {
+			set_country_flag = up_uranus_flag
+		}
+	
+		remove_effect = {
+			clr_country_flag = up_uranus_flag
+		}
+
+		ai_will_do = {
+			factor = 9000000
+		}
+	}
+
+	operation_bagration = {
+
+		icon = generic_operation
+
+		allowed = {
+			is_literally_russia = yes
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = is_summer
+				is_summer = yes
+			}
+			has_war_with = GER
+			OR = {
+				206 = { NOT = { is_controlled_by = ROOT } }
+	        	202 = { NOT = { is_controlled_by = ROOT } }
+			}
+			OR = {
+				date > 1944.1.1
+				GER = { has_country_flag = out_of_steam_flag }
+			}
+		}
+	
+		cancel_trigger = {
+			hidden_trigger = {
+		        206 = { is_fully_controlled_by = ROOT }
+	        	202 = { is_fully_controlled_by = ROOT }
+			}
+		}
+
+		visible = {
+			has_war_with = GER
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 100
+	
+		cost = 25
+	
+		modifier = {
+			army_speed_factor = 0.4
+			army_org_Factor = 0.6
+		}
+
+		targeted_modifier = {
+			tag = FIN
+			attack_bonus_against = 0.3
+			defense_bonus_against = 0.3
+		}
+
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 0.5
+			defense_bonus_against = 0.5
+		}
+
+		complete_effect = {
+			set_country_flag = bagration_time_flag
+		}
+	
+		remove_effect = {
+			clr_country_flag = bagration_time_flag
+		}
+
+		ai_will_do = {
+			factor = 9000000
+		}
+	}
+}

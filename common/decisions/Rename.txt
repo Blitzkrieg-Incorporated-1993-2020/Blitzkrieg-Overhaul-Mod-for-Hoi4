@@ -1,0 +1,434 @@
+rename_states = {
+	"Sikeleia" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 115
+			}
+		}
+		complete_effect = {
+			115 = {
+				set_state_name = "Sikeleia"
+			}
+			set_province_name = { id = 10074 name = "Panoramos"}
+			set_province_name = { id = 4159 name = "Messene"}
+		}
+	}
+
+	"Neapolis" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 117
+			}
+		}
+		complete_effect = {
+			117 = {
+				set_state_name = "Kampania"
+			}
+			set_province_name = { id = 819 name = "Neapolis"}
+		}
+	}
+
+	"Kalavria" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 156
+			}
+		}
+		complete_effect = {
+			156 = {
+				set_state_name = "Kalavria"
+			}
+			set_province_name = { id = 11837 name = "Tarantas"}
+		}
+	}
+
+	"Aulonia" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 790
+			}
+		}
+		complete_effect = {
+			790 = {
+				set_state_name = "Aulonia"
+			}
+			set_province_name = { id = 11767 name = "Aulon"}
+		}
+	}
+
+	"Opsikion" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 340
+			}
+		}
+		complete_effect = {
+			340 = {
+				set_state_name = "Opsikion"
+			}
+			set_province_name = { id = 947 name = "Messene"}
+		}
+	}
+
+	"Constantinople" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 341
+			}
+		}
+		complete_effect = {
+			341 = {
+				set_state_name = "Constantinople"
+			}
+			set_province_name = { id = 9833 name = "Constantinople"}
+		}
+	}
+
+	"Prusa" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 347
+			}
+		}
+		complete_effect = {
+			347 = {
+				set_state_name = "Prusa"
+			}
+			set_province_name = { id = 890 name = "Prusa"}
+		}
+	}
+
+	"Smyrna" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 339
+			}
+		}
+		complete_effect = {
+			339 = {
+				set_state_name = "Smyrna"
+			}
+			set_province_name = { id = 4112 name = "Smyrna"}
+		}
+	}
+
+	"Pisidia" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 343
+			}
+		}
+		complete_effect = {
+			343 = {
+				set_state_name = "Pisidia"
+			}
+		}
+	}
+
+	"Attaleia" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 342
+			}
+		}
+		complete_effect = {
+			342 = {
+				set_state_name = "Attaleia"
+			}
+			set_province_name = { id = 1005 name = "Attaleia"}
+		}
+	}
+
+	"Ikonion" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 346
+			}
+		}
+		complete_effect = {
+			346 = {
+				set_state_name = "Ikonion"
+			}
+			set_province_name = { id = 940 name = "Ikonion"}
+		}
+	}
+
+	"Cibyrrhaeot" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 345
+			}
+		}
+		complete_effect = {
+			345 = {
+				set_state_name = "Cibyrrhaeot"
+			}
+		}
+	}
+
+	"Ankyra" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 49
+			}
+		}
+		complete_effect = {
+			49 = {
+				set_state_name = "Ankyra"
+			}
+			set_province_name = { id = 11747 name = "Ankyra"}
+		}
+	}
+
+	"Paphlagonia" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 356
+			}
+		}
+		complete_effect = {
+			356 = {
+				set_state_name = "Paphlagonia"
+			}
+		}
+	}
+
+	"Kappadokia" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 348
+			}
+		}
+		complete_effect = {
+			348 = {
+				set_state_name = "Kappadokia"
+			}
+		}
+	}
+
+	"Cilicia" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 344
+			}
+		}
+		complete_effect = {
+			344 = {
+				set_state_name = "Cilicia"
+			}
+			set_province_name = { id = 9893 name = "Adata"}
+			set_province_name = { id = 11746 name = "Adanos"}
+		}
+	}
+
+	"Pontos" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 355
+			}
+		}
+		complete_effect = {
+			355 = {
+				set_state_name = "Pontos"
+			}
+		}
+	}
+
+	"Sebasteia" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 349
+			}
+		}
+		complete_effect = {
+			349 = {
+				set_state_name = "Sebasteia"
+			}
+		}
+	}
+
+	"Melitene" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 350
+			}
+		}
+		complete_effect = {
+			350 = {
+				set_state_name = "Melitene"
+			}
+		}
+	}
+
+	"Trapezous" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 354
+			}
+		}
+		complete_effect = {
+			354 = {
+				set_state_name = "Trapezous"
+			}
+			set_province_name = { id = 9932 name = "Trapezous"}
+		}
+	}
+
+	"Theodosia" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 353
+			}
+		}
+		complete_effect = {
+			353 = {
+				set_state_name = "Theodosia"
+			}
+		}
+	}
+
+	"Amida" = {
+		visible = {
+			original_tag = GRE
+		}
+		fire_only_once = yes
+		cost = 0
+		available = {
+			tag = GRE
+			GRE = {
+				owns_state = 352
+			}
+		}
+		complete_effect = {
+			352 = {
+				set_state_name = "Amida"
+			}
+		}
+	}
+

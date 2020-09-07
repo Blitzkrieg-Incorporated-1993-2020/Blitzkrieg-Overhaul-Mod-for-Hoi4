@@ -1,0 +1,514 @@
+leader_traits = {
+	### new traits
+	# monarchist booster
+	ham_monarchist = {
+		random = no
+		monarchism_drift = 0.005
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	# communism booster
+	ham_revolutionary = {
+		random = no
+		communism_drift = 0.003
+		unionism_drift = 0.003
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	# democratic booster
+	ham_democrat = {
+		random = no
+		democratic_drift = 0.005
+		conservative_drift = 0.005
+		social_democratic_drift = 0.005
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	# fascism booster
+	ham_nationalist = {
+		random = no
+		fascism_drift = 0.005
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	# conservative
+	ham_conservative = {
+		random = no
+		drift_defence_factor = 0.1
+		conservative_drift = 0.005
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	# psychopathic assaulter
+	ham_psychopathic_general = {
+		random = no
+		army_infantry_attack_factor = 0.1
+		army_morale_factor = -0.05
+		attrition = 0.05
+		
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+	# armchair general
+	ham_armchair_general = {
+		random = no
+		experience_gain_army = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# ex-special forces
+	ham_ex_special_forces = {
+		random = no
+		training_time_army_factor = -0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# tactical genius
+	ham_tactical_genius = {
+		random = no
+		special_forces_attack_factor = 0.1
+	    special_forces_defence_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# recruiter - dummy to provide description
+	ham_recruiter = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# popular general
+	ham_popular_general = {
+		random = no
+		army_morale_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# strategic genius
+	ham_strategic_genius = {
+		random = no
+		army_org_factor = 0.05
+		army_bonus_air_superiority_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# naive militarist
+	ham_naive_militarist = {
+		random = no
+		air_cas_present_factor = 0.1
+		air_strategic_bomber_attack_factor = 0.05
+		air_strategic_bomber_bombing_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# youth recruiter
+	ham_youth_recruiter = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# social cohesive
+	ham_social_cohesive = {
+		random = no
+		stability_weekly = 0.001
+		war_support_weekly = 0.001
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# national pride
+	ham_national_pride = {
+		random = no
+		drift_defence_factor = 0.25
+		enemy_partisan_effect = -0.1
+		foreign_subversive_activites = -0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# enlightened
+	ham_enlightened = {
+		random = no
+		consumer_goods_factor = -0.025
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# scientific mind
+	ham_scientific_mind = {
+		random = no
+		research_speed_factor = -0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# political youth
+	ham_political_youth = {
+		random = no
+		political_power_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# sweet talker
+	ham_sweet_talker = {
+		random = no
+		opinion_gain_monthly_factor = 0.15
+		trade_opinion_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# skilled negotiator
+	ham_skilled_negotiator = {
+		random = no
+		enemy_justify_war_goal_time = 0.25
+		foreign_subversive_activites = -0.10
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# new ideological crusader
+	ham_ideological_crusader_2 = {
+		random = no
+		justify_war_goal_time = -0.25
+		opinion_gain_monthly_same_ideology_factor = 0.5
+		
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+	# polyglot
+	ham_polyglot = {
+		random = no
+		political_power_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# lovable buffoon
+	ham_buffoon = {
+		random = no
+		political_power_factor = 0.1
+		trade_opinion_factor = -0.10
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# cooperative
+	ham_cooperative = {
+		random = no
+		research_speed_factor = -0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# stickler
+	ham_stickler = {
+		random = no
+		consumer_goods_factor = -0.025
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# refitter
+	ham_refitter = {
+		random = no
+		conversion_cost_civ_to_mil_factor = -0.5
+		conversion_cost_mil_to_civ_factor = -0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# industrialist
+	ham_industrialist = {
+		random = no
+		production_speed_industrial_complex_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# unionist
+	ham_unionist = {
+		random = no
+		industrial_capacity_factory = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# wealthy investor
+	ham_wealthy_investor = {
+		random = no
+		production_speed_buildings_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# paranoid
+	ham_paranoid = {
+		random = no
+		production_speed_bunker_factor = 0.2
+		production_speed_coastal_bunker_factor = 0.2
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# eagle eyed
+	ham_eagle_eyed = {
+		random = no
+		production_speed_anti_air_building_factor = 0.25
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# likes sailors
+	ham_likes_sailors = {
+		random = no
+		production_speed_dockyard_factor = 0.2
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# nation builder
+	ham_nation_builder = {
+		random = no
+		production_speed_infrastructure_factor = 0.25
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# oil baron
+	ham_oil_baron = {
+		random = no
+		production_speed_synthetic_refinery_factor = 0.25
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# future developer
+	ham_future_developer = {
+		random = no
+		production_speed_infrastructure_factor = 0.1
+		production_speed_nuclear_reactor_factor = 0.25
+		
+		ai_will_do = {
+			factor = 0.85
+		}
+	}
+	# strategic defender
+	ham_strategic_defender = {
+		random = no
+		production_speed_air_base_factor = 0.15
+		production_speed_radar_station_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# geared for war
+	ham_geared_for_war = {
+		random = no
+		industry_air_damage_factor = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# mathematical engineer
+	ham_mathematical_engineer = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# nuclear scientist
+	ham_nuclear_scientist_new = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# sophisticated arsonist
+	ham_sophisticated_arsonist = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# crack_addict
+	ham_crack_addict = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# air_enthusiast
+	ham_air_enthusiast = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# naval enthusiast
+	ham_naval_enthusiast = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# industry innovator
+	ham_industry_innovator = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# oil synthesist
+	ham_oil_synthesist = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# excavator
+	ham_excavator = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# entrepreneur
+	ham_entrepreneur = {
+		random = no
+		line_change_production_efficiency_factor = 0.1
+		production_factory_start_efficiency_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# gun nut
+	ham_gun_nut = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#industrial concern
+	excavation_concern = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#alpha male
+	ham_alpha_male = {
+		random = no
+		subjects_autonomy_gain = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#local historian
+	ham_local_historian = {
+		random = no
+		autonomy_gain = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	## franz todt
+	fortification_engineer = {
+		#sprite = 10
+		random = no
+		production_speed_bunker_factor = 0.2
+		production_speed_coastal_bunker_factor = 0.2
+		production_speed_anti_air_building_factor = 0.2
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	## louis st laurent
+	compassionate_gentleman = {
+		random = no
+		##sprite = 13
+		opinion_gain_monthly_factor = 0.15
+		enemy_partisan_effect = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	## c d howe
+	captain_of_industry = {
+		#sprite = 10
+		random = no
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_infrastructure_factor = 0.1
+		production_speed_synthetic_refinery_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

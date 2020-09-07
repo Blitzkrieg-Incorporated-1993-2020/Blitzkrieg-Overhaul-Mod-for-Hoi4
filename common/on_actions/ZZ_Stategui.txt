@@ -1,0 +1,124 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = coring_ai
+						option = NOT_CORING
+					}
+				}
+				set_variable = { global.CORING_BLOCKED = 1 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = claim_ai
+						option = NOT_CLAIM
+					}
+				}
+				set_variable = { global.CLAIM_BLOCKED = 1 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = coring_cost_setting
+						option = MODIFY
+					}
+				}
+				every_state = {
+					set_temp_variable = { state_population_m = state_population_k }
+					divide_temp_variable = { state_population_m = 1000 }
+					add_to_variable = { GLOBAL.STATE_POPULATION_AVE = state_population_m }
+					add_to_temp_variable = { num_states = 1 }
+				}
+				set_variable = { GLOBAL.CORE_COST_FACTOR = 2054.245 } #default 2054M
+				divide_variable = { GLOBAL.CORE_COST_FACTOR = GLOBAL.STATE_POPULATION_AVE }
+				divide_variable = { GLOBAL.CORE_COST_FACTOR = 10 }
+				multiply_variable = { GLOBAL.STATE_POPULATION_AVE = 1000 }
+				divide_variable = { GLOBAL.STATE_POPULATION_AVE = num_states }
+			}
+		}
+	}
+	
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = done_daily }
+				}
+				set_global_flag = { flag = done_daily value = 1 days = 1 }
+				every_state = {
+					limit = {
+						has_variable = progress
+					}
+					if = {
+						limit = {
+							is_controlled_by = coring_country
+						}
+						add_to_variable = { progress = daily_progress }
+						if = {
+							limit = {
+								check_variable = { progress > -1 }
+							}
+							add_core_of = coring_country
+							remove_claim_by = coring_country
+							var:coring_country = {
+								add_to_array = { coring_complete_popup = PREV }
+								clear_variable = PREV.rule_duration@this
+							}
+							clear_variable = daily_progress
+							clear_variable = progress
+							clear_variable = coring_country
+						}
+					}
+					if = {
+						limit = {
+							NOT = { is_owned_by = coring_country }
+						}
+						clear_variable = daily_progress
+						clear_variable = progress
+						clear_variable = coring_country
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					ROOT = {
+						has_variable = claim_power@prev
+						NOT = { has_wargoal_against = PREV }
+						NOT = { is_justifying_wargoal_against = PREV }
+					}
+				}
+				ROOT = {
+					subtract_from_variable = { claim_power@prev = 1 }
+					if = {
+						limit = {
+							check_variable = { claim_power@prev < 0 }
+						}
+						clear_variable = claim_power@prev
+					}
+				}
+			}
+			every_owned_state = {
+				limit = {
+					NOT = { is_core_of = ROOT }
+					is_controlled_by = ROOT
+				}
+				add_to_variable = { rule_duration@ROOT = 0.5 }
+			}
+		}
+	}
+
+	# During justifying wargoals
+	# triggered daily, so make sure there is a sink somewhere not firing events
+	# country, FROM = target nation
+	on_justifying_wargoal_pulse = {
+		effect = {
+			get_claim_power_daily_effect = yes
+			add_to_variable = { claim_power@FROM = claim_power_daily }
+		}
+	}
+
+}

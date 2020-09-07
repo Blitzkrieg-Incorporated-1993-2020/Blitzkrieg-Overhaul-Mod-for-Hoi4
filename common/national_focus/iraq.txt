@@ -1,0 +1,3094 @@
+focus_tree = {
+	id = iraqi_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = IRQ
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 50 y = 1100 }
+
+	### POLITICAL
+	
+	focus = {
+		id = IRQ_suppress_shia_revolts
+		icon = GFX_focus_generic_strike_at_democracy1
+		mutually_exclusive = { focus = IRQ_accept_shia_differences focus = IRQ_extend_british_mandate}
+		x = 10
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 9000
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			NOT = {
+				OR = {
+					has_idea = IRQ_muhammad_as_sadr
+					has_idea = IRQ_husain_al_radi
+				}
+			}
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			unlock_decision_tooltip = IRQ_suppress_shia_1
+		}
+	}
+	
+	focus = {
+		id = IRQ_accept_shia_differences
+		icon = GFX_focus_generic_diplomatic_treaty
+		mutually_exclusive = { focus = IRQ_suppress_shia_revolts focus = IRQ_extend_british_mandate }
+		x = 8
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = IRQ_religious_revolts_mended
+				remove_idea = IRQ_religious_revolts_1
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_extend_british_mandate
+		icon = GFX_focus_chi_british_cooperation
+		mutually_exclusive = { focus = IRQ_suppress_shia_revolts focus = IRQ_accept_shia_differences }
+		x = 6
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			country_exists = ENG
+			NOT = {
+				has_war_with = ENG
+			}
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			create_country_leader = {
+					name = "Nuri al-Said"
+					desc = "POLITICS_NURI_AL_SAID_DESC"
+					picture = "Portrait_Iraq_Nuri_al_Said.dds"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						#
+					}
+				}
+			set_party_name = { ideology = democratic long_name = IRQ_covenant_party name = IRQ_covenant_party }
+			ENG = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = IRQ_extended_british_mandate
+				}
+			}
+			add_ideas = {
+				democratic_influence
+			}
+			ENG = {
+				give_guarantee = IRQ
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_royal_mandate
+		icon = GFX_focus_generic_home_defense
+		prerequisite = { focus = IRQ_extend_british_mandate }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_extend_british_mandate
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			country_exists = ENG
+			NOT = {
+				has_war_with = ENG
+			}
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			}
+			ENG = { country_event = generic.2 }
+			remove_ideas = IRQ_nationalism_idea_1
+		}
+	}
+	
+	focus = {
+		id = IRQ_consolidate_power
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = IRQ_suppress_shia_revolts focus = IRQ_accept_shia_differences }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_accept_shia_differences
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = IRQ_king_ghazi_1
+		}
+		
+		bypass = {
+			has_country_flag = IRQ_king_ghazi_dead
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = IRQ_king_ghazi_2
+				remove_idea = IRQ_king_ghazi_1
+			}
+		}
+	}
+	
+	### DEFY COUP
+	
+	focus = {
+		id = IRQ_defy_bakr_sidqi_coup
+		icon = GFX_focus_irq_defy_bakr_sidqi
+		prerequisite = { focus = IRQ_accept_shia_differences }
+		mutually_exclusive = { focus = IRQ_support_bakr_sidqi_coup }
+		relative_position_id = IRQ_accept_shia_differences
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 0
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = IRQ_bakr_sidqi_focus_unavailable_tooltip
+				has_country_flag = IRQ_bakr_sidqi_unavailable
+			}
+		}
+
+		completion_reward = {
+			remove_unit_leader = 999
+			set_country_flag = IRQ_bakr_sidqi_unavailable
+			swap_ideas = {
+				add_idea = IRQ_kurdish_unrest_2
+				remove_idea = IRQ_kurdish_unrest_1
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_local_self_management_focus
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = IRQ_defy_bakr_sidqi_coup }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_defy_bakr_sidqi_coup
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 50
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_ideas = IRQ_local_self_management
+		}
+	}
+	
+	focus = {
+		id = IRQ_stabilise_the_country
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = IRQ_local_self_management_focus }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_local_self_management_focus
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 50
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_ideas = IRQ_stable_country_1
+		}
+	}
+
+	focus = {
+		id = IRQ_stronger_leftwing
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = IRQ_stabilise_the_country }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_stabilise_the_country
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 50
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = IRQ_leftwinged_self_management
+				remove_idea = IRQ_local_self_management
+			}
+		}
+	}
+	
+	### ALLY MIDDLE EAST
+	
+	focus = {
+		id = IRQ_mend_kurdish_revolts
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = IRQ_support_bakr_sidqi_coup focus = IRQ_defy_bakr_sidqi_coup }
+		relative_position_id = IRQ_defy_bakr_sidqi_coup
+		x = 1
+		y = 1
+		cost = 20
+		ai_will_do = {
+			factor = 60
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = IRQ_kurdish_unrest_1
+		}
+		
+		bypass = {
+			NOT = {
+				has_idea = IRQ_kurdish_unrest_1
+				has_idea = IRQ_kurdish_unrest_2
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = IRQ_kurdish_unrest_1
+				}
+				remove_ideas = IRQ_kurdish_unrest_1
+			}
+			if = {
+				limit = {
+					has_idea = IRQ_kurdish_unrest_2
+				}
+				remove_ideas = IRQ_kurdish_unrest_2
+			}
+		}
+	}
+	
+	
+	focus = {
+		id = IRQ_alliance_with_turkey
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = IRQ_mend_kurdish_revolts }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_mend_kurdish_revolts
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 40
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			TUR = { is_puppet = no }
+			country_exists = TUR
+			NOT = {
+				has_war_with = TUR
+			}
+		}
+		
+		bypass = {
+			NOT = {
+				country_exists = TUR
+			}
+		}
+
+		completion_reward = {
+			TUR = { 
+				country_event = { id = iraqi.1 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_sort_border_dispute_with_iran
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = IRQ_mend_kurdish_revolts }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_mend_kurdish_revolts
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			country_exists = PER
+			NOT = {
+				has_war_with = PER
+			}
+		}
+		
+		bypass = {
+			NOT = {
+				country_exists = PER
+			}
+
+		}
+
+		completion_reward = {
+			PER = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = IRQ_solved_border_dispute
+				}
+			}
+		}
+	}
+	
+	### SIDQI COUP
+	
+	focus = {
+		id = IRQ_support_bakr_sidqi_coup
+		icon = GFX_focus_jap_cast_the_die
+		prerequisite = { focus = IRQ_suppress_shia_revolts }
+		prerequisite = { focus = IRQ_consolidate_power }
+		mutually_exclusive = { focus = IRQ_defy_bakr_sidqi_coup }
+		relative_position_id = IRQ_consolidate_power
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 900
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = IRQ_king_ghazi_2
+		}
+		
+		bypass = {
+			has_country_flag = IRQ_king_ghazi_dead
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = IRQ_king_ghazi_3
+				remove_idea = IRQ_king_ghazi_2
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_the_bakr_sidqi_coup
+		icon = GFX_focus_irq_support_bakr_sidqi_coup
+		prerequisite = { focus = IRQ_support_bakr_sidqi_coup }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_support_bakr_sidqi_coup
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Hikmat Sulayman"
+				desc = "POLITICS_HIKMAT_SULAYMAN_DESC"
+				picture = "Portrait_Iraq_Hikmat_Sulayman.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_kings_radio_station
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = IRQ_the_bakr_sidqi_coup }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_the_bakr_sidqi_coup
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = IRQ_king_ghazi_3
+		}
+		
+		bypass = {
+			has_country_flag = IRQ_king_ghazi_dead
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = IRQ_king_ghazi_4
+				remove_idea = IRQ_king_ghazi_3
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_claim_kuwait
+		icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
+		prerequisite = { focus = IRQ_the_bakr_sidqi_coup }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_the_bakr_sidqi_coup
+		x = 3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 60
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			656 = {
+				add_claim_by = IRQ
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_arrest_the_king
+		icon = GFX_focus_rom_handle_king
+		prerequisite = { focus = IRQ_kings_radio_station }
+		mutually_exclusive = { focus = IRQ_grant_more_powers_to_the_king }
+		relative_position_id = IRQ_kings_radio_station
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 0
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = IRQ_king_ghazi_4
+		}
+		
+		bypass = {
+			has_country_leader = { ruling_only = yes name = "King Ghazi I" }
+		}
+
+		completion_reward = {
+			remove_ideas = IRQ_king_ghazi_4
+			add_stability = -0.20
+		}
+	}
+	
+	focus = {
+		id = IRQ_path_down_to_fascism
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = IRQ_arrest_the_king focus = IRQ_grant_more_powers_to_the_king }
+		mutually_exclusive = { focus = IRQ_purge_rightwing_elements }
+		relative_position_id = IRQ_arrest_the_king
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			fascism > 0.3
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = IRQ_arrest_the_king
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = no
+					}
+					create_country_leader = {
+						name = "Rashid Ali al-Gaylani"
+						desc = "POLITICS_RASHID_ALI_AL_GAYLANI_DESC"
+						picture = "Portrait_Iraq_Rashid_Ali_al_Gaylani.dds"
+						expire = "1965.1.1"
+						ideology = fascism_ideology
+						traits = {
+							#
+						}
+					}
+				}
+				swap_ideas = {
+					add_idea = IRQ_nationalism_idea_2
+					remove_idea = IRQ_nationalism_idea_1
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = IRQ_grant_more_powers_to_the_king
+					NOT = {
+						has_country_flag = IRQ_king_ghazi_dead
+					}
+				}
+
+				add_popularity = { ideology = monarchism popularity = 0.4 }
+				set_politics = {
+					ruling_party = monarchism
+					elections_allowed = no
+				}
+				create_country_leader = {
+					name = "King Ghazi I"
+					desc = "POLITICS_GHAZI_I_DESC"
+					picture = "GFX_portrait_iraq_ghazi"
+					expire = "1965.1.1"
+					ideology = absolutism
+					traits = {
+						fascist_sympathies
+					}
+				}
+			}
+			else = {
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+				swap_ideas = {
+					add_idea = IRQ_nationalism_idea_2
+					remove_idea = IRQ_nationalism_idea_1
+				}
+			}
+			if = {
+				limit = {
+					has_country_leader = { ruling_only = yes name = "King Ghazi I" }
+				}
+				set_party_name = { ideology = fascism long_name = IRQ_house_of_hashim_long name = IRQ_house_of_hashim }
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+				swap_ideas = {
+					add_idea = IRQ_nationalism_idea_2
+					remove_idea = IRQ_nationalism_idea_1
+				}
+				create_country_leader = {
+					name = "King Ghazi I"
+					desc = "POLITICS_GHAZI_I_DESC"
+					picture = "GFX_portrait_iraq_ghazi"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+						fascist_sympathies
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_leader = { ruling_only = yes name = "'Abd al-Ilah" }
+				}
+				IRQ = { country_event = iraqi.7 }
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_look_to_fascist_europe
+		icon = GFX_focus_irq_look_to_fascist_europe
+		prerequisite = { focus = IRQ_path_down_to_fascism }
+		mutually_exclusive = { focus = IRQ_al_ahali_group focus = IRQ_workers_peril focus = IRQ_strong_as_we_are }
+		relative_position_id = IRQ_path_down_to_fascism
+		x = 0
+		y = 1
+		cost = 16
+		ai_will_do = {
+			factor = 70
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			date > 1940.10.1
+			GER = { is_faction_leader = yes }
+			GER = { is_puppet = no }
+			ITA = { is_puppet = no }
+			country_exists = ITA
+			country_exists = GER
+			NOT = {
+				has_war_with = ITA
+				has_war_with = GER
+			}
+			OR = {
+				ITA = {
+					has_government = fascism
+				}
+				GER = {
+					has_government = fascism
+				}
+			}
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					GER = {
+						has_government = fascism
+					}
+				}
+				GER = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = IRQ_looks_to_us_for_guidance
+					}
+				}
+				GER = {
+					give_guarantee = IRQ
+				}
+			}
+			if = {
+				limit = {
+					ITA = {
+						has_government = fascism
+					}
+				}
+				ITA = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = IRQ_looks_to_us_for_guidance
+					}
+				}
+			}
+			hidden_effect = {
+				add_ideas = IRQ_axis_influence
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_baghdad_tech_group
+		icon = GFX_goal_tfv_generic_tech_sharing
+		prerequisite = { focus = IRQ_look_to_ourselves }
+		mutually_exclusive = { focus = IRQ_look_to_ourselves }
+		relative_position_id = IRQ_look_to_ourselves
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			is_faction_leader = yes
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_to_tech_sharing_group = IRQ_baghdad_pact_tech_group
+			every_other_country = {
+				limit = {
+					is_in_faction_with = IRQ
+				}
+				add_to_tech_sharing_group = IRQ_baghdad_pact_tech_group
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_italian_cooperation
+		icon = GFX_focus_irq_italian_cooperation
+		prerequisite = { focus = IRQ_look_to_fascist_europe }
+		relative_position_id = IRQ_look_to_fascist_europe
+		x = 2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 60
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			ITA = {
+				has_government = fascism
+			}
+			NOT = {
+				has_war_with = ITA
+			}
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_to_tech_sharing_group = IRQ_joint_air_innovation_tech_group
+			ITA = { add_to_tech_sharing_group = IRQ_joint_air_innovation_tech_group }
+			if = {
+				limit = {
+					ITA = {
+						is_in_faction_with = GER
+					}
+				}
+				GER = { add_to_tech_sharing_group = IRQ_joint_air_innovation_tech_group }
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_license_italian_equipment
+		icon = GFX_focus_generic_license_production
+		prerequisite = { focus = IRQ_italian_cooperation }
+		relative_position_id = IRQ_italian_cooperation
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 50
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			OR = {
+				ITA = {
+					has_government = fascism
+				}
+			}
+			NOT = {
+				has_war_with = ITA
+			}
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_relation_modifier = {
+				target = ITA
+				modifier = ROM_foreign_motor_company
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_alliance_with_the_axis
+		icon = GFX_goal_tripartite_pact
+		prerequisite = { focus = IRQ_look_to_fascist_europe }
+		relative_position_id = IRQ_look_to_fascist_europe
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1000000
+				date > 1940.10.1
+				is_historical_focus_on = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			is_in_faction = no
+			GER = { is_faction_leader = yes }
+			NOT = {
+				has_war_with = GER
+				has_war_with = ITA
+			}
+		}
+		
+		bypass = {
+			is_in_faction_with = GER
+		}
+
+		completion_reward = {
+			GER = { country_event = generic.2 }
+			IRQ = {
+				diplomatic_relation = {
+					country = ENG
+					relation = military_access
+					active = no
+				}
+			}
+			ENG = {
+				diplomatic_relation = {
+					country = IRQ
+					relation = military_access
+					active = no
+				}
+			}
+			TUR = {
+				diplomatic_relation = {
+					country = IRQ
+					relation = guarantee
+					active = no
+				}
+			}
+			IRQ = {
+				diplomatic_relation = {
+					country = TUR
+					relation = guarantee
+					active = no
+				}
+			}
+		}
+	}
+    
+   	focus = {
+		id = IRQ_restore_neoassyrian_claims
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = IRQ_alliance_with_the_axis }
+		relative_position_id = IRQ_look_to_fascist_europe
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 0
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			292 = {
+                add_claim_by = IRQ
+            }
+            455 = {
+                add_claim_by = IRQ
+            }
+            680 = {
+                add_claim_by = IRQ
+            }
+            554 = {
+                add_claim_by = IRQ
+            }
+            677 = {
+                add_claim_by = IRQ
+            }
+            533 = {
+                add_claim_by = IRQ
+            }
+            454 = {
+                add_claim_by = IRQ
+            }
+            453 = {
+                add_claim_by = IRQ
+            }
+            446 = {
+                add_claim_by = IRQ
+            }
+            447 = {
+                add_claim_by = IRQ
+            }
+            452 = {
+                add_claim_by = IRQ
+            }
+            456 = {
+                add_claim_by = IRQ
+            }
+            457 = {
+                add_claim_by = IRQ
+            }
+            350 = {
+                add_claim_by = IRQ
+            }
+            349 = {
+                add_claim_by = IRQ
+            }
+            344 = {
+                add_claim_by = IRQ
+            }
+            348 = {
+                add_claim_by = IRQ
+            }
+		}
+	}
+	
+	focus = {
+		id = IRQ_defied_british_treaty
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		prerequisite = { focus = IRQ_alliance_with_turkey focus = IRQ_sort_border_dispute_with_iran }
+		relative_position_id = IRQ_alliance_with_turkey
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 80
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = IRQ_anglo_iraqi_treaties
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+			swap_ideas = {
+				add_idea = export_focus
+				remove_idea = IRQ_anglo_iraqi_treaties
+			}
+			ENG = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = IRQ_defy_british_treaty
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_strong_as_we_are
+		icon = GFX_focus_rom_royal_dictatorship
+		prerequisite = { focus = IRQ_path_down_to_fascism focus = IRQ_purge_rightwing_elements }
+		mutually_exclusive = { focus = IRQ_al_ahali_group focus = IRQ_workers_peril focus = IRQ_look_to_fascist_europe }
+		relative_position_id = IRQ_purge_rightwing_elements
+		x = 3
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 40
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			date > 1941.1.1
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+			add_ideas = nationalism
+			}
+			if = {
+				limit = {
+					has_idea = IRQ_nationalism_idea_1
+					}
+					swap_ideas = {
+						remove_idea = IRQ_nationalism_idea_1
+						add_idea = IRQ_nationalist_government
+					}
+				}
+			if = {
+				limit = {
+					has_idea = IRQ_nationalism_idea_2
+				}
+				swap_ideas = {
+					remove_idea = IRQ_nationalism_idea_2
+					add_idea = IRQ_nationalist_government
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_look_to_ourselves
+		icon = GFX_focus_irq_defy_bakr_sidqi
+		prerequisite = { focus = IRQ_strong_as_we_are }
+		mutually_exclusive = {  }
+		relative_position_id = IRQ_purge_rightwing_elements
+		x = 3
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			is_in_faction = no
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction = IRQ_baghdad_pact
+			if = {
+				limit = {
+						has_completed_focus = IRQ_sort_border_dispute_with_iran
+					}
+					PER = {	country_event = generic.2 }
+				}
+			if = {
+				limit = {
+					IRQ = {
+						has_country_flag = IRQ_turkey_signed_alliance
+					}
+				}
+			TUR = { country_event = generic.2 }
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_grant_more_powers_to_the_king
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = IRQ_kings_radio_station }
+		mutually_exclusive = { focus = IRQ_arrest_the_king }
+		relative_position_id = IRQ_kings_radio_station
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 10000
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = IRQ_king_ghazi_4
+		}
+		
+		bypass = {
+			OR = {
+				has_country_leader = { ruling_only = yes name = "Ghazi I" }
+				has_country_flag = IRQ_king_ghazi_dead
+			}
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = IRQ_king_ghazi_5
+				remove_idea = IRQ_king_ghazi_4
+			}
+		}
+	}
+	
+		
+	focus = {
+		id = IRQ_purge_rightwing_elements
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		prerequisite = { focus = IRQ_grant_more_powers_to_the_king focus = IRQ_stronger_leftwing }
+		mutually_exclusive = { focus = IRQ_path_down_to_fascism }
+		relative_position_id = IRQ_defy_bakr_sidqi_coup
+		x = 1
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 50
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = IRQ_nationalism_idea_1
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			remove_ideas = IRQ_nationalism_idea_1
+			if = {
+				limit = {
+					has_idea = IRQ_stable_country_1
+				}
+				swap_ideas = {
+					add_idea = IRQ_stable_country_2
+					remove_idea = IRQ_stable_country_1
+				}
+			}
+		}
+	}
+	
+	### COMMIE-DEMOCRAT PATHS
+	
+	focus = {
+		id = IRQ_workers_peril
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = IRQ_purge_rightwing_elements }
+		mutually_exclusive = { focus = IRQ_al_ahali_group focus = IRQ_look_to_fascist_europe focus = IRQ_strong_as_we_are }
+		relative_position_id = IRQ_purge_rightwing_elements
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 60
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			communism > 0.4
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			set_party_name = { ideology = communism long_name = IRQ_iraqi_communist_party_long name = IRQ_iraqi_communist_party }
+			add_ideas = IRQ_workers_peril_idea_1
+		}
+	}
+	
+	focus = {
+		id = IRQ_workers_paradise
+		icon = GFX_focus_generic_soviet_politics
+		prerequisite = { focus = IRQ_workers_peril }
+		relative_position_id = IRQ_workers_peril
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = IRQ_workers_peril_idea_1
+				add_idea = IRQ_workers_peril_idea_2
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_support_communism_abroad
+		icon = GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = IRQ_workers_paradise }
+		relative_position_id = IRQ_workers_peril
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_ideas = IRQ_international_revolution
+		}
+	}
+	
+		
+	focus = {
+		id = IRQ_join_the_comintern
+		icon = GFX_focus_generic_join_comintern
+		prerequisite = { focus = IRQ_support_communism_abroad }
+		relative_position_id = IRQ_workers_peril
+		x = 0
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			NOT = {
+				has_war_with = SOV
+			}
+			is_in_faction = no
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			SOV = { country_event = generic.2 }
+		}
+	}
+	
+	focus = {
+		id = IRQ_al_ahali_group
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = IRQ_purge_rightwing_elements }
+		mutually_exclusive = { focus = IRQ_workers_peril focus = IRQ_look_to_fascist_europe focus = IRQ_strong_as_we_are }
+		relative_position_id = IRQ_purge_rightwing_elements
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 40
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			democratic > 0.4
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_ideas = IRQ_al_ahali_group_idea
+		}
+	}
+	
+	focus = {
+		id = IRQ_purge_the_radical_left
+		icon = GFX_goal_anti_comintern_pact
+		prerequisite = { focus = IRQ_al_ahali_group }
+		relative_position_id = IRQ_al_ahali_group
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = IRQ_leftist_influenced_industry
+				remove_idea = IRQ_leftwinged_self_management
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_befriend_the_west
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = IRQ_purge_the_radical_left }
+		relative_position_id = IRQ_al_ahali_group
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			NOT = {
+				has_war_with = ENG
+				has_war_with = FRA
+			}
+			OR = {
+				ENG = {
+					has_government = democratic
+				}
+				FRA = {
+					has_government = democratic
+				}
+			}
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+            add_research_slot = 1
+			if = {
+				limit = {
+					FRA = {
+						has_government = democratic
+					}
+				}
+				FRA = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = IRQ_looks_to_us_for_guidance
+					}
+				}
+			}
+			if = {
+				limit = {
+					ENG = {
+						has_government = democratic
+					}
+				}
+				ENG = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = IRQ_looks_to_us_for_guidance
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_idea = IRQ_anglo_iraqi_treaties
+				}
+			swap_ideas = {
+				add_idea = export_focus
+				remove_idea = IRQ_anglo_iraqi_treaties
+				}
+			}				
+		}
+	}
+	
+	focus = {
+		id = IRQ_join_the_allies
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = IRQ_befriend_the_west }
+		relative_position_id = IRQ_al_ahali_group
+		x = 0
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			NOT = {
+				has_war_with = ENG
+				has_war_with = FRA
+			}
+			is_in_faction = no
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			ENG = { country_event = generic.2 }
+		}
+	}
+	
+	### INDUSTRY
+	
+	focus = {
+		id = IRQ_iraqi_independent_industry
+		icon = GFX_goal_generic_production
+		mutually_exclusive = {
+			
+		}
+		x = 2
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_iraqi_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IRQ_iraqi_independent_industry }
+		relative_position_id = IRQ_iraqi_independent_industry
+		x = 1
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_baghdad_steel
+		icon = GFX_focus_generic_steel
+		prerequisite = { focus = IRQ_iraqi_independent_industry }
+		relative_position_id = IRQ_iraqi_independent_industry
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			has_full_control_of_state = 291
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			291 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_expand_civil_facilities
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = IRQ_baghdad_steel focus = IRQ_iraqi_infrastructure }
+		relative_position_id = IRQ_baghdad_steel
+		x = 1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			random_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			#	Adds a civilian Factory (Warsaw)
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_indigenous_arms
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = IRQ_baghdad_steel }
+		relative_position_id = IRQ_baghdad_steel
+		x = -1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+			#	Adds a military Factory (Warsaw)
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}
+	}
+
+	focus = {
+		id = IRQ_research_slot
+		icon = GFX_focus_research
+		prerequisite = { focus = IRQ_indigenous_arms focus = IRQ_expand_civil_facilities }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_indigenous_arms
+		available = {
+		}
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = IRQ_mobilization_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IRQ_research_slot }
+		mutually_exclusive = { focus = IRQ_expand_military_production }
+		relative_position_id = IRQ_research_slot
+		x = -1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+		
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_expand_military_production
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = IRQ_research_slot }
+		mutually_exclusive = { focus = IRQ_mobilization_effort }
+		relative_position_id = IRQ_research_slot
+		x = 1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			#	Adds a military Factory (Warsaw)
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = IRQ_mosul_arms_depot
+		icon = GFX_focus_secret_rearmament
+		prerequisite = { focus = IRQ_expand_military_production }
+		relative_position_id = IRQ_expand_military_production
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_full_control_of_state = 676
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			676 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_baghdad_civil_facilities
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = IRQ_mobilization_effort }
+		relative_position_id = IRQ_mobilization_effort
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_full_control_of_state = 291
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			291 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_synthetic_industry
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = { focus = IRQ_baghdad_civil_facilities }
+		relative_position_id = IRQ_baghdad_civil_facilities
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_tech = synth_oil_experiments
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_complete_industrial_focus
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = IRQ_mosul_arms_depot }
+		relative_position_id = IRQ_mosul_arms_depot
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			#	Adds a military Factory (Warsaw)
+			random_owned_controlled_state = {
+				limit = {									
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = IRQ_royal_research_institute_of_iraq
+		icon = GFX_focus_research
+		prerequisite = { focus = IRQ_synthetic_industry focus = IRQ_complete_industrial_focus }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_synthetic_industry
+		available = {
+		}
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	### Iraqi-British Coop
+	
+	focus = {
+		id = IRQ_revise_anglo_iraqi_treaties
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = IRQ_iraqi_infrastructure }
+		prerequisite = { focus = IRQ_royal_mandate }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_iraqi_infrastructure
+		available = {
+			has_government = democratic
+			is_in_faction_with = ENG
+			ENG = { is_puppet = no }
+		}
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+			swap_ideas = {
+				add_idea = export_focus
+				remove_idea = IRQ_anglo_iraqi_treaties
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_joint_refining_company
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = { focus = IRQ_revise_anglo_iraqi_treaties }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_revise_anglo_iraqi_treaties
+		available = {
+			has_government = democratic
+			is_in_faction_with = ENG
+			ENG = { is_puppet = no }
+		}
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_to_tech_sharing_group = IRQ_joint_oil_exploitation_company_tech_group
+			ENG = { add_to_tech_sharing_group = IRQ_joint_oil_exploitation_company_tech_group }
+		}
+	}
+	
+	focus = {
+		id = IRQ_invite_british_investors
+		icon = GFX_focus_generic_concessions
+		prerequisite = { focus = IRQ_joint_refining_company focus = IRQ_british_construction_company }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_revise_anglo_iraqi_treaties
+		available = {
+			has_government = democratic
+			is_in_faction_with = ENG
+			ENG = { is_puppet = no }
+		}
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			unlock_decision_category_tooltip  = IRQ_british_investors
+		}
+	}
+	
+	focus = {
+		id = IRQ_british_construction_company
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = IRQ_expand_civil_facilities }
+		prerequisite = { focus = IRQ_revise_anglo_iraqi_treaties }
+		mutually_exclusive = { }
+		relative_position_id = IRQ_expand_civil_facilities
+		available = {
+			has_government = democratic
+			is_in_faction_with = ENG
+			ENG = { is_puppet = no }
+		}
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_ideas = IRQ_british_investments
+		}
+	}
+	
+	### MILITARY
+	
+	### ARMY
+	
+	focus = {
+		id = IRQ_modernise_the_army
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 18
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_invest_in_infantry_support_equipment
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = IRQ_modernise_the_army }
+		relative_position_id = IRQ_modernise_the_army
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 2
+				bonus = 0.5
+				category = support_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_iraqi_cavalry_corps
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = IRQ_invest_in_infantry_support_equipment }
+		relative_position_id = IRQ_invest_in_infantry_support_equipment
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			hidden_effect = {
+				load_oob = "unlock_cavalry"
+			}			
+			custom_effect_tooltip = IRQ_unlock_cavalry
+		}
+	}
+	
+	focus = {
+		id = IRQ_chevrolet_c15
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = IRQ_iraqi_cavalry_corps }
+		relative_position_id = IRQ_iraqi_cavalry_corps
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 1
+				technology = motorised_infantry
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_iraqi_arms
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = IRQ_modernise_the_army }
+		relative_position_id = IRQ_modernise_the_army
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				uses = 2
+				bonus = 0.5
+				category = infantry_weapons
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_iraqi_armed_forces
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = IRQ_invest_in_infantry_support_equipment focus = IRQ_iraqi_arms }
+		relative_position_id = IRQ_modernise_the_army
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_shell_pieces
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = IRQ_iraqi_arms }
+		relative_position_id = IRQ_iraqi_arms
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = artillery
+				category = cat_anti_tank
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_local_armour_innovation
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = IRQ_shell_pieces }
+		relative_position_id = IRQ_shell_pieces
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_the_royal_army
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = IRQ_iraqi_armed_forces }
+		relative_position_id = IRQ_iraqi_armed_forces
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_aljabalia
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = IRQ_the_royal_army }
+		relative_position_id = IRQ_the_royal_army
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				category = mountaineers_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_paratroopers
+		icon = GFX_focus_generic_paratrooper
+		prerequisite = { focus = IRQ_the_royal_army focus = IRQ_the_strategic_bomber }
+		relative_position_id = IRQ_the_royal_army
+		x = -3
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				category = para_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_marines
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = IRQ_the_royal_army focus = IRQ_naval_transport }
+		relative_position_id = IRQ_the_royal_army
+		x = 3
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				category = marine_tech
+			}
+		}
+	}
+	
+	### AIRFORCE
+	
+	focus = {
+		id = IRQ_independent_airforce
+		icon = GFX_goal_generic_build_airforce
+		x = 14
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			air_experience = 5
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = IRQ_independent_airforce }
+		relative_position_id = IRQ_independent_airforce
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = light_fighter
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_close_air_support_focus
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = IRQ_fighter_focus }
+		relative_position_id = IRQ_fighter_focus
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = IRQ_independent_airforce }
+		relative_position_id = IRQ_independent_airforce
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_mosul_airbase
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = IRQ_fighter_focus focus = IRQ_bomber_focus }
+		relative_position_id = IRQ_independent_airforce
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			676 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_sm79b
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = IRQ_mosul_airbase focus = IRQ_close_air_support_focus }
+		relative_position_id = IRQ_mosul_airbase
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+			NOT = {
+				has_war_with = ITA
+			}
+			country_exists = ITA
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_air_effort
+				bonus = 0.5
+				uses = 1
+				category = naval_air
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_the_strategic_bomber
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = IRQ_mosul_airbase }
+		relative_position_id = IRQ_mosul_airbase
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_air_effort
+				bonus = 0.5
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+	
+	### NAVY
+	
+	focus = {
+		id = IRQ_independent_navy
+		icon = GFX_goal_generic_build_navy
+		x = 24
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 90
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			navy_experience = 5
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_destroyer_effort
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = IRQ_independent_navy }
+		relative_position_id = IRQ_independent_navy
+		x = -1
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_cruiser_effort
+		icon = GFX_focus_generic_cruiser2
+		prerequisite = { focus = IRQ_destroyer_effort }
+		relative_position_id = IRQ_destroyer_effort
+		x = -1
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_naval_transport
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = IRQ_cruiser_effort focus = IRQ_protect_the_arabian_sea }
+		relative_position_id = IRQ_cruiser_effort
+		x = 1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = tp_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = IRQ_independent_navy }
+		relative_position_id = IRQ_independent_navy
+		x = 1
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+		
+	focus = {
+		id = IRQ_protect_the_arabian_sea
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = IRQ_destroyer_effort focus = IRQ_submarine_effort }
+		relative_position_id = IRQ_destroyer_effort
+		x = 1
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_defence_of_baghdad
+		icon = GFX_focus_generic_coastal_fort
+		prerequisite = { focus = IRQ_submarine_effort }
+		relative_position_id = IRQ_submarine_effort
+		x = 1
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+			has_full_control_of_state = 291
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			291 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 6
+					province = 2089
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IRQ_baghdad_dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = IRQ_protect_the_arabian_sea focus = IRQ_defence_of_baghdad }
+		relative_position_id = IRQ_protect_the_arabian_sea
+		x = 1
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			291 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+}

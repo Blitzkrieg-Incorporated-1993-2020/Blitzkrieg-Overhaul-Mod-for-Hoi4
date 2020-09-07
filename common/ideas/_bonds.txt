@@ -1,0 +1,170 @@
+ideas = {
+	## War Bonds
+	bonds = { 
+		law = yes
+		use_list_view = yes
+		bonds_peace = {
+			level = 4
+			cost = 50
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.003
+				war_support_factor = 0.003
+			}
+			default = yes
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 2
+					OR = {
+						has_stability < 0.35
+						AND = {
+							has_war = yes
+							has_war_support < 0.35
+						}
+					}
+				}
+			}
+		}
+		bonds_basic = {
+			level = 3
+			available = {
+				OR = {
+					has_war = yes
+					has_government = fascism
+					has_government = communism
+				}
+			}
+			
+			cost = 100
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.0125
+				production_speed_dockyard_factor = 0.0125
+				
+				industrial_capacity_factory = 0.0125
+				industrial_capacity_dockyard = 0.0125
+				
+			}
+					
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+				factor = 3
+			}
+		}
+		bonds_war_public = {
+			
+			level = 2
+			available = {
+				has_war = yes
+				OR = {
+					has_country_flag = is_in_world_war
+					surrender_progress > 0.1
+					has_country_flag = missing_core_territory
+				}
+				OR = {
+					has_idea = unity_broken_nation
+					has_idea = unity_divided_nation
+					has_idea = unity_united_nation
+				}
+			}
+			
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.0125
+				
+				production_speed_arms_factory_factor = 0.04
+				production_speed_dockyard_factor = 0.04
+				
+				political_power_factor = -0.05
+				
+				industrial_capacity_factory = 0.04
+				industrial_capacity_dockyard = 0.04
+								
+				stability_factor = -0.005
+								
+				war_support_factor = -0.008
+				
+			}
+			
+			cancel_if_invalid = yes
+
+			ai_will_do = {
+   				factor = 4
+				modifier = {
+					factor = 0
+					OR = {
+						political_power_daily < 1
+						has_stability < 0.35
+						AND = {
+							has_war = yes
+							has_war_support < 0.35
+						}
+					}
+				}
+				
+   			}
+		}
+		bonds_print = {
+			
+			level = 1
+			available = {
+				has_war = yes
+				OR = {
+					surrender_progress > 0.2
+					has_country_flag = missing_core_territory
+				}
+				OR = {
+					has_idea = unity_divided_nation
+					has_idea = unity_united_nation
+				}
+			}
+			
+			cost = 200
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.025
+				
+				production_speed_arms_factory_factor = 0.075
+				production_speed_dockyard_factor = 0.075
+				
+				political_power_factor = -0.10
+				
+				industrial_capacity_factory = 0.075
+				industrial_capacity_dockyard = 0.075
+				
+				local_resources_factor = 0.075
+				
+				stability_factor = -0.1
+				
+				war_support_factor = -0.015
+				
+				trade_opinion_factor = -0.030
+			}
+			
+			cancel_if_invalid = yes
+
+			ai_will_do = {
+   				factor = 5
+				modifier = {
+					factor = 0
+					OR = {
+						political_power_daily < 1
+						has_stability < 0.35
+						AND = {
+							has_war = yes
+							has_war_support < 0.35
+						}
+					}
+				}
+   			}
+		}
+	}
+}
+
+##finished

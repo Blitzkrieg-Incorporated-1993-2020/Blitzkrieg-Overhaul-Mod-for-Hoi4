@@ -1,0 +1,326 @@
+ideas = {
+	country = {
+	
+	}
+	
+	political_advisor = {
+		SOM_haji_omar = { #Minister of Economic Affairs
+		
+			picture = generic_political_advisor_african_1
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { financial_expert }
+		}
+		SOM_jama_qalib = { #Early member of the Somali Youth League
+			
+			picture = generic_air_african_1
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { silent_workhorse }
+		}
+		SOM_sheikh_hussein = { #Prominent Somali Youth League member and president of Somalia twice
+			
+			picture = generic_communist_revolutionary_african_2d
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { popular_figurehead }
+		}
+	}
+
+	army_chief = {
+		SOM_mohamoud_shire = { #Former ally of the 'Mad Mullah', respected leader of the Warsangali clan
+			
+			picture = mohamoud_shire
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { army_chief_morale_3 }
+		}	
+	}
+
+	air_chief = {
+		SOM_sultan_diiriye = { #Garxajis ally of of Olol Dinle
+			
+			picture = generic_navy_arab_2
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { air_chief_night_operations_1 }
+		}	
+	}
+
+	navy_chief = {
+		SOM_ali_abdi = { #Early member of the Somali Youth League
+			
+			picture = generic_air_african_2
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { navy_chief_commerce_raiding_2 }
+		}		
+	}
+
+	high_command = {
+		SOM_jama_korshel = { #Later member of the Revolutionary council
+			
+			picture = generic_army_african_5
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { army_chief_organizational_2 }
+		}
+		SOM_abdullah_fadil = { #Son of parents who served under the Sultanate of Hobyo, later Revolutionary Council member
+		
+			picture = generic_army_african_2
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { army_chief_offensive_2 }
+		}
+		SOM_farah = { #General of Mohamoud Ali Shire, later Osman Mahaumuud
+			
+			picture = generic_army_arab_2
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { army_infantry_3 }
+		}
+		SOM_yasin_sharmake = { #First leader/founder of the Somali Youth League
+			
+			picture = generic_air_arab_2
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { navy_screen_1 }
+		}
+		SOM_mahamed_mahad = { #Founder of the Somali Youth League
+			
+			picture = generic_navy_african_2
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { navy_anti_submarine_2 }
+		}
+		SOM_mohamed_nur = { #Founder of the Somali Youth League
+			
+			picture = generic_political_advisor_arab_3
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { air_air_superiority_1 }
+		}
+		SOM_osman_rage = { #Founder of the Somali Youth League
+			
+			picture = generic_political_advisor_arab_3
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { air_strategic_bombing_3 }
+		}
+	}	
+
+	theorist = {
+		SOM_sakhawadin = { #Founder of the Somali Youth Club (Predecessor of the Somali Youth League)
+			
+			picture = generic_air_african_2
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.07
+			}
+			
+			traits = { military_theorist }
+		}
+		SOM_issa = { #Founder of the Somali Youth League
+			
+			picture = generic_army_african_6
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+		SOM_shermarke = { #Second President of Somalia
+			
+			picture = generic_navy_african_1
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			research_bonus = {
+				naval_doctrine = 0.07
+			}
+			
+			traits = { naval_theorist }
+		}
+	}
+	
+	# TECHNOLOGY
+	
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		SOM_spaa = { #SPA-A was a local thing in Magadiscio that built railcars in 1930, I think, information is scarce
+		
+			picture = generic_tank_manufacturer_3
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { heavy_tank_manufacturer }
+		}
+	}
+
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		SOM_mogadishu = { #Mogadishu had a huge port even before Europe arrived (Previously, Sarapion)
+			
+			picture = generic_naval_manufacturer_3
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { pacific_fleet_naval_manufacturer }
+		}
+	}
+	
+	aircraft_manufacturer = { 
+			
+		designer = yes
+		
+		SOM_littoria = {
+			
+			picture = generic_air_manufacturer_2
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { fuel_efficient_aircraft_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+	
+		designer = yes
+		
+		SOM_radio_mogadishu = { 
+			
+			picture = generic_electronics_concern_1
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+			}
+			
+			traits = { electronics_concern }
+		}		
+		SOM_villabruzzi = {
+			
+			picture = generic_refining_concern_1
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.1
+			}
+			
+			traits = { refinery_concern }
+		}
+		SOM_janale = { 
+			
+			picture = generic_industrial_concern_1
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			research_bonus = {
+				industry = 0.10
+			}
+			
+			traits = { industrial_concern }
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes	
+		
+		SOM_garessa = { #In 1870 Imam Azzan bin Qais of Oman built a large military fort that would later be bought by Italy, I am not 100% sure if it had Weapon Making materials, but skrew it, it is literally all I have.
+		
+			picture = generic_infantry_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+	}
+}

@@ -1,0 +1,129 @@
+## faction_fascist_paramilitary_militia
+## faction_fascist_paramilitary
+## faction_fascist_paramilitary_heavy
+## enable_bersaglieri_tech
+
+technologies = {
+
+	faction_fascist_paramilitary_militia = {
+	    enable_subunits = {
+            fascist_militia
+        }
+
+        research_cost = 1
+        start_year = 1925
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+	}
+
+	faction_fascist_paramilitary = {
+	    enable_subunits = {
+            fascist_infantry
+            fascist_cavalry
+            fascist_motorized
+        }
+
+        research_cost = 1
+        start_year = 1925
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+	}
+
+	faction_fascist_paramilitary_heavy = {
+	    enable_subunits = {
+            fascist_mechanized
+            fascist_light_armor
+            fascist_medium_armor
+            fascist_heavy_armor
+        }
+
+        research_cost = 1
+        start_year = 1925
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+	}
+
+	enable_bersaglieri_tech = {
+        enable_subunits = {
+            special_infantry
+        }
+
+        special_infantry = {
+            ## elite
+            default_morale = 0.20
+            soft_attack = 0.25
+            breakthrough = 0.3
+
+            ## motorized
+            transport = motorized_equipment
+
+            need = {
+                infantry_equipment = 50
+                motorized_equipment = 50
+            }
+
+            ## motorized malus
+            forest = {
+                attack = -0.1
+                movement = -0.5
+            }
+            mountain = {
+                attack = -0.05
+            }
+            jungle = {
+                attack = -0.2
+                movement = -0.5
+            }
+            marsh = {
+                attack = -0.1
+                movement = -0.3
+            }
+            river = {
+                attack = -0.1
+                movement = -0.1
+            }
+            amphibious = {
+                attack = -0.2
+            }
+
+            ## elite bonus
+            urban = {
+                attack = 0.2
+                defence = 0.2
+            }
+        }
+
+        research_cost = 1
+        start_year = 1831
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+}

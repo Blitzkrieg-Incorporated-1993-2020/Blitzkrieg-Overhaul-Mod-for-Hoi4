@@ -1,0 +1,27 @@
+ideas = {
+	country = {
+		postwar_economy = {
+			allowed = {
+				always = no
+			}
+			
+			picture = generic_trade
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_factory_max_efficiency_factor = -0.6
+				line_change_production_efficiency_factor = -0.5
+				equipment_conversion_speed = -0.5
+				industrial_capacity_factory = -0.9
+				industrial_capacity_dockyard = -0.7
+				global_building_slots_factor = -0.9
+				production_factory_start_efficiency_factor = -0.5
+				industry_air_damage_factor = 0.3
+				production_speed_buildings_factor = -0.8
+				industry_repair_factor = -0.8
+			}
+		}
+	}
+}
+	

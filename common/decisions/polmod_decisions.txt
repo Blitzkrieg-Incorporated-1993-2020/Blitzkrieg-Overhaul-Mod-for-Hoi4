@@ -1,0 +1,190 @@
+foreign_politics = {
+
+	SOV_sue_for_peace = { 
+		available = {
+			NOT = {	
+				controls_state = 219 #Moscow
+				controls_state = 195 #Leningrad
+				controls_state = 202 #Kiev
+				controls_state = 217 #Stalingrad
+			}
+			has_capitulated = no
+		}
+
+		visible = {
+			tag = SOV
+			has_war = yes
+			has_capitulated = no
+			OR = {
+				NOT = { controls_state = 219 }
+				NOT = { controls_state = 195 }
+				NOT = { controls_state = 202 }
+				NOT = { controls_state = 217 }
+			}
+			AND = {
+				219 = { is_owned_by = ROOT }
+				195 = { is_owned_by = ROOT }
+				202 = { is_owned_by = ROOT }
+				217 = { is_owned_by = ROOT }
+			}
+		}
+
+		cost = 0
+
+		days_remove = -1
+		ai_will_do = {
+			factor = 10
+		}
+
+		modifier = {
+			surrender_limit = -0.6
+		}
+
+		remove_trigger = {
+			OR = {
+				has_war = no
+				is_puppet = yes
+			}
+		}
+	}
+}
+
+#POL Four Year Plan
+
+POL_four_year_plan = {
+	
+	POL_four_year_plan_mission = {
+	
+		icon = generic_industry
+
+		allowed = {
+			original_tag = POL
+		}
+
+		available = {
+			num_of_civilian_factories  > 30
+			num_of_military_factories > 30
+		}
+
+		days_mission_timeout = 1080
+		fire_only_once = yes
+
+		activation = {
+			has_completed_focus = POL_the_four_year_plan
+		}
+
+		is_good = no
+
+		complete_effect = {
+			random_owned_controlled_state = {
+				prioritize = { 90 }
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 90 }
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		timeout_effect = {
+			add_stability = -0.05
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	POL_local_investors = {
+	
+		icon = generic_industry
+
+        allowed = { tag = POL }
+
+        available = {
+			has_active_mission = POL_four_year_plan_mission
+        }
+		
+		cost = 100
+
+        visible = {
+           has_active_mission = POL_four_year_plan_mission
+        }
+
+        modifier = {
+			production_speed_arms_factory_factor = 0.1 
+			production_speed_industrial_complex_factor = 0.1
+			consumer_goods_factor = -0.05 
+		}
+
+        days_re_enable = 30
+		
+        days_remove = 120
+
+        remove_effect = {
+			
+        }
+
+        complete_effect = {
+            
+        }
+    }
+	
+	POL_foreign_investors = {
+	
+		icon = generic_industry
+
+        allowed = { tag = POL }
+
+        available = {
+			has_active_mission = POL_four_year_plan_mission
+        }
+		
+		cost = 50
+
+        visible = {
+           has_active_mission = POL_four_year_plan_mission
+        }
+
+        modifier = {
+			
+		}
+
+        days_re_enable = 30
+		
+        days_remove = 60
+
+        remove_effect = {
+			add_offsite_building = { type = industrial_complex level = -3 } 
+        }
+
+        complete_effect = {
+            add_offsite_building = { type = industrial_complex level = 3 } 
+        }
+    }
+	
+}

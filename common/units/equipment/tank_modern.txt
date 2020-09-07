@@ -1,0 +1,641 @@
+# modern tank/self propelled equipment
+equipments = {
+
+	modern_tank_equipment = {
+		year = 1934
+
+		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_modern_tank_equipment			
+		is_buildable = no
+		type = armor
+		group_by = archetype
+		
+		interface_category = interface_category_armor
+		
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_gun_upgrade
+		}
+		
+		#Misc Abilities
+		maximum_speed = 10
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 10
+		breakthrough = 111
+		hardness = 0.9
+		armor_value = 135
+
+		#Offensive Abilities
+		soft_attack = 44
+		hard_attack = 39
+		ap_attack = 131
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 12
+		
+		build_cost_ic = 28
+		resources = {
+			steel = 2
+			tungsten = 2
+		}
+		fuel_consumption = 3.6
+		
+	}
+
+	modern_tank_equipment_1 = {
+		year = 1945
+
+		archetype = modern_tank_equipment
+		priority = 170
+		visual_level = 0
+		is_convertable = yes
+	}
+	
+	modern_tank_equipment_2 = {
+		year = 1950
+
+		archetype = modern_tank_equipment
+		parent = modern_tank_equipment_1
+		priority = 170
+		visual_level = 0
+		is_convertable = yes
+						
+		#Misc Abilities
+		maximum_speed = 12
+
+		#Defensive Abilities
+		defense = 11
+		breakthrough = 98
+		armor_value = 140
+
+		#Offensive Abilities
+		soft_attack = 54
+		hard_attack = 50
+		ap_attack = 141
+		air_attack = 0
+
+		build_cost_ic = 30
+		resources = {
+			tungsten = 2
+			steel = 3
+		}
+		fuel_consumption = 5
+	}
+	modern_tank_equipment_3 = {
+		year = 1955
+
+		archetype = modern_tank_equipment
+		parent = medium_tank_equipment_2
+		priority = 170
+		visual_level = 0
+		is_convertable = yes
+						
+		#Misc Abilities
+		maximum_speed = 14
+
+		#Defensive Abilities
+		defense = 11
+		breakthrough = 105
+		armor_value = 150
+
+		#Offensive Abilities
+		soft_attack = 65
+		hard_attack = 58
+		ap_attack = 151
+		air_attack = 0
+
+		build_cost_ic = 33
+		resources = {
+			tungsten = 2
+			steel = 3
+		}
+		fuel_consumption = 5.2
+	}
+	modern_tank_equipment_4 = {
+		year = 1960
+
+		archetype = modern_tank_equipment
+		parent = medium_tank_equipment_3
+		priority = 170
+		visual_level = 0
+		is_convertable = yes
+						
+		#Misc Abilities
+		maximum_speed = 16
+
+		#Defensive Abilities
+		defense = 11
+		breakthrough = 110
+		armor_value = 160
+
+		#Offensive Abilities
+		soft_attack = 76
+		hard_attack = 69
+		ap_attack = 161
+		air_attack = 0
+
+		build_cost_ic = 36
+		resources = {
+			tungsten = 2
+			steel = 3
+		}
+		fuel_consumption = 5.4
+	}
+
+	modern_tank_artillery_equipment = {
+		year = 1934
+
+		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_modern_tank_equipment			
+		is_buildable = no
+		family = modern_tank_equipment
+		type = {	#EAI
+			artillery
+			armor
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_armor
+		
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_art_upgrade
+		}
+		
+
+		#Misc Abilities
+		maximum_speed = 10
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 8
+		breakthrough = 4
+		hardness = 0.9
+		armor_value = 90
+
+		#Offensive Abilities
+		soft_attack = 180
+		hard_attack = 3
+		ap_attack = 10
+		air_attack = 0
+
+		build_cost_ic = 28
+		
+		resources = {
+			steel = 2
+			tungsten = 2
+		}
+		fuel_consumption = 3.6
+	}
+
+	modern_tank_artillery_equipment_1 = {
+		year = 1945
+
+		archetype = modern_tank_artillery_equipment
+		priority = 180
+		visual_level = 0
+		can_convert_from = { 
+			modern_tank_equipment_1 
+		}
+	}
+	modern_tank_artillery_equipment_2 = {
+		year = 1950
+
+		archetype = modern_tank_artillery_equipment
+		parent = modern_tank_artillery_equipment_1
+		priority = 180
+		visual_level = 0
+		can_convert_from = { 
+			modern_tank_equipment_2 
+		}
+
+		#Misc Abilities
+		maximum_speed = 12
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 9
+		breakthrough = 5
+		hardness = 0.9
+		armor_value = 100
+
+		#Offensive Abilities
+		soft_attack = 190
+		hard_attack = 4
+		ap_attack = 11
+		air_attack = 0
+
+		build_cost_ic = 30
+		fuel_consumption = 2.5
+		
+		resources = {
+			steel = 3
+			chromium = 4
+		}
+	}
+	modern_tank_artillery_equipment_3 = {
+		year = 1955
+
+		archetype = modern_tank_artillery_equipment
+		parent = modern_tank_artillery_equipment_2
+		priority = 180
+		visual_level = 0
+		can_convert_from = { 
+			modern_tank_equipment_3 
+		}
+
+		#Misc Abilities
+		maximum_speed = 14
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 9
+		breakthrough = 5
+		hardness = 0.9
+		armor_value = 100
+
+		#Offensive Abilities
+		soft_attack = 200
+		hard_attack = 5
+		ap_attack = 11
+		air_attack = 0
+
+		build_cost_ic = 32
+		fuel_consumption = 2.7
+		
+		resources = {
+			steel = 3
+			chromium = 4
+		}
+	}
+	modern_tank_artillery_equipment_4 = {
+		year = 1950
+
+		archetype = modern_tank_artillery_equipment
+		parent = modern_tank_artillery_equipment_3
+		priority = 180
+		visual_level = 0
+		can_convert_from = { 
+			modern_tank_equipment_4 
+		}
+
+		#Misc Abilities
+		maximum_speed = 16
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 9
+		breakthrough = 5
+		hardness = 0.9
+		armor_value = 105
+
+		#Offensive Abilities
+		soft_attack = 210
+		hard_attack = 4
+		ap_attack = 11
+		air_attack = 0
+
+		build_cost_ic = 33
+		fuel_consumption = 2.8
+		
+		resources = {
+			steel = 3
+			chromium = 4
+		}
+	}
+
+	modern_tank_destroyer_equipment = {
+		year = 1934
+
+		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_modern_tank_equipment			
+		is_buildable = no
+		family = modern_tank_equipment
+		type = {	#EAI
+			anti_tank
+			armor
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_armor
+
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_at_upgrade
+		}
+		
+		#Misc Abilities
+		maximum_speed = 10
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 8
+		breakthrough = 2.9
+		hardness = 0.9
+		armor_value = 135
+
+		#Offensive Abilities
+		soft_attack = 12
+		hard_attack = 58
+		ap_attack = 165
+		air_attack = 0
+
+		
+		build_cost_ic = 28
+		
+		resources = {
+			steel = 2
+			tungsten = 2
+		}
+		fuel_consumption = 3.6
+	}
+
+	modern_tank_destroyer_equipment_1 = {
+		year = 1945
+
+		archetype = modern_tank_destroyer_equipment
+		priority = 200
+		visual_level = 0
+		can_convert_from = { 
+			modern_tank_equipment_1 
+		}
+	}
+	modern_tank_destroyer_equipment_2 = {
+		year = 1950
+
+		archetype = modern_tank_destroyer_equipment
+		parent = modern_tank_destroyer_equipment_1		
+		priority = 200
+		visual_level = 0
+		can_convert_from = { 
+			modern_tank_equipment_2 
+		}
+		#Misc Abilities
+		maximum_speed = 12
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 9
+		breakthrough = 3
+		hardness = 0.92
+		armor_value = 140
+
+		#Offensive Abilities
+		soft_attack = 12
+		hard_attack = 60
+		ap_attack = 180
+		air_attack = 0
+
+		
+		build_cost_ic = 32
+		fuel_consumption = 2.25
+		
+		resources = {
+			steel = 3
+			chromium = 4
+		}
+	}
+	modern_tank_destroyer_equipment_3 = {
+		year = 1955
+
+		archetype = modern_tank_destroyer_equipment
+		parent = modern_tank_destroyer_equipment_2		
+		priority = 200
+		visual_level = 0
+		can_convert_from = { 
+			modern_tank_equipment_3 
+		}
+		#Misc Abilities
+		maximum_speed = 14
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 9
+		breakthrough = 3
+		hardness = 0.92
+		armor_value = 145
+
+		#Offensive Abilities
+		soft_attack = 13
+		hard_attack = 65
+		ap_attack = 190
+		air_attack = 0
+
+		
+		build_cost_ic = 33
+		fuel_consumption = 2.5
+		
+		resources = {
+			steel = 3
+			chromium = 4
+		}
+	}
+	modern_tank_destroyer_equipment_4 = {
+		year = 1960
+
+		archetype = modern_tank_destroyer_equipment
+		parent = modern_tank_destroyer_equipment_3		
+		priority = 200
+		visual_level = 0
+		can_convert_from = { 
+			modern_tank_equipment_4 
+		}
+		#Misc Abilities
+		maximum_speed = 16
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 9
+		breakthrough = 3
+		hardness = 0.92
+		armor_value = 150
+
+		#Offensive Abilities
+		soft_attack = 14
+		hard_attack = 70
+		ap_attack = 200
+		air_attack = 0
+
+		
+		build_cost_ic = 33
+		fuel_consumption = 2.7
+		
+		resources = {
+			steel = 3
+			chromium = 4
+		}
+	}
+
+	modern_tank_aa_equipment = {
+		year = 1934
+
+		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_modern_tank_equipment			
+		is_buildable = no
+		family = modern_tank_equipment
+		type = {	#EAI
+			anti_air
+			armor
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_armor
+		
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_aa_upgrade
+		}
+
+		#Misc Abilities
+		maximum_speed = 10
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 4
+		breakthrough = 5
+		hardness = 0.9
+		armor_value = 90
+
+		#Offensive Abilities
+		soft_attack = 9
+		hard_attack = 7.5
+		ap_attack = 100
+		air_attack = 76
+		
+		build_cost_ic = 28
+		
+		resources = {
+			steel = 2
+			tungsten = 2
+		}
+		fuel_consumption = 1.8
+	}
+
+	modern_tank_aa_equipment_1 = {
+		year = 1945
+
+		archetype = modern_tank_aa_equipment
+		priority = 190
+		visual_level = 0
+		can_convert_from = { 
+			modern_tank_equipment_1 
+		}
+	}
+	modern_tank_aa_equipment_2 = {
+		year = 1950
+
+		archetype = modern_tank_aa_equipment
+		parent = 	modern_tank_aa_equipment_1
+		priority = 190
+		visual_level = 0
+		can_convert_from = { 
+			modern_tank_equipment_2 
+		}
+		#Misc Abilities
+		maximum_speed = 12
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 5
+		breakthrough = 5
+		hardness = 0.85
+		armor_value = 95
+
+		#Offensive Abilities
+		soft_attack = 11
+		hard_attack = 9
+		ap_attack = 105
+		air_attack = 80
+		
+		build_cost_ic = 31
+		fuel_consumption = 1.25
+		
+		resources = {
+			steel = 3
+			chromium = 4
+		}
+	}
+	modern_tank_aa_equipment_3 = {
+		year = 1955
+
+		archetype = modern_tank_aa_equipment
+		parent = 	modern_tank_aa_equipment_2
+		priority = 190
+		visual_level = 0
+		can_convert_from = { 
+			modern_tank_equipment_3 
+		}
+		#Misc Abilities
+		maximum_speed = 14
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 5
+		breakthrough = 5
+		hardness = 0.85
+		armor_value = 95
+
+		#Offensive Abilities
+		soft_attack = 12
+		hard_attack = 9
+		ap_attack = 110
+		air_attack = 90
+		
+		build_cost_ic = 32
+		fuel_consumption = 1.5
+		
+		resources = {
+			steel = 3
+			chromium = 4
+		}
+	}
+	modern_tank_aa_equipment_4 = {
+		year = 1960
+
+		archetype = modern_tank_aa_equipment
+		parent = 	modern_tank_aa_equipment_3
+		priority = 190
+		visual_level = 0
+		can_convert_from = { 
+			modern_tank_equipment_4 
+		}
+		#Misc Abilities
+		maximum_speed = 16
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 5
+		breakthrough = 5
+		hardness = 0.85
+		armor_value = 95
+
+		#Offensive Abilities
+		soft_attack = 13
+		hard_attack = 9
+		ap_attack = 115
+		air_attack = 100
+		
+		build_cost_ic = 34
+		fuel_consumption = 1.7
+		
+		resources = {
+			steel = 3
+			chromium = 4
+		}
+	}
+}

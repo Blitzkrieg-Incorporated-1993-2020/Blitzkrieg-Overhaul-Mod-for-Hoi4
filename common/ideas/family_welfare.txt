@@ -1,0 +1,111 @@
+ideas = {
+
+    family_welfare = { 
+	
+	law = yes
+    use_list_view = yes
+	
+	    expanded_family_welfare = {
+		    available = {
+				  }
+			 
+			modifier = {
+				political_power_factor = -0.10
+				consumer_goods_factor = 0.08
+				drift_defence_factor = 0.15
+				MONTHLY_POPULATION = 0.10
+				stability_factor = 0.10
+				conscription_factor = 0.10
+                		
+
+			}
+			cost = 150
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 2
+				modifier = {
+					has_government = communism
+					factor = 5
+				}
+   			}
+		}
+		
+		partial_family_welfare = {
+		    available = {
+				  }
+			 
+			modifier = {
+				political_power_factor = -0.05
+				consumer_goods_factor = 0.04
+				drift_defence_factor = 0.10
+				MONTHLY_POPULATION = 0.05
+				stability_factor = 0.05
+				conscription_factor = 0.05
+                		
+
+			}
+			cost = 150
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 1
+			
+   			}
+		}
+		
+		reduced_family_welfare = {
+		    available = {
+				NOT = {
+				has_government = communism
+				}
+		    }
+			 
+			modifier = {
+				political_power_factor = 0.05
+				consumer_goods_factor = -0.04
+				drift_defence_factor = -0.10
+				MONTHLY_POPULATION = -0.05
+				stability_factor = -0.05
+				conscription_factor = -0.05
+                		
+
+			}
+			cost = 150
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 1
+		
+   			}
+		}
+	
+	    bare_bones_family_welfare = {
+		    available = {
+				NOT = {
+				has_government = communism
+				}
+		    }
+			 
+			modifier = {
+				political_power_factor = 0.10
+				consumer_goods_factor = -0.08
+				drift_defence_factor = -0.10
+				MONTHLY_POPULATION = -0.10
+				stability_factor = -0.10
+				conscription_factor = -0.10
+                		
+
+			}
+			cost = 150
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 1
+		
+   			}
+		}
+		
+	}
+
+}

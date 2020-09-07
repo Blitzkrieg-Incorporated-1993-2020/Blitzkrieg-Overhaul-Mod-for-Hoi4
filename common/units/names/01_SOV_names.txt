@@ -1,0 +1,50 @@
+﻿SOV = {
+    communist_militia = {
+		prefix = ""
+		generic = { "NKVD Diviziya" }
+		generic_pattern = "UNIT_GENERIC_NAME_SOV"
+		unique = {}
+	}
+    communist_infantry = {
+		prefix = ""
+		generic = { "Guard Rifle Diviziya" }
+		generic_pattern = "UNIT_GENERIC_NAME_SOV"
+		unique = {}
+	}
+    communist_cavalry = {
+		prefix = ""
+		generic = { "Guard Kavaleriyskaya Diviziya" }
+		generic_pattern = "UNIT_GENERIC_NAME_SOV"
+		unique = {}
+	}
+    communist_motorized = {
+		prefix = ""
+		generic = { "Guard Motostrelkovaya Diviziya" }
+		generic_pattern = "UNIT_GENERIC_NAME_SOV"
+		unique = {}
+	}
+    communist_mechanized = {
+		prefix = ""
+		generic = { "Guard Mekhanizirovanaya Diviziya" }
+		generic_pattern = "UNIT_GENERIC_NAME_SOV"
+		unique = {}
+	}
+    communist_light_armor = {
+		prefix = ""
+		generic = { "Guard Mekhanizirovanaya Diviziya" }
+		generic_pattern = "UNIT_GENERIC_NAME_SOV"
+		unique = {}
+	}
+    communist_medium_armor = {
+		prefix = ""
+		generic = { "Guard Mekhanizirovanaya Diviziya" }
+		generic_pattern = "UNIT_GENERIC_NAME_SOV"
+		unique = {}
+	}
+    communist_heavy_armor = {
+		prefix = ""
+		generic = { "Guard Mekhanizirovanaya Diviziya" }
+		generic_pattern = "UNIT_GENERIC_NAME_SOV"
+		unique = {}
+	}
+}

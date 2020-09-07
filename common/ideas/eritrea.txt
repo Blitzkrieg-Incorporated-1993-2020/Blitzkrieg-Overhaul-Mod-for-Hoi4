@@ -1,0 +1,353 @@
+ideas = {
+	country = {
+	
+	}
+	
+	political_advisor = {
+		ERI_bairu = { #Pro-Ethiopian Politician, famously called for union in the 40's. Would eventually defect to the ELF in 1967
+			
+			picture = generic_democratic_reformer_african_2d
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { ideological_crusader }
+		}
+		ERI_asfaha = { # Asfaha Woldemikael, Another pro-Ethiopian politician, would remain one until his death in 1994
+			
+			picture = generic_political_advisor_african_2
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { propaganda_expert }
+		}
+		ERI_nawd = { #Mohamed Said Nawd, Founding member of the Eritrean Liberation Movement (ELM), not to be confused with the ELF
+			
+			picture = generic_democratic_reformer_middle_eastern_2d
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { popular_figurehead }			
+		}
+		ERI_eyay = { #Salih Ahmed Eyay, Founding member of the ELM
+			
+			picture = generic_communist_revolutionary_african_2d
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { captain_of_industry }			
+		}
+	}
+
+	army_chief = {
+		ERI_musa_adem = { #Imam Musa Adem, Founder of the Moslem Youth League in 1953
+			
+			picture = generic_army_arab_3
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { army_chief_offensive_2 }			
+		}
+	}
+
+	air_chief = {
+		ERI_beyn = { #Fissahazion Beyn, the first Eritrean Pilot
+			
+			picture = generic_air_african_1
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { air_chief_all_weather_3 }			
+		}
+	}
+
+	navy_chief = {
+		ERI_gherenki = { #Gherenkiel Berakhi, Leader of the New Eritrea Party, joined the Independence Bloc in 1949
+			
+			picture = generic_navy_african_3
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { navy_chief_commerce_raiding_2 }			
+		}
+	}
+
+	high_command = {
+		ERI_al_haj = { #Mahamoud Ismael Al-Haj, First Clandestine member of the ELM
+			
+			picture = generic_army_african_1
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { army_concealment_1 }
+		}
+		ERI_redda = { #Tesfai Redda, founder of the Young Federalists
+			
+			picture = generic_army_african_2
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { army_chief_organizational_3 }
+		}
+		ERI_beshir = { #Ahmed Abdulkader Beshir, Leader of the National Party, joined the Independence Bloc in 1949
+		
+			picture = generic_army_african_2
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { army_infantry_1 }
+		}
+		ERI_deres = { #Tesfatsion Deres, Leader of the Independant Eritrea Party, joined the Independence Bloc in 1949
+		
+			picture = generic_air_african_3
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { air_chief_ground_support_1 }
+		}
+		ERI_radai = { #Ali Mussa Radai, Lead splinter group Moslem League of Western Eritrea away from the Moslem League (who had joined the Independence Bloc)
+			
+			picture = generic_air_arab_1
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { air_air_superiority_1 }
+		}
+		ERI_tessema = { #Ras Tessema Asberom, A leading member of the Liberal Progressive Party, joined the Independence Bloc in 1949
+			
+			picture = generic_army_african_6
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { navy_chief_maneuver_2 }
+		}
+		ERI_omar = { #Omar Mohammed Baduri, A leading member of the New Eritrea Party (Also known as the New Eritrea Pro-Italy Party), joined the Independence Bloc in 1949
+			
+			picture = generic_army_african_4
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { navy_naval_air_defense_2 }
+		}		
+	}	
+
+	theorist = {
+	
+		ERI_el_hassan = { #Mohammed el-Hassan, Founding member of the ELM
+			
+			picture = generic_army_arab_1
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.07
+			}
+			
+			traits = { military_theorist }
+		}		
+		ERI_hajji_ahmed = { #Hajji Suleiman Ahmed, Early leader of the Moslem Youth League
+		
+			picture = generic_air_arab_3
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				naval_doctrine = 0.07
+			}
+			
+			traits = { naval_theorist }
+		}
+		ERI_pollera = { #Michele Pollera, Leader of the Italo-Eritrean Association, joined the Independence Bloc in 1949
+		
+			picture = generic_political_advisor_african_1
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+	}
+	
+	# TECHNOLOGY
+	
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		ERI_sisler = { #OFFICINA ELETTROMECCANICA REMO SISLER, A large pre-WWII firm that built both boats and motor-vehicles
+		
+			picture = generic_tank_manufacturer_2
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { fast_tank_manufacturer }
+		}
+	}
+
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		ERI_massawa_docks = {
+			
+			picture = generic_naval_manufacturer_2
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+		}
+		
+		ERI_assab_yards = {
+			
+			picture = generic_naval_manufacturer_1
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { pacific_fleet_naval_manufacturer }
+		}
+	}
+	
+	aircraft_manufacturer = { 
+			
+		designer = yes
+		
+		ERI_littoria = {
+			
+			picture = generic_air_manufacturer_2
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { fuel_efficient_aircraft_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+	
+		designer = yes
+		
+		ERI_costa = { #COSTRUZIONI MECCANICHE VINCENZO COSTA, An Electromechancial Company in Asmara (Founded 1936)
+			
+			picture = generic_industrial_concern_1
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				industry = 0.10
+			}
+			
+			traits = { industrial_concern }
+		}
+		
+		ERI_sedao = { #1936 Electrical Company, SOCIETA' ELETTRICA DELL'AFRICA ORIENTALE
+		
+			picture = generic_electronics_concern_1
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+			}
+			
+			traits = { electronics_concern }
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes	
+		
+		ERI_rino = { #OFFICINA MECCANICA (Owned by Desideri Rino, owned a "Shell" gas station and an auto-store)
+			
+			picture = generic_motorized_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.10
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		ERI_concentrate = { #Okay, this is technically a canning factory. Look, information on industry in Eritrea is basically non-existent okay?
+		
+			picture = generic_infantry_equipment_manufacturer_3
+		
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+	}
+}

@@ -1,0 +1,8 @@
+ai_historical_focus_list_YUG = {
+	ai_national_focuses = {
+
+		YUG_diplomacy
+		YUG_support_prince_paul
+		YUG_diplomatic_relations_with_axis
+	}
+}

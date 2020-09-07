@@ -1,0 +1,17 @@
+
+SIK_betray_stalin = {
+	icon = category_generic_crisis
+	allowed = {
+		original_tag = SIK
+	}
+	available = {
+		tag = SIK
+		SOV = {	
+			has_war_with = GER 
+		}
+		JAP = {
+			exists = yes
+			has_war_with = ENG
+		}
+	}
+}

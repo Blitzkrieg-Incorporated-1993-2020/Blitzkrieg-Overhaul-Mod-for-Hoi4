@@ -1,0 +1,29 @@
+#############
+##Australia##
+#############
+AST_immigration = {
+	icon = generic_democracy
+	
+	picture = GFX_decision_cat_ast_immigration
+
+	allowed = {
+		original_tag = AST
+	}
+}
+
+AST_challenge_britain = {
+	icon = generic_monarchism
+
+	allowed = {
+		original_tag = AST
+	}
+}
+
+
+AST_protect_south_east_asia = {
+	icon = jap_southern_expansion
+
+	allowed = {
+		original_tag = AST
+	}
+}

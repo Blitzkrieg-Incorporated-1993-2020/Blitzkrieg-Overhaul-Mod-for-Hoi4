@@ -1,0 +1,400 @@
+ideas = {
+	
+	tank_manufacturer = {
+		designer = yes
+
+		generic_tank_manufacturer = {
+
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = BEL tag = CAN } }
+				NOT = {
+					has_available_idea_with_traits = { idea = fast_tank_manufacturer limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { fast_tank_manufacturer }
+		}
+
+		generic_tank_manufacturer_2 = {
+
+			picture = generic_tank_manufacturer_2
+			
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = BEL tag = CAN } }
+				NOT = {
+					has_available_idea_with_traits = { idea = medium_tank_manufacturer limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { medium_tank_manufacturer }
+		}
+
+		generic_tank_manufacturer_3 = {
+
+			picture = generic_tank_manufacturer_3
+			
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = BEL tag = CAN } }
+				NOT = {
+					has_available_idea_with_traits = { idea = heavy_tank_manufacturer limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { heavy_tank_manufacturer }
+		}
+	}
+	
+	naval_manufacturer = {
+		designer = yes
+
+		generic_naval_manufacturer = {
+			
+			picture = generic_naval_manufacturer_1
+
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = SWE } }
+				NOT = {
+					has_available_idea_with_traits = { idea = naval_manufacturer limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { naval_manufacturer }
+		}
+
+		generic_naval_manufacturer_2 = {
+			
+			picture = generic_naval_manufacturer_3
+
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = SWE } }
+				NOT = {
+					has_available_idea_with_traits = { idea = convoy_escort_naval_manufacturer limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+		}
+
+		generic_naval_manufacturer_3 = {
+			
+			picture = generic_naval_manufacturer_2
+
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = SWE } }
+				NOT = {
+					has_available_idea_with_traits = { idea = coastal_defence_naval_manufacturer limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+		}
+	}
+
+	aircraft_manufacturer = {
+		designer = yes
+
+		generic_light_aircraft_manufacturer = {
+			
+			picture = generic_air_manufacturer_1
+
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = {
+					has_available_idea_with_traits = { idea = light_aircraft_manufacturer limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { light_aircraft_manufacturer }
+		}
+		
+		generic_medium_aircraft_manufacturer = {
+			
+			picture = generic_air_manufacturer_3
+
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = {
+					has_available_idea_with_traits = { idea = medium_aircraft_manufacturer limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		}
+		
+		generic_heavy_aircraft_manufacturer = {
+
+			picture = generic_air_manufacturer_2
+			
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = {
+					has_available_idea_with_traits = { idea = heavy_aircraft_manufacturer limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+		}
+		
+		generic_naval_aircraft_manufacturer = {
+			
+			picture = generic_naval_manufacturer_2
+
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = {
+					has_available_idea_with_traits = { idea = naval_aircraft_manufacturer limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { naval_aircraft_manufacturer }
+		}
+	}
+
+	industrial_concern = {
+
+		generic_industrial_concern = {
+			
+			picture = generic_industrial_concern_1
+
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = {
+					has_available_idea_with_traits = { idea = industrial_concern limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				industry = 0.10
+			}
+			
+			traits = { industrial_concern }
+		}
+
+		generic_industrial_concern_2 = {
+			
+			picture = generic_industrial_concern_2
+
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = {
+					has_available_idea_with_traits = { idea = refinery_concern limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.1
+			}
+			
+			traits = { refinery_concern }
+		}
+
+		generic_electronics_concern = {
+			
+			picture = generic_electronics_concern_1
+
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = {
+					has_available_idea_with_traits = { idea = electronics_concern limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				electronics = 0.10
+			}
+			
+			traits = { electronics_concern }
+		}
+
+		generic_industrial_excavators = {
+			
+			picture = generic_industrial_concern_3
+
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = {
+					has_available_idea_with_traits = { idea = excavation_concern limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			modifier = {
+				local_resources_factor = 0.1
+			}
+			
+			traits = { excavation_concern }
+		}
+	}
+
+	materiel_manufacturer = {
+		designer = yes
+		
+		generic_motorized_equipment_manufacturer = {
+			
+			picture = generic_motorized_equipment_manufacturer_2
+
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = {
+					has_available_idea_with_traits = { idea = motorized_equipment_manufacturer limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				motorized_equipment = 0.10
+			}
+
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		generic_infantry_equipment_manufacturer = {
+			
+			picture = generic_infantry_equipment_manufacturer_2
+
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = {
+					has_available_idea_with_traits = { idea = infantry_equipment_manufacturer limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+		
+		generic_artillery_manufacturer = {
+			
+			picture = generic_artillery_manufacturer_1
+
+			allowed = {
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = {
+					has_available_idea_with_traits = { idea = artillery_manufacturer limit = 1 }
+				}
+			}
+			
+			cost = 100
+			removal_cost = 0
+			
+			research_bonus = {
+				artillery = 0.10
+			}
+
+			equipment_bonus = {
+				artillery = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			
+			traits = { artillery_manufacturer }
+		}
+	}
+}

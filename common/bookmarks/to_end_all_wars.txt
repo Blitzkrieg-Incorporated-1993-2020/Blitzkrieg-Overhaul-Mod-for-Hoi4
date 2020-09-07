@@ -1,0 +1,134 @@
+bookmarks = {
+	bookmark = {
+		name = "TO_END_ALL_WARS_NAME"
+		desc = "TO_END_ALL_WARS_DESC"
+		date = 1910.1.1.12
+		picture = "GFX_select_date_1910"
+		default_country = "ENG"
+		default = yes
+		
+
+		"USA"={
+			history = "USA_TO_END_ALL_WARS_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"ENG"={
+			history = "ENG_TO_END_ALL_WARS_DESC"
+			ideology = conservative
+			ideas = {
+			}
+			focuses = {
+			}
+		} 
+		"FRA"={
+			history = "FRA_TO_END_ALL_WARS_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"ITA"={
+			history = "ITA_TO_END_ALL_WARS_DESC"
+			ideology = monarchism
+			ideas = {
+			}	
+			focuses = {
+			}		
+		}
+		"GER"={
+			history = "GER_TO_END_ALL_WARS_DESC"
+			ideology = monarchism 
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"AUS"={
+			history = "AUS_TO_END_ALL_WARS_DESC"
+			ideology = monarchism
+			ideas = {
+				#
+			}
+			focuses = {
+			}
+		}
+		"YUG"={
+			history = "YUG_TO_END_ALL_WARS_DESC"
+			ideology = monarchism
+			ideas = {
+				#
+			}
+			focuses = {
+			}
+		}
+		"TUR"={
+			history = "TUR_TO_END_ALL_WARS_DESC"
+			ideology = monarchism
+			ideas = {
+				#
+			}
+			focuses = {
+			}
+		}
+		"RUS"={
+			history = "RUS_TO_END_ALL_WARS_DESC"
+			ideology = monarchism
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+
+		"---"={
+			history = "OTHER_TO_END_ALL_WARS_DESC"
+		}
+
+
+		# minors from DLC #### 
+		
+		"CAN"={
+			minor = yes
+			history = "CAN_TO_END_ALL_WARS_DESC"
+			ideology = democratic
+			ideas = {
+				CAN_great_depression_1
+				CAN_conscription_crisis
+			}
+			focuses = {
+				CAN_skewer_the_eagle
+				CAN_north_american_alliance
+				CAN_join_comintern
+			}
+		}
+		"MAN"={
+			minor = yes
+			history = "MAN_TO_END_ALL_WARS_DESC"
+			ideology = monarchism
+			ideas = {
+			}	
+			focuses = {
+			}			
+		}
+		"JAP"={
+			minor = yes
+			history = "JAP_TO_END_ALL_WARS_DESC"
+			ideology = monarchism
+			ideas = {
+			}	
+			focuses = {
+			}			
+		}
+
+		
+
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

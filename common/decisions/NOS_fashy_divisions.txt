@@ -1,0 +1,89 @@
+fascist_decisions = {
+
+	activate_fascist_militia = {
+
+		icon = fascist_militia
+
+		available = {
+		    has_army_experience > 25
+		    has_war_support > 0.25
+			fascism > 0.50
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+
+		complete_effect = {
+		    ## TODO create event to put those effects inside
+		    # conscription = 0.015 # TODO balance
+            set_technology = { faction_fascist_paramilitary_militia = 1 }
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	create_fascist_paramilitary_force = {
+
+		icon = fascist_military
+
+		available = {
+		    has_army_experience > 100
+		    has_war_support > 0.50
+			fascism > 0.75
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+
+		complete_effect = {
+		    ## TODO create event to put those effects inside
+		    # conscription = 0.015 # TODO balance
+            set_technology = { faction_fascist_paramilitary = 1 }
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	create_fascist_military_force = {
+
+		icon = fascist_military_heavy
+
+		available = {
+		    has_army_experience > 200
+		    has_war_support > 0.75
+			fascism > 0.95
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+
+		complete_effect = {
+		    ## TODO create event to put those effects inside
+		    # conscription = 0.015 # TODO balance
+            set_technology = { faction_fascist_paramilitary_heavy = 1 }
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+}

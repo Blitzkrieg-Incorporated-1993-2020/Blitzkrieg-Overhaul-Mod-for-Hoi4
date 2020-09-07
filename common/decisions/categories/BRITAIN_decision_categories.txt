@@ -1,0 +1,13 @@
+
+ENG_italian_colonies = {
+	picture = decision_cat_generic_libya_occupation.dds
+	icon = category_generic_crisis
+	allowed = {
+		original_tag = ENG
+	} 	
+	visible = {
+		ENG = {
+			has_war_with = GER
+		}
+	}
+}

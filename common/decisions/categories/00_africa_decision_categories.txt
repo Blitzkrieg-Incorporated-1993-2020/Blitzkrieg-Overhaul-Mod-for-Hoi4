@@ -1,0 +1,31 @@
+
+DARK_revive_ethiopia_category = {
+	
+	icon = category_generic_democracy
+	
+	allowed = {
+		NOT = { original_tag = ITA }
+		NOT = { original_tag = ETH }
+	}
+	
+	visible = {
+		OR = {
+			NOT = { country_exists = ETH }
+			AND = {
+				ETH = { is_subject = yes }
+				ETH = { NOT = { has_government = monarchism } }
+			}
+		}
+	}
+}
+
+DARK_restore_sultan_category = {
+	
+	icon = generic_monarchism
+	
+	allowed = {
+		tag = SOM
+	}
+}
+	
+	

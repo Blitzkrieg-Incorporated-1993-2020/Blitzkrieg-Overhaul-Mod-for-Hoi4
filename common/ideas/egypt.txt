@@ -1,0 +1,930 @@
+ideas = {
+	political_advisor = {
+		EGE_haji_faiz_muhammed_zikeria = {
+
+			picture = generic_political_advisor_arab_1
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { silent_workhorse }
+		}
+
+		EGE_moukhled_al_asmari = {
+
+			picture = generic_political_advisor_arab_1
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { captain_of_industry }
+		}
+		
+		EGE_mohammad_hashim_khan = {
+
+			picture = generic_political_advisor_arab_3
+				
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { popular_figurehead }
+		}
+
+		EGE_mahmud_khan = {
+
+			picture = generic_political_advisor_arab_1
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { prince_of_terror }
+		}
+	}
+
+	theorist = {
+
+		EGE_muhammad_amin_bughra = {
+					
+			picture = generic_political_advisor_arab_2
+
+			allowed = {
+				original_tag = EGY
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.07
+			}
+			
+			traits = { military_theorist }
+		}
+
+		EGE_renato_bardolucci = {
+					
+			picture = generic_army_europe_1
+				
+			allowed = {
+				original_tag = EGY
+			}
+			
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+	}
+
+	high_command = {
+
+		EGE_mohammed_daoud_khan = {
+
+			picture = generic_political_advisor_arab_1
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { army_armored_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		EGE_azam_ataullah = {
+
+			picture = generic_army_arab_2
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { army_infantry_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		EGE_aalem_daana = {
+
+			picture = generic_navy_arab_3
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { navy_screen_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		EGE_hares_muzafar = {
+
+			picture = generic_army_arab_3
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { army_entrenchment_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	# MILITARY
+	army_chief = {
+
+		EGE_asadullah_seraj_khan = {
+			
+			picture = generic_army_arab_1
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { army_chief_defensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		EGE_wazir_akbar_khan = {
+			
+			picture = generic_army_arab_3
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { army_chief_morale_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		EGE_faisal_al_saud = {
+			
+			picture = generic_army_arab_1
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { army_chief_drill_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		EGE_aziz_ali_al-misri = {
+			
+			picture = generic_army_arab_2
+			
+			allowed = {
+				has_completed_focus = EGE_the_soldiers_leader
+			}
+			
+			traits = { army_chief_drill_3 army_chief_morale_3 }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	air_chief = {
+		
+
+		EGE_ali_muhammed_khan = {
+			
+			picture = generic_air_arab_1
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { air_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		EGE_gholam_wali = {
+			
+			picture = generic_air_arab_3
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { air_chief_ground_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+
+	navy_chief = {
+
+		EGE_nasirullah_husain = {
+			
+			picture = generic_navy_arab_2
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { navy_chief_decisive_battle_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		EGE_mohammed_etemadi_khan = {
+			
+			picture = generic_navy_arab_1
+			
+			allowed = {
+				original_tag = EGY
+			}
+			
+			traits = { navy_chief_naval_aviation_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	country = {
+		fuad_i_of_egypt = {
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_socialist_government = yes
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly = 0.001
+			}
+		}
+		sir_miles_lampson = {
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					OR = {
+						has_socialist_government = yes
+						has_autocratic_government = yes
+					}
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				democratic_drift = 0.01
+				conservative_drift = 0.01
+				social_democracy_drift = 0.01
+			}
+		}
+		king_farouk_i = {
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_socialist_government = yes
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.1
+				fascism_drift = 0.01
+			}
+			
+		}
+		resistance_to_british_occupation = {			
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_democratic_government = yes
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				communism_acceptance = 30
+				democratic_acceptance = -20
+				fascism_acceptance = 30
+				conscription_factor = -0.2
+				join_faction_tension = -0.20
+			}
+		}	
+		resistance_to_british_occupation_2 = {			
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_democratic_government = yes
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				communism_acceptance = 30
+				democratic_acceptance = -10
+				fascism_acceptance = 30
+				conscription_factor = -0.15
+				join_faction_tension = -0.20
+			}
+		}	
+		british_military_technology = {
+
+			allowed = {
+				original_tag = EGY
+				has_democratic_government = yes
+				ENG = {
+					has_democratic_government = yes
+				}
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_democratic_government = yes
+				ENG = {
+					has_democratic_government = yes
+				}
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				naval_doctrine = 0.07
+			}
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+		}
+		a_colonized_nile = {
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				monthly_population = 10
+			}
+			
+		}
+		national_mobilization = {
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.05
+				non_core_manpower = 0.03
+			}
+			
+		}
+		egypt_first = {
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				trade_laws_cost_factor = -0.3
+				trade_opinion_factor = 0.3
+			}
+			
+		}
+		follow_the_monarch = {
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				if = {
+					LIMIT = {
+						NOT = {
+							has_democratic_government = yes
+						}
+					}
+					always = yes
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				fascism_drift = 0.02
+				fascism_acceptance = 85
+			}
+			
+		}
+		national_fascism = {
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				fascism_drift = 0.05
+			}
+			
+		}
+		national_socialism = {
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				communism_drift = 0.05
+			}
+			
+		}
+		arab_socialist_movement = {
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				communism_drift = 0.05
+				communism_acceptance = 85
+			}
+			
+		}
+		national_democracy = {
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				democratic_drift = 0.01
+				conservative_drift = 0.01
+				social_democracy_drift = 0.01
+			}
+			
+		}
+		national_neutrality = {
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				neutrality_drift = 0.1
+			}
+			
+		}
+		ufo_runway_construction = {
+			
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				political_power_gain = -0.1
+			}
+			
+		}
+		national_poverty = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.2
+				industrial_capacity_factory = -0.25
+				industrial_capacity_dockyard = -0.25
+				conscription_factor = -0.1
+				consumer_goods_factor = 0.05
+			}
+		}
+		national_poverty_2 = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				industrial_capacity_factory = -0.25
+				industrial_capacity_dockyard = -0.25
+				conscription_factor = -0.1
+				consumer_goods_factor = 0.05
+			}
+		}
+		national_poverty_3 = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				conscription_factor = -0.1
+			}
+		}
+		british_military_training = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				training_time_army_factor = -0.1
+			}
+		}
+		the_british_protectorate = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conservative_drift = 0.01
+				social_democracy_drift = 0.01
+			}
+		}
+		british_political_influence = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conservative_drift = 0.03
+				social_democracy_drift = 0.02
+			}
+		}
+		crackdown_on_riots_democracy = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_weekly = -0.001
+				democratic_drift = -0.01
+				conservative_drift = -0.01
+				social_democracy_drift = -0.01
+			}
+		}
+		wafd_internal_collapse = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_weekly = 0.001
+				democratic_drift = -0.02
+				conservative_drift = -0.02
+				social_democracy_drift = -0.02
+			}
+		}
+		defense_of_the_motherland = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.01
+				army_core_defence_factor = 0.25
+				army_morale_factor = 0.1
+				compliance_factor = 0.3
+			}
+		}
+		ignite_the_warrior_spirit = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				heat_attrition_factor = -0.5
+				no_supply_grace = 48
+			}
+		}
+		ptah = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				global_building_slots_factor = 0.10
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		ra = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_air_base_factor = 0.1
+				air_air_superiority_attack_factor = 0.05
+				air_air_superiority_defence_factor = 0.05
+				air_air_superiority_agility_factor = 0.05
+			}
+		}
+		amen = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				min_export = -0.05
+				local_resources_factor = 0.10
+				consumer_goods_factor = -0.05
+			}
+		}
+		set = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				naval_hit_chance = 0.05
+				convoy_raiding_efficiency_factor = 0.1
+				army_infantry_attack_factor = 0.15
+				army_infantry_defence_factor = 0.15
+			}
+		}
+		a_flourishing_economy = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.1
+			}
+		}
+		a_flourishing_economy_2 = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.15
+			}
+		}
+		a_flourishing_economy_3 = {
+
+			allowed = {
+				original_tag = "EGY"
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.2
+			}
+		}
+	}
+}

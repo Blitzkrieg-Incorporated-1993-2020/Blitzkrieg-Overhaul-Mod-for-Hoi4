@@ -1,0 +1,20 @@
+﻿FRA = {
+	special_infantry = {
+        prefix = ""
+        generic = { "Division de la Légion Etrangère" }
+        generic_pattern = "UNIT_GENERIC_NAME_FRA"
+        unique = {}
+    }
+	militia = {
+        prefix = ""
+        generic = { "Division d'Infanterie Coloniale" }
+        generic_pattern = "UNIT_GENERIC_NAME_FRA"
+        unique = {}
+    }
+	special_mountaineers = {
+        prefix = ""
+        generic = { "Division de chasseurs alpins" }
+        generic_pattern = "UNIT_GENERIC_NAME_FRA"
+        unique = {}
+    }
+}

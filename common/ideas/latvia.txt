@@ -1,0 +1,503 @@
+ideas = {
+	    political_advisor = {
+	                        LAT_Vilis_Lacis = {
+	                        picture = idea_vilis_lacis
+	                        allowed = { original_tag = LAT }
+	                        traits = { backroom_backstabber }
+	                        }
+	                        LAT_Janis_Kaminskis = {
+	                        picture = idea_janis_kaminskis
+	                        allowed = { original_tag = LAT }
+	                        traits = { war_industrialist }
+	                        }
+	                        LAT_Vilhelms_Munters = {
+	                        picture = idea_vilhelms_munters
+	                        allowed = { original_tag = LAT }
+	                        traits = { smooth_talking_charmer }
+	                        }
+	    }
+	    theorist = {
+	               LAT_Janis_Balodis = {
+	               picture = janis_balodis
+	               allowed = { original_tag = LAT }
+	               research_bonus = { land_doctrine = 0.07 }
+	               traits = { military_theorist }
+	               }
+	               LAT_Herberts_Cukurs = {
+	               picture = herberts_cukurs
+	               allowed = { original_tag = LAT }
+			       available = { NOT = { has_country_flag = Crash_of_Herberts_Cukurs }}
+	               research_bonus = { air_doctrine = 0.07 }
+	               traits = { air_warfare_theorist }
+	               }
+	    }
+	    high_command = {
+	                   LAT_Janis_Indans = {
+	                   picture = janis_indans
+	                   allowed = { original_tag = LAT }
+	                   traits = { air_close_air_support_2 }
+	                   }
+	                   LAT_Arhibalds_fon_Keizerlings = {
+	                   picture = arhibalds_fon_keizerlings
+	                   allowed = { original_tag = LAT }
+	                   traits = { navy_screen_2 }
+	                   }
+	                   LAT_Krisjanis_Berkis_1 = {
+	                   picture = Krisjanis_Berkis_1
+	                   allowed = { original_tag = LAT }
+	                   traits = { army_infantry_2 }
+	                   }
+	                   LAT_Martins_Hartmanis = {
+	                   picture = martins_hartmanis
+	                   allowed = { original_tag = LAT }
+	                   traits = { army_entrenchment_2 }
+	                   }
+	    }
+	    army_chief = {
+	                 LAT_Fricis_Celmins = {
+	                 picture = fricis_celmins
+	                 allowed = { original_tag = LAT }
+	                 traits = { army_chief_defensive_2 }
+	                 }
+	                 LAT_Rudolfs_Kocins = {
+	                 picture = rudolfs_kocins
+	                 allowed = { original_tag = LAT }
+	                 traits = { army_chief_drill_2 }
+	                 }
+	                 LAT_Krisjanis_Berkis_2 = {
+	                 picture = Krisjanis_Berkis_2
+	                 allowed = { original_tag = LAT }
+	                 traits = { army_chief_offensive_2 }
+	                 }
+	    }
+	    air_chief = {
+	                LAT_Konstantins_Cakste = {
+	                picture = konstantins_cakste
+	                allowed = { original_tag = LAT }
+	                traits = { air_chief_ground_support_2 }
+	                }
+	    }
+	    navy_chief = {
+	                 LAT_Teodors_Spade = {
+	                 picture = teodors_spade
+	                 allowed = { original_tag = LAT }
+	                 traits = { navy_chief_decisive_battle_2 }
+	                 }
+	                 LAT_Teodors_Zvejnieks = {
+	                 picture = teodors_zvejnieks
+	                 allowed = { original_tag = LAT }
+	                 traits = { navy_chief_commerce_raiding_2 }
+	                 }
+	    }
+	    aircraft_manufacturer = {
+	                            designer = yes
+	                            VEF = {
+	                                  picture = idea_valsts_elektrotehniska_fabrika
+	                                  allowed = { original_tag = LAT }
+	                                  research_bonus = { air_equipment = 0.10 }
+	                                  traits = { light_aircraft_manufacturer }
+	                                  equipment_bonus = { }
+	                                  }
+	    }
+	    materiel_manufacturer = {
+	                            designer = yes
+	                            Ford_Vairogs = {
+	                                           picture = idea_ford_vairogs
+	                                           allowed = { original_tag = LAT }
+	                                           research_bonus = { motorized_equipment = 0.10 }
+	                                           traits = { motorized_equipment_manufacturer }
+	                                           modifier = { }
+	                                           }
+	    }
+	    industrial_concern = {
+	                         RRR = {
+	                               picture = idea_rigas_radio_rupnica
+	                               allowed = { original_tag = LAT }
+	                               research_bonus = { electronics = 0.10 }
+	                               traits = { electronics_concern }
+	                               modifier = { }
+	                               }
+	    }
+
+country = {
+          rise_of_the_thunder_cross = {
+	                                  allowed = { original_tag = LAT }
+		                              allowed_civil_war = { always = yes }
+		                              removal_cost = -1
+		                              picture = idea_rise_of_the_thunder_cross
+		                              modifier = {
+                                                 fascism_drift = 0.1
+		                              }
+		  }
+		  strike_of_the_lightning = {
+	                                allowed = { original_tag = LAT }
+		                            allowed_civil_war = { always = yes }
+		                            removal_cost = -1
+		                            picture = idea_strike_of_the_lightning
+		                            modifier = {
+		                                       conscription = 0.025
+		                                       fascism_drift = 0.05
+		                            }
+		  }
+		  political_party_ban = {
+	                            allowed = { original_tag = LAT }
+		                        allowed_civil_war = { always = yes }
+		                        removal_cost = -1
+		                        picture = idea_political_party_ban
+		                        modifier = {
+		                                   communism_drift = -0.01
+				                           fascism_drift = -0.01
+				                           democratic_drift = -0.01
+				                           conservative_drift = -0.01
+		                        }
+		  }
+		  cina_newspapers = {
+	                        allowed = { original_tag = LAT }
+		                    allowed_civil_war = { always = yes }
+		                    removal_cost = -1
+		                    picture = idea_cina_newspapers
+		                    modifier = {
+		                               communism_drift = 0.1
+		                    }
+		  }
+		  red_flag_revolution = {
+	                            allowed = { original_tag = LAT }
+		                        allowed_civil_war = { always = yes }
+		                        removal_cost = -1
+		                        picture = idea_red_flag_revolution
+		                        modifier = {
+		                                   conscription = 0.025
+		                                   communism_drift = 0.05
+		                        }
+		  }
+		  tresa_atmoda = {
+	                     allowed = { original_tag = LAT }
+		                 allowed_civil_war = { always = yes }
+		                 removal_cost = -1
+		                 picture = idea_tresa_atmoda
+		                 modifier = {
+		                            conscription = 0.05
+		                            stability_weekly = 0.005
+		                            war_support_weekly = 0.005
+		                            army_core_attack_factor = 0.15
+			                        army_core_defence_factor = 0.15
+		                 }
+		  }
+		  support_of_satversme = {
+	                             allowed = { original_tag = LAT }
+		                         allowed_civil_war = { always = yes }
+		                         removal_cost = -1
+		                         picture = idea_satversme
+		                         modifier = {
+		                                    democratic_drift = 0.02
+		                                    conservative_drift = 0.02
+		                                    }
+		  }
+		  latvian_kingdom = {
+	                        allowed = { original_tag = LAT }
+		                    allowed_civil_war = { always = yes }
+		                    removal_cost = -1
+		                    picture = idea_latvian_kingdom
+		                    modifier = {
+		                               stability_weekly = 0.001
+		                               }
+		  }
+		  livonian_unity = {
+	                       allowed = { original_tag = LAT }
+		                   allowed_civil_war = { always = yes }
+		                   removal_cost = -1
+		                   picture = GFX_idea_livonian_unity
+		                   modifier = {
+		                              conscription = 0.025
+		                              }
+		  }
+		  baltic_unity = {
+	                     allowed = { original_tag = LAT }
+		                 allowed_civil_war = { always = yes }
+		                 removal_cost = -1
+		                 picture = idea_baltic_unity
+		                 modifier = {
+		                            conscription = 0.025
+		                            }
+		  }
+		  nationalistic_ideas = {
+	                            allowed = { original_tag = LAT }
+		                        allowed_civil_war = { always = yes }
+		                        removal_cost = -1
+		                        picture = idea_nationalistic_ideas
+		                        modifier = {
+				                           neutrality_drift = 0.05
+				                           fascism_drift = 0.05
+				                           conscription = 0.025
+		                        }
+		  }
+		  latvia_for_latvians = {
+	                            allowed = { original_tag = LAT }
+		                        allowed_civil_war = { always = yes }
+		                        removal_cost = -1
+		                        picture = idea_latvia_for_latvians
+		                        modifier = {
+		                                   conscription = 0.025
+		                                   stability_weekly = 0.001
+		                                   }
+		  }
+		  independent_socialist_republic = {
+	                                       allowed = { original_tag = LAT }
+		                                   allowed_civil_war = { always = yes }
+		                                   removal_cost = -1
+		                                   picture = idea_independent_socialist_republic
+		                                   modifier = {
+		                                              stability_weekly = 0.001
+		                                              }
+		  }
+		  wave_of_latvian_socialism = {
+	                                  allowed = { original_tag = LAT }
+		                              allowed_civil_war = { always = yes }
+		                              removal_cost = -1
+		                              picture = idea_wave_of_latvian_socialism
+		                              modifier = {
+		                                         communism_drift = 0.05
+		                                         }
+		  }
+		  big_brothers_influence = {
+	                                  allowed = { original_tag = LAT }
+		                              allowed_civil_war = { always = yes }
+		                              removal_cost = -1
+		                              picture = idea_big_brothers_influence
+		                              modifier = {
+		                                         conscription = 0.025
+		                                         communism_drift = 0.05
+		                                         }
+		  }
+		  baltic_nationalism = {
+	                           allowed = { original_tag = LAT }
+		                       allowed_civil_war = { always = yes }
+		                       removal_cost = -1
+		                       picture = idea_baltic_nationalism
+		                       modifier = {
+				                          conscription = 0.025
+		                       }
+		  }
+		  power_of_the_thunder = {
+	                             allowed = { original_tag = LAT }
+		                         allowed_civil_war = { always = yes }
+		                         removal_cost = -1
+		                         picture = idea_power_of_the_thunder
+		                         modifier = {
+			                                justify_war_goal_time = -0.25
+			                                non_core_manpower = 0.25
+		                       }
+		  }
+		  latvian_legion = {
+	                       allowed = { original_tag = LAT }
+		                   allowed_civil_war = { always = yes }
+		                   removal_cost = -1
+		                   picture = idea_latvian_legion
+		                   modifier = {
+		                              stability_weekly = 0.005
+		                              war_support_weekly = 0.005
+			                          justify_war_goal_time = -0.25
+			                          conscription = 0.025
+			                          non_core_manpower = 0.25
+		                   }
+		  }
+		  gos_ostland_project = {
+	                            allowed = { original_tag = LAT }
+		                        allowed_civil_war = { always = yes }
+		                        removal_cost = -1
+		                        picture = idea_gos_ostland_project
+		                        modifier = {
+		                                   war_support_weekly = 0.005
+		                                   army_core_attack_factor = 0.15
+			                               army_core_defence_factor = 0.15
+			                               conscription = 0.05
+			                               non_core_manpower = 0.25
+		                        }
+		  }
+		  ost_ostland_project = {
+	                            allowed = { original_tag = LAT }
+		                        allowed_civil_war = { always = yes }
+		                        removal_cost = -1
+		                        picture = idea_ost_ostland_project
+		                        modifier = {
+		                                   army_core_attack_factor = 0.15
+			                               army_core_defence_factor = 0.15
+			                               conscription = 0.025
+		                             }
+		  }
+		  the_big_democratic_world = {
+	                                 allowed = { original_tag = LAT }
+		                             allowed_civil_war = { always = yes }
+		                             removal_cost = -1
+		                             picture = idea_the_big_democratic_world
+		                             modifier = {
+		                                    democratic_drift = 0.02
+		                                    conservative_drift = 0.02
+	                                        conscription = 0.025
+		                             }
+		  }
+		  the_small_democratic_world = {
+	                                   allowed = { original_tag = LAT }
+		                               allowed_civil_war = { always = yes }
+		                               removal_cost = -1
+		                               picture = idea_the_small_democratic_world
+		                               modifier = {
+		                                    democratic_drift = 0.02
+		                                    conservative_drift = 0.02
+	                                          conscription = 0.05
+	                                          army_core_attack_factor = 0.15
+		                                      army_core_defence_factor = 0.15
+		                               }
+		  }
+		  latvian_democratic_influence = {
+		                                 allowed_civil_war = { always = yes }
+		                                 removal_cost = -1
+		                                 picture = idea_the_big_democratic_world
+		                                 modifier = {
+		                                    democratic_drift = 0.02
+		                                    conservative_drift = 0.02
+		                                 }
+		  }
+          the_latvian_dream_state = {
+	                                allowed = { original_tag = LAT }
+		                            allowed_civil_war = { always = yes }
+		                            removal_cost = -1
+		                            picture = idea_the_latvian_dream_state
+		                            modifier = {
+		                                       war_support_weekly = 0.001
+		                                       stability_weekly = 0.001
+		                                       army_core_attack_factor = 0.20
+			                                   army_core_defence_factor = 0.20
+		                                       }
+		  }
+		  teutonic_believes = {
+		                      allowed_civil_war = { always = yes }
+		                      removal_cost = -1
+		                      picture = idea_the_big_democratic_world
+		                      modifier = {
+		                                 stability_weekly = 0.01
+		                                 conscription = 0.025
+		                                 }
+		  }
+		  deus_vult = {
+		              allowed_civil_war = { always = yes }
+		              removal_cost = -1
+		              picture = idea_deus_vult
+		              modifier = {
+		                         war_support_weekly = 0.01
+			                     justify_war_goal_time = -0.75
+			                     army_attack_factor = 0.10
+			                     conscription = 0.05
+		                         }
+		  }
+		  baltic_blood = {
+		                 allowed_civil_war = { always = yes }
+		                 removal_cost = -1
+		                 picture = idea_baltic_blood
+		                 modifier = {
+		                            stability_weekly = 0.01
+		                            war_support_weekly = 0.01
+			                        army_core_attack_factor = 0.20
+			                        army_core_defence_factor = 0.20
+			                        conscription = 0.02
+		                            }
+		  }
+		  internal_security = {
+	                          allowed = { original_tag = LAT }
+		                      allowed_civil_war = { always = yes }
+		                      removal_cost = -1
+		                      picture = idea_internal_security
+		                      modifier = {
+		                                 war_support_weekly = 0.005
+		                                 army_core_attack_factor = 0.05
+			                             army_core_defence_factor = 0.05
+		                      }
+		  }
+		  security_organizations = {
+	                               allowed = { original_tag = LAT }
+		                           allowed_civil_war = { always = yes }
+		                           removal_cost = -1
+		                           picture = idea_security_organizations
+		                           modifier = {
+		                                      high_command_cost_factor = -0.2
+		                                      army_chief_cost_factor = -0.2
+		                                      partisan_effect = 0.2
+		                                      enemy_partisan_effect = -0.2
+		                           }
+		  }
+		  industrial_support = {
+	                           allowed = { original_tag = LAT }
+		                       allowed_civil_war = { always = yes }
+		                       removal_cost = -1
+		                       picture = idea_industrial_support
+		                       modifier = {
+		                                  production_speed_industrial_complex_factor = 0.15
+		                                  production_speed_arms_factory_factor = 0.15
+		                                  production_factory_max_efficiency_factor = 0.15
+		                       
+		                       }
+		  }
+		  border_fortification = {
+	                             allowed = { original_tag = LAT }
+		                         allowed_civil_war = { always = yes }
+		                         removal_cost = -1
+		                         picture = idea_border_fortification
+		                         modifier = {
+		                                    production_speed_bunker_factor = 0.25
+		                         }
+		  }
+		  armored_forces = {
+	                       allowed = { original_tag = LAT }
+		                   allowed_civil_war = { always = yes }
+		                   removal_cost = -1
+		                   picture = idea_armored_forces
+		                   equipment_bonus = {
+		                                     armor = { build_cost_ic = -0.1 instant = yes }
+		                                     }
+		                   modifier = {
+		                              army_armor_attack_factor = 0.025
+		                              army_armor_defence_factor = 0.025
+		                              }
+		  }
+		  zibenskars = {
+	                   allowed = { original_tag = LAT }
+		               allowed_civil_war = { always = yes }
+		               removal_cost = -1
+		               picture = idea_zibenskars
+		               modifier = {
+		                          army_armor_speed_factor = 0.05
+		                          mechanized_attack_factor = 0.05
+                                  mechanized_defence_factor = 0.05
+		                          motorized_attack_factor = 0.05
+		                          motorized_defence_factor = 0.05
+		                          }
+		  }
+		  recruitment_campaign = {
+		                         allowed_civil_war = { always = yes }
+		                         removal_cost = -1
+		                         picture = idea_recruitment_campaign
+		                         modifier = {
+		                                    conscription_factor = 0.05
+			                                conscription = 0.025
+		                                    }
+		  }
+		  trained_destroyer_crew = {
+		                           allowed_civil_war = { always = yes }
+		                           removal_cost = -1
+		                           picture = idea_trained_destroyer_crew
+		                           modifier = {
+		                                      navy_screen_attack_factor = 0.05
+			                                  navy_screen_defence_factor = 0.05
+			                                  spotting_chance = 0.05
+		                                      }
+		  }
+		  trained_submarine_crew = {
+		                           allowed_civil_war = { always = yes }
+		                           removal_cost = -1
+		                           picture = idea_trained_submarine_crew
+		                           modifier = {
+		                                      navy_submarine_attack_factor = 0.05
+			                                  navy_submarine_defence_factor = 0.05
+			                                  spotting_chance = 0.05
+		                                      }
+		  }

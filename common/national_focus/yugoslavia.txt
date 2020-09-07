@@ -1,0 +1,1858 @@
+focus_tree = {
+	id = yugoslavia_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = YUG
+		}
+	}
+	default = no
+	focus = {
+		id = YUG_strengthen_army
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		cost = 5
+		x = 46
+		y = 0
+		completion_reward = {
+			army_experience = 50
+			air_experience = 50
+			navy_experience = 50
+		}
+	}
+	focus = {
+		id = YUG_diplomacy
+		icon = GFX_goal_generic_demand_territory
+		cost = 10
+		x = 22
+		y = 0
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = YUG_expand_university_of_belgrade
+		icon = GFX_focus_research
+		cost = 10
+		x = 56
+		y = 0
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = YUG_support_tito
+		icon = GFX_YUG_tito
+		cost = 10
+		prerequisite = {
+			focus = YUG_diplomacy
+		}
+		available = {
+			has_government = communism
+		}
+		mutually_exclusive = {
+			focus = YUG_support_prince_paul
+			focus = YUG_support_peter_ii
+		}
+		x = 8
+		y = 1
+		completion_reward = {
+			add_ideas = YUG_support_tito
+		}
+	}
+	focus = {
+		id = YUG_support_from_soviet
+		icon = GFX_Cutdown_the_Soviet_Union
+		cost = 10
+		prerequisite = {
+			focus = YUG_support_tito
+		}
+		x = 2
+		y = 2
+		completion_reward = {
+			SOV = {
+				country_event = { id = yugoslavia.200 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = YUG_abolish_the_monarchy
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		cost = 10
+		prerequisite = {
+			focus = YUG_support_from_soviet
+		}
+		x = 2
+		y = 3
+		completion_reward = {
+			add_ideas = YUG_abolish_the_monarchy
+		}
+	}
+	focus = {
+		id = YUG_follow_stalin
+		icon = GFX_appeal_to_stalin
+		cost = 10
+		prerequisite = {
+			focus = YUG_abolish_the_monarchy
+		}
+		mutually_exclusive = {
+			focus = YUG_yugoslavian_communism
+		}
+		x = 0
+		y = 4
+		completion_reward = {
+			SOV = {
+				add_opinion_modifier = { target = YUG modifier = YUG_support_from_soviet }
+			}
+			YUG = {
+				add_opinion_modifier = { target = SOV modifier = YUG_support_from_soviet }
+			}
+			remove_ideas = YUG_idea_croatian_opposition
+			remove_ideas = YUG_idea_macedonian_opposition
+			remove_ideas = YUG_idea_slovene_nationalism
+		}
+	}
+	focus = {
+		id = YUG_research_project_with_usr
+		icon = GFX_focus_research2
+		cost = 10
+		prerequisite = {
+			focus = YUG_follow_stalin
+		}
+		x = 2
+		y = 5
+		completion_reward = {
+			SOV = {
+				country_event = { id = yugoslavia.60 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = YUG_peasant_councils
+		icon = GFX_goal_peoples_state
+		cost = 10
+		prerequisite = {
+			focus = YUG_support_from_soviet
+		}
+		x = 4
+		y = 3
+		completion_reward = {
+			add_ideas = YUG_idea_peasant_councils
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = YUG_yugoslavian_communism
+		icon = GFX_goal_support_communism
+		cost = 10
+		prerequisite = {
+			focus = YUG_abolish_the_monarchy
+		}
+		mutually_exclusive = {
+			focus = YUG_follow_stalin
+		}
+		x = 4
+		y = 4
+		completion_reward = {
+			SOV = {
+				add_opinion_modifier = { target = YUG modifier = YUG_yugoslavian_communism }
+			}
+			YUG = {
+				add_opinion_modifier = { target = SOV modifier = YUG_yugoslavian_communism }
+			}
+			set_rule = { can_create_factions = yes }
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = YUG_form_the_federal_republic
+		icon = GFX_goal_red_star_pact
+		cost = 10
+		prerequisite = {
+			focus = YUG_yugoslavian_communism
+		}
+		x = 4
+		y = 5
+		completion_reward = {
+			remove_ideas = YUG_idea_croatian_opposition
+			remove_ideas = YUG_idea_macedonian_opposition
+			remove_ideas = YUG_idea_slovene_nationalism
+		}
+	}
+	focus = {
+		id = YUG_establish_anvoj
+		icon = GFX_goal_red_star_soldier
+		cost = 10
+		prerequisite = {
+			focus = YUG_support_tito
+		}
+		x = 8
+		y = 2
+		completion_reward = {
+			add_ideas = YUG_establish_anvoj
+			remove_ideas = YUG_idea_serbian_general_staff
+		}
+	}
+	focus = {
+		id = YUG_south_slavs
+		icon = GFX_focus_red_constitution
+		cost = 10
+		prerequisite = {
+			focus = YUG_establish_anvoj
+		}
+		x = 8
+		y = 3
+		available = {
+			48 = {
+				CONTROLLER = {
+				OR = {
+					tag = BUL
+					}
+				}
+			}
+			211 = {
+				CONTROLLER = {
+				OR = {
+					tag = BUL
+					}
+				}
+			}
+			212 = {
+				CONTROLLER = {
+				OR = {
+					tag = BUL
+					}
+				}
+			}
+			NOT = { has_war_with = BUL }
+			OR = {
+				NOT = { BUL = { is_in_faction_with = YUG } }
+			}
+		}
+		completion_reward = {
+			BUL = {
+				country_event = { id = yugoslavia.75 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = YUG_balkan_federation
+		icon = GFX_focus_YUG_pan_slavic_congress
+		cost = 10
+		prerequisite = {
+			focus = YUG_south_slavs
+		}
+		x = 8
+		y = 4
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = YUG_involve_albania_in_federation
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10
+		prerequisite = {
+			focus = YUG_balkan_federation
+		}
+		x = 6
+		y = 5
+		available = {
+			44 = {
+				CONTROLLER = {
+				OR = {
+					tag = ALB
+					}
+				}
+			}
+			NOT = { has_war_with = ALB }
+			NOT = { has_war_with = ITA }
+			OR = {
+				NOT = { ITA = { is_in_faction_with = YUG } }
+			}
+		}
+		completion_reward = {
+			ITA = {
+				country_event = { id = yugoslavia.11 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = YUG_support_greek_communists
+		icon = GFX_goal_tfv_can_forced_quebec_conscription
+		cost = 10
+		prerequisite = {
+			focus = YUG_balkan_federation
+		}
+		x = 8
+		y = 5
+		completion_reward = {
+			GRE = {
+				add_ideas = YUG_support_greek_communists_idea
+				country_event = { id = yugoslavia.14 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = YUG_invite_romania
+		icon = GFX_goal_generic_major_war
+		cost = 10
+		prerequisite = {
+			focus = YUG_balkan_federation
+		}
+		x = 10
+		y = 5
+		available = {
+			has_war_support > 0.5
+			OR = {
+				NOT = { ROM = { is_in_faction_with = YUG } }
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ROM
+			}
+		}
+	}
+	focus = {
+		id = YUG_land_reform
+		icon = GFX_goal_generic_soviet_construction
+		cost = 10
+		prerequisite = {
+			focus = YUG_support_tito
+		}
+		x = 13
+		y = 2
+		completion_reward = {
+			add_ideas = YUG_land_reform
+		}
+	}
+	focus = {
+		id = YUG_modern_factories
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = YUG_land_reform
+		}
+		x = 11
+		y = 3
+		completion_reward = {
+					107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			     	104 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+				 	108 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+				 	107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+				 	104 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+					108 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_statism
+		icon = GFX_goal_ideology_radical_socialist
+		cost = 10
+		prerequisite = {
+			focus = YUG_land_reform
+		}
+		x = 13
+		y = 3
+		completion_reward = {
+			add_ideas = YUG_statism
+		}
+	}
+	focus = {
+		id = YUG_agricultural_development
+		icon = GFX_goal_ideology_libsoc
+		cost = 10
+		prerequisite = {
+			focus = YUG_modern_factories
+			focus = YUG_statism
+		}
+		x = 11
+		y = 4
+		completion_reward = {
+			add_ideas = YUG_agricultural_development
+		}
+	}
+	focus = {
+		id = YUG_socialist_economy
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 10
+		prerequisite = {
+			focus = YUG_statism
+			focus = YUG_modern_factories
+		}
+		x = 13
+		y = 4
+		completion_reward = {
+			add_ideas = YUG_socialist_economy_idea
+		}
+	}
+	focus = {
+		id = YUG_federal_economy
+		icon = GFX_goal_social_commune
+		cost = 10
+		prerequisite = {
+			focus = YUG_socialist_economy
+			focus = YUG_agricultural_development
+		}
+		x = 13
+		y = 5
+		completion_reward = {
+			add_ideas = YUG_federal_economy
+		}
+	}
+	focus = {
+		id = YUG_support_prince_paul
+		icon = GFX_YUG_paul
+		cost = 10
+		prerequisite = {
+			focus = YUG_diplomacy
+		}
+		mutually_exclusive = {
+			focus = YUG_support_tito
+			focus = YUG_support_peter_ii
+		}
+		available = {
+			has_government = neutrality
+		}
+		x = 22
+		y = 1
+		completion_reward = {
+			add_ideas = YUG_support_prince_paul
+		}
+	}
+	focus = {
+		id = YUG_diplomatic_relations_with_axis
+		icon = GFX_focus_ger_reichskommisariats
+		cost = 10
+		prerequisite = {
+			focus = YUG_support_prince_paul
+		}
+		x = 18
+		y = 2
+		completion_reward = {
+			GER = {
+				add_opinion_modifier = { target = YUG modifier = YUG_diplomatic_relations_with_axis }
+			}
+			YUG = {
+				add_opinion_modifier = { target = GER modifier = YUG_diplomatic_relations_with_axis }
+			}
+			ITA = {
+				add_opinion_modifier = { target = YUG modifier = YUG_diplomatic_relations_with_axis }
+			}
+			YUG = {
+				add_opinion_modifier = { target = ITA modifier = YUG_diplomatic_relations_with_axis }
+			}
+		}
+	}
+	focus = {
+		id = YUG_friendship_treaty_with_italy
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 10
+		prerequisite = {
+			focus = YUG_diplomatic_relations_with_axis
+		}
+		x = 16
+		y = 3
+		completion_reward = {
+			ITA = {
+				country_event = { id = yugoslavia.15 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = YUG_yugoslav_german_relations
+		icon = GFX_focus_chi_mission_to_germany
+		cost = 10
+		prerequisite = {
+			focus = YUG_diplomatic_relations_with_axis
+		}
+		x = 20
+		y = 3
+		completion_reward = {
+			GER = {
+				country_event = { id = yugoslavia.18 days = 1 }
+			}
+			remove_ideas = YUG_anti_german_military
+		}
+	}
+	focus = {
+		id = YUG_croatian_problem
+		icon = GFX_focus_YUG_banovina_of_croatia
+		cost = 10
+		prerequisite = {
+			focus = YUG_friendship_treaty_with_italy
+		}
+		prerequisite = {
+			focus = YUG_yugoslav_german_relations
+		}
+		mutually_exclusive = {
+			focus = YUG_puppet_croatian_state
+		}
+		x = 19
+		y = 4
+		completion_reward = {
+			remove_ideas = YUG_idea_croatian_opposition
+			add_political_power = -100
+		}
+	}
+	focus = {
+		id = YUG_puppet_croatian_state
+		icon = GFX_focus_YUG_banovina_of_croatia
+		cost = 10
+		prerequisite = {
+			focus = YUG_friendship_treaty_with_italy
+		}
+		prerequisite = {
+			focus = YUG_yugoslav_german_relations
+		}
+		mutually_exclusive = {
+			focus = YUG_croatian_problem
+		} 
+		ai_will_do = {
+			factor = 0
+		}
+		x = 17
+		y = 4
+		completion_reward = {
+			remove_ideas = YUG_idea_croatian_opposition
+			release_puppet = CRO 
+			set_autonomy = { target = CRO autonomy_state = autonomy_integrated_puppet }
+		}
+	}
+	focus = {
+		id = YUG_macedonian_relocation
+		icon = GFX_goal_demand_sudetenland
+		cost = 10
+		prerequisite = {
+			focus = YUG_puppet_croatian_state
+			focus = YUG_croatian_problem
+		}
+		x = 18
+		y = 5
+		completion_reward = {
+			remove_ideas = YUG_idea_macedonian_opposition
+		}
+	}
+	focus = {
+		id = YUG_reorganized_serbian_military_staff
+		icon = GFX_focus_generic_military_mission
+		cost = 10
+		prerequisite = {
+			focus = YUG_croatian_problem
+			focus = YUG_puppet_croatian_state
+		}
+		x = 20
+		y = 5
+		completion_reward = {
+			remove_ideas = YUG_idea_serbian_general_staff
+			add_ideas = YUG_idea_yugoslavian_general_staff
+		}
+	}
+	focus = {
+		id = YUG_orthodox_church_support
+		icon = GFX_goal_generic_propaganda
+		cost = 10
+		prerequisite = {
+			focus = YUG_support_prince_paul
+		}
+		mutually_exclusive = {
+			focus = YUG_guarantee_religious_liberties
+		}
+		x = 21
+		y = 2
+		completion_reward = {
+			add_ideas = YUG_idea_orthodox_church_support
+		}
+	}
+	focus = {
+		id = YUG_guarantee_religious_liberties
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		prerequisite = {
+			focus = YUG_support_prince_paul
+		}
+		mutually_exclusive = {
+			focus = YUG_orthodox_church_support
+		}
+		x = 23
+		y = 2
+		completion_reward = {
+			add_ideas = YUG_idea_religious_freedoms_guaranteed
+		}
+	}
+	focus = {
+		id = YUG_invest_in_economy
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 10
+		prerequisite = {
+			focus = YUG_support_prince_paul
+		}
+		x = 25
+		y = 2
+		completion_reward = {
+			add_ideas = YUG_invest_in_economy
+		}
+	}
+	focus = {
+		id = YUG_military_factories
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = {
+			focus = YUG_invest_in_economy
+		}
+		x = 23
+		y = 3
+		completion_reward = {
+			107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			104 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_navy_factories
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 10
+		prerequisite = {
+			focus = YUG_military_factories
+		}
+		x = 23
+		y = 4
+		completion_reward = {
+			103 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			105 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_local_militias
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 10
+		prerequisite = {
+			focus = YUG_navy_factories
+		}
+		x = 23
+		y = 5
+		completion_reward = {
+			add_ideas = YUG_idea_local_militias
+		}
+	}
+	focus = {
+		id = YUG_civilian_factories
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = YUG_invest_in_economy
+		}
+		x = 25
+		y = 3
+		completion_reward = {
+					107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			     	104 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_attract_foreign_capital
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 10
+		prerequisite = {
+			focus = YUG_civilian_factories
+		}
+		x = 25
+		y = 4
+		completion_reward = {
+			add_ideas = YUG_idea_foreign_capital
+		}
+	}
+	focus = {
+		id = YUG_strengthen_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = YUG_attract_foreign_capital
+		}
+		x = 25
+		y = 5
+		completion_reward = {
+					107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			     	104 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+				 	103 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_support_peter_ii
+		icon = GFX_YUG_peter
+		cost = 10
+		prerequisite = {
+			focus = YUG_diplomacy
+		}
+		available = {
+			has_government = democratic
+		}
+		mutually_exclusive = {
+			focus = YUG_support_prince_paul
+			focus = YUG_support_tito
+		}
+		x = 33
+		y = 1
+		completion_reward = {
+			add_ideas = YUG_support_peter_ii
+		}
+	}
+	focus = {
+		id = YUG_diplomatic_relations_with_allies
+		icon = GFX_goal_generic_improve_relations
+		cost = 10
+		prerequisite = {
+			focus = YUG_support_peter_ii
+		}
+		x = 30
+		y = 2
+		completion_reward = {
+			ENG = {
+				add_opinion_modifier = { target = YUG modifier = YUG_diplomatic_relations_with_allies }
+			}
+			YUG = {
+				add_opinion_modifier = { target = ENG modifier = YUG_diplomatic_relations_with_allies }
+			}
+			FRA = {
+				add_opinion_modifier = { target = YUG modifier = YUG_diplomatic_relations_with_allies }
+			}
+			YUG = {
+				add_opinion_modifier = { target = FRA modifier = YUG_diplomatic_relations_with_allies }
+			}
+		}
+	}
+	focus = {
+		id = YUG_british_support
+		icon = GFX_focus_chi_british_cooperation
+		cost = 10
+		prerequisite = {
+			focus = YUG_diplomatic_relations_with_allies
+		}
+		x = 28
+		y = 3
+		completion_reward = {
+			add_ideas = YUG_british_support
+		}
+	}
+	focus = {
+		id = YUG_pact_with_france
+		icon = GFX_focus_chi_reach_out_to_france
+		cost = 10
+		prerequisite = {
+			focus = YUG_diplomatic_relations_with_allies
+		}
+		x = 32
+		y = 3
+		completion_reward = {
+			FRA = {
+				country_event = { id = yugoslavia.21 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = YUG_democracy_for_yugoslavia
+		icon = GFX_goal_support_democracy
+		cost = 10
+		prerequisite = {
+			focus = YUG_british_support
+			focus = YUG_pact_with_france
+		}
+		x = 30
+		y = 4
+		completion_reward = {
+			add_ideas = YUG_democracy_for_yugoslavia
+			remove_ideas = YUG_idea_croatian_opposition
+			remove_ideas = YUG_idea_macedonian_opposition
+		}
+	}
+	focus = {
+		id = YUG_allies_guarantee
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		cost = 10
+		prerequisite = {
+			focus = YUG_democracy_for_yugoslavia
+		}
+		x = 30
+		y = 5
+		completion_reward = {
+			ENG = {
+				country_event = { id = yugoslavia.24 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = YUG_remove_nationalist_parties
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		cost = 10
+		prerequisite = {
+			focus = YUG_pact_with_france
+			focus = YUG_british_support
+		}
+		x = 32
+		y = 4
+		completion_reward = {
+			remove_ideas = YUG_idea_slovene_nationalism
+			add_popularity = { ideology = fascism popularity = -0.1 }
+		}
+	}
+	focus = {
+		id = YUG_liberalism
+		icon = GFX_goal_ideology_market_liberal
+		cost = 10
+		prerequisite = {
+			focus = YUG_support_peter_ii
+		}
+		x = 36
+		y = 2
+		completion_reward = {
+			add_ideas = YUG_liberalism
+		}
+	}
+	focus = {
+		id = YUG_research_pact
+		icon = GFX_goal_tfv_generic_tech_sharing
+		cost = 10
+		prerequisite = {
+			focus = YUG_liberalism
+		}
+		x = 35
+		y = 3
+		completion_reward = {
+			add_ideas = YUG_research_pact_idea
+		}
+	}
+	focus = {
+		id = YUG_unitary_parliamentary_monarchy
+		icon = GFX_focus_generic_treaty
+		cost = 10
+		prerequisite = {
+			focus = YUG_liberalism
+		}
+		x = 37
+		y = 3
+		completion_reward = {
+			add_ideas = YUG_unitary_parliamentary_monarchy
+		}
+	}
+	focus = {
+		id = YUG_new_constitution
+		icon = GFX_focus_treaty_red
+		cost = 10
+		prerequisite = {
+			focus = YUG_research_pact
+			focus = YUG_unitary_parliamentary_monarchy
+		}
+		x = 36
+		y = 4
+		completion_reward = {
+			add_ideas = YUG_new_constitution
+		}
+	}
+	focus = {
+		id = YUG_reform_economy
+		icon = GFX_goal_generic_trade
+		cost = 10
+		prerequisite = {
+			focus = YUG_research_pact
+			focus = YUG_unitary_parliamentary_monarchy
+		}
+		x = 34
+		y = 4
+		completion_reward = {
+			add_ideas = YUG_reform_economy
+		}
+	}
+	focus = {
+		id = YUG_industrial_build_up
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = YUG_research_pact
+			focus = YUG_unitary_parliamentary_monarchy
+		}
+		x = 38
+		y = 4
+		completion_reward = {
+					107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			     	104 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+				 	103 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_renovated_industry
+		icon = GFX_goal_generic_construct_civilian
+		cost = 10
+		prerequisite = {
+			focus = YUG_reform_economy
+			focus = YUG_industrial_build_up
+		}
+		x = 36
+		y = 5
+		completion_reward = {
+		add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+					107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+				
+		}
+	}
+	focus = {
+		id = YUG_military_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = {
+			focus = YUG_industrial_build_up
+			focus = YUG_reform_economy
+		}
+		x = 38
+		y = 5
+		completion_reward = {
+					107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			     	104 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+				 	103 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_air_effort
+		icon = GFX_goal_generic_build_airforce
+		cost = 5
+		prerequisite = {
+			focus = YUG_strengthen_army
+		}
+		x = 42
+		y = 1
+		completion_reward = {
+			air_experience = 50
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = YUG_ikarus
+		icon = GFX_focus_YUG_ikarus
+		cost = 5
+		prerequisite = {
+			focus = YUG_air_effort
+		}
+		x = 41
+		y = 2
+		completion_reward = {
+			107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_rogozarski
+		icon = GFX_focus_YUG_rogozarski
+		cost = 5
+		prerequisite = {
+			focus = YUG_air_effort
+		}
+		x = 43
+		y = 2
+		completion_reward = {
+			107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_zmaj
+		icon = GFX_focus_YUG_zmaj
+		cost = 5
+		prerequisite = {
+			focus = YUG_ikarus
+			focus = YUG_rogozarski
+		}
+		x = 41
+		y = 3
+		completion_reward = {
+			107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_advanced_planes
+		icon = GFX_focus_jap_zero
+		cost = 5
+		prerequisite = {
+			focus = YUG_rogozarski
+			focus = YUG_ikarus
+		}
+		x = 43
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = light_fighter
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+	focus = {
+		id = YUG_air_research
+		icon = GFX_focus_generic_air_defense
+		cost = 5
+		prerequisite = {
+			focus = YUG_zmaj
+			focus = YUG_advanced_planes
+		}
+		x = 42
+		y = 4
+		completion_reward = {
+			air_experience = 50
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = YUG_army_effort
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 5
+		prerequisite = {
+			focus = YUG_strengthen_army
+		}
+		x = 46
+		y = 1
+		completion_reward = {
+			army_experience = 50
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = YUG_infantry_research
+		icon = GFX_goal_generic_small_arms
+		cost = 5
+		prerequisite = {
+			focus = YUG_army_effort
+		}
+		x = 45
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+	}
+	focus = {
+		id = YUG_modern_equipment
+		icon = GFX_goal_generic_small_arms
+		cost = 5
+		prerequisite = {
+			focus = YUG_army_effort
+		}
+		x = 47
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				category = support_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = YUG_special_forces
+		icon = GFX_goal_generic_special_forces
+		cost = 5
+		prerequisite = {
+			focus = YUG_infantry_research
+			focus = YUG_modern_equipment
+		}
+		x = 45
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 2
+				technology = paratroopers
+				technology = paratroopers2
+				technology = marines
+				technology = marines2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+	focus = {
+		id = YUG_vehicles_in_war
+		icon = GFX_goal_generic_army_tanks
+		cost = 5
+		prerequisite = {
+			focus = YUG_modern_equipment
+			focus = YUG_infantry_research
+		}
+		x = 47
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = motorized_equipment
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+	focus = {
+		id = YUG_army_doctrines
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 5
+		prerequisite = {
+			focus = YUG_special_forces
+			focus = YUG_vehicles_in_war
+		}
+		x = 46
+		y = 4
+		completion_reward = {
+			army_experience = 50
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = YUG_navy_effort
+		icon = GFX_goal_generic_build_navy
+		cost = 5
+		prerequisite = {
+			focus = YUG_strengthen_army
+		}
+		x = 50
+		y = 1
+		completion_reward = {
+			navy_experience = 50
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = YUG_new_destroyers
+		icon = GFX_focus_generic_destroyer
+		cost = 5
+		prerequisite = {
+			focus = YUG_navy_effort
+		}
+		x = 49
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+	focus = {
+		id = YUG_expand_the_submarine_fleet
+		icon = GFX_goal_generic_navy_submarine
+		cost = 5
+		prerequisite = {
+			focus = YUG_navy_effort
+		}
+		x = 51
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+	focus = {
+		id = YUG_adriatic_superiority
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 5
+		prerequisite = {
+			focus = YUG_new_destroyers
+			focus = YUG_expand_the_submarine_fleet
+		}
+		x = 49
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cl_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = bc_tech
+			}
+		}
+	}
+	focus = {
+		id = YUG_coastal_defense
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		prerequisite = {
+			focus = YUG_expand_the_submarine_fleet
+			focus = YUG_new_destroyers
+		}
+		x = 51
+		y = 3
+		completion_reward = {
+			#forts on coast and harbor
+			if = {
+				limit = { has_full_control_of_state = 103 }
+				103 = {
+					custom_effect_tooltip = YUG_coastal_defense_effect_tt1
+					custom_effect_tooltip = YUG_coastal_defense_effect_tt2
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							province = {
+								all_provinces = yes
+								limit_to_coastal = yes
+							}
+							level = 2
+							instant_build = yes
+						}			
+						add_building_construction = {
+							type = coastal_bunker
+							province = {
+								all_provinces = yes
+								limit_to_naval_base = yes
+							}
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+			
+			if = {
+				limit = { has_full_control_of_state = 105 }
+				105 = {
+					custom_effect_tooltip = YUG_coastal_defense_effect_tt1
+					custom_effect_tooltip = YUG_coastal_defense_effect_tt2
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							province = {
+								all_provinces = yes
+								limit_to_coastal = yes
+							}
+							level = 2
+							instant_build = yes
+						}			
+						add_building_construction = {
+							type = coastal_bunker
+							province = {
+								all_provinces = yes
+								limit_to_naval_base = yes
+							}
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_navy_doctrines
+		icon = GFX_goal_generic_occupy_states_coastal
+		cost = 5
+		prerequisite = {
+			focus = YUG_coastal_defense
+			focus = YUG_adriatic_superiority
+		}
+		x = 50
+		y = 4
+		completion_reward = {
+			navy_experience = 50
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = YUG_invest_in_modern_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = YUG_expand_university_of_belgrade
+		}
+		x = 54
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+					107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			     	108 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_economy_of_war
+		icon = GFX_goal_generic_trade
+		cost = 10
+		prerequisite = {
+			focus = YUG_invest_in_modern_industry
+		}
+		x = 54
+		y = 2
+		completion_reward = {
+			add_ideas = YUG_economy_of_war
+		}
+	}
+	focus = {
+		id = YUG_nuclear_and_jet_effort
+		icon = GFX_focus_wonderweapons
+		cost = 10
+		prerequisite = {
+			focus = YUG_economy_of_war
+		}
+		x = 54
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = nuclear
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = rocketry
+			}
+		}
+	}
+	focus = {
+		id = YUG_expand_the_railways
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10
+		prerequisite = {
+			focus = YUG_expand_university_of_belgrade
+		}
+		x = 56
+		y = 1
+		completion_reward = {
+			107 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			104 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			108 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			105 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			45 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_expand_the_resources
+		icon = GFX_goal_generic_construction2
+		cost = 10
+		prerequisite = {
+			focus = YUG_expand_the_railways
+		}
+		x = 56
+		y = 2
+		completion_reward = {
+			add_ideas = YUG_idea_expanded_mining_industry
+		}
+	}
+	focus = {
+		id = YUG_heavy_rail
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10
+		prerequisite = {
+			focus = YUG_expand_the_resources
+		}
+		x = 56
+		y = 3
+		completion_reward = {
+			107 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			104 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			108 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			105 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			45 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_socialist_commisars
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 10
+		prerequisite = {
+			focus = YUG_follow_stalin
+		}
+		x = 0
+		y = 5
+		completion_reward = {
+			add_ideas = YUG_socialist_commisars
+		}
+	}
+	focus = {
+		id = YUG_ban_slovene_nationalist_parties
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		cost = 10
+		prerequisite = {
+			focus = YUG_puppet_croatian_state
+			focus = YUG_croatian_problem
+		}
+		x = 16
+		y = 5
+		completion_reward = {
+			remove_ideas = YUG_idea_slovene_nationalism
+			add_popularity = { ideology = fascism popularity = -0.05 }
+		}
+	}
+	focus = {
+		id = YUG_join_axis
+		icon = GFX_goal_support_fascism
+		cost = 10
+		prerequisite = {
+			focus = YUG_ban_slovene_nationalist_parties
+			focus = YUG_macedonian_relocation
+			focus = YUG_reorganized_serbian_military_staff
+		}
+		x = 18
+		y = 6
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+			date > 1942.1.1
+			GER = { is_faction_leader = yes }
+			NOT = { has_war_with = GER }
+		}
+		completion_reward = {
+			GER = {
+				add_to_faction = YUG
+			}
+		}
+	}
+	focus = {
+		id = YUG_remove_serbian_military_superiortity
+		icon = GFX_focus_generic_military_mission
+		cost = 10
+		prerequisite = {
+			focus = YUG_british_support
+			focus = YUG_pact_with_france
+		}
+		x = 28
+		y = 4
+		completion_reward = {
+			remove_ideas = YUG_idea_serbian_general_staff
+		}
+	}
+	focus = {
+		id = YUG_develop_the_capital
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = YUG_reform_economy
+			focus = YUG_industrial_build_up
+		}
+		x = 34
+		y = 5
+		completion_reward = {
+					107 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			     	107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_extra_research_slot
+		icon = GFX_focus_research2
+		cost = 10
+		prerequisite = {
+			focus = YUG_expand_domestic_factories
+		}
+		x = 58
+		y = 3
+		available = {
+			num_of_factories > 50
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = YUG_domestic_factories
+		icon = GFX_goal_generic_construct_civilian
+		cost = 10
+		prerequisite = {
+			focus = YUG_expand_university_of_belgrade
+		}
+		x = 58
+		y = 1
+		completion_reward = {
+					107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			     	104 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+				 	103 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUG_expand_domestic_factories
+		icon = GFX_goal_generic_construct_civilian
+		cost = 10
+		prerequisite = {
+			focus = YUG_domestic_factories
+		}
+		x = 58
+		y = 2
+		completion_reward = {
+					107 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			     	104 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+				 	103 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}

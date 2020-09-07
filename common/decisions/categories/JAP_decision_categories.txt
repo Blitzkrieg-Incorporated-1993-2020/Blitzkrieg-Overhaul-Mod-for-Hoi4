@@ -1,0 +1,74 @@
+JAP_intervene_in_china = {
+	allowed = {
+		original_tag = JAP
+	}
+}
+
+JAP_pacific_satellites = {
+	allowed = {
+		original_tag = JAP
+	}
+}
+
+JAP_southern_expansion = {
+	allowed = {
+		original_tag = JAP
+	}
+
+	visible = {
+		is_puppet = no
+	}
+}
+
+JAP_pacific_guardian = {
+	allowed = {
+		original_tag = JAP
+	}
+
+	visible = {
+		is_puppet = no
+		has_completed_focus = JAP_pacific_guardian
+	}
+}
+
+JAP_2sinjapwar = {
+	allowed = {
+		OR = {
+			tag = JAP
+			tag = CHI
+		}
+	}
+
+	visible = {
+		is_puppet = no
+		has_global_flag = 2sinjapwar_stalemate
+	}
+}
+
+JAP_colonial_independence = {
+	allowed = {
+		original_tag = JAP
+	}
+
+	visible = {
+		is_puppet = no
+		has_completed_focus = JAP_pacific_guardian
+	}
+}
+JAP_develop_eastern_resources_dec = {
+	
+	allowed = {
+		original_tag = JAP
+	}
+
+	visible = {	
+		has_completed_focus = JAP_establish_the_northern_resource_area
+	}
+}
+
+JAP_interservice_rivalry = {
+	allowed = {
+		original_tag = JAP
+		has_dlc = "Waking the Tiger"
+	}
+}

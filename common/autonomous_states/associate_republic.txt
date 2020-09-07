@@ -1,0 +1,70 @@
+autonomy_state = {
+	id = autonomy_associate_republic
+
+	manpower_influence = 0.1
+	
+	min_freedom_level = 0.8
+	
+	rule = {
+		can_not_declare_war = yes
+		can_decline_call_to_war = yes
+		can_be_spymaster = no
+		contributes_operatives = yes
+		can_create_collaboration_government = yes
+	}
+	
+	modifier = {
+		autonomy_manpower_share = 0.1
+		extra_trade_to_overlord_factor = 0.25
+		overlord_trade_cost_factor = -0.5
+		autonomy_gain = 0.15
+		master_ideology_drift = 0.05
+	}
+	
+	ai_subject_wants_higher = {
+		factor = 1.0
+	}
+	
+	ai_overlord_wants_lower = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = no
+	}
+
+	allowed = {
+		has_dlc = "Together for Victory"
+		OVERLORD = { OR = { has_government = unionism has_government = communism } }
+		if = {
+			limit = { OVERLORD = { has_idea = CHI_china_broken } }
+			NOT = {
+				OR = {
+					tag = XSM
+					tag = GXC
+					tag = SHX
+					tag = YUN
+					tag = SIK
+				}
+			}
+		}
+		if = {
+			limit = { OVERLORD = { has_idea = western_empire } }
+			NOT = {
+				OR = {
+					OVERLORD = { capital_scope = { is_on_continent = asia } }
+					has_idea = etgi_laws_leadership_structure_d
+					has_country_flag = prev_undeveloped_colony
+				}
+			}
+		}
+	}
+	
+	can_take_level = {
+		#trigger here
+	}
+
+	can_lose_level = {
+		#trigger here
+	}
+}

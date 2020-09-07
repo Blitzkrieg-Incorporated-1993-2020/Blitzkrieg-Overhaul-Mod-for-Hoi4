@@ -1,0 +1,114 @@
+bookmarks = {
+	bookmark = {
+		name = "TWO_MINUTES_TO_MIDNIGHT_NAME"
+		desc = "TWO_MINUTES_TO_MIDNIGHT_DESC"
+		date = 1949.6.1.12
+		picture = "GFX_select_date_1949"
+		default_country = "SOV"
+		default = yes
+		
+
+		"USA"={
+			history = "USA_TWO_MINUTES_TO_MIDNIGHT_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"ENG"={
+			history = "ENG_TWO_MINUTES_TO_MIDNIGHT_DESC"
+			ideology = social_democracy
+			ideas = {
+			}
+			focuses = {
+			}
+		} 
+		"FRA"={
+			history = "FRA_TWO_MINUTES_TO_MIDNIGHT_DESC"
+			ideology = social_democracy
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"WGR"={
+			history = "WGR_TWO_MINUTES_TO_MIDNIGHT_DESC"
+			ideology = conservative
+			ideas = {
+			}	
+			focuses = {
+			}		
+		}
+		"SOV"={
+			history = "SOV_TWO_MINUTES_TO_MIDNIGHT_DESC"
+			ideology = communism
+			ideas = {
+				#
+			}
+			focuses = {
+			}
+		}		
+		"CHI"={
+			history = "CHI_TWO_MINUTES_TO_MIDNIGHT_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"PRC"={
+			history = "PRC_TWO_MINUTES_TO_MIDNIGHT_DESC"
+			ideology = communism
+			ideas = {
+			}
+			focuses = {
+			}	
+		}
+		"KOR"={
+			history = "KOR_TWO_MINUTES_TO_MIDNIGHT_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}	
+		}
+		"PRK"={
+			history = "PRK_TWO_MINUTES_TO_MIDNIGHT_DESC"
+			ideology = communism
+			ideas = {
+			}
+			focuses = {
+			}	
+		}
+
+		"---"={
+			history = "OTHER_TWO_MINUTES_TO_MIDNIGHT_DESC"
+		}
+
+
+		# minors from DLC #### 
+		
+		"CAN"={
+			minor = yes
+			history = "CAN_TWO_MINUTES_TO_MIDNIGHT_DESC"
+			ideology = democratic
+			ideas = {
+				CAN_great_depression_1
+				CAN_conscription_crisis
+			}
+			focuses = {
+				CAN_skewer_the_eagle
+				CAN_north_american_alliance
+				CAN_join_comintern
+			}
+		}
+
+		
+
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

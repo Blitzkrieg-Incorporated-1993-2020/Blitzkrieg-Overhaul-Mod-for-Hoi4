@@ -1,0 +1,299 @@
+scripted_gui = {
+
+	coreclaim_message_popup_place = {
+		context_type = player_context
+		window_name = "coreclaim_message_bg"
+		
+		visible = {
+			OR = {
+				check_variable = { coring_check_popup^num > 0 }
+				check_variable = { coring_cancel_popup^num > 0 }
+				check_variable = { coring_complete_popup^num > 0 }
+				check_variable = { claim_check_popup^num > 0 }
+				check_variable = { claim_complete_popup^num > 0 }
+			}
+		}
+		
+		dynamic_lists = {
+			core_check_popup_window_list = {
+				array = coring_check_popup
+				change_scope = yes
+				entry_container = core_check_popup_bg_window
+				ai_weights = {
+					core_check_cancel_button_click = {
+						ai_will_do = {
+							factor = 0
+						}
+					}
+					core_check_ok_button_click = {
+						ai_will_do = {
+							factor = 200
+						}
+					}
+				}
+			}
+			core_cancel_popup_window_list = {
+				array = coring_cancel_popup
+				change_scope = yes
+				entry_container = core_cancel_popup_bg_window
+				ai_weights = {
+					core_cancel_cancel_button_click = {
+						ai_will_do = {
+							factor = 200
+						}
+					}
+					core_cancel_ok_button_click = {
+						ai_will_do = {
+							factor = 0
+						}
+					}
+				}
+			}
+			core_complete_popup_window_list = {
+				array = coring_complete_popup
+				change_scope = yes
+				entry_container = core_complete_popup_bg_window
+				ai_weights = {
+					core_complete_goto_button_click = {
+						ai_will_do = {
+							factor = 0
+						}
+					}
+					core_complete_ok_button_click = {
+						ai_will_do = {
+							factor = 200
+						}
+					}
+				}
+			}
+			claim_check_popup_window_list = {
+				array = claim_check_popup
+				change_scope = yes
+				entry_container = claim_check_popup_bg_window
+				ai_weights = {
+					claim_check_cancel_button_click = {
+						ai_will_do = {
+							factor = 0
+						}
+					}
+					claim_check_ok_button_click = {
+						ai_will_do = {
+							factor = 200
+						}
+					}
+				}
+			}
+			claim_complete_popup_window_list = {
+				array = claim_complete_popup
+				change_scope = yes
+				entry_container = claim_complete_popup_bg_window
+				ai_weights = {
+					claim_complete_goto_button_click = {
+						ai_will_do = {
+							factor = 0
+						}
+					}
+					claim_complete_ok_button_click = {
+						ai_will_do = {
+							factor = 200
+						}
+					}
+				}
+			}
+		}
+		
+		properties = {
+			sender_flag = {
+				image = "[This.Owner.GetFlag]"
+			}
+			receiver_flag = {
+				image = "[ROOT.GetFlag]"
+			}
+			claimer_flag = {
+				image = "[?ROOT.claim_complete_popup_tag^i.GetFlag]"
+			}
+		}
+		
+		effects = {
+			
+			core_check_cancel_button_click = {
+				remove_from_array = { 
+					array = ROOT.coring_check_popup
+					index = i
+				}
+				
+			}
+			core_check_ok_button_click = {
+				remove_from_array = { 
+					array = ROOT.coring_check_popup
+					index = i
+				}
+				state_coring_cost_effect = yes
+				multiply_temp_variable = { core_cost = -1 }
+				ROOT = { add_political_power = core_cost }
+				multiply_temp_variable = { temp_cost_modifier = 360 }
+				set_variable = { daily_progress = 90 }
+				divide_variable = { daily_progress = temp_cost_modifier }
+				set_variable = { progress = -91 }
+				set_variable = { coring_country = ROOT }
+				for_each_scope_loop = {
+					array = ROOT.coring_check_popup
+					state_coring_cost_effect = yes
+					if = {
+						limit = {
+							check_variable = { ROOT.political_power < core_cost }
+						}
+						add_to_temp_array = { remove_popup = THIS }
+					}
+				}
+				for_each_scope_loop = {
+					array = remove_popup
+					remove_from_array = { ROOT.coring_check_popup = THIS }
+				}
+			}
+			core_cancel_cancel_button_click = {
+				remove_from_array = { 
+					array = ROOT.coring_cancel_popup
+					index = i
+				}
+			}
+			core_cancel_ok_button_click = {
+				remove_from_array = { 
+					array = ROOT.coring_cancel_popup
+					index = i
+				}
+				state_coring_cost_effect = yes
+				ROOT = { add_political_power = core_cost }
+				clear_variable = progress
+				clear_variable = daily_progress
+				clear_variable = coring_country
+			}
+			core_complete_goto_button_click = {
+				ROOT = { 
+					goto_state = PREV
+					remove_from_array = { 
+						array = coring_complete_popup
+						index = i
+					}
+				}
+			}
+			core_complete_ok_button_click = {
+				ROOT = { 
+					remove_from_array = { 
+						array = coring_complete_popup
+						index = i
+					}
+				}
+			}
+			claim_check_cancel_button_click = {
+				remove_from_array = { 
+					array = ROOT.claim_check_popup
+					index = i
+				}
+				
+			}
+			claim_check_ok_button_click = {
+				remove_from_array = { 
+					array = ROOT.claim_check_popup
+					index = i
+				}
+				state_claim_cost_effect = yes
+				owner = {
+					subtract_from_variable = { ROOT.claim_power@this = claim_cost }
+				}
+				add_claim_by = ROOT
+				add_to_array = { ROOT.claim_complete_popup = THIS }
+				owner = { add_to_array = { claim_complete_popup = PREV } }
+				add_to_array = { ROOT.claim_complete_popup_tag = ROOT }
+				owner = { add_to_array = { claim_complete_popup_tag = ROOT } }
+				for_each_scope_loop = {
+					array = ROOT.claim_check_popup
+					state_claim_cost_effect = yes
+					if = {
+						limit = {
+							owner = {
+								check_variable = { ROOT.claim_power@this < claim_cost }
+							}
+						}
+						add_to_temp_array = { remove_popup = THIS }
+					}
+				}
+				for_each_scope_loop = {
+					array = remove_popup
+					remove_from_array = { ROOT.claim_check_popup = THIS }
+				}
+			}
+			claim_complete_goto_button_click = {
+				ROOT = { 
+					goto_state = PREV
+					remove_from_array = { 
+						array = claim_complete_popup
+						index = i
+					}
+					remove_from_array = { 
+						array = claim_complete_popup_tag
+						index = i
+					}
+				}
+			}
+			claim_complete_ok_button_click = {
+				ROOT = { 
+					remove_from_array = { 
+						array = claim_complete_popup
+						index = i
+					}
+					remove_from_array = { 
+						array = claim_complete_popup_tag
+						index = i
+					}
+				}
+			}
+		}
+		
+		triggers = {
+			
+			core_check_cancel_button_click_enabled = {
+				check_variable = { ROOT.coring_check_popup^num > 0 }
+			}
+			core_check_ok_button_click_enabled = {
+				check_variable = { ROOT.coring_check_popup^num > 0 }
+			}
+			core_cancel_cancel_button_click_enabled = {
+				check_variable = { ROOT.coring_cancel_popup^num > 0 }
+			}
+			core_cancel_ok_button_click_enabled = {
+				check_variable = { ROOT.coring_cancel_popup^num > 0 }
+			}
+			core_complete_goto_button_click_enabled = {
+				check_variable = { ROOT.coring_complete_popup^num > 0 }
+			}
+			core_complete_ok_button_click_enabled = {
+				check_variable = { ROOT.coring_complete_popup^num > 0 }
+			}
+			claim_check_cancel_button_click_enabled = {
+				check_variable = { ROOT.claim_check_popup^num > 0 }
+			}
+			claim_check_ok_button_click_enabled = {
+				check_variable = { ROOT.claim_check_popup^num > 0 }
+			}
+			claim_complete_goto_button_click_enabled = {
+				check_variable = { ROOT.claim_complete_popup^num > 0 }
+			}
+			claim_complete_ok_button_click_enabled = {
+				check_variable = { ROOT.claim_complete_popup^num > 0 }
+			}
+		}
+		
+		ai_enabled = {
+			always = yes
+		}
+		
+		ai_check = {
+			always = yes
+		}
+		
+		ai_test_interval = 24
+		ai_test_variance = 0.2
+		
+	}
+}

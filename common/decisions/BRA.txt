@@ -1,0 +1,1907 @@
+BRA_elect_neutrality = {
+	
+	bra_elect_dutra = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_government = neutrality
+			neutrality > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			has_completed_focus = bra_brasilia
+			has_government = neutrality
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Eurico Gaspar Dutra"
+				desc = "POLITICS_DUTRA_DESC"
+				picture = "gfx/leaders/BRA/Dutra.dds"
+				expire = "1965.1.1"
+				ideology = moderatism
+				traits = {
+					vfb_trait_dutra
+					vfb_trait_officer
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+
+	bra_elect_mc = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_government = neutrality
+			neutrality > 0.5
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Miguel Costa"
+				desc = "POLITICS_MC_DESC"
+				picture = "gfx/leaders/BRA/G13.dds"
+				expire = "1965.1.1"
+				ideology = moderatism
+				traits = {
+					vfb_trait_mc
+					vfb_trait_officer
+					vfb_trait_tenentista
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_jkneutro = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_government = neutrality
+			neutrality > 0.5
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Juscelino Kubitschek"
+				desc = "POLITICS_JKNEUTRO_DESC"
+				picture = "gfx/leaders/BRA/JK.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+					vfb_trait_jk
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_isidoro = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_government = neutrality
+			neutrality > 0.5
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Isidoro Dias Lopes"
+				desc = "POLITICS_ISIDORO_DESC"
+				picture = "gfx/leaders/BRA/G12.dds"
+				expire = "1965.1.1"
+				ideology = moderatism
+				traits = {
+					vfb_trait_isidoro
+					vfb_trait_officer
+					vfb_trait_tenentista
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_lottneutro = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_government = neutrality
+			neutrality > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_government = neutrality
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Henrique Teixeira Lott"
+				desc = "POLITICS_LOTTNEUTRO_DESC"
+				picture = "gfx/leaders/BRA/Lott.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+					vfb_trait_lott
+					vfb_trait_officer
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+}
+
+BRA_elect_democratic = {
+	
+	bra_elect_adhemar = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_democratic_government = yes
+			democratic > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_democratic_government = yes
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Adhemar de Barros"
+				desc = "POLITICS_ADHEMAR_DESC"
+				picture = "gfx/leaders/BRA/Adhemar.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					vfb_trait_adhemar
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_eg = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_democratic_government = yes
+			democratic > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_democratic_government = yes
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Eduardo Gomes"
+				desc = "POLITICS_EG_DESC"
+				picture = "gfx/leaders/BRA/EG.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					vfb_trait_eg
+					vfb_trait_tenentista
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_cl = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_democratic_government = yes
+			democratic > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_democratic_government = yes
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Carlos Lacerda"
+				desc = "POLITICS_CL_DESC"
+				picture = "gfx/leaders/BRA/CL.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					vfb_trait_cl
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_americo = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_democratic_government = yes
+			democratic > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_democratic_government = yes
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "José Américo de Almeida"
+				desc = "POLITICS_AMERICO_DESC"
+				picture = "gfx/leaders/BRA/Americo.dds"
+				expire = "1965.1.1"
+				ideology = liberalism
+				traits = {
+					vfb_trait_americo
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_salles = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_democratic_government = yes
+			democratic > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_democratic_government = yes
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Armando Salles de Oliveira"
+				desc = "POLITICS_SALLES_DESC"
+				picture = "gfx/leaders/BRA/Armando.dds"
+				expire = "1965.1.1"
+				ideology = liberalism
+				traits = {
+					vfb_trait_salles
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_jkdemocratico = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_democratic_government = yes
+			democratic > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_democratic_government = yes
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Juscelino Kubitschek"
+				desc = "POLITICS_JKDEMOCRATICO_DESC"
+				picture = "gfx/leaders/BRA/JK.dds"
+				expire = "1965.1.1"
+				ideology = liberalism
+				traits = {
+					vfb_trait_jk
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_jprestes = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_democratic_government = yes
+			democratic > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_democratic_government = yes
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Júlio Prestes"
+				desc = "POLITICS_JPRESTES_DESC"
+				picture = "gfx/leaders/BRA/JP.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					vfb_trait_jprestes
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_tancredo = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_democratic_government = yes
+			democratic > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_democratic_government = yes
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Tancredo Neves"
+				desc = "POLITICS_NEVES_DESC"
+				picture = "gfx/leaders/BRA/Neves.dds"
+				expire = "1965.1.1"
+				ideology = liberalism
+				traits = {
+					vfb_trait_neves
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_lottdemocratico = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_democratic_government = yes
+			democratic > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_democratic_government = yes
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Henrique Teixeira Lott"
+				desc = "POLITICS_LOTTDEMOCRATICO_DESC"
+				picture = "gfx/leaders/BRA/Lott.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					vfb_trait_lott
+					vfb_trait_officer
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+}
+
+BRA_elect_fascism = {
+	
+	bra_elect_mourao = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_government = fascism
+			fascism > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_government = fascism
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Olímpio Mourão Filho"
+				desc = "POLITICS_MOURAO_DESC"
+				picture = "gfx/leaders/BRA/Mourao.dds"
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					vfb_trait_mourao
+					vfb_trait_linhadura
+					vfb_trait_officer
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_geisel = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_government = fascism
+			fascism > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_government = fascism
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Ernesto Geisel"
+				desc = "POLITICS_GEISEL_DESC"
+				picture = "gfx/leaders/BRA/Geisel.dds"
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					vfb_trait_geisel
+					vfb_trait_castelista
+					vfb_trait_officer
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_cb = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_government = fascism
+			fascism > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_government = fascism
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Humberto de Alencar Castelo Branco"
+				desc = "POLITICS_CB_DESC"
+				picture = "gfx/leaders/BRA/Branco.dds"
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					vfb_trait_cb
+					vfb_trait_castelista
+					vfb_trait_officer
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_ces = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_government = fascism
+			fascism > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_government = fascism
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Artur da Costa e Silva"
+				desc = "POLITICS_CES_DESC"
+				picture = "gfx/leaders/BRA/G4.dds"
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					vfb_trait_ces
+					vfb_trait_linhadura
+					vfb_trait_officer
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_rademaker = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_government = fascism
+			fascism > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_government = fascism
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Augusto Rademaker"
+				desc = "POLITICS_RADEMAKER_DESC"
+				picture = "gfx/leaders/BRA/Rademaker.dds"
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					vfb_trait_rademaker
+					vfb_trait_linhadura
+					vfb_trait_officer
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+}
+
+BRA_elect_communism = {
+	
+	bra_elect_jango = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_socialist_government = yes
+			communism > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_socialist_government = yes
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "João Goulart"
+				desc = "POLITICS_JANGO_DESC"
+				picture = "gfx/leaders/BRA/Jango.dds"
+				expire = "1965.1.1"
+				ideology = marxism
+				traits = {
+					vfb_trait_jango
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+
+	bra_elect_mccomunista = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_socialist_government = yes
+			communism > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_socialist_government = yes
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Miguel Costa"
+				desc = "POLITICS_MCCOMUNISTA_DESC"
+				picture = "gfx/leaders/BRA/G13.dds"
+				expire = "1965.1.1"
+				ideology = marxism
+				traits = {
+					vfb_trait_mc
+					vfb_trait_tenentista
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+	
+	bra_elect_clcomunista = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_socialist_government = yes
+			communism > 0.5
+			has_completed_focus = bra_brasilia
+			NOT = { has_country_flag = bra_elect_flag }
+		}
+		
+		cost = 150
+		
+		days_remove = 150
+
+		ai_will_do = {
+			factor = 40
+		}
+		
+		visible = {
+			AND = { 
+				has_completed_focus = bra_brasilia
+				has_socialist_government = yes
+			}
+			tag = BRA
+		}
+		
+		modifier = {
+			#modifier1
+			#modifier2
+		}
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = bra_elect_flag } 
+			
+			hidden_effect = { kill_country_leader = yes }
+			
+			create_country_leader = {
+				name = "Carlos Lacerda"
+				desc = "POLITICS_CLCOMUNISTA_DESC"
+				picture = "gfx/leaders/BRA/CL.dds"
+				expire = "1965.1.1"
+				ideology = marxism
+				traits = {
+					vfb_trait_cl
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = { clr_country_flag = bra_elect_flag }
+			
+		}
+	}
+}
+
+BRA_uiracu = {
+	
+	bra_inv_arg= {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_completed_focus = bra_sem_eixo
+			ARG = {
+				AND = {
+					exists = yes
+					is_puppet = no
+					is_in_faction = no
+					NOT = { has_non_aggression_pact_with = BRA }
+					is_neighbor_of = BRA
+				}
+			}
+		}
+		
+		cost = 150
+		days_remove = 30
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 0
+			modifier = { 
+				has_government = fascism
+				factor = 40
+			}
+		}
+		
+		visible = {
+			has_completed_focus = bra_sem_eixo
+			tag = BRA
+		}
+		
+		modifier = {
+			political_power_gain = -1
+		}
+		
+		remove_effect = {
+			add_threat = 5
+			declare_war_on = {
+				target = ARG
+				type = annex_everything
+			}
+		}
+	}
+	
+	bra_inv_bol= {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_completed_focus = bra_sem_eixo
+			BOL = {
+				AND = {
+					exists = yes
+					is_puppet = no
+					is_in_faction = no
+					NOT = { has_non_aggression_pact_with = BRA }
+					is_neighbor_of = BRA
+				}
+			}
+		}
+		
+		cost = 150
+		days_remove = 30
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+			modifier = { 
+				has_government = fascism
+				factor = 40
+			}
+		}
+		
+		visible = {
+			has_completed_focus = bra_sem_eixo
+			tag = BRA
+		}
+		
+		modifier = {
+			political_power_gain = -1
+		}
+		
+		remove_effect = {
+			add_threat = 5
+			declare_war_on = {
+				target = BOL
+				type = annex_everything
+			}
+		}
+	}
+	
+	bra_inv_par= {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_completed_focus = bra_sem_eixo
+			PAR = {
+				AND = {
+					exists = yes
+					is_puppet = no
+					is_in_faction = no
+					NOT = { has_non_aggression_pact_with = BRA }
+					is_neighbor_of = BRA
+				}
+			}
+		}
+		
+		cost = 150
+		days_remove = 30
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+			modifier = { 
+				has_government = fascism
+				factor = 40
+			}
+		}
+		
+		visible = {
+			has_completed_focus = bra_sem_eixo
+			tag = BRA
+		}
+		
+		modifier = {
+			political_power_gain = -1
+		}
+		
+		remove_effect = {
+			add_threat = 5
+			declare_war_on = {
+				target = PAR
+				type = annex_everything
+			}
+		}
+	}
+	
+	bra_inv_urg= {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_completed_focus = bra_sem_eixo
+			URG = {
+				AND = {
+					exists = yes
+					is_puppet = no
+					is_in_faction = no
+					NOT = { has_non_aggression_pact_with = BRA }
+					is_neighbor_of = BRA
+				}
+			}
+		}
+		
+		cost = 150
+		days_remove = 30
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+			modifier = { 
+				has_government = fascism
+				factor = 40
+			}
+		}
+		
+		visible = {
+			has_completed_focus = bra_sem_eixo
+			tag = BRA
+		}
+		
+		modifier = {
+			political_power_gain = -1
+		}
+		
+		remove_effect = {
+			add_threat = 5
+			declare_war_on = {
+				target = URG
+				type = annex_everything
+			}
+		}
+	}
+}
+
+BRA_voz_ligada_cat = {
+	
+	bra_voz_ligada_on = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			NOT = { has_country_flag = bra_voz_ligada_flag }
+		}
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		visible = {
+			tag = BRA
+			is_ai = no
+		}
+		
+		complete_effect = {	
+			hidden_effect = { set_country_flag = bra_voz_ligada_flag }
+			custom_effect_tooltip =  bra_voz_ligada_on_tooltip
+		}
+
+	}
+	
+	bra_voz_ligada_off = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_country_flag = bra_voz_ligada_flag
+		}
+		
+		cost = 0
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		visible = {
+			tag = BRA
+			is_ai = no
+		}
+		
+		complete_effect = {	
+			hidden_effect = { clr_country_flag = bra_voz_ligada_flag }
+			custom_effect_tooltip =  bra_voz_ligada_off_tooltip
+		}
+
+	}
+	
+}
+
+BRA_cat_proalcool = {
+	
+	bra_proalcool_2 = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_completed_focus = bra_etanol
+			has_idea = bra_etanol_idea
+		}
+		
+		cost = 150
+		days_remove = 60 
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 4000
+		}
+		
+		visible = {
+			tag = BRA
+		}
+		
+		modifier = {
+			civilian_factory_use = 5
+			political_power_gain = -0.25
+			fuel_gain_factor_from_states = 0.2
+		}
+		
+		complete_effect = {	
+			add_tech_bonus = {
+				name = proalcool_bonus
+				bonus = 0.5
+				uses = 1
+				category = synth_resources
+			}
+		}
+
+		remove_effect = {
+			
+			502 = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			503 = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			hidden_effect = {
+				set_country_flag = bra_proalcool_2_flag
+			}
+			
+		}
+	}
+	
+	bra_proalcool_3 = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_country_flag = bra_proalcool_2_flag
+		}
+		
+		cost = 150
+		days_remove = 60 
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 4000
+		}
+		
+		visible = {
+			tag = BRA
+		}
+		
+		modifier = {
+			civilian_factory_use = 5
+			political_power_gain = -0.25
+			fuel_gain_factor_from_states = 0.4
+		}
+		
+		complete_effect = {	
+			add_tech_bonus = {
+				name = proalcool_bonus
+				bonus = 0.5
+				uses = 1
+				category = synth_resources
+			}
+		}
+
+		remove_effect = {
+		
+			504 = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			505 = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			hidden_effect = {
+				set_country_flag = bra_proalcool_3_flag
+				clr_country_flag = bra_proalcool_2_flag
+			}
+			
+		}
+	}
+	
+	bra_proalcool_4 = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_country_flag = bra_proalcool_3_flag
+		}
+		
+		cost = 150
+		days_remove = 60 
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 4000
+		}
+		
+		visible = {
+			tag = BRA
+		}
+		
+		modifier = {
+			civilian_factory_use = 5
+			political_power_gain = -0.25
+			fuel_gain_factor_from_states = 0.6
+		}
+		
+		complete_effect = {	
+			add_tech_bonus = {
+				name = proalcool_bonus
+				bonus = 0.5
+				uses = 1
+				category = synth_resources
+			}
+		}
+
+		remove_effect = {
+			
+			496 = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			499 = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			hidden_effect = {
+				set_country_flag = bra_proalcool_4_flag
+				clr_country_flag = bra_proalcool_3_flag
+			}
+			
+		}
+	}
+	
+	bra_proalcool_5 = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_country_flag = bra_proalcool_4_flag
+		}
+		
+		cost = 150
+		days_remove = 60 
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 4000
+		}
+		
+		visible = {
+			tag = BRA
+		}
+		
+		modifier = {
+			civilian_factory_use = 5
+			political_power_gain = -0.25
+			fuel_gain_factor_from_states = 0.8
+		}
+		
+		complete_effect = {	
+			add_tech_bonus = {
+				name = proalcool_bonus
+				bonus = 0.5
+				uses = 1
+				category = synth_resources
+			}
+		}
+
+		remove_effect = {
+		
+			495 = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			280 = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			hidden_effect = {
+				set_country_flag = bra_proalcool_5_flag
+				clr_country_flag = bra_proalcool_4_flag
+			}
+			
+		}
+	}
+	
+	bra_proalcool_6 = {
+	
+		icon = generic_power_struggle
+		
+		allowed = {
+			original_tag = BRA
+		}
+		
+		available = {
+			has_country_flag = bra_proalcool_5_flag
+		}
+		
+		cost = 150
+		days_remove = -1
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 4000
+		}
+		
+		visible = {
+			tag = BRA
+		}
+		
+		modifier = {
+			civilian_factory_use = 5
+			fuel_gain_factor_from_states = 1
+			MONTHLY_POPULATION = 0.2
+			max_fuel_factor = 1
+			war_support_factor = 0.1
+			stability_factor = 0.05
+		}
+		
+		complete_effect = {	
+			
+			497 = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			498 = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			remove_ideas = bra_etanol_idea
+			
+		}
+
+		remove_effect = {
+			
+			hidden_effect = {
+				clr_country_flag = bra_proalcool_5_flag
+			}
+			
+		}
+	}
+	
+}
+

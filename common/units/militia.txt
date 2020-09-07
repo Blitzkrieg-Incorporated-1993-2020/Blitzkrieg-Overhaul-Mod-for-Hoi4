@@ -1,0 +1,43 @@
+sub_units = {
+
+    militia = {
+        sprite = infantry
+        map_icon_category = infantry
+
+        priority = 600
+        active = no
+
+        type = {
+            infantry
+        }
+
+        group = infantry
+
+        categories = {
+            # category_faction_infantry # no faction infantry bonus in order to be less efficient than regular infantry
+            # category_front_line # no org bonus with doctrine
+            category_light_infantry
+            category_all_infantry
+            category_army
+        }
+
+        combat_width = 2
+
+        #Size Definitions
+        max_strength = 25
+        max_organisation = 50 # low organization -0.10
+        default_morale = 0.3
+        manpower = 1000
+
+        #Misc Abilities
+        training_time = 45 # quick training -45
+        weight = 0.25 # light -0.25
+
+        supply_consumption = 0.02 # bad weapons = low supply -0.05
+
+        need = {
+            infantry_equipment = 50 # low equipment -50
+        }
+    }
+
+}

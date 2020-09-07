@@ -1,0 +1,939 @@
+focus_tree = {
+	id = civilwar_focus
+	country = {
+		factor = 0
+	}
+	
+	continuous_focus_position = { x = 1500 y = 100 }
+	
+	focus = {
+		id = CIV_18
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 6
+		x = 5
+		y = 0
+        available = { has_country_flag = never }
+		bypass = { 
+			OR = { 
+				AND = {
+					original_tag = SPR
+					has_war_with = SPS
+				}
+				AND = {
+					original_tag = SPS
+					has_war_with = SPR
+				}
+			} 
+		}
+	}
+	focus = {
+		id = CIV_republic
+		icon = GFX_focus_spain_defend_republic
+		cost = 6
+		prerequisite = {
+			focus = CIV_18
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		available = { has_country_flag = never }
+		bypass = { 
+			has_autocratic_government = no
+		}
+		x = 2
+		y = 1
+
+	}
+	focus = {
+		id = CIV_arm
+		icon = GFX_focus_spain_arm_people
+		cost = 1
+		prerequisite = {
+			focus = CIV_republic
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+		    swap_ideas = { remove_idea = SPR_mutinies add_idea = SPR_militias }
+            hidden_effect = { country_event = { id = spain.110 } }			
+		}
+		x = 1
+		y = 2
+
+	}
+	focus = {
+		id = CIV_france
+		icon = GFX_focus_chi_reach_out_to_france
+		cost = 2
+		prerequisite = {
+			focus = CIV_republic
+		}
+		completion_reward = { 
+		    FRA = {
+		        country_event = { id = spain.32 days = 1 }  
+			}
+			add_equipment_to_stockpile = {
+				type = fighter_equipment_0
+				amount = 50
+				producer = FRA
+			}
+		}
+		x = 3
+		y = 2
+
+	}
+	focus = {
+		id = CIV_no_pasaran
+		icon = GFX_goal_generic_construct_military
+		cost = 5
+		prerequisite = {
+			focus = CIV_arm
+		}
+		prerequisite = {
+			focus = CIV_france
+		}
+		completion_reward = {
+		    add_timed_idea = { idea = SPR_no_pasaran_idea days = 650 }
+		}
+		x = 2
+		y = 3
+
+	}
+	focus = {
+		id = CIV_moscow
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		cost = 6
+		prerequisite = {
+			focus = CIV_no_pasaran
+		}
+		bypass = {
+		    has_country_flag = cnt_in_power
+		}
+		completion_reward = {
+		    add_political_power = -50
+			custom_effect_tooltip = -5_ana_inf
+			add_to_variable = { var = ana_inf value = -5 }
+		    add_to_variable = { var = com_inf value = 3 }
+		    add_to_variable = { var = lib_inf value = 2 }
+		}
+		x = 2
+		y = 4
+
+	}
+	focus = {
+		id = CIV_sov_planes
+		icon = GFX_focus_spain_sov_planes
+		cost = 6
+		prerequisite = {
+			focus = CIV_moscow
+		}
+		bypass = {
+		    has_country_flag = cnt_in_power
+		}
+		completion_reward = {
+		    add_equipment_to_stockpile = {
+				type = fighter_equipment_1
+				amount = 200
+				producer = SOV
+			}
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 1
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+			custom_effect_tooltip = 5_com_inf
+			add_to_variable = { var = ana_inf value = -5 }
+		    add_to_variable = { var = com_inf value = 5 }
+		    add_to_variable = { var = lib_inf value = 0 }
+		}
+		x = 1
+		y = 5
+
+	}
+	focus = {
+		id = CIV_sov_tanks
+		icon = GFX_focus_spain_sov_tanks
+		cost = 6
+		prerequisite = {
+			focus = CIV_moscow
+		}
+		bypass = {
+		    has_country_flag = cnt_in_power
+		}
+		completion_reward = {
+		    add_equipment_to_stockpile = {
+				type = basic_light_tank
+				amount = 250
+				producer = SOV
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+			custom_effect_tooltip = 5_com_inf
+			add_to_variable = { var = ana_inf value = -5 }
+		    add_to_variable = { var = com_inf value = 5 }
+		    add_to_variable = { var = lib_inf value = 0 }
+		}
+		x = 3
+		y = 5
+
+	}
+	focus = {
+		id = CIV_advisors
+		icon = GFX_focus_spain_sov_advisors
+		cost = 6
+		prerequisite = {
+			focus = CIV_sov_planes
+		}
+		prerequisite = {
+			focus = CIV_sov_tanks
+		}
+		bypass = {
+		    has_country_flag = cnt_in_power
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.75
+				uses = 3
+				category = land_doctrine
+			}
+			custom_effect_tooltip = 5_com_inf
+			add_to_variable = { var = ana_inf value = -5 }
+		    add_to_variable = { var = com_inf value = 5 }
+		    add_to_variable = { var = lib_inf value = 0 }
+		}
+		x = 2
+		y = 6
+
+	}
+	focus = {
+		id = CIV_brigada
+		icon = GFX_focus_brigada_mixta
+		cost = 6
+		prerequisite = {
+			focus = CIV_no_pasaran
+		}
+		completion_reward = {
+		    swap_ideas = { remove_idea = SPR_militias add_idea = SPR_militias2 }
+		    if = {
+		    	limit = { NOT = { any_country = { has_country_flag = load_milita2_oob } } }
+           	 	load_oob = SPR_mixta
+           	 	set_country_flag = load_milita2_oob
+		    }
+            if = {
+                limit = {
+		            has_country_flag = cnt_in_power
+                }
+                add_political_power = -100
+            }				
+		}
+		x = 4
+		y = 4
+
+	}
+	focus = {
+		id = CIV_unified
+		icon = GFX_focus_spain_divisions
+		cost = 6
+		prerequisite = {
+			focus = CIV_brigada
+		}
+		completion_reward = {
+		    remove_ideas = SPR_militias2
+            if = {
+                limit = {
+		            has_country_flag = cnt_in_power
+                }
+                add_political_power = -100
+				add_stability = -0.1
+			    add_war_support = -0.25
+            }			
+		}
+		x = 4
+		y = 6
+
+	}
+	focus = {
+		id = CIV_political
+		icon = GFX_focus_spanish_rep
+		cost = 6
+		prerequisite = {
+			focus = CIV_advisors
+		}
+		prerequisite = {
+			focus = CIV_unified
+		}
+		completion_reward = {
+		    add_war_support = 0.15
+            add_stability = 0.2			
+		}
+		x = 3
+		y = 7
+
+	}
+	focus = {
+		id = CIV_anarchists
+		icon = GFX_focus_spain_arm_people
+		cost = 5
+		prerequisite = {
+			focus = CIV_political
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		available = { has_country_flag = never }
+		completion_reward = {
+		    add_political_power = 100
+			custom_effect_tooltip = 5_ana_inf
+			add_to_variable = { var = ana_inf value = 5 }
+		    add_to_variable = { var = com_inf value = -3 }
+		    add_to_variable = { var = lib_inf value = -2 }
+		}
+		x = 2
+		y = 8
+
+	}
+	focus = {
+		id = CIV_moderates
+		icon = GFX_focus_spain_defend_republic
+		cost = 5
+		prerequisite = {
+			focus = CIV_political
+		}
+		available = { 
+		    has_democratic_government = yes
+		}
+		completion_reward = {
+		    add_political_power = 100
+			custom_effect_tooltip = 5_lib_inf
+			add_to_variable = { var = ana_inf value = -3 }
+		    add_to_variable = { var = com_inf value = -2 }
+		    add_to_variable = { var = lib_inf value = 5 }
+		}
+		x = 4
+		y = 8
+
+	}
+	focus = {
+		id = CIV_order
+		icon = GFX_focus_spr_dem
+		cost = 6
+		prerequisite = {
+			focus = CIV_moderates
+		}
+		available = { 
+		    OR = {
+			    has_democratic_government = yes
+				has_country_flag = pce_power
+		    }
+		}
+		completion_reward = {
+		    add_stability = 0.15
+			custom_effect_tooltip = disable_riots
+		}
+		x = 4
+		y = 9
+
+	}
+	focus = {
+		id = CIV_popular
+		icon = GFX_focus_brigada_mixta
+		cost = 6
+		prerequisite = {
+			focus = CIV_order
+		}
+		available = { 
+		    OR = {
+			    has_democratic_government = yes
+				has_country_flag = pce_power
+		    }
+		}
+		completion_reward = {
+		    add_ideas = SPR_ejercito1
+			custom_effect_tooltip = -5_ana_inf
+			add_to_variable = { var = ana_inf value = -5 }
+		    add_to_variable = { var = com_inf value = 3 }
+		    add_to_variable = { var = lib_inf value = 2 }
+	    }
+		x = 4
+		y = 10
+
+	}
+	focus = {
+		id = CIV_resistir
+		icon = GFX_goal_generic_defence
+		cost = 6
+		prerequisite = {
+			focus = CIV_popular
+		}
+		available = { 
+		    OR = {
+			    has_democratic_government = yes
+				has_country_flag = pce_power
+		    }
+		}
+		completion_reward = { 
+		    swap_ideas = { remove_idea = SPR_ejercito1 add_idea = SPR_ejercito2 } 
+		}
+		x = 4
+		y = 11
+
+	}
+	focus = {
+		id = CIV_spain
+		icon = GFX_focus_generic_strike_at_democracy1
+		cost = 6
+		prerequisite = {
+			focus = CIV_18
+		}
+		available = { has_country_flag = never }
+		bypass = { 
+			has_autocratic_government = yes
+		}
+		x = 8
+		y = 1
+
+	}
+	focus = {
+		id = CIV_italy
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 3
+		prerequisite = {
+			focus = CIV_spain
+		}
+		completion_reward = {
+		    add_equipment_to_stockpile = {
+				type = convoy_1
+				amount = 300
+				producer = ITA
+			}
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				uses = 1
+				technology = improved_light_cruiser
+				technology = advanced_light_cruiser
+				technology = improved_heavy_cruiser
+				technology = advanced_heavy_cruiser
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 600
+				producer = ITA
+			}
+		}
+		x = 6
+		y = 2
+
+	}
+	focus = {
+		id = CIV_texaco
+		icon = GFX_focus_chi_mission_to_the_us
+		cost = 7
+		prerequisite = {
+			focus = CIV_spain
+		}
+		completion_reward = {
+		    add_ideas = SPR_texaco
+		}
+		x = 8
+		y = 2
+
+	}
+	focus = {
+		id = CIV_fire
+		icon = GFX_focus_chi_mission_to_germany
+		cost = 6
+		prerequisite = {
+			focus = CIV_spain
+		}
+		completion_reward = {
+		    add_equipment_to_stockpile = {
+				type = fighter_equipment_0
+				amount = 100
+				producer = GER
+			}
+			air_experience = 45
+		}
+		x = 10
+		y = 2
+
+	}
+	focus = {
+		id = CIV_mercenaries
+		icon = GFX_goal_generic_alliance
+		cost = 8
+		prerequisite = {
+			focus = CIV_italy
+		}
+		prerequisite = {
+			focus = CIV_texaco
+		}
+		prerequisite = {
+			focus = CIV_fire
+		}
+		completion_reward = {
+		    if = {
+		    	limit = { NOT = { any_country = { has_country_flag = load_mercs_oob } } }
+           	 	load_oob = SPR_mercs
+           	 	set_country_flag = load_mercs_oob
+		    }
+		}
+		x = 8
+		y = 3
+
+	}
+	focus = {
+		id = CIV_organize
+		icon = GFX_focus_generic_strike_at_democracy2
+		cost = 5
+		prerequisite = {
+			focus = CIV_mercenaries
+		}
+		completion_reward = {
+		    add_stability = 0.1
+		}
+		x = 7
+		y = 4
+
+	}
+	focus = {
+		id = CIV_falange
+		icon = GFX_goal_generic_propaganda
+		cost = 7
+		prerequisite = {
+			focus = CIV_organize
+		}
+		completion_reward = {
+		    add_popularity = {
+				   ideology = fascism
+				   popularity = 0.1
+			    }
+			add_political_power = 75
+		}
+		x = 7
+		y = 5
+
+	}
+	focus = {
+		id = CIV_church
+		icon = GFX_focus_spanish_deal
+		cost = 5
+		prerequisite = {
+			focus = CIV_falange
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		x = 8
+		y = 6
+
+	}
+	focus = {
+		id = CIV_traditionalists
+		icon = GFX_focus_generic_home_defense
+		cost = 6
+		prerequisite = {
+			focus = CIV_falange
+		}
+		completion_reward = {
+		    add_popularity = {
+				   ideology = neutrality
+				   popularity = 0.1
+			    }
+			add_stability = 0.1
+		}
+		x = 6
+		y = 6
+
+	}
+	focus = {
+		id = CIV_requetes
+		icon = GFX_focus_generic_little_entente
+		cost = 6
+		prerequisite = {
+			focus = CIV_falange
+		}
+		completion_reward = {
+		    add_popularity = {
+				   ideology = neutrality
+				   popularity = 0.1
+			    }
+			add_stability = 0.1
+		}
+		x = 10
+		y = 6
+
+	}
+	focus = {
+		id = CIV_state
+		icon = GFX_goal_anschluss
+		cost = 6
+		prerequisite = {
+			focus = CIV_traditionalists
+		}
+		prerequisite = {
+			focus = CIV_church
+		}
+		prerequisite = {
+			focus = CIV_requetes
+		}
+		completion_reward = {
+		    add_political_power = 200
+		}
+		x = 8
+		y = 7
+
+	}
+	focus = {
+		id = CIV_condor
+		icon = GFX_goal_generic_air_bomber
+		cost = 6
+		prerequisite = {
+			focus = CIV_trouppe
+		}
+		completion_reward = {
+		    add_equipment_to_stockpile = {
+				type = fighter_equipment_1
+				amount = 200
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = CAS_equipment_1
+				amount = 100
+				producer = GER
+			}
+			air_experience = 70
+		}
+		x = 9
+		y = 5
+
+	}
+	focus = {
+		id = CIV_trouppe
+		icon = GFX_focus_generic_italy_first
+		cost = 6
+		prerequisite = {
+			focus = CIV_mercenaries
+		}
+		completion_reward = {
+		    add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1000
+				producer = ITA
+			}
+            add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.35
+				uses = 3
+				category = land_doctrine
+			}
+			army_experience = 50
+		}
+		x = 9
+		y = 4
+
+	}
+	focus = {
+		id = CIV_decree
+		icon = GFX_goal_generic_political_pressure
+		cost = 6
+		prerequisite = {
+			focus = CIV_state
+		}
+		available = { has_autocratic_government = yes }
+		mutually_exclusive = {
+			focus = CIV_monarchy
+		}
+	completion_reward = {
+		    set_country_flag = SPR_decree
+		set_party_name = 
+		{ideology = fascism
+		long_name = SPR_fetjons_long 
+		name = SPR_fetjons }
+		
+		GER = { 
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_increase
+			}
+		}
+	    add_political_power = 100
+		hidden_effect = {
+		    add_popularity = {
+		        ideology = fascism
+			    popularity = 1
+		    }
+			add_popularity = {
+		        ideology = neutrality
+			    popularity = 0.1
+		    }
+		    add_popularity = {
+		        ideology = democratic
+			    popularity = 0.1
+		    }
+			add_popularity = {
+		        ideology = communism
+			    popularity = 0.2
+		    }
+			set_party_name = {  
+			    ideology = neutrality
+		        long_name = SPR_ade_long 
+		        name = SPR_ade 
+			}
+			set_party_name = {  
+			    ideology = democratic
+		        long_name = SPR_anfd_long 
+		        name = SPR_anfd
+			}
+			
+			create_country_leader = {
+	            name = "Segismundo Casado"
+	            desc = "POLITICS_CASADO_DESC"
+	            picture = "Portrait_Spain_Casado.dds"
+	            expire = "1965.1.1"
+	            ideology = centrism
+	            traits = {
+		        #
+	            }
+		    }
+			create_country_leader = {
+	            name = "Indalecio Prieto"
+	            desc = "POLITICS_PRIETO_DESC"
+	            picture = "Portrait_Spain_Prieto.dds"
+	            expire = "1965.1.1"
+	            ideology = socialism
+	            traits = {
+		            public_order_keeper
+	            }
+		    }
+		}
+	}
+		x = 9
+		y = 8
+
+	}
+	focus = {
+		id = CIV_cult
+		icon = GFX_goal_continuous_def_against_influence
+		cost = 6
+		prerequisite = {
+			focus = CIV_decree
+		}
+		x = 9
+		y = 9
+        completion_reward = {
+		    add_ideas = SPR_regime1
+	    }
+	}
+	focus = {
+		id = CIV_responsabilidades
+		icon = GFX_focus_CZE_german_puppet
+		cost = 6
+		prerequisite = {
+			focus = CIV_cult
+		}
+		completion_reward = { 
+		swap_ideas = { remove_idea = SPR_regime1 add_idea = SPR_regime2 } 
+		}
+		x = 9
+		y = 10
+
+	}
+	focus = {
+		id = CIV_communists
+		icon = GFX_goal_anti_comintern_pact
+		cost = 6
+		prerequisite = {
+			focus = CIV_responsabilidades
+		}
+		completion_reward = { 
+		swap_ideas = { remove_idea = SPR_regime2 add_idea = SPR_regime3 } 
+		}
+		x = 9
+		y = 11
+
+	}
+	focus = {
+		id = CIV_mass
+		icon = GFX_goal_generic_propaganda
+		cost = 6
+		prerequisite = {
+			focus = CIV_anarchists
+		}
+		available = { has_country_flag = cnt_in_power }
+		completion_reward = {
+		    add_ideas = SPR_revolution
+	    }
+		x = 2
+		y = 9
+
+	}
+	focus = {
+		id = CIV_revolucionario
+		icon = GFX_focus_generic_strike_at_democracy2
+		cost = 6
+		prerequisite = {
+			focus = CIV_mass
+		}
+		available = { has_country_flag = cnt_in_power }
+		completion_reward = { 
+		swap_ideas = { remove_idea = SPR_revolution add_idea = SPR_revolution2 } 
+		}
+		x = 2
+		y = 10
+
+	}
+	focus = {
+		id = CIV_break
+		icon = GFX_goal_generic_occupy_start_war
+		cost = 6
+		prerequisite = {
+			focus = CIV_revolucionario
+		}
+		available = { has_country_flag = cnt_in_power }
+		completion_reward = { 
+		swap_ideas = { remove_idea = SPR_revolution2 add_idea = SPR_revolution3 } 
+		}
+		x = 2
+		y = 11
+
+	}
+	focus = {
+		id = CIV_monarchy
+		icon = GFX_focus_hun_elect_a_king
+		cost = 6
+		ai_will_do = {
+			factor = 0
+		}
+		prerequisite = {
+			focus = CIV_state
+		}
+		mutually_exclusive = {
+			focus = CIV_decree
+		}
+		available = { has_government = neutrality }
+		completion_reward = {
+		    add_political_power = 100
+			set_country_flag = king_restored 
+		}
+		set_party_name = 
+		{ideology = fascism
+		long_name = SPR_directorio_long 
+		name = SPR_directorio }
+		x = 7
+		y = 8
+
+	}
+	focus = {
+		id = CIV_aristocrat
+		icon = GFX_goal_generic_cavalry
+		cost = 6
+		prerequisite = {
+			focus = CIV_monarchy
+		}
+		completion_reward = {
+		    add_ideas = SPR_royal1
+	    }
+		x = 7
+		y = 9
+
+	}
+	focus = {
+		id = CIV_british
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		cost = 6
+		prerequisite = {
+			focus = CIV_aristocrat
+		}
+		completion_reward = {
+		    add_equipment_to_stockpile = {
+				type = basic_light_tank
+				amount = 150
+				producer = ENG
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+		x = 7
+		y = 10
+
+	}
+	focus = {
+		id = CIV_resist
+		icon = GFX_focus_generic_coastal_fort
+		cost = 6
+		prerequisite = {
+			focus = CIV_british
+		}
+		completion_reward = { 
+		swap_ideas = { remove_idea = SPR_royal1 add_idea = SPR_royal2 } 
+		}
+		x = 7
+		y = 11
+
+	}
+	focus = {
+		id = CIV_allies
+		icon = GFX_focus_chi_british_cooperation
+		cost = 6
+		prerequisite = {
+			focus = CIV_resistir
+		}
+		available = {
+		    ENG = {
+			    has_war_with = GER
+			}
+			has_democratic_government = yes
+		}
+		completion_reward = {
+		    custom_effect_tooltip = 5_lib_inf
+			add_to_variable = { var = ana_inf value = 0 }
+		    add_to_variable = { var = com_inf value = -5 }
+		    add_to_variable = { var = lib_inf value = 5 }
+		    ENG = {
+			    add_to_faction = ROOT
+			}
+		}
+		x = 4
+		y = 12
+
+	}
+	focus = {
+		id = CIV_axis
+		icon = GFX_focus_chi_mission_to_germany
+		cost = 6
+		available = {
+		    ENG = {
+			    has_war_with = GER
+			}
+		}
+		prerequisite = {
+			focus = CIV_communists
+		}
+		completion_reward = {
+		    GER = {
+			    add_to_faction = ROOT
+			}
+		}
+		x = 9
+		y = 12
+
+	}
+}

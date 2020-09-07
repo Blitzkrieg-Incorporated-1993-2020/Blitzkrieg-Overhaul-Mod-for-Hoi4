@@ -1,0 +1,4 @@
+ANS = {
+	color = rgb { 164  0  24 }
+	color_ui = rgb { 165  0  25 }
+}

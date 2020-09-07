@@ -1,0 +1,28 @@
+##########
+##Canada##
+##########
+CAN_immigration = {
+	icon = generic_democracy
+	
+	picture = GFX_decision_cat_can_immigration
+
+	allowed = {
+		original_tag = CAN
+	}
+}
+
+CAN_support_america = {
+	icon = generic_economy
+
+	allowed = {
+		original_tag = CAN
+	}
+}
+
+CAN_loan_payments = {
+	icon = generic_economy
+
+	allowed = {
+		original_tag = CAN
+	}
+}

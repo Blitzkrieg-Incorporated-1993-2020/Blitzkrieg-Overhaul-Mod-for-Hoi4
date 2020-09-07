@@ -1,0 +1,27 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+# value
+# min_trust
+# max_trust
+# decay
+# months/years/days = timer
+# trade = yes/no
+
+opinion_modifiers = {
+
+	### Turkish focus tree ###
+
+	TUR_pactwithgermany = { value = 50 }
+
+	TUR_improverelationsovietunion = { value = 50 }
+
+	TUR_drawcloseruk = { value = 50 }
+	
+	TUR_montreux = {
+		value = -50
+
+	TUR_lozan = {
+		value = -50
+
+}

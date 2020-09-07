@@ -1,0 +1,1743 @@
+focus_tree = { 
+	id = irish_focus
+
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = IRE 
+		} 
+	} 
+
+	#Focus for Never another famine
+	focus = { 
+		id = IRE_neveranotherfamine
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construct_civilian
+		x = 12
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_revivethelimericksoviet } 
+		ai_will_do = { 
+	 		factor = 1
+	 	} 
+		completion_reward = { 
+			random_owned_controlled_state = {
+				 limit = {
+					 free_building_slots = {
+					 	building = infrastructure
+					 	size > 0
+		 				include_locked = yes
+	 				}
+
+ 				}
+		 		add_extra_state_shared_building_slots = 1
+		 		add_building_construction = {
+			 		type = infrastructure
+		 			level = 1
+					instant_build = yes
+				}
+			}
+			country_event= {
+				days = 150
+				id = ireland.7 
+			}
+		}
+	} 
+
+	#Focus for New revolutions
+	focus = { 
+		id = IRE_newrevolutions
+		icon = GFX_goal_generic_air_production
+		search_filters = { FOCUS_FILTER_MANPOWER } 
+		x = 18
+		y = 5
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_theaircorps } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			air_experience= 100
+		}
+	} 
+
+	#Focus for Revive the Limerick soviet
+	focus = { 
+		id = IRE_revivethelimericksoviet
+		icon = GFX_nosgoals_GENERIC_commie1
+		x = 12
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		prerequisite = { focus = IRE_strengthenthecpi } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_ideas= IRE_limerick_soviet
+		}
+	}
+
+	#Focus for Strengthen ties to the Soviet Union
+	focus = { 
+		id = IRE_strengthentiestothesovietunion
+		icon = GFX_nosgoals_GENERIC_deal_soviet
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		x = 14
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_invitesovietdiplomats } 
+		ai_will_do = { 
+	 		factor = 1
+	 	} 
+		completion_reward = { 
+			add_political_power= 75
+			add_opinion_modifier= { 
+				target = SOV 
+				modifier = medium_increase 
+			}
+		} 
+	} 
+
+	#Focus for Re-purpose agricultural spending
+	focus = { 
+		id = IRE_repurposeagriculturalspending
+		icon = GFX_nosgoals_GENERIC_planeconomy
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY } 
+		x = 19
+		y = 0
+		cost = 10
+		available_if_capitulated = yes 
+		mutually_exclusive = { focus = IRE_increaseagriculturalspending } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_stability= 0.05
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	} 
+
+	#Focus for Allow american immigrants into the government
+	focus = { 
+		id = IRE_allowamericanimmigrantsintothegovernment
+		icon = GFX_nosgoals_GENERIC_militaryagree
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		x = 2
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_inviteirishamericanshome } 
+		prerequisite = { focus = IRE_parlimentaryspeech } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_stability= -0.01
+			add_ideas= IRE_immigrants_in_government
+		} 
+	} 
+
+	#Focus for Fund the university of Dublin
+	focus = { 
+		id = IRE_fundtheuniversityofdublin
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_nosgoals_GENERIC_brain
+		x = 16
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_constructiongrants } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_research_slot= 1
+		} 
+	} 
+
+	#Focus for Conscript the rioters
+	focus = { 
+		id = IRE_conscripttherioters
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_nosgoals_GENERIC_moremen
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_fascistriots } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_manpower= 5000
+			add_timed_idea= { 
+				idea = IRE_rioters_conscripted 
+				days = 365 
+			}
+		}
+	} 
+
+	#Focus for Provide research grants
+	focus = { 
+		id = IRE_provideresearchgrants
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 16
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_fundtheuniversityofdublin } 
+		ai_will_do = { 
+			factor = 1
+	 	} 
+		completion_reward = { 
+			add_tech_bonus= {
+				bonus = 0.5 
+				uses = 2 
+				category = industry 
+			}
+		} 
+	} 
+
+	#Focus for Expand the cork dockyard facilities
+	focus = { 
+		id = IRE_expandthecorkdockyardfacilities
+		icon = GFX_goal_generic_navy_battleship
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		x = 20
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_constructiongrants } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	} 
+
+	#Focus for Women in the workforce
+	focus = { 
+		id = IRE_womenintheworkforce
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_nosgoals_SOV_pilotwomen
+		x = 4
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_inviteirishamericanshome } 
+		ai_will_do = { 
+			factor = 1
+	 	} 
+		completion_reward = { 
+			add_ideas= IRE_women
+		} 
+	} 
+
+	#Focus for A new, better government
+	focus = {
+		id = IRE_anewbettergovernment
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_fashychampaign
+		x = 7
+		y = 4
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_fascistriots } 
+		prerequisite = { focus = IRE_restabilisation } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_ideas= IRE_blueshirt_government
+		} 
+	} 
+
+	#Focus for Construction grants
+	focus = { 
+		id = IRE_constructiongrants
+		icon = GFX_nosgoals_IRE_heavyindustry
+		x = 18
+		y = 1
+		cost = 10
+		available_if_capitulated = yes 
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = IRE_increaseagriculturalspending focus = IRE_repurposeagriculturalspending } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Engage with the IRA
+	focus = { 
+		id = IRE_engagewiththeira
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		icon = GFX_nosgoals_IRE_defence
+		x = 0
+		y = 1
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_empowerthetaoiseach } 
+		mutually_exclusive = { focus = IRE_strengthenthecpi } 
+		mutually_exclusive = { focus = IRE_empowertheblueshirts }
+		ai_will_do = { 
+			factor = 100
+		} 
+		completion_reward = { 
+			add_stability= -0.05
+			add_war_support= 0.05
+			add_political_power= 50
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Douglas Hyde"
+				desc = ""
+				picture = "gfx/leaders/IRE/IRE_Douglas_Hyde.dds"
+				expire = "1959.7.20"
+				ideology = conservatism
+				traits = {
+					political_dancer
+				}
+			}
+		}
+	}
+
+	#Focus for The path of darkness
+	focus = { 
+		id = IRE_thepathofdarkness
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GER_nazireichstag
+		x = 8
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_empowertheblueshirts } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			set_party_name= { 
+				ideology = fascism 
+				long_name = IRE_blueshirts_long 
+				name = IRE_blueshirts_party 
+			}
+			add_stability= -0.15
+			add_political_power= 50
+		} 
+	} 
+
+	#Focus for Fascist riots
+	focus = { 
+		id = IRE_fascistriots
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_ENG_blackshirtorganize
+		x = 6
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_empowertheblueshirts } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_timed_idea= { 
+				idea = IRE_blueshirt_riots 
+				days = 90 
+			}
+		}
+	} 
+
+	#Focus for Strengthen the CPI
+	focus = {
+		id = IRE_strengthenthecpi
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_SOV_commie_democracy
+		x = 13
+		y = 1
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_empowerthetaoiseach } 
+		mutually_exclusive = { focus = IRE_empowertheblueshirts } 
+		mutually_exclusive = { focus = IRE_engagewiththeira } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_ideas= communist_influence
+		} 
+	} 
+
+	#Focus for Empower the Taoiseach
+	focus = { 
+		id = IRE_empowerthetaoiseach
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_IRE_sanctuary
+		x = 7
+		y = 0
+		cost = 5
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			date > 1937.10.1
+		}
+
+		completion_reward = { 
+			add_stability= -0.05
+			add_political_power= 120
+			if = {
+				limit = {
+					ROOT = {
+						is_subject = yes
+						is_puppet = no
+					}
+				}
+				random_country = {
+					limit = {
+						ROOT = { is_subject_of = PREV }
+					}
+					end_puppet = ROOT
+				}
+			}
+			if = {
+				limit = {
+					is_in_faction = yes
+				}
+				random_country = {
+					limit = {
+						is_in_faction_with = ROOT
+						is_faction_leader = yes
+					}
+					remove_from_faction = IRE
+				}
+			}
+		}
+	}
+
+	#Focus for Increase agricultural spending
+	focus = { 
+		id = IRE_increaseagriculturalspending
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_nosgoals_IRE_farms
+		x = 17
+		y = 0
+		cost = 10
+		available_if_capitulated = yes 
+		mutually_exclusive = { focus = IRE_repurposeagriculturalspending } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_timed_idea= { 
+				idea = IRE_agricultural_spending_focus 
+				days = 730 
+			}
+		} 
+	} 
+
+	#Focus for Empower the blueshirts
+	focus = { 
+		id = IRE_empowertheblueshirts
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_fashytreaty
+		x = 7
+		y = 1
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_empowerthetaoiseach } 
+		mutually_exclusive = { focus = IRE_engagewiththeira } 
+		mutually_exclusive = { focus = IRE_strengthenthecpi } 
+		mutually_exclusive = { focus = IRE_ } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_ideas= IRE_governmental_chaos
+		}
+	} 
+
+	#Focus for Finish off the north!
+	focus = { 
+		id = IRE_finishoffthenorth
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		icon = GFX_nosgoals_GER_invadebritain
+		x = 8
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = IRE_generalsinparliament } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			transfer_state = 119
+			reverse_add_opinion_modifier= { 
+				target = ENG 
+				modifier = large_decrease 
+			}
+			ENG = { 
+				country_event= { id = ireland.6 } 
+			}
+		}
+	} 
+
+	#Focus for Parlimentary speech
+	focus = { 
+		id = IRE_parlimentaryspeech
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		icon = GFX_nosgoals_GENERIC_liberty_torch
+		x = 0
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_engagewiththeira } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_stability= 0.05
+			add_political_power= 50
+		}
+	} 
+
+	#Focus for Invite irish-americans home
+	focus = { 
+		id = IRE_inviteirishamericanshome
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
+		icon = GFX_focus_chi_mission_to_the_us
+		x = 4
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_empowertheblueshirts focus = IRE_engagewiththeira } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_stability= 0.05
+			add_manpower= 50000
+			add_ideas= IRE_population_focus
+		} 
+
+	} 
+
+	#Focus for A new fleet
+	focus = { 
+		id = IRE_anewfleet
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_nosgoals_GENERIC_navalfund
+		x = 23
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_focusonthepeople focus = IRE_focusonthearmy } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	} 
+
+	#Focus for Dream big
+	focus = { 
+		id = IRE_dreambig
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_nosgoals_IRE_navy
+		x = 21
+		y = 4
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_fermentnewnavaldesigns focus = IRE_anewfleet } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			navy_experience= 250
+		}
+	} 
+
+	#Focus for Co-operate with the axis
+	focus = { 
+		id = IRE_cooperatewiththeaxis
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_friend_reich
+		x = 10
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_fascistscience } 
+		mutually_exclusive = { focus = IRE_forgeourownpath } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			GER = { country_event= { id = ireland.8 } }
+			add_ideas= ideological_fanaticism_focus
+		}
+	} 
+
+	#Focus for Communist science
+	focus = { 
+		id = IRE_communistscience
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_nosgoals_GENERIC_socialscience
+		x = 13
+		y = 4
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_strengthentiestothesovietunion } 
+		prerequisite = { focus = IRE_neveranotherfamine } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			has_government = communism
+		} 
+		completion_reward = { 
+			add_research_slot = 1
+		} 
+	} 
+
+	#Focus for Join the comintern
+	focus = { 
+		id = IRE_jointhecomintern
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_commie_militaryagree
+		x = 14
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_purchasenorthernireland } 
+		prerequisite = { focus = IRE_cashinonourindustrialsuccesses } 
+		mutually_exclusive = { focus = IRE_forgeourownpath } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			SOV = { country_event= { id = ireland.10 } }
+		} 
+	} 
+
+	#Focus for Move the capital to Limerick
+	focus = { 
+		id = IRE_movethecapitaltolimerick
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_commietown
+		x = 11
+		y = 4
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_expansionofthesoviets } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			has_government= communism
+		} 
+		completion_reward = { 
+			set_capital= 135
+			add_stability= 0.1
+		} 
+	} 
+
+	#Focus for Industrial growth
+	focus = { 
+		id = IRE_industrialgrowth
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construction2
+		x = 23
+		y = 1
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_repurposeagriculturalspending } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	} 
+
+	#Focus for Focus on the army
+	focus = { 
+		id = IRE_focusonthearmy
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_nosgoals_IRE_army
+		x = 24
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_industrialgrowth } 
+		mutually_exclusive = { focus = IRE_focusonthepeople } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	} 
+
+	#Focus for Re-stabilisation
+	focus = { 
+		id = IRE_restabilisation
+		search_filters = { FOCUS_FILTER_STABILITY }
+		icon = GFX_nosgoals_GENERIC_police
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_thepathofdarkness } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			swap_ideas= {
+				remove_idea = IRE_governmental_chaos
+				add_idea = IRE_governmental_chaos2 
+			}
+		}
+	} 
+
+	#Focus for Invite soviet diplomats
+	focus = { 
+		id = IRE_invitesovietdiplomats
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_diplo
+		x = 14
+		y = 2
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_strengthenthecpi } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_political_power= 150
+		} 
+	} 
+
+	#Focus for The Belfast conference
+	focus = { 
+		id = IRE_thebelfastconference
+		icon = GFX_nosgoals_GENERIC_riskydeal
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		x = 0
+		y = 5
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_thetreatyofderry } 
+		prerequisite = { focus = IRE_thetreatyofarmagh } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_political_power= -100
+			ENG = { country_event= { id = ireland.1 } }
+		} 
+	} 
+
+	#Focus for The treaty of Armagh
+	focus = { 
+		id = IRE_thetreatyofarmagh
+		search_filters = { FOCUS_FILTER_POLITICAL}
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 4
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_begintalksaboutnorthernireland } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_political_power= -150
+			add_opinion_modifier= { 
+				target = ENG 
+				modifier = medium_increase 
+			}
+			reverse_add_opinion_modifier= { 
+				target = ENG 
+				modifier = small_decrease 
+			}
+		}
+	} 
+
+	#Focus for The treaty of Derry
+	focus = { 
+		id = IRE_thetreatyofderry
+		search_filters = { FOCUS_FILTER_POLITICAL}
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 2
+		y = 4
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_begintalksaboutnorthernireland } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_political_power= -150
+			add_opinion_modifier= { 
+				target = ENG 
+				modifier = medium_increase 
+			}
+			reverse_add_opinion_modifier= { 
+				target = ENG
+				modifier = small_decrease
+			}
+		}
+	} 
+
+	#Focus for Begin talks about Northern Ireland
+	focus = { 
+		id = IRE_begintalksaboutnorthernireland
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_gibland
+		x = 0
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_parlimentaryspeech } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_opinion_modifier= { 
+				target = ENG 
+				modifier = small_increase 
+			}
+			reverse_add_opinion_modifier= { 
+				target = ENG 
+				modifier = small_increase 
+			}
+		} 
+	} 
+
+	#Focus for Generals in parliament
+	focus = { 
+		id = IRE_generalsinparliament
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_nosgoals_GENERIC_militarygov
+		x = 6
+		y = 5
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_anewbettergovernment } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			army_experience= 25
+			air_experience= 15
+			navy_experience= 50
+		}
+	} 
+
+	#Focus for Fascist science
+		focus = { 
+		id = IRE_fascistscience
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_nosgoals_GENERIC_tech
+		x = 9
+		y = 6
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_generalsinparliament } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_research_slot = 1
+		}
+	} 
+
+	#Focus for Embrace Northern Irish scholars
+	focus = { 
+		id = IRE_embracenorthernirishscholars
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_focus_research2
+		x = 0
+		y = 6
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_thebelfastconference } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			owns_state = 119
+		}
+		completion_reward = { 
+			add_research_slot= 1
+		}
+	} 
+
+	#Focus for Deal with the Rat
+	focus = { 
+		id = IRE_dealwiththerat
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_backstab
+		x = 9
+		y = 4
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_expansionofthesoviets focus = IRE_restabilisation } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			country_event= { id = ireland.3 }
+		} 
+	} 
+
+	#Focus for Strengthen the new leadership
+	focus = { 
+		id = IRE_strengthenthenewleadership
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_bulldiplomacy
+		x = 10
+		y = 5
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_dealwiththerat } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_stability = 0.05
+			add_war_support= 0.05
+			add_political_power= 25
+		} 
+	} 
+
+	#Focus for Infrastructure development
+	focus = { 
+		id = IRE_infrastructuredevelopment
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 18
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_constructiongrants } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	} 
+
+	#Focus for Develop the west
+	focus = { 
+		id = IRE_developthewest
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_civilian
+		x = 18
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_infrastructuredevelopment } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	} 
+
+	#Focus for Ferment new naval designs
+	focus = { 
+		id = IRE_fermentnewnavaldesigns
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
+		icon = GFX_focus_generic_destroyer
+		x = 20
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_expandthecorkdockyardfacilities } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			navy_experience= 50
+			add_tech_bonus= {
+				bonus = 0.5 
+				uses = 1 
+				category = dd_tech
+			}
+			add_tech_bonus= {
+				bonus = 0.5 
+				uses = 1 
+				category = cl_tech
+			}
+			add_tech_bonus= {
+				bonus = 0.5 
+				uses = 1 
+				category = ca_tech
+			}
+		}
+	} 
+
+	#Focus for Industrial integrations
+	focus = { 
+		id = IRE_industrialintegrations
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construction2
+		x = 2
+		y = 5
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_thetreatyofderry } 
+		prerequisite = { focus = IRE_thetreatyofarmagh } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	} 
+
+	#Focus for The air corps
+	focus = { 
+		id = IRE_theaircorps
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_nosgoals_IRE_airforce
+		x = 18
+		y = 4
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_provideresearchgrants focus = IRE_developthewest focus = IRE_fermentnewnavaldesigns } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			air_experience= 75
+		}
+	} 
+
+	#Focus for Public indoctrination
+	focus = { 
+		id = IRE_publicindoctrination
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_commieloyal
+		x = 15
+		y = 4
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_strengthentiestothesovietunion } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_political_power= 50
+			add_manpower= 8000
+		}
+	} 
+
+	#Focus for Expansion of the soviets
+	focus = { 
+		id = IRE_expansionofthesoviets
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_focus_generic_soviet_politics
+		x = 10
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_revivethelimericksoviet } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			swap_ideas= {
+				remove_idea = IRE_limerick_soviet 
+				add_idea = IRE_limerick_soviet2 
+			}
+		}
+	} 
+
+	#Focus for Invite scotland
+	focus = { 
+		id = IRE_invitescotland
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_rally
+		x = 10
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_forgeourownpath } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			is_faction_leader = yes
+			any_country = {
+				original_tag = SCO
+				exists = yes
+				NOT = { has_war_with = ROOT }
+				custom_trigger_tooltip = {
+					tooltip = same_ideology_group
+					OR = {
+						AND = {
+							PREV.PREV = { has_democratic_government = yes }
+							ROOT = { has_democratic_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_socialist_government = yes }
+							ROOT = { has_socialist_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_autocratic_government = yes }
+							ROOT = { has_autocratic_government = yes }
+						}
+					}
+				}
+			}
+		} 
+		completion_reward = { 
+			random_country = {
+				limit = {
+					original_tag = SCO
+					exists = yes
+					NOT = { has_war_with = ROOT }
+					custom_trigger_tooltip = {
+						tooltip = same_ideology_group
+						OR = {
+							AND = {
+								PREV.PREV = { has_democratic_government = yes }
+								ROOT = { has_democratic_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_socialist_government = yes }
+								ROOT = { has_socialist_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_autocratic_government = yes }
+								ROOT = { has_autocratic_government = yes }
+							}
+						}
+					}
+				}
+				country_event = { id = generic.5 }
+			}
+		} 
+	} 
+
+	#Focus for Invite wales
+	focus = { 
+		id = IRE_invitewales
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_rally
+		x = 14
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_forgeourownpath } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			is_faction_leader = yes
+			any_country = {
+				original_tag = WLS
+				exists = yes
+				NOT = { has_war_with = ROOT }
+				custom_trigger_tooltip = {
+					tooltip = same_ideology_group
+					OR = {
+						AND = {
+							PREV.PREV = { has_democratic_government = yes }
+							ROOT = { has_democratic_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_socialist_government = yes }
+							ROOT = { has_socialist_government = yes }
+						}
+						AND = {
+							PREV.PREV = { has_autocratic_government = yes }
+							ROOT = { has_autocratic_government = yes }
+						}
+					}
+				}
+			}
+		} 
+		completion_reward = { 
+			random_country = {
+				limit = {
+					original_tag = WLS
+					exists = yes
+					NOT = { has_war_with = ROOT }
+					custom_trigger_tooltip = {
+						tooltip = same_ideology_group
+						OR = {
+							AND = {
+								PREV.PREV = { has_democratic_government = yes }
+								ROOT = { has_democratic_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_socialist_government = yes }
+								ROOT = { has_socialist_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_autocratic_government = yes }
+								ROOT = { has_autocratic_government = yes }
+							}
+						}
+					}
+				}
+				country_event = { id = generic.5 }
+			}
+		} 
+	} 
+
+	#Focus for Demand Britain release the celts
+	focus = { 
+		id = IRE_demandbritainreleasethecelts
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_IRE_gaelic
+		x = 11
+		y = 6
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_strengthenthenewleadership } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			ENG = { country_event= { id = ireland.11 } }
+		}
+	} 
+
+	#Focus for Deal with the British
+	focus = { 
+		id = IRE_dealwiththebritish
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_britenemy
+		x = 12
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_cooperatewiththeaxis focus = IRE_jointhecomintern focus = IRE_forgeourownpath } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			create_wargoal= { 
+				type = annex_everything 
+				target = ENG
+			}
+		}
+	} 
+
+	#Focus for Communist parliamentary speeches
+	focus = { 
+		id = IRE_communistparliamentaryspeeches
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		icon = GFX_nosgoals_GENERIC_commiepride
+		x = 12
+		y = 5
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_movethecapitaltolimerick } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_stability= 0.1
+			add_war_support= 0.1
+		}
+	} 
+
+	#Focus for Propaganda efforts
+	focus = { 
+		id = IRE_propagandaefforts
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		icon = GFX_nosgoals_GENERIC_extravagant
+		x = 8
+		y = 5
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_anewbettergovernment } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			has_government= fascism
+		} 
+		completion_reward = { 
+			add_stability= 0.2
+			add_war_support= 0.2
+		} 
+	} 
+
+	#Focus for Purchase Northern Ireland
+	focus = { 
+		id = IRE_purchasenorthernireland
+		icon = GFX_nosgoals_GENERIC_shutupandtakemymoney
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		x = 13
+		y = 6
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_communistparliamentaryspeeches } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			has_political_power > 299
+			119 = {
+				OWNER = {
+					NOT = { tag = ROOT }
+					custom_trigger_tooltip = {
+						tooltip = same_ideology_group
+						OR = {
+							AND = {
+								PREV.PREV = { has_democratic_government = yes }
+								ROOT = { has_democratic_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_socialist_government = yes }
+								ROOT = { has_socialist_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_autocratic_government = yes }
+								ROOT = { has_autocratic_government = yes }
+							}
+						}
+					}
+				}
+			}
+		} 
+		completion_reward = { 
+			add_political_power= -300
+			119 = {
+				OWNER = {
+					country_event= { id = ireland.12 } 
+				}
+			}
+		} 
+	} 
+
+	#Focus for Communist utopia
+	focus = { 
+		id = IRE_communistutopia
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_commie6
+		x = 14
+		y = 5
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_communistscience } 
+		prerequisite = { focus = IRE_publicindoctrination } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_political_power= 300
+		} 
+
+	} 
+
+	#Focus for Cash in on our industrial successes
+	focus = { 
+		id = IRE_cashinonourindustrialsuccesses
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_nosgoals_GENERIC_commieinvest
+		x = 15
+		y = 6
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_communistutopia } 
+		prerequisite = { focus = IRE_industrialmiracle } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	} 
+
+	#Focus for Conscript IRA members
+	focus = { 
+		id = IRE_conscriptiramembers
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_nosgoals_GENERIC_militaryagree
+		x = 8
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_finishoffthenorth } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_manpower= 15000
+			add_ideas= IRE_IRA
+		}
+	}
+
+	#Focus for Industrial miracle
+	focus = { 
+		id = IRE_industrialmiracle
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construction2
+		x = 16
+		y = 5
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_publicindoctrination } 
+		prerequisite = { focus = IRE_provideresearchgrants } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	} 
+
+	#Focus for Widespread army innovations
+	focus = { 
+		id = IRE_widespreadarmyinnovations
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_nosgoals_IRE_army
+		x = 7
+		y = 6
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_generalsinparliament } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			army_experience= 150
+		}
+	} 
+
+	#Focus for Focus on the people
+	focus = { 
+		id = IRE_focusonthepeople
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_civilian
+		x = 22
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_industrialgrowth } 
+		mutually_exclusive = { focus = IRE_focusonthearmy } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state={
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	} 
+
+	#Focus for Forge our own path
+	focus = { 
+		id = IRE_forgeourownpath
+		icon = GFX_nosgoals_IRE_defence
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 12
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = IRE_fascistscience focus = IRE_purchasenorthernireland } 
+		mutually_exclusive = { focus = IRE_cooperatewiththeaxis } 
+		mutually_exclusive = { focus = IRE_jointhecomintern } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			create_faction = "Irish Sraith"
+		}
+	}
+}
+
+
+#search_filters = { FOCUS_FILTER_STABILITY } 
+#search_filters = { FOCUS_FILTER_INDUSTRY } 
+#search_filters = { FOCUS_FILTER_POLITICAL } 
+#search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+#search_filters = { FOCUS_FILTER_STABILITY } 
+#search_filters = { FOCUS_FILTER_RESEARCH } 
+#search_filters = { FOCUS_FILTER_ANNEXATION }

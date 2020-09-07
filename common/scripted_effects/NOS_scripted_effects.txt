@@ -1,0 +1,23 @@
+
+embargo = {
+	set_country_flag = diplo_embargo
+	add_to_array = { ROOT.embargoed_countries = FROM.id }
+	reverse_add_opinion_modifier = { target = ROOT modifier = cw_embargo }
+	hidden_effect = {
+		reverse_add_opinion_modifier = { target = ROOT modifier = cw_embargo_relations_target }
+		add_opinion_modifier = { target = ROOT modifier = cw_embargo_relations_initiator }
+	}
+}
+
+end_embargo = {
+	set_country_flag = this_remove_embargo
+	remove_from_array = { ROOT.embargoed_countries = FROM.id }
+	ROOT = { remove_opinion_modifier = { target = EMB modifier = cw_embargo } }
+	hidden_effect = {
+		ROOT = { remove_opinion_modifier = { target = EMB modifier = cw_embargo_relations_target } }
+		remove_opinion_modifier = { target = ROOT modifier = cw_embargo_relations_initiator }
+		add_opinion_modifier = { target = ROOT modifier = cw_embargo_lifter }
+		clr_country_flag = this_remove_embargo
+		clr_country_flag = diplo_embargo
+	}
+}

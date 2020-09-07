@@ -1,0 +1,3093 @@
+focus_tree = {
+	id = latvian_focus
+	country = {
+      	factor = 0
+      	modifier = {
+		  	add = 10
+		  	tag = LAT
+	  	}
+	}
+
+	default = no
+
+######################### Industrial Focuses #########################
+
+	focus = {
+		id = LAT_Rebuild_Our_Industry
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		icon = GFX_goal_generic_production
+		x = 2
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Improve_Latvian_Export
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = LAT_Rebuild_Our_Industry }
+		x = 2
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+	    	random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 1
+                    add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+	}
+
+	focus = {
+		id = LAT_Expand_Vairogs_Production
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = LAT_Improve_Latvian_Export }
+		x = 2
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		    random_owned_controlled_state = {
+	        	add_extra_state_shared_building_slots = 1
+	            add_building_construction = {
+	                type = industrial_complex
+	                level = 1
+	                instant_build = yes
+                }
+            }
+        }
+	}
+
+	focus = {
+		id = LAT_Expand_VEF_Production
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = LAT_Expand_Vairogs_Production }
+		x = 2
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		    random_owned_controlled_state = {
+	            add_extra_state_shared_building_slots = 1
+	                add_building_construction = {
+	                type = industrial_complex
+	                level = 1
+	                instant_build = yes
+                }
+            }
+        }
+	}
+	focus = {
+		id = LAT_Construction_of_Keguma_VES
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = LAT_Expand_VEF_Production }
+		x = 2
+		y = 4
+		cost = 20
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+	    	random_owned_controlled_state = {
+	            add_extra_state_shared_building_slots = 2
+	            add_building_construction = {
+	                type = industrial_complex
+	                level = 2
+	                instant_build = yes
+                }
+            }
+	    }
+	}
+
+	focus = {
+		id = LAT_Rebuild_Vidzeme_Infrastructure
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = LAT_Rebuild_Our_Industry }
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			12 = {
+				owner = { original_tag = LAT }
+			}
+		}
+
+		completion_reward = {
+			12 = {
+			    add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Rebuild_Kurzeme_Infrastructure
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = LAT_Rebuild_Vidzeme_Infrastructure }
+		x = 0
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			190 = {
+				owner = { original_tag = LAT }
+			}
+		}
+
+		completion_reward = {
+			190 = {
+			    add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Rebuild_Lithuanian_Infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		prerequisite = { focus = LAT_Rebuild_Kurzeme_Infrastructure }
+		x = 0
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			11 = {
+				owner = { original_tag = LAT }
+			}
+			189 = {
+				owner = { original_tag = LAT }
+			}
+		}
+
+		completion_reward = {
+			11 = {
+			    add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+			189 = {
+			    add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Rebuild_Estonian_Infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		prerequisite = { focus = LAT_Rebuild_Kurzeme_Infrastructure }
+		x = 0
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			13 = {
+				owner = { original_tag = LAT }
+			}
+			191 = {
+				owner = { original_tag = LAT }
+			}
+		}
+
+		completion_reward = {
+			13 = {
+			    add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+			191 = {
+			    add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Supplies_for_Army
+		icon = GFX_goal_generic_construct_mil_factory
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		prerequisite = { focus = LAT_Rebuild_Our_Industry }
+		x = 4
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+	    random_owned_controlled_state = {
+				                        add_extra_state_shared_building_slots = 1
+				                        add_building_construction = {
+				                        type = arms_factory
+				                        level = 1
+				                        instant_build = yes
+				                        }
+			                }
+		        }
+	}
+
+	focus = {
+		id = LAT_Vairogs_in_Army
+		icon = GFX_goal_generic_construct_mil_factory
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		prerequisite = { focus = LAT_Supplies_for_Army }
+		x = 4
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+		available = { has_completed_focus = LAT_Expand_Vairogs_Production }
+
+		completion_reward = {
+	    random_owned_controlled_state = {
+				                        add_extra_state_shared_building_slots = 1
+				                        add_building_construction = {
+				                        type = arms_factory
+				                        level = 1
+				                        instant_build = yes
+				                        }
+			                }
+		        }
+	}
+
+	focus = {
+		id = LAT_Modernize_VEF_Aircraft
+		icon = GFX_goal_generic_construct_mil_factory
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		prerequisite = { focus = LAT_Vairogs_in_Army }
+		x = 4
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+		available = { has_completed_focus = LAT_Expand_VEF_Production }
+
+		completion_reward = {
+	    random_owned_controlled_state = {
+				                        add_extra_state_shared_building_slots = 1
+				                        add_building_construction = {
+				                        type = arms_factory
+				                        level = 1
+				                        instant_build = yes
+				                        }
+			                }
+		        }
+	}
+
+	focus = {
+		id = LAT_Latvian_Rifle_Industry
+		icon = GFX_goal_generic_construct_mil_factory
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		prerequisite = { focus = LAT_Modernize_VEF_Aircraft }
+		x = 4
+		y = 4
+		cost = 20
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+	    random_owned_controlled_state = {
+				                        add_extra_state_shared_building_slots = 2
+				                        add_building_construction = {
+				                        type = arms_factory
+				                        level = 2
+				                        instant_build = yes
+				                        }
+			                }
+		        }
+	}
+
+	focus = {
+		id = LAT_Expand_University_of_Latvia
+		icon = GFX_focus_research
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		prerequisite = { focus = LAT_Latvian_Rifle_Industry }
+		prerequisite = { focus = LAT_Construction_of_Keguma_VES }
+		x = 3
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = LAT_Grand_Potato_Project
+		icon = GFX_goal_grand_potato_project
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		prerequisite = { focus = LAT_Expand_University_of_Latvia }
+		x = 4
+		y = 6
+		cost = 10
+
+		available = {
+			is_major = yes
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 0.5
+				uses = 2
+				category = nuclear
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_New_VEF_Project
+		icon = GFX_goal_new_vef_project
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		prerequisite = { focus = LAT_Expand_University_of_Latvia }
+		x = 2
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 4
+				category = electronics
+				category = rocketry
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Baltic_Industrial_Powerhouse
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = LAT_Rebuild_Lithuanian_Infrastructure }
+		prerequisite = { focus = LAT_Rebuild_Estonian_Infrastructure }
+		prerequisite = { focus = LAT_Latvian_Rifle_Industry }
+		prerequisite = { focus = LAT_Construction_of_Keguma_VES }
+		x = 0
+		y = 5
+		cost = 20
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				                        add_extra_state_shared_building_slots = 2
+				                        add_building_construction = {
+				                        type = arms_factory
+				                        level = 2
+				                        instant_build = yes
+				                        }
+			                }
+			random_owned_controlled_state = {
+				                        add_extra_state_shared_building_slots = 2
+				                        add_building_construction = {
+				                        type = arms_factory
+				                        level = 2
+				                        instant_build = yes
+				                        }
+			                }
+			random_owned_controlled_state = {
+				                        add_extra_state_shared_building_slots = 2
+				                        add_building_construction = {
+				                        type = industrial_complex
+				                        level = 2
+				                        instant_build = yes
+				                        }
+			                }
+			random_owned_controlled_state = {
+				                        add_extra_state_shared_building_slots = 2
+				                        add_building_construction = {
+				                        type = industrial_complex
+				                        level = 2
+				                        instant_build = yes
+				                        }
+			                }
+		        }
+	}
+
+	focus = {
+		id = LAT_Baltic_University
+		icon = GFX_focus_research
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		prerequisite = { focus = LAT_Baltic_Industrial_Powerhouse }
+		prerequisite = { focus = LAT_Expand_University_of_Latvia }
+		x = 0
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+######################### Polticial Focuses #########################
+
+	focus = {
+		    id = LAT_Review_the_Satversme
+			search_filters = { FOCUS_FILTER_POLITICAL } 
+		    icon = GFX_focus_renounce_the_treaty_of_trianon
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 15
+		    y = 0
+
+		    completion_reward = {
+                add_political_power = 150
+            }
+	}
+
+	focus = {
+		    id = LAT_Finish_the_Coup
+		    icon = GFX_goal_finish_the_coup
+			search_filters = { FOCUS_FILTER_POLITICAL } 
+		    prerequisite = { focus = LAT_Review_the_Satversme }
+		    mutually_exclusive = { focus = LAT_Follow_the_Thunder }
+		    mutually_exclusive = { focus = LAT_Bring_Out_the_Hammers }
+		    mutually_exclusive = { focus = LAT_Strengthen_the_Satversme }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 18
+		    y = 1
+
+		    completion_reward = {
+			                    country_event = { id = latvia.7 }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Political_Party_Ban
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    icon = GFX_focus_generic_strike_at_democracy2
+		    prerequisite = { focus = LAT_Finish_the_Coup }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 18
+		    y = 2
+
+		    completion_reward = {
+			                    add_ideas = political_party_ban
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Nationalistic_Ideas
+		    icon = GFX_goal_nationalistic_ideas
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Political_Party_Ban }
+		    mutually_exclusive = { focus = LAT_Monarch_State }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 17
+		    y = 3
+
+		    completion_reward = {
+			                    add_ideas = nationalistic_ideas
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Baltic_Unity
+		    icon = GFX_goal_generic_improve_relations
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Nationalistic_Ideas }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 17
+		    y = 4
+
+		    completion_reward = {
+			                    LAT = { add_opinion_modifier = { target = LIT modifier = Baltic_Unity }}
+			                    LAT = { add_opinion_modifier = { target = EST modifier = Baltic_Unity }}
+			                    LIT = { add_opinion_modifier = { target = LAT modifier = Baltic_Unity }}
+			                    EST = { add_opinion_modifier = { target = LAT modifier = Baltic_Unity }}
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Latvia_for_Latvians
+		    icon = GFX_goal_latvia_for_latvians
+			search_filters = { FOCUS_FILTER_RESEARCH }
+		    prerequisite = { focus = LAT_Baltic_Unity }
+		    mutually_exclusive = { focus = LAT_Baltic_Entente }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 15
+		    y = 5
+
+		    completion_reward = {
+			                    add_ideas = latvia_for_latvians
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Aizsargi
+		    icon = GFX_goal_aizsargi
+			search_filters = { FOCUS_FILTER_MANPOWER }
+		    prerequisite = { focus = LAT_Latvia_for_Latvians }
+		    available_if_capitulated = yes
+		    cost = 20
+		    x = 15
+		    y = 6
+
+		    completion_reward = {
+			                    set_technology = { bicycle_infantry = 1 }
+			                    hidden_effect = { load_oob = LAT_Aizsargi }
+			                    custom_effect_tooltip = spawns_19_aizsargi_units
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Victory_Square_Project
+		    icon = GFX_goal_victory_square_project
+			search_filters = { FOCUS_FILTER_INDUSTRY }
+		    prerequisite = { focus = LAT_Aizsargi }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 15
+		    y = 7
+
+		    completion_reward = {
+		                        add_war_support = 0.2
+			                    12 = {
+			                         add_building_construction = {
+				                                                 type = infrastructure
+				                                                 level = 1
+				                                                 instant_build = yes
+				                                                 }
+			                         }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_The_Dream_State
+		    icon = GFX_goal_the_dream_state
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Victory_Square_Project }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 15
+		    y = 8
+
+		    completion_reward = {
+			                    add_ideas = the_latvian_dream_state
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Baltic_Entente
+		    icon = GFX_focus_generic_little_entente
+		    prerequisite = { focus = LAT_Baltic_Unity }
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    mutually_exclusive = { focus = LAT_Latvia_for_Latvians }
+		    available_if_capitulated = no
+		    cost = 10
+		    x = 17
+		    y = 5
+
+		    available = {
+		    	OR = {
+		    		date > 1941.1.1
+		    		is_major = yes
+		    	}
+		    }
+
+		    completion_reward = {
+		                        set_rule = { can_create_factions = yes }
+			                    create_faction = baltic_entente
+			                    EST = { country_event = latvia.25 }
+			                    LIT = { country_event = latvia.28 }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Finnish_Membership
+		    icon = GFX_goal_support_finnish_democracy
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Baltic_Entente }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 17
+		    y = 6
+
+		    completion_reward = {
+			                    FIN = { country_event = latvia.97 }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Polish_Membership
+		    icon = GFX_goal_polish_membership
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Finnish_Membership }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 17
+		    y = 7
+
+		    completion_reward = {
+			                    POL = { country_event = latvia.100 }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_The_Big_Baltic_Entente
+		    icon = GFX_goal_the_big_baltic_entente
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Polish_Membership }
+		    available_if_capitulated = yes
+		    cost = 20
+		    x = 17
+		    y = 8
+
+		    completion_reward = {
+			                    CZE = { country_event = latvia.103 }
+			                    HUN = { country_event = latvia.106 }
+			                    ROM = { country_event = latvia.109 }
+			                    YUG = { country_event = latvia.112 }
+			                    BUL = { country_event = latvia.115 }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Monarch_State
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		    prerequisite = { focus = LAT_Political_Party_Ban }
+		    mutually_exclusive = { focus = LAT_Nationalistic_Ideas }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 19
+		    y = 3
+
+		    completion_reward = {
+			                    country_event = { id = latvia.17 }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Form_the_Latvian_Kingdom
+		    icon = GFX_focus_generic_home_defense
+		    prerequisite = { focus = LAT_Monarch_State }
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    mutually_exclusive = { focus = LAT_Nationalistic_Ideas }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 19
+		    y = 4
+
+		    completion_reward = {
+			                    country_event = { id = latvia.18 }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Restore_the_Livonian_Order
+		    icon = GFX_goal_restore_the_livonian_order
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		    prerequisite = { focus = LAT_Form_the_Latvian_Kingdom }
+		    mutually_exclusive = { focus = LAT_Unite_the_Balts }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 19
+		    y = 5
+
+		    completion_reward = {
+			                    EST = { country_event = { id = latvia.19 }}
+			                    add_state_claim = 13
+			                    add_state_claim = 191
+			                    add_state_claim = 883
+			                    add_state_claim = 890
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Teutonic_Believes
+		    icon = GFX_goal_teutonic_believes
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Restore_the_Livonian_Order }
+		    available_if_capitulated = yes
+            available = {
+			            13 = { owner = { original_tag = LAT }}
+			            191 = { owner = { original_tag = LAT }}
+			            }
+		    cost = 10
+		    x = 19
+		    y = 6
+
+		    completion_reward = {
+			                    add_ideas = teutonic_believes
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Baltic_Crusade
+		    icon = GFX_goal_baltic_crusade
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		    prerequisite = { focus = LAT_Teutonic_Believes }
+		    available_if_capitulated = yes
+		    cost = 5
+		    x = 19
+		    y = 7
+
+		    available = {
+		    	OR = {
+		    		is_major = yes
+		    		date > 1941.1.1
+		    	}
+		    }
+
+		    completion_reward = {
+		                        add_state_claim = 11
+		                        add_state_claim = 878
+		                        add_state_claim = 189
+		                        add_state_claim = 188
+		                        add_state_claim = 784
+			                    create_wargoal = { 
+			                                     type = annex_everything
+				                                 target = LIT
+			                                     }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Deus_Vult
+		    icon = GFX_goal_deus_vult
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		    prerequisite = { focus = LAT_Baltic_Crusade }
+		    available_if_capitulated = no
+		    available = {
+			            11 = { owner = { original_tag = LAT }}
+			            189 = { owner = { original_tag = LAT }}
+			            }
+		    cost = 10
+		    x = 19
+		    y = 8
+
+		    completion_reward = {
+		                        add_state_claim = 5
+		                        add_state_claim = 763
+		                        add_state_claim = 85
+		                        add_state_claim = 865
+		                        add_state_claim = 124
+		                        create_wargoal = { 
+			                                     type = annex_everything
+				                                 target = GER
+			                                     }
+			                    create_wargoal = { 
+			                                     type = annex_everything
+				                                 target = POL
+			                                     }
+			                    create_wargoal = { 
+			                                     type = annex_everything
+				                                 target = SWE
+			                                     }
+			                    add_ideas = deus_vult
+		                        }
+	}
+
+	focus = {
+	    id = LAT_Unite_the_Balts
+	    icon = GFX_goal_unite_the_balts
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+	    prerequisite = { focus = LAT_Form_the_Latvian_Kingdom }
+	    mutually_exclusive = { focus = LAT_Restore_the_Livonian_Order }
+	    available_if_capitulated = yes
+	    cost = 10
+	    x = 21
+	    y = 5
+
+	    available = {
+		    	OR = {
+		    		is_major = yes
+		    		date > 1941.1.1
+		    	}
+	    }
+
+	    completion_reward = {
+            LIT = { country_event = { id = latvia.22 } }
+            add_state_claim = 11
+            add_state_claim = 188
+            add_state_claim = 189
+        }
+	}
+
+	focus = {
+		    id = LAT_Baltic_Ancestry
+		    icon = GFX_goal_baltic_ancestry
+		    prerequisite = { focus = LAT_Unite_the_Balts }
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		    available_if_capitulated = yes
+		    available = {
+				    	OR = {
+				    		is_major = yes
+				    		date > 1941.1.1
+				    	}
+			            11 = { owner = { original_tag = LAT }}
+			            189 = { owner = { original_tag = LAT }}
+			            }
+		    cost = 10
+		    x = 21
+		    y = 6
+
+		    completion_reward = {
+                add_state_claim = 784
+                add_state_claim = 5
+                add_state_claim = 96
+                add_state_claim = 95
+                add_state_claim = 97
+                add_state_claim = 94
+                add_state_claim = 194
+                add_state_claim = 204
+                add_state_claim = 206
+                add_state_claim = 207
+                add_state_claim = 241
+                add_ideas = baltic_blood
+            }
+	}
+
+	focus = {
+		    id = LAT_Demand_Vilnius
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		    icon = GFX_goal_generic_more_territorial_claims
+		    prerequisite = { focus = LAT_Baltic_Ancestry }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 21
+		    y = 7
+
+		    available = {
+		    	POL = { owns_state = 784 }
+		    	OR = {
+		    		is_major = yes
+		    		date > 1941.1.1
+		    	}
+		    }
+
+		    completion_reward = {
+                POL = { country_event = { id = latvia.118 }}
+            }
+	}
+
+	focus = {
+		    id = LAT_Demand_Prussia
+		    icon = GFX_goal_generic_territory_or_war
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		    prerequisite = { focus = LAT_Demand_Vilnius }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 21
+		    y = 8
+
+		    available = {
+		    	GER = { owns_state = 763 }
+		    	OR = {
+		    		is_major = yes
+		    		date > 1941.1.1
+		    	}
+		    }
+
+		    completion_reward = {
+                GER = { country_event = { id = latvia.124 }}
+            }
+	}
+
+	focus = {
+		    id = LAT_Follow_the_Thunder
+		    icon = GFX_goal_follow_the_thunder
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Review_the_Satversme }
+		    mutually_exclusive = { focus = LAT_Finish_the_Coup }
+		    mutually_exclusive = { focus = LAT_Bring_Out_the_Hammers }
+		    mutually_exclusive = { focus = LAT_Strengthen_the_Satversme }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 12
+		    y = 1
+
+		    completion_reward = {
+				                add_ideas = rise_of_the_thunder_cross
+		                        }
+	}
+
+	focus = {
+		    id = LAT_The_Lightning_Strike
+		    icon = GFX_focus_ger_reichskommisariats
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Follow_the_Thunder }
+		    available_if_capitulated = yes
+		    available = { fascism > 0.3 }
+		    cost = 10
+		    x = 12
+		    y = 2
+
+		    completion_reward = {
+				                add_ideas = strike_of_the_lightning
+				                country_event = { id = latvia.8 }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Tresa_Atmoda
+		    icon = GFX_goal_tresa_atmoda
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_The_Lightning_Strike }
+		    mutually_exclusive = { focus = LAT_German_Cooperation }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 13
+		    y = 3
+
+		    completion_reward = {
+				                add_ideas = Tresa_Atmoda
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Baltic_Dominance
+		    icon = GFX_goal_demand_sudetenland
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		    prerequisite = { focus = LAT_Tresa_Atmoda }
+		    available_if_capitulated = no
+		    cost = 10
+		    x = 13
+		    y = 4
+
+		    completion_reward = {
+				                add_state_claim = 13
+			                    add_state_claim = 191
+			                    add_state_claim = 883
+			                    add_state_claim = 879
+			                    add_state_claim = 890
+		                        add_state_claim = 11
+		                        add_state_claim = 188
+			                    add_state_claim = 189
+			                    EST = { country_event = { id = latvia.42 }}
+			                    LIT = { country_event = { id = latvia.45 }}
+			                    }
+	}
+
+	focus = {
+		    id = LAT_Legacy_of_Baltic_Tribes
+		    icon = GFX_goal_generic_territory_or_war
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		    prerequisite = { focus = LAT_Baltic_Dominance }
+		    available_if_capitulated = no
+		    available = {
+		                has_full_control_of_state = 13
+		                has_full_control_of_state = 191
+		                has_full_control_of_state = 11
+		                has_full_control_of_state = 189
+		                }
+		    cost = 20
+		    x = 13
+		    y = 5
+
+		    completion_reward = {
+				                add_state_claim = 5
+				                add_state_claim = 97
+				                add_state_claim = 997
+			                    add_state_claim = 96
+		                        add_state_claim = 95
+		                        add_state_claim = 933
+		                        add_state_claim = 94
+		                        add_state_claim = 210
+		                        add_state_claim = 209
+			                    add_state_claim = 207
+			                    add_state_claim = 206
+			                    add_state_claim = 204
+			                    add_state_claim = 194
+			                    add_state_claim = 241
+			                    add_state_claim = 691
+			                    add_state_claim = 701
+			                    add_state_claim = 763
+			                    add_state_claim = 784
+			                    add_ideas = baltic_nationalism
+			                    custom_effect_tooltip = enables_claim_dispute_decisions
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Thunder_Over_Europe
+		    icon = GFX_goal_thunder_over_europe
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Legacy_of_Baltic_Tribes }
+		    available_if_capitulated = no
+		    available = {
+                        has_country_flag = LAT_Demanded_Prussia
+                        has_country_flag = LAT_Demanded_Western_Belarus
+                        has_country_flag = LAT_Demanded_Eastern_Belarus
+                        has_country_flag = LAT_Demanded_Former_Colonies
+		                }
+		    cost = 10
+		    x = 13
+		    y = 6
+
+		    completion_reward = {
+				                add_ideas = power_of_the_thunder
+		                        }
+	}
+
+	focus = {
+		    id = LAT_German_Cooperation
+		    icon = GFX_focus_chi_mission_to_germany
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_The_Lightning_Strike }
+		    mutually_exclusive = { focus = LAT_Tresa_Atmoda }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 11
+		    y = 3
+
+		    completion_reward = {
+				                GER = { country_event = { id = latvia.12 }}
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Latvian_Legion
+		    icon = GFX_goal_latvian_legion
+		    prerequisite = { focus = LAT_German_Cooperation }
+		    available = { is_in_faction_with = GER }
+		    available_if_capitulated = no
+		    cost = 10
+		    x = 11
+		    y = 4
+
+		    completion_reward = {
+				                hidden_effect = { load_oob = LAT_Latvian_Legion }
+				                country_event = { id = latvia.63 }
+				                add_ideas = latvian_legion
+				                add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 300 producer = GER }
+				                add_equipment_to_stockpile = { type = support_equipment amount = 60 producer = GER }
+				                custom_effect_tooltip = spawns_2_motorized_divisions
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Plans_to_United_Baltics
+		    icon = GFX_goal_plans_to_united_baltics
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		    prerequisite = { focus = LAT_Latvian_Legion }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 11
+		    y = 5
+
+		    completion_reward = {
+                country_event = { id = latvia.64 }
+                add_state_claim = 13
+                add_state_claim = 191
+                add_state_claim = 11
+                add_state_claim = 188
+                add_state_claim = 189
+                add_state_claim = 96
+                add_state_claim = 95
+                add_state_claim = 94
+                add_state_claim = 784
+            }
+	}
+
+	focus = {
+		    id = LAT_Ostland_Project
+		    icon = GFX_goal_generic_military_deal
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Plans_to_United_Baltics }
+		    available_if_capitulated = no
+		    cost = 10
+		    x = 11
+		    y = 6
+
+		    completion_reward = {
+				                country_event = { id = latvia.65 }
+				                create_wargoal = {
+			                              type = annex_everything
+			                              target = EST
+			                              }
+				                create_wargoal = {
+			                              type = annex_everything
+			                              target = LIT
+			                              }
+				                create_wargoal = {
+			                              type = annex_everything
+			                              target = POL
+			                              }
+				                create_wargoal = {
+			                              type = annex_everything
+			                              target = SOV
+			                              }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Bring_Out_the_Hammers
+		    icon = GFX_focus_YUG_pan_slavic_congress
+		    prerequisite = { focus = LAT_Review_the_Satversme }
+		    mutually_exclusive = { focus = LAT_Follow_the_Thunder }
+		    mutually_exclusive = { focus = LAT_Finish_the_Coup }
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    mutually_exclusive = { focus = LAT_Strengthen_the_Satversme }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 24
+		    y = 1
+
+		    completion_reward = {
+			                    country_event = { id = latvia.10 }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Communist_Propoganda
+		    icon = GFX_goal_communist_propoganda
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Bring_Out_the_Hammers }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 24
+		    y = 2
+
+		    completion_reward = {
+				                add_ideas = cina_newspapers
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Red_Flag_Revolution
+		    icon = GFX_goal_red_flag_revolution
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Communist_Propoganda }
+		    available_if_capitulated = yes
+		    available = { communism > 0.4 }
+		    cost = 10
+		    x = 24
+		    y = 3
+
+		    completion_reward = {
+				                add_ideas = red_flag_revolution
+				                country_event = { id = latvia.11 }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Independent_Socialist_Republic
+		    icon = GFX_focus_prc_agrarian_socialism
+		    prerequisite = { focus = LAT_Red_Flag_Revolution }
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    mutually_exclusive = { focus = LAT_Soviet_Cooperation }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 23
+		    y = 4
+
+		    completion_reward = {
+				                add_ideas = independent_socialist_republic
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Pressure_On_the_Baltics
+		    icon = GFX_goal_pressure_on_the_baltics
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Independent_Socialist_Republic }
+		    available_if_capitulated = yes
+		    available = {
+		                EST = { exists = yes }
+		                LIT = { exists = yes }
+		                }
+		    cost = 10
+		    x = 23
+		    y = 5
+
+		    completion_reward = {
+				                EST = { country_event = { id = latvia.31 }}
+				                LIT = { country_event = { id = latvia.31 }}
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Spread_the_Revolution
+		    icon = GFX_goal_spread_the_revolution
+		    prerequisite = { focus = LAT_Pressure_On_the_Baltics }
+		    available_if_capitulated = no
+		    available = {
+		                EST = { exists = yes }
+		                LIT = { exists = yes }
+		                }
+		    cost = 20
+		    x = 23
+		    y = 6
+
+		    completion_reward = {
+				                EST = { country_event = { id = latvia.32 }}
+				                LIT = { country_event = { id = latvia.35 }}
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Baltic_Socialist_Union
+		    icon = GFX_goal_baltic_socialist_union
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Spread_the_Revolution }
+		    available_if_capitulated = no
+		    available = {
+		                OR = {
+		                     LAT = {
+		                           has_full_control_of_state = 13
+		                           has_full_control_of_state = 191
+		                           }
+		                     EST = { is_puppet_of = LAT }
+		                     }
+		                OR = {
+		                     LAT = {
+		                           has_full_control_of_state = 11
+		                           has_full_control_of_state = 189
+		                           }
+		                     LIT = { is_puppet_of = LAT }
+		                     }
+		                }
+		    cost = 20
+		    x = 23
+		    y = 7
+
+		    completion_reward = {
+		                        add_state_claim = 13
+			                    add_state_claim = 191
+		                        add_state_claim = 11
+		                        add_state_claim = 188
+			                    add_state_claim = 189
+			                    add_state_claim = 784
+				                set_rule = { can_create_factions = yes }
+				                country_event = { id = latvia.38 }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Soviet_Cooperation
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    icon = GFX_focus_chi_mission_to_the_soviet_union
+		    prerequisite = { focus = LAT_Red_Flag_Revolution }
+		    mutually_exclusive = { focus = LAT_Independent_Socialist_Republic }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 25
+		    y = 4
+
+		    completion_reward = {
+				                LAT = { add_opinion_modifier = { target = SOV modifier = Soviet-Latvian_Cooperation }}
+			                    SOV = { add_opinion_modifier = { target = LAT modifier = Soviet-Latvian_Cooperation }}
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Join_the_Comitern
+		    icon = GFX_focus_generic_soviet_politics
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Soviet_Cooperation }
+		    bypass = { is_in_faction_with = SOV }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 25
+		    y = 5
+
+		    completion_reward = {
+				                SOV = { country_event = { id = latvia.39 }}
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Big_Brother
+		    icon = GFX_goal_big_brother
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Join_the_Comitern }
+		    available_if_capitulated = yes
+		    available = { is_in_faction_with = SOV }
+		    cost = 10
+		    x = 25
+		    y = 6
+
+		    completion_reward = {
+		                        add_ideas = big_brothers_influence
+				                LAT = { add_opinion_modifier = { target = SOV modifier = Big_Brother }}
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Concept_of_Baltic_Revolution
+		    icon = GFX_goal_concept_of_baltic_revolution
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		    prerequisite = { focus = LAT_Big_Brother }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 25
+		    y = 7
+
+		    available = {
+		    	OR = {
+		    		date > 1941.1.1
+		    		is_major = yes
+		    	}
+		    }
+
+		    completion_reward = {
+				                add_state_claim = 13
+			                    add_state_claim = 191
+		                        add_state_claim = 11
+		                        add_state_claim = 188
+			                    add_state_claim = 189
+			                    add_state_claim = 784
+			                    create_wargoal = {
+			                              type = annex_everything
+			                              target = EST
+			                              }
+			                    create_wargoal = {
+			                              type = annex_everything
+			                              target = LIT
+			                              }
+			                    set_cosmetic_tag = BSU
+		                        }
+	}
+
+	focus = {
+	    id = LAT_Strengthen_the_Satversme
+	    icon = GFX_goal_strengthen_the_satversme
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	    prerequisite = { focus = LAT_Review_the_Satversme }
+	    mutually_exclusive = { focus = LAT_Finish_the_Coup }
+	    mutually_exclusive = { focus = LAT_Follow_the_Thunder }
+	    mutually_exclusive = { focus = LAT_Bring_Out_the_Hammers }
+	    available_if_capitulated = yes
+	    cost = 10
+	    x = 8
+	    y = 1
+
+	    completion_reward = {
+            add_ideas = support_of_satversme
+			}
+	}
+
+	focus = {
+		    id = LAT_the_Riga_Referendum
+		    icon = GFX_focus_generic_treaty
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Strengthen_the_Satversme }
+		    available_if_capitulated = yes
+		    available = { democratic > 0.5 }
+		    cost = 10
+		    x = 8
+		    y = 2
+
+		    completion_reward = {
+		                        random_list = {
+			                                  70 = { LAT = { news_event = { id = latvia.15 }}}
+			                                  30 = { LAT = { news_event = { id = latvia.16 }}}
+	                                      }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_the_Big_Allies
+		    icon = GFX_focus_chi_british_cooperation
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_the_Riga_Referendum }
+		    mutually_exclusive = { focus = LAT_the_Baltic_Allies }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 9
+		    y = 3
+
+		    completion_reward = {
+				                add_ideas = the_big_democratic_world 
+				                set_rule = { can_send_volunteers = yes }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Alliance_With_Anglosphere
+		    icon = GFX_goal_alliance_with_anglosphere
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_the_Big_Allies }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 9
+		    y = 4
+
+		    completion_reward = {
+				                LAT = { add_opinion_modifier = { target = ENG modifier = Anglo-Latvian_Sphere }}
+				                ENG = { add_opinion_modifier = { target = LAT modifier = Anglo-Latvian_Sphere }}
+				                LAT = { add_opinion_modifier = { target = USA modifier = Anglo-Latvian_Sphere }}
+				                USA = { add_opinion_modifier = { target = LAT modifier = Anglo-Latvian_Sphere }}
+				                LAT = { add_opinion_modifier = { target = AST modifier = Anglo-Latvian_Sphere }}
+				                AST = { add_opinion_modifier = { target = LAT modifier = Anglo-Latvian_Sphere }}
+				                LAT = { add_opinion_modifier = { target = CAN modifier = Anglo-Latvian_Sphere }}
+				                CAN = { add_opinion_modifier = { target = LAT modifier = Anglo-Latvian_Sphere }}
+				                LAT = { add_opinion_modifier = { target = NZL modifier = Anglo-Latvian_Sphere }}
+				                NZL = { add_opinion_modifier = { target = LAT modifier = Anglo-Latvian_Sphere }}
+				                LAT = { add_opinion_modifier = { target = SAF modifier = Anglo-Latvian_Sphere }}
+				                SAF = { add_opinion_modifier = { target = LAT modifier = Anglo-Latvian_Sphere }}
+				                LAT = { add_opinion_modifier = { target = RAJ modifier = Anglo-Latvian_Sphere }}
+				                RAJ = { add_opinion_modifier = { target = LAT modifier = Anglo-Latvian_Sphere }}
+				                LAT = { add_opinion_modifier = { target = MAL modifier = Anglo-Latvian_Sphere }}
+				                MAL = { add_opinion_modifier = { target = LAT modifier = Anglo-Latvian_Sphere }}
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Request_For_Defensive_Measures
+		    icon = GFX_focus_generic_army_tanks2
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Alliance_With_Anglosphere }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 9
+		    y = 5
+
+		    completion_reward = {
+				                ENG = { country_event = { id = latvia.67 }}
+				                CAN = { country_event = { id = latvia.70 }}
+				                USA = { country_event = { id = latvia.73 }}
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Join_The_Allies
+		    icon = GFX_focus_generic_little_entente
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Request_For_Defensive_Measures }
+		    available_if_capitulated = yes
+		    bypass = {
+			         is_in_faction_with = ENG
+		    }
+		    cost = 10
+		    x = 9
+		    y = 6
+
+		    completion_reward = {
+				                ENG = { country_event = { id = latvia.76 }}
+		                        }
+	}
+
+	focus = {
+		    id = LAT_the_Baltic_Allies
+		    icon = GFX_goal_generic_major_alliance
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_the_Riga_Referendum }
+		    mutually_exclusive = { focus = LAT_the_Big_Allies }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 7
+		    y = 3
+
+		    completion_reward = {
+				                add_ideas = the_small_democratic_world
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Support_Baltic_Democracy
+		    icon = GFX_goal_support_baltic_democracy
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_the_Baltic_Allies }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 7
+		    y = 4
+
+		    completion_reward = {
+				                EST = { add_ideas = latvian_democratic_influence }
+				                LIT = { add_ideas = latvian_democratic_influence }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Support_Finnish_Democracy
+		    icon = GFX_goal_support_finnish_democracy
+			search_filters = { FOCUS_FILTER_POLITICAL }
+		    prerequisite = { focus = LAT_Support_Baltic_Democracy }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 7
+		    y = 5
+
+		    completion_reward = {
+				                FIN = { add_ideas = latvian_democratic_influence }
+		                        }
+	}
+
+	focus = {
+		    id = LAT_Baltic_Democratic_Alliance
+		    icon = GFX_focus_generic_diplomatic_treaty
+		    prerequisite = { focus = LAT_Support_Finnish_Democracy }
+		    available_if_capitulated = yes
+		    cost = 10
+		    x = 7
+		    y = 6
+
+		    completion_reward = {
+				                set_rule = { can_create_factions = yes }
+			                    create_faction = baltic_democratic_alliance
+			                    if = {
+				                     limit = {
+					                         EST = { has_democratic_government = yes }
+				                             }
+				                             EST = { country_event = latvia.88 }
+			                         }
+			                    if = {
+				                     limit = {
+					                         LIT = { has_democratic_government = yes }
+				                             }
+				                             LIT = { country_event = latvia.89 }
+			                         }
+			                    if = {
+				                     limit = {
+					                         FIN = { has_democratic_government = yes }
+				                             }
+				                             FIN = { country_event = latvia.90 }
+			                         }
+		                        }
+	}
+
+######################### Army Focuses #########################
+
+	focus = {
+		id = LAT_Military_Effort
+			search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 35
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    army_experience = 25
+		                    air_experience = 25
+		                    navy_experience = 25
+		                    }
+	}
+
+	focus = {
+		id = LAT_Border_Security
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_focus_generic_provoke_border_clashes
+		prerequisite = { focus = LAT_Military_Effort }
+		x = 29
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    army_experience = 10
+		                    }
+	}
+
+	focus = {
+		id = LAT_Fortify_the_East
+		icon = GFX_goal_generic_fortify_city
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = LAT_Border_Security }
+		x = 29
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+        available = {
+			        12 = {
+				         owner = { original_tag = LAT }
+			             }
+		}
+
+		completion_reward = {
+		  12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3298
+						instant_build = yes
+					}
+				}
+			}
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 319
+						instant_build = yes
+					}
+				}
+			}
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 222
+						instant_build = yes
+					}
+				}
+			}
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 9275
+						instant_build = yes
+					}
+				}
+			}
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6459
+						instant_build = yes
+					}
+				}
+			}
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 310
+						instant_build = yes
+					}
+				}
+			}
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 11358
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Focus_on_Outside_Security
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = LAT_Fortify_the_East }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		mutually_exclusive = { focus = LAT_Focus_on_Internal_Security }
+		x = 28
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+        available = {
+			        12 = {
+				         owner = { original_tag = LAT }
+			             }
+		}
+
+		completion_reward = {
+		  12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 3298
+						instant_build = yes
+					}
+				}
+			}
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 319
+						instant_build = yes
+					}
+				}
+			}
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 222
+						instant_build = yes
+					}
+				}
+			}
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 9275
+						instant_build = yes
+					}
+				}
+			}
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 6459
+						instant_build = yes
+					}
+				}
+			}
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 310
+						instant_build = yes
+					}
+				}
+			}
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 11358
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Lithuanian_Border_Security
+		icon = GFX_goal_generic_fortify_city
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = LAT_Focus_on_Outside_Security }
+		x = 28
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+		available = {
+			        11 = {
+				         owner = { original_tag = LAT }
+			             }
+			        189 = {
+				          owner = { original_tag = LAT }
+			              }
+		}
+
+		completion_reward = {
+            11 = {
+				if = {
+					limit = {
+					        is_controlled_by = ROOT
+					        not = { 784 = { is_controlled_by = LAT }}
+					        }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 11226
+						instant_build = yes
+					}
+				}
+			}
+			11 = {
+				if = {
+					limit = {
+					        is_controlled_by = ROOT
+					        not = { 784 = { is_controlled_by = LAT }}
+					        }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 11498
+						instant_build = yes
+					}
+				}
+			}
+            11 = {
+				if = {
+					limit = {
+					        is_controlled_by = ROOT
+					        not = { 784 = { is_controlled_by = LAT }}
+					        }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 9404
+						instant_build = yes
+					}
+				}
+			}
+			11 = {
+				if = {
+					limit = {
+					        is_controlled_by = ROOT
+					        not = { 784 = { is_controlled_by = LAT }}
+					        }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 327
+						instant_build = yes
+					}
+				}
+			}
+		    784 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 11342
+						instant_build = yes
+					}
+				}
+			}
+			784 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 9295
+						instant_build = yes
+					}
+				}
+			}
+			784 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3320
+						instant_build = yes
+					}
+				}
+			}
+			784 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 9274
+						instant_build = yes
+					}
+				}
+			}
+			11 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6281
+						instant_build = yes
+					}
+				}
+			}
+			11 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 11312
+						instant_build = yes
+					}
+				}
+			}
+			11 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6407
+						instant_build = yes
+					}
+				}
+			}
+			189 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3337
+						instant_build = yes
+					}
+				}
+			}
+			189 = {
+				if = {
+					limit = {
+					        is_controlled_by = ROOT
+					        not = { 188 = { is_controlled_by = LAT }}
+					        }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 9499
+						instant_build = yes
+					}
+				}
+			}
+			189 = {
+				if = {
+					limit = {
+					        is_controlled_by = ROOT
+					        not = { 188 = { is_controlled_by = LAT }}
+					        }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6314
+						instant_build = yes
+					}
+				}
+			}
+			188 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3288
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Estonian_Border_Security
+		icon = GFX_goal_generic_fortify_city
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = LAT_Focus_on_Outside_Security }
+		x = 28
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+        available = {
+			        191 = {
+				          owner = { original_tag = LAT }
+			              }
+		}
+
+		completion_reward = {
+			191 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 592
+						instant_build = yes
+					}
+				}
+			}
+			191 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 4640
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Baltic_Wall
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = LAT_Lithuanian_Border_Security }
+		prerequisite = { focus = LAT_Estonian_Border_Security }
+		x = 28
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+        available = {
+			        11 = {
+				         owner = { original_tag = LAT }
+			             }
+			        189 = {
+				          owner = { original_tag = LAT }
+			              }
+			        191 = {
+				          owner = { original_tag = LAT }
+			              }
+		}
+
+		completion_reward = {
+            11 = {
+				if = {
+					limit = {
+					        is_controlled_by = ROOT
+					        not = { 784 = { is_controlled_by = LAT }}
+					        }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 11226
+						instant_build = yes
+					}
+				}
+			}
+			11 = {
+				if = {
+					limit = {
+					        is_controlled_by = ROOT
+					        not = { 784 = { is_controlled_by = LAT }}
+					        }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 11498
+						instant_build = yes
+					}
+				}
+			}
+            11 = {
+				if = {
+					limit = {
+					        is_controlled_by = ROOT
+					        not = { 784 = { is_controlled_by = LAT }}
+					        }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 9404
+						instant_build = yes
+					}
+				}
+			}
+			11 = {
+				if = {
+					limit = {
+					        is_controlled_by = ROOT
+					        not = { 784 = { is_controlled_by = LAT }}
+					        }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 327
+						instant_build = yes
+					}
+				}
+			}
+		    784 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 11342
+						instant_build = yes
+					}
+				}
+			}
+			784 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 9295
+						instant_build = yes
+					}
+				}
+			}
+			784 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 3320
+						instant_build = yes
+					}
+				}
+			}
+			784 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 9274
+						instant_build = yes
+					}
+				}
+			}
+			11 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 6281
+						instant_build = yes
+					}
+				}
+			}
+			11 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 11312
+						instant_build = yes
+					}
+				}
+			}
+			11 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 6407
+						instant_build = yes
+					}
+				}
+			}
+			189 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 3337
+						instant_build = yes
+					}
+				}
+			}
+			189 = {
+				if = {
+					limit = {
+					        is_controlled_by = ROOT
+					        not = { 188 = { is_controlled_by = LAT }}
+					        }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 9499
+						instant_build = yes
+					}
+				}
+			}
+			189 = {
+				if = {
+					limit = {
+					        is_controlled_by = ROOT
+					        not = { 188 = { is_controlled_by = LAT }}
+					        }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 6314
+						instant_build = yes
+					}
+				}
+			}
+			188 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 3288
+						instant_build = yes
+					}
+				}
+			}
+            191 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 592
+						instant_build = yes
+					}
+				}
+			}
+			191 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 4640
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Focus_on_Internal_Security
+		icon = GFX_focus_generic_military_academy
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = LAT_Fortify_the_East }
+		mutually_exclusive = { focus = LAT_Focus_on_Outside_Security }
+		x = 30
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_ideas = internal_security
+		                    }
+	}
+
+	focus = {
+		id = LAT_Security_Organizations
+		icon = GFX_goal_generic_small_arms
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = LAT_Focus_on_Internal_Security }
+		x = 30
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_ideas = security_organizations
+		                    }
+	}
+
+	focus = {
+		id = LAT_Industrial_Support
+		icon = GFX_goal_generic_production
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = LAT_Security_Organizations }
+		x = 30
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_ideas = industrial_support
+		                    }
+	}
+
+	focus = {
+		id = LAT_Border_Fortification
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = LAT_Industrial_Support }
+		x = 30
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_ideas = border_fortification
+		                    }
+	}
+
+	focus = {
+		id = LAT_Land_Forces
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = LAT_Military_Effort }
+		x = 33
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_tech_bonus = {
+				                             name = land_doc_bonus
+				                             bonus = 0.5
+				                             uses = 3
+				                             category = land_doctrine
+			                                 }
+		                    }
+	}
+
+	focus = {
+		id = LAT_Infantry_Focus
+		icon = GFX_goal_generic_small_arms
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Land_Forces }
+		mutually_exclusive = { focus = LAT_Motorized_Divisions }
+		x = 32
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_tech_bonus = {
+				                             name = infantry_artillery_bonus
+				                             bonus = 1.0
+				                             uses = 1
+				                             category = infantry_weapons
+				                             category = artillery
+			                                 }
+		                    }
+	}
+
+	focus = {
+		id = LAT_Modern_Equipment
+		icon = GFX_focus_secret_rearmament
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Infantry_Focus }
+		x = 32
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_tech_bonus = {
+				                             name = infantry_artillery_bonus
+				                             bonus = 1.0
+				                             uses = 2
+				                             category = infantry_weapons
+				                             category = artillery
+			                                 }
+		                    }
+	}
+
+	focus = {
+		id = LAT_Motorized_Divisions
+		icon = GFX_goal_generic_army_motorized
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Land_Forces }
+		mutually_exclusive = { focus = LAT_Infantry_Focus }
+		x = 34
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_tech_bonus = {
+				                             name = motorized_bonus
+				                             bonus = 1.0
+				                             uses = 1
+				                             category = motorized_equipment
+			                                 }
+		                    }
+	}
+
+	focus = {
+		id = LAT_Armored_Technology
+		icon = GFX_goal_generic_army_tanks
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Motorized_Divisions }
+		x = 34
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_tech_bonus = {
+				                             name = motorized_armor_bonus
+				                             bonus = 1.0
+				                             uses = 2
+				                             category = motorized_equipment
+				                             category = armor
+			                                 }
+		                    }
+	}
+
+	focus = {
+		id = LAT_Riga_Defenses
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = {
+		               focus = LAT_Armored_Technology
+		               focus = LAT_Modern_Equipment
+		               }
+		x = 33
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+		available = { owns_state = 12 }
+
+		completion_reward = {
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = bunker
+						level = 5
+						province = 9340
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+focus = {
+		id = LAT_Armored_Forces
+		icon = GFX_focus_generic_tank_production
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Armored_Technology }
+		x = 34
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_ideas = armored_forces
+		                    add_tech_bonus = {
+				                             name = motorized_armor_bonus
+				                             bonus = 1.0
+				                             uses = 1
+				                             category = motorized_equipment
+				                             category = armor
+			                                 }
+		                    }
+	}
+
+focus = {
+		id = LAT_Zibenskars
+		icon = GFX_focus_generic_license_production
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Armored_Forces }
+		x = 34
+		y = 6
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		                    add_ideas = zibenskars
+		                    hidden_effect = {
+		                                    if = {
+			                                     limit = { not = { has_tech = improved_light_tank }}
+			                                     set_technology = { improved_light_tank = 1 }
+		                                         }
+		                                    if = {
+			                                     limit = { not = { has_tech = basic_medium_tank }}
+			                                     set_technology = { basic_medium_tank = 1 }
+		                                         }
+		                                    if = {
+			                                     limit = { not = { has_tech = tech_engineers }}
+			                                     set_technology = { tech_engineers = 1 }
+		                                    }
+		                                    load_oob = LAT_Zibenskars
+		                                    }
+		                    custom_effect_tooltip = spawns_2_armored_divisions
+		                    }
+	}
+
+	focus = {
+		id = LAT_Special_Forces
+		icon = GFX_goal_generic_special_forces
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Modern_Equipment }
+		x = 32
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			                add_ideas = special_forces
+			                add_tech_bonus = {
+				                             name = special_forces_bonus
+				                             bonus = 1.0
+				                             uses = 2
+				                             technology = paratroopers
+				                             technology = paratroopers2
+				                             technology = marines
+				                             technology = marines2
+				                             technology = tech_mountaineers
+				                             technology = tech_mountaineers2
+			                                 }
+		                    }
+	}
+
+focus = {
+		id = LAT_Recruitment_Campaign
+		icon = GFX_focus_generic_little_entente
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Special_Forces }
+		x = 32
+		y = 6
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		                    add_ideas = recruitment_campaign
+		                    hidden_effect = {
+		                                    load_oob = LAT_Recruitment_Campaign
+		                                    }
+		                    custom_effect_tooltip = spawns_2_infantry_divisions
+		                    }
+	}
+
+	focus = {
+		id = LAT_Air_Forces
+		icon = GFX_goal_generic_build_airforce
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Military_Effort }
+		x = 37
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_tech_bonus = {
+				                             name = air_doc_bonus
+				                             bonus = 0.5
+				                             uses = 3
+				                             category = air_doctrine
+			                                 }
+		                    }
+	}
+
+	focus = {
+		id = LAT_Figther_Focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = LAT_Air_Forces }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = LAT_Bomber_Focus }
+		x = 36
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			                add_tech_bonus = {
+				                             name = fighter_bonus
+				                             bonus = 1.0
+				                             uses = 2
+				                             technology = early_fighter
+				                             technology = fighter1
+				                             technology = fighter2
+				                             technology = fighter3
+			                                 }
+		                    }
+	}
+
+	focus = {
+		id = LAT_Bomber_Focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = LAT_Air_Forces }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = LAT_Figther_Focus }
+		x = 38
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			                add_tech_bonus = {
+				                             name = bomber_bonus
+				                             bonus = 1.0
+				                             uses = 2
+				                             technology = early_bomber
+				                             technology = tactical_bomber1
+				                             technology = tactical_bomber2
+				                             technology = tactical_bomber3
+			                                 }
+		                    }
+	}
+
+	focus = {
+		id = LAT_Deal_of_Gladiators
+		icon = GFX_goal_deal_of_gladiators
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Figther_Focus focus = LAT_Bomber_Focus }
+		x = 37
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    ENG = { country_event = { id = latvia.127 }}
+		                    }
+	}
+
+focus = {
+		id = LAT_CAS_Effort
+		icon = GFX_goal_generic_CAS
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Deal_of_Gladiators }
+		x = 36
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			                add_tech_bonus = {
+				                             name = fighter_bonus
+				                             bonus = 1.0
+				                             uses = 2
+				                             technology = CAS1
+				                             technology = CAS2
+				                             technology = CAS3
+			                                 }
+		                    }
+	}
+
+focus = {
+		id = LAT_NAV_Effort
+		icon = GFX_goal_generic_air_naval_bomber
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Deal_of_Gladiators }
+		x = 38
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			                add_tech_bonus = {
+				                             name = bomber_bonus
+				                             bonus = 1.0
+				                             uses = 2
+				                             technology = naval_bomber1
+				                             technology = naval_bomber2
+				                             technology = naval_bomber3
+			                                 }
+		                    }
+	}
+
+focus = {
+		id = LAT_Heavy_Fighter_Effort
+		icon = GFX_goal_generic_air_fighter
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_CAS_Effort }
+		x = 36
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			                add_tech_bonus = {
+				                             name = fighter_bonus
+				                             bonus = 1.0
+				                             uses = 2
+				                             technology = heavy_fighter1
+				                             technology = heavy_fighter2
+				                             technology = heavy_fighter3
+			                                 }
+		                    }
+	}
+
+
+focus = {
+		id = LAT_Strategic_Bomber_Effort
+		icon = GFX_goal_generic_air_bomber
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_NAV_Effort }
+		x = 38
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			                add_tech_bonus = {
+				                             name = bomber_bonus
+				                             bonus = 1.0
+				                             uses = 2
+				                             technology = strategic_bomber1
+				                             technology = strategic_bomber2
+				                             technology = strategic_bomber3
+			                                 }
+		                    }
+	}
+
+focus = {
+		id = LAT_Build_New_Airport
+		icon = GFX_goal_generic_air_production
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = LAT_Heavy_Fighter_Effort focus = LAT_Strategic_Bomber_Effort }
+		mutually_exclusive = { focus = LAT_Expand_Current_Airport }
+		x = 36
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+        available = { owns_state = 190 }
+
+		completion_reward = {
+			190 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+focus = {
+		id = LAT_Expand_Current_Airport
+		icon = GFX_goal_generic_air_production
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = LAT_Strategic_Bomber_Effort focus = LAT_Heavy_Fighter_Effort }
+		mutually_exclusive = { focus = LAT_Build_New_Airport }
+		x = 38
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+		available = { owns_state = 12 }
+
+		completion_reward = {
+			12 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Sea_Forces
+		icon = GFX_goal_generic_build_navy
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Military_Effort }
+		x = 41
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_tech_bonus = {
+				                             name = naval_doc_bonus
+				                             bonus = 0.5
+				                             uses = 3
+				                             category = naval_doctrine
+			                                 }
+		                    }
+	}
+
+	focus = {
+		id = LAT_Destroyer_Effort
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = LAT_Sea_Forces }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = LAT_Submarine_Effort }
+		x = 40
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Trained_Destroyer_Crew
+		icon = GFX_focus_generic_military_mission
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Destroyer_Effort }
+		x = 40
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_ideas = trained_destroyer_crew
+		                    }
+	}
+
+	focus = {
+		id = LAT_Submarine_Effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = LAT_Sea_Forces }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = LAT_Destroyer_Effort}
+		x = 42
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Trained_Submarine_Crew
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = LAT_Submarine_Effort }
+		x = 42
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		                    add_ideas = trained_submarine_crew
+		                    }
+	}
+
+	focus = {
+		id = LAT_Revival_of_Karosta
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = LAT_Trained_Destroyer_Crew focus = LAT_Trained_Submarine_Crew }
+		x = 41
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+        available = { 190 = { owner = { original_tag = LAT }}}
+
+		completion_reward = {
+			                190 = {
+			                      add_extra_state_shared_building_slots = 3
+				                  add_building_construction = {
+				                                              type = dockyard
+				                                              level = 3
+				                                              instant_build = yes
+				                                              }
+			                      }
+			                }
+	}
+
+
+    focus = {
+		id = LAT_Western_Port_Modernization
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = LAT_Revival_of_Karosta }
+		mutually_exclusive = { focus = LAT_Capital_Port_Modernisation }
+		x = 40
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+		available = { 190 = { owner = { original_tag = LAT }}}
+
+		completion_reward = {
+	                        190 = {
+					              add_building_construction = {
+						                                      type = naval_base
+						                                      level = 1
+						                                      province = 9262
+						                                      instant_build = yes
+					                                          }
+				            }
+				            190 = {
+					              add_building_construction = {
+						                                      type = naval_base
+						                                      level = 1
+						                                      province = 3296
+						                                      instant_build = yes
+					                                          }
+				            }
+	    }
+	}
+
+	focus = {
+		id = LAT_Capital_Port_Modernisation
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = LAT_Revival_of_Karosta }
+		mutually_exclusive = { focus = LAT_Western_Port_Modernization }
+		x = 42
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+        available = { 12 = { owner = { original_tag = LAT }}}
+
+		completion_reward = {
+	                        12 = {
+					             add_building_construction = {
+						                                     type = naval_base
+						                                     level = 2
+						                                     province = 9340
+						                                     instant_build = yes
+					                                         }
+				            }
+	    }
+	}
+
+	focus = {
+		id = LAT_Latvian_Battleship_Project
+		icon = GFX_focus_generic_navy_battleship2
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Western_Port_Modernization focus = LAT_Capital_Port_Modernisation }
+		mutually_exclusive = { focus = LAT_Latvian_Carrier_Project }
+		x = 40
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bb_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = bb_tech
+			}
+		}
+	}
+
+	focus = {
+		id = LAT_Latvian_Carrier_Project
+		icon = GFX_goal_generic_navy_carrier
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = LAT_Western_Port_Modernization focus = LAT_Capital_Port_Modernisation }
+		mutually_exclusive = { focus = LAT_Latvian_Battleship_Project }
+		x = 42
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cv_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cv_tech
+			}
+		}
+	}
+
+#search_filters = { FOCUS_FILTER_STABILITY } 
+#search_filters = { FOCUS_FILTER_INDUSTRY } 
+#search_filters = { FOCUS_FILTER_POLITICAL } 
+#search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+#search_filters = { FOCUS_FILTER_STABILITY } 
+#search_filters = { FOCUS_FILTER_RESEARCH } 
+#search_filters = { FOCUS_FILTER_ANNEXATION }

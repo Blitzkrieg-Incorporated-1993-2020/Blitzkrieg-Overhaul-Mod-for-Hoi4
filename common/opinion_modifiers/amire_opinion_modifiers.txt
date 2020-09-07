@@ -1,0 +1,8 @@
+opinion_modifiers = {
+	IRE_belfast_blitz = { value = -50 }
+	IRE_axisalignger = { value = 50 }
+	IRE_axisalignuk = { value = -50 }
+	IRE_comalignsov = { value = 50 }
+	IRE_comalignuk = { value = -50 }
+	IRE_planw = { value = 50 }
+}

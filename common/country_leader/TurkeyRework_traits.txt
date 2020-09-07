@@ -1,0 +1,39 @@
+leader_traits = {
+
+	muhtesem_devrimci = {
+		random = no	
+		political_power_factor = 0.15
+		drift_defence_factor = 0.15
+		political_advisor_cost_factor = -0.25
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_infrastructure_factor = 0.1
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	mpler_ele = {
+	political_power_factor = 0.05
+	drift_defence_factor = 0.15
+	
+			ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	yeni_lider = {
+	production_speed_bunker_factor = 0.3
+	production_speed_coastal_bunker_factor = 0.3
+	production_speed_anti_air_building_factor = 0.3
+	production_speed_dockyard_factor = 0.2
+	production_speed_naval_base_factor = 0.2
+	production_speed_air_base_factor = 0.15
+	production_speed_arms_factory_factor = 0.1
+	
+			ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

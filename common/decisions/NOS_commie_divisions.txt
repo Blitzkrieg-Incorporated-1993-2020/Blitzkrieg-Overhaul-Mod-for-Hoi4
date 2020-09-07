@@ -1,0 +1,86 @@
+communist_decisions = {
+
+	activate_communist_militia = {
+
+		icon = communist_militia
+
+		available = {
+		    has_army_experience > 25
+            communism > 0.50
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		complete_effect = {
+		    ## TODO create event to put those effects inside
+		    # conscription = 0.015 # TODO balance
+            set_technology = { faction_communist_militia = 1 }
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	create_communist_paramilitary_force = {
+
+		icon = communist_guard
+
+		available = {
+		    has_army_experience > 100
+            communism > 0.75
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		complete_effect = {
+		    ## TODO create event to put those effects inside
+		    # conscription = 0.015 # TODO balance
+            set_technology = { faction_communist_units = 1 }
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	create_communist_military_force = {
+
+		icon = communist_guard_heavy
+
+		available = {
+		    has_army_experience > 200
+            communism > 0.90
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		complete_effect = {
+		    ## TODO create event to put those effects inside
+		    # conscription = 0.015 # TODO balance
+            set_technology = { faction_communist_units_heavy = 1 }
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+}

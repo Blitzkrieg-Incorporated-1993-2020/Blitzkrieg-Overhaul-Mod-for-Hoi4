@@ -1,0 +1,137 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+# value
+# min_trust
+# max_trust
+# decay
+# months/years/days = timer
+# trade = yes/no
+
+opinion_modifiers = {
+
+	NOS_different_ideology = { value = -5 }
+	NOS_similar_ideology = { value = 10 }
+	NOS_same_ideology = { value = 15 }
+	embargo = {
+		trade = yes
+		value = -100
+	}
+	sanctions = {
+		trade = yes
+		value = -50
+	}
+	minor_sanctions = {
+		trade = yes
+		value = -20
+	}
+	new_emb = {
+		trade = yes
+		value = -40
+	}
+	new_emb_opinion = {
+		value = -10
+	}
+	emb_lifted = {
+		value = 20
+		#days = 10
+		decay = 10
+	}
+
+
+	##### ALBANIA
+
+	ALB_trust_in_the_west = { value = 10 }
+	ALB_friendship_with_neighbors = { value = 10 }
+
+
+	new_anti_capitalist_diplomacy_focus = {
+		value = 10
+	}
+
+	new_anti_capitalist_diplomacy_capitalists = {
+		value = -20
+	}
+
+	TUR_bogazlar = { 	
+		value = 30
+		months = 15
+		decay = 2
+	}
+
+	TUR_saadabad_pact = { value = 25 }
+
+	TUR_jews = { 	
+		value = -20
+		months = 20
+		decay = 1
+	}	
+
+	TUR_racist = { 	
+		value = -50
+		months = 50
+		decay = 1
+	}
+
+	TUR_go_with_britain_reject = { value = -50 }
+
+	TUR_kursk = { 	
+		value = -30
+		months = 10
+		decay = 3
+	}
+
+	TUR_banfascim = { 	
+		value = -30
+		months = 10
+		decay = 3
+	}
+
+	TUR_trotsky_plot = { value = 20 }
+
+	TUR_italy_visitation = { 
+		value = 20 
+		months = 20
+		decay = 1
+	}
+
+	TUR_nazim_hikmet = { 
+		value = 15 
+		months = 15
+		decay = 1
+	}
+
+	TUR_galiyevism = { 
+		value = 20 
+		months = 20
+		decay = 1
+	}
+
+	TUR_panturkism = { value = -30 }
+
+	TUR_cairo = { 
+		value = 10 
+		months = 10
+		decay = 1
+	}
+	ENG_edward_visit = { value = 50 }
+	ENG_disband_allies = { value = -100 }
+	ENG_recognise_manchu = { value = 50 }
+	ENG_colonies_seized = { value = -50 }
+	ENG_refused_syndicate = { value = -100 }
+	ENG_vegetarian_success = { value = -100 }
+	ENG_vegetarian_failure = { value = -50 }
+	possessions_seized = { value = -30 }
+	ENG_friendly_policy = { value = 30 }
+	ENG_hostile_policy = { value = -30 }
+	oil_nationalised = { value = -50 }
+	POL_Poland_Abandoned = { value = -20 }
+	ENG_Poland_Abandoned = { value = -65 }
+	imperial_conference = { value = 30 }
+	old_ties = { value = 50 }
+
+	improved_trade = {
+		trade = yes
+		value = 100
+	}
+}	

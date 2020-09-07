@@ -1,0 +1,1027 @@
+focus_tree = {
+	id = albania
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ALB
+		}
+	}
+
+	default = no
+	focus = {
+		id = ALB_zogs_way
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_ALB_zog
+		cost = 10
+		x = 4
+		y = 0
+		completion_reward = {
+			set_politics = {
+				ruling_party = monarchism
+				elections_allowed = no
+			}
+			create_country_leader = {
+				name = "King Zog I"
+				desc = "POLITICS_KING_ZOG_DESC"
+				picture = "ALB_King_Zog_I.dds"
+				expire = "1965.1.1"
+				ideology = absolutism
+				traits = {
+					king_of_albania
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_zogs_army
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_nosgoals_ALB_royalarmy
+		cost = 10
+		x = 15
+		y = 0
+		completion_reward = {
+			army_experience = 50
+		}
+	}
+	focus = {
+		id = ALB_adriatic_navy
+		icon = GFX_nosgoals_ALB_royalnavy
+		cost = 10
+		x = 31
+		y = 0
+		completion_reward = {
+			44 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = dockyard
+				level = 1
+				instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_establish_the_airforce
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_nosgoals_ALB_albraf
+		cost = 10
+		x = 33
+		y = 0
+		completion_reward = {
+			air_experience = 50
+		}
+	}
+	focus = {
+		id = ALB_renovated_industry
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_nosgoals_GENERIC_factories
+		cost = 10
+		x = 24
+		y = 0
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = ALB_zogs_constitution
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_GENERIC_constitution
+		cost = 10
+		prerequisite = {
+			focus = ALB_zogs_way
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = ALB_friendship_with_neighbors
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		prerequisite = {
+			focus = ALB_zogs_constitution
+		}
+		x = 0
+		y = 2
+		completion_reward = {
+			every_country = {
+				limit = {
+					is_neighbor_of = ROOT
+				}
+				add_opinion_modifier = { 
+					target = ROOT
+					modifier = medium_increase
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_pact_with_yugoslavia
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_nosgoals_ALB_YUG_friend
+		cost = 10
+		prerequisite = {
+			focus = ALB_friendship_with_neighbors
+		}
+		x = 0
+		y = 3
+		available = {
+			NOT = { has_war_with = YUG }
+		}
+		completion_reward = {
+			YUG = {
+				country_event = { id = albania.2 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = ALB_trust_in_the_west
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 10
+		prerequisite = {
+			focus = ALB_zogs_constitution
+		}
+		x = 2
+		y = 2
+		completion_reward = {
+			every_country = {
+				limit = {
+					has_democratic_government = yes
+					is_major = yes
+					OR = {
+						capital_scope = { is_on_continent = europe }
+						capital_scope = { is_on_continent = north_america }
+					}
+				}
+				add_opinion_modifier = { 
+					target = ROOT
+					modifier = medium_increase
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_demand_a_western_guarantee
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_focus_chi_british_cooperation
+		cost = 10
+		prerequisite = {
+			focus = ALB_trust_in_the_west
+		}
+		x = 2
+		y = 3
+		available = {
+			NOT = { has_war_with = ENG }
+		}
+		completion_reward = {
+			ENG = {
+				country_event = { id = albania.5 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = ALB_zogs_economy
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_nosgoals_GENERIC_stockmarket
+		cost = 10
+		prerequisite = {
+			focus = ALB_zogs_way
+		}
+		x = 7
+		y = 1
+		completion_reward = {
+			add_ideas = ALB_zogs_economy
+		}
+	}
+	focus = {
+		id = ALB_workers_culture
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construction
+		cost = 10
+		prerequisite = {
+			focus = ALB_zogs_economy
+		}
+		x = 6
+		y = 2
+		completion_reward = {
+			add_ideas = ALB_workers_culture
+		}
+	}
+	focus = {
+		id = ALB_albanian_resources
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construction2
+		cost = 10
+		prerequisite = {
+			focus = ALB_zogs_economy
+		}
+		x = 8
+		y = 2
+		completion_reward = {
+			add_resource = {
+				type = aluminium
+				amount = 10
+				state = 44
+			}
+			add_resource = {
+				type = steel
+				amount = 10
+				state = 44
+			}
+		}
+	}
+	focus = {
+		id = ALB_civil_factory
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = ALB_workers_culture
+			focus = ALB_albanian_resources
+		}
+		x = 6
+		y = 3
+		completion_reward = {
+					44 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_military_factory
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = {
+			focus = ALB_albanian_resources
+			focus = ALB_workers_culture
+		}
+		x = 8
+		y = 3
+		completion_reward = {
+					44 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_zogs_royal_guard
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_focus_generic_little_entente
+		cost = 10
+		prerequisite = {
+			focus = ALB_zogs_army
+		}
+		x = 13
+		y = 1
+		completion_reward = {
+			add_ideas = ALB_zogs_royal_guard
+		}
+	}
+	focus = {
+		id = ALB_albanian_militias
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		cost = 10
+		prerequisite = {
+			focus = ALB_zogs_royal_guard
+		}
+		x = 11
+		y = 2
+		completion_reward = {
+			add_ideas = ALB_albanian_militias
+		}
+	}
+	focus = {
+		id = ALB_new_officers
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		icon = GFX_focus_generic_military_mission
+		cost = 10
+		prerequisite = {
+			focus = ALB_albanian_militias
+		}
+		x = 11
+		y = 3
+		completion_reward = {
+			add_ideas = ALB_new_officers_idea
+		}
+	}
+	focus = {
+		id = ALB_a_weapon_in_every_hand
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_small_arms
+		cost = 10
+		prerequisite = {
+			focus = ALB_zogs_royal_guard
+		}
+		x = 13
+		y = 2
+		completion_reward = {
+			add_ideas = ALB_a_weapon_in_every_hand_idea
+		}
+	}
+	focus = {
+		id = ALB_support_equipments
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_small_arms
+		cost = 10
+		prerequisite = {
+			focus = ALB_a_weapon_in_every_hand
+		}
+		x = 13
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = support_tech
+			}
+		}
+	}
+	focus = {
+		id = ALB_our_land
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_military
+		cost = 10
+		prerequisite = {
+			focus = ALB_zogs_army
+		}
+		x = 17
+		y = 1
+		completion_reward = {
+			add_ideas = ALB_our_land
+		}
+	}
+	focus = {
+		id = ALB_new_doctrines
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 10
+		prerequisite = {
+			focus = ALB_zogs_royal_guard
+			focus = ALB_our_land
+		}
+		x = 15
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = ALB_war_doctrines
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 10
+		prerequisite = {
+			focus = ALB_new_doctrines
+		}
+		x = 15
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = ALB_wall_of_adriatic
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_focus_generic_coastal_fort
+		cost = 10
+		prerequisite = {
+			focus = ALB_our_land
+		}
+		x = 17
+		y = 2
+		completion_reward = {
+			44 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = 914
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = 11767
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = 3884
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = 9914
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = 9780
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_preparation_for_italy
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_major_war
+		cost = 10
+		prerequisite = {
+			focus = ALB_wall_of_adriatic
+		}
+		x = 17
+		y = 3
+		completion_reward = {
+			44 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = 914
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = 11767
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = 3884
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = 9914
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = 9780
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_homeland_defense
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_fortify_city
+		cost = 10
+		prerequisite = {
+			focus = ALB_our_land
+		}
+		x = 19
+		y = 2
+		completion_reward = {
+			add_ideas = ALB_homeland_defense
+		}
+	}
+	focus = {
+		id = ALB_protect_fatherland
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_fortify_city
+		cost = 10
+		prerequisite = {
+			focus = ALB_homeland_defense
+		}
+		x = 19
+		y = 3
+		completion_reward = {
+			44 = {
+				add_building_construction = {
+					type = bunker
+					province = 3896
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 11762
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 9875
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 6900
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 3448
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 914
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_develop_civilian_factories
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = ALB_renovated_industry
+		}
+		x = 22
+		y = 1
+		completion_reward = {
+					44 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_develop_civilian_factories_2
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = ALB_develop_civilian_factories
+		}
+		x = 22
+		y = 2
+		completion_reward = {
+					44 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_develop_civilian_factories_3
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_focus_generic_industry_3
+		cost = 10
+		prerequisite = {
+			focus = ALB_develop_civilian_factories_2
+		}
+		x = 22
+		y = 3
+		completion_reward = {
+					44 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_university_of_tirana
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_focus_research
+		cost = 10
+		prerequisite = {
+			focus = ALB_renovated_industry
+		}
+		x = 24
+		y = 1
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = ALB_strengthen_factories
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 10
+		prerequisite = {
+			focus = ALB_university_of_tirana
+		}
+		x = 24
+		y = 2
+		completion_reward = {
+			add_ideas = ALB_strengthen_factories_idea
+		}
+	}
+	focus = {
+		id = ALB_extra_research_slot
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_focus_research2
+		cost = 10
+		prerequisite = {
+			focus = ALB_strengthen_factories
+		}
+		x = 24
+		y = 3
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = ALB_develop_military_factories
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = {
+			focus = ALB_renovated_industry
+		}
+		x = 26
+		y = 1
+		completion_reward = {
+					44 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_develop_military_factories_2
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = {
+			focus = ALB_develop_military_factories
+		}
+		x = 26
+		y = 2
+		completion_reward = {
+					44 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_develop_military_factories_3
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_focus_generic_industry_3
+		cost = 10
+		prerequisite = {
+			focus = ALB_develop_military_factories_2
+		}
+		x = 26
+		y = 3
+		completion_reward = {
+					44 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_buy_ship_from_greece
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_focus_generic_destroyer
+		cost = 10
+		prerequisite = {
+			focus = ALB_adriatic_navy
+		}
+		x = 29
+		y = 1
+		available = {
+			NOT = { has_war_with = GRE }
+		}
+		completion_reward = {
+			GRE = {
+				country_event = { id = albania.8 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = ALB_buy_ship_from_france
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 10
+		prerequisite = {
+			focus = ALB_buy_ship_from_greece
+		}
+		x = 29
+		y = 2
+		available = {
+			NOT = { has_war_with = FRA }
+		}
+		completion_reward = {
+			FRA = {
+				country_event = { id = albania.11 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = ALB_research_ships
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_navy_submarine
+		cost = 10
+		prerequisite = {
+			focus = ALB_adriatic_navy
+		}
+		x = 31
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cl_tech
+			}
+		}
+	}
+	focus = {
+		id = ALB_advanced_ships
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_occupy_states_coastal
+		cost = 10
+		prerequisite = {
+			focus = ALB_research_ships
+		}
+		x = 31
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cl_tech
+			}
+		}
+	}
+	focus = {
+		id = ALB_navy_doctrines
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_build_navy
+		cost = 10
+		prerequisite = {
+			focus = ALB_buy_ship_from_france
+			focus = ALB_advanced_ships
+		}
+		x = 30
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = ALB_fighter_development
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_air_fighter2
+		cost = 10
+		prerequisite = {
+			focus = ALB_establish_the_airforce
+		}
+		x = 33
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = light_fighter
+			}
+		}
+	}
+	focus = {
+		id = ALB_cas_development
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_CAS
+		cost = 10
+		prerequisite = {
+			focus = ALB_fighter_development
+		}
+		x = 33
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+	focus = {
+		id = ALB_albanian_freedom
+		search_filters = { FOCUS_FILTER_POLITCAL }
+		icon = GFX_goal_generic_military_sphere
+		cost = 10
+		prerequisite = {
+			focus = ALB_demand_a_western_guarantee
+		}
+		x = 2
+		y = 4
+		completion_reward = {
+			add_ideas = ALB_albanian_freedom
+		}
+	}
+	focus = {
+		id = ALB_pact_with_greece
+		search_filters = { FOCUS_FILTER_POLITCAL }
+		icon = GFX_goal_generic_major_alliance
+		cost = 10
+		prerequisite = {
+			focus = ALB_pact_with_yugoslavia
+		}
+		x = 0
+		y = 4
+		available = {
+			NOT = { has_war_with = GRE }
+		}
+		completion_reward = {
+			GRE = {
+				country_event = { id = albania.14 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = ALB_civil_factory_2
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = ALB_civil_factory
+		}
+		x = 6
+		y = 4
+		completion_reward = {
+					44 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_military_factory_2
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = {
+			focus = ALB_military_factory
+		}
+		x = 8
+		y = 4
+		completion_reward = {
+					44 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_bomber_development
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_air_fighter
+		cost = 10
+		prerequisite = {
+			focus = ALB_establish_the_airforce
+		}
+		x = 35
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+			}
+		}
+	}
+	focus = {
+		id = ALB_nav_development
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_air_fighter
+		cost = 10
+		prerequisite = {
+			focus = ALB_bomber_development
+		}
+		x = 35
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_air_effort
+				bonus = 0.5
+				uses = 1
+				technology = naval_bomber1
+				technology = naval_bomber2
+				technology = naval_bomber3
+			}
+		}
+	}
+	focus = {
+		id = ALB_air_doctrines
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		icon = GFX_goal_generic_build_airforce
+		cost = 10
+		prerequisite = {
+			focus = ALB_cas_development
+			focus = ALB_nav_development
+		}
+		x = 34
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+}
+
+#search_filters = { FOCUS_FILTER_STABILITY } 
+#search_filters = { FOCUS_FILTER_INDUSTRY } 
+#search_filters = { FOCUS_FILTER_POLITICAL } 
+#search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+#search_filters = { FOCUS_FILTER_STABILITY } 
+#search_filters = { FOCUS_FILTER_RESEARCH } 
+#search_filters = { FOCUS_FILTER_ANNEXATION }

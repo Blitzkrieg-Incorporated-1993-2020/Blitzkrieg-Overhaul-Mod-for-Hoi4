@@ -1,0 +1,1951 @@
+ideas = {
+
+	country = {
+	
+		csa_german_oil_money = {
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				GER = { has_autocratic_government = yes }
+				country_exists = GER
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_fascism_drift_2
+			
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}		
+		}
+		
+		csa_german_subsidiaries = {
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				GER = { has_autocratic_government = yes }
+				country_exists = GER
+			}
+			
+			removal_cost = -1
+			
+			picture = ger_rebuild_the_nation
+			
+			
+			modifier = {
+				consumer_goods_factor = -0.03
+				stability_factor = -0.05
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+			}		
+		}
+		
+		csa_made_in_the_csa_idea = {
+			
+			allowed = {
+				always = yes
+			}
+			
+			available = {
+				
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_fascism_drift_2
+			
+			
+			modifier = {
+				stability_factor = 0.05
+				global_building_slots_factor = 0.1
+			}		
+		}
+	
+		csa_loans1 = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_goods_red_bonus
+			
+			
+			modifier = {
+				consumer_goods_factor = -0.07
+			}		
+		}
+		
+		csa_loans2 = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_goods_red_bonus
+			
+			
+			modifier = {
+				consumer_goods_factor = 0.07
+			}		
+		}
+		
+		csa_commonwealth_trading_sphere = {
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				OR = {
+					tag = ENG
+					is_subject_of = ENG
+					AND = { 
+						tag = CSA
+						is_in_faction_with = ENG
+					}
+				}
+			}
+			
+			removal_cost = -1
+			
+			picture = brittish_stoicism
+			
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				stability_factor = 0.05
+				industrial_capacity_factory = 0.1
+				global_building_slots_factor = 0.1
+				min_export = 0.05 
+			}		
+		}
+		
+		
+	
+		csa_confederate_constitution = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_constitutional_guarantees
+			
+			rule = {
+				can_join_opposite_factions = no
+				can_create_factions = yes
+				can_only_justify_war_on_threat_country = yes
+			}
+			modifier = {
+				drift_defence_factor = 1
+				justify_war_goal_time = 0.75
+				army_core_attack_factor = 0.1 
+				army_core_defence_factor = 0.1 
+				#economy_cost_factor = 2
+				#mobilization_laws_cost_factor = 1
+				political_power_cost = 0.25
+				ai_badass_factor = 0.03 # cares for 3% of normal threat
+			}		
+		}
+		
+		csa_confederate_constitution2 = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_constitutional_guarantees
+			
+			rule = {
+				can_join_opposite_factions = no
+				can_create_factions = yes
+				can_only_justify_war_on_threat_country = yes
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+				drift_defence_factor = 1
+				conservative_drift = 0.005
+				fascism_drift = 0.005
+				justify_war_goal_time = 0.75
+				army_core_attack_factor = 0.1 
+				army_core_defence_factor = 0.1 
+				root_out_resistance_effectiveness_factor = 2
+				#economy_cost_factor = 2
+				global_building_slots_factor = 0.15
+				#mobilization_laws_cost_factor = 1
+				political_power_cost = 0.25
+				stability_factor = 0.4
+				research_speed_factor = 0.05
+				MONTHLY_POPULATION = 0.2
+				ai_badass_factor = 0.03 # cares for 3% of normal threat
+			}		
+		}
+		
+		csa_bill_of_rights = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = HUN_treaty_of_triannon
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				global_building_slots_factor = 0.2
+				democratic_drift = 0.005
+				social_democracy_drift = 0.005
+				communism_drift = 0.005
+				unionism_drift = 0.005
+				drift_defence_factor = -0.35
+				root_out_resistance_effectiveness_factor = 1.5
+				stability_factor = 0.3
+				research_speed_factor = 0.05
+				MONTHLY_POPULATION = 0.3
+			}
+		}
+		
+		
+	
+		csa_rural_society = {
+			
+			picture = generic_agrarian_society
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_democratic_government = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_industrial_complex_factor = -0.25
+				global_building_slots_factor = -0.05
+				research_speed_factor = -0.05
+			}
+			
+			research_bonus = {
+				
+			}
+			
+		}
+		
+		csa_rural_society2 = {
+			
+			picture = generic_agrarian_society
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_democratic_government = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_industrial_complex_factor = -0.25
+				global_building_slots_factor = -0.05
+				#research_speed_factor = -0.05
+			}
+			
+			research_bonus = {
+				
+			}
+			
+		}
+	
+		csa_the_southern_fighting_man = {
+			
+			picture = generic_manpower_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_democratic_government = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_infantry_attack_factor = 0.2
+				army_infantry_defence_factor = 0.1
+				motorized_attack_factor = 0.15
+				motorized_defence_factor = 0.05
+				training_time_army_factor = -0.15
+				conscription = 0.01 	
+				out_of_supply_factor = -0.25
+			}
+			
+			research_bonus = {
+				
+			}
+			
+		}
+		
+		csa_the_southern_fighting_man2 = {
+			
+			picture = generic_manpower_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_democratic_government = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = 0.1 
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_infantry_attack_factor = 0.2
+				army_infantry_defence_factor = 0.1
+				motorized_attack_factor = 0.15
+				motorized_defence_factor = 0.05
+				training_time_army_factor = -0.15 
+				conscription = 0.01 	
+				out_of_supply_factor = -0.25
+			}
+			
+			research_bonus = {
+				
+			}
+			
+		}
+		
+		csa_the_southern_fighting_man3 = {
+			
+			picture = generic_manpower_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_democratic_government = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = 0.1 
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_infantry_attack_factor = 0.2
+				army_infantry_defence_factor = 0.1
+				motorized_attack_factor = 0.15
+				motorized_defence_factor = 0.05
+				mobilization_speed = 0.25
+				training_time_army_factor = -0.3
+				special_forces_cap = 0.2 
+				special_forces_min = 100 
+				conscription = 0.01 	
+				out_of_supply_factor = -0.25
+			}
+			
+			research_bonus = {
+				
+			}
+			
+		}
+		
+		csa_general_staff = {
+			
+			picture = general_staff
+			
+			allowed = {
+				original_tag = GER
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_Factor = 0.10
+				#planning_speed = 0.25
+				#max_planning = 0.25
+				experience_gain_army = 0.01
+				
+				command_power_gain_mult = -0.1
+			}
+		}
+		
+		csa_general_staff2 = {
+			
+			picture = general_staff
+			
+			allowed = {
+				original_tag = GER
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_Factor = 0.15
+				experience_gain_army = 0.01
+				
+				command_power_gain_mult = -0.15
+			}
+		}
+		
+		csa_general_staff3 = {
+			
+			picture = general_staff
+			
+			allowed = {
+				original_tag = GER
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_Factor = 0.15
+				planning_speed = 0.25
+				max_planning = 0.25
+				land_reinforce_rate = 0.15
+				offence = 0.05
+				defence = 0.05
+				experience_gain_army = 0.01
+				
+				command_power_gain_mult = -0.15
+			}
+		}
+		
+		csa_general_staff4 = {
+			
+			picture = general_staff
+			
+			allowed = {
+				original_tag = GER
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_Factor = 0.15
+				experience_gain_army = 0.01
+				
+				experience_gain_navy = 0.01
+				naval_hit_chance = 0.05 
+				naval_coordination = 0.1
+				sortie_efficiency = 0.1 	
+				convoy_escort_efficiency = 0.2
+				amphibious_invasion = 0.15
+				invasion_preparation = -0.3 
+				
+				command_power_gain_mult = -0.15
+			}
+		}
+		
+		csa_general_staff5 = {
+			
+			picture = general_staff
+			
+			allowed = {
+				original_tag = GER
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_Factor = 0.15
+				planning_speed = 0.25
+				max_planning = 0.25
+				land_reinforce_rate = 0.15
+				offence = 0.05
+				defence = 0.05
+				experience_gain_army = 0.01
+				
+				experience_gain_navy = 0.01
+				naval_hit_chance = 0.05 
+				naval_coordination = 0.1
+				sortie_efficiency = 0.1 	
+				convoy_escort_efficiency = 0.2
+				amphibious_invasion = 0.15
+				invasion_preparation = -0.3 
+				
+				command_power_gain_mult = -0.15
+			}
+		}
+		
+		
+		
+		
+		csa_segregation = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			picture = ast_classify_aliens
+
+			allowed_civil_war = {
+				NOT = { has_socialist_government = yes }
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = -0.1
+				stability_factor = 0.05
+				#global_building_slots_factor = -0.05
+				industrial_capacity_factory = -0.05
+			}
+		}
+		
+		
+		csa_segregation2 = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			picture = ast_classify_aliens
+
+			allowed_civil_war = {
+				NOT = { has_socialist_government = yes }
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = -0.1
+				stability_factor = -0.1
+				global_building_slots_factor = -0.05
+				industrial_capacity_factory = 0.15
+			}
+		}
+		
+		csa_segregation3 = {
+			
+			
+			allowed = {
+				always = no
+			}
+			
+			picture = ast_classify_aliens
+
+			allowed_civil_war = {
+				NOT = { has_socialist_government = yes }
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = -0.1
+				stability_factor = -0.05
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.15
+			}
+		}
+		
+		
+		csa_the_klan = {
+			
+			picture = prc_low_popular_support2
+			
+			allowed = {
+				always = no
+			}
+			
+			picture = ast_classify_aliens
+
+			allowed_civil_war = {
+				NOT = { has_socialist_government = yes }
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = 0.1
+				consumer_goods_factor = -0.05
+				political_power_gain = -0.15
+				#industrial_capacity_factory = 0.15
+			}
+		}
+		
+		csa_the_klan2 = {
+			
+			picture = prc_low_popular_support2
+			
+			allowed = {
+				always = no
+			}
+			
+			picture = ast_classify_aliens
+
+			allowed_civil_war = {
+				NOT = { has_socialist_government = yes }
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = 0.15
+				consumer_goods_factor = -0.07
+				political_power_gain = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		
+	
+	}
+	
+	
+	
+	
+	political_advisor = {
+	
+		
+		USA_j_hamilton_lewis2 = {
+		
+			picture = USA_j_hamilton_lewis
+			
+			allowed = {
+				
+					original_tag = CSA
+				
+			}
+			
+			traits = { senate_majority_whip }
+		}
+		
+		USA_william_b_bankhead2 = {
+		
+			picture = USA_william_b_bankhead
+			
+			allowed = {
+				
+					original_tag = CSA
+				
+			}
+			
+			available = {
+				#NOT = { has_country_flag = bankhead_dead }
+				date < 1941.1.1
+			}
+			
+			
+			traits = { speaker_of_the_house }
+		}
+		
+		USA_sam_rayburn2 = {
+		
+			picture = USA_sam_rayburn
+			
+			allowed = {
+				
+					original_tag = CSA
+				
+			}
+			
+			available = {
+				#has_country_flag = bankhead_dead
+				date > 1941.1.1
+			}
+			
+			traits = { speaker_of_the_house }
+		}
+		
+		
+		USA_claude_a_swanson2 = {
+		
+			picture = USA_claude_a_swanson
+			
+			allowed = {
+				
+					original_tag = CSA
+				
+			}
+			
+			available = {
+				date < 1940.1.1
+			}
+			
+			traits = { secretary_of_navy }
+		}
+		
+		
+		
+		USA_jesse_h_jones2 = {
+		
+			picture = USA_jesse_h_jones
+			
+			allowed = {
+				
+					original_tag = CSA
+				
+			}
+			
+			available = {
+				date > 1939.1.1
+			}
+			
+			traits = { secretary_of_commerce }
+		}
+		
+		
+		USA_james_allred2 = {
+		
+			picture = USA_james_allred
+			
+			allowed = {
+				
+					original_tag = CSA
+				
+			}
+			
+			traits = { usa_federal_judge }
+		}
+
+	
+		
+		robert_a_lovett2 = {
+		
+			picture = robert_a_lovett
+			
+			allowed = {
+				
+					original_tag = CSA
+				
+			}
+			
+			available = {
+				date > 1941.1.1
+				NOT = { has_idea = USA_henry_stimson }
+			}
+			
+			traits = { secretary_of_defence }
+		}
+		
+		
+		
+		
+		
+		
+		james_hubert_price = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#potential leader man - becomes gov of Virginia before the war - liberal
+			
+			traits = { USA_confederate_reformer }
+		
+			available = {
+			NOT = {
+					#has_country_leader = { id = 83 ruling_only = yes name = "Franklin Delano Roosevelt" } 
+				}
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		john_nance_garner = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#potential leader man - Roosevelt's first VP - conservative - big buisness
+			
+			traits = { USA_conservative_confederate }
+		
+		
+			available = {
+				NOT = {
+					#has_country_leader = { id = 83 ruling_only = yes name = "Franklin Delano Roosevelt" } 
+				}
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		w_lee_odaniel = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#governor of Texas, populist
+			
+			traits = { USA_populist_conservative }
+		
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		benjamin_muse = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#conservative Virginian, pro civil rights or gov authority
+			
+			traits = { USA_conservative_politician }
+		
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		earl_long = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#progressive, hugely popular and somewhat erratic
+			
+			traits = { USA_populist_progressive }
+		
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		ellis_arnall = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#somewhat less inspiring but solid anti corruption/power governor from Georgia
+			
+			traits = { USA_anti_corruption_southerner }
+		
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		oliver_max_gardner = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#ran the North Carolina political machine, limited to gov once by constitution, conservative pro-buisness
+			
+			traits = { USA_conservative_reformer }
+		
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		olin_d_johnston = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#populist new dealer governor of South Carolina
+			
+			traits = { USA_southern_labor }
+		
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		burnet_r_maybank = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#somewhat powerful us senator/governor of South Carolina, democrat somewhat progressive
+			
+			traits = { USA_prominent_southern_democrat }
+		
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		
+		
+	}
+	
+
+	army_chief = {
+		
+		
+		george_patton20 = {
+			
+			picture = george_patton
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 3
+			}
+		}
+		
+		matthew_ridgway20 = {
+			
+			picture = matthew_ridgway
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			available = {
+				date > 1946.1.1
+			}
+			
+			traits = { army_chief_defensive_2 }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+	}
+	
+	air_chief = {
+		
+		
+		george_kenney20 = {
+			
+			picture = george_kenney
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			available = {
+				NOT = {
+					has_idea = george_kenney2
+				}
+			}
+			
+			traits = { air_chief_all_weather_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+	}
+	
+	navy_chief = {
+	
+		
+		chester_nimitz20 = {
+			
+			picture = chester_nimitz
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { navy_chief_commerce_raiding_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	
+	high_command = {
+	
+		
+		courtney_hodges20 = {
+			
+			picture = courtney_hodges
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { usa_army_spearhead }
+			
+			ai_will_do = {
+				factor = 4
+			}
+		}
+		
+		george_patton21 = {
+			
+			picture = george_patton
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			
+			traits = { army_armored_3 }
+			
+			ai_will_do = {
+				factor = 3
+			}
+		}
+		
+		matthew_ridgway21 = {
+			
+			picture = matthew_ridgway
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			available = {
+				NOT = {
+					has_idea = matthew_ridgway
+				}
+			}
+			
+			
+			traits = { army_artillery_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		holland_smith20 = {
+			
+			picture = holland_smith
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			traits = { navy_amphibious_assault_3 }
+			#traits = { usa_army_marine_infantry }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		
+		claire_lee_chennault20 = {
+			
+			picture = claire_lee_chennault
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { air_air_superiority_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		
+		ira_c_eaker = {
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { air_air_superiority_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		william_m_hoge = {
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { air_air_superiority_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		orlando_ward = {
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { air_air_superiority_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		
+		george_kenney21 = {
+			
+			picture = george_kenney
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			available = {
+				NOT = {
+					has_idea = george_kenney
+				}
+			}
+			
+			traits = { air_naval_strike_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+		
+		marc_mitscher20 = {
+			
+			picture = marc_mitscher
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			traits = { navy_carrier_3 }
+			
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+		
+	tank_manufacturer = { 
+	
+		designer = yes
+	
+		csa_stuart_tank_arsenal = {
+
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				tag = CSA
+			}
+			
+			available = {
+				has_completed_focus = CSA_Establish_Stuart_Tank_Arsenal
+			}
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { CSA_mobile_tank_manufacturer }
+		}
+		
+		army_ordnance_department20 = {
+			
+			picture = army_ordnance_department
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { USA_heavy_tank_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.01
+			}
+		}	
+		
+		
+	}
+	
+	naval_manufacturer = { 
+	
+		designer = yes
+		
+		csa_mobile_dockyard_co = {
+			
+			picture = generic_naval_manufacturer_1
+
+			allowed = {
+				tag = CSA
+			}
+			
+			available = {
+				has_completed_focus = CSA_Mobile_Dockyard
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { USA_submarine_manufacturer }
+		}
+		
+		csa_houston_dockyard_co = {
+			
+			picture = generic_naval_manufacturer_1
+
+			allowed = {
+				tag = CSA
+			}
+			
+			available = {
+				has_completed_focus = CSA_Houston_Dockyard
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+		}
+		
+		csa_new_orleans_dockyard_co = {
+			
+			picture = generic_naval_manufacturer_1
+
+			allowed = {
+				tag = CSA
+			}
+			
+			available = {
+				has_completed_focus = CSA_New_Orleans_Dockyard
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { CSA_cruiser_manufacturer }
+		}
+		
+		norfolk_naval_yard2 = {
+			
+			picture = norfolk_naval_yard
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#S. Virginia
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { USA_capital_ship_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		
+		newport_news_shipbuilding2 = {
+			
+			picture = newport_news_shipbuilding
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#S. Virginia
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { USA_pacific_fleet_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		
+		
+	}
+	
+	aircraft_manufacturer = { 
+		
+		designer = yes
+		
+		#Higgins Aircraft Co. at some point
+		
+		
+		curtiss_wright20 = {
+			
+			picture = curtiss_wright
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#Buffalo NY, later the South - NC -> will go to south for this reason
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { usa_light_aircraft_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		csa_atlanta_aircraft_corporation = {
+			
+			picture = generic_air_manufacturer_1
+
+			allowed = {
+				tag = CSA
+			}
+			
+			available = {
+				has_completed_focus = CSA_Establish_Atlanta_Aircraft_Corporation
+			}
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { light_aircraft_manufacturer }
+		}
+		
+		csa_piper_aircraft_corporation = {
+			
+			picture = generic_air_manufacturer_3
+
+			allowed = {
+				tag = CSA
+			}
+			
+			available = {
+				has_completed_focus = CSA_Establish_Piper_Aircraft_Corporation
+			}
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { CAS_manufacturer }
+		}
+		
+		csa_hill_aircraft_corporation = {
+
+			picture = generic_air_manufacturer_2
+			
+			allowed = {
+				tag = CSA
+			}
+			
+			available = {
+				has_completed_focus = CSA_Establish_Hill_Aircraft_Corporation
+			}
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { csa_heavy_aircraft_manufacturer }
+		}
+		
+		csa_jackson_aircraft_corporation = {
+			
+			picture = generic_naval_manufacturer_2
+
+			allowed = {
+				tag = CSA
+			}
+			
+			available = {
+				has_completed_focus = CSA_Establish_Jackson_Aircraft_Corporation
+			}
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { usa_carrier_aircraft_manufacturer }
+		}
+		
+		goodyear2 = {
+		
+			picture = goodyear
+		
+			allowed = {
+				original_tag = CSA
+			}
+			
+			research_bonus = {
+				#electronics = 0.10
+			}
+			
+			traits = { USA_fighter_bomber_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		
+		vought2 = {
+			
+			#For fun the South will get this - they did move to Texas post-war
+			
+			picture = vought
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			available = {
+				#has_completed_focus = USA_Corsairs
+			}
+			
+			research_bonus = {
+				#air_equipment = 0.10
+			}
+			
+			traits = { usa_corsair_designer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		
+	}
+	
+	
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		
+		csa_atlanta_arsenal = {
+			
+			picture = generic_infantry_equipment_manufacturer_2
+
+			allowed = {
+				tag = CSA
+			}
+			
+			available = {
+				has_completed_focus = CSA_Establish_Atlanta_Arsenal
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { csa_cheap_infantry_equipment_manufacturer }
+		}
+		
+		csa_tredegar_ironworks = {
+			
+			picture = generic_artillery_manufacturer_2
+
+			allowed = {
+				tag = CSA
+			}
+			
+			available = {
+				has_completed_focus = CSA_Establish_Tredegar_Ironworks
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.1
+				artillery = 0.1
+			}
+			
+			traits = { csa_infantry_equipment_manufacturer }
+		}
+		
+		csa_lee_motor_company = {
+			
+			picture = generic_motorized_equipment_manufacturer_3
+
+			allowed = {
+				tag = CSA
+			}
+			
+			available = {
+				has_completed_focus = CSA_Establish_Lee_Motor_Company
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.10
+			}
+			
+			traits = { USA_reliable_truck_manufacturer }
+		}
+		
+		
+		csa_forrest_halftrack_arsenal = {
+			
+			picture = generic_motorized_equipment_manufacturer_3
+
+			allowed = {
+				tag = CSA
+			}
+			
+			available = {
+				has_completed_focus = CSA_Establish_Forrest_Halftrack_Arsenal
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.10
+			}
+			
+			traits = { USA_reliable_mechanized_manufacturer }
+		}
+		
+		
+		ford_motor_company20 = {
+			
+			picture = ford_motor_company
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			research_bonus = {
+				motorized_equipment = 0.10
+			}
+			
+			traits = { USA_motorized_equipment_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		higgins2 = {
+			
+			picture = higgins
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			research_bonus = {
+				tp_tech = 0.2
+			}
+			
+			traits = { american_naval_transport_company }
+			
+			modifier = {
+				consumer_goods_factor = 0.01
+			}
+		}
+		
+		#Higgins Engine Co. at some point
+	
+		army_ordnance_department21 = {
+			
+			picture = army_ordnance_department
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			research_bonus = {
+				artillery = 0.10
+			}
+			
+			traits = { US_general_artillery_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		
+	}
+	
+
+	
+	industrial_concern = {
+					
+		
+		
+		humble_oils2 = {
+		
+			picture = humble_oils
+		
+			allowed = {
+				original_tag = CSA
+			}
+			
+			research_bonus = {
+				#electronics = 0.10
+			}
+			
+			traits = { USA_refining_concern }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		texaco2 = {
+		
+			picture = texaco
+		
+			allowed = {
+				original_tag = CSA
+			}
+			
+			research_bonus = {
+				#electronics = 0.10
+			}
+			
+			traits = { USA_drilling_concern }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		goodrich2 = {
+			
+			picture = goodrich
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#infinite events for construction of synthetic rubber (rubber resource, not refineries) - slower than US rubber
+			#North Carolina
+			
+			research_bonus = {
+				synth_resources = 0.20
+			}
+			
+			traits = { US_rubber2_concern }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		
+		att20 = {
+		
+			picture = att
+		
+			allowed = {
+				original_tag = CSA
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+			}
+			
+			traits = { electronics_concern }
+			
+			modifier = {
+				consumer_goods_factor = 0.01
+			}
+		}
+		
+		ibm20 = {
+		
+			picture = ibm
+		
+			allowed = {
+				original_tag = CSA
+			}
+			
+			research_bonus = {
+				computing_tech = 0.25
+			}
+			
+			traits = { USA_computing_concern }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		general_electric20 = {
+		
+			picture = general_electric
+			
+			#jet engines also 
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			# Cincinnati
+			
+			research_bonus = {
+				jet_technology = 0.10
+			}
+			
+			traits = { ge_jet_engines }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		rolls_royce_usa = {
+			
+			#picture = rolls_royce_usa
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			available = {
+				#has_completed_focus = USA_Mustangs
+			}
+			
+			cost = 50
+			
+			research_bonus = {
+				air_equipment = 0.05
+			}
+			
+			traits = { usa_rolls_royce_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.01
+			}
+		}
+		
+		allison_motor_co2 = {
+		
+			picture = allison_motor_co
+		
+			allowed = {
+				original_tag = CSA
+			}
+			
+			cost = 50
+			
+			research_bonus = {
+				air_equipment = 0.05
+			}
+			
+			traits = { usa_allison_engines }
+			
+			modifier = {
+				consumer_goods_factor = 0.01
+			}
+		}
+		
+		curtiss_wright21 = {
+		
+			picture = curtiss_wright
+		
+			allowed = {
+				original_tag = CSA
+			}
+			
+			#Buffalo
+			
+			cost = 50
+			
+			research_bonus = {
+				air_equipment = 0.05
+			}
+			
+			traits = { usa_wright_engines }
+			
+			modifier = {
+				consumer_goods_factor = 0.01
+			}
+		}
+		
+		general_motors20 = {
+		
+			picture = general_motors
+		
+			allowed = {
+				original_tag = CSA
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+			}
+			
+			traits = { electronics_concern }
+			
+			modifier = {
+			}
+		}
+		
+		
+		
+		#End
+	}
+	
+	
+	theorist = {
+	
+		george_patton22 = {
+			
+			picture = george_patton
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			cost = 250
+			
+			research_bonus = {
+				cat_mobile_warfare = 0.2
+				armor = 0.2
+			}
+			
+			
+			traits = { mobile_warfare_expert }
+		}
+		
+		
+		
+		marc_mitscher21 = {
+		
+			picture = marc_mitscher
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			cost = 250
+			
+			research_bonus = {
+				cat_base_strike = 0.10
+			}
+			
+			traits = { naval_aviation_pioneer }
+		}
+		
+		
+		john_garand20 = {
+			
+			picture = john_garand
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			available = {
+				date < 1937.1.1
+			}
+			
+			cost = 10
+
+			
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			
+			traits = { usa_weapons_genius }
+			
+			cancel_if_invalid = yes
+		}
+	}
+	
+}

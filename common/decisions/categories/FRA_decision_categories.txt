@@ -1,0 +1,58 @@
+################
+##### FRA ######
+################
+
+FRA_vichy_france = {
+	
+	allowed = {
+		OR = {
+			original_tag = FRA
+			original_tag = VCF
+		}
+	}
+}
+
+FRA_escape_to_congo = {
+
+	icon = GFX_decision_category_military_operation
+
+	picture = GFX_decision_cat_poland_social_policy
+
+	allowed = {
+		original_tag = FRA
+	}
+
+	visible = {
+		has_capitulated = yes
+	}
+}
+
+FRA_economic_reforms = {
+
+	icon = generic_economy
+	
+	allowed = {
+		original_tag = FRA
+	}
+
+}
+
+FRA_nationalisation = {
+
+	icon = generic_industry
+	
+	allowed = {
+		original_tag = FRA
+	}
+
+}
+
+FRA_4th_international = {
+
+	icon = generic_communism
+	
+	allowed = {
+		original_tag = FRA
+	}
+
+}

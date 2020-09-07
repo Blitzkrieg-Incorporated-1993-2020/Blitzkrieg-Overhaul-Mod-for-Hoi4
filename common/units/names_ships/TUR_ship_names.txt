@@ -1,0 +1,171 @@
+﻿##### TURKEY NAME LISTS #####
+### REGULAR DESTROYER NAMES###		        
+TUR_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+
+	for_countries = { TUR }
+
+	type = ship
+	ship_types = { ship_hull_light destroyer }			
+
+	prefix = "TCG "
+	fallback_name = "%d. Muhrip"					
+
+	unique = {											
+		"Peyk" "Berk" "Zafer" "Kocatepe" "Adatepe" "Tinaztepe" "Yücetepe" "Savastepe" "Alcitepe" "Anittepe" "Demirhisar" "Sultanhisar" "Gayret" "Muavenet"
+		"Maresal Fevzi Cakmak Pasa" "Piyale Pasa"
+	}
+}
+
+### LIGHT CRUISER NAMES###
+TUR_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+
+	for_countries = { TUR }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	
+	prefix = "TCG "
+	fallback_name = "%d. Hafif Kruvazör"
+
+	unique = {
+		"Peyk-i Sevket" "Berk-i Satvet" "Kesan" "Sariyer" "Fethiye" "Bodrum" "Sarımsaklı" "Bandirma"
+
+	}
+}
+
+### HEAVY CRUISER NAMES###
+TUR_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+
+	for_countries = { TUR }
+
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	prefix = "TCG "
+	fallback_name = "%d. Agir Kruvazör"
+
+	unique = {
+		"Residiye" "Tuzla" "Yalova" "Gemlik" "Izmit" "Gebze"
+		"Gölcük" "Gelibolu" "Urla" 
+	}
+}
+
+
+### BATTLESHIP NAMES ###
+TUR_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+
+	for_countries = { TUR }
+
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	
+	prefix = "TCG "
+	fallback_name = "%d. Savas Gemisi"		
+
+	unique = {
+		"Istanbul" "Izmir" "Samsun" "Trabzon"
+	}
+}
+
+### BATTLECRUISER NAMES ###
+TUR_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { TUR }
+
+	type = ship
+	ship_types = { ship_hull_heavy battle_cruiser }
+	
+	prefix = "TCG "
+	fallback_name = "%d. Muharebe Kruvazörü"		
+
+	unique = {
+		"Yavuz" "Yavuzay" "Midilli" 
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+TUR_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+
+	for_countries = { TUR }
+
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	
+	prefix = "TCG "
+	fallback_name = "%d. Ucak Gemisi"	
+
+	unique = {
+		"Anadolu" "Trakya" "Kafkasya" "Balkan"
+	}
+}
+
+### SUBMARINES ###
+TUR_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+
+	for_countries = { TUR }
+
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	
+	prefix = "TCG "
+	fallback_name = "%d. Denizalti"
+	
+	unique = {
+		"Birinci Inönü" "Ikinci Inönü" "Dumlupinar" "Sakarya" "Saldiray" "Batiray" "Atilay" "Yildiray" "Oruc Reis" "Murat Reis" "Burak Reis" "Salih Reis"
+		"Uluc Ali Reis" "Kilic Ali Reis" "Turgut Reis" "Piri Reis" "Hizir Reis" "Barbaros" 
+	}
+}
+
+## THEME: TURKISH MYTHOLOGICAL NAMES ###
+TUR_TR_MYTHOLOGY = {
+	name = NAME_THEME_TURK_MYTHOLOGY
+
+	for_countries = { TUR }
+
+	type = ship
+
+	prefix = "TCG " 
+	
+	unique = {
+		"Sigun Geyik" "Gok Kurt" "Tepegoz" "Geyik Tanrica" "Bugu Kagan" "Hizir" "Od Ana" "Otuken" "Alp Er Tunga" "Al Basti" "Asena" "Kartal Ana" "Semruk Burkut" "Burkut Ana" "Kubey Hatun" "Su Iyesi" "Urung Ayig Toyon"
+		"Yildiz Han" "Gun Han" "Gok Han" "Deniz Han" "Dag Han" "Ay Han" "Yarsub Hatun" "Goksel Hatun" "Oguz Kagan" "Ayizitin Ilk Kizi" "Ayizitin Ikinci Kizi" "Ayizit" "Utkuuci" "Suyla" "Karlik"
+		"Yaylik Han" "Umay Ana" "Kizagan" "Mergen Tengri" "Erlik" "Ak Ana" "Ulgen Bey" "Kayra Han" "Boru" "Gokboru" "Abra" "Yutpa" "Tulpar" "Toprak Ana" "Azmic" "Bukrek" "Sangal" "Cay Ninesi"
+		"Demirkiynak" "Gulyabani" "Evren" "Bas Emegen" "Huma" "Germakoci" "Enkebit" "Hibilik" "Munkur" "Hirtik" "Icci Ana" "Doga Ana" "Al Itbarak" "Karakoncolos" "Kamos" "Kara Korsak" "Kayberen"
+		"Sahmeran" "Merkut" "Sese" "Ocu" "Yelbegen"
+    }
+}
+
+TUR_TR_CITY = {
+	name = NAME_THEME_TURK_CITY
+
+	for_countries = { TUR }
+
+	type = ship
+
+	prefix = "TCG " 
+	
+	unique = {
+		"Sinop" "Gaziantep" "Adana" "Iskenderun" "Hatay" "Mugla" "Manisa" "Balikesir" "Canakkale" "Edirne" "Mersin" "Tekirdag" "Aydın" "Lefkoşa"
+    }
+}
+
+TUR_TR_ISLAND = {
+	name = NAME_THEME_TURK_ISLAND
+
+	for_countries = { TUR }
+
+	type = ship
+
+	prefix = "TCG " 
+	
+	unique = {
+		"Preveze" "Cerbe" "Rodos" "Kıbrıs" "Kardak" "Mora" "Kınalı" "Aksaz"
+    }
+}

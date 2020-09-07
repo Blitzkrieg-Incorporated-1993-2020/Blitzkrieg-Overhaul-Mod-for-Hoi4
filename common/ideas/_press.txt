@@ -1,0 +1,326 @@
+ideas = {
+
+	press_laws = { 
+		law = yes
+		use_list_view = yes
+
+		free_press = {
+						
+			cost = 50
+			removal_cost = -1
+			
+			available = {
+			}
+			
+			modifier = {
+				research_speed_factor = 0.025
+				drift_defence_factor = -0.25
+				social_democracy_drift = 0.0001
+				conservative_drift = 0.0001
+				democratic_drift = 0.0001
+			}
+			
+			on_add = {
+				custom_effect_tooltip = fs_social_democrat_increase_TT
+				custom_effect_tooltip = mn_liberal_increase_TT
+				custom_effect_tooltip = cm_conservative_increase_TT
+			}
+
+			ai_will_do = {
+   				factor = 1
+   				modifier = {
+					factor = 0
+					OR = {
+						has_war = yes
+						has_government = fascism
+						has_government = monarchism
+						has_government = communism
+					}
+				}
+   				modifier = {
+					factor = 2
+					has_war = no
+					OR = {
+						has_government = democratic
+						has_government = conservative
+						has_government = social_democracy
+					}
+				}
+   			}
+			
+			cancel_if_invalid = yes
+			default = yes
+		}
+		
+		security_press = {
+						
+			cost = 50
+			removal_cost = -1
+			
+			available = {
+			}
+
+			modifier = {
+				decryption_factor = 0.1
+			}
+			
+			ai_will_do = {
+   				factor = 1
+   			}
+			
+			cancel_if_invalid = yes
+		}
+		
+		censored_press = {
+						
+			cost = 50
+			removal_cost = -1
+			
+			available = {
+				NOT = { has_government = social_democracy }
+			}
+
+			modifier = {
+				#production_speed_industrial_complex_factor = 0.05
+				#production_speed_arms_factory_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				communism_drift = 0.0001
+				fascism_drift = 0.0001
+
+			}
+			
+			on_add = {
+				custom_effect_tooltip = lb_communism_increase_TT
+				custom_effect_tooltip = cs_fascism_increase_TT
+			}
+
+			ai_will_do = {
+   				factor = 1
+   				modifier = {
+					factor = 2
+					has_war = yes
+				}
+   				modifier = {
+					factor = 0
+					has_war = no
+					OR = {
+						has_government = democratic
+						has_government = conservative
+					}
+				}
+   			}
+			
+			cancel_if_invalid = yes
+		}
+		
+		call_for_volunteers_press = {
+						
+			cost = 50
+			removal_cost = -1
+			
+			available = {
+			}
+
+			modifier = {
+				conscription = 0.005
+			}
+			
+			ai_will_do = {
+   				factor = 1
+   				modifier = {
+					factor = 3
+					OR = {
+						AND = {
+					        has_war = yes
+					        is_major = no
+					        has_manpower < 10000
+						}
+						AND = {
+					        has_war = yes
+					        is_major = yes
+					        has_manpower < 100000
+					        NOT = { is_literally_russia = yes }
+						}
+						AND = {
+					        has_war = yes
+					        is_major = yes
+					        has_manpower < 1000000
+					        OR = {
+					        	is_literally_russia = yes
+					        	is_literally_china_proper = yes
+					        }
+						}
+					}
+				}
+   			}
+			
+			
+			cancel_if_invalid = yes
+		}
+		
+		productive_press = {
+						
+			cost = 50
+			removal_cost = -1
+			
+			available = {
+			}
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.10
+				communism_drift = 0.0001
+				unionism_drift = 0.0001
+			}
+			
+			on_add = {
+				custom_effect_tooltip = all_communism_increase_TT
+				custom_effect_tooltip = all_socialism_increase_TT
+			}
+
+			ai_will_do = {
+   				factor = 1
+   				modifier = {
+					factor = 3
+					has_war = yes
+				}
+   				modifier = {
+					factor = 2
+					has_war = no
+					OR = {
+						has_government = unionism
+						has_government = communism
+					}
+				}
+   				modifier = {
+					factor = 0
+					has_war = no
+					OR = {
+						has_government = democratic
+						has_government = conservative
+						has_government = social_democracy
+						has_government = neutrality
+						has_government = monarchism
+						has_government = fascism
+					}
+				}
+   			}
+			
+			cancel_if_invalid = yes
+		}
+		
+		resistance_press = {
+						
+			cost = 50
+			removal_cost = -1
+			
+			available = {
+			}
+
+			modifier = {
+				partisan_effect = 0.2
+			}
+			
+			ai_will_do = {
+   				factor = 1
+				
+				modifier = {
+					factor = 3
+					surrender_progress > 0.50
+					has_war = yes
+				}
+
+   				modifier = {
+					factor = 4
+					has_capitulated = yes
+					has_war = yes
+				}
+   			}
+			
+			cancel_if_invalid = no
+		}
+		
+		nationalism_press = {
+						
+			cost = 50
+			removal_cost = -1
+			
+			available = {
+			}
+
+			modifier = {
+				drift_defence_factor = 0.2
+				stability_factor  = 0.005 
+				stability_weekly = 0.0005
+				war_support_factor = 0.005
+				nationalism_drift = 0.0001
+				neutrality_drift = 0.0001
+			}
+			
+			on_add = {
+				custom_effect_tooltip = all_nationalism_increase_TT
+				custom_effect_tooltip = all_authority_increase_TT
+			}
+
+			ai_will_do = {
+   				factor = 1
+   				modifier = {
+					factor = 3
+					OR = {
+						political_power_daily < 1
+						has_stability < 0.35
+					}
+				}
+   				modifier = {
+					factor = 2
+					political_power_daily > 1
+					has_stability > 0.35
+					OR = {
+						has_government = neutrality
+						has_government = fascism
+					}
+				}
+   				modifier = {
+					factor = 0
+					political_power_daily > 1
+					has_stability > 0.35
+					OR = {
+						has_government = democratic
+						has_government = conservative
+						has_government = social_democracy
+						has_government = monarchism
+						has_government = unionism
+						has_government = communism
+					}
+				}
+   			}
+			
+			cancel_if_invalid = no
+		}
+
+		agressive_press = {
+						
+			cost = 50
+			removal_cost = -1
+			
+			available = {
+				NOT = { has_government = democratic }
+			}
+
+			modifier = {
+				justify_war_goal_time = -0.25
+			}
+			
+			ai_will_do = {
+   				factor = 1
+   				modifier = {
+					factor = 3
+					has_added_tension_amount > 50
+				}
+   			}
+			
+			cancel_if_invalid = no
+		}
+	}
+}
+
+##finished

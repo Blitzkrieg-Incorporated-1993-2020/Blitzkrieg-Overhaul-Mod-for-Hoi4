@@ -1,0 +1,40 @@
+leader_traits = {
+
+	AST_a_king_for_our_people = {
+		random = no
+		stability_factor = 0.15
+		drift_defence_factor = 0.30
+		political_power_gain = 0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	AST_support_for_war_effort = {
+		random = no
+		war_support_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	NZL_appeasement_opposition = {
+		random = no
+		war_support_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	NZL_war_above_all_else = {
+		random = no
+		war_support_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

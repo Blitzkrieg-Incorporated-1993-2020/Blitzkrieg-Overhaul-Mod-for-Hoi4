@@ -1,0 +1,2145 @@
+focus_tree = {
+	id = Saudi_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SAU
+		}
+		
+		modifier = {
+			add = 10
+			original_tag = SAU
+		}
+	}
+	
+	default = no
+
+	############################
+	#### POLITICAL SECTION #####
+	############################
+	
+	focus = {
+		id = SAU_Hail_Deus
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		available = {
+		}
+		x = 3
+		y = 0
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_national_unity = 0.05
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = SAU_Collectivism_Road
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = SAU_Hail_Deus }
+		mutually_exclusive = {
+	 		focus = SAU_Independant_Road
+	 	}
+		available = {
+			OR = {
+				communism > 0.4
+				fascism > 0.4
+			}
+		}
+		x = 1
+		y = 1
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = collectivist_ethos_focus
+		}
+	}
+	
+		focus = {
+		id = SAU_Independant_Road
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = SAU_Hail_Deus }
+		mutually_exclusive = {
+	 		focus = SAU_Collectivism_Road
+	 	}
+		available = {
+			OR = {
+				democratic > 0.4
+				neutrality > 0.4
+			}
+		}
+		x = 5
+		y = 1
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = deterrence
+		}
+	}
+	
+	focus = {
+		id = SAU_Red_Desert
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = SAU_Collectivism_Road }
+		mutually_exclusive = {
+			focus = SAU_Furor_Divinus
+	 	}
+		available = {
+			communism > 0.4
+		}
+		x = 0
+		y = 3
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = communist_influence
+		}
+	}
+
+	focus = {
+		id = SAU_Furor_Divinus
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SAU_Collectivism_Road }
+		mutually_exclusive = {
+			focus = SAU_Red_Desert
+	 	}
+		available = {
+			fascism > 0.4
+		}
+		x = 2
+		y = 3
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = fascist_influence
+		}
+	}
+	
+	focus = {
+		id = SAU_Desert_Soul
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = SAU_Independant_Road }
+		mutually_exclusive = {
+			focus = SAU_Create_Republic
+	 	}
+		available = {
+			neutrality > 0.4
+		}
+		x = 4
+		y = 3
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = idea_political_correctness
+			add_national_unity = 0.05
+		}
+	}
+	
+	focus = {
+		id = SAU_Our_Vision
+		available = {
+			is_puppet = no
+		}
+		prerequisite = { focus = SAU_Desert_Soul }
+		x = 4
+		y = 4
+		cost = 10
+		icon = GFX_goal_generic_major_alliance	
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			add_political_power = 150
+			add_national_unity = 0.05
+		}
+	}
+	
+	focus = {
+		id = SAU_Reactionary
+		available = {
+			is_puppet = no
+		}
+		prerequisite = { focus = SAU_Our_Vision }
+		x = 4
+		y = 5
+		cost = 10
+		icon = GFX_goal_generic_defence
+		completion_reward = {
+        add_ideas = SAU_Reactionary
+		add_national_unity = 0.05
+		}
+	}
+	
+	focus = {
+		id = SAU_Welcome_home
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = SAU_Reactionary focus = SAU_foreign_expeditions}
+		available = { 
+		}
+
+		continue_if_invalid = yes
+		
+		x = 5
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower = 150000
+			add_national_unity = 0.05
+		}
+	}
+	
+	focus = {
+		id = SAU_Create_Republic
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = SAU_Independant_Road }
+		mutually_exclusive = {
+	 		focus = SAU_Nothern_Soul
+	 	}
+		available = {
+			democratic > 0.4
+		}
+		x = 6
+		y = 3
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = democratic_influence
+		}
+	}
+	
+	focus = {
+		id = SAU_volunteer_corps
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = SAU_Create_Republic }
+		x = 6
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+			add_ideas = volunteer_corps_focus
+		}
+	}
+	
+	focus = {
+		id = SAU_foreign_expeditions
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = SAU_volunteer_corps }
+		x = 6
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = foreign_expeditions_focus
+		}
+	}
+	
+	focus = {
+		id = SAU_Support_Workers
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = SAU_Red_Desert}
+		mutually_exclusive = {
+	 	}
+		available = {
+		}
+		x = 0
+		y = 4
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 250
+		}
+	}
+
+	focus = {
+		id = SAU_Cannon_fodder
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = SAU_Support_Workers}
+		mutually_exclusive = {
+	 	}
+		available = {
+		}
+		x = 0
+		y = 5
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = militarism_focus
+			set_rule = { can_send_volunteers = yes }
+		}
+	}
+				
+	focus = {
+		id = SAU_Successful_Revolution 
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = SAU_Cannon_fodder }
+		mutually_exclusive = {
+	 	}
+		available = {
+		}
+		x = 0
+		y = 6
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				add_ideas = political_commissars_focus
+			if = {
+				limit = { has_government = fascism }
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.2
+				}
+			}
+			if = {
+				limit = { has_government = communism }
+				add_popularity = {
+					ideology = communism
+					popularity = 0.2
+				}
+			}
+				add_ideas = ideological_fanaticism_focus
+				add_political_power = 250
+		}
+	}
+	
+	focus = {
+		id = SAU_Military_Youth
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = SAU_Furor_Divinus}
+		mutually_exclusive = {
+	 	}
+		available = {
+		}
+		x = 2
+		y = 4
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = military_youth_focus
+		}
+	}
+	
+	focus = {
+		id = SAU_Militarism
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = SAU_Military_Youth}
+		mutually_exclusive = {
+	 	}
+		available = {
+		}
+		x = 2
+		y = 5
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = militarism_focus
+			set_rule = { can_send_volunteers = yes }
+		}
+	}
+
+	focus = {
+		id = SAU_Extreme_Fanaticism 
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = SAU_Militarism }
+		mutually_exclusive = {
+	 	}
+		available = {
+		}
+		x = 2
+		y = 6
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				add_ideas = political_commissars_focus
+			if = {
+				limit = { has_government = fascism }
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.2
+				}
+			}
+			if = {
+				limit = { has_government = communism }
+				add_popularity = {
+					ideology = communism
+					popularity = 0.2
+				}
+			}
+				add_ideas = ideological_fanaticism_focus
+			hidden_effect = {
+				set_rule = { can_use_kamikaze_pilots = yes }
+			}
+			custom_effect_tooltip = kamikaze_focus_tooltip
+		}
+	}
+	
+	############################
+	#### INDUSTRIAL SECTION ####
+	############################
+	
+	focus = {
+		id = SAU_industrial_effort
+		icon = GFX_goal_generic_production
+		x = 10
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_resource = {
+				type = oil
+				amount = 20
+				state = 678
+			}
+			678 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+			}
+			give_resource_rights = { receiver = USA state = 678 }
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Desert_Complex
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = SAU_industrial_effort }
+		x = 8
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			# Rub Al_Khali
+			678 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Infrastructure_I
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = SAU_industrial_effort }
+		x = 10
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			# Nejd
+			292 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			# Hedjaz
+			679 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			# Rub Al_Khali
+			678 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Desert_Military
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SAU_industrial_effort }
+		x = 12
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			# Rub Al_Khali
+			678 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Mountain_Complex
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = SAU_Desert_Complex }
+		x = 8
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			# Hedjaz
+			679 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_education_reform
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = SAU_Desert_Complex }
+		prerequisite = { focus = SAU_Infrastructure_I }
+		prerequisite = { focus = SAU_Desert_Military }
+		
+		x = 10
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = progress_cult_focus
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = SAU_Mountain_Military
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SAU_Desert_Military }
+		x = 12
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			# Hedjaz
+			679 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Capital_Complex
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = SAU_Mountain_Complex }
+		x = 8
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			# Nejd
+		292 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Infrastructure_II
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = SAU_education_reform }
+		x = 10
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		# Nejd
+			292 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			# Hedjaz
+			679 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			# Rub Al_Khali
+			678 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Capital_Military
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SAU_Mountain_Military }
+		x = 12
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			# Nejd
+			292 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_extra_tech_slot
+		icon = GFX_focus_research
+		prerequisite = { focus = SAU_Capital_Complex }
+		prerequisite = { focus = SAU_Infrastructure_II }
+		prerequisite = { focus = SAU_Capital_Military }
+
+		x = 10
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = SAU_nuclear_technology
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = SAU_extra_tech_slot }
+		x = 10
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 1
+				category = nuclear
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_rocket_technology
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = SAU_extra_tech_slot }
+		x = 8
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_secret_weapons
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = { focus = SAU_extra_tech_slot }
+		x = 12
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 4
+				category = electronics
+				category = nuclear
+				category = rocketry
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+	}
+
+	
+	############################
+	####  DOCTRINE SECTION  ####
+	############################
+	
+	focus = {
+		id = SAU_special_forces
+		icon = GFX_goal_generic_special_forces
+		x = 21
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.25
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = marines
+				technology = marines2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = SAU_special_forces }
+		x = 15
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = SAU_doctrine_effort }
+		x = 15
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_doctrine_effort_3
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = SAU_doctrine_effort_2 }
+		x = 15
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 15
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_air_effort
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = SAU_special_forces }
+		x = 17
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_air_effort_2
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = SAU_air_effort }
+		x = 17
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_air_effort_3
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = SAU_air_effort_2 }
+		mutually_exclusive = {
+	 		focus = SAU_naval_effort_3
+	 	}
+		x = 17
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = air_base
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = air_base
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			air_experience = 15
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}	
+	
+	focus = {
+		id = SAU_naval_effort
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = SAU_special_forces }
+		x = 19
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_naval_effort_2
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = SAU_naval_effort }
+		x = 19
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_naval_effort_3
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = SAU_naval_effort_2 }
+		mutually_exclusive = {
+	 		focus = SAU_air_effort_3
+	 	}
+		x = 19
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+			navy_experience = 15
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_amphibious
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = SAU_doctrine_effort }
+		prerequisite = { focus = SAU_air_effort 
+						 focus = SAU_naval_effort }
+		prerequisite = { focus = SAU_equipment_effort }
+		prerequisite = { focus = SAU_fighter_focus 
+						 focus = SAU_submarine_effort }
+		x = 21
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = uk_amphibious_focus
+				bonus = 0.5
+				uses = 2
+				category = tp_tech
+			}
+		}
+	}
+	
+	############################
+	#### EQUIPEMENT SECTION ####
+	############################
+	
+	focus = {
+		id = SAU_equipment_effort
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = SAU_special_forces }
+		x = 27
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = SAU_equipment_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 27
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.75
+				technology = motorised_infantry
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_heavy_vehicle_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = SAU_motorization_effort }
+		x = 27
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_mechanized_equipment
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = SAU_special_forces }
+		x = 23
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = early_submarine
+				technology = basic_submarine
+				technology = improved_submarine
+				technology = advanced_submarine
+			}
+		}
+	}
+
+	focus = {
+		id = SAU_destroyer_effort
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = SAU_submarine_effort }
+		x = 23
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = early_destroyer
+				technology = basic_destroyer
+				technology = improved_destroyer
+				technology = advanced_destroyer
+			}
+		}
+	}
+
+	focus = {
+		id = SAU_heavy_ships_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = SAU_destroyer_effort }
+		mutually_exclusive = {
+	 		focus = SAU_bomber_focus
+	 	}
+		x = 23
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = improved_light_cruiser
+				technology = advanced_light_cruiser
+				technology = improved_heavy_cruiser
+				technology = advanced_heavy_cruiser
+			}
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = basic_battlecruiser
+				technology = basic_battleship
+				technology = improved_battleship
+				technology = advanced_battleship
+				technology = heavy_battleship
+				technology = heavy_battleship2
+				technology = early_carrier
+				technology = basic_carrier
+				technology = improved_carrier
+				technology = advanced_carrier
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = SAU_special_forces }
+		x = 25
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+		}
+	}
+
+	
+	
+	focus = {
+		id = SAU_cas_focus
+		icon = GFX_goal_generic_CAS
+	 	prerequisite = { 
+	 		focus = SAU_fighter_focus
+	 	}
+		x = 25
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = FRA_cas_focus
+				bonus = 0.5
+				uses = 2
+				category = cas_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = SAU_cas_focus }
+		mutually_exclusive = {
+	 		focus = SAU_heavy_ships_effort
+	 	}
+		x = 25
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = naval_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_special_forces_2
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = SAU_doctrine_effort_3 }
+		prerequisite = { focus = SAU_air_effort_3 
+						 focus = SAU_naval_effort_3 }
+		prerequisite = { focus = SAU_heavy_vehicle_effort }
+		prerequisite = { focus = SAU_bomber_focus 
+						 focus = SAU_heavy_ships_effort }
+		x = 21
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 2
+				technology = paratroopers
+				technology = paratroopers2
+				technology = paratroopers3
+				technology = marines
+				technology = marines2
+				technology = marines3
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+				technology = tech_mountaineers3
+			}
+		}
+	}
+	
+	############################
+	######## WAR SECTION #######
+	############################
+
+	focus = {
+		id = SAU_Ministry
+		icon = GFX_goal_generic_demand_territory
+		available = {
+			OR = {
+				has_government = communism
+				has_government = fascism
+			}
+		}
+		x = 36
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			create_faction = "Califat"
+			add_manpower = 25000
+		}
+	}	
+	
+		focus = {
+		id = SAU_Invite_Oman
+		icon = GFX_goal_generic_alliance
+		available = {
+			is_puppet = no
+		}
+	 	prerequisite = { focus = SAU_Ministry }
+	 	mutually_exclusive = { focus = SAU_Claim_Oman }
+	 	bypass = {
+	 		is_in_faction_with = OMA
+	 		is_faction_leader = yes
+	 	}
+		x = 32
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 0.1
+
+			modifier = {
+				factor = 10
+				ai_irrationality > 20
+			}
+			modifier = {
+				factor = 2
+				ai_irrationality > 30
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					OMA = { 
+						is_puppet = no
+						NOT = { has_war_with = SAU }
+					}
+				}
+				OMA = { country_event = Califat.1 }
+				hidden_effect = {
+					news_event = { hours = 6 id = news.177 }
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Invite_Yemen
+		icon = GFX_goal_generic_alliance
+		available = {
+			is_puppet = no
+		}
+	 	prerequisite = { focus = SAU_Invite_Oman }
+	 	bypass = {
+	 		is_in_faction_with = YEM
+	 		is_faction_leader = yes
+	 	}
+		x = 32
+		y = 2
+		cost = 10
+
+		ai_will_do = {
+			factor = 0.1
+
+			modifier = {
+				factor = 10
+				ai_irrationality > 20
+			}
+			modifier = {
+				factor = 2
+				ai_irrationality > 30
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					YEM = { 
+						is_puppet = no
+						NOT = { has_war_with = SAU }
+					}
+				}
+				YEM = { country_event = Califat.1 }
+				hidden_effect = {
+					news_event = { hours = 6 id = news.177 }
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Invite_Irak
+		icon = GFX_goal_generic_alliance
+		available = {
+			is_puppet = no
+		}
+	 	prerequisite = { focus = SAU_Invite_Yemen }
+	 	bypass = {
+	 		is_in_faction_with = IRQ
+	 		is_faction_leader = yes
+	 	}
+		x = 34
+		y = 3
+		cost = 10
+
+		ai_will_do = {
+			factor = 0.1
+
+			modifier = {
+				factor = 10
+				ai_irrationality > 20
+			}
+			modifier = {
+				factor = 2
+				ai_irrationality > 30
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					IRQ = { 
+						is_puppet = no
+						NOT = { has_war_with = SAU }
+					}
+				}
+				IRQ = { country_event = Califat.1 }
+				hidden_effect = {
+					news_event = { hours = 6 id = news.177 }
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Invite_Iran
+		icon = GFX_goal_generic_alliance
+		available = {
+			is_puppet = no
+		}
+	 	prerequisite = { focus = SAU_Invite_Yemen }
+	 	bypass = {
+	 		is_in_faction_with = PER
+	 		is_faction_leader = yes
+	 	}
+		x = 30
+		y = 3
+		cost = 10
+
+		ai_will_do = {
+			factor = 0.1
+
+			modifier = {
+				factor = 10
+				ai_irrationality > 20
+			}
+			modifier = {
+				factor = 2
+				ai_irrationality > 30
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					PER = { 
+						is_puppet = no
+						NOT = { has_war_with = SAU }
+					}
+				}
+				PER = { country_event = Califat.1 }
+				hidden_effect = {
+					news_event = { hours = 6 id = news.177 }
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Invite_Afghanistan
+		icon = GFX_goal_generic_alliance
+		available = {
+			is_puppet = no
+		}
+	 	prerequisite = { focus = SAU_Invite_Iran }
+	 	bypass = {
+	 		is_in_faction_with = AFG
+	 		is_faction_leader = yes
+	 	}
+		x = 30
+		y = 4
+		cost = 10
+
+		ai_will_do = {
+			factor = 0.1
+
+			modifier = {
+				factor = 10
+				ai_irrationality > 20
+			}
+			modifier = {
+				factor = 2
+				ai_irrationality > 30
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					AFG = { 
+						is_puppet = no
+						NOT = { has_war_with = SAU }
+					}
+				}
+				AFG = { country_event = Califat.1 }
+				hidden_effect = {
+					news_event = { hours = 6 id = news.177 }
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Invite_Turquie
+		icon = GFX_goal_generic_alliance
+		available = {
+			is_puppet = no
+		}
+	 	prerequisite = { focus = SAU_Invite_Irak }
+	 	bypass = {
+	 		is_in_faction_with = TUR
+	 		is_faction_leader = yes
+	 	}
+		x = 34
+		y = 4
+		cost = 10
+
+		ai_will_do = {
+			factor = 0.1
+
+			modifier = {
+				factor = 10
+				ai_irrationality > 20
+			}
+			modifier = {
+				factor = 2
+				ai_irrationality > 30
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					TUR = { 
+						is_puppet = no
+						NOT = { has_war_with = SAU }
+					}
+				}
+				TUR = { country_event = Califat.1 }
+				hidden_effect = {
+					news_event = { hours = 6 id = news.177 }
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Claim_England
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = SAU_Ministry }
+		available = {
+		}
+		x = 36
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			659 = { add_core_of = SAU }
+			658 = { add_core_of = SAU }			
+			656 = { add_core_of = SAU }
+			455 = { add_core_of = SAU }
+			454 = { add_core_of = SAU }
+			453 = { add_core_of = SAU }
+			create_wargoal = {
+				type = take_state_focus
+				target = ENG
+			} 
+		}
+	}
+	
+	focus = {
+		id = SAU_Claim_France
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = SAU_Claim_England }
+		available = {
+		}
+		x = 36
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_state_claim = 677
+			add_state_claim = 680
+			add_state_claim = 554
+			add_state_claim = 553
+			create_wargoal = {
+				type = take_state_focus
+				target = FRA
+			} 
+		}
+	}
+	
+	focus = {
+		id = SAU_Claim_Italy
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = SAU_Claim_England }
+		available = {
+		}
+		x = 36
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = ITA
+			} 
+		}
+	}
+	
+	focus = {
+		id = SAU_Claim_Oman
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = SAU_Ministry }
+		mutually_exclusive = { focus = SAU_Create_Alliance }
+		available = {
+		}
+		x = 40
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				294 = { add_core_of = SAU }
+			create_wargoal = {
+				type = take_state_focus
+				target = OMA
+			} 
+		}
+	}
+	
+	focus = {
+		id = SAU_Claim_Yemen
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = SAU_Claim_Oman }
+		available = {
+		}
+		x = 40
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				293 = { add_core_of = SAU }
+			create_wargoal = {
+				type = take_state_focus
+				target = YEM
+			} 
+		}
+	}
+
+	focus = {
+		id = SAU_Claim_Irak
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = SAU_Claim_Yemen }
+		available = {
+		}
+		x = 38
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				675 = { add_core_of = SAU }
+				291 = { add_core_of = SAU }
+				676 = { add_core_of = SAU }
+			create_wargoal = {
+				type = take_state_focus
+				target = IRQ
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Claim_Turquie
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = SAU_Claim_Irak }
+		available = {
+		}
+		x = 38
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				341 = { add_core_of = SAU }
+				340 = { add_core_of = SAU }
+				339 = { add_core_of = SAU }
+				343 = { add_core_of = SAU }
+				342 = { add_core_of = SAU }
+				347 = { add_core_of = SAU }
+				49 = { add_core_of = SAU }
+				345 = { add_core_of = SAU }
+				346 = { add_core_of = SAU }
+				356 = { add_core_of = SAU }
+				348 = { add_core_of = SAU }
+				344 = { add_core_of = SAU }
+				355 = { add_core_of = SAU }
+				349 = { add_core_of = SAU }
+				350 = { add_core_of = SAU }
+				352 = { add_core_of = SAU }
+				353 = { add_core_of = SAU }
+				354 = { add_core_of = SAU }
+			create_wargoal = {
+				type = take_state_focus
+				target = TUR
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Claim_Iran
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = SAU_Claim_Yemen }
+		available = {
+		}
+		x = 42
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				410 = { add_core_of = SAU }
+				414 = { add_core_of = SAU }
+				416 = { add_core_of = SAU }
+				266 = { add_core_of = SAU }
+				418 = { add_core_of = SAU }
+				411 = { add_core_of = SAU }
+				412 = { add_core_of = SAU }
+				413 = { add_core_of = SAU }
+				421 = { add_core_of = SAU }
+				417 = { add_core_of = SAU }
+				419 = { add_core_of = SAU }
+				420 = { add_core_of = SAU }
+			create_wargoal = {
+				type = take_state_focus
+				target = PER
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Claim_Afghanistan
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = SAU_Claim_Iran }
+		available = {
+		}
+		x = 42
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				267 = { add_core_of = SAU }
+				415 = { add_core_of = SAU }
+			create_wargoal = {
+				type = take_state_focus
+				target = AFG
+			}
+		}
+	}
+	
+	focus = {
+		id = SAU_Love_Califat
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = SAU_Invite_Afghanistan }
+		prerequisite = { focus = SAU_Invite_Turquie }
+		available = {
+			is_in_faction_with = OMA
+			is_in_faction_with = YEM
+			is_in_faction_with = PER
+			is_in_faction_with = AFG
+			is_in_faction_with = IRQ
+			is_in_faction_with = TUR
+		}
+		x = 32
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_manpower = 150000
+		}
+	}
+	
+	focus = {
+		id = SAU_Anti_Colonialist
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = SAU_Claim_France }
+		available = {
+		659 = { is_controlled_by = SAU }
+		658 = { is_controlled_by = SAU }
+		656 = { is_controlled_by = SAU }
+		453 = { is_controlled_by = SAU }
+		454 = { is_controlled_by = SAU }
+		455 = { is_controlled_by = SAU }
+		680 = { is_controlled_by = SAU }
+		677 = { is_controlled_by = SAU }
+		553 = { is_controlled_by = SAU }
+		554 = { is_controlled_by = SAU }
+		552 = { is_controlled_by = SAU }
+		551 = { is_controlled_by = SAU }
+		456 = { is_controlled_by = SAU }
+		457 = { is_controlled_by = SAU }
+		446 = { is_controlled_by = SAU }
+		447 = { is_controlled_by = SAU }
+		452 = { is_controlled_by = SAU }
+		273 = { is_controlled_by = SAU }
+		661 = { is_controlled_by = SAU }
+		662 = { is_controlled_by = SAU }
+		663 = { is_controlled_by = SAU }
+		448 = { is_controlled_by = SAU }
+		449 = { is_controlled_by = SAU }
+		450 = { is_controlled_by = SAU }
+		451 = { is_controlled_by = SAU }
+		
+		}
+		x = 36
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_manpower = 150000
+		}
+	}
+	
+	focus = {
+		id = SAU_Arabian_Empire
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = { focus = SAU_Claim_Turquie }
+		prerequisite = { focus = SAU_Claim_Afghanistan }
+		available = {
+		293 = { is_controlled_by = SAU }
+		294 = { is_controlled_by = SAU }
+		675 = { is_controlled_by = SAU }
+		291 = { is_controlled_by = SAU }
+		676 = { is_controlled_by = SAU }
+		354 = { is_controlled_by = SAU }
+		353 = { is_controlled_by = SAU }
+		352 = { is_controlled_by = SAU }
+		350 = { is_controlled_by = SAU }
+		349 = { is_controlled_by = SAU }
+		355 = { is_controlled_by = SAU }
+		348 = { is_controlled_by = SAU }
+		344 = { is_controlled_by = SAU }
+		356 = { is_controlled_by = SAU }
+		345 = { is_controlled_by = SAU }
+		346 = { is_controlled_by = SAU }
+		49 = { is_controlled_by = SAU }
+		347 = { is_controlled_by = SAU }
+		341 = { is_controlled_by = SAU }
+		340 = { is_controlled_by = SAU }
+		339 = { is_controlled_by = SAU }
+		342 = { is_controlled_by = SAU }
+		343 = { is_controlled_by = SAU }
+		410 = { is_controlled_by = SAU }
+		412 = { is_controlled_by = SAU }
+		414 = { is_controlled_by = SAU }
+		416 = { is_controlled_by = SAU }
+		411 = { is_controlled_by = SAU }
+		418 = { is_controlled_by = SAU }
+		266 = { is_controlled_by = SAU }
+		417 = { is_controlled_by = SAU }
+		413 = { is_controlled_by = SAU }
+		412 = { is_controlled_by = SAU }
+		420 = { is_controlled_by = SAU }
+		413 = { is_controlled_by = SAU }
+		421 = { is_controlled_by = SAU }
+		419 = { is_controlled_by = SAU }
+		267 = { is_controlled_by = SAU }
+		415 = { is_controlled_by = SAU }
+		}
+		x = 40
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_manpower = 150000
+		}
+	}
+}

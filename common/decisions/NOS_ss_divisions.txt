@@ -1,0 +1,73 @@
+SS_recruitment = {
+
+	create_ss_paramilitary_force = {
+
+		icon = fascist_military
+
+		available = {
+			date > 1941.1.1
+			has_completed_focus = GER_SS_division_organization
+            OR = {
+                has_idea = heinrich_himmler
+                has_country_leader = { name = "Heinrich Himmler" }
+            }
+			fascism > 0.95
+        }
+
+        visible = {
+            OR = {
+                has_idea = heinrich_himmler
+                has_country_leader = { name = "Heinrich Himmler" }
+            }
+        }
+
+		fire_only_once = yes
+
+		cost = 50
+
+		complete_effect = {
+            set_technology = { faction_fascist_paramilitary = 1 }
+            SS_infantry_division = yes
+            load_oob = "GER_SS_1941"
+		}
+
+		ai_will_do = {
+			base = 900
+		}
+	}
+
+	expand_ss_military_force = {
+
+		icon = fascist_military_heavy
+
+		available = {
+			date > 1944.1.1
+			has_completed_focus = GER_SS_division_organization
+            OR = {
+                has_idea = heinrich_himmler
+                has_country_leader = { name = "Heinrich Himmler" }
+            }
+            fascism > 0.95
+        }
+
+        visible = {
+            OR = {
+                has_idea = heinrich_himmler
+                has_country_leader = { name = "Heinrich Himmler" }
+            }
+        }
+
+		fire_only_once = yes
+
+		cost = 100
+
+		complete_effect = {
+            set_technology = { faction_fascist_paramilitary_heavy = 1 }
+            load_oob = "GER_SS_1944"
+		}
+
+		ai_will_do = {
+			base = 900
+		}
+	}
+}
