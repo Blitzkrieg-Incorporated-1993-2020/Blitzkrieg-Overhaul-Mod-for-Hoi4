@@ -1,0 +1,135 @@
+﻿capital = 330
+
+set_popularities = {
+	conservative = 10
+	fascism = 0
+	monarchism = 80
+	neutrality = 4
+	communism = 6
+}
+
+set_politics = {
+
+	ruling_party = monarchism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+1933.1.1 = {
+	oob = "MON_1936"
+
+	# Starting tech
+	set_technology = {
+		infantry_weapons = 1
+		gw_artillery = 1
+	}
+
+	add_ideas = {
+		limited_conscription
+		MON_power_struggle
+		MON_nomadic
+	}
+
+	set_popularities = {
+		conservative = 10
+		fascism = 0
+		communism = 80
+		neutrality = 4
+		monarchism = 6
+	}
+
+	set_politics = {
+
+		ruling_party = communism
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+	create_country_leader = {
+		name = "Anandyn Amar"
+		desc = "POLITICS_ANANDYN_AMAR_DESC"
+		picture = "MON_Anandyn_Amar.dds"
+		expire = "1965.1.1"
+		ideology = marxism
+		traits = {
+			#
+		}
+	}
+	create_country_leader = {
+		name = "Sambadondogiin Tserendorj"
+		desc = "POLITICS_TSERENDORJ_DESC"
+		picture = "gfx/leaders/MON/Portrait_Tserendorj.dds"
+		expire = "1965.1.1"
+		ideology = oligarchism
+		traits = {
+			pillar_of_nation
+		}
+	}
+	create_country_leader = {
+		name = "Sambadondogiin Tserendorj"
+		desc = "POLITICS_TSERENDORJ_DESC"
+		picture = "gfx/leaders/MON/Portrait_Tserendorj.dds"
+		expire = "1965.1.1"
+		ideology = fascism_ideology
+		traits = {
+			pillar_of_nation
+		}
+	}
+	create_country_leader = {
+		name = "Jamsrangiin Tseveen"
+		desc = "POLITICS_TSEVEEN_DESC"
+		picture = "gfx/leaders/MON/Portrait_Tseveen.dds"
+		expire = "1965.1.1"
+		ideology = socialism
+		traits = {
+			#
+		}
+	}
+
+	create_corps_commander = {
+		id = 821895 
+		name = "Khorloogiin Choibalsan"
+		portrait_path = "gfx/leaders/MON/Portrait_Choibalsan.dds"
+		traits = { 
+			cavalry_leader
+			harsh_leader
+			politically_connected 
+		}
+		skill = 3
+		attack_skill = 4
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+
+	create_corps_commander = {
+		id = 22081900 
+		name = "Gelegdorjiin Demid"
+		portrait_path = "gfx/leaders/MON/Portrait_Demid.dds"
+		traits = { 
+			cavalry_officer
+			career_officer
+		}
+		skill = 3
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 3
+	}
+
+	create_corps_commander = {
+		id = 25031912
+		name = "Jamyangiin Lhagvasüren"
+		portrait_path = "gfx/leaders/MON/Portrait_Lhagvasuren.dds"
+		traits = { 
+			cavalry_officer
+		}
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+}

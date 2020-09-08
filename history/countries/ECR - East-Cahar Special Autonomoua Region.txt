@@ -1,0 +1,103 @@
+﻿capital = 612
+
+oob = "ECR_1936"
+
+set_country_flag = JAP_puppet
+set_technology = {
+	infantry_weapons = 1
+	tech_military_police = 1
+	tech_support = 1
+}
+
+add_ideas = {
+	limited_exports
+	limited_conscription
+	war_economy
+}
+
+set_stability = 0.5
+
+set_party_name = { ideology = fascism long_name = ECSAR_fascism name = ECSAR_fascism }
+
+1939.1.1 = {
+	retire_country_leader = yes
+	drop_cosmetic_tag = yes
+	set_cosmetic_tag = MAGmen
+	set_party_name = { ideology = fascism long_name = MAFmen_fascism name = MAFmen_fascism }
+	add_to_war = {
+		targeted_alliance = JAP
+		enemy = CHI
+	}
+
+	add_political_power = 1198
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	oob = "MEN_1939"
+	set_technology = {
+		#doctrines
+		grand_battle_plan = 1
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}
+
+set_politics = {
+	ruling_party = fascism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	fascism = 80
+	neutrality = 20
+}
+
+create_country_leader = {
+	name = "Li Shouxin"
+	desc = "POLITICS_LI_SHOUXIN_DESC"
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+	}
+}
+
+create_corps_commander = {
+	name = "Li Shouxin"
+	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
+	traits = {  }
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 2
+	skill = 2
+}
+
+1939.1.1 = {
+}

@@ -2,6 +2,8 @@
 
 oob = "BEL_1936"
 
+set_cosmetic_tag = BGU_monarchy
+
 set_research_slots = 3
 set_stability = 0.7
 set_war_support = 0.3 #we see what you are doing there Adolf #what the fuck are the pardox devs on about

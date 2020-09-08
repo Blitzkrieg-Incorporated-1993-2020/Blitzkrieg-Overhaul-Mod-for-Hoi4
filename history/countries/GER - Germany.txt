@@ -1,5 +1,7 @@
 ﻿capital = 813
 
+set_cosmetic_tag = GER_united
+
 oob = "GER_1936"
 
 set_fuel_ratio = 0.8

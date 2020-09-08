@@ -1,0 +1,117 @@
+﻿capital = 44
+
+set_popularities = {
+	democratic = 0
+	fascism = 0
+	communism = 0
+	monarchism = 100
+}
+
+set_politics = {
+
+	ruling_party = monarchism
+	last_election = "1908.3.5"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+1933.1.1 = {
+	OOB = "ALB_1936"
+
+	set_technology = {
+		infantry_weapons = 1
+		tech_support = 1
+		tech_recon = 1
+	}
+
+	set_popularities = {
+		democratic = 0
+		fascism = 0
+		communism = 0
+		monarchism = 100
+	}
+
+	set_politics = {
+
+		ruling_party = monarchism
+		last_election = "1933.3.5"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+
+	set_convoys = 20
+	set_stability = 0.5
+	set_war_support = 0.1
+
+	create_country_leader = {
+		name = "King Zog I"
+		desc = "POLITICS_KING_ZOG_DESC"
+		picture = "ALB_King_Zog_I.dds"
+		expire = "1965.1.1"
+		ideology = absolutism
+		traits = {
+			
+		}
+	}
+
+	create_country_leader = {
+		name = "Enver Hoxha"
+		desc = "POLITICS_ENVER_HOXHA_DESC"
+		picture = "Portrait_Enver_Hoxha.dds"
+		expire = "1965.1.1"
+		ideology = leninism
+		traits = {
+			dictator
+		}
+	}
+
+	create_country_leader = {
+		name = "Tefik Mborja"
+		desc = "POLITICS_TEFIK_MBORJA-DESC"
+		picture = "Portrait_Tefik_Mborja.dds"
+		expire = "1965.1.1"
+		ideology = rexism
+		traits = {
+			dictator
+		}
+	}
+
+	create_country_leader = {
+		name = "Pandeli Evangjeli"
+		desc = "POLITICS_PANDELI_EVANGJELI"
+		picture = "Portrait_Pandeli_Evangjeli.dds"
+		expire = "1965.1.1"
+		ideology = conservatism
+		traits = {
+			#
+		}
+	}
+
+	create_field_marshal = {
+		name = "Xhemal Aranitasi"
+		portrait_path = "gfx/leaders/ALB/Portrait_ALB_xhemal.dds"
+		traits = { }
+		skill = 2
+		attack_skill = 1
+	    defense_skill = 3
+	    planning_skill = 2
+	    logistics_skill = 2
+	}
+}
+
+1944.1.1 = {
+	set_popularities = {
+		conservative = 2
+		fascism = 11
+		monarchism = 21
+		communism = 83
+	}
+
+	set_politics = {
+		ruling_party = communism
+		last_election = "1931.6.21"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+}

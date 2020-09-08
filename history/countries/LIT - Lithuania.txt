@@ -1,0 +1,259 @@
+﻿capital = 11
+
+oob = "LIT_1936"
+
+set_research_slots = 3
+
+add_ideas = {
+	limited_conscription
+}
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	early_fighter = 1
+}
+
+set_convoys = 10
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	oob = "LIT_1939"
+	set_technology = {
+		tech_support = 1		
+		tech_engineers = 1
+		early_bomber = 1
+		gw_artillery = 1
+		interwar_artillery = 1
+		interwar_antiair = 1
+		support_weapons = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}
+
+set_popularities = {
+	democratic = 27
+	fascism = 1
+	communism = 12
+	neutrality = 60
+}
+
+set_politics = {
+
+	parties = {
+		democratic = { 
+			popularity = 30
+		}
+
+		fascism = {
+			popularity = 15
+		}
+		
+		communism = {
+			popularity = 15
+		}
+		
+		neutrality = { 
+			popularity = 50
+		}
+	}
+	
+	ruling_party = neutrality
+	last_election = "1926.5.8"
+	election_frequency = 120
+	elections_allowed = no
+}
+
+add_ideas = {
+	LIT_spirit_agrarian_society
+}
+
+1939.1.1 = {
+	set_politics = {
+
+		parties = {
+			democratic = { 
+				popularity = 30
+			}
+
+			fascism = {
+				popularity = 15
+			}
+			
+			communism = {
+				popularity = 15
+			}
+			
+			neutrality = { 
+				popularity = 50
+			}
+		}
+		
+		ruling_party = neutrality
+		last_election = "1936.6.10"
+		election_frequency = 120
+		elections_allowed = no
+	}
+}
+
+create_country_leader = {
+	name = "Antanas Smetona"
+	desc = "POLITICS_ANTANAS_SMETONA_DESC"
+	picture = "gfx/leaders/LIT/LIT_Antanas_Smetona.dds"
+	expire = "1965.1.1"
+	ideology = oligarchism
+	traits = {
+		LIT_antidem
+	}
+}
+
+create_country_leader = {
+	name = "Antanas Snieckus"
+	desc = "POLITICS_ANTANAS_SNIECKUS_DESC"
+	picture = "gfx/leaders/LIT/portrait_LIT_antanas_snieckus.dds"
+	expire = "1965.1.1"
+	ideology = stalinism
+	traits = {
+		stalins_puppet
+	}
+}
+
+create_country_leader = {
+	name = "Augustinas Voldemaras"
+	desc = ""
+	picture = "gfx/leaders/LIT/portrait_LIT_augustinas_voldemaras.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		dictator
+	}
+}
+create_country_leader = {
+	name = "Kazys Grinius"
+	desc = ""
+	picture = "gfx/leaders/LIT/portrait_LIT_kazys_grinius.dds"
+	expire = "1965.1.1"
+	ideology = liberalism
+	traits = {
+		staunch_constitutionalist
+	}
+}
+
+
+#Military Leaders
+create_corps_commander = {
+	name = "Jurgis Kubilius"
+	desc = "Not the politician!"
+	portrait_path = "gfx/leaders/LIT/portrait_LIT_jurgis_kubilius.dds"
+	traits = { }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Vladas Nagevicius"
+	portrait_path = "gfx/leaders/LIT/portrait_LIT_vladas_nagevicius.dds"
+	traits = {  }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Stasys Nastopka"
+	portrait_path = "gfx/leaders/LIT/portrait_LIT_stasys_nastopka.dds"
+	traits = { infantry_officer }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+create_corps_commander = {
+	name = "Kazys Skirpa"
+	portrait_path = "gfx/leaders/LIT/portrait_LIT_kazys_skirpa.dds"
+	traits = { career_officer }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+}
+create_corps_commander = {
+	name = "Mykolas Velykis"
+	portrait_path = "gfx/leaders/LIT/portrait_LIT_mykolas_velykis.dds"
+	traits = { }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 4
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Vincas Grigaliūnas-Glovackis"
+	portrait_path = "gfx/leaders/LIT/portrait_LIT_vincas_grigaliunas.dds"
+	traits = {  }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+}
+create_corps_commander = {
+	name = "Jonas Galvydis-Bykauskas"
+	portrait_path = "gfx/leaders/LIT/portrait_LIT_jonas_galvydis.dds"
+	traits = { cavalry_officer }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+create_navy_leader = {
+	name = "Povilas Julius Labanauskas"
+	portrait_path = "gfx/leaders/LIT/portrait_LIT_povilas_julius.dds"
+	traits = {  }
+	skill = 2
+}

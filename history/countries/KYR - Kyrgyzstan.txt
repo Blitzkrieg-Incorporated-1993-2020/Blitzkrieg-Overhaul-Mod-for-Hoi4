@@ -1,0 +1,95 @@
+﻿capital = 732
+
+oob = "KYR_1936"
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	gwtank = 1
+	gw_artillery = 1
+}
+
+set_popularities = {
+	democratic = 0
+	fascism = 7
+	communism = 92
+	neutrality = 1
+}
+
+set_politics = {
+
+	parties = {
+		democratic = { 
+			popularity = 20
+		}
+
+		neutrality = {
+			popularity = 35
+		}
+		
+		communism = {
+			popularity = 40
+		}
+
+		fascism = { 
+			popularity = 5
+		}
+	}
+	
+	ruling_party = communism
+	last_election = "1928.5.8"
+	election_frequency = 120
+	elections_allowed = no
+}
+
+create_country_leader = {
+	name = "Almanbek Quranov"
+	desc = ""
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_2.dds"
+	expire = "1965.5.5"
+	ideology = moderatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Tursunbay Uldzabayev"
+	desc = ""
+	picture = "gfx/leaders/Tadjik/Portrait_Uldzabaev.dds"
+	ideology = liberalism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Suren Konstantinovich"
+	desc = ""
+	picture = "gfx/leaders/Tadjik/Portrait_Suren_Konstantinovich.dds"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Bobojan Gafurov"
+	desc = ""
+	picture = "gfx/leaders/Tadjik/Portrait_Gafurov_Bobojan.dds"
+	ideology = despotism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Turabay Kulatov"
+	desc = ""
+	picture = "gfx/leaders/KYR/KYR_Kulatov.dds"
+	ideology = stalinism
+	traits = {
+		#
+	}
+}

@@ -1,5 +1,7 @@
 ﻿capital = 141	
 
+set_cosmetic_tag = SWE_monarchy
+
 oob = "SWE_1936"
 if = {
 	limit = { has_dlc = "Man the Guns" }

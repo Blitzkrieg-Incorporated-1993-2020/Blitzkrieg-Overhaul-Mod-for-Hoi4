@@ -1,5 +1,8 @@
 ﻿capital = 285
 
+set_country_flag = prev_undeveloped_colony
+set_cosmetic_tag = ENG_australia
+
 oob = "AST_1936"
 set_stability = 0.8
 set_war_support = 0.3

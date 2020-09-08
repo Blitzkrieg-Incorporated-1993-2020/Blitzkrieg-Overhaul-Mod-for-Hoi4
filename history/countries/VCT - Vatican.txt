@@ -1,0 +1,42 @@
+﻿capital = 828
+
+oob = "VCT_1936"
+
+give_military_access = SWI
+
+set_research_slots = 1
+
+set_technology = {
+}
+
+set_politics = {
+	ruling_party = monarchism
+	last_election = "1922.2.6"
+	election_frequency = 60
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 0
+	fascism = 0
+	communism = 0
+	monarchism = 100
+}
+
+add_ideas = {
+	neutrality_idea	
+	disarmed_nation
+}
+
+set_stability = 0.75
+set_war_support = 0.1
+
+create_country_leader = {
+	name = "Pope Pius X"
+	desc = ""
+	picture = ""
+	expire = "1939.2.11"
+	ideology = absolutism
+	traits = {
+		#
+	}
+}

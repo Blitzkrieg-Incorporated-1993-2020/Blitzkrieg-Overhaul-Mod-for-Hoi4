@@ -1,0 +1,133 @@
+﻿capital = 324
+
+set_war_support = 0.1
+set_stability = 0.8
+
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	ENG = {
+		BHU = { add_ideas = complacent_puppet }
+		set_autonomy = {
+			target = BHU
+			autonomous_state = autonomy_protected_state
+			freedom_level = 0.7
+		}
+		NEP = { add_ideas = complacent_puppet }
+		set_autonomy = {
+			target = NEP
+			autonomous_state = autonomy_protected_state
+			freedom_level = 0.8
+		}		
+	}
+	else = {
+		ENG = {
+			puppet = BHU
+			puppet = NEP
+		}
+	}
+}
+
+set_popularities = {
+	fascism = 0
+	monarchism = 100
+	democratic = 0
+	communism = 0
+}
+
+set_politics = {
+	ruling_party = monarchism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+1933.1.1 = {
+	oob = "BHU_1936"
+	# Starting tech
+	set_technology = {
+		infantry_weapons = 1
+		tech_mountaineers = 1
+	}
+	set_war_support = 0.1
+	set_stability = 0.8
+	add_ideas = {
+		TIB_mountainous_people
+		BHU_no_army
+		BHU_backward_economy
+		disarmed_nation
+		closed_economy
+	}
+
+	if = {
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		ENG = {
+			BHU = { add_ideas = complacent_puppet }
+			set_autonomy = {
+				target = BHU
+				autonomous_state = autonomy_protected_state
+				freedom_level = 0.7
+			}
+			NEP = { add_ideas = complacent_puppet }
+			set_autonomy = {
+				target = NEP
+				autonomous_state = autonomy_protected_state
+				freedom_level = 0.8
+			}		
+		}
+		else = {
+			ENG = {
+				puppet = BHU
+				puppet = NEP
+			}
+		}
+	}
+
+	set_popularities = {
+		fascism = 0
+		monarchism = 100
+		democratic = 0
+		communism = 0
+	}
+
+	set_politics = {
+		ruling_party = monarchism
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+	create_country_leader = {
+		name = "Druk Gyalpo Jigme"
+		desc = "POLITICS_JIGME_WANGCHUCK_DESC"
+		picture = "GFX_portrait_buthan_jigme_wangchuk"
+		expire = "1965.1.1"
+		ideology = absolutism
+		traits = {
+			#
+		}
+	}
+	create_field_marshal = {
+		name = "Bachu Phugyal"
+		portrait_path = "gfx/leaders/TIB/generic_tibetan_general_3.dds"
+		traits = { }
+		skill = 1
+		attack_skill = 1					
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1		
+	}
+	create_corps_commander = {
+		name = "Namgyal Bahadur"
+		portrait_path = "gfx/leaders/TIB/generic_tibetan_general_2.dds"
+		traits = { }
+		skill = 1
+		attack_skill = 1					
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1		
+	}
+}
