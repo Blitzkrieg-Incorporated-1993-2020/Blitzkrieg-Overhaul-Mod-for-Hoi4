@@ -23,7 +23,7 @@ guiTypes = {
 
 		iconType = {
 			name = "member_icon"
-			spriteType = "GFX_AUS_Imperial_Senate_strip" # this should be a strip with 5 frames, with each frame representing each unique party (goes in the order Party A-E)
+			spriteType = "GFX_USA_Senate_strip" # this should be a strip with 5 frames, with each frame representing each unique party (goes in the order Party A-E)
 			position = { x = 0 y = 0 }
 		}
 	}
