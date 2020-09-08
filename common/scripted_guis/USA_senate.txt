@@ -6,7 +6,7 @@ scripted_gui = {
         window_name = "USA_senate_gridbox_container"
 
 		dynamic_lists = {
-			AUS_imperial_senate_main_grid = {
+			USA_senate_main_grid = {
 				array = global.senate_main_array
 				change_scope = yes
 				entry_container = USA_senate_main_entry
