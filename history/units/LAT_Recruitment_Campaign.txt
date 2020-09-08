@@ -1,0 +1,30 @@
+﻿division_template = {
+	                name = "Brīvprātīgo Divīzija"
+	                division_names_group = LAT_INF_01
+	                regiments = {
+		                        infantry = { x = 0 y = 0 }
+		                        infantry = { x = 0 y = 1 }
+		                        infantry = { x = 0 y = 2 }
+		                        infantry = { x = 1 y = 0 }
+		                        infantry = { x = 1 y = 1 }
+		                        infantry = { x = 1 y = 2 }
+		                        infantry = { x = 2 y = 0 }
+		                        infantry = { x = 2 y = 1 }
+		                        infantry = { x = 2 y = 2 }
+	                }
+	                support = {
+	                }
+}
+
+units = {
+	    division = {
+		           location = 9340
+		           division_template = "Brīvprātīgo Divīzija"
+		           force_equipment_variants = { infantry_equipment_0 = { owner = "LAT" } }
+		           }
+	    division = {
+		           location = 9340
+		           division_template = "Brīvprātīgo Divīzija"
+		           force_equipment_variants = { infantry_equipment_0 = { owner = "LAT" } }
+                   }
+}

@@ -1,0 +1,40 @@
+objectTypes = {
+
+##################
+##################
+##################
+	pdxmesh = {
+		name = "SOV_T3485_mesh"
+		file = "gfx/models/units/tanks/t3485.mesh"
+
+		animation = { id = "attack"			type = "SOV_tank_medium_attack_animation" }
+		animation = { id = "idle"			type = "SOV_tank_medium_idle_animation" }
+		animation = { id = "move"			type = "SOV_tank_medium_moving_animation" }
+		scale = 0.5
+		 meshsettings = {
+            texture_diffuse = "yourtexture_YouHaveToEditThis.dds"
+            texture_normal = "w_Weapon_N.dds"
+            texture_specular = "w_Weapon_S.dds"
+            shader = PdxMeshAdvanced
+        }
+	}
+
+	pdxmesh = {
+		name = "ENG_firefly_mesh"
+		file = "gfx/models/units/tanks/firefly.mesh"
+
+		animation = { id = "attack"			type = "USA_tank_medium_attack_animation" }
+		animation = { id = "idle"			type = "USA_tank_medium_idle_animation" }
+		animation = { id = "move"			type = "USA_tank_medium_moving_animation" }
+		scale = 0.5
+		  meshsettings = {
+            texture_diffuse = "UVMAP_2.dds"
+            texture_normal = "ENG_tank_medium_normal.dds"
+            texture_specular = "ENG_tank_medium_spec.dds"
+            shader = PdxMeshAdvanced
+	}		
+
+##################
+##################
+##################	
+}

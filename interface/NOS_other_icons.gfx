@@ -1,0 +1,27 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_select_date_1910"
+		texturefile = "gfx/interface/select_date_1910.dds"
+	}
+
+	spriteType = {
+		name = "GFX_select_date_1949"
+		texturefile = "gfx/interface/select_date_1949.dds"
+	}
+
+	##################################
+	### Large images for Groups    ###
+
+    spriteType = {      name = "GFX_group_communist_units_icon"	                textureFile = "gfx/interface/group_communist_icon.dds"                  noOfFrames = 2 }
+    spriteType = {      name = "GFX_group_fascist_units_icon"		            textureFile = "gfx/interface/group_fascist_icon.dds"                    noOfFrames = 2 }
+    spriteType = {      name = "GFX_group_allies_units_icon"		            textureFile = "gfx/interface/group_allies_icon.dds"                     noOfFrames = 2 }
+
+	###########################################
+	### Units categories ###
+
+	spriteType = {		name = "GFX_unit_category_faction_infantry"		        texturefile = "gfx/interface/category_faction_infantry.dds"		        legacy_lazy_load = no	}
+	spriteType = {		name = "GFX_unit_category_faction_mobile_infantry"		texturefile = "gfx/interface/category_faction_mobile_infantry.dds"		legacy_lazy_load = no	}
+	spriteType = {		name = "GFX_unit_category_faction_mechanized_infantry"	texturefile = "gfx/interface/category_faction_mechanized_infantry.dds"	legacy_lazy_load = no	}
+	spriteType = {		name = "GFX_unit_category_faction_tanks"		        texturefile = "gfx/interface/category_faction_tanks.dds"		        legacy_lazy_load = no	}
+}

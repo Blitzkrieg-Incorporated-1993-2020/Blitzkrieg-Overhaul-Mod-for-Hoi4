@@ -1,0 +1,42 @@
+﻿l_russian:
+ ST:0 "st"
+ ND:0 "nd"
+ RD:0 "rd"
+ TH:0 "th"
+ WAR_NAME:0 "$ПОРЯДОК$$первая$ - $вторая$ война"
+ CIVIL_WAR_NAME:0 "$ПОРЯДОК$$ВТОРАЯ$ гражданская война"
+ WAR_TAKE_CORE_NAME:0 "$ПОРЯДОК$$ПЕРВАЯ$ рекультивация земель $STATE$"
+ WAR_TAKE_CLAIM_NAME:0 "$ПОРЯДОК$$ПЕРВАЯ$ агрессия для $STATE$"
+
+ WAR_NAME_SPS_SPR:0 "Гражданская война в Испании"
+ WAR_NAME_SPR_SPS:0 "Гражданская война в Испании"
+
+ WAR_NAME_ITA_ETH:0 "Вторая Итало-Абиссинская война"
+
+ WAR_NAME_JAP_CHI:0 "Вторая Китайско-Японская война" 
+
+ WAR_NAME_GER_AUS:0 "Падение Отто"
+ WAR_NAME_GER_CZE:0 "Дело Грина"
+ WAR_NAME_SOV_POL:0 "План Вайс"
+ WAR_NAME_GER_POL:0 "План Вайс"
+ WAR_NAME_GER_NOR:0 "Операция "Везерюбунг""
+ WAR_NAME_GER_DEN:0 "Операция "Везерюбунг""
+ WAR_NAME_GER_ENG:0 "Мировая война II"
+ WAR_NAME_GER_FRA:0 "Мировая война II"
+ WAR_NAME_GER_HOL:0 "Гельб-план (Желтый план)"
+ WAR_NAME_GER_LUX:0 "Гельб-план (Желтый план)"
+ WAR_NAME_GER_BEL:0 "Гельб-план (Желтый план)"
+ WAR_NAME_GER_YUG:0 "Апрельская война"
+ WAR_NAME_GER_GRE:0 "Операция Марита"
+ WAR_NAME_GER_SOV:0 "Великая Отечественная война"
+ WAR_NAME_ITA_ITL:0 "Гражданская война в Италии"
+ WAR_NAME_GER_HUN:0 "Операция Маргарете"
+ WAR_NAME_GER_ROM:0 "Операция Маргарете"
+
+ WAR_NAME_SOV_FIN:0 "Зимняя война"
+
+ WAR_NAME_CHI_PRC:0 "Китайская гражданская война"
+ WAR_NAME_PRC_CHI:0 "Китайская гражданская война"
+
+ WAR_NAME_PRK_KOR:0 "Корейская война"
+ WAR_NAME_KOR_PRK:0 "Корейская война"

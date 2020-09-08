@@ -302,3 +302,54 @@ custom_effect_tooltip = USA_government_spending_level_down_tt
 }
 
 
+
+usa_senate_initial = {
+	# put simply parliament_seat_array contains seat numbers of each party and parliament_id_array contains the id of the corresponding party
+	add_to_array = { global.senate_seat_array = 138 } # Party A
+	add_to_array = { global.senate_seat_array = 109 } # Party B
+	add_to_array = { global.senate_seat_array = 74 } # Party C
+	add_to_array = { global.senate_seat_array = 62 } # Party D
+	add_to_array = { global.senate_seat_array = 29 }
+
+	# the loop below just populates the parliament_id_array with values starting from 1 to 5
+	for_loop_effect = {
+		start = 1 # loop starts at v = 1
+		end = 6 # loop end when v = 6 so the last add_to_array will have a value of 5
+
+		add_to_array = { global.senate_id_array = v } # v is a variable storing the current iteration of the root
+	}
+
+	modify_parliament_seats = yes
+}
+
+modify_parliament_seats = {
+	for_each_loop = {
+		array = global.senate_id_array
+
+		set_temp_variable = { temp_id = global.senate_id_array^i } # i is the current index of the array
+		set_temp_variable = { temp_index = i }
+		modify_parliament_id_seats = yes
+	}
+}
+
+modify_parliament_id_seats = {
+	set_temp_variable = { temp_seat_count = global.senate_seat_array^temp_index } # temp seat count will be 95 for example if temp_index is 0, 15 if 1 and so on
+
+	# what this does is essentially adding to parliament_main_array the id of a party until the number of ids in the array is the same as its number of seats 
+	while_loop_effect = {
+		limit = { 
+			check_variable = { temp_seat_count > 0 }
+		}
+		add_to_array = { global.senate_main_array = temp_id }
+		subtract_from_temp_variable = { temp_seat_count = 1 }
+	}
+	# the global.parliament_main_array will essentially look like:
+	# 1,1,1,1,1,1,1,...(repeated 95 times),2,2,2,2,2,2,2(repeated 15 times),3,3,3.. etc.
+}
+
+
+
+
+
+
+

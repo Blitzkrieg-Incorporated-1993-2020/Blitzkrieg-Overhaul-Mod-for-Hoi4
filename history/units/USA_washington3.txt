@@ -1,0 +1,104 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "Militia Regiment" 
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	support = {
+	}
+}
+
+units = {	
+	division= {			
+		name = "141st Militia Regiment"		
+		location = 3957
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "142nd Militia Regiment"		
+		location = 3957
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}
+	division= {			
+		name = "143rd Militia Regiment"		
+		location = 3957
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "144th Militia Regiment"		
+		location = 3957
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "145th Militia Regiment"		
+		location = 3957
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "146th Militia Regiment"		
+		location = 3957
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "147th Militia Regiment"		
+		location = 3957
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "148th Militia Regiment"		
+		location = 3957
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "149th Militia Regiment"		
+		location = 3957
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "150th Militia Regiment"		
+		location = 3957
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}			
+	division= {			
+		name = "151st Militia Regiment"		
+		location = 3957
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}
+
+}

@@ -1,0 +1,220 @@
+﻿division_template = {
+	name = "janajaateey inphaintree"			
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+}
+
+### OOB ###
+units = {
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	} 
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	} 
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	} 
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	} 
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	} 
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	} 
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	} 
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	} 
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Janajaateey Sena"
+		location = 2086
+		division_template = "janajaateey inphaintree"
+		start_experience_factor = 0.2
+	}
+}

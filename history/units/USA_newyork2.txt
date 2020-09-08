@@ -1,0 +1,280 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "Militia Regiment" 
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	support = {
+	}
+}
+
+units = {	
+	division= {			
+		name = "21st Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "22nd Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}
+	division= {			
+		name = "23rd Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "24th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "25th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "26th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "27th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "28th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "29th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "30th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}			
+	division= {			
+		name = "31st Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "32nd Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "33rd Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "34th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "35th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "36th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "37th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "38th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "39th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "40th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "28th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "29th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "30th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}			
+	division= {			
+		name = "31st Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "32nd Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "33rd Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "34th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "35th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "36th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "37th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "38th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}	
+	division= {			
+		name = "39th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}		
+	division= {			
+		name = "40th Militia Regiment"		
+		location = 3878
+		division_template = "Militia Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}			
+	
+}

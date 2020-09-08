@@ -1,0 +1,37 @@
+﻿units = {
+    division = {
+		name = "1ere Division Volontaire"
+		location = 3938  # Madrid
+		division_template = "Columna Milicianos"
+	}
+	division = {
+		name = "2ieme Division Volontaire"
+		location = 3938  # Madrid
+		division_template = "Columna Milicianos"
+	}
+    division = {
+		name = "3ieme Division Volontaire"
+		location = 3938  # Madrid
+		division_template = "Columna Milicianos"
+	}
+	division = {
+		name = "4ieme Division Volontaire"
+		location = 3938  # Madrid
+		division_template = "Columna Milicianos"
+	}
+	division = {
+		name = "5ieme Division Volontaire"
+		location = 3938  # Madrid
+		division_template = "Columna Milicianos"
+	}
+	division = {
+		name = "6ieme Division Volontaire"
+		location = 3938  # Madrid
+		division_template = "Columna Milicianos"
+	}
+	division = {
+		name = "7ieme Division Volontaire"
+		location = 3938  # Madrid
+		division_template = "Columna Milicianos"
+	}
+}

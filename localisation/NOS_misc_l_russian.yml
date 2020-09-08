@@ -1,0 +1,1126 @@
+﻿l_russian:
+
+ is_summer:0 "Текущий сезон-это § Ysummer§!"
+ is_winter:0 "Текущий сезон-это §Ywinter§!"
+
+
+ STATE_797:0 "Суэц"
+
+ tblra_factory_strikes:0 "Фабричные Забастовки" 
+ tblra_1936_election:0 "Избирательная кампания в законодательные органы началась в 1936 году"
+ decoster_in_government:0 "Декостеру предложили должность в правительстве"
+ 
+ experimental_light_aircraft_manufacturer:0 "Конструктор эспериментального истребителя"
+ mining_engineer:0 "Горный инженер" 
+ 
+ BEL_trick_germans_good:0 "Оправданный нейтралитет"
+ BEL_trick_germans_bad:0 "Оборона против Британии"
+ 
+ tblra_benelux_economic_cooperation:0 "Таможенный Союз Бенилюкса"
+ tblra_benelux_economic_cooperation_desc:0 "Даже если мы сегодня три страны, мы формируем особое пространство между Францией и Германией. Ни французы, ни немцы, мы не могли создать таможенный союз, чтобы увеличить торговлю и легче конкурировать с нашими могущественными соседями."
+ tblra_economic_cooperation_within_benelux:0 "Экономическая Инициатива-Нидерланды"
+ tblra_economic_cooperation_within_benelux2:0 "Экономическая Инициатива - Бельгия"
+ tblra_economic_cooperation_within_benelux3:0 "Экономическая Инициатива - Люксембург"
+ tblra_economic_cooperation_within_benelux4:0 "Экономическая Инициатива - Бенилюкс"
+ 
+ benelux_faction:0 "Бенилюкс"
+ fn_trucks:0 "Грузовики ФН" 
+ frc_BEL:0 "Королевское литейное производство пушек"
+ cockerill_naval:0 "Верфи Кокерилл"
+ boel_zonen:0 "Дж. Буль и Сыновья"
+ Cockerill_industry:0 "Сталелитейный Кокерилл"
+ srb_bel:0 "Бельгийское радиоэлектронное общество"
+ sabca:0 "Сабка"
+ solvay:0 "Сольвей"
+ BEL_FRC_TD:0 "Королевское литейное производство пушек"
+ Stampe_Vertongen:0 "Стамп и Вертоген"
+ brossel:0 "Броссель"
+ BEL_miesse:0 "Миссе"
+ BEL_miesse_tank:0 "Танки Мисса"
+ BEL_familleureux:0 "Фамильяр"
+ BEL_chrysler:0 "Крайслер Антверпен" 
+ mecar:0 "Мекар"
+ zeebrugge_smederijen:0 "Зебрюгге Смедерьен"
+ katoen_natie:0 "Хлопок Нации" 
+ WLL_ACEC:0 "Электрические строительные мастерские Шарлеруа"
+
+ ELECTION_FOCUS_TOOLTIP:0 "Было событие "начало избирательной кампании 1936 года""
+ KW_line_tooltip:0 "Создайте линию укреплений между Брюсселем и Антверпеном\n"
+ TBLRA_1936_election_tooltip:0 "Разблокируйте Политические Фокусы."
+ TBLRA_congo_tree_tooltip:0 "§RЗавершая этот фокус обходите аналогичный фокус в конголезском дереве§!\n"
+ TBLRA_belgian_tree_tooltip:0 "§RЗавершение этого фокуса обходит аналогичный фокус в бельгийском дереве§!\n" 
+ TBLRA_van_severen_killed_tooltip:0 "Йорис ван Северен исчезает, Виктор Маттис становится "фашистским политиком" для Бельгии."
+ TBLRA_alexandre_galopin_killed_tooltip:0 "Александр Галопин умирает."
+ Chose_Rex:0 «выбрал короля»
+ Chose_Verdinaso:0 «выбрал Verdinaso»
+ van_severen_killed:0 "Йорис Ван Северен умер"
+ alexandre_galopin_killed:0 "Умер Александр Галопин"
+ spaak_resigned:0 "Поль-Анри Спанак подал в отставку"
+ tblra_king_martial_law:0 "Объявлено чрезвычайное положение\n" Text "All"
+ bel_hol_diplomacy_focus:0 «бельгийское Влияние»
+ tooltip_COG_fighter_britain: "Финансирование строительства 50 шпилей для Британии\n"
+ tooltip_COG_fighter_belgium: "Финансирование строительства 50 шпилей для Бельгии\n"
+ COG_Union_if_the_African_People_tooltip:0 "Если Южная Африка является лидером коммунистической фракции, Конго будет стремиться присоединиться к этой фракции.\n"
+ v_campaign_tooltip:0 "V кампания будет постепенно распространяться на другие оккупированные страны в той же фракции, что и британцы.\n" Text "All"
+ tblra_signal_company_tech_bonus_tooltip:0 "Бонус для сигнальных модулей может не отображаться над значком технологии по какой-то причине, но не беспокойтесь, вы все равно получите скидку.\n" Text "All"
+ tblra_motorised_support_tooltip:0 "Скидка на исследования для логистических и медицинских компаний может по каким-то причинам не показываться выше технологических значков, но не волнуйтесь, вы все равно получите бонус.\n" Text "All"
+ tblra_puppet_netherlands_tootip:0 "§ RThe Нидерланды и другие страны могут агрессивно реагировать на этот ход событий. §!\n" Text "All"
+ advisor_require_democracy_tooltip:0 "§ RTher советник требует демократического правительства §!.\n" Text "All"
+ available_political_advisor_democratic:0 "Доступно как демократический или неприсоединившийся § YPolitical Advisor §!:\n" Text "All"
+ frc_tanks_tooltip:0 «Открывают §YFonderie Royale de Canons§! В качестве конструктора резервуара.\n "Text" All "
+ S47_tooltip:0 "Это событие должно предоставить Бельгию вариант лицензированного самолета, но на данный момент это представляется невозможным. Air Xp получили компенсацию незначительно. Если в Бельгии есть CAS1 технология, S47 доступна ".
+ S47_focus_tooltip:0 "§ RThe plane technology:" Close Air Support 1 "рекомендуется для того, чтобы в полной мере извлечь выгоду из этой направленности из-за невозможности создания желаемого эффекта через код игры. §!"
+ TBLRA_neutrality_debate_over_tooltip:"Improves эффект фокуса "British Ship Designs", дает бонус, если Бельгия присоединится к французской Антанте ".
+ TBLRA_congo_rifle_delivery_tooltip:"Receive 200 пехотных подразделений из Бельгии "
+ recruit_dutch_generals_tooltip:0 "Пока решение активно, к нашему делу предложат присоединиться до 3 генералов".
+
+ benelux_pact_failed:0 "Отказался от альянса Бенилюкса"
+ bel_fra_diplomacy_focus:0 «Бельгийско-французские Отношения»
+ SOV_join_comintern_reject:0 "Отклоненная запись в Коминтерне"
+ GER_join_axis_reject:0 "Отклонено вход по Ось"
+ SAF_join_african_union_reject: "Отказ во вступлении в Африканский союз"
+ SOV_BEL_pact_signed:0 "Российско-бельгийская передача технологий"
+ GER_BEL_pact_signed:0 "Передача технологии Германии"
+ ENG_BEL_non_aggression_pact_signed:0 "Белго-британский неагрессивный пакт"
+ brussels_pact:0 «Брюссельский Договор»
+ 
+ congolese_self_reliance:0 «Конголезская уверенность в своих силах»
+ belgian_investments:0 «Бельгийские инвестиции»»
+ benelux_trade_deal:0 "Таможенный союз Бенилюкса"
+ COG_exports:0 «Конголезские экспортирования»
+
+ autonomy_free_regime:0 «Свободный Режим»
+ autonomy_protected_state:0 «Защищенное государство»
+ autonomy_federal_puppet:0 «федеральная Марионетка»
+ autonomy_territory:0 «Территория»
+
+ autonomy_collaborator_state:0 «Государство-колобрационист»»
+ autonomy_satellite_state:0 «Государство-сателлит»
+ autonomy_protectorate:0 «Протекторат»
+ autonomy_commissariat:0 «Комиссариат»
+ autonomy_occupied_regime:0 «Режим оккупации»»
+
+ autonomy_crown_colony:0 «Британская колония»
+ autonomy_royal_protectorate:0 «Королевский Протекторат»
+ autonomy_integrated_region:0 «Интегрированный регион»
+ autonomy_imperial_dominion:0 «Императорский Доминион»
+
+ autonomy_imperial_province:0 «Императорская область»
+ autonomy_imperial_client:0 «Имперский клиент»
+ autonomy_subject_state:0 "Имперское предметное государство"
+ autonomy_imperial_tributary:0 «Имперский приток»
+
+ autonomy_autonomous_region:0 «Автономная область»
+ autonomy_loyal_warlord:0 «Лояльный военачальник»
+ autonomy_compliant_warlord:0 «Послушный военачальник»
+
+ autonomy_associate_republic:0 «Объединенная республика»
+ autonomy_soviet_satellite:0 «Сателит»
+ autonomy_integrated_republic:0 «Интегрированная республика»
+ autonomy_autonomous_ssr:0 «Автономный S.S.R»
+
+ autonomy_sphered_nation:0 «Сфера влияния»
+ autonomy_tributary_state:0 «Зависимое государство»
+
+
+ developed_colony:0 «Развитая Колония»
+ undeveloped_nation:0 «Неразвитая нация»
+ western_empire:0 «Западная Империя»
+ eastern_empire:0 «Восточная Империя»
+ military_autonomy:0 "Колониальная военная автономия"
+
+
+ IRQ_GATHERING_STORM_DESC:0 "Только став недавно независимым, Ирак был частью Османской империи во время Великой войны. Королевство Ирак было создано в соответствии с мандатом Соединенного Королевства и, наконец, в 1932 году, в соответствии с англо-иракским соглашением, королевству Ирак предоставили формальную независимость. \n\nNow Ирак стоит на краю, Дал шанс определить свою судьбу на данный момент, но что более важно, на будущее > >.
+ IRQ_BLITZKRIEG_DESC:0 "После обретения независимости Ирак пытался стать стабильной страной, независимой от Великобритании. Теперь, все больше националистическое правительство стремится уполномочить иракское государство за счет их союза с Соединенным Королевством, однако это был только вопрос времени, прежде чем это будет колебаться. \n\nIraq теперь стоит на грани войны со своими бывшими союзниками от имени национализма."
+
+ IRQ_joint_oil_exploitation_company_name:0 "Объединенная нефтедобывающая компания"
+ IRQ_joint_oil_exploitation_company_desc:0 "Совместная добыча нефти между § YIraq §! И § Иудейское царство §! ".
+ IRQ_joint_air_innovation_name:0 «Иракско-Итальянские инновации танков и самолетов»
+ IRQ_joint_air_innovation_desc:0 "Совместная инициатива по разработке самолётов и бронированных машин".
+ IRQ_baghdad_pact_name:0 "Багдадская технологическая группа"
+ IRQ_baghdad_pact_desc:0 "Совместная техническая группа участников Багдадского пакта".
+
+ INS_naval_autonomy_tooltip:0 "Даже если Нидерланды не примут, мы все равно получим небольшое вознаграждение".
+ INS_bunker_tooltip:0 "Добавляет форты на ключевые городские провинции".
+ INS_ports_tooltip:0 "Добавляет береговые форты на ключевых военно-морских базах".
+ INS_limited_autonomy_tooltip:0 "Если у вас нет DLC Together for Victory этот фокус ничего не сделает".
+
+ INS_naval_autonomy_tooltip:0 "Даже если Нидерланды не примут, мы все равно получим небольшое вознаграждение".
+ INS_bunker_tooltip:0 "Добавляет форты на ключевые городские провинции".
+ INS_ports_tooltip:0 "Добавляет береговые форты на ключевых военно-морских базах".
+ INS_limited_autonomy_tooltip:0 "Если у вас нет DLC Together for Victory этот фокус ничего не сделает".
+#descripts
+
+#descripts
+POLITICS_DAMIAN_KRATZENBERG_DESC:0 "Лидер Volksdeutche Bewegung во время немецкой оккупации, Краценбург верил в сильную националистическую страну и был главой предыдущих ультраправых партий до войны".
+POLITICS_CHARLES_MARX_DESC:0 "Шарль Маркс стал лидером Коммунистической партии Люксембурга по окончании войны. В то время как до войны предпринимались попытки подавить коммунистические движения, КПЛ по-прежнему действует и является одной из старейших политических партий Люксембурга. "
+POLITICS_DUCHESS_DESC:0 "Принимая монархию в 1919 году во время революционных потрясений, великая герцогиня Шарлотта была очень любима своим населением, которое большинством голосов проголосовало за сохранение ее в качестве главы государства. Во время войны, хотя и в эмиграции, она оставалась фигурой национального единства и сопротивления оккупированному Люксембургу ".
+POLITICS_JOSEPH_BECH_DESC:0 "Премьер-министр Люксембурга как до, так и после войны, Иосиф Бех стал одним из отцов-основателей Европейского сообщества, и присутствовал как на Мессинской конференции, так и на Римском договоре".
+
+#opinions
+diplomatic_ties:0 "Дипломатические связи"
+
+#factions
+#LUX_benelux_faction:0 "Бенилюкский экономический союз"
+
+#opinions
+raaf_assistance:0 «R.A.A.F. Помощь»
+denied_freedom:0 «Отрицаемая Свобода»
+
+#autonomy
+INS_navy_reforms:0 «Морские реформы»
+INS_army_reforms:0 «Армейские реформы»
+INS_science_reforms:0 «Научные реформы»
+INS_economy_reforms:0 «Экономические реформы»
+INS_political_reforms:0 «Политические реформы»
+
+TUR_bogazlar:0 "Конвенция о проливах Монтрё"
+TUR_saadabad_pact:0 «Договор Sadabad»
+TUR_jews:0 «Еврейские беженцы»
+TUR_racist:0 «Партнер по геноциду»
+TUR_go_with_britain_reject:0 "Отказ от присоединения Турции к союзникам"
+TUR_banfascim:0 «Запрещенный расизм»
+TUR_hatay_reject:0 «Кризис Хатая»
+communist_cablestreet:0 "Победа антифашистов на Кабельной улице"
+fascist_cablestreet:0 "Победа Чернорубашечника на Кабельной улице"
+empire_loss_warning:0 "§ RTher приведёт к распаду Империи! §!"
+POLITICS_GEORGE_ORWELL_DESC:0»»
+delusional_general:0 «Помешанный Генерал»
+ENG_libya_forts:0 "Укрепления в Египте"
+ENG_appeasement:0 «Передача успокоения»
+ENG_isolation:0 "Возвращено в великолепную изоляцию"
+ENG_asia_buildup:0 "Наращивание дальневосточных войск"
+ENG_siam_seizure:0 "Захваченный Малайский полуостров"
+ENG_asian_reinforcements:0 "Гарнизонные войска прибудут в Сингапур, Гонконг и Рангун".
+ENG_edward_visit:0 «Государственный визит»
+ENG_disband_allies:0 "Осталось на морозе"
+ENG_recognise_manchu:0 "Признание Маньчжоу-го"
+ENG_colonies_seized:0 «Захватил колонии»
+ENG_refused_syndicate:0 «Отказался от синдикализации»
+ENG_vegetarian_success:0 "Операция вегетарианская негативная реакция"
+ENG_vegetarian_failure:0 "Операция вегетарианская негативная реакция"
+possessions_seized:0 «Захваченное Имущество»
+ENG_friendly_policy:0 "Умиротворение внешней политики"
+ENG_hostile_policy:0 "Враждебная внешняя политика"
+british_betrayal:0 «Британское предательство»
+vegetarian_warning:0 "§ RSucceed или fail, это будет иметь серьезные откаты. §"
+ENG_peking_text:0 "Три польских эсминца прибудут в Лондон."
+ENG_missile_bonus:0 "Невращающиеся снаряды"
+ENG_radar_bonus:0 «Разработка радаров»
+ENG_armor_bonus:0 "Советские конструкции танков"
+ENG_nuclear_bonus:0 "Проект трубных сплавов"
+ENG_nuclear_bonus_2:0 "Американская ядерная помощь"
+ENG_sas_bonus:0 "Специальная авиасообщение"
+ENG_gbp_bonus:0 "Уроки последней войны"
+ENG_gbp2_bonus:0 "Усовершенствованное стрелковое оружие"
+ENG_gbp3_bonus:0 "Центр поддержки компании"
+ENG_sfp_bonus:0 «Доктрина бомбардировки»
+ENG_sfp2_bonus:0 "Разработка линейной артиллерии"
+ENG_sfp3_bonus:0 "Бронированная доктрина"
+ENG_fib1_bonus:0 "Доктрина подавляющего превосходства"
+ENG_fib2_bonus:0 «Доктрина главного линкора»
+ENG_fib3_bonus:0 «Доктрина главного перевозчика»
+ENG_mw1_bonus:0 "Усилия по моторизации армии" 
+ENG_mw2_bonus:0 "" 
+ENG_mw3_bonus:0 "" 
+ENG_marine_bonus:0 «Королевская морская пехота»
+ENG_air_doctrine:0 «Воздушная доктрина»
+ENG_cas_bonus:0 «Основанный на перевозчике CAS»
+ENG_fighter_bonus:0 "Командование истребителей RAF"
+ENG_bomber_bonus:0 "Командование бомбардировщиков RAF"
+ENG_federation_tooltip:0 "\n § RTher потребует от вас потихоньку заново присоединять свои субъекты, чтобы правильно сформировать Федерацию. Это также заблокирует возможность фашистской или коммунистической Великобритании. § "
+ENG_provoking_1:0 "Враждебная внешняя политика"
+ENG_provoking_2:0 «Греческое наращивание»
+ENG_provoking_3:0 «Югославское наращивание»
+ENG_provoking_4:0 "Приглашенные балканские государства в союзники"
+ENG_appeasing:0 «Запуганная Югославия»
+ENG_edward_coronation:0 "Коронован король Эдуарда VIII"
+ENG_george_coronation:0 "Коронован король Георга VI"
+ENG_MW_Div:0 "Наш кумулятивный опыт перевооружения будет использован для стандартизации нового подразделения комбинированных вооружений".
+ imperial_conference:0 "Имперская конференция завершилась"
+ 
+ colonial_autonomy:0 "Push for Independence"
+ colonial_votes:0 "Universal Citizenship"
+ colonial_police_auto:0 "Colonial Police"
+ colonial_perfection:0 "Model Colony"
+ democratic_autonomy_1:0 "Democratic Path to Independence"
+ democratic_autonomy_2:0 "Satyagraha"
+ democratic_autonomy_3:0 "Civic Nationalism"
+ fascism_autonomy_1:0 "Fascist Path to Independence"
+ fascism_autonomy_2:0 "Brownshirts"
+ fascism_autonomy_3:0 "Nationalist State"
+ colonial_fleet:0 "Fleet Development"
+ colonial_interdiction:0 "Small Fleet Focus"
+ colonial_destroyers:0 "Destroyer Development"
+ colonial_submarines:0 "Submarine Development"
+ colonial_fib:0 "Independent Navy Focus"
+ colonial_cruisers:0 "Cruiser Development"
+ colonial_carriers:0 "Flagship Development"
+ colonial_army:0 "Army Development"
+ colonial_equipment:0 "Local Small Arms Production"
+ colonial_artillery:0 "Artillery Support Development"
+ colonial_cars:0 "Motorisation Push"
+ colonial_tanks:0 "Tank Experimentation"
+ colonial_support:0 "Support Company Integration"
+ colonial_air:0 "Airplane Experimentation"
+ colonial_industry:0 "Push for Modernisation"
+ colonial_mil_research:0 "Military Research Grants"
+ colonial_civ_research:0 "Civilian Research Grants"
+                                                                                                                                                                                                                                                                                                                                                               
+ 8_GRE_tt:0 "§RWe will attempt to silence our enemies by terrorizing or executing them. However there is some possibility that this could backfire!§!"
+ 9_GRE_tt:0 "§YWe will call for a meeting with our government ministers in order to make final reforms that will be essential for overcoming the Depression.§! \n"
+ 10_GRE_tt:0 "§YWe will start focusing on internal matters and foreign diplomacy.§!"
+ 11_GRE_tt:0 "§YBy reinforcing our Metaxist regime and abolish the parliament completely we can achieve total control of our nation.§! \n"
+ 12_GRE_tt:0 "§YWe will call for a meeting for temporary solutions to problems that affect our nation.§!"
+ 14_GRE_tt:0 "§YWe will introduce new policies to our people, ensuring them that equality is our top priority.§! \n"
+ pmd_over:0 "Prime Minister Demertzis has passed away."
+ depression_over:0 "The Great Depression has been dealt with."
+ GRE_royal_dictatorship:0 "The King Has Assumed Power"
+ GRE_metaxas_in_power:0 "Metaxas Has Assumed Control of The Country"
+ GRE_gg_fascism:0 "Greater Sovereign Union Of Greece"
+
+ commonwealth:0 "Commonwealth"
+ syndicalist_faction:0 "Syndicalist International"
+ 
+ ENG_cablestreet_normal:0 "§RThis option will lock you in to a Democratic Britain!§" 
+ ENG_cablestreet_fascist:0 "§RThis option will lock you in to a Fascist Britain!§" 
+ ENG_cablestreet_communist:0 "§RThis option will lock you in to a Commmunist Britain!§" 
+
+ betrayed_alliance:0 "Betrayed Alliance"
+ ENG_edward_visit:0 "State Visit"
+ ENG_disband_allies:0 "Left out in the cold"
+ ENG_recognise_manchu:0 "Recognition of Manchukuo"
+ ENG_colonies_seized:0 "Seized colonies"
+ ENG_refused_syndicate:0 "Refused Syndicalisation"
+ ENG_vegetarian_success:0 "Operation Vegetarian Backlash"
+ ENG_vegetarian_failure:0 "Operation Vegetarian Backlash"
+ possessions_seized:0 "Possessions Seized"
+ oil_nationalised:0 "Oil Expropriation"
+
+ WIP_cooperation_with_indonesian_tree_completed:0 "WIP - coordination with the indonesian content still incomplete "
+ bypass_HOL_maintain_neutrality:0 "The Benelux Customs Negociations have Failed"
+ bypass_HOL_foreign_guarantees:0 "The Benelux Customs Negociations have Failed" 
+ HOL_benelux_customs_union_denied:0 "Refused Rentry into the Belgo-Luxembourgian Customs Union "
+ 
+ HOL_fascism:0 "Dietschland"
+ HOL_fascism_DEF:0 "The Dietschland" 
+
+ POL_Poland_Abandoned:0 "Poland Abandoned"
+ ENG_Poland_Abandoned:0 "Poland Abandoned"
+
+ EGE_politicians_deported:0 "British Politicians Deported"
+ EGE_makram_ebeid_assassinated:0 "Makram Ebeid Assassinated"
+ EGE_military_reinstated:0 "Traditional Military Trainers Reinstated"
+ EGE_servants_executed:0 "British Servants Executed"
+ EGE_wafd_destabilised:0 "Wafd Party Destabilised"
+ EGE_foreign_investors_attracted:0 "Foreign Investors Attracted"
+ EGE_mines_expanded:0 "Mines Expanded"
+ EGE_slaves_legalised:0 "Slaves Legalised"
+ EGE_suez_purchased:0 "Suez Canal Purchased" EGE_purge_the_british:0 "Sever Ties With UK"
+ EGE_purge_the_british_desc:0 "Britain's manipulation and political influence is directing our country towards a colonial future; therefore, complete disassociation must occur."
+ EGE_secret_services:0 "Secret Services"
+ EGE_secret_services_desc:0 "To accelerate the progression of our military equipment, we may or may not need to not refrain from not employing spies that don't gather highly useless intelligence on leftover British equipment that was definitely not left behind."
+ EGE_an_independent_government:0 "An Independent Government"
+ EGE_an_independent_government_desc:0 "Egypt's government is riddled with foreign political influence and corruption. By reforming it into a brand new system, Egypt will be able to advance forwards."
+ EGE_follow_the_monarch:0 "Follow the Monarch"
+ EGE_follow_the_monarch_desc:0 "We have ascertained our future, but our political path remains undecided. With the freedom to do so, we can now become a true kingdom and let our King guide us."
+ EGE_assassinate_lampson:0 "Assassinate Lampson"
+ EGE_assassinate_lampson_desc:0 "To achieve political greatness, we must first clear our path. Sir Miles Lampson, the British-employed diplomat sent to correct our political wrongdoings, must be assassinated."
+ EGE_go_left:0 "Go Left"
+ EGE_go_left_desc:0 "We face our most challenging decision yet. If we choose to venture down the path of the left, we can form ties with the Soviet Union, which may prove vital if we are to show Britain that we are stronger than they believe."
+ EGE_begin_the_arab_socialist_movement:0 "Arab Socialist Movement"
+ EGE_begin_the_arab_socialist_movement_desc:0 "The Arab Socialist Movement is a secret underground cult that has been generating popularity over the years, and bases its ideologies upon the foundations of Marxism. By promoting them into the public light, their efforts will become much more influential and guide Egypt towards a classless future."
+ EGE_reclaim_the_middle_east:0 "Reclaim the Middle East"
+ EGE_reclaim_the_middle_east_desc:0 "As an alternative, we could instead turn to growing a strong communist presence in our significantly more powerful neighbours, which could change the political landscape of the world as we know it."
+ EGE_join_comintern:0 "Join Comintern"
+ EGE_join_comintern_desc:0 "In order to secure our national independence and security, we must join the Comintern and ally with the Soviet Union."
+ EGE_marx_of_africa:0 "Marx of Africa"
+ EGE_marx_of_africa_desc:0 "Egypt's rapid progression towards ideological stability will allow it to continue to thrive as the vanguard of communism within Africa."
+ EGE_seek_foreign_cooperation:0 "Seek Foreign Cooperation"
+ EGE_seek_foreign_cooperation_desc:0 "Egypt's rapid progression towards ideological stability allows for the potential of an independent future. However, all strong players need allies, and the Egyptian people must seek to appease potential foreign friends if they are to reclaim power."
+ EGE_go_right:0 "Go Right"
+ EGE_go_right_desc:0 "We face our most challenging decision yet. If we choose to venture down the path of the right, our bonds with Italy and the intimidating Nazi forces will grow stronger."
+ EGE_restore_the_empire:0 "Restore the Empire"
+ EGE_restore_the_empire_desc:0 "The restoration of Egypt's once great political system will see the King assume full control of the nation - and his title be changed to Emperor."
+ EGE_request_libya:0 "Request Libya"
+ EGE_request_libya_desc:0 "If we are to become the great power we once were, we must have land to match our strength. Therefore, we must request that Italy sacrifices Libya for the benefit of Egypt."
+ EGE_liberate_sudan:0 "Liberate Sudan"
+ EGE_liberate_sudan_desc:0 "The Sudanese people have been subject to the tyranny of the British long enough. We must liberate the Sudanese people and show them the power of Egypt."
+ EGE_join_axis:0 "Join Axis"
+ EGE_join_axis_desc:0 "In order to secure our quest for international dominance, we must join the Axis and ally with the Germany and Italy."
+ EGE_demand_suez:0 "Demand Suez"
+ EGE_demand_suez_desc:0 "In order to reunite Egypt once and for all, we must force an ultimatum upon the British: surrender the Suez, or face the wrath of Egypt."
+ EGE_support_the_status_quo:0 "Support the Status Quo"
+ EGE_support_the_status_quo_desc:0 "We musn't let ourselves be torn down by the ruthlessness of fascism or the red threat of communism. Therefore, declaring ourselves to be military allies of the British will surely prevent such events from affecting our glorious nation's future."
+ EGE_anglo-egyptian_treaty:0 "Anglo-Egyptian Treaty"
+ EGE_anglo-egyptian_treaty_desc:0 "Continuing to improve relations with the UK is necessary. We must propose to them a treaty which changes our unilateral independence, whilst letting them retain control over the Suez."
+ EGE_democratic_reforms:0 "Democratic Reforms"
+ EGE_democratic_reforms_desc:0 "To become a democracy and demonstrate our dedication to the Allies, we must prove that political freedom is now possible by outlining what a democracy means for Egypt."
+ EGE_down_with_the_king:0 "Down with the King"
+ EGE_down_with_the_king_desc:0 "Farouk's ties with the Italians are compromising our democratic future. A disestablishment of the monarchy would be the perfect correction."
+ EGE_western_technology:0 "British Technology Sharing"
+ EGE_western_technology_desc:0 "Our new alliance with the British has allowed us to combine scientific research efforts and resources in an attempt to progress further in the modern weaponry arms race."
+ EGE_prepare_intervention:0 "Prepare Intervention"
+ EGE_prepare_intervention_desc:0 "Our existing democratic party has outlined a suitably justifiable plan for Egypt's democratic future, one that includes the return of assistance with any wars our European friends are involved in."
+ EGE_elect_lampson:0 "Elect Lampson"
+ EGE_elect_lampson_desc:0 "Our existing democratic party, nor any of its leaders, are capable of leading our country. Therefore, we must let Lampson lead the Wafd into the future."
+ EGE_fortify_el-alamein:0 "Fortify El-Alamein"
+ EGE_fortify_el-alamein_desc:0 "If we wish to stand any chance against a potential offensive from the Italians in the west, we must fortify our closest stronghold as much as possible."
+ EGE_nuclear_effort:0 "Nuclear Effort"
+ EGE_nuclear_effort_desc:0 "Standing on the edge of a world-changing discovery, we cannot let others light the fire that may one day consume the Earth."
+ EGE_secret_weapons:0 "Secret Weapons"
+ EGE_secret_weapons_desc:0 "It is tempting to expend all extra resources into developing tanks and planes, but the secret to winning wars lies in whole new fields of science; electronics, rocketry and nuclear research."
+ EGE_industrial_organization:0 "Industrial Organization"
+ EGE_industrial_organization_desc:0 "If we are to develop into a world superpower, our industry needs a serious reorganization so that towns and factories are distributed in such a way that resource-rich areas are spared for refineries and factories, with more arable land being sacrificed to the towns."
+ EGE_establish_science_facilities:0 "Establish Science Facilities"
+ EGE_establish_science_facilities:0 "Our industrial expansion and other recent advances might allow us to conduct more R&D in parallel."
+ EGE_accelerate_research:0 "Alien Technology"
+ EGE_accelerate_research_desc:0 "01010111 01100101 00100000 01100001 01110010 01100101 00100000 01100011 01101111 01101101 01101001 01101110 01100111 00101110 00101110 00101110"
+ EGE_expand_cairo:0 "Expand Cairo"
+ EGE_expand_cairo_desc:0 "By following down the path towards becoming an industrial superpower we must develop our own capital."
+ EGE_colonize_the_nile:0 "The Nile Project"
+ EGE_colonize_the_nile_desc:0 "To cultivate a population worthy of rivalling other world superpowers, we must first create the infrastructure and towns to do so."
+ EGE_connect_the_towns:0 "Connect The Towns"
+ EGE_connect_the_towns_desc:0 "Now that the towns have been constructed, we need to connect them using the most efficient form of land transportation possible: railways."
+ EGE_nile_immigration:0 "Nile Immigration"
+ EGE_nile_immigration_desc:0 "Time to find the people for the power."
+ EGE_capitalize_on_oil_fields:0 "Capitalize On Oil Fields"
+ EGE_capitalize_on_oil_fields_desc:0 "With so much oil to be pumped and refined, and with so much land to do it on, why haven't we done so yet?"
+ EGE_italian_steel_factories:0 "Italian Steel Factories"
+ EGE_italian_steel_factories_desc:0 "Now that we have successfully marked our country as a staple of the global oil industry, we need to turn our focus to other resources that we desperately need. For example, steel."
+ EGE_expand_rubber_production:0 "Expand Rubber Production"
+ EGE_expand_rubber_production_desc:0 "If the Ethiopians can do it, why can't we?"
+ EGE_found_the_gfluke:0 "Found the GFLUKE"
+ EGE_found_the_gfluke_desc:0 "Egypt's expansive resources have established it as a centre of trade in the south. Because of its newfound position in the global trade market, the establishment of the General Federation of Labour Unions in the Kingdom of Egypt aims to expand and regulate Egypt's trade, and increase relations with much more powerful neighbours."
+ EGE_mobilize_the_population:0 "Mobilize The Population"
+ EGE_mobilize_the_population_desc:0 "After developing such an enormous population, wouldn't it be good to put it to good use? Oh, and uh... do it to the children as well."
+ EGE_military_expansion:0 "Military Expansion"
+ EGE_military_expansion_desc:0 "With our industrial endeavors laid out before us, we must now focus on expanding our military equipment operations so that we can supply what we expect to be a military to be reckoned with."
+ EGE_finish_alexandrian_port:0 "Finish Alexandrian Port"
+ EGE_finish_alexandrian_port_desc:0 "If we wish to develop a naval presence, we must first complete construction on the port in Alexandria."
+ EGE_expand_alexandrian_airfield:0 "Expand Alexandrian Airfield"
+ EGE_expand_alexandrian_airfield_desc:0 "If we wish to develop a significant aerial presence, we must expand the airfield in Alexandria."
+ EGE_army_effort:0 "Army Effort"
+ EGE_army_effort_desc:0 "Despite the increasing possibilities of aerial and naval warfare, ground combat is still key in tomorrow's wars. With preparation, we can avoid reliving the hell of the trenches."
+ EGE_doctrine_effort:0 "Doctrine Effort"
+ EGE_doctrine_effort_desc:0 "The military doctrines that defined ground combat in the Great War are outdated. We must put our greatest minds to the task of shaping the military thought of tomorrow."
+ EGE_equipment_effort:0 "Equipment Effort"
+ EGE_equipment_effort_desc:0 "The limits for what equipment can be carried by infantry are constantly being pushed. We will focus on giving our troops the best tools available."
+ EGE_motorization_effort:0 "Motorization Effort"
+ EGE_motorization_effort_desc:0 "Mobility and protection are crucial to get infantry into and out of the field safely. Focusing on these developments will allow us to take action quickly."
+ EGE_armor_effort:0 "Egyptian Panzers"
+ EGE_armor_effort_desc:0 "Our prophecists have informed us that in the near future a certain German general may or may not storm along the north African coast with dozens of powerful tank divisions. If the day comes, the least we can do is give him a taste of his own medicine."
+ EGE_mediterranean_fleet:0 "Mediterranean Fleet"
+ EGE_mediterranean_fleet_desc:0 "The Red Sea is a useless prospect to us. The Mediterranean, on the other hand, provides access to plenty of strong European countries. To make that access easier, we need the largest fleet in the sea."
+ EGE_submarine_effort:0 "Submarine Effort"
+ EGE_submarine_effort_desc:0 "Submarine warfare is the most exciting naval development since the invention of the torpedo boat. We would do well to not just protect against submarines, but also use them against enemy shipping."
+ EGE_cruiser_effort:0 "Cruiser Effort"
+ EGE_cruiser_effort_desc:0 "Before making forays into advanced battleship research, the smaller cruisers are in need of replacement."
+ EGE_destroyer_effort:0 "Destroyer Effort"
+ EGE_destroyer_effort_desc:0 "Studying the design and strategic use of submarines, we have also learned how to counter those strategies. Destroyers will be crucial for this."
+ EGE_capital_ships_effort:0 "Capital Ship Effort"
+ EGE_capital_ships_effort_desc:0 "The nation with the most battleships will rule the oceans. Battleships and carriers represent the old and the new in naval superiority."
+ EGE_radar_improvements:0 "Radar Improvements"
+ EGE_radar_improvements_desc:0 "Having a powerful fleet is unimportant if it is not equipped with world-class radar technology."
+ EGE_fighter_focus:0 "Fighter Focus"
+ EGE_fighter_focus_desc:0 "We have not seen that last of dogfights in the Great War. Keeping ahead in the development of fighter planes will give us an edge in the future."
+ EGE_bomber_focus:0 "Bomber Focus"
+ EGE_bomber_focus_desc:0 "When people of the future speak of the horror to today's wars, fire raining from the skies will prominently feature. We will do our best to ensure those stories are told by our enemies."
+ EGE_aviation_effort:0 "Aviation Effort"
+ EGE_aviation_effort_desc:0 "Focusing on indoctrinating our air force is crucial if our aerial efforts are to be successful."
+ EGE_CAS_effort:0 "CAS Effort"
+ EGE_CAS_effort_desc:0 "A modern army needs support from vehicles not only on the ground, but also in the air."
+ EGE_rocket_effort:0 "Visit the Aliens"
+ EGE_rocket_effort_desc:0 "Rocket and jet engines allow for unprecedented speeds for unmanned and manned vessels alike. Pioneering these technologies will allow us to take the enemy by surprise, and once again make contact with our extraterrestrial friends."
+ EGE_NAV_effort:0 "NAV Effort"
+ EGE_NAV_effort_desc:0 "Just as the new naval warfare takes place in part beneath the water's surface, part of it takes place in the air above the waters."
+ EGE_a_new_empire:0 "A New Empire"
+ EGE_a_new_empire_desc:0 "The Egyptian Empire has been reborn."
+ EGE_ufo_runway:0 "UFO Runway"
+ EGE_ufo_runway_desc:0 "If the ancient myths are to be believed, aliens from far away gave our ancestors precious knowledge that allowed them to become the most technologically advanced civilization on the planet. If we are to test the myths, we obviously need to build an expansive area for the aliens to visit us, an area that will require the contribution of thousands of people for the greater good."
+ EGE_indoctrinate_the_airforce:0 "Indoctrinate the Airforce"
+ EGE_indoctrinate_the_airforce_desc:0 "Focusing on indoctrinating our air force is crucial if our aerial efforts are to be successful."
+ EGE_establish_gold_mining_operation:0 "Establish Gold Mining Operation"
+ EGE_establish_gold_mining_operation_desc:0 "Establishing the foundations for a strong economy are crucial if we wish to elevate our political power position in the world. Such a strong economy will also allow a future challenge against the United Kingdom for the ownership of the shares of the Suez Canal, allowing Egypt to be reunited again."
+ EGE_complete_decolonization:0 "Complete Decolonization"
+ EGE_complete_decolonization_desc:0 "Following the strengthening of Egypt's relations with the United Kingdom, the Egyptian people must now focus on their own priorities and achieve internationally-recognised independence."
+ EGE_cave_to_the_italians:0 "Cave to the Italians"
+ EGE_cave_to_the_italians_desc:0 "With the presence of Italian fascism growing steadily stronger in the west, it is time to release Egypt's political reigns and allow the nationalist ideologies to invade Egyptian politics and the ideologies of the King."
+ EGE_political_commissars:0 "Political Commissars"
+ EGE_political_commissars_desc:0 "To ensure that our policies are followed in military practice, we will introduce politically appointed officials into military ranks."
+ EGE_strengthen_axis_ties:0 "Strengthen Axis Ties"
+ EGE_strengthen_axis_ties_desc:0 "Egypt's rapid progression towards ideological stability allows for the potential of an independent future. However, all strong players need allies, and the Egyptian people must seek to appease potential foreign friends if they are to reclaim power."
+ EGE_maintain_neutrality:0 "Maintain Neutrality"
+ EGE_maintain_neutrality_desc:0 "Although our European friends would prefer full assistance in future wars against the Italian threat in Libya, we shall choose our participation how and when we want."
+ EGE_ignite_the_warrior_spirit:0 "Ignite the Warrior Spirit"
+ EGE_ignite_the_warrior_spirit_desc:0 "Egypt's people are timid, weak, and uninspired. Yet in the days of the Empire, they were fierce, brutal warriors, categorised by their fighting ability and powered on by the will of the Emperor."
+ EGE_ra:0 "Ra"
+ EGE_amen:0 "Amun"
+ EGE_ptah:0 "Ptah"
+ EGE_set:0 "Set"
+ EGE_ra_desc:0 "Ra - Deity of the Sun"
+ EGE_amen_desc:0 "Amun - Deity of the Poor and Troubled"
+ EGE_ptah_desc:0 "Ptah - Deity of Architecture and Creation"
+ EGE_set_desc:0 "Set - Deity of Violence and the Desert"
+ EGE_the_soldiers_leader:0 "The Soldiers' Leader"
+ EGE_the_soldiers_leader_desc:0 "The brave men of the Egyptian army not only need a good leader, but a great commander as well."
+ EGE_saharan_roads:0 "Saharan Roads"
+ EGE_saharan_roads_desc:0 "In order to sufficiently reinforce any operations against the Italian threat in the west, the construction of roads connecting the border to the population centres is necessary."
+ EGE_operation_compass:0 "Operation Compass"
+ EGE_operation_compass_desc:0 "Operation Compass will require the Egyptian military to defend the border with Italian Libya; however, additional support may be required, and it cannot be delivered internationally through manpower. Therefore, the British have kindly decided to lend us some equipment."
+ EGE_italian_defense:0 "Italian Defense"
+ EGE_italian_defense_desc:0 "The fearless defense of Egypt has led to an increase in patriotism within the Egyptian soldiers; by targeting this fully against the Italians and their Axis allies, the morale and thus the fighting spirit of the brave Egyptian soldiers will increase exponentially."
+ 
+ TUR_bogazlar:0 "Montreux Straits Convention"
+ TUR_saadabad_pact:0 "Sadabad Pact"
+ TUR_go_with_britain_reject:0 "The rejection of Turkey's joining the Allies"
+ TUR_kursk:0 "Kursk Visitation"
+ TUR_banfascim:0 "Racism Banned"
+ TUR_hatay_reject:0 "Hatay Crisis"
+ 
+ ERW_greater_germany_tooltip:0 "Opens a decision for unifying Großdeutschland"
+ TG_plan_z_tt:0 "Opens decisions for proceeding with Plan Z to grow Germany's navy"
+ ERW_SS_division_organization_tooltip:0 "Unlocks new elite unit type: the Waffen-SS"
+ ERW_SS_foreign_volunteers_tooltip:0 "Opens decisions to create foreign SS divisions"
+ ERW_SS_to_freikorps:0 "Unlocks new specialized unit type: Freikorps"
+ GER_plan_z_category:0 "Plan Z Operations"
+ GER_study_foreign_carriers:0 "Study Foreign Carriers"
+ 
+ completed_ship_production_1:0 "Completed Plan Z Production Phase 1"
+ completed_ship_production_2:0 "Completed Plan Z Production Phase 2"
+ completed_ship_production_3:0 "Completed Plan Z Production Phase 3"
+ completed_ship_production_4:0 "Completed Plan Z Production Phase 4"
+ GER_schutzgebieten:0 "Schutzgebieten Organization"
+ GER_change_the_flag:0 "Change to Politically Correct Aesthetic"
+ GER_change_the_flag_back:0 "Return to Historical Aesthetic"
+ GER_reichskommissariat_kaukasus:0 "Reichskommissariat Kaukasus"
+ GER_protektorat_bohmen:0 "Protektorat Böhmen und Mähren"
+ GER_ostafrika:0 "Establish Deutsche Ostafrika"
+ GER_wunderwaffe_development:0 "Developing the Wunderwaffe"
+ GER_greater_germany_construction_category:0 "Constructing Großdeutschland"
+ GER_greater_germany_construction:0 "Establish Großdeutsches Reich"
+ GER_reichskommissariat_poland:0 "Generalgouvernement Polen"
+ GER_reichskommissariat_moskowien:0 "Reichskommissariat Moskowien"
+
+ SS_divisions:0 "Establishing SS Divisions"
+ SS_division_1:0 "1. SS Panzerdivision Leibstandarte Adolf Hitler"
+ SS_division_2:0 "2. SS Panzerdivision Das Reich"
+ SS_division_3:0 "3. SS Panzerdivision Totenkopf"
+ SS_division_4:0 "4. SS Panzergrenadier Division Polizei"
+ SS_division_6:0 "6. SS Mountain-Division Nord"
+ SS_division_7:0 "7. SS Mountain-Division Prinz Eugen"
+ SS_division_8:0 "8. SS Cavalry-Division Florian Geyer"
+ SS_division_9:0 "9. SS Panzerdivision Hohenstaufen"
+ SS_division_10:0 "10. SS Panzerdivision Frundsberg"
+ SS_division_12:0 "12. SS Panzerdivision Hitlerjugend"
+ SS_division_16:0 "16. SS Panzergrenadier Division Reichsführer-SS"
+ SS_division_17:0 "17. SS Panzergrenadier Division Götz von Berlichingen"
+ SS_division_18:0 "18. SS Freiwilligen Panzergrenadier Division Horst Wessel"
+ SS_division_24:0 "24. SS Mountain-Division Karstjäger"
+ SS_division_32:0 "32. SS Freiwilligen Grenadier-Division 30. Januar"
+ SS_division_35:0 "35. SS und Polizei Grenadier-Division"
+ SS_division_36:0 "36. SS Waffen Grenadier-Division Dirlewanger"
+ SS_division_37:0 "37. SS Volunteer Cavalry Division Lützow"
+ SS_division_38:0 "38. SS Grenadier-Division Nibelungen"
+ 
+ 
+ GER_SS_division_1:0 "Form 1. SS Panzerdivision Leibstandarte Adolf Hitler"
+ GER_SS_division_2:0 "Form 2. SS Panzerdivision Das Reich"
+ GER_SS_division_3:0 "Form 3. SS Panzerdivision Totenkopf"
+ GER_SS_division_4:0 "Form 4. SS Panzergrenadier Division Polizei"
+ GER_SS_division_6:0 "Form 6. SS Mountain-Division Nord"
+ GER_SS_division_7:0 "Form 7. SS Mountain-Division Prinz Eugen"
+ GER_SS_division_8:0 "Form 8. SS Cavalry-Division Florian Geyer"
+ GER_SS_division_9:0 "Form 9. SS Panzerdivision Hohenstaufen"
+ GER_SS_division_10:0 "Form 10. SS Panzerdivision Frundsberg"
+ GER_SS_division_12:0 "Form 12. SS Panzerdivision Hitlerjugend"
+ GER_SS_division_16:0 "Form 16. SS Panzergrenadier Division Reichsführer-SS"
+ GER_SS_division_17:0 "Form 17. SS Panzergrenadier Division Götz von Berlichingen"
+ GER_SS_division_18:0 "Form 18. SS Freiwilligen Panzergrenadier Division Horst Wessel"
+ GER_SS_division_24:0 "Form 24. SS Mountain-Division Karstjäger"
+ GER_SS_division_32:0 "Form 32. SS Freiwilligen Grenadier-Division 30. Januar"
+ GER_SS_division_35:0 "Form 35. SS und Polizei Grenadier-Division"
+ GER_SS_division_36:0 "Form 36. SS Waffen Grenadier-Division Dirlewanger"
+ GER_SS_division_37:0 "Form 37. SS Volunteer Cavalry Division Lützow"
+ GER_SS_division_38:0 "Form 38. SS Grenadier-Division Nibelungen"
+ 
+ 
+ SS_division_5:0 "5. SS Panzerdivision Wiking"
+ SS_division_11:0 "11. SS Freiwilligen Panzergrenadier Division Nordland"
+ SS_division_13:0 "13. SS Mountain-Division Handschar"
+ SS_division_14:0 "14. SS Grenadier-Division 1. Galizische"
+ SS_division_15:0 "15. SS Grenadier-Division 1. Lettische"
+ SS_division_19:0 "19. SS Grenadier-Division 2. Lettische"
+ SS_division_20:0 "20. SS Grenadier-Division 1. Estnische"
+ SS_division_21:0 "21. SS Mountain-Division Skanderbeg"
+ SS_division_22:0 "22. SS Freiwilligen Cavalry Division Maria Theresia"
+ SS_division_23:0 "23. SS Panzergrenadier Division Nederland"
+ SS_division_25:0 "25. SS Grenadier-Division Hunyadi"
+ SS_division_26:0 "26. SS Grenadier-Division Hungaria"
+ SS_division_27:0 "27. SS Freiwilligen Grenadier-Division Langemarck"
+ SS_division_28:0 "28. SS Freiwilligen Grenadier-Division Wallonien"
+ SS_division_29:0 "29. SS Grenadier-Division 1. Russische/Italienische"
+ SS_division_30:0 "30. SS Grenadier-Division 2. Russische"
+ SS_division_31:0 "31. SS Freiwilligen Grenadier-Division Böhmen-Mähren"
+ SS_division_33:0 "33. SS Grenadier-Division Charlemagne"
+ SS_division_34:0 "34. SS Freiwilligen Grenadier-Division Landstorm Nederland"
+ 
+ SS_recruitment_hungary:0 "SS Recruitment Hungary"
+ SS_recruitment_croatia:0 "SS Recruitment Croatia"
+ SS_recruitment_ukraine:0 "SS Recruitment Ukraine"
+ SS_recruitment_russia:0 "SS Recruitment Russia"
+ SS_recruitment_albania:0 "SS Recruitment Albania"
+ 
+ GER_division_hungary_infantry_tt:0 "Organize the 22. SS Freiwilligen Cavalry Division Maria Theresia, 25. SS Grenadier-Division Hunyadi, 26. SS Grenadier-Division Hungaria, and 31. SS Freiwilligen Grenadier-Division Böhmen-Mähren"
+ SS_recruitment_nordland_tt:0 "Organize the 11. Freiwilligen Panzergrenadier Division Nordland"
+ GER_division_croatia_infantry_tt:0 "Organize the 13. SS Mountain-Division Handschar"
+ GER_division_ukraine_infantry_tt:0 "Organize the 14. SS Grenadier-Division 1. Galizische"
+ GER_division_russia_infantry_tt:0 "Organize the 29. SS Grenadier-Division 1. Russische/Italienische and 30. SS Grenadier-Division 2. Russische"
+ GER_division_albanian_infantry_tt:0 "Organize the 21. SS Mountain-Division Skanderbeg"
+ freikorps_infantry:0 "Freikorps Infanterie"
+ freikorps_infantry_desc:0 "Small divisions composed of veterans and determined volunteers that specialize in resistance supression and urban combat. Their reduced size and ad-hoc nature, though, makes them less effective in traditional military manuevers."
+ freikorps_motorized:0 "Mot. Freikorps Infanterie"
+ freikorps_motorized_desc:0 "Small divisions composed of veterans and determined volunteers that specialize in resistance supression and urban combat. Their reduced size and ad-hoc nature, though, makes them less effective in traditional military manuevers."
+ freikorps_mechanized:0 "Freikorps Panzergrenadiere"
+ freikorps_mechanized_desc:0 "Small divisions composed of veterans and determined volunteers that specialize in resistance supression and urban combat. Their reduced size and ad-hoc nature, though, makes them less effective in traditional military manuevers."
+ grenz_infantry:0 "Grenzinfanterie"
+ grenz_infantry_desc:0 "These special border guard divisions are organized from both specially trained soldiers and police, and are specifically trained in advanced recon activities."
+ grenz_motorized:0 "Mot. Grenzinfanterie"
+ grenz_motorized_desc:0 "These special border guard divisions are organized from both specially trained soldiers and police, and are specifically trained in advanced recon activities."
+ grenz_mechanized:0 "Grenzpanzergrenadiere"
+ grenz_mechanized_desc:0 "These special border guard divisions are organized from both specially trained soldiers and police, and are specifically trained in advanced recon activities."
+ bgrenz_infantry:0 "Grenzinfanterie"
+ bgrenz_infantry_desc:0 "These special border guard divisions are organized from both specially trained soldiers and police, and are specifically trained in advanced recon activities."
+ bgrenz_motorized:0 "Mot. Grenzinfanterie"
+ bgrenz_motorized_desc:0 "These special border guard divisions are organized from both specially trained soldiers and police, and are specifically trained in advanced recon activities."
+ bgrenz_mechanized:0 "Grenzpanzergrenadiere"
+ bgrenz_mechanized_desc:0 "These special border guard divisions are organized from both specially trained soldiers and police, and are specifically trained in advanced recon activities."
+ 
+ 
+ erwache.21.t:0 "The Blomberg–Fritsch Affair"
+ erwache.21.d:0 "It would appear as though two officers in the high command, Werner von Blomberg and Werner von Fritsch, are opposed to the rapid rearmament and intent to wield our military. They are a symbolic opposition to our führer's aspirations, and it would appear as though they are up to activities unfitting of a German officer-Blomberg is married to an immoral woman and Fritsch is a homosexual. Forming the long-planned Oberkommando der Wehrmacht would appear to be the best way to shuffle the high command and make it more effective. Should we form an OKW that gives the führer more say in the military, or one that prioritizes the wants of the generals?"
+ erwache.21.a:0 "Form the OKW with Hitler at it's head"
+ erwache.21.b:0 "Form the OKW with the General Staff at it's head"
+ 
+ 
+ TG_Bundesgrenzschutz_unlock_tooltip:0 "Unlocks new elite unit type: Bundesgrenzschutzen"
+ TG_grenzerkompanie_unlock_tooltip:0 "Unlocks new elite unit type: Grenzerdivision"
+ GER_bundesgrenzschutz_units_tech:0 "Bundesgrenzschutzen"
+ GER_grenzerdivision_units_tech:0 "Grenzerdivision"
+ GER_freikorps_units_tech:0 "Freikorps"
+ 
+ internationalist:0 "Internationalist"
+ the_elder:0 "Der Alte"
+ loyal_communist:0 "Loyal Communist"
+ party_chairman:0 "Party Chairman"
+ loyal_fascist:0 "Loyal Fascist"
+ liberal_socialist:0 "Liberal Socialist"
+ humane_socialist:0 "Humane Socialist"
+ social_market_democrat:0 "Social Market Democrat"
+ cordial_democrat:0 "Cordial Democrat"
+ conservative_monarchist:0 "Conservative Monarchist"
+ antiextremist_monarchist:0 "Anti-Extremist Monarchist"
+ military_monarchist:0 "Military Monarchist"
+ quality_submarine_manufacturer:0 "Quality Submarine Manufacturer"
+ motorized_infantry_manufacturer:0 "Motorized-Infantry Manufacturer"
+ uniform_manufacturer:0 "Uniform Manufacturer"
+ resource_concern:0 "Resource Concern"
+ army_chief_supply:0 "Supply Specialist"
+ army_chief_panzer:0 "Panzer Specialist"
+ airforce_chief_wunderwaffe:0 "Wunderwaffe Incarnate"
+ 
+ wilhelm_frick:0 "Wilhelm Frick"
+ wilhelm_frick_desc:0 "Reich Minister of the Interior"
+ heinrich_rau:0 "Heinrich Rau"
+ otto_grotewohl:0 "Otto Grotewohl"
+ ludwig_erhard:0 "Ludwig Erhard"
+ theodor_heuss:0 "Theodor Heuss"
+ carl_friedrich_goerdeler:0 "Carl Friedrich Goerdeler"
+ heinrich_bruning:0 "Heinrich Bruning"
+ fedor_von_bock:0 "Fedor von Bock"
+ kurt_zeitzler:0 "Kurt Zeitzler"
+ heinz_guderian2:0 "Heinz Guderian"
+ erhard_milch2:0 "Erhard Milch"
+ 
+ howaldtswerke:0 "Howaldtswerke-Deutsche Werft"
+ tg_steyr_daimler_puch:0 "Steyr-Daimler-Puch"
+ hugo_boss:0 "Hugo Boss"
+ bergwerks_huttenbau:0 "Deutsche Bergwerks & Hüttenbau"
+ EST_GER_Units:0 "You will receive the §YXXVII advanced infantry Corps§! from Germany, consisting of 1 Infantry Divisions and 1 SS-Division with all the extra equipment."
+ EST_nortech:0 "Invite Sweden and Finland to form §Nordic Research Agreement§"
+ EST_nortechfinal:0 "§Expand the agreement§ and invite all Scandinavian countries to our program"
+ 
+ 
+ NK:0 "Noored Kotkad"
+ NK_desc:0 "The affiliated organisations of the Defence League combine more than 21,000 volunteers, in all, and include the Estonian Defence League’s women’s corps Naiskodukaitse, the Estonian Defence League’s boys’ corps Noored Kotkad, and the Estonian Defence League’s girls’ corps Kodutütred."
+
+ 
+
+
+  #### FLAGS ####
+ front_explosed:0 "Popular Front disbanded"
+ matignon_agreements:0 "Matignon Agreements"
+  
+  #### ORGANISE INTERNATIONAL ####
+FRA_4th_international:0 "4-й Международный"
+FRA_support_ENG:0 "Поддержка коммунизма в Англии"
+FRA_support_BEL:0 "Поддержка коммунизма в Бельгии"
+FRA_support_LUX:0 "Поддержка коммунизма в Люксембурге"
+FRA_support_IRE:0 "Поддержка коммунизма в Ирландии"
+ 
+ fcm_nat:0 «национализированный FCM»
+caer_nat:0 «национализированный CAER»
+brest_nat:0 «национализированный CNF»
+penhoet_nat:0 «Penhoët национализировал»
+cfp_nat:0 «национализированный CFP»
+csf_nat:0 «национализированный CSF»
+radiola_nat:0 «Radiola национализировал»
+peugeot_nat:0 «Peugeot национализировал»
+citroen_nat:0 «Citroen национализировал»
+hotchkiss_nat:0 «Хотчкисс национализировал»
+latecoere_nat:0 «Latécoère национализировал»
+dakar_nat:0 «национализированный CND»
+loire_nat:0 «национализированный ACL»
+tunis_nat:0 «национализированная ЦИНОВКА»
+normandie_nat:0 «национализированный SMN»
+puteaux_nat:0 «национализированный APX»
+bayonne_nat:0 «национализированный MAB»
+vetra_nat:0 «Vétra национализировал»
+bull_nat:0 «Национализированный бык»
+poulenc_nat:0 «Рон-Пуленк национализировал»
+darne_nat:0 «Darne национализировал»
+oran_nat:0 «Оран национализировал»
+dietrich_nat:0 «Лотарингия-Dietrich национализировал»
+panhard_nat:0 "Панхард & Левассор национализирован"
+berliet_nat:0 «Berliet национализировал»
+delaunay_nat:0 «Delaunay-Бельвиль национализировал»
+bleriot_nat:0 «Blériot национализировал»
+fouga_nat:0 «Fouga национализировал»
+dewoitine_nat:0 «Dewoitine национализировал»
+potez_nat:0 «Potez национализировал»
+renault_nat:0 «Renault национализировал»
+AMX_nat:0 «национализированный AMX»
+mas_nat:0 «национализированный МКЛ»
+schneider_nat:0 «Шнайдер национализировал»
+darne_nat:0 «Darne национализировал»
+somua_nat:0 «Somua национализировал»
+morane_saulnier_nat:0 "Моран Саулнье национализирован"
+bloch_nat:0 «Блох национализировал»
+amiot_nat:0 «Amiot национализировал»
+levasseur_nat:0 «Levasseur национализировал»
+fcm_nat:0 «национализированный FCM»
+famh_nat:0 «национализированный FAMH»
+bouton_nat:0 "Де Дион-Бутон национализирован"
+ 
+ 
+ GRE_GATHERING_STORM_DESC:0 "Не сумев извлечь выгоду из нестабильности Османской империи после Великой войны, Греция еще больше пострадала во время Великой Депрессии. Миллионам бездомных и бедных было некуда обратиться, и вместе с нищетой пришел хаос. Ионис Метаксас руководит Грецией во главе режима 4 августа, не чисто фашистского, демократического или роялистского, но уравновешивающего мир в стране. наследие Александра и Юстиниана взывает к греческому народу. При правильном руководстве Греция может вернуться к своей древней славе и вновь занять свое место в качестве краеугольного камня культуры и цивилизации."
+ GRE_BLITZKRIEG_DESC:0 "Не сумев извлечь выгоду из нестабильности Османской империи после Великой войны, Греция еще больше пострадала во время Великой Депрессии. Миллионам бездомных и бедных было некуда обратиться, и вместе с нищетой пришел хаос. Ионис Метаксас руководит Грецией во главе режима 4 августа, не чисто фашистского, демократического или роялистского, но уравновешивающего мир в стране. наследие Александра и Юстиниана взывает к греческому народу. При правильном руководстве Греция может вернуться к своей древней славе и вновь занять свое место в качестве краеугольного камня культуры и цивилизации."
+
+ edelweiss_fail:0 "В §HSecond Немецкого Наступления§! застоялся"
+ 
+KM_marine:0 "Подразделение береговой обороны"
+KM_marine_desc:0 "Войска, специализирующиеся на обороне прибрежных городов, портов и укреплений. Сильные в оборонительных способностях, но медленно двигающиеся и слабые нападающие."
+
+SS_police:0 "Альгеймме-СС"
+SS_police_desc:0 "Антипартизанское подразделение. Войска, специализирующиеся на обороне от партизанской деятельности. Сильный против партизан, но слабый против нападающих."
+
+SS_infantry:0 «Гренадер СС-Volks»
+SS_infantry_desc:0 "Элитные пехотные войска СС".
+SS_mountaineers:0 «Горный охотник СС»
+SS_mountaineers_desc:0 "Элитные горные войска СС".
+SS_motorized:0 «Гренадер СС»
+SS_motorized_desc:0 "Элитные моторизованные войска СС".
+SS_mechanized:0 «Гренадер SS-Pz.»
+SS_mechanized_desc:0 "Элитные механизированные войска СС".
+SS_cavalry:0 «Кавалерия СС»
+SS_cavalry_desc:0 "Элитные кавалерийские войска СС".
+
+GER_SS_units_tech:0 "Войска Ваффен-СС"
+GER_SS_units_tech_desc:0 "Позволяет вербовать элитные войска Ваффен-СС.\nAlso Allgemeine-антипартизанские отряды СС, которые сильны в обороне, но слабы в нападении."
+
+ss_elite_cap:0 «Schutzstaffel Erwache»
+ss_elite_cap_desc:0 "Расширенный элитный бассейн для войск Шютцштаффеля".
+SS-Angriff:0 "Включен режим SS Angriff Mod"
+ZDSS.1:0 «Умирают Schutzstaffel»
+ZDSS.1.t:0 "Варианты для Шютцштаффель мод"
+ZDSS.1.desc:0 «У Вас четыре настройки:\n\n#1 Шкуры, и Модели только \nThis предоставят доступ к шаблонам единицы SS и всем моделям, никакие единицы не будут ежегодно \n\n#2 поставляться, Исторические Единицы \nThis поставят, историческое ежегодное SS-подразделение строит вокруг 30-го января, каждый год 1940-45.\n\n#3, который Исторические Единицы & Технология \nThis поставят историческому ежегодному SS-подразделению, строит и технология земли вокруг 30-го января, каждый год 1940-45.\n\n#4 Умирают Waffen-SS! \nDelivers все отделения Waffen & Allgemeine SS теперь, с некоторой основой techs."
+ZDSS.1.a:0 "Только обложки и модели"
+ZDSS.1.a.tt:0 "Это позволит получить доступ к шаблонам блоков SS и ко всем моделям, ни один блок не будет поставляться ежегодно"
+ZDSS.1.b:0 «Исторические единицы»
+ZDSS.1.b.tt:0 "Это даст исторический ежегодный блок построений около 30 января, каждый год" 1940-45
+ZDSS.1.c:0 "Исторические единицы и технические характеристики"
+ZDSS.1.c.tt:0 "Это поставит исторический ежегодный блок строительства и земли технологии около 30 января, каждый год" 1940-45
+ZDSS.1.d:0 «Умирают Вафенн-СС!»
+ZDSS.1.d.tt:0 "Поставляет все устройства Waffen & Allgemeine SS сейчас, с некоторыми базовыми техниками".
+ZDSS.100:0 «Умирают модник Schutzstaffel»
+ZDSS.100.t:0 «Умирают Schutzstaffel Bericht»
+ZDSS.100.d:0 "Оберкомандо дер вермахт сообщает, что все развертывания СС за этот год завершены по заказу.\n\nZeig Heil!"
+ZDSS.100.a:0, «Признанный, признанный!»
+
+CAF_daensk.1:0 "SS Angriff"
+CAF_daensk.1.t:0 "SS Angriff Mod"
+CAF_daensk.1.desc:0 "Этот мод добавляет подразделение береговой обороны Кригсмарине, а также кавалерию СС, пехоту, моторизованные и механизированные дивизии и бригады. Подразделения Schutzstaffel стоят немного дороже в снаряжении, но имеют лучшую организацию и моральный дух."
+CAF_daensk.1.a:0 "Я Понимаю!"
+CAF_daensk.1.a.tt:0 "Это позволит получить доступ к шаблонам и моделям подразделений береговой обороны и СС."
+
+
+SS-Angriff:0 "Включен режим SS Angriff Mod"
+ss_recruitment_event_CAF:0 "Местный набор в СС"
+ss_recruitment_event_CAF.1:0 "Вербовать иностранные войска"
+ss_recruitment_event_CAF.1.t:0 "Вербовать иностранные войска"
+ss_recruitment_event_CAF.1.a:0 "Единицы для СС"
+ss_recruitment_event_CAF.1.b:0 "Личный состав вермахта"
+ss_recruitment_event_CAF.1.c:0 "Третий путь"...
+ss_recruitment_event_CAF.1.desc:0 "В этой титанической борьбе за национальное выживание мы должны использовать каждый актив и все преимущества. SS полагает, что есть много ausländer, кто с удовольствием взял бы руки и борьбу нашей стороной против угрозы глобального большевизма \n\nWhile, Вермахт соглашается в принципе, что некоторая вербовка подходящих волонтеров могла быть полезной, Генералы в ОКВ очень твердо уверены, что любые иностранные добровольцы должны находиться под военным - а не СС - командованием. "
+SS_recruitment_CAF1:0 "Разрешить вербовку СС в Польше".
+SS_recruitment_CAF2:0 "Разрешить вербовку СС в Богемии и Моравии".
+SS_recruitment_CAF3:0 "Разрешить набор СС в Судетскую".
+SS_recruitment_CAF4:0 "Разрешить вербовку СС в Словакии".
+SS_recruitment_CAF5:0 "Разрешить вербовку СС в Словении".
+SS_recruitment_CAF6:0 "Разрешить вербовку СС в Югославии".
+SS_recruitment_CAF7:0 "Разрешить вербовку СС в Албании".
+SS_recruitment_CAF8:0 "Разрешить набор СС в Венгрии".
+SS_recruitment_CAF9:0 "Разрешить вербовку СС в Белой России".
+SS_recruitment_CAF10:0 "Разрешить набор СС в Италии".
+SS_recruitment_CAF11:0 "Разрешить вербовку СС на Украине".
+SS_recruitment_CAF12:0 "Разрешить набор СС в Финляндии".
+SS_recruitment_CAF13:0 "Разрешить вербовку СС в Швейцарии".
+SS_recruitment_CAF14:0 "Разрешение СС на формирование легиона Африка".
+SS_recruitment_CAF15:0 "Разрешение формирования СС легиона Индия".
+SS_recruitment_CAF16:0 "Разрешить вербовку СС в Аргентине".
+SS_recruitment_CAF17:0 "Разрешить вербовку СС в Бразилии".
+SS_recruitment_CAF18:0 "Разрешить набор СС в США".
+SS_recruitment_CAF19:0 "Разрешить набор СС в Канаде".
+SS_recruitment_CAF20:0 "Разрешение на вербовку СС в Сюд-Африке."
+
+ ##BOOKMARKS
+ POR_GATHERING_STORM_DESC:0 "Португалия-когда-то процветающая империя, которая вместе с Испанией разделила мир пополам благодаря своим исследователям и колонистам, но теперь это разлагающаяся страна, загнанная за кулисы мировой политики. Дорога к славе будет нелегкой, и море может оказаться таким же коварным, как и столетия назад. у португала впереди много путей - будут ли они преследовать его былую славу и, возможно, еще большие высоты, или же они просто будут работать над тем, чтобы пережить грядущую бурю?"
+ POR_BLITZKRIEG_DESC:0 "Португалия-когда-то процветающая империя, которая вместе с Испанией разделила мир пополам благодаря своим исследователям и колонистам, но теперь это разлагающаяся страна, загнанная за кулисы мировой политики. Дорога к славе будет нелегкой, и море может оказаться таким же коварным, как и столетия назад. у португала впереди много путей - будут ли они преследовать его былую славу и, возможно, еще большие высоты, или же они просто будут работать над тем, чтобы пережить грядущую бурю?"
+ ##END
+ ##DIPLOMACY
+ por_supported_spain_civil_war:0 "Добровольцы в гражданской войне"
+iber_pact:0 «Иберийский Договор»
+afraid_colonization:0 "Боится иберийского вторжения"
+iberian_interests:0 "Бывшая иберийская колония"
+POR_mission_soviet_union:0 "Миссия Советского Союза"
+POR_mission_germany:0 «Немецкое Лузу сотрудничество»
+POR_british_coop:0 «Британский Лузу союз»
+POR_pink_map_positive:0 "Виндзорский договор"
+POR_pink_map_negative:0 «Португальский ультиматум»
+ ##END
+ scw_over:0 "Испанская гражданская война окончилась"
+ ##PARTIES
+ POR_neutrality_party_king_long:0 "Лузитанский интегализм"
+ POR_neutrality_party_king:0 "Лузитанский интегализм"
+ ##TECH SHARING
+ kingdom_research:0 "Иберийская исследовательская группа"
+kingdom_research_name:0 "Иберийская исследовательская группа"
+kingdom_research_desc:0 "Более эффективное проведение НИОКР военного времени"
+##TRAITS
+diplomat:0 «Дипломат»
+protected_by_god:0, «Защищенный Богом»
+minister_president:0 «Полномочия президента»
+royal_blood:0 «Руаяль Блад»
+
+MEN_mongal_council:0 «Монгольский совет»
+MEN_mongal_council_long:0 «Китайско-монгольский совет»
+
+## misc ##
+night_vision_research:0 "Время исследования ночного видения"
+support_tech_research:0 "Время технической поддержки"
+preserve:0 «Самосохранение»
+mountain_warfare:0 «Горная Война»
+tech_support:0 «Технология Поддержки»
+
+#descripts
+
+#opinions
+raaf_assistance:0 «R.A.A.F. Помощь»
+denied_freedom:0 «Отрицаемая свобода»
+
+#autonomy
+INS_navy_reforms:0 «Морские реформы»
+INS_army_reforms:0 «Армейские реформы»
+INS_science_reforms:0 «Научные реформы»
+INS_economy_reforms:0 «Экономические реформы»
+INS_political_reforms:0 «Политические реформы»
+
+#company
+knilm:0 «Королевские голландские Воздушные трассы Инди»
+shell:0 «Голандский королевский Shell»
+#politicians/advisors
+Дхарма: 0 "Джахья Даниэль Дхарма"
+theorist_dharma:0 "Джахья Даниэль Дхарма"
+xi:0 «Hamengkubuwana IX»
+Насуция: 0 "Абдул Харис Насуция"
+Ойен: 0 "Лудольф Хенрик ван Ойен"
+theorist_oyen:0 "Лудольф Хенрик ван Ойен"
+rai:0 «Я Нгурах-Рай Gusti»
+Реиндерхофф: 0 "Жерар Леонард Реиндерхофф"
+soemohardjo:0 «Oerip Soemohardjo»
+Straten: 0 "Нико Леонард Виллем ван Стратен"
+sudirman:0 «Судирмен»
+semaun:0 «Semaun»
+hatta:0 «Мохаммад Хэтта»
+sutomo:0 «Sutomo»
+Кан: 0 "Хок Хоуи Кан"
+Береншот: 0 "Герардус Йоханнес Береншот"
+advisor_spoor:0 «След Саймона»
+advisor_helfrich:0 «Конрад Хелфрич»
+Asjes: 0 "Дирк Лукас Асьес"
+Крэп: 0 "Чарльз Дью ван дер Крэп"
+salim:0 «Агус Салим»
+Порте: 0 "Питер де ла Порте"
+hoogland:0 «Рене Оглан»
+doorman:0 «Швейцар Карела»
+soejono:0 «Ario Soejono»
+Девантара: 0 "Ги Хаджар Девантара"
+Mook: 0 "Хубертус Ван Мук"
+sutardjo:0 «Sutardjo Kertohadikusumo»
+
+### slots stuff ###
+aware_unavailable_idea:0 "Недоступный"
+aware_unavailable_idea_desc:0 "Этот механик недоступен для вашей страны (пока)\n" Text "All"
+cg_false:0 "Нецентральное правительство Китая"
+cg_true:0 "Центральное правительство Китая"
+jap_awareness:0 «Японская осведомленность»
+central_gov_binary:0 "Статус центрального правительства"
+jap_aware_0_desc:0 "Японцы не знают о нашем плане.\n" Text "All"
+cg_true_low:0 «Низкая Законность»
+
+
+### misc ###
+shitty_furnace:0 «Печь Заднего двора»
+immature_steelmaking_furnace:0 «Печь Заднего двора»
+immature_steelmaking_furnace_desc:0 "Это здание предоставляет государству"
+immature_steelmaking_furnace_amount:0 «$VALUE|Y0=$»
+immature_steelmaking_furnace_resource:0 «£resources_strip|$FRAME$»
+kmt.64.a_tt:0 "Если они принимают:"
+
+kmt_tibet_add_to_faction_if_any:0 «§YTibet§! Присоединяется к фракции, если § Y [Root.GetName] §! Является лидером фракции.\n "Text" All "
+kmt_coastal_bunker_sd_tt:0 "Добавить § Y2 береговые форты §! в §YWeihaiwei§! и §YQingdao§!\n»
+kmt_coastal_bunker_zhej_tt:0 "Добавить § Y2 береговые форты §! в §YHangzhou§!, §YNingbo§! и §YWenzhou§!\n»
+kmt_coastal_bunker_sh_tt:0 "Добавить § Y4 береговые форты §! в §YShanghai§!\n»
+kmt_coastal_bunker_fj_tt:0 "Добавить § Y2 береговые форты §! в §YXiamen§! и §YFuzhou§!\n»
+kmt_coastal_bunker_tj_tt:0 "Добавить § Y2 береговые форты §! в §YTianjin§!\n»
+
+ tactic_dtd_operation_attack:0, «Обрамляющий Маневр»
+political.9.d_nl:0 "Некоторые скажут, что ожидали этого. И те, кто предостерегал от опасностей фашизма, и те, кто превозносил его как спасителя [Root.GetName], нашли свои пророчества, сделанные сегодня, как [Root.GetLeader] в [Root.Capital.GetName] объявил, что [CHI.GetName] пойдет по фашистскому пути. Все противоборства немедленно замалчиваются в часах.\n\n [Root.GetLeader] тоже не планирует позволять сопротивлению расти. Военное положение объявлено и с теми изменениями, которые идут, что бы ни произошло после, вряд ли будет совсем другим ".
+political.18.d_nl:1 "Быстро растущее фашистское движение никогда не утверждало, что им нужна поддержка большинства, прежде чем они захватят власть. Однако, похоже, их общественная поддержка стремительно росла. [Корень. GetLeader] теперь призывает к переходу в фашизм \n\nThe, призывают к референдуму, был отклонен как типичные попытки разрушения системы частью из [Корень. GetRulingParty] члены до сих пор, но это возмутило [Корень. GetLeader] значительно. Если мы не будем действовать сейчас, [Root.GetLeader] может выбрать жестокую борьбу как лучший путь к власти ".
+political.10.d_nl:1 "Хотя попытки фашистского движения возродить националистические настроения видели некоторый успех, сопротивление этим идеям остаётся высоким. [Root.GetLeader] разочарован отсутствием уверенности в том, что население [Root.GetAdjustice] само, похоже, находится в [Root.GetLeader].\n\n [Root.GetLeader] остается уверенным в том, что народ в конечном итоге подхватит чувство гордости, но сомневается, какой курс действий предпринять. Некоторые из сторонников призывают совершить переворот сейчас, прежде чем враги [Root.GetName] примут меры. Однако, если общественная поддержка будет ограничена, это ввергнет нацию в гражданскую войну. "
+KMT_ig_faben:0 «IG Цвета»
+KMT_krupp:0 «Крупп»
+KMT_rheinmetall:0 «Рейнметалл»
+Hanyang_armory:0 «Арсенал Ханьяна»
+the_peoples_tutelage:0 «Народная Опека»
+the_peoples_tutelage_desc:0 "Народная опека - фаза развития Китая, заложенная Сунь Ятсеном. На этом этапе Гоминьдан правит Китаем как единым партийным государством, развивая страну и готовя свой народ к демократии ".
+KMT_mauser:0 «Маузер»
+KMT_army_ordnance_department:0 "Управление боеприпасов армии США"
+KMT_hanyang_arsenal_tank:0 «Арсенал Ханьяна»
+Фалькенхаузен: 0 "Александр фон Фалькенхаузен"
+german_training:0 «Немецкий советник»
+true_marxist_lennenist:0 "Истинный марксист-ленинец" # название фракции, лол
+KMT_trick_war:0 "Китай объявил Японии неожиданную войну"
+JAP_toseiha_trait:0 "Тосеха во власти"
+JAP_toseiha_trait_chi_ally:0 "Тосеха во власти"
+JAP_kodoha_trait:0 "Кодоха во власти"
+JAP_kodoha_trait_chi_ally:0 "Кодоха во власти"
+ JAP_kodoha:0 "Кодоха"
+ JAP_toseiha:0 "Тосейха"
+ JAP_taiseiyokusankai:0 "Тайсей Йокусанкай"
+ ya_zhou_lian_meng:0 "Да Донг Я Гун Ронг Цюань"
+ autonomy_warlords:0 "Военачальник"
+ taiyuan_artillery:0 "Тайюань артиллерии"
+ hanyang_rifles:0 "Винтовки Ханьян"
+ CKS_regime:0 "Гоминьдан"
+
+ prc_nation_founded:0 "Мы основали нашу нацию."
+ lin_biao:0 "Линь Бяо захватил власть"
+ deng_xiao_ping:0 "Дэн Сяопин захватил власть"
+ prc_capital_decided:0 "Мы уже определились с нашим капиталом"
+ CR_ended:0 "Культурная революция закончилась"
+ death_of_zel:0 "Чжоу Эньлай скончался"
+ month_countercurrent:0 "Был подвергнут критике во время культурной революции"
+ prc_annex_chi_integration:0 "Интегрированное правительство"
+ cultural_revolution:0 "Идет культурная революция"
+ ## 8/2/2017 ##
+ PRC_zxl_purge:0 "Казнён Чжан Сюэляном"
+ PRC_enable_cdx:0 "Чэнь Дукисю вернулся"
+## 9/2/2017 ##
+ PRC_no_wargoal_to_chi_with_gnwu:0 "Брошенная античианская цель"
+ PRC_yhc_enable:0 "Объединенный"
+ ## 13/2/2017 ##
+ has_pact_with_jap_tt:0 "Имеет договор с [JAP.GetName]"
+ ## 16/2/2017 ##
+ PRC_zxl_purge:0 "Исполнено Чжан Сюэляном"
+ ## 17/2/2017 ##
+ chi_accept_prc71_tt:0 "[CHI.GetName] принял наше предложение"
+ ## 18/2/2017 ##
+ no_rescue_zhang:0 "Не надо спасать Чжан Сюэляна"
+ xian_incident_started:0 "В Сиане начался инцидент"
+ ## 20/2/2017 ##
+ cdx_returned:0 "Чэнь Дусю вернулся"
+ ## 27/2/2017 ##
+ PRC_zxl_as_leader:0 "Чжан Сюэлян когда-то пришел к власти"
+ ## 24/4/2017 ##
+ PRC_yes_truce:0 "Договорились прекратить все гражданские войны."                                  
+ 
+ UMC_JCD_pacific_guardian_sharing:0 "Тайхейё Гунджи Кэнкю Кюряку"
+ UMC_JCD_pacific_guardian_sharing_desc:0 ""
+ 
+ UMC_JCD_pacific_civilian_sharing:0 «Тайхейё Минкан Кэнкю Кюряку»
+ UMC_JCD_pacific_civilian_sharing_desc:0»»
+ BRA_nero_fiuza_de_castro_vfb:0 "Альваро Фиуза де Кастро"
+ BRA_joao_neves_da_fontoura_vfb:0 "Жуан Невес да Фонтура"
+ BRA_salgado_filho_vfb:0 "Хоаким Педро Сальгадо Фильо"
+ BRA_armando_trompowsky_vfb:0 "Армандо Фигейра Тромповский де Алмейда"
+ BRA_aristides_guilhem_vfb:0 «Хенрик Аристайдс Гилхем»
+ BRA_pedro_max_vfb:0 "Педро Макс Фернандо Фронтин"
+ BRA_protogenes_guimaraes_vfb:0 «Протохенес Гимарайнш»
+ BRA_moreira_lima_vfb:0 "Октавио Жулио Морейра Лима"
+ BRA_artur_da_costa_e_silva_vfb:0 "Артур да Коста э Силва"
+ BRA_francisco_correa_vfb:0 "Франсиско де Ассис Коррея де Мелло"
+ BRA_epaminondas_dos_santos_vfb:0 "Эпаминондас Гомеш дос Сантос"
+ BRA_eduardo_gomes_vfb:0 «Эдуардо Гомеш»
+ BRA_newton_cavalcanti_vfb:0 "Ньютон де Андраде Кавальканти"
+ 
+ #Tooltips
+ AST_ANZ_union_deformation_tt:0 «Выпуск §YНовая Зеландия§!\n»
+ AST_swpa_protector_singapore_tt:0 «земля §YSingapore:§!\n-§R5 Forts§! Будут добавлены в линию вдоль Северной и Южной резервных линий\n\n- § M4 Прибрежные форты §! Будет добавлен вдоль береговой линии\n\n- § M2 Прибрежный форт §! Будет добавлен к каждому порту\n\n- § Y3 Anti-Air §! Здания будут построены\n\n- § Y2 авиабазы §! будет built\n\n»
+ AST_swpa_protector_north_borneo_tt:0 «§YNorth Borneo:§!\n-§M4 прибрежный Forts§! Будет добавлен вдоль береговой линии\n\n- § M2 Прибрежный форт §! Будет добавлен к каждому порту\n\n- § Y1 Anti-Air §! Здание будет построено "Text" All "
+ AST_island_defense_tt:0 "Добавление § M3 прибрежных фортов §! Вдоль § GAustralian Coast §!, и добавляет дополнительный § M2 Прибрежные форты §! на §YPorts§!."
+ AST_a_king_for_our_people_trigger_tt:0 «Король Эдвард был сослан»
+ AST_australian_empire_tt:0 «§GAustralia§! Будет называться § GAustralian Empire §!\n "Text" All "
+ AST_preemptive_defence_tt:0 "О государствах, которые § RMalaya §!, § LIndonesia §!, или § GAustralia §! Иметь полный контроль над следующим:\n\n- § M2 Прибрежные форты §! Будет добавлен вдоль береговой линии\n\n- § M1 Прибрежный форт §! Будет добавлен к каждому порту\n\n- § YAnti-Air §! Здания будут добавлены к различным состояниям, выравниваемым по разработкам\n\n- § YAir Bases §! Будут добавлены в стратегические позиции\n\n "Text" All "
+ AST_preemptive_defence_singapore_fallback_tt:0 «земля §YSingapore:§!\n-§R5 Forts§! Будет добавлен в линию вдоль Северной и Южной резервных линий "
+ AST_claims_on_western_powers_tt:0 «\nUnlocks территориальные требования §RBritish§!, §MFrench§!, и §GPortuguese§! Государства, проживающие в Тихом океане > >.
+ AST_supports_australia:0 «§GSupports Australia§!\n»
+ AST_guarantee_all_helped_subjects:0 "Мы гарантируем всем подданным Великобритании, которым мы помогли обрести независимость\n"
+ AST_wargoals_against_all_former_subjects:0 "Мы получим марионеточные военные цели против всех освобожденных субъектов\n"
+ 
+ 
+    #British State Control Tooltips
+    AST_controls_fiji_tt:0 «Управляет §GFiji§!\n»
+    AST_controls_gilbert_islands_tt:0 "Управление § островами Гильберта §!\n" Text "All"
+    AST_controls_ellice_islands_tt:0 «управляет §GEllice Islands§!\n»
+    AST_controls_christmas_island_tt:0 «управляет §GChristmas Island§!\n»
+    AST_controls_cocos_islands_tt:0 «управляет §GCocos Islands§!\n»
+    AST_controls_nauru_tt:0 «Управляет §GNauru§!\n\n»
+    AST_demand_british_swpa_islands_tt:0 "Мы направим ультиматум стране или странам, которые владеют первоначальным § YBritish SWPA Islands §!.\n § RThe получающая страна находится в состоянии войны с крупным или капитулировавшим, повышает шансы на их принятие. §!\n\n" Text "All"
+
+    # Подсказки для государственного управления Франции
+    AST_controls_new_caledonia_tt:0 «управляет §GNew Caledonia§!\n»
+    AST_controls_tahiti_tt:0 «Управляет §GTahiti§!\n»
+    AST_controls_kerguelen_tt:0 «Управляет §GKerguelen§!\n»
+    AST_controls_nendo_tt:0 «Управляет §GNendo§!\n\n»
+    AST_demand_french_swpa_islands_tt:0 "Мы направим ультиматум стране или странам, которые владеют первоначальным § YFrench SWPA Islands §!.\n § RThe получающая страна находится в состоянии войны с крупным или капитулировавшим, повышает шансы на их принятие. §!\n\n" Text "All"
+
+   # Всплывающая подсказка по управлению португальским Тимором
+   AST_controls_portuguese_timot_tt:0 «Управляет §GPortuguese Timor§!\n\n»
+   AST_demand_portuguese_timor_tt:0 "Мы направим ультиматум стране, которая владеет § YProtuguese Тимор §!.\n § RThe получающая страна находится в состоянии войны с крупным или капитулировавшим, увеличивает шансы на их принятие. §!\n\n" Text "All"
+ #Events
+
+ #Decisions
+ #Immigration
+ 
+ 
+ #Tech Sharing
+ colonial_research_name:0 "Колониальное исследование"
+ colonial_research_desc:0 "Сокращено время исследований технологий, исследуемых австралийскими колониями."
+ 
+ 
+ #Opinion Modifiers
+ AST_accepted_indonesian_migrants:0 "Принятые Индонезийские мигранты"
+ AST_accepted_british_refugees:0 "Принятые Британские беженцы"
+ AST_australian_independence_movement:0 "Австралийское движение за независимость"
+ AST_australian_betrayal:0 "Австралийское предательство"
+ ##########
+ ##Canada##
+ ##########
+ 
+ #Focus
+
+ #Tooltips
+ CAN_western_canadian_oil_extracted_tt:0 «Западная канадская Нефть был извлечен»
+ CAN_aluminum_company_of_canada_subsidized_tt:0 "Алюминиевая компания Канады получила субсидирование"
+ CAN_turner_valley_oilfield_developed_tt:0 "Развить нефтяное месторождение Тернерской долины"
+ CAN_canadian_special_forces_tt:0 "Включает § HCanadian Специальные силы §!\n § HInfantry\n Лес §!\n Атака: § G 5% §!\n Защита: § G 10% §!\n Движение: § G 10% §!\n § HMontainers\n Гора §!\n Атака: § G 5% §!
+ CAN_accept_loans_tt:0 "§ RBy принимая это вы соглашаетесь погасить кредиты в будущем, когда ваша экономика будет лучше. §!\n" Text "All"
+ CAN_cut_loans_tt:0 "§ RBy сокращение наших кредитов на [USA.GetNameDef] мы не сможем просить о льготах в будущем. §!\n" Text "All"
+ CAN_defence_behind_the_albany_river_tt:0 «Добавляет, что §R3 сажают Forts§! Вдоль восточной стороны реки Олбани в Северном Онтарио\n "Text" All "
+ available_aircraft_manufacturer:0, «Доступный как §YAircraft Manufacturer§!:\n»
+ CAN_this_may_lead_to_war_tt:0 «§RThis может привести к войне §!\n»
+ CAN_payment_selected:0 «Выбрал оплату»
+ CAN_has_revived_the_canada_wheat_board_tt:0 "Возродил Совет по пшенице Канады"
+ CAN_us_deny_payments_tt:0 "§ RWe может отклонить только два из трех предложений, если мы не находимся во фракции с [CAN.GetNameDef] или не имеем полного контроля над Аляской или Линейными островами. Для которых мы можем отказать только одному. §!\n "Text" All "
+ CAN_canadian_red_ensign_tt:0 «§RCanadian Красный Ensign§! Станет официальным флагом [CAN.GetNameDef] "
+ CAN_maple_leaf_tt:0 «§RMaple Leaf§! Флаг станет официальным флагом [CAN.GetNameDef] "
+ 
+    #French Saint Pierre and Miquelon
+    CAN_controls_saint_pierre_and_miquelon_tt:0 "Управление §GSaint Pierre and Miquelon§!\n\n"
+    CAN_demand_saint_pierre_and_miquelon_tt:0 "Мы отправим ультиматум стране, которой принадлежат Исэн-Пьер и Микелон!.принимающая страна, находящаяся в состоянии войны с майором или капитулировавшая, увеличивает шансы на их принятие.§!\n\n"
+    CAN_controls_greenland_tt:0 "Управление §GGreenland§!\n"
+    CAN_controls_iceland_tt:0 "Управления §GIceland§!\n\n"
+    CAN_demand_nordic_islands_tt:0 "Мы отправим ультиматум стране или странам, которые владеют этими островами!.принимающая страна, находящаяся в состоянии войны с майором или капитулировавшая, увеличивает шансы на их принятие.§!\n\n"
+    
+ 
+ #Events
+
+ #Cosmetic Tags
+ CAN_canadian_empire_fascism:0 "Канадская империя"
+ CAN_canadian_empire_fascism_DEF:0 "Канадская империя"
+ CAN_canadian_empire_fascism_ADJ:0 "Канадский"
+ 
+ #Decisions
+ #Immigration
+ 
+ #Opinion Modifiers
+ CAN_seized_labrador_and_newfoundland:0 "Захватили Лабрадор и Ньюфаундленд"
+ CAN_accepted_british_refugees:0 "Принятые Британские беженцы"
+ CAN_war_plan_red_leaked:0 "Просочился Красный план войны"
+
+ ###############
+ ##New Zealand##
+ ###############
+ 
+ #Focus
+
+ #Ideas
+ 
+ #Tooltips
+ NZL_island_defense_tt:0 "Добавление § M3 прибрежных фортов §! Вдоль § YNew Zealand Coast §!, и добавляет дополнительный § M2 Прибрежные форты §! на §YPorts§!.\n»
+ 
+ #Events
+
+ #Decisions
+ #Immigration
+
+ #Opinion Modifiers
+ NZL_accepted_british_refugees:0 "Принятые Британские беженцы"
+ 
+ 
+ ################
+ ##South Africa##
+ ################
+ 
+ #Tooltips
+ SAF_coastal_defense_tt:0 "Добавление § M3 прибрежных фортов §! Вдоль § YSoth африканского побережья §!, и добавляет дополнительный § M 2 Прибрежные форты §! на §YPorts§!.\n»
+ 
+ #Events
+ 
+ ##########
+ ##Traits##
+ ##########
+ 
+ AST_a_king_for_our_people:0 "Король для нашего народа"
+ AST_support_for_war_effort:0 "Поддержка военных усилий"
+ NZL_appeasement_opposition:0 "Умиротворение оппозиции"
+ NZL_war_above_all_else:0 "Война превыше всего"
+ 
+ ################
+ #TFV Overhauled#
+ ################
+ 
+ ###############
+ ##News Events##
+ ###############

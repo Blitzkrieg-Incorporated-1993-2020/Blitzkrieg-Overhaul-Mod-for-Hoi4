@@ -1,0 +1,339 @@
+﻿division_template = {
+	name = "Minami Heishi 2"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }		
+	}
+}
+
+units = {
+	division = {
+		name = "Marayan Shinryaku-gun 14"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 16"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 12"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 14"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 16"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 12"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 14"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 16"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 12"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 14"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 16"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 12"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 14"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 16"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 12"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 14"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 16"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 12"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 14"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 16"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 12"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 14"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 16"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 12"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 14"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 16"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 12"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 14"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 16"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 12"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 14"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 16"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 12"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 14"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 16"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Marayan Shinryaku-gun 12"
+		location = 4075
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+} 

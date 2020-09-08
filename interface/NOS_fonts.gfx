@@ -1,0 +1,123 @@
+spriteTypes = {
+	bitmapfont = {
+		name = "vic_22_bl"
+		#path = "gfx/fonts/terminal_12"
+		fontfiles = {
+			"gfx/fonts/vic_22_bl"
+		}
+		#color = 0x0f0f0f
+		color = 0xffffffff
+		
+		textcolors = {
+			G = { 86 172 91 }
+			R = { 222 86 70 }
+			Y = { 238 201 35 }
+			H = { 238 201 35 }
+			T = { 255 255 255 }
+		}
+	}
+	
+	bitmapfont = {
+		name = "headline21"
+		#path = "gfx/fonts/terminal_12"
+		fontfiles = {
+			"gfx/fonts/headline21"
+		}
+		#color = 0x0f0f0f
+		color = 0xffffffff
+		
+		textcolors = {
+			G = { 86 172 91 }
+			R = { 222 86 70 }
+			Y = { 238 201 35 }
+			H = { 238 201 35 }
+			T = { 255 255 255 }
+		}
+	}
+	bitmapfont = {
+		name = "over_the_rainbow_16"
+		#path = "gfx/fonts/terminal_12"
+		fontfiles = {
+			"gfx/fonts/over_the_rainbow_16"
+		}
+		#color = 0x0f0f0f
+		color = 0xffffffff
+		
+		textcolors = {
+			G = { 86 172 91 }
+			R = { 222 86 70 }
+			Y = { 238 201 35 }
+			H = { 238 201 35 }
+			T = { 255 255 255 }
+		}
+	}
+	bitmapfont = {
+		name = "Zai_17"
+		#path = "gfx/fonts/terminal_12"
+		fontfiles = {
+			"gfx/fonts/Zai_17"
+		}
+		#color = 0x0f0f0f
+		color = 0xffffffff
+		
+		textcolors = {
+			G = { 86 172 91 }
+			R = { 222 86 70 }
+			Y = { 238 201 35 }
+			H = { 238 201 35 }
+			T = { 255 255 255 }
+		}
+	}
+	bitmapfont = {
+		name = "STAMP_ALL_CAPS_17"
+		#path = "gfx/fonts/terminal_12"
+		fontfiles = {
+			"gfx/fonts/STAMP_ALL_CAPS_17"
+		}
+		#color = 0x0f0f0f
+		color = 0xffffffff
+		
+		textcolors = {
+			G = { 86 172 91 }
+			R = { 222 86 70 }
+			Y = { 238 201 35 }
+			H = { 238 201 35 }
+			T = { 255 255 255 }
+		}
+	}
+	bitmapfont = {
+		name = "STAMP_ALL_CAPS_15"
+		#path = "gfx/fonts/terminal_12"
+		fontfiles = {
+			"gfx/fonts/STAMP_ALL_CAPS_15"
+		}
+		#color = 0x0f0f0f
+		color = 0xffffffff
+		
+		textcolors = {
+			G = { 86 172 91 }
+			R = { 222 86 70 }
+			Y = { 238 201 35 }
+			H = { 238 201 35 }
+			T = { 255 255 255 }
+		}
+	}
+	bitmapfont = {
+		name = "Orwell_16"
+		#path = "gfx/fonts/terminal_12"
+		fontfiles = {
+			"gfx/fonts/Orwell_16"
+		}
+		#color = 0x0f0f0f
+		color = 0xffffffff
+		
+		textcolors = {
+			G = { 86 172 91 }
+			R = { 222 86 70 }
+			Y = { 238 201 35 }
+			H = { 238 201 35 }
+			T = { 255 255 255 }
+		}
+	}
+	
+}

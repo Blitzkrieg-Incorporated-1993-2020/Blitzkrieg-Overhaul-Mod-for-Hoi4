@@ -1,0 +1,22 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_sl_george_v"
+		texturefile = "gfx/interface/GFX_sl_george_v.dds"
+	}
+	spriteType = {
+		name = "GFX_sl_george_v_old"
+		texturefile = "gfx/interface/GFX_sl_george_v_old.dds"
+	}
+	spriteType = {
+		name = "GFX_sl_edward_viii"
+		textureFile = "gfx/interface/GFX_sl_edward_viii.dds"
+	}
+	spriteType = {
+		name = "GFX_sl_george_vi"
+		textureFile = "gfx/interface/GFX_sl_george_vi.dds"
+	}
+	spriteType = {
+		name = "GFX_sl_elizabeth_ii"
+		textureFile = "gfx/interface/GFX_sl_elizabeth_ii.dds"
+	}
+}

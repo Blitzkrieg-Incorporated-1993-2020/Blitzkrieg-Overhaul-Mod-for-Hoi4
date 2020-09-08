@@ -1,0 +1,197 @@
+﻿division_template = {
+	name = "Minami Heishi 2"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }		
+	}
+	support = {
+       	engineer = { x = 0 y = 0 }
+       	recon = { x = 0 y = 1 }
+       	artillery = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Minami Heishi to Jidōsha 2"
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+	    motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 0 y = 3 }		
+		motorized = { x = 1 y = 0 }
+	    motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 1 y = 3 }		
+	}
+	support = {
+	 	engineer = { x = 0 y = 0 }
+        recon = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Sōkō Minami Heishi 2"
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 0 y = 2 }
+		light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1}
+       	mechanized = { x = 2 y = 0 }
+	}
+	support = {
+        recon = { x = 0 y = 0 }
+        engineer = { x = 0 y = 1 }
+        artillery = { x = 0 y = 2 }
+	}
+}
+
+units = { 
+	division = {
+		name = "Firipin Shinryaku-gun 4"
+		location = 7284
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Mōtā Firipin Shinryaku-gun 1"
+		location = 10328
+		division_template = "Minami Heishi to Jidōsha 2" 
+		start_equipment_factor = 1
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+			motorized_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Tanku Firipin Shinryaku-gun 1"
+		location = 13791
+		division_template = "Sōkō Minami Heishi 2"
+		force_equipment_variants = {
+			lt_equipment_0 = { owner = "JAP" creator = "JAP" }
+			mechanized_equipment_1 = { owner = "JAP" creator = "JAP" }
+			motorized_equipment_1 = { owner = "JAP" creator = "JAP" }
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	} 
+	division = {
+		name = "Firipin Shinryaku-gun 2"
+		location = 1234
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Firipin Shinryaku-gun 3"
+		location = 4241
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Firipin Shinryaku-gun 3"
+		location = 4241
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Firipin Shinryaku-gun 3"
+		location = 4241
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Firipin Shinryaku-gun 4"
+		location = 7284
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	} 
+	division = {
+		name = "Firipin Shinryaku-gun 6"
+		location = 1293
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Firipin Shinryaku-gun 7"
+		location = 1340
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	} 
+	division = {
+		name = "Firipin Shinryaku-gun 9"
+		location = 1388
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Firipin Shinryaku-gun 10"
+		location = 4233
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Firipin Shinryaku-gun 11"
+		location = 7439
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+	division = {
+		name = "Firipin Shinryaku-gun 12"
+		location = 4214
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	} 
+	division = {
+		name = "Firipin Shinryaku-gun 14"
+		location = 4368
+		division_template = "Minami Heishi 2"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "JAP" creator = "JAP" }
+			artillery_equipment_1 = { owner = "JAP" creator = "JAP" }
+		}
+	}
+}

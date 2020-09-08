@@ -1,0 +1,45 @@
+﻿
+units = {
+	division = {
+		name = "6th SS Mountain Division 'Nord'"
+		location = 6521
+		division_template = "SS Waffen-Grenadier-Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "9th SS Panzer Division 'Hohenstaufen'"
+		location = 6521
+		division_template = "SS Panzer Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "10th SS Panzer Division 'Frundsberg'"
+		location = 6521
+		division_template = "SS Panzer Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "12th SS Division 'Hitlerjugend'"
+		location = 6521
+		division_template = "SS Motorisierte Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "16th SS Panzergrenadier Division 'Reichsführer-SS'"
+		location = 6521
+		division_template = "SS Motorisierte Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "17th SS Panzergrenadier Division 'Götz von Berlichingen'"
+		location = 6521
+		division_template = "SS Motorisierte Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+}

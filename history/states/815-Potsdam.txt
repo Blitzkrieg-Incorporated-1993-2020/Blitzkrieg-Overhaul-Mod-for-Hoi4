@@ -1,0 +1,22 @@
+state={
+	id=815
+	name="STATE_815"
+
+	history={
+		owner = GER
+		buildings = {
+			infrastructure = 7
+			arms_factory = 1
+
+		}
+		add_core_of = GER
+
+	}
+
+	provinces={
+		375 3367 3499 11219 
+	}
+	manpower=719913
+	buildings_max_level_factor=1.000
+	state_category=town
+}

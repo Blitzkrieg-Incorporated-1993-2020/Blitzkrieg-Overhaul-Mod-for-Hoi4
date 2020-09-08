@@ -1,0 +1,31 @@
+﻿
+units = {
+	division = {
+		name = "32nd SS Volunteer Grenadier Division '30 Januar'"
+		location = 6521
+		division_template = "SS Waffen-Grenadier-Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "35th SS-Police Grenadier Division"
+		location = 6521
+		division_template = "SS Waffen-Grenadier-Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "SS-Sturmbrigade Dirlewanger"
+		location = 6521
+		division_template = "SS Waffen-Grenadier-Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "38th SS Division 'Nibelungen'"
+		location = 6521
+		division_template = "SS Waffen-Grenadier-Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+}

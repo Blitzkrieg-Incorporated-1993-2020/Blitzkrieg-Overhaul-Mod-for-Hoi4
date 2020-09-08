@@ -1,0 +1,50 @@
+﻿division_template = {
+	name = "Śródmieście-Północ"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }		
+	}
+	support = {
+       	recon = { x = 0 y = 1 }
+	}
+}
+
+units = { 
+	division = {
+		name = "Chrobry II"
+		location = 3544
+		division_template = "Śródmieście-Północ"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "POL" creator = "GER" }
+		}
+	}
+	division = {
+		name = "Gurt"
+		location = 3544
+		division_template = "Śródmieście-Północ"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "POL" creator = "GER" }
+		}
+	}
+	division = {
+		name = "Kiliński"
+		location = 3544
+		division_template = "Śródmieście-Północ"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "POL" creator = "GER" }
+		}
+	}
+	division = {
+		name = "Harnasie"
+		location = 3544
+		division_template = "Śródmieście-Północ"
+		force_equipment_variants = {
+			infantry_equipment_0 = { owner = "POL" creator = "GER" }
+		}
+	}
+}
