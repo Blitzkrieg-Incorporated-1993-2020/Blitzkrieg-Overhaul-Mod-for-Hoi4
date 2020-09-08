@@ -1,0 +1,7 @@
+spriteTypes = {
+    SpriteType = {
+		name = "GFX_USA_Senate_strip"
+		texturefile = "gfx/interface/USA_senate_Strip.dds"
+		noOfFrames = 4
+	}
+ }
