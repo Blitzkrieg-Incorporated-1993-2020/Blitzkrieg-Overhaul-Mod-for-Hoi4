@@ -556,9 +556,9 @@ focus = {
 focus = {
 	id = FRA_ban_the_communist_party
 	icon = GFX_focus_generic_treaty
-	prerequisite = { focus = FRA_war_powers focus = FRA_administrative_reforms}
+	prerequisite = { focus = FRA_war_powers focus = FRA_administrative_reforms focus = FRA_comission_firearms}
 	relative_position_id = FRA_administrative_reforms
-	x = 2
+	x = 3
 	y = 1
 	cost = 10
 	ai_will_do = {
@@ -593,7 +593,7 @@ focus = {
 	id = FRA_modernize_counter_intelligence
 	icon = GFX_focus_generic_treaty
 	prerequisite = { focus = FRA_laval_decree }
-	relative_position_id = FRA_administrative_reforms
+	relative_position_id = FRA_laval_decree
 	x = 0
 	y = 1
 	cost = 10
