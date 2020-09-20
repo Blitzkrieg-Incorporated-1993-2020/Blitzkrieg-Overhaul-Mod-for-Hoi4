@@ -1,0 +1,528 @@
+﻿##############################
+##TFV Overhauled News Events##
+##############################
+
+add_namespace = tfvo_news
+
+# Fascist path NZL annexes Australia - Fired from event tfv_new_zealand.7
+news_event = {
+	id = tfvo_news.1
+	title = tfvo_news.1.t
+	desc = tfvo_news.1.desc
+	picture = GFX_news_event_generic_army
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfvo_news.1.a
+		trigger = {
+			NOT = {
+				tag = NZL
+				tag = ENG
+			}
+			NOT = {
+				is_in_faction_with = ENG
+			}
+		}
+	}
+	option = {
+		name = tfvo_news.1.b
+		trigger = { TAG = NZL }
+	}
+	option = {
+		name = tfvo_news.1.c
+		trigger = { 
+			OR = {
+				tag = ENG
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+# Democratic AST annexes New Zealand - Fired from event tfv_australia.97
+news_event = {
+	id = tfvo_news.2
+	title = tfvo_news.2.t
+	desc = tfvo_news.2.desc
+	picture = GFX_news_event_ANZAC_day
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfvo_news.2.a
+		trigger = {
+			NOT = {
+				tag = AST
+				tag = ENG
+			}
+			NOT = {
+				is_in_faction_with = ENG
+			}
+		}
+	}
+	option = {
+		name = tfvo_news.2.b
+		trigger = { tag = AST }
+	}
+	option = {
+		name = tfvo_news.2.c
+		trigger = {
+			NOT = { 
+				tag = AST 
+			}
+			OR = {
+				tag = ENG
+				is_in_faction_with = ENG
+			}
+		}
+	}
+	option = {
+		name = tfvo_news.2.d
+		trigger = { tag = JAP }
+	}
+}
+
+# King Eddy takes conrtrol of Australia
+news_event = {
+	id = tfvo_news.3
+	title = tfvo_news.3.t
+	desc = tfvo_news.3.desc
+	picture = GFX_news_event_king_speech
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfvo_news.3.a
+		trigger = {
+			NOT = {
+				tag = AST
+				tag = ENG
+			}
+			NOT = {
+				is_in_faction_with = ENG
+			}
+		}
+	}
+	option = {
+		name = tfvo_news.3.b
+		trigger = { tag = AST }
+	}
+	option = {
+		name = tfvo_news.3.c
+		trigger = {
+			NOT = { 
+				tag = AST 
+			}
+			OR = {
+				tag = ENG
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+# USA hands over Alaska to CAN's demands - CAN_demand_alaska focus
+news_event = {
+	id = tfvo_news.4
+	title = tfvo_news.4.t
+	desc = tfvo_news.4.desc
+	picture = GFX_news_event_canada_treaty
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfvo_news.4.a
+		trigger = {
+			NOT = {
+				tag = CAN
+				tag = USA
+			}
+		}
+	}
+	option = {
+		name = tfvo_news.4.b
+		trigger = { tag = CAN }
+	}
+	option = {
+		name = tfvo_news.4.c
+		trigger = { tag = USA }
+	}
+}
+
+#North American ACT
+news_event = {
+	id = tfvo_news.5
+	title = tfvo_news.5.t
+	desc = tfvo_news.5.desc
+	picture = GFX_news_event_canada_treaty
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfvo_news.5.a
+		trigger = {
+			NOT = {
+				tag = ENG
+				tag = CAN
+			}
+		}
+	}
+	option = {
+		name = tfvo_news.5.b
+		trigger = { tag = CAN }
+		add_timed_idea = { 
+			idea = CAN_newfoundlands_debt
+			days = 120
+		}
+	}
+	option = {
+		name = tfvo_news.5.c
+		trigger = { tag = ENG }
+	}
+}
+
+#Canada supports America with loans
+news_event = {
+	id = tfvo_news.6
+	title = tfvo_news.6.t
+	desc = tfvo_news.6.desc
+	picture = GFX_news_event_generic_usa_treaty
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfvo_news.6.a
+		trigger = {
+			NOT = {
+				tag = USA
+				tag = CAN
+			}
+			OR = {
+				has_government = fascism
+				has_government = communism
+				has_government = unionism
+			}
+		}
+	}
+	option = {
+		name = tfvo_news.6.b
+		trigger = { tag = CAN }
+	}
+	option = {
+		name = tfvo_news.6.c
+		trigger = { tag = USA }
+	}
+	option = {
+		name = tfvo_news.6.d
+		trigger = {
+			NOT = {
+				tag = USA
+				tag = CAN
+			}
+			OR = {
+				has_democratic_government = yes
+				has_government = neutrality
+				has_government = monarchism
+			}
+		}
+	}
+}
+
+#Inflation news event from Canada printing money
+news_event = {
+	id = tfvo_news.7
+	title = tfvo_news.7.t
+	desc = tfvo_news.7.desc
+	picture = GFX_news_event_ast_parliament_house
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfvo_news.7.a
+		trigger = {
+			NOT = {
+				tag = USA
+				tag = CAN
+			}
+			OR = {
+				has_government = fascism
+				has_government = communism
+				has_government = unionism
+			}
+		}
+	}
+	option = {
+		name = tfvo_news.7.b
+		trigger = { tag = CAN }
+	}
+	option = {
+		name = tfvo_news.7.c
+		trigger = { tag = USA }
+	}
+	option = {
+		name = tfvo_news.7.d
+		trigger = {
+			NOT = {
+				tag = USA
+				tag = CAN
+			}
+			OR = {
+				has_democratic_government = yes
+				has_government = neutrality
+				has_government = monarchism
+			}
+		}
+	}
+}
+
+#Canadian Gold Standard
+news_event = {
+	id = tfvo_news.8
+	title = tfvo_news.8.t
+	desc = tfvo_news.8.desc
+	picture = GFX_news_event_generic_parliament
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfvo_news.8.a
+		trigger = {
+			NOT = {
+				tag = USA
+				tag = CAN
+			}
+		}
+	}
+	option = {
+		name = tfvo_news.8.b
+		trigger = {
+			OR = {		
+				tag = CAN 
+				tag = USA
+			}
+		}
+	}
+}
+
+#Democratic US gives Democratic canada Alaska and The Line Islands because of loans
+news_event = {
+	id = tfvo_news.9
+	title = tfvo_news.9.t
+	desc = tfvo_news.9.desc
+	picture = GFX_news_event_generic_usa_treaty
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfvo_news.9.a
+		trigger = {
+			NOT = {
+				tag = USA
+				tag = CAN
+			}
+		}
+	}
+	option = {
+		name = tfvo_news.9.b
+		trigger = {
+			OR = {		
+				tag = CAN 
+				tag = USA
+			}
+		}
+	}
+}
+
+# Jean Batten makes trip from England to New Zealand
+news_event = {
+	id = tfvo_news.10
+	title = tfvo_news.10.t
+	desc = tfvo_news.10.desc
+	picture = GFX_news_event_nzl_jean_batten
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfvo_news.10.a
+		trigger = {
+			NOT = {		
+				tag = AST
+				tag = NZL
+			}
+		}
+	}
+	
+	option = {
+		name = tfvo_news.10.b
+		trigger = {
+			tag = AST
+		}
+	}
+	
+	option = {
+		name = tfvo_news.10.c
+		trigger = {
+			tag = NZL
+		}
+		add_stability = 0.03
+	}
+}
+
+# Jean Batten makes trip from Australia to England
+news_event = {
+	id = tfvo_news.11
+	title = tfvo_news.11.t
+	desc = tfvo_news.11.desc
+	picture = GFX_news_event_nzl_jean_batten_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfvo_news.11.a
+		trigger = {
+			NOT = {
+				tag = AST
+				tag = ENG
+				tag = NZL
+			}
+		}
+	}
+	
+	option = {
+		name = tfvo_news.11.b
+		trigger = {
+			OR = {
+				tag = AST
+				tag = ENG
+				tag = NZL
+			}
+		}
+	}
+}
+
+# England give North American islands to Canada
+news_event = {
+	id = tfvo_news.12
+	title = tfvo_news.12.t
+	desc = tfvo_news.12.desc
+	picture = GFX_news_event_canada_treaty
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfvo_news.12.a
+		trigger = {
+			OR = {
+				NOT = {
+					tag = ENG
+					is_in_faction_with = ENG
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = tfvo_news.12.b
+		trigger = {
+			OR = {
+				tag = ENG
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+# The Fall of Auckland
+news_event = {
+	id = tfvo_news.13
+	title = tfvo_news.13.t
+	desc = tfvo_news.13.desc
+	picture = GFX_news_event_nzl_auckland #change
+	
+	major = yes
+	
+#	is_triggered_only = yes
+	
+	trigger = {
+		any_country = {
+			controls_state = 284
+			NOT = { owns_state = 284 }
+		}
+		NOT = { has_global_flag = fall_of_auckland }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_auckland
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = tfvo_news.13.a
+		trigger = {
+			NOT = {
+				tag = {
+					any_country = {
+						controls_state = 284
+						NOT = { owns_state = 284 }
+					}
+				}
+				tag = {
+					any_country = {
+						owns_state = 284
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = tfvo_news.13.b
+		trigger = { 
+			tag = {
+				any_country = {
+					controls_state = 284
+					NOT = { owns_state = 284 }
+				}
+			} 
+		}
+	}
+	
+	option = {
+		name = tfvo_news.13.c
+		trigger = { 
+			tag = {
+				any_country = {
+					owns_state = 284
+				}
+			}
+		}
+	}
+}

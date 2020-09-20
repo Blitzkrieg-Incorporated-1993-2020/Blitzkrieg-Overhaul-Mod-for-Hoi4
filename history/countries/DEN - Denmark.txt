@@ -127,15 +127,17 @@ if = {
 
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = social_democracy
 	last_election = "1935.10.22"
 	election_frequency = 48
 	elections_allowed = yes
 }
 set_popularities = {
-	democratic = 97
-	fascism = 1
-	communism = 2
+    social_democracy = 50
+	democratic = 25
+	fascism = 2
+	communism = 3
+	liberal = 20
 }
 
 if = {
@@ -158,7 +160,7 @@ if = {
 
 1939.1.1 = {
 	set_politics = {
-		ruling_party = democratic
+		ruling_party = social_democracy
 		last_election = "1939.4.3"
 		election_frequency = 48
 		elections_allowed = yes
@@ -172,9 +174,9 @@ create_country_leader = {
 	desc = "POLITICS_THORVALD_STAUNING_DESC"
 	picture = "Portrait_Denmark_Thorvald_Stauning.dds"
 	expire = "1965.1.1"
-	ideology = socialism
+	ideology = moderate_social_democracy
 	traits = {
-		#
+	prime_minister	
 	}
 }
 
@@ -183,7 +185,7 @@ create_country_leader = {
 	desc = "POLITICS_FRITS_CLAUSEN_DESC"
 	picture = "Portrait_Frits_Clausen.dds"
 	expire = "1965.1.1"
-	ideology = nazism
+	ideology = fascism_ideology
 	traits = {
 		#
 	}

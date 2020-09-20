@@ -1,0 +1,106 @@
+﻿capital = 461
+
+oob = "MOR_1936"
+
+add_ideas = {
+	etgi_laws_leadership_structure_d
+}
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	tech_mountaineers = 1
+}
+
+set_convoys = 5
+
+1933.1.1 = {
+	if = {
+		limit = { has_dlc = "Together for Victory" } 
+		FRA = {
+			set_autonomy = {
+				target = MOR
+				autonomous_state = autonomy_federal_puppet
+				freedom_level = 0.3
+			}
+		}
+		set_popularities = {
+			democratic = 0
+			fascism = 0
+			communism = 0
+			monarchism = 100
+		}
+
+		set_politics = {
+			ruling_party = monarchism
+			last_election = "1936.1.1"
+			election_frequency = 48
+			elections_allowed = no
+		}
+		else = {
+			FRA = {
+				transfer_state = 461
+				transfer_state = 462
+			}
+		}
+	}
+}
+
+set_popularities = {
+	democratic = 0
+	fascism = 0
+	communism = 0
+	monarchism = 100
+}
+
+set_politics = {
+	ruling_party = monarchism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+if = {
+	limit = { 
+		has_dlc = "Together for Victory" 
+	}
+	add_to_tech_sharing_group = french_research
+}
+
+create_country_leader = {
+	name = "Fatih taqi"
+	desc = ""
+	picture = "gfx/leaders/PAL/Portrait_Arabia_Generic_2.dds"
+	ideology = liberalism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Hazem Nahri"
+	desc = ""
+	picture = "gfx/leaders/PAL/Portrait_Arabia_Generic_1.dds"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Osama Danid"
+	desc = ""
+	picture = "gfx/leaders/PAL/Portrait_Arabia_Generic_2.dds"
+	ideology = leninism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "King Mohammed V"
+	desc = "POLITICS_MOR_DESC"
+	picture = "gfx/leaders/MOR/Portrait_Morocco_Mohammed_V.dds"
+	expire = "1965.1.1"
+	ideology = absolutism
+}

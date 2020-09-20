@@ -1,0 +1,251 @@
+state_coring_cost_effect = {
+	set_temp_variable = { core_cost = state_population_k }
+	set_temp_variable = { min_population_m = GLOBAL.STATE_POPULATION_AVE?2500 }
+	divide_temp_variable = { min_population_m = 5 }
+	set_temp_variable = { max_population_m = GLOBAL.STATE_POPULATION_AVE?2500 }
+	multiply_temp_variable = { max_population_m = 2 }
+	clamp_temp_variable = {
+		var = core_cost
+		min = min_population_m
+		max = max_population_m
+	}
+	multiply_temp_variable = { core_cost = GLOBAL.CORE_COST_FACTOR?0.1 }
+	set_temp_variable = { temp_cost_modifier = 1 }
+	if = {
+		limit = {
+			is_claimed_by = ROOT
+		}
+		add_to_temp_variable = { temp_cost_modifier = -0.25 }
+	}
+	if = {
+		limit = {
+			country_and_state_are_on_same_continent = no
+		}
+		add_to_temp_variable = { temp_cost_modifier = 0.5 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					has_government = fascism
+					has_government = communism
+					has_government = democratic
+				}
+			}
+		}
+		set_temp_variable = { cost_government = -0.1 }
+		if = {
+			limit = {
+				ROOT = { has_government = democratic }
+			}
+			set_temp_variable = { cost_government = 0.1 }
+		}
+		add_to_temp_variable = { temp_cost_modifier = cost_government }
+	}
+	if = {
+		limit = {
+			ROOT = { has_government = fascism }
+		}
+		set_temp_variable = { cost_threat = global.threat }
+		multiply_temp_variable = { cost_threat = -0.1 }
+		add_to_temp_variable = { temp_cost_modifier = cost_threat }
+	}
+	if = {
+		limit = {
+			ROOT = { has_government = communism }
+			any_country = {
+				is_puppet = ROOT
+				PREV = { is_core_of = PREV }
+			}
+		}
+		add_to_temp_variable = { temp_cost_modifier = -0.15 }
+	}
+	set_temp_variable = { cost_stability = ROOT.stability }
+	subtract_from_temp_variable = { cost_stability = 0.5 }
+	multiply_temp_variable = { cost_stability = -0.1 }
+	add_to_temp_variable = { temp_cost_modifier = cost_stability }
+	if = {
+		limit = {
+			NOT = { is_in_home_area = yes }
+		}
+		add_to_temp_variable = { temp_cost_modifier = 0.25 }
+	}
+	set_temp_variable = { cost_duration = rule_duration@ROOT }
+	clamp_temp_variable = {
+		var = cost_duration
+		max = 1500
+	}
+	divide_temp_variable = { cost_duration = -3000 }
+	add_to_temp_variable = { temp_cost_modifier = cost_duration }
+	
+	clamp_temp_variable = {
+		var = temp_cost_modifier
+		min = 0.10
+	}
+	multiply_temp_variable = { core_cost = temp_cost_modifier }
+}
+
+state_claim_cost_effect = {
+	set_temp_variable = { claim_cost = 50 }
+	if = {
+		limit = {
+			has_state_category = megalopolis
+		}
+		add_to_temp_variable = { claim_cost = 120 } #12 building_slot
+	}
+	if = {
+		limit = {
+			has_state_category = metropolis
+		}
+		add_to_temp_variable = { claim_cost = 100 } #10 building_slot
+	}
+	if = {
+		limit = {
+			has_state_category = large_city
+		}
+		add_to_temp_variable = { claim_cost = 80 } #8 building_slot
+	}
+	if = {
+		limit = {
+			has_state_category = city
+		}
+		add_to_temp_variable = { claim_cost = 60 } #6 building_slot
+	}
+	if = {
+		limit = {
+			has_state_category = large_town
+		}
+		add_to_temp_variable = { claim_cost = 50 } #5 building_slot
+	}
+	if = {
+		limit = {
+			has_state_category = town
+		}
+		add_to_temp_variable = { claim_cost = 40 } #4 building_slot
+	}
+	if = {
+		limit = {
+			has_state_category = rural
+		}
+		add_to_temp_variable = { claim_cost = 20 } #2 building_slot
+	}
+	if = {
+		limit = {
+			has_state_category = pastoral
+		}
+		add_to_temp_variable = { claim_cost = 10 } #1 building_slot
+	}
+	if = {
+		limit = {
+			has_state_category = small_island
+		}
+		add_to_temp_variable = { claim_cost = 10 } #1 building_slot
+	}
+	owner = {
+		for_each_scope_loop = {
+			array = owned_states
+			if = {
+				limit = {
+					THIS = { is_claimed_by = ROOT }
+				}
+				add_to_temp_variable = { claim_cost = 20 }
+			}
+		}
+	}
+}
+get_claim_power_daily_effect = {
+	set_temp_variable = { claim_power_daily = 1 }
+	if = {
+		limit = {
+			has_government = fascism
+			any_country = {
+				is_major = yes
+				has_war_with = ROOT
+			}
+		}
+		add_to_temp_variable = { claim_power_daily = 5 }
+	}
+	set_temp_variable = { multiply_power_modifier = 1 }
+	if = {
+		limit = {
+			is_major = yes
+		}
+		add_to_temp_variable = { multiply_power_modifier = 0.25 }
+	}
+	if = {
+		limit = {
+			FROM = {
+				any_owned_state = {
+					is_coastal = yes
+					ROOT = {
+						any_owned_state = {
+							is_coastal = yes
+							check_variable = { distance_to@prev.prev < 500 }
+							set_temp_variable = { power_neighbor = 0.1 }
+							is_core_of = ROOT
+						}
+					}
+				}
+			}
+		}
+		set_temp_variable = { power_core = 0.3 }
+	}
+	if = {
+		limit = {
+			FROM = {
+				any_owned_state = {
+					any_neighbor_state = {
+						is_owned_by = ROOT
+						set_temp_variable = { power_neighbor = 0.2 }
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+		set_temp_variable = { power_core = 0.5 }
+	}
+	add_to_temp_variable = { multiply_power_modifier = power_neighbor }
+	add_to_temp_variable = { multiply_power_modifier = power_core }
+	if = {
+		limit = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
+		add_to_temp_variable = { multiply_power_modifier = 0.1 }
+	}
+	if = {
+		limit = {
+			has_government = democratic
+		}
+		add_to_temp_variable = { multiply_power_modifier = -0.1 }
+	}
+	add_to_temp_variable = { multiply_power_modifier = has_war_support }
+	add_to_temp_variable = { multiply_power_modifier = -0.5 }
+	set_temp_variable = { power_stability = FROM.stability }
+	add_to_temp_variable = { power_stability = -0.5 }
+	multiply_temp_variable = { power_stability = -1 }
+	add_to_temp_variable = { multiply_power_modifier = power_stability }
+	if = {
+		limit = {
+			has_government = fascism
+		}
+		add_to_temp_variable = { multiply_power_modifier = global.threat }
+	}
+	if = {
+		limit = {
+			has_government = communism
+		}
+		add_to_temp_variable = { multiply_power_modifier = FROM.party_popularity@communism }
+		set_temp_variable = { manpower_ratio = max_manpower_k }
+		divide_temp_variable = { manpower_ratio = FROM.max_manpower_k }
+		divide_temp_variable = { manpower_ratio = 10 }
+		clamp_temp_variable = {
+			var = manpower_ratio
+			max = 2.00
+		}
+		add_to_temp_variable = { multiply_power_modifier = manpower_ratio }
+	}
+	multiply_temp_variable = { claim_power_daily = multiply_power_modifier }
+}

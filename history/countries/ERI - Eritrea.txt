@@ -1,0 +1,110 @@
+﻿capital = 550
+
+add_ideas = {
+	etgi_laws_leadership_structure_d
+}
+
+oob = "ERI_1936"
+
+set_research_slots = 3
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	gwtank = 1
+	basic_light_tank = 1
+	early_fighter = 1
+	early_bomber = 1
+	naval_bomber1 = 1
+	CAS1 = 1
+	early_submarine = 1
+	early_destroyer = 1
+	early_light_cruiser = 1
+	early_heavy_cruiser = 1
+	early_battleship = 1
+	early_battlecruiser = 1
+	transport = 1
+	trench_warfare = 1
+	fleet_in_being = 1
+}
+
+set_convoys = 5
+
+set_popularities = {
+	democratic = 0
+	fascism = 20
+	communism = 0
+	neutrality = 80
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+create_country_leader = {
+	name = "Woldeab Woldemariam"
+	desc = "POLITICS_WOLDEAB_WOLDEMARIAM_DESC"
+	picture = "gfx/leaders/SAF/Portrait_South_Africa_Political_Leader_Generic.dds"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	name = "Idris Mohammed Adam"
+	desc = "POLITICS_IDRIS_ADAM_DESC"
+	picture = "gfx/leaders/Africa/Portrait_Africa_Generic_land_3.dds"
+	ideology = despotism
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	name = "Ibrahim Sultan Ali"
+	desc = "POLITICS_IBRAHIM_SULTAN_ALI_DESC"
+	picture = "gfx/leaders/DARK/Portrait_DARK_Ibrahim_Sultan_Ali.tga"
+	ideology = conservatism
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	name = "Hamid Idris Awate"
+	desc = "POLITICS_HAMID_IDRIS_AWATE_DESC"
+	picture = "gfx/leaders/Africa/Portrait_Africa_Generic_1.dds"
+	ideology = anti_revisionism
+	traits = {
+		#
+	}
+}
+
+
+##Main leaders controlled entirely different groups of people, so there will be two Field Marshals and no corps commanders
+create_field_marshal = { #Founder of the Eritrean Liberation Army
+	name = "Hamid Idris Awate"
+	portrait_path = "gfx/leaders/Africa/Portrait_Africa_Generic_1.dds"
+	traits = { offensive_doctrine trait_reckless infantry_officer trickster trait_mountaineer }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 4
+}
+create_field_marshal = { #Leader of initial muslim guerilla forces
+	name = "Idris Mohammed Adam"
+	portrait_path = "gfx/leaders/Africa/Portrait_Africa_Generic_land_3.dds"
+	traits = { offensive_doctrine trait_reckless infantry_officer commando skirmisher hill_fighter }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 4
+	logistics_skill = 3
+}

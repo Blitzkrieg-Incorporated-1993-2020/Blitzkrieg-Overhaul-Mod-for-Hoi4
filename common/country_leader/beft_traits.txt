@@ -1,0 +1,375 @@
+leader_traits = {
+	unorthodox_communist = {
+	random = no
+	political_advisor_cost_factor = -0.25
+	trade_laws_cost_factor = -0.25
+	subversive_activites_upkeep = 0.25
+	drift_defence_factor = -0.20
+	communist_acceptance = -50
+	ai_focus_defense_factor = 0.2
+
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	heir_to_marx = {
+	random = no
+	political_power_factor = 0.15
+	foreign_subversive_activites = -0.25
+	war_support_factor = 0.10
+		command_power_gain = -0.5
+		generate_wargoal_tension = 0.4
+				communist_acceptance = 25
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	ideological_fanatic = {
+	random = no
+	political_power_factor = -0.10
+	drift_defence_factor = 0.10
+	fascism_drift = 0.1
+	war_support_factor = 0.10
+	army_core_attack = 0.10
+	fascist_acceptance = 75
+	neutrality_acceptance = -75
+	ai_focus_aggressive_factor = 0.5
+	ai_call_ally_desire_factor = -85
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	pragmatic_ideologue = {
+	random = no
+	political_power_factor = 0.15
+	drift_defence_factor = -0.20
+	stability_factor = 0.10
+	partisan_effect = 0.3
+	neutrality_acceptance = 25
+	ai_join_ally_desire_factor = -35
+	ai_get_ally_desire_factor = 25
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	conservative = {
+	random = no
+	consumer_goods_factor = -0.05
+	political_power_factor = 0.10
+	ai_focus_defense_factor = 0.25
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	liberal = {
+	random = no
+	stability_factor = 0.05
+	trade_laws_cost_factor = -0.5
+	ai_get_ally_desire_factor = 40
+	ai_call_ally_desire_factor = 50
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	great_dictator = {
+	random = no
+	political_power_factor = 0.30
+	mobilization_laws_cost_factor = -0.5
+	economy_cost_factor = -0.5
+	military_leader_cost_factor = -0.5
+	neutrality_drift = 0.01
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	emperor = {
+	random = no
+	neutrality_drift = 0.1
+	stability_factor = 0.05
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	fascist_emperor = {
+	random = no
+	stability_factor = 0.05
+	justify_war_goal_time = -0.05
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	puppetmaster = {
+	random = no
+	master_ideology_drift = 0.2
+	extra_trade_to_target_factor = 0.50
+	puppet_cost_factor = -0.2
+	civilian_intel_to_others = -5.0
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	satisfied = {
+	ai_focus_defense_factor = 0.2
+		ai_will_do = {
+		factor = 1
+		}
+	}
+
+	imperialist_emperor = {
+	random = no
+	neutrality_drift = 0.1
+	stability_factor = 0.10
+	surrender_limit = 0.1
+	special_forces_cap = 0.02
+	communism_acceptance = -100
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	anti_authortarian = {
+		random = no
+		communism_acceptance = -50
+		communism_drift = -0.01
+		fascism_acceptance = -50
+		fascism_drift = -0.01
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	elected_dictator = {
+		random = no
+		stability_factor = 0.05
+		political_power_factor = 0.05
+		democratic_acceptance = 25
+
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	democratic_crusader = {
+		random = no
+		foreign_subversive_activites = -0.10
+		production_speed_industrial_complex_factor = 0.15
+		democratic_acceptance = 75
+
+	ai_will_do = {
+		factor = 1
+		}
+	}
+
+	stubborn = {
+		random = no
+		political_power_factor = 0.05
+		war_support_factor = 0.3
+		army_defence_factor = -0.05
+		army_org_Factor = -0.05 
+		ai_get_ally_desire_factor = -100
+	}
+
+	stubborn_leader = {
+		random = no
+		political_power_factor = 0.05
+		war_support_factor = 0.4
+		army_defence_factor = -0.1
+		army_org_Factor = -0.1
+		ai_get_ally_desire_factor = 10
+	}
+	
+	stubborn_conquerer = {
+		random = no
+		surrender_limit = 0.05
+		political_power_factor = -0.15
+		war_support_factor = 0.5
+		army_defence_factor = 0.15
+		army_attack_factor = 0.15 
+		ai_focus_aggressive_factor = 0.25
+		ai_join_ally_desire_factor = 30
+	}
+
+	il_duce = {
+		random = no
+		justify_war_goal_time = -0.5
+		army_attack_factor = -0.2
+		army_defence_factor = -0.1
+	}
+
+	incompetent = {
+		random = no
+		army_attack_factor = -0.4
+		army_org_Factor = -0.5
+	}
+
+	founder_of_fascism = {
+		political_power_factor = 0.05
+		stability_factor = 0.05
+		ai_get_ally_desire_factor = -100
+	}
+
+	vivacious_general = {
+		random = no
+		army_speed_Factor = 0.5
+		army_morale_factor = 0.25
+	}
+
+	restoring_monarchist = {
+		random = no
+		neutrality_drift = 0.05
+		ai_focus_aggressive_factor = 0.5
+		political_power_factor = -0.05
+		justify_war_goal_time = -0.30
+		generate_wargoal_tension = -1.0
+	}
+	
+	new_monarchist = {
+		random = no
+		neutrality_drift = 0.05
+		political_power_factor = 0.05
+		ai_focus_aggressive_factor = 0.4
+		justify_war_goal_time = -0.15
+		generate_wargoal_tension = -1.0
+	}
+	
+	german_queen = {
+		random = no
+		neutrality_drift = 0.05
+		political_power_factor = 0.025
+		ai_focus_aggressive_factor = 0.45
+		justify_war_goal_time = -0.2
+		generate_wargoal_tension = -1.0
+	}
+	
+	fuhrerprinzip = {
+		random = no
+		political_power_factor = 0.1
+		war_support_factor = 0.10
+		ai_focus_aggressive_factor = 0.4
+	}
+	
+	german_restorationist = {
+		random = no
+		ai_focus_aggressive_factor = 0.3
+		justify_war_goal_time = -0.40
+	}
+	
+	temporary_leader = {
+		random = no
+		political_power_factor = -0.5
+		neutrality_drift = 0.05
+	}
+
+	#New Country Leader Trait
+	bureaucracy = {
+		random = no
+		political_power_factor = -0.15
+		justify_war_goal_time = 0.25
+		drift_defence_factor = -0.5 
+		ai_will_do = {
+			factor = 1
+		}
+
+	}
+	#New Trait
+	communist_sympathies = {
+		random = no
+		communism_acceptance = 50
+		ai_will_do = {
+			factor = 1
+		}
+
+	}
+	#New Trait
+	favorable_trade_deal = {
+		random = no
+
+		targeted_modifier = {
+			tag = USA
+			extra_trade_to_target_factor = 1 
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#New Trait
+	economic_reformer = {
+		random = no
+
+		economy_cost_factor = -0.75
+		local_resources_factor = 0.25
+		consumer_goods_factor = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#New Trait
+	international_popularity = {
+		random = no
+
+		improve_relations_maintain_cost_factor = -0.5
+		trade_opinion_factor = 0.25 
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#New Trait
+	hates_communists = {
+		random = no
+
+		communism_acceptance = -100
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	diplomat = {
+		random = no
+		improve_relations_maintain_cost_factor = -0.75
+		opinion_gain_monthly_factor = 0.30
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	protected_by_god = {
+		random = no
+		stability_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	minister_president = {
+		random = no
+		war_support_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	royal_blood = {
+		random = no
+		generate_wargoal_tension = -0.4
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

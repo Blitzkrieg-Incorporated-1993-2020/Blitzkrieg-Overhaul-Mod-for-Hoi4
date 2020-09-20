@@ -1,0 +1,385 @@
+bookmarks = {
+	bookmark = {
+		name = "THE_RISE_OF_EVIL_NAME"
+		desc = "GATHERING_STORM_DESC"
+		date = 1936.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "GER"
+		default = yes
+		
+
+		"USA"={
+			history = "USA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				usa_bill_of_rights
+				great_depression
+				warsick_peoples
+			}
+			focuses = {
+				USA_Lend_Lease
+				USA_Liberal_II
+				USA_World_Wide_Defense_of_Freedom
+			}
+		}
+		"ENG"={
+			history = "ENG_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				stiff_upper_lip
+				ENG_the_war_to_end_all_wars
+				george_v
+			}
+			focuses = {
+				tizard_mission_focus
+				uk_churchill
+				uk_navy
+			}
+		} 
+		"FRA"={
+			history = "FRA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				FRA_victors_of_wwi
+				FRA_disjointed_government
+				FRA_protected_by_the_maginot_line
+			}
+			focuses = {
+				FRA_social_reforms
+				FRA_revise_versailles
+				FRA_little_entente
+			}
+		}
+		"ITA"={
+			history = "ITA_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				vittoria_mutilata
+				victor_emmanuel
+			}	
+			focuses = {
+				ITA_pact_of_steel
+				ITA_albania_war_goal
+				ITA_greece_war_goal
+			}		
+		}
+		"GER"={
+			history = "GER_GATHERING_STORM_DESC"
+			ideology = fascism 
+			ideas = {
+				sour_loser
+				general_staff
+				GER_mefo_bills_1
+			}
+			focuses = {
+				GER_anschluss
+				GER_danzig_or_war
+				GER_soviet_invasion
+			}
+		}
+		"POL"={
+			history = "POL_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				#
+			}
+			focuses = {
+				POL_the_baltic_alliance
+				POL_draw_closer_to_britain
+				POL_seek_accommodation_with_germany
+			}
+		}
+		"SOV"={
+			history = "SOV_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+				trotskyite_plot
+				home_of_revolution
+			}
+			focuses = {
+				SOV_End_the_Great_Purge
+				SOV_Victory_in_Europe
+				SOV_A_Bomb_of_Our_Own
+			}	
+		}		
+		"CHI"={
+			history = "CHI_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				CHI_army_corruption_1
+				CHI_hyper_inflation_1
+				CHI_nine_power_treaty
+			}
+			focuses = {
+				KMT_yunnan_demand
+				KMT_strengthen_the_republic
+				KMT_preemptive_preparation
+			}
+		}
+		"JAP"={
+			history = "JAP_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				JAP_zaibatsus
+				state_shintoism
+			}	
+			focuses = {
+				JAP_intervene_in_china
+				JAP_pearl_harbor
+				JAP_push_inland
+			}			
+		}
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+
+
+		# minors from DLC #### 
+		
+		"CAN"={
+			minor = yes
+			history = "CAN_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				CAN_great_depression_1
+				CAN_conscription_crisis
+			}
+			focuses = {
+				CAN_skewer_the_eagle
+				CAN_north_american_alliance
+				CAN_join_comintern
+			}
+		}	
+		"AST"={
+			minor = yes
+			history = "AST_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				AST_great_depression_1
+			}
+			focuses = {
+				AST_never_another_gallipoli
+				AST_support_indonesian_uprising
+				AST_delegation_to_china
+			}
+		}
+		"RAJ"={
+			minor = yes
+			history = "RAJ_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				RAJ_agrarian_society
+				RAJ_princely_states
+			}
+			focuses = {
+				RAJ_all_india_forward_bloc
+				RAJ_indian_gurkhas
+				RAJ_the_smiling_buddha
+			}
+		}	
+		"POR"={
+			minor = yes
+			history = "POR_BLITZKRIEG_DESC"
+			ideology = neutrality
+			ideas = {
+				estado_novo
+				POR_disorganized_army
+				POR_holy_see
+			}
+			focuses = {
+				POR_Concordata
+				POR_legiao_portuguesa
+				POR_miguelist_constitution
+			}
+		}
+		"SPR"={
+			minor = yes
+			history = "SPR_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			    SPR_riots
+			    SPR_old_guard
+			    SPR_depression
+			}
+			focuses = {
+				SPR_pol8
+				SPR_pol4
+				SPR_soc1
+			}
+		}
+		"BEL"={
+			minor = yes
+			history = "BEL_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				BEL_pillarized_society
+				BEL_recovery_from_the_great_depression1
+				BEL_linguistic_question_in_military
+			}
+			focuses = {
+				BEL_independent_revolution
+				BEL_benelux_faction
+				BEL_colonial_claims
+			}
+		}
+		"HOL"={
+			minor = yes
+			history = "HOL_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				HOL_reliance_on_the_gold_standard
+				BEL_pillarized_society
+				BEL_recovery_from_the_great_depression1
+			}
+			focuses = {
+				HOL_communist_electoral_success
+				HOL_the_new_ideal
+				HOL_unite_dietschland
+			}
+		}
+		"HUN"={
+			minor = yes
+			history = "HUN_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				HUN_treaty_of_triannon
+			}
+			focuses = {
+				HUN_proclaim_the_restoration_of_austria_hungary
+				HUN_secret_rearmament
+				HUN_renounce_the_treaty_of_trianon
+			}
+		}
+
+		"YUG"={
+			minor = yes
+			history = "YUG_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				anti_german_military
+				YUG_idea_croatian_opposition
+				YUG_idea_serbian_general_staff
+			}
+			focuses = {
+				YUG_western_focus
+				YUG_abolish_the_monarchy
+				YUG_establish_the_banovina_of_croatia
+			}
+		}
+
+		"ROM"={
+			minor = yes
+			history = "ROM_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				ROM_king_carol_ii_hedonist
+				neutrality_idea
+			}
+			focuses = {
+				ROM_balkans_dominance
+				ROM_institute_royal_dictatorship
+				ROM_preserve_greater_romania
+			}
+		}
+		
+		"GRE"={
+			minor = yes
+			history = "GRE_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				GRE_depression_1
+				GRE_shadow_of_1921
+				GRE_divided_nation
+			}
+			focuses = {
+				GRE_reinforce_4th_of_august_regime
+                GRE_surprise_attack_italy
+				GRE_megali_idea
+			}
+		}
+		
+		"TUR"={
+			minor = yes
+			history = "TUR_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				entente_balkanique
+				debt_of_ottomans
+			}
+			focuses = {
+				TUR_Straits
+				TUR_thrace_maneuvers
+				TUR_demands_hatay
+			}
+		}
+
+		"IRQ"={
+			minor = yes
+			history = "IRQ_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				IRQ_nationalism_idea_1
+				IRQ_religious_revolts_1
+				IRQ_kurdish_unrest_1
+			}
+			focuses = {
+				IRQ_the_bakr_sidqi_coup
+				IRQ_look_to_ourselves
+				IRQ_embrace_the_golden_square
+			}
+		}
+		"PER"={
+			minor = yes
+			history = "PER_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				PER_religous_discontent
+				PER_rural_economy_1
+				PER_untrained_officer
+			}	
+			focuses = {
+				PER_fascist_path
+				PER_path_of_the_khan
+				PER_tudeh_iraj
+			}		
+		}
+		"PRC"={
+			minor = yes
+			history = "PRC_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+				PRC_the_long_march_1
+				PRC_low_popular_support_3
+				PRC_power_struggles
+			}
+			focuses = {
+				PRC_infiltration
+				PRC_maoism
+				PRC_anti_japanese_expedition
+			}
+		}
+		"MAN"={
+			minor = yes
+			history = "MAN_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				MAN_banditry
+				MAN_kwantung_veto
+				MAN_low_legitimacy_5
+			}
+			focuses = {
+				MAN_obedience
+				MAN_independence_war
+				MAN_claim_the_mandate_of_heaven
+			}
+		}
+
+		
+
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

@@ -1,0 +1,9 @@
+opinion_modifiers = {
+	                German-Latvian_Cooperation = { value = 50 }
+	                German-Latvian_Cooperation_Declined = { value = -50 }
+	                Soviet-Latvian_Cooperation = { value = 50 }
+	                Baltic_Unity = { value = 50 }
+	                Big_Brother = { value = 50 }
+	                Big_Brother = { value = 50 }
+	                Anglo-Latvian_Sphere = { value = 50 }
+                    }

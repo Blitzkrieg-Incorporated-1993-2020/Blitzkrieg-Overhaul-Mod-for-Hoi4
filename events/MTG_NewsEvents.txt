@@ -41,7 +41,7 @@ news_event = {
 		name = mtg_news.1.c
 		trigger = { 
 			NOT = { original_tag = USA }
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 		}
 	}
 	option = {
@@ -49,8 +49,8 @@ news_event = {
 		trigger = { 
 			NOT = { original_tag = USA }
 			or = {
-				has_government = democratic
-				has_government = neutrality
+				has_democratic_government = yes
+				OR = { has_government = monarchism has_government = neutrality }
 			}
 		}
 	}
@@ -79,7 +79,7 @@ news_event = {
 			NOT = { original_tag = USA }
 			OR = {
 				has_government = fascism
-				has_government = neutrality
+				OR = { has_government = monarchism has_government = neutrality }
 			}
 		}
 	}
@@ -87,14 +87,14 @@ news_event = {
 		name = mtg_news.2.c
 		trigger = { 
 			NOT = { original_tag = USA }
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 		}
 	}
 	option = {
 		name = mtg_news.2.d
 		trigger = { 
 			NOT = { original_tag = USA }
-			has_government = democratic
+			has_democratic_government = yes
 		}
 	}
 }
@@ -127,7 +127,7 @@ news_event = {
 		name = mtg_news.3.c
 		trigger = { 
 			NOT = { original_tag = USA }
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 		}
 	}
 	option = {
@@ -137,8 +137,8 @@ news_event = {
 			NOT = { original_tag = BEL }
 			NOT = { has_idea = HOL_aloof_neutrality }
 			OR = {
-				has_government = democratic
-				has_government = neutrality
+				has_democratic_government = yes
+				OR = { has_government = monarchism has_government = neutrality }
 			}
 		}
 	}
@@ -183,7 +183,7 @@ news_event = {
 		name = mtg_news.4.c
 		trigger = { 
 			NOT = { original_tag = USA }
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 		}
 	}
 	option = {
@@ -191,8 +191,8 @@ news_event = {
 		trigger = { 
 			NOT = { original_tag = USA }
 			Or = {
-				has_government = democratic
-				has_government = neutrality
+				has_democratic_government = yes
+				OR = { has_government = monarchism has_government = neutrality }
 			}
 		}
 	}
@@ -225,7 +225,7 @@ news_event = {
 		name = mtg_news.5.c
 		trigger = { 
 			NOT = { original_tag = USA }
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 		}
 	}
 	option = {
@@ -233,8 +233,8 @@ news_event = {
 		trigger = { 
 			NOT = { original_tag = USA }
 			Or = {
-				has_government = democratic
-				has_government = neutrality
+				has_democratic_government = yes
+				OR = { has_government = monarchism has_government = neutrality }
 			}
 		}
 	}
@@ -258,7 +258,7 @@ news_event = {
 				original_tag = USA
 				original_tag = CSA
 				original_tag = USB
-				has_government = neutrality
+				OR = { has_government = monarchism has_government = neutrality }
 			}
 		}
 	}
@@ -273,14 +273,14 @@ news_event = {
 		name = mtg_news.6.c
 		trigger = { 
 			NOT = { original_tag = USA }
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 		}
 	}
 	option = {
 		name = mtg_news.6.d
 		trigger = { 
 			NOT = { original_tag = USA }
-			has_government = democratic
+			has_democratic_government = yes
 		}
 	}
 }
@@ -301,7 +301,7 @@ news_event = {
 		trigger = {
 			OR = {
 				original_tag = USA
-				has_government = neutrality
+				OR = { has_government = monarchism has_government = neutrality }
 			}
 		}
 	}
@@ -316,14 +316,14 @@ news_event = {
 		name = mtg_news.7.c
 		trigger = { 
 			NOT = { original_tag = USA }
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 		}
 	}
 	option = {
 		name = mtg_news.7.d
 		trigger = { 
 			NOT = { original_tag = USA }
-			has_government = democratic
+			has_democratic_government = yes
 		}
 	}
 }
@@ -1426,7 +1426,7 @@ news_event = {
 		name = mtg_news.33.b
 		trigger = { 
 			NOT = { original_tag = ENG }
-			NOT = { has_government = communism }
+			NOT = { OR = { has_government = unionism has_government = communism } }
 		}
 	}
 
@@ -1434,7 +1434,7 @@ news_event = {
 		name = mtg_news.33.c
 		trigger = { 
 			NOT = { original_tag = ENG }
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 		}
 	}
 }
@@ -1461,7 +1461,7 @@ news_event = {
 		name = mtg_news.34.b
 		trigger = {
 			NOT = { original_tag = ENG }
-			NOT = { has_government = communism }
+			NOT = { OR = { has_government = unionism has_government = communism } }
 		}
 	}
 
@@ -1469,7 +1469,7 @@ news_event = {
 		name = mtg_news.34.c
 		trigger = { 
 			NOT = { original_tag = ENG }
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 		}
 	}
 }
@@ -1496,7 +1496,7 @@ news_event = {
 		name = mtg_news.35.b
 		trigger = {
 			NOT = { original_tag = ENG }
-			NOT = { has_government = communism }
+			NOT = { OR = { has_government = unionism has_government = communism } }
 		}
 	}
 
@@ -1504,7 +1504,7 @@ news_event = {
 		name = mtg_news.35.c
 		trigger = { 
 			NOT = { original_tag = ENG }
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 		}
 	}
 }
@@ -1531,7 +1531,7 @@ news_event = {
 		name = mtg_news.36.b
 		trigger = { 
 			AND = {
-				has_government = communism
+				OR = { has_government = unionism has_government = communism }
 				original_tag = SOV
 			}
 		}
@@ -1541,10 +1541,10 @@ news_event = {
 		name = mtg_news.36.c
 		trigger = { 
 			NOT = { original_tag = ENG }
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 			NOT = {
 				AND = {
-					has_government = communism
+					OR = { has_government = unionism has_government = communism }
 					original_tag = SOV
 				}
 			}
@@ -2641,7 +2641,7 @@ news_event = {
 		name = mtg_news.43.b
 		trigger = {
 			NOT = { original_tag = ENG }
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 		}
 	}
 
@@ -2649,7 +2649,7 @@ news_event = {
 		name = mtg_news.43.c
 		trigger = { 
 			NOT = { original_tag = ENG }
-			NOT = { has_government = communism }
+			NOT = { OR = { has_government = unionism has_government = communism } }
 		}
 	}
 }
@@ -3207,8 +3207,8 @@ news_event = {
 #London naval treaty is dead
 news_event = {
 	id = mtg_news.60
-	title = MTG_naval_treaty.8.t
-	desc = MTG_naval_treaty.8.desc
+	title = mtg_news.60.t
+	desc = mtg_news.60.desc
 	picture = GFX_news_event_generic_naval_treaty
 	
 	major = yes
@@ -3240,8 +3240,8 @@ news_event = {
 #Second London Naval Treaty Signed
 news_event = {
 	id = mtg_news.61
-	title = MTG_naval_treaty.9.t
-	desc = MTG_naval_treaty.9.desc
+	title = mtg_news.61.t
+	desc = mtg_news.61.desc
 	picture = GFX_news_event_generic_naval_treaty
 	
 	major = yes

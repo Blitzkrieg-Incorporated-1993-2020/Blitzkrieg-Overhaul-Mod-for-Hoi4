@@ -1,0 +1,93 @@
+
+LIT_rename_city = {
+
+
+	wilno_to_vilnius = {
+
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = LIT
+		}
+
+		available = {
+			tag = LIT
+			owns_state = 96
+			controls_state = 96
+			
+		}
+		cost = 5
+
+		fire_only_once = yes
+
+		visible = {		
+			controls_state = 96
+		}
+
+		complete_effect = {
+			set_province_name = { id = 3320	name = "Vilnius" }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	keonigsberg_to_kaliningradas = {
+
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = LIT
+		}
+
+		available = {
+			tag = LIT
+			controls_state = 5
+		}
+		cost = 5
+
+		fire_only_once = yes
+
+		visible = {
+			controls_state = 5
+		}
+
+		complete_effect = {
+			set_province_name = { id = 6332 name = "Kaliningradas" }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+
+	grodno_to_gardinas = {
+
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = LIT
+		}
+
+		available = {
+			tag = LIT
+			controls_state = 97
+		}
+		cost = 5
+
+		fire_only_once = yes
+
+		visible = {
+			controls_state = 97
+		}
+
+		complete_effect = {
+			set_province_name = { id = 3393 name = "Gardinas" }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+}

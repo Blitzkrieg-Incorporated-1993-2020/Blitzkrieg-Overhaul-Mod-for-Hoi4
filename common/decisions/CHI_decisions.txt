@@ -1,57 +1,15 @@
 
-
-#Category only allowed for CHI
-CHI_anti_imperialism = {
-	
-	CHI_release_korea = {
-
-		icon = generic_nationalism
-
-		available = {
-			country_exists = KOR
-		}
-
-		days_mission_timeout = 180
-
-		fire_only_once = yes
-		activation = {			
-			owns_state = 525
-			owns_state = 527
-			KOR = {
-				exists = no
-			}
-			has_completed_focus = CHI_commit_to_korean_independence
-		}
-
-		visible = {
-			owns_state = 525
-			owns_state = 527
-			KOR = {
-				exists = no
-			}
-			has_completed_focus = CHI_commit_to_korean_independence
-		}
-		complete_effect = {
-			add_political_power = 50
-		}
-		timeout_effect = {
-			add_stability = -0.1 #naughty
-		}
-	}
-}
-
-
 #Category allowed for all potential nationalist china
 #Category visible when CHI_army_reform focus is completed
-CHI_army_reform = {
+
+war_measures = {
 
 	CHI_army_reform = {
 
 		icon = generic_prepare_civil_war
 
 		available = {
-			has_army_experience > 99
-			has_completed_focus = CHI_army_reform
+			has_army_experience > 350
 		}
 
 		cost = 0
@@ -62,193 +20,35 @@ CHI_army_reform = {
 
 		visible = {
 			OR = {
-				has_idea = CHI_army_corruption_1
-				has_idea = CHI_army_corruption_2
-				has_idea = CHI_army_corruption_3
+				has_idea = KMT_weak_army
+				has_idea = KMT_weak_army_lesser
+				has_idea = KMT_weak_army_lesserer
 			}
 		}
 		remove_effect = {
 			if = {
-				limit = { has_idea = CHI_army_corruption_1 }
+				limit = { has_idea = KMT_weak_army }
 				swap_ideas = {
-					remove_idea = CHI_army_corruption_1
-					add_idea = CHI_army_corruption_2
+					remove_idea = KMT_weak_army
+					add_idea = KMT_weak_army_lesser
 				}
 			}
 			else_if = {
-				limit = { has_idea = CHI_army_corruption_2 }
+				limit = { has_idea = KMT_weak_army_lesser }
 				swap_ideas = {
-					remove_idea = CHI_army_corruption_2
-					add_idea = CHI_army_corruption_3
+					remove_idea = KMT_weak_army_lesser
+					add_idea = KMT_weak_army_lesserer
 				}
 			}
 			else_if = {
-				limit = { has_idea = CHI_army_corruption_3 }
-				remove_ideas = CHI_army_corruption_3
+				limit = { has_idea = KMT_weak_army_lesserer }
+				remove_ideas = KMT_weak_army_lesserer
 			}
 		}
 		complete_effect = {
-			army_experience = -100						
+			army_experience = -350						
 		}		
 	}
-
-	CHI_lessons_of_war = {
-		icon = generic_army_support
-		available = {
-			has_army_experience > 199
-			has_idea = CHI_incompetent_officers
-			if = {
-				limit = { has_idea = CHI_army_corruption_1 }
-				NOT = { has_idea = CHI_army_corruption_1 }
-			}
-
-			if = {
-				limit = { has_idea = CHI_army_corruption_2 }
-				NOT = { has_idea = CHI_army_corruption_2 }
-			}
-
-			if = {
-				limit = { has_idea = CHI_army_corruption_3 }
-				NOT = { has_idea = CHI_army_corruption_3 }
-			}
-
-			if = {
-				limit = {
-					NOT = { has_idea = CHI_army_corruption_1 }
-					NOT = { has_idea = CHI_army_corruption_2 }
-					NOT = { has_idea = CHI_army_corruption_3 }
-				}
-				NOT = { has_idea = CHI_army_corruption_3 }
-			}
-		}
-
-		cost = 0
-		ai_will_do = {
-			factor = 10
-		}
-		fire_only_once = yes
-
-		visible = {
-			has_idea = CHI_incompetent_officers
-			has_completed_focus = CHI_army_reform
-		}
-
-		complete_effect = {
-			army_experience = -200
-			remove_ideas = CHI_incompetent_officers
-			set_country_flag = CHI_lessons_of_war_completed
-		}		
-	}
-
-	#Activates when the player picks CHI_60_divisions_plan decision
-	CHI_bolster_our_ranks = {
-
-		icon = generic_prepare_civil_war
-
-		available = {
-			num_divisions > 60
-			has_army_manpower = { size > 549999 }
-		}
-
-		fire_only_once = yes
-		
-		days_mission_timeout = 180
-
-		is_good = no
-
-		activation = {
-			always = no #Triggered from effect in CHI_60_divisions_plan
-		}
-
-		complete_effect = {
-			add_war_support = 0.1
-		}
-
-		timeout_effect = {
-
-		}
-	}
-
-	CHI_60_divisions_plan = {
-
-		icon = generic_operation
-
-		available = {
-			
-		}
-
-		cost = 90
-		ai_will_do = {
-			factor = 1
-		}
-		fire_only_once = yes
-
-		visible = {
-			has_completed_focus = CHI_60_divisions_plan
-		}
-
-		days_remove = 180
-
-		modifier = {
-			training_time_army_factor = -0.25
-		}
-
-		complete_effect = {
-			activate_mission = CHI_bolster_our_ranks
-		}		
-	}
-
-}
-
-economy_decisions = {
-	CHI_forced_loans = {
-
-		icon = ger_mefo_bills
-
-		available = {
-			has_hyper_inflation = yes
-		}
-
-		cost = 100
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				OR = {
-					has_idea = CHI_hyper_inflation_none
-					has_idea = CHI_hyper_inflation_1
-				}
-				factor = 0
-			}
-			modifier = {
-				has_idea = CHI_hyper_inflation_3
-				factor = 2
-			}
-			modifier = {
-				has_idea = CHI_hyper_inflation_4
-				factor = 5
-			}
-			modifier = {
-				has_idea = CHI_hyper_inflation_5
-				factor = 10
-			}
-		}
-
-		visible = {
-			has_completed_focus = CHI_forced_loans
-		}
-
-		days_re_enable = 90
-
-		complete_effect = {
-			CHI_hyper_inflation_level_down = yes
-			add_stability = -0.03
-			add_war_support = -0.03
-		}		
-	}
-}
-
-war_measures = {
-
 	CHI_scorched_earth_tactics = {
 		icon = generic_scorched_earth
 		available = {
@@ -257,7 +57,7 @@ war_measures = {
 				infrastructure > 0
 				any_neighbor_state = {
 					NOT = { is_fully_controlled_by = ROOT }
-					controller = { has_war_with = CHI }
+					controller = { has_war_with = ROOT }
 				}
 			}
 		}
@@ -268,8 +68,11 @@ war_measures = {
 			factor = 1
 		}
 
-		visible = {			
-			has_completed_focus = CHI_scorched_earth_tactics
+		visible = {		
+			OR = {
+				has_completed_focus = KMT_lure_them_in_strategy
+				has_completed_focus = PRC_lure_them_in_strategy
+			}	
 		}
 
 		days_re_enable = 30
@@ -281,7 +84,7 @@ war_measures = {
 					infrastructure > 0
 					any_neighbor_state = {
 						NOT = { is_fully_controlled_by = ROOT }
-						controller = { has_war_with = CHI }
+						controller = { has_war_with = ROOT }
 					}
 				}
 				damage_building = {
@@ -293,7 +96,6 @@ war_measures = {
 				limit = {
 					PRC_has_low_popular_support = yes
 				}
-
 				PRC_low_popular_support_level_down = yes
 			}			
 		}
@@ -320,7 +122,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 283
 		}
 		visible = {
@@ -543,7 +345,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 591
 		}
 		visible = {
@@ -767,7 +569,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 592
 		}
 
@@ -992,7 +794,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 593
 		}
 
@@ -1217,7 +1019,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 594
 		}
 
@@ -1442,7 +1244,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 595
 		}
 
@@ -1667,7 +1469,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 596
 		}
 
@@ -1892,7 +1694,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 597
 		}
 
@@ -2117,7 +1919,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 598
 		}
 		visible = {
@@ -2341,7 +2143,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 599
 		}
 
@@ -2566,7 +2368,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 600
 		}
 
@@ -2791,7 +2593,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}	
-		highlight_state_targets = {
+		highlight_states = {
 			state = 602
 		}
 		visible = {
@@ -3022,7 +2824,7 @@ CHI_industrial_evacuations = {
 				is_controlled_by = ROOT
 			}			
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 606
 		}
 
@@ -3240,7 +3042,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 607
 		}
 		visible = {
@@ -3464,7 +3266,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 608
 		}
 
@@ -3689,7 +3491,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 613
 		}
 		visible = {
@@ -3913,7 +3715,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 614
 		}
 		visible = {
@@ -4137,7 +3939,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 616
 		}
 		visible = {
@@ -4361,7 +4163,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 620
 		}
 		visible = {
@@ -4585,7 +4387,7 @@ CHI_industrial_evacuations = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 743
 		}
 		visible = {
@@ -5012,7 +4814,7 @@ CHI_integrate_the_warlords = {
 		cancel_if_not_visible = yes
 
 		cost = 150
-		
+
 		target_array = subjects
 
 		target_trigger = {
@@ -5071,7 +4873,7 @@ CHI_integrate_the_warlords = {
 		cancel_if_not_visible = yes
 
 		cost = 150
-		
+
 		target_array = subjects
 
 		target_trigger = {
@@ -5174,7 +4976,6 @@ CHI_communist_infiltration = {
 						621 = { has_state_flag = discovered_infiltration }
 						744 = { has_state_flag = discovered_infiltration }
 						746 = { has_state_flag = discovered_infiltration }
-						1027 = { has_state_flag = discovered_infiltration }
 					}
 				}
 			}
@@ -5200,7 +5001,7 @@ CHI_communist_infiltration = {
 			has_equipment = { infantry_equipment > 999 }
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 283
 		}
 		
@@ -5258,28 +5059,16 @@ CHI_communist_infiltration = {
 				is_controlled_by = ROOT
 				has_any_PRC_infiltration_flag = yes
 			}
-			1027 = {
-				is_controlled_by = ROOT
-				has_any_PRC_infiltration_flag = yes
-			}
 		}
 		available = {
 			has_equipment = { infantry_equipment > 999 }
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 597
-			state = 1027
 		}
 		
 		visible = {
 			597 = {
-				is_controlled_by = ROOT
-				has_state_flag = {
-					flag = discovered_infiltration
-					value > 0
-				}
-			}
-			1027 = {
 				is_controlled_by = ROOT
 				has_state_flag = {
 					flag = discovered_infiltration
@@ -5320,11 +5109,6 @@ CHI_communist_infiltration = {
 				save_event_target_as = infiltrated_state
 				CHI_infiltration_flag_down_2 = yes
 			}
-			1027 = {
-				CHI_show_state_uprising_effect_after_infiltration_level_down = yes
-				save_event_target_as = infiltrated_state
-				CHI_infiltration_flag_down_2 = yes
-			}
 			event_target:WTT_communist_china = { country_event = wtt_infiltration.6 } 
 		}
 	}
@@ -5341,7 +5125,7 @@ CHI_communist_infiltration = {
 			has_equipment = { infantry_equipment > 999 }
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 598
 		}
 		
@@ -5412,7 +5196,7 @@ CHI_communist_infiltration = {
 				}
 			}
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 607
 		}
 
@@ -5463,7 +5247,7 @@ CHI_communist_infiltration = {
 		available = {
 			has_equipment = { infantry_equipment > 999 }
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 608
 		}
 		
@@ -5524,7 +5308,7 @@ CHI_communist_infiltration = {
 		available = {
 			has_equipment = { infantry_equipment > 999 }
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 614
 		}
 		
@@ -5585,7 +5369,7 @@ CHI_communist_infiltration = {
 		available = {
 			has_equipment = { infantry_equipment > 999 }
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 615
 		}
 		
@@ -5646,7 +5430,7 @@ CHI_communist_infiltration = {
 		available = {
 			has_equipment = { infantry_equipment > 999 }
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 621
 		}
 		
@@ -5707,7 +5491,7 @@ CHI_communist_infiltration = {
 		available = {
 			has_equipment = { infantry_equipment > 999 }
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 744
 		}
 		
@@ -5768,7 +5552,7 @@ CHI_communist_infiltration = {
 		available = {
 			has_equipment = { infantry_equipment > 999 }
 		}
-		highlight_state_targets = {
+		highlight_states = {
 			state = 746
 		}
 		
@@ -5918,45 +5702,142 @@ foreign_support = {
 			}
 		}
 
-		available = {
-			if = {
-				limit = {
-					OR = {
-						has_focus_tree = china_nationalist_focus
-						has_focus_tree = china_communist_focus 
+		available = { #WTT_TODO_CD: Make this tooltip not look like complete garbage
+			OR = {
+				has_completed_focus = KMT_improve_burma_road
+				has_completed_focus = uk_burma_road
+			}
+			288 = {
+				CONTROLLER = {
+					NOT = {
+						has_war_with = ROOT
 					}
 				}
-				has_completed_focus = CHI_burma_road
 			}
-			if = {
-				limit = {
-					has_focus_tree = british_focus
-				}
-				has_completed_focus = uk_burma_focus
-			}
-			any_state = {
-				OR = {
-					state = 288
-					state = 640
-					state = 325
-					state = 747
-				}
+			640 = {
 				CONTROLLER = {
-					NOT = { has_War_with = ROOT }
-					custom_trigger_tooltip = {
-						tooltip = burma_road_expansion_tt
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			325 = {
+				CONTROLLER = {
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			747 = {
+				CONTROLLER = {
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			OR = {
+				288 = {
+					CONTROLLER = {
 						OR = {
 							has_completed_focus = uk_burma_focus
-							has_completed_focus = CHI_burma_road
-							AND = {
-								OR = {
+							has_completed_focus = KMT_improve_burma_road
+							custom_trigger_tooltip = {
+								tooltip = owner_of_state_in_faction_tt
+								AND = {
 									is_in_faction_with = ROOT
-									is_subject_of = ROOT
+									has_completed_focus = uk_burma_focus
+									has_completed_focus = CHI_burma_road
 								}
-								ROOT = {
-									OR = {
-										has_completed_focus = uk_burma_focus
-										has_completed_focus = CHI_burma_road
+								if = {
+									limit = {
+										is_subject = yes
+									}
+									OVERLORD = {
+										OR = {
+											has_completed_focus = uk_burma_focus
+											has_completed_focus = CHI_burma_road
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				640 = {
+					CONTROLLER = {
+						OR = {
+							has_completed_focus = uk_burma_focus
+							has_completed_focus = KMT_improve_burma_road
+							custom_trigger_tooltip = {
+								tooltip = owner_of_state_in_faction_tt
+								AND = {
+									is_in_faction_with = ROOT
+									has_completed_focus = uk_burma_focus
+									has_completed_focus = CHI_burma_road
+								}
+								if = {
+									limit = {
+										is_subject = yes
+									}
+									OVERLORD = {
+										OR = {
+											has_completed_focus = uk_burma_focus
+											has_completed_focus = CHI_burma_road
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				325 = {
+					CONTROLLER = {
+						OR = {
+							has_completed_focus = uk_burma_focus
+							has_completed_focus = KMT_improve_burma_road
+							custom_trigger_tooltip = {
+								tooltip = owner_of_state_in_faction_tt
+								AND = {
+									is_in_faction_with = ROOT
+									has_completed_focus = uk_burma_focus
+									has_completed_focus = CHI_burma_road
+								}
+								if = {
+									limit = {
+										is_subject = yes
+									}
+									OVERLORD = {
+										OR = {
+											has_completed_focus = uk_burma_focus
+											has_completed_focus = CHI_burma_road
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				747 = {
+					CONTROLLER = {
+						OR = {
+							has_completed_focus = uk_burma_focus
+							has_completed_focus = KMT_improve_burma_road
+							custom_trigger_tooltip = {
+								tooltip = owner_of_state_in_faction_tt
+								AND = {
+									is_in_faction_with = ROOT
+									has_completed_focus = uk_burma_focus
+									has_completed_focus = CHI_burma_road
+								}
+								if = {
+									limit = {
+										is_subject = yes
+									}
+									OVERLORD = {
+										OR = {
+											has_completed_focus = uk_burma_focus
+											has_completed_focus = CHI_burma_road
+										}
 									}
 								}
 							}
@@ -5969,16 +5850,19 @@ foreign_support = {
 			NOT = { has_global_flag = CHI_burma_3 }
 			OR = {
 				has_focus_tree = china_nationalist_focus
-				has_focus_tree = china_communist_focus 
 				has_focus_tree = british_focus
 			}
 			OR = {
-				325 = {
-					CONTROLLER = {
-						OR = {
-							tag = ROOT
-							is_subject_of = ROOT
-							is_in_faction_with = ROOT
+				AND = {
+					OR = {
+						controls_state = 325
+						325 = {
+							CONTROLLER = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+								}
+							}
 						}
 					}
 				}
@@ -6060,7 +5944,7 @@ foreign_support = {
 		icon = generic_construction
 		available = {
 			any_country = {
-				has_completed_focus = CHI_ledo_road
+				has_completed_focus = KMT_ledo_road
 			}
 			OR = {
 				controls_state = 640
@@ -6076,7 +5960,7 @@ foreign_support = {
 							AND = {
 								is_subject = yes
 								OVERLORD = {
-									has_completed_focus = CHI_ledo_road
+									has_completed_focus = KMT_ledo_road
 								}
 							}
 							AND = {
@@ -6092,7 +5976,7 @@ foreign_support = {
 		}
 		visible = {
 			OR = {
-				has_completed_focus = CHI_ledo_road
+				has_completed_focus = KMT_ledo_road
 				controls_state = 640
 				640 = {
 					CONTROLLER = {
@@ -6104,7 +5988,7 @@ foreign_support = {
 				has_global_flag = CHI_ledo_3
 			}
 			any_country = {
-				has_completed_focus = CHI_ledo_road
+				has_completed_focus = KMT_ledo_road
 			}
 		}
 		days_re_enable = 360
@@ -6140,246 +6024,12 @@ foreign_support = {
 			}
 		}
 	}
-	CHI_expand_the_airlift = {
-		icon = generic_construction
-		available = {	
-			OR = {
-				434 = {
-					CONTROLLER = {
-						NOT = {
-							has_war_with = CHI
-						}
-						is_in_faction_with = ROOT
-					}
-				}
-				601 = {
-					CONTROLLER = {
-						OR = {
-							has_completed_focus = CHI_the_hump
-							is_in_faction_with = ROOT
-						}
-					}
-				}
-			}
-		}
-		visible = {
-			OR = { 
-				AND = {
-					has_completed_focus = CHI_the_hump
-					OR = {
-						controls_state = 601
-						601 = {
-							CONTROLLER = {
-								is_in_faction_with = ROOT
-							}
-						}
-					}
-				}
-				AND = {
-					controls_state = 434
-					any_country = {
-						has_completed_focus = CHI_the_hump
-					}
-				}
-			}
-			NOT = {
-				has_global_flag = CHI_hump_3
-			}
-		}
-		cost = 25
-		days_re_enable = 360
-		ai_will_do = {
-			factor = 1
-		}
-		days_remove = 60
-		modifier = {
-			civilian_factory_use = 2
-		}
-		complete_effect = {
-			if = {
-				limit = {
-					AND = {
-						has_war = no
-						has_war_support < 0.6
-					}
-				}
-				add_war_support = 0.05
-			}
-		}
-		remove_effect = {
-			434 = {
-				add_building_construction = {
-					type = air_base
-					level = 1
-					instant_build = yes
-				}
-			}
-			601 = {
-				add_building_construction = {
-					type = air_base
-					level = 1
-					instant_build = yes
-				}
-			}
-			if = {
-				limit = {
-					has_global_flag = CHI_hump_2
-				}
-				set_global_flag = CHI_hump_3 # Hump 3: Revenge of the Hump: The Humpening
-			}
-			if = {
-				limit = {
-					NOT = { has_global_flag = CHI_hump_2} # Hump 2: Hump Harder
-				}
-				set_global_flag = CHI_hump_2
-			}
-			601 = {
-				CONTROLLER = {
-					add_to_variable = { var = CHI_the_hump value = 1 }
-					add_offsite_building = { type = arms_factory level = 1 }
-				}
-			}
-		}
-	}
 }
 
 political_actions = {
-
-	CHI_suspend_the_inter_party_coordination_council = {
-		icon = oppression
-		available = {
-			has_idea = CHI_inter_party_coordination_council
-		}
-		visible = {
-			has_idea = CHI_inter_party_coordination_council
-		}
-		cost = 25
-		complete_effect = {
-			if = {
-				limit = {
-					NOT = {
-						has_government = democratic
-					}
-				}
-				add_stability = -0.05
-			}
-			remove_ideas = CHI_inter_party_coordination_council
-		}
-	}
-	CHI_reinstate_the_inter_party_coordination_council = {
-		icon = generic_political_discourse
-		available = {
-			NOT = { has_idea = CHI_inter_party_coordination_council }
-			NOT = {
-				has_government = democratic
-			}
-			has_completed_focus = CHI_inter_party_coordination_council
-		}
-		visible = {
-			NOT = { has_idea = CHI_inter_party_coordination_council }
-			NOT = {
-				has_government = democratic
-			}
-			has_completed_focus = CHI_inter_party_coordination_council
-		}
-		cost = 25
-		complete_effect = {
-			add_ideas = CHI_inter_party_coordination_council
-		}
-	}
-
-	CHI_join_united_front = {
-		available = {
-			is_literally_china = yes
-			CHI = {
-				is_in_faction_with = PRC
-			}
-			OR = {
-				PRC = {
-					is_faction_leader = yes
-				}
-				CHI = {
-					is_faction_leader = yes
-				}
-			}
-			NOT = {
-				OR = {
-					has_war_with = CHI
-					has_war_with = PRC
-				}
-			}
-			is_in_faction = no
-			NOT = {
-				has_completed_focus = CHI_opposition
-			}
-			OR = {
-				is_subject = no
-				OVERLORD = {
-					is_in_faction_with = event_target:WTT_current_china_leader
-				}
-			}
-		}
-		visible = {
-			is_literally_china = yes
-			CHI = {
-				is_in_faction_with = PRC
-			}
-			is_in_faction = no
-		}
-		cost = 25
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				JAP = {
-					OR = {
-						has_war_with = CHI
-						has_war_with = PRC
-					}
-				}
-				factor = 10
-			}
-			modifier = {
-				has_war_with = JAP
-				factor = 500
-			}
-		}
-		complete_effect = {
-			If = {
-				limit = {
-					CHI = {
-						is_faction_leader = yes
-					}
-				}
-				CHI = {
-					country_event = generic.2
-				}
-				add_ai_strategy = {
-					type = alliance
-					id = "CHI"
-					value = 200
-				}
-			}
-			else_if = {
-				limit = {
-					PRC = {
-						is_faction_leader = yes
-					}
-				}
-				PRC = {
-					country_event = generic.2
-				}
-				add_ai_strategy = {
-					type = alliance
-					id = "PRC"
-					value = 200
-				}
-			}
-		}
-	}
 	CHI_move_the_capital = {
 		allowed = {
 			is_literally_china = yes
-			has_dlc = "Waking the Tiger"
 		}
 		available = {
 			has_war = no
@@ -6398,7 +6048,6 @@ political_actions = {
 		}
 		visible = {
 			has_war = no
-			is_subject = no
 			OR = {
 				has_full_control_of_state = 608
 				has_full_control_of_state = 613
@@ -6515,55 +6164,6 @@ CHI_xian_incident = {
 	}
 }
 
-operations = {
-	
-	CHI_overlordship_over_indochina = {
-		icon = generic_operation
-
-		allowed = {
-			is_literally_china = yes
-		}
-
-		available = {
-			controls_state = 671
-			controls_state = 670
-			controls_state = 286
-			controls_state = 741
-			controls_state = 1073
-			controls_state = 1074
-			controls_state = 1075
-			controls_state = 1076
-			controls_state = 1077
-			controls_state = 1078
-			controls_state = 1079
-			controls_state = 1080
-			controls_state = 1081
-			controls_state = 1082
-			controls_state = 1083
-			controls_state = 1084
-			controls_state = 1085
-		} 
-
-		days_mission_timeout = 360
-
-		fire_only_once = yes
-
-		activation = {
-			has_completed_focus = CHI_overlordship_over_indochina
-		}
-		
-		complete_effect = {
-			add_political_power = 50
-			add_war_support = 0.05
-			add_stability = 0.05
-		}
-
-		timeout_effect = {
-			add_war_support = -0.1
-		}
-	}
-}
-
 prestigious_projects = {
 	CHI_build_a_carrier = {
 		allowed = {
@@ -6579,7 +6179,7 @@ prestigious_projects = {
 		fire_only_once = yes
 		is_good = no
 		activation = {
-			has_completed_focus = CHI_naval_aviation
+			has_completed_focus = KMT_pacific_fleet
 		}
 		
 		complete_effect = {

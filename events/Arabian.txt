@@ -1,0 +1,51 @@
+﻿###########################
+# Califat Events
+###########################
+
+add_namespace = Califat
+ 
+#Invit Oman
+country_event = {
+	id = Califat.1
+	title = Califat.1.t
+	desc = Califat.1.d
+	picture = GFX_report_event_polish_tanks_01
+
+	is_triggered_only = yes
+
+	option = { #Enter alliance
+		name = Califat.1.a
+		ai_chance = {
+			factor = 90
+		}
+		SAU = {
+			add_to_faction = ROOT
+			ROOT = {
+				add_ai_strategy = {
+					type = alliance
+					id = "FRA"
+					value = 200
+				}
+			}
+			country_event = { id = poland.10 days = 1 }
+		}
+	}
+
+	option = {
+		name = Califat.1.b
+		ai_chance = {
+			factor = 10
+		}
+		effect_tooltip = {
+			SAU = {
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = ROOT
+				}
+			}
+		}
+		SAU = {
+			country_event = { id = poland.11 days = 1 }
+		}
+	}
+}

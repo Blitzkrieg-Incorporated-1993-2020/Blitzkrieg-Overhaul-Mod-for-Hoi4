@@ -1,0 +1,2693 @@
+spriteTypes = {	
+
+
+
+####------> GENERIC <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_admiralty"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_admiralty.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_aerial_fleet"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_aerial_fleet.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_africanalliance"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_africanalliance.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_africandiplo"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_africandiplo.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_africantroops"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_africantroops.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_against_god"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_against_god.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_agression"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_agression.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_agriculture"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_agriculture.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_agriculture2"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_agriculture2.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_allies"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_allies.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_anti_communist"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_anti_communist.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_attackcommies"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_attackcommies.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_backstab"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_backstab.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_bigpush"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_bigpush.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_bluewater"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_bluewater.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_bombs"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_bombs.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_brain"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_brain.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_break_germans"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_break_germans.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_britenemy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_britenemy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_buddha"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_buddha.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_buddha2"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_buddha2.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_bul"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_bul.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_ita"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_ita.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_bulldiplomacy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_bulldiplomacy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_burnglobe"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_burnglobe.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_cannon"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_cannon.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_capitalism"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_capitalism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_cards"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_cards.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_cavalry"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_cavalry.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_chromium"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_chromium.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_church"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_church.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_cityfort"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_cityfort.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_coins"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_coins.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commie1"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commie1.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commie2"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commie2.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commie3"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commie3.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commie4"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commie4.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commie5"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commie5.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commie6"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commie6.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commiearmy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commiearmy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commieinvest"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commieinvest.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commieloyal"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commieloyal.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commiepride"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commiepride.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commiescience"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commiescience.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commieslums"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commieslums.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commiespies"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commiespies.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commietown"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commietown.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_continueair"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_continueair.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_copper"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_copper.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_cruiser"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_cruiser.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_crushanarchy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_crushanarchy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_crushresistance"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_crushresistance.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_cze"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_cze.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_daneindustry"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_daneindustry.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_darkarms"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_darkarms.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_deal_bel"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_deal_bel.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_deal_fra"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_deal_fra.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_deal_russia"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_deal_russia.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_deal_soviet"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_deal_soviet.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_deal_spa"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_deal_spa.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_deal_yug"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_deal_yug.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_deathtrain"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_deathtrain.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_deathtrain2"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_deathtrain2.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_den"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_den.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_desertwar"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_desertwar.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_diplo"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_diplo.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_elitearmy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_elitearmy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_elitism1"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_elitism1.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_elitism2"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_elitism2.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_endcorruption"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_endcorruption.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_endtreaty"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_endtreaty.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_espionage"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_espionage.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_sovietmenace"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_sovietmenace.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_extravagant"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_extravagant.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_factorytown"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_factorytown.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fashy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fashy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fashychampaign"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fashychampaign.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fashyespionage"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fashyespionage.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fashytreaty"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fashytreaty.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_bel"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_bel.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_bul"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_bul.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_den"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_den.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_den"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_den.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_fin"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_fin.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_gre"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_gre.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_hol"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_hol.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_jap"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_jap.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_nor"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_nor.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_pol"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_pol.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_por"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_por.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_spa"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_spa.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_swe"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_swe.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_swi"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_swi.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_usa"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_usa.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_yugo"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_yugo.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fleet"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fleet.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fort"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fort.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_fin"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_fin.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_gre"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_gre.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_hol"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_hol.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_pol"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_pol.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_por"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_por.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_reich"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_reich.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_scan"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_scan.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_spa"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_spa.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_swe"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_swe.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_tur"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_tur.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_generalstaff"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_generalstaff.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_helpfromreich"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_helpfromreich.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_gibland"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_gibland.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_globalcommunity"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_globalcommunity.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_greenpol"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_greenpol.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_gundiplomacy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_gundiplomacy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_helmet"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_helmet.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_hiddenpact"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_hiddenpact.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_hindu"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_hindu.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_hindugov"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_hindugov.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_humanwave1"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_humanwave1.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_humanwave2"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_humanwave2.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_humanwave3"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_humanwave3.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_industrycompany"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_industrycompany.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_intofire"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_intofire.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_muslimexpand"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_muslimexpand.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_jackboot"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_jackboot.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_krasnyyarmy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_krasnyyarmy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_liberty"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_liberty.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_liberty_torch"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_liberty_torch.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_licenseproduction"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_licenseproduction.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_licensetanks"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_licensetanks.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_militarygov"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_militarygov.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_militaryagree"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_militaryagree.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_mission"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_mission.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_mobilization"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_mobilization.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_mobilization2"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_mobilization2.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_modern_army"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_modern_army.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_monarchism"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_monarchism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_monarchism2"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_monarchism2.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_moneypile"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_moneypile.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_moremen"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_moremen.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_moresteel"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_moresteel.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_multiethnicarmy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_multiethnicarmy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_muslimexile"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_muslimexile.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_muslimfear"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_muslimfear.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_muslimlaw"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_muslimlaw.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_navaleffort"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_navaleffort.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_navalfund"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_navalfund.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_navalops"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_navalops.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_newtowns"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_newtowns.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_noose"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_noose.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_officers"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_officers.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_oiltrade"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_oiltrade.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_peasantstrike"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_peasantstrike.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_planeconomy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_planeconomy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_police"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_police.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_political"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_political.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_preptroops"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_preptroops.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_producetanks"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_producetanks.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_purgeelites"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_purgeelites.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_purgeking"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_purgeking.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_rally"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_rally.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_recruit"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_recruit.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_red_fleet"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_red_fleet.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_redinfantry"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_redinfantry.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_reichrepression"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_reichrepression.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_research"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_research.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_riggedelection"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_riggedelection.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_riskydeal"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_riskydeal.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_rubber"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_rubber.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_russiabear"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_russiabear.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_russiacage"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_russiacage.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_scientists"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_scientists.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_secretact"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_secretact.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_secretmeeting"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_secretmeeting.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_ship"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_ship.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_shutupandtakemymoney"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_shutupandtakemymoney.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_smallnavy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_smallnavy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_socialist_action"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_socialist_action.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_socialscience"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_socialscience.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_soviet_politics"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_soviet_politics.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_soviethelp"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_soviethelp.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_spa"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_spa.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_starve"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_starve.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_statecontrol"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_statecontrol.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_steel"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_steel.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_stockmarket"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_stockmarket.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_stolenpapers"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_stolenpapers.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_stomp_out_weak"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_stomp_out_weak.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_strikedemocracy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_strikedemocracy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_strikehard"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_strikehard.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_studyforeigntanks"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_studyforeigntanks.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_subterfuge"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_subterfuge.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_sunni"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_sunni.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_sunni_gov"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_sunni_gov.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_superiorarms"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_superiorarms.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_tank"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_lighttanks"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_lighttanks.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_tankdoctrine"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_tankdoctrine.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_tech"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_tech.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_urban"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_urban.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_unitednations1"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_unitednations1.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_unitednations2"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_unitednations2.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_unitednations3"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_unitednations3.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_urbanwar"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_urbanwar.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_workersupport"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_workersupport.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_ww1deaths"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_ww1deaths.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_yacht"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_yacht.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_yugo_ally"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_yugo_ally.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_oil"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_oil.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_gold"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_gold.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_lit"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_lit.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_rom"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_rom.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_alb"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_alb.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_irq"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_irq.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_rom"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_rom.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_tur"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_tur.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_per"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_per.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_checkmate"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_checkmate.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_break_chinese"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_break_chinese.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_africa_ita"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_africa_ita.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_africa_bel"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_africa_ita.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_closeeconomy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_closeeconomy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_colonialism"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_colonialism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_moneydeal"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_moneydeal.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_constitution"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_constitution.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fortisland"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fortisland.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fortcityair"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fortcityair.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_lightarms"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_lightarms.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_factories"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_factories.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_intel"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_intel.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_invasion"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_invasion.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_resources"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_resources.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_economy_push"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_economy_push.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_anti_capitalist"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_anti_capitalist.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_syndie_industry"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_syndie_industry.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_syndie1"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_syndie1.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fellowman"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fellowman.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_reform"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_reform.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_syndie2"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_syndie2.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_syndieally"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_syndieally.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_baltics"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_baltics.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_fight_baltics"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_fight_baltics.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_friend_baltics"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_friend_baltics.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_reichenemy"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_reichenemy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_eliteunitpropaganda"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_eliteunitpropaganda.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_tungsten"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_tungsten.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_workersunion"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_workersunion.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_commie_militaryagree"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_commie_militaryagree.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_religiousharmony"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_religiousharmony.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_axis"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_axis.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GENERIC_axispapers"
+		texturefile = "gfx/interface/goals/1GENERIC/nosgoals_GENERIC_axispapers.dds"
+	}
+
+
+
+####------> GERMANY <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_GER_airnationalization"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_airnationalization.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_aradocompany"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_aradocompany.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_architect"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_architect.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_aroundmaginot"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_aroundmaginot.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_atlantikwall"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_atlantikwall.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_auchtungminen"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_auchtungminen.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_barbarossa_prep"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_barbarossa_prep.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_BF109"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_BF109.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_bismarck"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_bismarck.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_brandenburger"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_brandenburger.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_brotheraustria"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_brotheraustria.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_brownrevolution"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_brownrevolution.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_bundesrepublik"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_bundesrepublik.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_cascompany"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_cascompany.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_christianity"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_christianity.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_ckd"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_ckd.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_czechdeal"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_czechdeal.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_danzigorwar"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_danzigorwar.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_deathsquads"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_deathsquads.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_empowerjunkers"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_empowerjunkers.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_enablingact"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_enablingact.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_endnazism"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_endnazism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_fallschrimjager"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_fallschrimjager.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_friend_fin"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_friend_fin.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_friend_swe"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_friend_swe.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_friend_tur"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_friend_tur.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_frontlines"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_frontlines.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_funeral"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_funeral.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_Fw190"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_Fw190.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_generalplanost"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_generalplanost.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_germancolonialempire"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_germancolonialempire.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_germanglory"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_germanglory.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_gottmituns"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_gottmituns.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_greatblackmenace"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_greatblackmenace.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_hangman"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_hangman.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_He177"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_He177.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_heavyfighterco"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_heavyfighterco.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_heer"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_heer.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_hgw"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_hgw.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_hireeconomists"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_hireeconomists.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_hitlerelected"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_hitlerelected.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_hitleryouth"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_hitleryouth.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_igfarben"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_igfarben.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_intocommunism"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_intocommunism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_intodespotism"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_intodespotism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_intorepublic"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_intorepublic.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_invadebritain"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_invadebritain.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_ironcross"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_ironcross.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_ironcrossgreatwar"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_ironcrossgreatwar.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_kaiserflag"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_kaiserflag.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_kaiserreich"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_kaiserreich.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_kaiserreich_return"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_kaiserreich_return.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_kaiserreturn"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_kaiserreturn.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_kaisersonreturn"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_kaisersonreturn.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_kdf"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_kdf.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_kriegsmarine"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_kriegsmarine.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_kriegsmarine_buildup"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_kriegsmarine_buildup.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_kriegsmarine_donitz"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_kriegsmarine_donitz.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_kriegsmarine_kaiser"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_kriegsmarine_kaiser.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_luftwaffe"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_luftwaffe.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_Me262"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_Me262.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_MEFObills"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_MEFObills.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_monarchism"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_monarchism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_moretanks"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_moretanks.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_nationalism"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_nationalism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_nazicapitalship"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_nazicapitalship.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_nazidomination"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_nazidomination.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_nazioccupation"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_nazioccupation.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_nazireichstag"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_nazireichstag.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_nightlongknives"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_nightlongknives.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_okw"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_okw.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_pangermanism"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_pangermanism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_panthertank"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_panthertank.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_planz"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_planz.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_prussia"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_prussia.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_prussian_constitutionalism"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_prussian_constitutionalism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_raciallaws"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_raciallaws.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_realpolitik"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_realpolitik.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_reichsarmy"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_reichsarmy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_rhineland"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_rhineland.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_SAmarines"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_SAmarines.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_schutzstaffel"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_schutzstaffel.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_sealion"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_sealion.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_ss"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_ss.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_SSofficers"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_SSofficers.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_SSvolunteers"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_SSvolunteers.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_strasser"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_strasser.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_strasserism"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_strasserism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_take_finland"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_take_finland.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_take_france"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_take_france.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_take_icealnd"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_take_icealnd.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_tigerseast"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_tigerseast.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_tripartitepact"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_tripartitepact.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_ultranationalism"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_ultranationalism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_weimar"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_weimar.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_weltkrieglesson"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_weltkrieglesson.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_weserubung"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_weserubung.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_wolfenstein"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_wolfenstein.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_GER_hitlerfriend"
+		texturefile = "gfx/interface/goals/GER/nosgoals_GER_hitlerfriend.dds"
+	}
+
+
+
+####------> EAST GERMANY <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_DDR_nva"
+		texturefile = "gfx/interface/goals/DDR/nosgoals_DDR_nva.dds"
+	}
+
+
+
+####------> SOVIET UNION <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_5yearplanresume"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_5yearplanresume.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_5yearplanstart"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_5yearplanstart.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_aeroflot"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_aeroflot.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_aircult"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_aircult.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_airdefenceforces"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_airdefenceforces.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_arrestenemies"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_arrestenemies.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_Btr60"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_Btr60.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_civilwar_redarmy"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_civilwar_redarmy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_civilwar_russia"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_civilwar_russia.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_comecon"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_comecon.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_commie_democracy"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_commie_democracy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_commie_science"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_commie_science.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_commie_justice"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_commie_justice.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_constitution"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_constitution.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_counterrevolution"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_counterrevolution.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_education"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_education.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_fifthcolumn"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_fifthcolumn.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_freethewest"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_freethewest.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_frozenrail"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_frozenrail.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_globalsovietimage"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_globalsovietimage.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_greatpurge"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_greatpurge.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_gulag"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_gulag.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_heroism"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_heroism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_kgb"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_kgb.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_lenincult"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_lenincult.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_leningradcircle"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_leningradcircle.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_libertyscience"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_libertyscience.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_litvinov_replace"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_litvinov_replace.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_marchonkremlin"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_marchonkremlin.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_mechwave"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_mechwave.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_MiG9"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_MiG9.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_MiG15"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_MiG15.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_molotovdoctrine"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_molotovdoctrine.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_moscowdirectrule"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_moscowdirectrule.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_moscowtrial"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_moscowtrial.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_naturetransform"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_naturetransform.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_newpowerstruggle"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_newpowerstruggle.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_nkvd"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_nkvd.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_nkvd_agranov"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_nkvd_agranov.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_nkvd_yagoda"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_nkvd_yagoda.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_okb"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_okb.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_partycensorship"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_partycensorship.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_peoplesarmy"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_peoplesarmy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_peoplesfront"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_peoplesfront.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_permamantrevolution"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_permamantrevolution.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_pilotwomen"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_pilotwomen.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_politiburo_role"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_politiburo_role.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_premier_bukharin"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_premier_bukharin.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_premier_trotsky"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_premier_trotsky.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_proletariat_dictatorship"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_proletariat_dictatorship.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_R7"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_R7.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_redairforce"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_redairforce.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_redarmy"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_redarmy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_redfleet"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_redfleet.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_redguards"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_redguards.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_redmarines"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_redmarines.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_redrockets"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_redrockets.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_rulebyforce"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_rulebyforce.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_russification1"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_russification1.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_russification2"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_russification2.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_russification3"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_russification3.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_sicklehammerstar"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_sicklehammerstar.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_small_politiburo"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_small_politiburo.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_smersh"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_smersh.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_sovietbreadbasket"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_sovietbreadbasket.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_sovietpalace"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_sovietpalace.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_sputnik"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_sputnik.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_stakhonovite"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_stakhonovite.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_stalin_cult"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_stalin_cult.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_stalin_constitution"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_stalin_constitution.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_stalin_deadlist"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_stalin_deadlist.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_stalin_outmaneuvered"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_stalin_outmaneuvered.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_stalin_protegee"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_stalin_protegee.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_stalin_writing"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_stalin_writing.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_statedefcommite"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_statedefcommite.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_T55"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_T55.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_transpolarflight"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_transpolarflight.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_Tu16"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_Tu16.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_urbanization"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_urbanization.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_vdv"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_vdv.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_workerculture"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_workerculture.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_yakovlev"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_yakovlev.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_yezhovchina"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_yezhovchina.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_rockets"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_rockets.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_SOV_stalin"
+		texturefile = "gfx/interface/goals/SOV/nosgoals_SOV_stalin.dds"
+	}
+
+
+
+####------> BRITAIN <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_airrearm"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_airrearm.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_allies"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_allies.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_angevin"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_angevin.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_apartheid"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_apartheid.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_army"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_army.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_asiaprotector"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_asiaprotector.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_australia"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_australia.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_bengal"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_bengal.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_bignavy"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_bignavy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_blackshirtorganize"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_blackshirtorganize.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_blackshirts"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_blackshirts.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_bletchlypark"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_bletchlypark.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_bombercommand"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_bombercommand.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_britannia"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_britannia.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_britishiraq"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_britishiraq.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_bsacompany"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_bsacompany.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_burmaroad"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_burmaroad.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_canada"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_canada.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_newzealand"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_newzealand.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_southafrica"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_southafrica.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_ceylon"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_ceylon.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_commonwealth"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_commonwealth.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_cruisertank"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_cruisertank.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_deal_swe"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_deal_swe.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_defendisland"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_defendisland.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_election"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_election.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_fightercommand"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_fightercommand.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_fourpoweract"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_fourpoweract.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_general"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_general.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_godsaveking"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_godsaveking.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_grenadiers"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_grenadiers.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_helpnukes"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_helpnukes.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_hurricane"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_hurricane.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_imperialconference"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_imperialconference.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_india"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_india.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_infantrytank"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_infantrytank.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_investdominion"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_investdominion.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_investsahara"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_investsahara.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_keepdemocracy"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_keepdemocracy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_kill_heydrich"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_kill_heydrich.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_kill_hitler"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_kill_hitler.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_kill_mosley"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_kill_mosley.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_kingedwardVIII"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_kingedwardVIII.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_kinggeorgeVI"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_kinggeorgeVI.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_lion"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_lion.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_overseas"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_overseas.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_pm_churchill"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_pm_churchill.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_pm_halifax"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_pm_halifax.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_raf"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_raf.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_reaffirm"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_reaffirm.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_rulewaves"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_rulewaves.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_singaporefort"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_singaporefort.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_speechking"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_speechking.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_spitfire"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_spitfire.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_sunneversets"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_sunneversets.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_takedominions"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_takedominions.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_unionoffascists"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_unionoffascists.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ENG_empirestrikesback"
+		texturefile = "gfx/interface/goals/ENG/nosgoals_ENG_empirestrikesback.dds"
+	}
+
+
+
+####------> JAPAN <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_airforce"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_airforce.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_armyexpand"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_armyexpand.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_blackdragon"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_blackdragon.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_bomber"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_bomber.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_bombingsomeone"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_bombingsomeone.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_bushido"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_bushido.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_colonialism"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_colonialism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_coprosperity"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_coprosperity.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_defend"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_defend.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_empireinfantry"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_empireinfantry.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_ENG_ally"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_ENG_ally.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_helmet"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_helmet.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_imperialnavy"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_imperialnavy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_imperialwave"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_imperialwave.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_navy"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_navy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_samurai"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_samurai.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_statefleet"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_statefleet.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_stateloyalty"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_stateloyalty.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_tank"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_tojopurge"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_tojopurge.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_JAP_wave"
+		texturefile = "gfx/interface/goals/JAP/nosgoals_JAP_wave.dds"
+	}
+
+
+
+####------> NATIONALIST CHINA <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_CHI_airforce"
+		texturefile = "gfx/interface/goals/CHI/nosgoals_CHI_airforce.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_CHI_american_fighters"
+		texturefile = "gfx/interface/goals/CHI/nosgoals_CHI_american_fighters.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_CHI_army"
+		texturefile = "gfx/interface/goals/CHI/nosgoals_CHI_army.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_CHI_communistparty"
+		texturefile = "gfx/interface/goals/CHI/nosgoals_CHI_communistparty.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_CHI_kuomintang"
+		texturefile = "gfx/interface/goals/CHI/nosgoals_CHI_kuomintang.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_CHI_kuomintangally"
+		texturefile = "gfx/interface/goals/CHI/nosgoals_CHI_kuomintangally.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_CHI_kuomintangburn"
+		texturefile = "gfx/interface/goals/CHI/nosgoals_CHI_kuomintangburn.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_CHI_nationaldefence"
+		texturefile = "gfx/interface/goals/CHI/nosgoals_CHI_nationaldefence.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_CHI_nationalistchina"
+		texturefile = "gfx/interface/goals/CHI/nosgoals_CHI_nationalistchina.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_CHI_navy"
+		texturefile = "gfx/interface/goals/CHI/nosgoals_CHI_navy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_CHI_singleparty"
+		texturefile = "gfx/interface/goals/CHI/nosgoals_CHI_singleparty.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_CHI_threeprinciples"
+		texturefile = "gfx/interface/goals/CHI/nosgoals_CHI_threeprinciples.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_CHI_wakingthetiger"
+		texturefile = "gfx/interface/goals/CHI/nosgoals_CHI_wakingthetiger.dds"
+	}
+
+
+
+####------> ITALY <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_ITA_balkans"
+		texturefile = "gfx/interface/goals/ITA/nosgoals_ITA_balkans.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ITA_kingdomshield"
+		texturefile = "gfx/interface/goals/ITA/nosgoals_ITA_kingdomshield.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ITA_revolution"
+		texturefile = "gfx/interface/goals/ITA/nosgoals_ITA_revolution.dds"
+	}
+
+
+
+####------> BELGIUM <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_airservice"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_airservice.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_army"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_army.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_belgiumfirst"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_belgiumfirst.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_benelux"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_benelux.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_bergenplan"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_bergenplan.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_commiesymbol"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_commiesymbol.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_defend"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_defend.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_ENG_friend"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_ENG_friend.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_ENG_navy"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_ENG_navy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_flanwallarmy"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_flanwallarmy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_italian_fighters"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_italian_fighters.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_keepdemocracy"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_keepdemocracy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_navy"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_navy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_newburgundy1"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_newburgundy1.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_newburgundy2"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_newburgundy2.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_officers"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_officers.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_rexism"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_rexism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_rijk"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_rijk.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_verdinaso"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_verdinaso.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BEL_volunteers"
+		texturefile = "gfx/interface/goals/BEL/nosgoals_BEL_volunteers.dds"
+	}
+
+
+
+####------> AUSTRIA <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_airforce"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_airforce.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_armczechs"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_armczechs.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_aushun"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_aushun.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_aushun_army"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_aushun_army.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_aushun_navy"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_aushun_navy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_aushun_paratroop"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_aushun_paratroop.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_austriaflag"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_austriaflag.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_bundesheer"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_bundesheer.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_czechcitizen"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_czechcitizen.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_czechimmigration"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_czechimmigration.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_czechvolunteers"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_czechvolunteers.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_fight_romania"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_fight_romania.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_FRA_friend"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_FRA_friend.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_gebirgsjaeger_programme"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_gebirgsjaeger_programme.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_HUN_friend"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_HUN_friend.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_YUG_ally"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_YUG_ally.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_kingdom"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_kingdom.dds"
+	}	
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_kriegsmarine"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_kriegsmarine.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_luftstreitkrafte"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_luftstreitkrafte.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_naziban"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_naziban.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_rearmbundesheer"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_rearmbundesheer.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_southgermany_form"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_southgermany_form.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_takebohemia"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_takebohemia.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_takepower"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_takepower.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AUS_YUG_friend"
+		texturefile = "gfx/interface/goals/AUS/nosgoals_AUS_YUG_friend.dds"
+	}
+
+
+
+####------> INDIA <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_RAJ_expandindustry"
+		texturefile = "gfx/interface/goals/RAJ/nosgoals_RAJ_expandindustry.dds"
+	}
+
+
+
+####------> HUNGARY <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_HUN_greaterhungary"
+		texturefile = "gfx/interface/goals/HUN/nosgoals_HUN_greaterhungary.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_HUN_hungaryflag"
+		texturefile = "gfx/interface/goals/HUN/nosgoals_HUN_hungaryflag.dds"
+	}
+
+
+
+####------> AUSTRALIA <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_AST_aboriginalaustralia"
+		texturefile = "gfx/interface/goals/AST/nosgoals_AST_aboriginalaustralia.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AST_anzac"
+		texturefile = "gfx/interface/goals/AST/nosgoals_AST_anzac.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AST_aussieairforce"
+		texturefile = "gfx/interface/goals/AST/nosgoals_AST_aussieairforce.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AST_aussiearmy"
+		texturefile = "gfx/interface/goals/AST/nosgoals_AST_aussiearmy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AST_aussienavy"
+		texturefile = "gfx/interface/goals/AST/nosgoals_AST_aussienavy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AST_australiaalone"
+		texturefile = "gfx/interface/goals/AST/nosgoals_AST_australiaalone.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AST_bushwarriors"
+		texturefile = "gfx/interface/goals/AST/nosgoals_AST_bushwarriors.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AST_emuweapons"
+		texturefile = "gfx/interface/goals/AST/nosgoals_AST_emuweapons.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AST_johncurtis"
+		texturefile = "gfx/interface/goals/AST/nosgoals_AST_johncurtis.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AST_republicanism"
+		texturefile = "gfx/interface/goals/AST/nosgoals_AST_republicanism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AST_whiteaustralia"
+		texturefile = "gfx/interface/goals/AST/nosgoals_AST_whiteaustralia.dds"
+	}
+
+
+
+####------> BRAZIL <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_BRA_braziljesus"
+		texturefile = "gfx/interface/goals/BRA/nosgoals_BRA_braziljesus.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BRA_estadonovo"
+		texturefile = "gfx/interface/goals/BRA/nosgoals_BRA_estadonovo.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BRA_integralism"
+		texturefile = "gfx/interface/goals/BRA/nosgoals_BRA_integralism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BRA_monarchy"
+		texturefile = "gfx/interface/goals/BRA/nosgoals_BRA_monarchy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BRA_security"
+		texturefile = "gfx/interface/goals/BRA/nosgoals_BRA_security.dds"
+	}
+
+
+
+####------> IRAN <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_PER_abadanoil"
+		texturefile = "gfx/interface/goals/PER/nosgoals_PER_abadanoil.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_PER_grabiraq"
+		texturefile = "gfx/interface/goals/PER/nosgoals_PER_grabiraq.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_PER_iranflag"
+		texturefile = "gfx/interface/goals/PER/nosgoals_PER_iranflag.dds"
+	}
+
+
+
+####------> IRELAND <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_IRE_airforce"
+		texturefile = "gfx/interface/goals/IRE/nosgoals_IRE_airforce.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_IRE_army"
+		texturefile = "gfx/interface/goals/IRE/nosgoals_IRE_army.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_IRE_defence"
+		texturefile = "gfx/interface/goals/IRE/nosgoals_IRE_defence.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_IRE_farms"
+		texturefile = "gfx/interface/goals/IRE/nosgoals_IRE_farms.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_IRE_gaelic"
+		texturefile = "gfx/interface/goals/IRE/nosgoals_IRE_gaelic.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_IRE_heavyindustry"
+		texturefile = "gfx/interface/goals/IRE/nosgoals_IRE_heavyindustry.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_IRE_navy"
+		texturefile = "gfx/interface/goals/IRE/nosgoals_IRE_navy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_IRE_sanctuary"
+		texturefile = "gfx/interface/goals/IRE/nosgoals_IRE_sanctuary.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_IRE_tank"
+		texturefile = "gfx/interface/goals/IRE/nosgoals_IRE_tank.dds"
+	}
+
+
+
+####------> BULGARIA <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_BUL_bulagreement"
+		texturefile = "gfx/interface/goals/BUL/nosgoals_BUL_bulagreement.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BUL_bulairforce"
+		texturefile = "gfx/interface/goals/BUL/nosgoals_BUL_bulairforce.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BUL_bularmy"
+		texturefile = "gfx/interface/goals/BUL/nosgoals_BUL_bularmy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BUL_bulgariaflag"
+		texturefile = "gfx/interface/goals/BUL/nosgoals_BUL_bulgariaflag.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BUL_bulnavy"
+		texturefile = "gfx/interface/goals/BUL/nosgoals_BUL_bulnavy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BUL_commie_industry"
+		texturefile = "gfx/interface/goals/BUL/nosgoals_BUL_commie_industry.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BUL_fashybul"
+		texturefile = "gfx/interface/goals/BUL/nosgoals_BUL_fashybul.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BUL_flagandeagle"
+		texturefile = "gfx/interface/goals/BUL/nosgoals_BUL_flagandeagle.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BUL_greaterbulgaria"
+		texturefile = "gfx/interface/goals/BUL/nosgoals_BUL_greaterbulgaria.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BUL_tanks"
+		texturefile = "gfx/interface/goals/BUL/nosgoals_BUL_tanks.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BUL_tsarboris"
+		texturefile = "gfx/interface/goals/BUL/nosgoals_BUL_tsarboris.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BUL_tsardom"
+		texturefile = "gfx/interface/goals/BUL/nosgoals_BUL_tsardom.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BUL_twobulflags"
+		texturefile = "gfx/interface/goals/BUL/nosgoals_BUL_twobulflags.dds"
+	}
+
+
+
+####------> ALBANIA <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_ALB_albraf"
+		texturefile = "gfx/interface/goals/ALB/nosgoals_ALB_albraf.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ALB_killzog"
+		texturefile = "gfx/interface/goals/ALB/nosgoals_ALB_killzog.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ALB_royalarmy"
+		texturefile = "gfx/interface/goals/ALB/nosgoals_ALB_royalarmy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ALB_royalnavy"
+		texturefile = "gfx/interface/goals/ALB/nosgoals_ALB_royalnavy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ALB_royalshield"
+		texturefile = "gfx/interface/goals/ALB/nosgoals_ALB_royalshield.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ALB_YUG_friend"
+		texturefile = "gfx/interface/goals/ALB/nosgoals_ALB_YUG_friend.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_ALB_zog"
+		texturefile = "gfx/interface/goals/ALB/nosgoals_ALB_zog.dds"
+	}
+
+
+
+####------> TIBET <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_TIB_buddhism"
+		texturefile = "gfx/interface/goals/TIB/nosgoals_TIB_buddhism.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_TIB_dalailama"
+		texturefile = "gfx/interface/goals/TIB/nosgoals_TIB_dalailama.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_TIB_dalailama_agree"
+		texturefile = "gfx/interface/goals/TIB/nosgoals_TIB_dalailama_agree.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_TIB_monasteries"
+		texturefile = "gfx/interface/goals/TIB/nosgoals_TIB_monasteries.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_TIB_monasteries_crisis"
+		texturefile = "gfx/interface/goals/TIB/nosgoals_TIB_monasteries_crisis.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_TIB_monasteries_crushed"
+		texturefile = "gfx/interface/goals/TIB/nosgoals_TIB_monasteries_crushed.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_TIB_monasteries_red"
+		texturefile = "gfx/interface/goals/TIB/nosgoals_TIB_monasteries_red.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_TIB_monasteries_tax"
+		texturefile = "gfx/interface/goals/TIB/nosgoals_TIB_monasteries_tax.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_TIB_monasteries_uproar"
+		texturefile = "gfx/interface/goals/TIB/nosgoals_TIB_monasteries_uproar.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_TIB_philip_neame"
+		texturefile = "gfx/interface/goals/TIB/nosgoals_TIB_philip_neame.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_TIB_regent"
+		texturefile = "gfx/interface/goals/TIB/nosgoals_TIB_regent.dds"
+	}
+
+
+
+####------> MONGOLIA <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_MON_whitemongolia"
+		texturefile = "gfx/interface/goals/MON/nosgoals_MON_whitemongolia.dds"
+	}
+
+
+
+####------> IRAQ <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_IRQ_royalarmy"
+		texturefile = "gfx/interface/goals/IRQ/nosgoals_IRQ_royalarmy.dds"
+	}
+
+
+
+####------> AFGHANISTAN <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_AFG_royalairforce"
+		texturefile = "gfx/interface/goals/AFG/nosgoals_AFG_royalairforce.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_AFG_royalarmy"
+		texturefile = "gfx/interface/goals/AFG/nosgoals_AFG_royalarmy.dds"
+	}
+
+
+
+####------> BHUTAN <><> <><> <><> <><> <><>
+	
+	SpriteType = {
+		name = "GFX_nosgoals_BHU_bhutanarmy"
+		texturefile = "gfx/interface/goals/BHU/nosgoals_BHU_bhutanarmy.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BHU_bhutanseal"
+		texturefile = "gfx/interface/goals/BHU/nosgoals_BHU_bhutanseal.dds"
+	}
+	SpriteType = {
+		name = "GFX_nosgoals_BHU_stormdragon"
+		texturefile = "gfx/interface/goals/BHU/nosgoals_BHU_stormdragon.dds"
+	}
+}

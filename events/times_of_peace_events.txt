@@ -1,0 +1,290 @@
+﻿add_namespace = times_of_peace
+
+country_event = {
+	id = times_of_peace.7
+	mean_time_to_happen = { days = 2 }
+	hidden = yes
+	trigger = {
+		NOT = { has_country_flag = is_in_world_war }
+		is_in_faction = yes
+		any_country = {
+			is_in_faction_with = ROOT
+			is_major = yes
+		}
+		any_country = {
+			capital_scope = { is_on_continent = europe }
+			is_in_faction_with = ROOT
+			is_faction_leader = yes
+			is_major = yes
+			OR = {
+				has_idea = etgi_laws_leadership_structure_2
+				has_idea = etgi_laws_leadership_structure_3
+			}
+		}
+		any_country = {
+			has_war_with = ROOT
+			is_in_faction = yes
+			is_major = yes
+		}
+		any_country = {
+			capital_scope = { is_on_continent = europe }
+			is_faction_leader = yes
+			has_war_with = ROOT
+			is_in_faction = yes
+			is_major = yes
+			OR = {
+				has_idea = etgi_laws_leadership_structure_2
+				has_idea = etgi_laws_leadership_structure_3
+			}
+		}
+	}
+	immediate = {
+		set_country_flag = is_in_world_war
+	}
+	option = {
+		name = times_of_war.0.a
+	}
+}
+
+country_event = {
+	id = times_of_peace.0
+	title = times_of_peace.0.t
+	desc = times_of_peace.0.d
+	picture = GFX_news_event_073
+	hidden = yes
+
+	mean_time_to_happen = {	days = 50}
+	
+	trigger = {
+		date > 1945.1.1
+		any_country = {
+			has_country_flag = is_in_world_war
+			has_war = no
+			NOT = {
+				any_country = {
+					is_in_faction_with = PREV
+					has_war = yes
+				}
+			}
+		}
+		NOT = {
+			any_country = {
+				is_major = yes
+				has_war = yes
+				is_in_faction = yes
+			}
+		}
+	}
+	immediate = {
+		country_event = { id = times_of_peace.4 days = 7}
+		hidden_effect = {
+			every_country = {
+				limit = { num_divisions > 2 }
+				set_country_flag = needs_troop_removal
+				add_ideas = postwar_economy
+				add_ideas = civilian_economy
+				add_ideas = disarmed_nation
+				add_ideas = tax_low
+				add_ideas = foreign_cooperative
+				add_ideas = mob_reserve
+			}
+			every_country = {
+				limit = {
+					has_country_flag = is_in_world_war
+					has_war = no
+					num_divisions > 5
+					NOT = {
+						any_country = {
+							is_in_faction_with = PREV
+							has_war = yes
+						}
+					}
+				}
+				if = {
+					limit = { is_in_faction = yes }
+					every_country = {
+						limit = { is_in_faction_with = PREV }
+						give_guarantee = PREV
+						give_military_access = PREV
+						diplomatic_relation = { country = PREV relation = non_aggression_pact }
+						PREV = {
+							give_guarantee = PREV
+							give_military_access = PREV
+							diplomatic_relation = { country = PREV relation = non_aggression_pact }
+						}
+					}
+				}
+				every_country = { #Improve relations with every ww participant (and neighbour) to avoid a war straight after peace
+					limit = {
+						OR = {
+							has_country_flag = is_in_world_war
+							is_neighbor_of = PREV
+							is_in_faction_with = PREV
+						}
+					}
+					add_opinion_modifier = { target = ROOT modifier = peace_at_last }
+					reverse_add_opinion_modifier = { target = ROOT modifier = peace_at_last }
+					add_opinion_modifier = { target = ROOT modifier = peace_at_last1 }
+					reverse_add_opinion_modifier = { target = ROOT modifier = peace_at_last1 }
+					add_opinion_modifier = { target = ROOT modifier = peace_at_last2 }
+					reverse_add_opinion_modifier = { target = ROOT modifier = peace_at_last2 }
+					add_opinion_modifier = { target = ROOT modifier = peace_at_last3 }
+					reverse_add_opinion_modifier = { target = ROOT modifier = peace_at_last3 }
+				}
+				if = {
+					limit = {
+						is_faction_leader = yes
+						any_country = {
+							is_in_faction_with = PREV
+							NOT = { is_subject_of = PREV }
+							is_major = yes
+						}
+					}
+					dismantle_faction = yes
+				}
+				country_event = { id = times_of_peace.3 days = 7}
+				clr_country_flag = is_in_world_war
+				set_country_flag = was_in_world_war
+			}
+			random_country = {
+				limit = {
+					has_country_flag = needs_troop_removal
+					has_war = no
+					is_ai = no
+					num_divisions > 5
+					NOT = {
+						any_country = {
+							is_in_faction_with = PREV
+							has_war = yes
+						}
+					}
+				}
+				country_event = { id = times_of_peace.1 days = 7}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_country = {
+							has_country_flag = needs_troop_removal
+							has_war = no
+							is_ai = no
+							num_divisions > 5
+							NOT = {
+								any_country = {
+									is_in_faction_with = PREV
+									has_war = yes
+								}
+							}
+						}
+					}
+				}
+				country_event = { id = times_of_peace.2}
+			}
+		}
+		
+	}
+	
+	option = {
+		name = times_of_peace.0.a
+		
+		
+		
+		
+		
+		hidden_effect = {
+		
+			
+		
+			set_political_power = 0
+			
+		}
+		
+		every_owned_state = {
+			remove_building = {
+					type = arms_factory
+					level = 1
+				}
+		}
+
+	}
+}
+country_event = { #Informs the player that troops are about to be removed
+	id = times_of_peace.1
+	title = times_of_peace.1.t
+	desc = times_of_peace.1.d
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = times_of_peace.1.a
+		
+		hidden_effect = {
+			country_event = { id = times_of_peace.2}
+		}
+	}
+	
+	
+}
+
+
+country_event = { #Troop removal code, starts a civil war and immediately ends it, hence removing troops based on the civil war size
+	id = times_of_peace.2
+	
+	hidden = yes
+	is_triggered_only = yes 
+	
+	immediate = {
+		every_country = {
+			limit = { has_country_flag = needs_troop_removal }
+			delete_unit = { disband = yes }
+			clr_country_flag = needs_troop_removal
+			set_equipment_fraction = 0.01
+		}
+	}
+}
+
+news_event = { #World tension correction code
+	id = times_of_peace.4
+	title = times_of_peace.4.t
+	desc = times_of_peace.4.d
+	picture = GFX_news_event_073
+	
+	hidden = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_country = {
+			if = {
+				limit = {
+					threat > 0
+				}
+				add_named_threat = { threat = -100 name = times_of_peace.0.x }
+			}
+		}
+		country_event = { id = times_of_peace.4 days = 2}
+	}
+	
+	option = {
+		name = none
+	}
+}
+
+# Notification event that leader has decided to retire
+country_event = {
+	id = times_of_peace.8
+	title = times_of_peace.8.t
+	desc = times_of_peace.8.desc
+	
+	picture = GFX_report_event_military_planning
+
+	is_triggered_only = yes
+
+	option = {
+		name = times_of_peace.8.a
+		FROM = {
+			retire = yes
+		}
+	}	
+}

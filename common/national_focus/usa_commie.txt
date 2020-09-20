@@ -1,0 +1,1940 @@
+###########################
+# Commonwealth Focuses
+###########################
+
+focus_tree = {
+	id = aco_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			original_tag = FAS
+		}
+	}
+	
+	default = no
+	
+	focus = {
+		id = ACO_Mobilize_the_People
+		icon = GFX_goal_generic_demand_territory
+		x = 17
+		y = 0
+		cost = 2
+		available = {
+			has_war = yes
+			#has_government = communism
+		}
+		ai_will_do = {
+			factor = 100
+		}	
+		
+		completion_reward = {
+			add_ideas = limited_conscription 
+			add_ideas = partial_economic_mobilisation 
+		
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+	}
+	
+	
+	
+	focus = {
+		id = ACO_Washington_Mountaineers_School
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Mobilize_the_People }
+		x = 14
+		y = 1
+		cost = 10
+		available = {
+			#has_government = communism
+		}
+		ai_will_do = {
+			factor = 20
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = ACO_mountaineer_divisions_tt
+			hidden_effect = { USA = { load_oob = "ACO_mountaineers" } }
+		}
+		
+	}
+	
+	focus = {
+		id = ACO_Expand_Naval_Production
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Mobilize_the_People }
+		x = 12
+		y = 1
+		cost = 10
+		available = {
+			#has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+		}
+	}
+	
+	
+	focus = {
+		id = ACO_Expand_Military_Production
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Mobilize_the_People }
+		x = 10
+		y = 1
+		cost = 2
+		available = {
+			#has_government = communism
+		}
+		ai_will_do = {
+			factor = 100
+		}	
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Establish_Communal_Armories
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Expand_Military_Production }
+		x = 10
+		y = 2
+		cost = 5
+		available = {
+			#has_government = communism
+		}
+		ai_will_do = {
+			factor = 100
+		}	
+		
+		completion_reward = {
+			378 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}	
+			}
+			
+		}
+	}
+	
+	
+	
+	focus = {
+		id = ACO_Fight_for_Survival
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Mobilize_the_People }
+		x = 8
+		y = 1
+		cost = 5
+		available = {
+			has_war = yes
+			#has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_ideas = aco_struggle_for_survival
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Rifle_Donations
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Fight_for_Survival }
+		x = 8
+		y = 2
+		cost = 5
+		available = {
+			has_war = yes
+			#has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 20000
+				producer = ACO
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Establish_a_Provisional_Government
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = ACO_Mobilize_the_People }
+		x = 17
+		y = 1
+		cost = 10
+		available = {
+			hidden_trigger = {
+				NOS_has_civil_war = no
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			
+			add_research_slot = 1
+		
+			add_ideas = aco_remnants_of_the_federal_system
+		}	
+	}
+	
+	focus = {
+		id = ACO_Fortify_the_Northern_Rockies
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Mobilize_the_People }
+		x = 20
+		y = 1
+		cost = 10
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			387 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 1832
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 12124
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 3781
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 10602
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 10672
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 12535
+					instant_build = yes
+				}
+			}
+			380 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 10582
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 4865
+					instant_build = yes
+				}
+			}				
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Fortify_the_Southern_Rockies
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Mobilize_the_People }
+		x = 22
+		y = 1
+		cost = 10
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			376 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 12552
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 4975
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 8070
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 3867
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 4668
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 1756
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 7684
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 868
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					province = 9792
+					instant_build = yes
+				}
+			}	
+		}
+	}
+	
+	
+	focus = {
+		id = ACO_Demoralize_the_Union
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Mobilize_the_People }
+		x = 24
+		y = 1
+		cost = 10
+		available = {
+			has_war = yes
+		}
+		bypass = {
+			NOT = { has_war_with = FAS }
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			FAS = { add_war_support = -0.15 }
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Increase_Support_for_our_War
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Demoralize_the_Union }
+		x = 24
+		y = 2
+		cost = 5
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_war_support = 0.1
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = ACO_Motorized_Artillery_Brigades
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = ACO_Mobilize_the_People }
+		x = 26
+		y = 1
+		cost = 10
+		available = {
+			#has_government = democratic
+			has_tech = mechanised_infantry
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		completion_reward = {
+			set_technology = { usa_tech_motorized_artillery_units = 1 }
+				
+		}
+					
+	}
+
+	
+	focus = {
+		id = ACO_Tank_Destroyer_Doctrine
+		icon = GFX_focus_generic_army_tanks2
+		prerequisite = { focus = ACO_Motorized_Artillery_Brigades }
+		x = 26
+		y = 2
+		cost = 10
+		available = {
+			#has_government = democratic
+		}
+		ai_will_do = {
+			factor = 15
+		}	
+		completion_reward = {
+			set_technology = { usa_tech_support_tank_destroyer_units = 1 }
+				
+		}
+					
+	}
+	
+	
+	
+	focus = {
+		id = ACO_Establish_An_Official_Military
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Mobilize_the_People }
+		x = 5
+		y = 1
+		cost = 10
+		available = {
+			has_war = yes
+			#has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_ideas = aco_american_military
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Organize_Our_NCOs
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Establish_An_Official_Military }
+		x = 6
+		y = 2
+		cost = 10
+		available = {
+			has_war = yes
+			#has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			
+			if = {
+				limit = { has_idea = aco_american_military }
+			
+				swap_ideas = {
+					remove_idea = aco_american_military
+					add_idea = aco_american_military2
+				}
+			}	
+			
+			if = {
+				limit = { has_idea = aco_american_military3 }
+			
+				swap_ideas = {
+					remove_idea = aco_american_military3
+					add_idea = aco_american_military4
+				}
+			}	
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Organize_Our_Officers
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Establish_An_Official_Military }
+		x = 4
+		y = 2
+		cost = 10
+		available = {
+			has_war = yes
+			#has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = aco_american_military }
+			
+				swap_ideas = {
+					remove_idea = aco_american_military
+					add_idea = aco_american_military3
+				}
+			}	
+			
+			if = {
+				limit = { has_idea = aco_american_military2 }
+			
+				swap_ideas = {
+					remove_idea = aco_american_military2
+					add_idea = aco_american_military4
+				}
+			}	
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Anti_Communist_Volunteer_Brigades
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Establish_a_Provisional_Government }
+		x = 16
+		y = 2
+		cost = 10
+		available = {
+			has_government = fascism
+			has_civil_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = ACO_fascist_brigades_tt
+			hidden_effect = { USA = { load_oob = "ACO_fascist_brigades" } }
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 300
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = light_tank_equipment_1 
+				amount = 240
+				producer = GER
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Anti_Fascist_Volunteer_Brigades
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Establish_a_Provisional_Government }
+		x = 18
+		y = 2
+		cost = 10
+		available = {
+			has_government = communism
+			has_civil_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = ACO_communist_brigades_tt
+			hidden_effect = { USA = { load_oob = "ACO_communist_brigades" } }
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 300
+				producer = SOV
+			}
+			add_equipment_to_stockpile = {
+				type = light_tank_equipment_1 
+				amount = 240
+				producer = SOV
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Agreement_with_the_Confederacy
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Establish_a_Provisional_Government }
+		x = 20
+		y = 2
+		cost = 10
+		available = {
+			#has_government = communism
+			has_civil_war = yes
+			NOT = { has_war_with = CSA }
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			CSA = { add_timed_idea = { idea = aco_no_interest_loans  days = 730 } }
+			add_timed_idea = { idea = aco_no_interest_loans_given  days = 730 }
+			
+			if = {
+				limit = { has_government = fascism }
+				random_other_country = {
+					limit = {
+						original_tag = ACO
+						has_government = communism
+					}
+					declare_war_on = {
+						target = CSA
+						type = annex_everything
+					}
+					add_war_support = 0.2
+				}
+			}
+			if = {
+				limit = { has_government = communism }
+				random_other_country = {
+					limit = {
+						original_tag = ACO
+						has_government = fascism
+					}
+					declare_war_on = {
+						target = CSA
+						type = annex_everything
+					}
+					add_war_support = 0.2
+				}
+			}
+		}
+			
+			
+	}
+	
+	
+	
+	focus = {
+		id = ACO_Enemy_of_Our_Enemy
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Establish_a_Provisional_Government }
+		#mutually_exclusive = { focus = ACO_Common_Ground }
+		x = 12
+		y = 2
+		cost = 1
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_political_power = 150
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Eliminate_the_Competition
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Enemy_of_Our_Enemy }
+		x = 11
+		y = 3
+		cost = 5
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_political_power = 150
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Purge_All_Opposition
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Eliminate_the_Competition }
+		x = 11
+		y = 4
+		cost = 30
+		available = {
+			has_government = fascism
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			remove_ideas = usa_bill_of_rights
+			add_ideas = aco_second_bill_of_rights2
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Develop_Persuasive_Arguments
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Reeducate_Hostile_Extremists focus = ACO_Purge_All_Opposition }
+		mutually_exclusive = { focus = ACO_Propaganda_Machine }
+		x = 11
+		y = 5
+		cost = 25
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_ideas = aco_fascist_idea1
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Propaganda_Machine
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Reeducate_Hostile_Extremists focus = ACO_Purge_All_Opposition }
+		mutually_exclusive = { focus = ACO_Develop_Persuasive_Arguments }
+		x = 13
+		y = 5
+		cost = 5
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_ideas = aco_fascist_idea2
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = ACO_Party_Dominance
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Develop_Persuasive_Arguments focus = ACO_Propaganda_Machine }
+		mutually_exclusive = { focus = ACO_Utilitarian_Initiatives }
+		x = 11
+		y = 6
+		cost = 10
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = aco_fascist_idea1 }
+				swap_ideas = {
+					remove_idea = aco_fascist_idea1
+					add_idea = aco_fascist_idea3
+				}
+			}
+			if = {
+				limit = { has_idea = aco_fascist_idea2 }
+				swap_ideas = {
+					remove_idea = aco_fascist_idea2
+					add_idea = aco_fascist_idea5
+				}
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Utilitarian_Initiatives
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Develop_Persuasive_Arguments focus = ACO_Propaganda_Machine }
+		mutually_exclusive = { focus = ACO_Party_Dominance }
+		x = 13
+		y = 6
+		cost = 25
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = aco_fascist_idea1 }
+				swap_ideas = {
+					remove_idea = aco_fascist_idea1
+					add_idea = aco_fascist_idea4
+				}
+			}
+			if = {
+				limit = { has_idea = aco_fascist_idea2 }
+				swap_ideas = {
+					remove_idea = aco_fascist_idea2
+					add_idea = aco_fascist_idea6
+				}
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Expanded_Border_Security_Service
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Party_Dominance focus = ACO_Utilitarian_Initiatives }
+		mutually_exclusive = { focus = ACO_Military_Arm_of_the_Party }
+		x = 11
+		y = 7
+		cost = 15
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = aco_fascist_idea3 }
+				swap_ideas = {
+					remove_idea = aco_fascist_idea3
+					add_idea = aco_fascist_idea7
+				}
+			}
+			if = {
+				limit = { has_idea = aco_fascist_idea4 }
+				swap_ideas = {
+					remove_idea = aco_fascist_idea4
+					add_idea = aco_fascist_idea8
+				}
+			}
+			if = {
+				limit = { has_idea = aco_fascist_idea5 }
+				swap_ideas = {
+					remove_idea = aco_fascist_idea5
+					add_idea = aco_fascist_idea9
+				}
+			}
+			if = {
+				limit = { has_idea = aco_fascist_idea6 }
+				swap_ideas = {
+					remove_idea = aco_fascist_idea6
+					add_idea = aco_fascist_idea10
+				}
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Military_Arm_of_the_Party
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Party_Dominance focus = ACO_Utilitarian_Initiatives }
+		mutually_exclusive = { focus = ACO_Expanded_Border_Security_Service }
+		x = 13
+		y = 7
+		cost = 15
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = aco_fascist_idea3 }
+				swap_ideas = {
+					remove_idea = aco_fascist_idea3
+					add_idea = aco_fascist_idea11
+				}
+			}
+			if = {
+				limit = { has_idea = aco_fascist_idea4 }
+				swap_ideas = {
+					remove_idea = aco_fascist_idea4
+					add_idea = aco_fascist_idea12
+				}
+			}
+			if = {
+				limit = { has_idea = aco_fascist_idea5 }
+				swap_ideas = {
+					remove_idea = aco_fascist_idea5
+					add_idea = aco_fascist_idea13
+				}
+			}
+			if = {
+				limit = { has_idea = aco_fascist_idea6 }
+				swap_ideas = {
+					remove_idea = aco_fascist_idea6
+					add_idea = aco_fascist_idea14
+				}
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_A_New_Beacon
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Expanded_Border_Security_Service focus = ACO_Military_Arm_of_the_Party }
+		x = 12
+		y = 8
+		cost = 20
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = ACO_A_Better_Model
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Enemy_of_Our_Enemy }
+		x = 9
+		y = 3
+		cost = 10
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+			
+			
+	}
+	
+	#focus = {
+	#	id = ACO_Communal_Awareness
+	#	icon = GFX_goal_generic_demand_territory
+	#	prerequisite = { focus = ACO_A_Better_Model }
+	#	x = 9
+	#	y = 4
+	#	cost = 10
+	#	available = {
+	#		has_government = fascism
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#	}	
+	#	
+	#	completion_reward = {
+	#		
+	#	}
+	#		
+	#		
+	#}
+	
+	focus = {
+		id = ACO_Environmental_Awareness
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_A_Better_Model }
+		#prerequisite = { focus = ACO_Communal_Awareness }
+		x = 9
+		y = 5
+		cost = 10
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			remove_ideas = usa_dust_bowl
+			add_timed_idea = {
+				idea = usa_dust_bowl  days = 900
+			}
+		}
+		
+	}
+	
+	
+	#focus = {
+	#	id = ACO_Scrap_the_Financial_System
+	#	icon = GFX_goal_generic_demand_territory
+	#	prerequisite = { focus = ACO_Establish_a_Provisional_Government }
+	#	#mutually_exclusive = { focus = ACO_Enemy_of_Our_Enemy }
+	#	x = 14
+	#	y = 2
+	#	cost = 10
+	#	available = {
+	#		#has_government = fascism
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#	}	
+	#	
+	#	completion_reward = {
+	#		
+	#	}
+	#		
+	#		
+	#}
+	
+	focus = {
+		id = ACO_Seize_Power
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Enemy_of_Our_Enemy }
+		x = 13
+		y = 3
+		cost = 10
+		available = {
+			has_government = fascism
+		}
+		bypass = {
+			date > 1937.6.1
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			create_country_leader = {
+				name = "Gerald L.K. Smith"
+				desc = "POLITICS_WILLIAM_DUDLEY_PELLEY_DESC"
+				picture = "Portrait_ACO_Gerald_LK_Smith.dds"
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					
+				}
+			}
+			
+			add_stability = -0.1
+
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Reeducate_Hostile_Extremists
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Seize_Power }
+		x = 13
+		y = 4
+		cost = 20
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		bypass = {
+			date > 1938.2.1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = aco_share_our_wealth
+				add_idea = aco_share_our_wealth2
+			}
+			#btm need to add aco_share_our_wealth via event during the war
+		}
+			
+			
+	}
+	
+	
+	
+	focus = {
+		id = ACO_Embrace_Isolationism
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Enemy_of_Our_Enemy }
+		x = 15
+		y = 3
+		cost = 10
+		available = {
+			has_government = fascism
+			has_war = no
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_ideas = usa_isolationism
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_America_First
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Embrace_Isolationism }
+		x = 15
+		y = 4
+		cost = 10
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_political_power = 250
+			add_ideas = aco_america_first_fascism
+			add_ideas = limited_exports
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Invest_in_Our_Men
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_America_First }
+		x = 15
+		y = 5
+		cost = 10
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = aco_america_first_fascism
+				add_idea = aco_america_first_fascism2
+			}
+		}
+	}
+	
+	focus = {
+		id = ACO_A_New_Industrial_Revolution
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Invest_in_Our_Men }
+		x = 15
+		y = 7
+		cost = 10
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				category = industry
+				uses = 5
+			}
+		}
+			
+			
+	}
+
+	focus = {
+		id = ACO_In_the_Service_of_the_Nation
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_A_New_Industrial_Revolution }
+		x = 15
+		y = 8
+		cost = 5
+		available = {
+			has_government = fascism
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_ideas = aco_to_arms
+		}
+			
+			
+	}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	focus = {
+		id = ACO_Nationalize_the_Banks
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Enemy_of_Our_Enemy }
+		x = 17
+		y = 3
+		cost = 10
+		available = {
+			#has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_political_power = 150
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Expand_Public_Universities
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Nationalize_the_Banks focus = ACO_A_New_Deal focus = ACO_A_New_Bill_of_Rights focus = ACO_A_New_Communist_Orthodoxy }
+		x = 17
+		y = 4
+		cost = 10
+		available = {
+			#has_government = fascism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	#focus = {
+	#	id = ACO_The_Founders_Intentions
+	#	icon = GFX_goal_generic_demand_territory
+	#	prerequisite = { focus = ACO_Nationalize_the_Banks }
+	#	x = 17
+	#	y = 4
+	#	cost = 10
+	#	available = {
+	#		#has_government = fascism
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#	}	
+	#	
+	#	completion_reward = {
+	#		
+	#	}
+	#		
+	#}
+	
+	focus = {
+		id = ACO_Restore_America
+		icon = GFX_goal_generic_demand_territory
+		#prerequisite = { focus = ACO_The_Founders_Intentions }
+		prerequisite = { focus = ACO_Expand_Public_Universities }
+		x = 17
+		y = 5
+		cost = 10
+		available = {
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = CSA
+			}
+			#btm need to come back to this for molotov-ribbentrop 
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Conquest_of_Canada
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Restore_America }
+		x = 16
+		y = 6
+		cost = 12
+		available = {
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = ACO_canadian_crisis_tt
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Request_Union_with_Canada
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Restore_America }
+		x = 18
+		y = 6
+		cost = 3
+		available = {
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = ACO_canadian_crisis2_tt
+		}
+			
+			
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	focus = {
+		id = ACO_Communist_Brotherhood
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Establish_a_Provisional_Government }
+		#mutually_exclusive = { focus = ACO_Common_Ground }
+		x = 22
+		y = 2
+		cost = 1
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_political_power = 150
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_A_New_Deal
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Communist_Brotherhood }
+		mutually_exclusive = { focus = ACO_A_New_Bill_of_Rights }
+		mutually_exclusive = { focus = ACO_A_New_Communist_Orthodoxy }
+		x = 21
+		y = 3
+		cost = 10
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_ideas = aco_new_deal
+		}
+	}
+	
+	focus = {
+		id = ACO_A_New_Bill_of_Rights
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Communist_Brotherhood }
+		mutually_exclusive = { focus = ACO_A_New_Deal }
+		mutually_exclusive = { focus = ACO_A_New_Communist_Orthodoxy }
+		x = 23
+		y = 3
+		cost = 10
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			remove_ideas = usa_bill_of_rights
+			add_ideas = aco_second_bill_of_rights
+		}
+	}
+	
+	focus = {
+		id = ACO_A_New_Communist_Orthodoxy
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Communist_Brotherhood }
+		mutually_exclusive = { focus = ACO_A_New_Deal }
+		mutually_exclusive = { focus = ACO_A_New_Bill_of_Rights }
+		x = 25
+		y = 3
+		cost = 10
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			remove_ideas = aco_remnants_of_the_federal_system
+			remove_ideas = usa_bill_of_rights
+			add_ideas = aco_new_communist_orthodoxy_idea
+		}
+	}
+	
+	
+	focus = {
+		id = ACO_America_First_Communism
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_A_New_Deal focus = ACO_A_New_Bill_of_Rights focus = ACO_A_New_Communist_Orthodoxy }
+		mutually_exclusive = { focus = ACO_Internationalism }
+		x = 19
+		y = 4
+		cost = 10
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_ideas = aco_america_first_communism
+		}
+	}
+	
+	focus = {
+		id = ACO_Public_Works_Programme
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_America_First_Communism }
+		x = 19
+		y = 5
+		cost = 10
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = aco_america_first_communism
+				add_idea = aco_america_first_communism2
+			}
+		}
+	}
+	
+	focus = {
+		id = ACO_Expansion_of_State_Owned_Industries
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Public_Works_Programme }
+		x = 19
+		y = 7
+		cost = 10
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = aco_america_first_communism2
+				add_idea = aco_america_first_communism3
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Expand_Hoover_Dam
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Expansion_of_State_Owned_Industries }
+		x = 19
+		y = 8
+		cost = 20
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			379 = {
+				add_extra_state_shared_building_slots = 8
+			}
+			380 = {
+				add_extra_state_shared_building_slots = 6
+			}
+			382 = {
+				add_extra_state_shared_building_slots = 4
+			}
+			377 = {
+				add_extra_state_shared_building_slots = 6
+			}
+			376 = {
+				add_extra_state_shared_building_slots = 4
+			}
+			378 = {
+				add_extra_state_shared_building_slots = 6
+			}
+			385 = {
+				add_extra_state_shared_building_slots = 6
+			}
+			387 = {
+				add_extra_state_shared_building_slots = 6
+			}
+			386 = {
+				add_extra_state_shared_building_slots = 4
+			}
+			388 = {
+				add_extra_state_shared_building_slots = 4
+			}
+			381 = {
+				add_extra_state_shared_building_slots = 4
+			}
+		}
+	}
+	
+	focus = {
+		id = ACO_Internationalism
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_A_New_Deal focus = ACO_A_New_Bill_of_Rights focus = ACO_A_New_Communist_Orthodoxy }
+		mutually_exclusive = { focus = ACO_America_First_Communism }
+		x = 22
+		y = 4
+		cost = 10
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_ideas = aco_internationalism_idea
+		}
+	}
+	
+	focus = {
+		id = ACO_International_Commitments
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Internationalism focus = ACO_Reach_Out_to_the_Comintern }
+		mutually_exclusive = { focus = ACO_Embrace_Trotskyite_Communism }
+		x = 23
+		y = 5
+		cost = 10
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = aco_internationalism_idea }
+				swap_ideas = {
+					remove_idea = aco_internationalism_idea
+					add_idea = aco_internationalism_idea3
+				}
+			}
+			add_ideas = aco_internationalism_idea4
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Embrace_Trotskyite_Communism
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Internationalism }
+		#prerequisite = { focus = ACO_Reach_Out_to_the_Comintern }
+		mutually_exclusive = { focus = ACO_International_Commitments }
+		x = 21
+		y = 5
+		cost = 10
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = aco_internationalism_idea
+				add_idea = aco_internationalism_idea2
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Reach_Out_to_the_Comintern
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_A_New_Deal focus = ACO_A_New_Bill_of_Rights focus = ACO_A_New_Communist_Orthodoxy }
+		mutually_exclusive = { focus = ACO_Develop_CPUSA }
+		x = 24
+		y = 4
+		cost = 10
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			every_other_country = {
+				limit = { is_in_faction_with = SOV }
+				add_opinion_modifier = { target = ACO modifier = aco_comintern_ties }
+			}
+			SOV = {
+				add_opinion_modifier = { target = ACO modifier = aco_comintern_ties }
+			}
+			add_opinion_modifier = { target = SOV modifier = aco_comintern_ties }
+		}
+	}
+	
+	focus = {
+		id = ACO_Soviet_Civilian_Industry_Ties
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Develop_CPUSA focus = ACO_Reach_Out_to_the_Comintern }
+		prerequisite = { focus = ACO_Heal_the_Wounds_of_War }
+		mutually_exclusive = { focus = ACO_Inner_City_Rennovations }
+		x = 25
+		y = 5
+		cost = 10
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_ideas = aco_industry_ties
+			SOV = { add_ideas = aco_industry_ties }
+		}
+	}
+	
+	focus = {
+		id = ACO_Joint_Economic_Prosperity
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Soviet_Civilian_Industry_Ties }
+		x = 25
+		y = 6
+		cost = 20
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = aco_industry_ties
+				add_idea = aco_industry_ties2
+			} 
+			SOV = {
+				swap_ideas = {
+					remove_idea = aco_industry_ties
+					add_idea = aco_industry_ties2
+				} 
+			}
+		}
+	}
+	
+	focus = {
+		id = ACO_Inner_City_Rennovations
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Develop_CPUSA }
+		prerequisite = { focus = ACO_Heal_the_Wounds_of_War }
+		mutually_exclusive = { focus = ACO_Soviet_Civilian_Industry_Ties }
+		x = 27
+		y = 5
+		cost = 10
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_ideas = aco_inner_city_rennovations_idea
+		}
+		
+	}
+	
+	focus = {
+		id = ACO_Middle_Class_Boom
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Inner_City_Rennovations }
+		x = 27
+		y = 6
+		cost = 20
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = aco_inner_city_rennovations_idea
+				add_idea = aco_inner_city_rennovations_idea2
+			} 
+		}
+		
+	}
+	
+	
+	focus = {
+		id = ACO_Develop_CPUSA
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_A_New_Deal focus = ACO_A_New_Bill_of_Rights focus = ACO_A_New_Communist_Orthodoxy }
+		mutually_exclusive = { focus = ACO_Reach_Out_to_the_Comintern }
+		x = 26
+		y = 4
+		cost = 5
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_political_power = 250
+		}
+	}
+	
+	focus = {
+		id = ACO_Heal_the_Wounds_of_War
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_A_New_Deal focus = ACO_A_New_Bill_of_Rights focus = ACO_A_New_Communist_Orthodoxy }
+		x = 28
+		y = 4
+		cost = 10
+		available = {
+			has_government = communism
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			add_political_power = -450 
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			360 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			361 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			61 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			396 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			393 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			373 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = ACO_Defeat_Dustbowl
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ACO_Heal_the_Wounds_of_War }
+		x = 29
+		y = 5
+		cost = 10
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		completion_reward = {
+			remove_ideas = usa_dust_bowl
+			add_timed_idea = {
+				idea = usa_dust_bowl  days = 240
+			}
+		}
+		
+	}
+	
+	#focus = {
+	#	id = ACO_Manufacturing_the_American_Dream
+	#	icon = GFX_goal_generic_demand_territory
+	#	prerequisite = { focus = ACO_Defeat_Dustbowl }
+	#	x = 29
+	#	y = 6
+	#	cost = 10
+	#	available = {
+	#		has_government = communism
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#	}	
+	#	
+	#	completion_reward = {
+	#		
+	#	}
+	#		
+	#		
+	#}
+	
+}
+

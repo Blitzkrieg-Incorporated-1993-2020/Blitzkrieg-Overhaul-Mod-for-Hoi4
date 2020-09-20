@@ -1,0 +1,43 @@
+﻿l_english: 
+genericfocustree.1.title:0 "[From.GetName] Pursues Nuclear Technology"
+genericfocustree.1.desc:0 "Following initial tests, the politicians of [From.GetName] have decided to direct [From.GetAdjective] research towards the development of nuclear technology.
+
+The technology is still highly experimental, and there is great uncertainty whether it has any practical applications at all. Who knows where this might lead their war effort."
+genericfocustree.1.a:0 "We should follow this development."
+genericfocustree.2.title:0 "[From.GetName] offers aid"
+genericfocustree.2.desc:0 "[From.GetName] has generously offered us some of their men to aid our war effort."
+genericfocustree.2.a:0 "How Helpful!"
+genericfocustree.3.title:0 "[From.GetName] denounces communism"
+genericfocustree.3.desc:0 "During a declamatory speech, [From.From.GetLeader] has announced to the world that [From.GetName] will devote the bulk of its efforts to opposing communism. After describing it as destabilising, oppressive and the true enemy of democracy, [From.From.GetLeader] finished his speech by announcing plans of creating or joining an anti-communist initiative.
+
+So far no communist nations have responded."
+genericfocustree.3.a:0 "A bold move."
+genericfocustree.4.title:0 "[From.GetName] announces new communist initiative."
+genericfocustree.4.desc:0 "[From.From.GetLeader] has issued a surprising declaration that surprised the world, decrying the doctrine of Marx, Trotsky and Stalin as all incorrect. Instead they have announced a separate form of communism, one that they adhere to. Apparently it is also the only 'true' form of communism. This action has made them rather unpopular on the world stage."
+genericfocustree.4.a:0 "Realistically, they are all the same."
+genericfocustree.5.title:0 "[From.GetName] announces Permanent Revolution."
+genericfocustree.5.desc:0 "[From.From.GetLeader] has today declared that the 'permanent revolution' begins today. Whilst they did not exactly outline what that meant, experts believe that this is the beginning of their concerted effort to spread communism throughout the world, however is the most effective manner.
+
+The world waits to see what [From.GetName] does next."
+genericfocustree.6.title:0 "[From.GetName] Announces Initiative."
+genericfocustree.6.desc:0 "In a odd speech, the pragmatic [From.From.GetLeader] has delivered a message to all those nations who have no ideological alignment, that they should consider working together. It seems that [From.From.GetLeader]  is not as ideologically stringent as many thought he was, as he may be finding some new, strange allies. 
+
+The Protective Initiative, (as [From.From.GetLeader] named it) will be beginning shortly, and all minor nations are welcomed."
+genericfocustree.6.a:0 "How Bizarre."
+genericfocustree.7.title:0 "[From.GetName] offers alliance"
+genericfocustree.7.desc:0 "[From.From.GetLeader] has offered you an alliance, in order for you to be protected. It seems like a generous offer, but we must first make sure we are not walking into a trap."
+genericfocustree.7.a:0 "That sounds excellent."
+genericfocustree.7.b:0 "We probably shouldn't."
+genericfocustree.8.title:0 "[From.GetName] Agrees"
+genericfocustree.8.desc:0 "[From.GetName] has agreed to join our faction."
+genericfocustree.8.a:0 "Excellent."
+genericfocustree.9.title:0 "[From.GetName] Declines"
+genericfocustree.9.desc:0 "[From.GetName] has declined to join our faction."
+genericfocustree.9.a:0 "Unfortunate."
+genericfocustree.10.title:0 "Democratic Revolution in [From.GetName]"
+genericfocustree.10.desc:0 "Today, [From.From.GetLeader] has announced that the previous regime has peacefully transitioned into democracy through the enabling elections and mass resignation. A new, democratic government has taken power and intends to make sweeping reforms to completely liberalise [From.GetName].
+
+The democracies of the world have gained a new ally with seeming convert's zeal."
+genericfocustree.11.title:0 "[From.From.GetLeader] crowned Emperor of [From.GetName]"
+genericfocustree.11.desc:0 "In a lavish ceremony, [From.From.GetLeader] has been officially crowned the Emperor of [From.GetName]. Whilst some blow this off as merely a party within a part of the world that no one is interested in, others see this as an opportunity to gain an ally, or an ideological enemy. The motives of the new Emperor will only be reveal in time."
+genericfocustree.11.a:0 "How delightful."

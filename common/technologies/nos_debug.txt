@@ -1,0 +1,51 @@
+## debug_all_units_tech
+
+technologies = {
+	debug_all_units_tech = {
+        enable_subunits = {
+            fascist_militia
+            fascist_infantry
+            fascist_cavalry
+            fascist_motorized
+            fascist_mechanized
+            fascist_light_armor
+            fascist_medium_armor
+            fascist_heavy_armor
+            communist_militia
+            communist_infantry
+            communist_cavalry
+            communist_motorized
+            communist_mechanized
+            communist_light_armor
+            communist_medium_armor
+            communist_heavy_armor
+            allies_paramarine
+            amphibious_armor_brigade
+            rangers
+            motorized_anti_air_brigade
+            motorized_artillery_brigade
+            motorized_anti_tank_brigade
+            militia
+            special_infantry
+            special_mountaineers
+            glider_light_armor_brigade
+        }
+
+        enable_equipments = {
+            medium_assault_gun_equipment_1
+            armored_car_equipment_1
+        }
+
+        research_cost = 1
+        start_year = 1925
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+}

@@ -1,0 +1,143 @@
+#####---------------------------------------------------------------------> Mod by Sig "GreatExperiment" Altre
+
+ideas = {
+
+	etgi_ideas_leadership_structure = { 
+	
+		law = yes
+		use_list_view = yes
+		
+		#Undeveloped
+		etgi_laws_leadership_structure_d = {
+			available = {
+				always = yes
+			}
+
+			cost = 200
+			removal_cost = -1
+			level = 1
+			
+			modifier = {
+				conscription_factor = -0.8
+				production_speed_buildings_factor = -0.3
+				production_factory_max_efficiency_factor = -0.3
+				surrender_limit = -0.3	
+				political_power_gain = -0.1
+				industrial_capacity_factory = -0.6
+				industrial_capacity_dockyard = -0.3
+				join_faction_tension = 0.1
+			
+			}
+
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+		
+		#Developed
+		etgi_laws_leadership_structure_1 = {
+			
+			available = {
+				AND = {
+					num_of_civilian_factories > 5
+					num_of_military_factories > 10
+				}
+			}
+
+			cost = 200
+			removal_cost = -1
+			level = 2
+			
+			modifier = {
+				conscription_factor = -0.6
+				production_speed_buildings_factor = 0.05
+				production_factory_max_efficiency_factor = -0.10
+				surrender_limit = -0.1	
+				industrial_capacity_factory = -0.4
+				industrial_capacity_dockyard = -0.2
+				join_faction_tension = 0.3
+			}
+			
+			default = yes
+			cancel_if_invalid = no
+
+			on_add = {
+				if = {
+					limit = { is_subject = yes }
+					set_country_flag = prev_undeveloped_colony
+				}
+			}
+			
+			ai_will_do = {
+   				factor = 50
+   			}
+		}
+		
+		#Major Power
+		etgi_laws_leadership_structure_2 = {
+			
+			available = {
+				is_subject = no
+				AND = {
+					num_of_civilian_factories > 30
+					num_of_military_factories > 60
+				}
+			}
+
+			cost = 200
+			removal_cost = -1
+			level = 3
+			
+			modifier = {
+				conscription_factor = -0.4
+				production_speed_buildings_factor = 0.1
+				production_factory_max_efficiency_factor = 0.05
+				surrender_limit = 0.1	
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				join_faction_tension = 0.5
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 50
+   			}
+		}
+		
+		#Superpower
+		etgi_laws_leadership_structure_3 = {
+			
+			available = {
+				is_major = yes
+				nuclear_reactor > 1
+				is_subject = no
+				AND = {
+					num_of_civilian_factories > 100
+					num_of_military_factories > 150
+				}
+			}
+
+			cost = 200
+			removal_cost = -1
+			level = 4
+			
+			modifier = {
+				conscription_factor = -0.2
+				surrender_limit = 0.2
+				join_faction_tension = 0.5
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 50
+   			}
+		}
+	}
+}
+
+
+##finished

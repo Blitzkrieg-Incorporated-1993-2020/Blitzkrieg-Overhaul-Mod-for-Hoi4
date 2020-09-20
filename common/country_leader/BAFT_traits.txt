@@ -1,0 +1,875 @@
+
+leader_traits = {
+
+	taiyuan_artillery = {
+		random = no
+		equipment_bonus = {
+			artillery_equipment = {
+				soft_attack = 0.02
+				reliability = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	hanyang_rifles = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.15
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	mukden_rifles = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = 0.02
+				hard_attack = 0.01
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	harbin_motorised = {
+		random = no
+		equipment_bonus = {
+			motorized_equipment = {
+				maximum_speed = 0.25
+				reliability = 0.15
+				hardness = -0.05
+			}
+			motorized_equipment = {
+				maximum_speed = 0.4
+				reliability = 0.15
+				hardness = -0.15
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	mukden_u = {
+		random = no
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	german_training = {
+		sprite = 14
+		random = no
+		
+		training_time_army_factor = -0.1
+		experience_gain_army_factor = 0.1
+		experience_gain_army = 0.05
+		planning_speed = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	warlords = {
+		random = no
+		ai_get_ally_desire_factor = -10000
+	}
+	
+	JAP_toseiha_trait = {
+		sprite = 14
+		random = no
+		
+			ai_strategy = {
+				type = antagonize
+				id = "CHI"			
+				value = 1000
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "PRC"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "SHX"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "GXC"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "YUN"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "XSM"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "ENG"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "USA"			
+				value = 200
+			}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_toseiha_trait_chi_ally = {
+		sprite = 14
+		random = no
+		
+			ai_strategy = {
+				type = alliance
+				id = "CHI"			
+				value = 200
+			}
+			ai_strategy = {
+				type = befriend
+				id = "CHI"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "PRC"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "SHX"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "GXC"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "YUN"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "XSM"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "ENG"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "USA"			
+				value = 200
+			}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_kodoha_trait = {
+		sprite = 14
+		random = no
+		
+			ai_strategy = {
+				type = antagonize
+				id = "SOV"			
+				value = 200
+			}
+			ai_strategy = {
+				type = ignore
+				id = "CHI"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "SHX"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "PRC"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "XSM"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "GXC"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "YUN"			
+				value = 50
+			}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_kodoha_trait_chi_ally = {
+		sprite = 14
+		random = no
+		
+			ai_strategy = {
+				type = antagonize
+				id = "SOV"			
+				value = 200
+			}
+			ai_strategy = {
+				type = alliance
+				id = "CHI"			
+				value = 200
+			}
+			ai_strategy = {
+				type = befriend
+				id = "CHI"			
+				value = 200
+			}
+			ai_strategy = {
+				type = ignore
+				id = "SHX"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "PRC"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "XSM"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "GXC"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "YUN"			
+				value = 50
+			}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	experimental_light_aircraft_manufacturer = {
+		random = no
+		equipment_bonus = {
+			fighter_equipment = {
+				air_agility = 0.2 maximum_speed = 0.15 reliability = -0.1
+			}
+			cv_fighter_equipment = {
+				air_agility = 0.2 maximum_speed = 0.15 reliability = -0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rommel_of_the_east = {
+		sprite = 14
+		random = no
+		
+		army_morale_factor = 0.08
+		army_org_factor = 0.08
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	unavailable_trait = {
+		random = no
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	 
+###------> MAN <><> <><> <><> <><> <><>
+
+	puppet_emperor = {
+		sprite = 14
+		random = no
+		
+		stability_factor = 0.15
+		political_power_cost = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	puppet_emperor_tfv = {
+		sprite = 14
+		random = no
+		
+		stability_factor = 0.15
+		political_power_cost = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	low_legitimacy = {
+		sprite = 14
+		random = no
+		
+		stability_factor = -0.05
+		political_power_cost = 0.15
+		conscription_factor = -0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ceremonial_air = {
+		sprite = 14
+		random = no
+		
+		stability_factor = 0.05
+		air_ace_generation_chance_factor = 0.02
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ceremonial = {
+		sprite = 14
+		random = no
+		
+		stability_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ceremonial_army = {
+		sprite = 14
+		random = no
+		
+		stability_factor = 0.05
+		army_morale_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	lawrence_of_manchuria = {
+		sprite = 14
+		random = no
+		
+		political_power_factor = 0.1
+		
+		army_infantry_attack_factor = 0.08
+		army_infantry_defence_factor = 0.12
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	joan_of_arc_of_manchukuo = {
+		sprite = 14
+		random = no
+		
+		army_org_factor = 0.08
+		
+		cavalry_attack_factor = 0.08
+		cavalry_defence_factor = 0.12
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	emperors_ambition = {
+		sprite = 14
+		random = no
+		
+		ai_get_ally_desire_factor = -150
+		justify_war_goal_time = -0.5
+		fascism_drift = -0.1
+		neutrality_drift = 0.2
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	army_chief_organizational_2_mck = {
+		sprite = 5
+		army_org_factor = 0.1
+		political_power_cost = 0.15
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	military_theorist_mck = {
+		sprite = 14
+		experience_gain_army = 0.1
+		political_power_cost = 0.15
+		
+		ai_will_do = {
+			factor = 500
+		}
+	}
+	
+	army_chief_reform_3_mck = { 
+		sprite = 5
+		experience_gain_army_factor = 0.2
+		political_power_cost = 0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	army_chief_drill_1_mck = { 
+		sprite = 5
+		training_time_army_factor = -0.1
+		political_power_cost = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_chief_ground_support_2_mck = { 
+		sprite = 2
+		army_bonus_air_superiority_factor = 0.12
+		political_power_cost = 0.15
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_regrouping_2_mck = { 
+		sprite = 5
+		army_morale_factor = 0.1
+		political_power_cost = 0.15
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_infantry_2_mck = { 
+		sprite = 5
+		army_infantry_attack_factor = 0.13
+		army_infantry_defence_factor = 0.18
+		political_power_cost = 0.15
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	war_industrialist_mck = {
+		sprite = 10
+		random = yes
+		production_speed_arms_factory_factor = 0.25
+		production_speed_dockyard_factor = 0.25
+		production_speed_synthetic_refinery_factor = 0.15
+		political_power_cost = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	captain_of_industry_mck = {
+		sprite = 10
+		random = no
+		production_speed_industrial_complex_factor = 0.35
+		production_speed_infrastructure_factor = 0.25
+		production_speed_synthetic_refinery_factor = 0.1
+		political_power_cost = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	armaments_organizer_mck = {
+		sprite = 10
+		random = no
+		conversion_cost_civ_to_mil_factor= -0.2
+		# civ_to_mil_industry_conversion_rate = -1
+		political_power_cost = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	} 
+
+	army_chief_organizational_2_mck_tfv = {
+		sprite = 5
+		army_org_factor = 0.1
+		political_power_cost = 0.15
+		autonomy_gain = -0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	military_theorist_mck_tfv = {
+		sprite = 14
+		experience_gain_army = 0.1
+		political_power_cost = 0.15
+		autonomy_gain = -0.1
+		
+		ai_will_do = {
+			factor = 500
+		}
+	}
+	
+	army_chief_reform_3_mck_tfv = { 
+		sprite = 5
+		experience_gain_army_factor = 0.2
+		political_power_cost = 0.15
+		autonomy_gain = -0.1
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	army_chief_drill_1_mck_tfv = { 
+		sprite = 5
+		training_time_army_factor = -0.1
+		political_power_cost = 0.15
+		autonomy_gain = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_chief_ground_support_2_mck_tfv = { 
+		sprite = 2
+		army_bonus_air_superiority_factor = 0.12
+		political_power_cost = 0.15
+		autonomy_gain = -0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_regrouping_2_mck_tfv = { 
+		sprite = 5
+		army_morale_factor = 0.1
+		political_power_cost = 0.15
+		autonomy_gain = -0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_infantry_2_mck_tfv = { 
+		sprite = 5
+		army_infantry_attack_factor = 0.13
+		army_infantry_defence_factor = 0.18
+		political_power_cost = 0.15
+		autonomy_gain = -0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	war_industrialist_mck_tfv = {
+		sprite = 10
+		random = no
+		production_speed_arms_factory_factor = 0.25
+		production_speed_dockyard_factor = 0.25
+		production_speed_synthetic_refinery_factor = 0.15
+		political_power_cost = 0.15
+		autonomy_gain = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	captain_of_industry_mck_tfv = {
+		sprite = 10
+		random = no
+		production_speed_industrial_complex_factor = 0.35
+		production_speed_infrastructure_factor = 0.25
+		production_speed_synthetic_refinery_factor = 0.1
+		political_power_cost = 0.1
+		autonomy_gain = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	lawrence_of_manchuria_tfv = {
+		sprite = 14
+		random = no
+		
+		political_power_factor = 0.1
+		
+		army_infantry_attack_factor = 0.08
+		army_infantry_defence_factor = 0.12
+		autonomy_gain = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	armaments_organizer_mck_tfv = {
+		sprite = 10
+		random = no
+		conversion_cost_civ_to_mil_factor= -0.2
+		# civ_to_mil_industry_conversion_rate = -1
+		political_power_cost = 0.15
+		autonomy_gain = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	MAN_under_house_arrest = {
+		sprite = 10
+		random = no
+		
+		political_power_factor = -0.75
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	the_great_chairman = {
+		random = no
+		foreign_subversive_activites = -0.5
+		army_morale_factor = 0.1
+		drift_defence_factor = 0.75
+		stability_factor = 0.2
+		
+	}
+	
+	generalissimo = {
+		random = no
+		
+		army_morale_factor = 0.1
+		army_attack_factor = 0.1
+		army_defence_factor = 0.1
+		army_speed_factor = 0.1
+		experience_gain_army = 0.05
+		planning_speed = 0.25
+		justify_war_goal_time = -0.25
+		
+		
+	}
+	
+	prc_jack_of_all_trade = {
+		random = no
+		
+		sprite = 13
+		ai_will_do = {
+			factor = 1
+		}
+		
+		army_morale_factor = 0.025
+		communism_drift = 0.1
+		opinion_gain_monthly_same_ideology_factor = 1.75
+		industrial_capacity_factory = 0.07
+		trade_opinion_factor = 0.1
+	
+		
+	}
+	
+	sov_power_truggle = {
+		random = no
+		
+		political_power_factor = -0.5
+		stability_factor = -0.2
+		army_morale_factor = -0.1
+		justify_war_goal_time = 10
+		ai_get_ally_desire_factor = -100
+	
+		
+	}
+	
+	questionable_agenda = {
+		random = no
+		
+		stability_factor = -0.1
+		drift_defence_factor = -0.75
+	}
+	
+	liberty_fighter_prc = {
+		random = no
+		
+		drift_defence_factor = 0.6
+		democratic_drift = 0.05
+		communism_acceptance = -100
+	}
+	
+	effective_propagation = {
+		random = no
+		
+		conscription = 0.02
+		fascism_drift = 0.05
+		communism_acceptance = -100
+	}
+	
+	fascism_follower = {
+		random = no
+		
+		fascism_drift = 0.1
+		fascism_acceptance = -100
+	}
+	
+	the_generals_that_dont_resist = {
+		random = no
+		
+		political_power_factor = -0.25
+		training_time_army_factor = -0.25
+	}
+	
+	PRC_trotskyist = {
+		random = no
+		sprite = 13
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		subversive_activites_upkeep = -0.25
+		drift_defence_factor = 0.15
+		communism_drift = 0.1
+	} 
+	
+	pillar_of_nation = {
+		random = no
+		fascism_drift = 0.1
+		neutrality_drift = 0.1
+	}
+
+	intellectual = {
+		random = no
+		research_speed_factor = -0.02
+	}
+
+	cooperative_leader = {
+		random = no
+		political_power_cost = -0.1
+		opinion_gain_monthly_same_ideology_factor = 1
+	}
+
+	staunch_traditionalist = {
+		random = no
+		drift_defence_factor = 0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	spirit_of_genghis_improved = {
+		random = no
+		cavalry_attack_factor = 0.1
+		cavalry_defence_factor = 0.1
+		equipment_bonus = {
+			nav_bomber_equipment = {
+				air_range = 0.1 naval_strike_attack = 0.2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	committed_colonialist = {
+		random = no
+		political_power_factor = -0.05
+		local_resources_factor = 0.10
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	nationalist_uniter = {
+		random = no
+		ai_focus_aggressive_factor = 0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	committed_revolutionary = {
+		random = no
+		ai_focus_aggressive_factor = 0.25
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	democratic_defender = {
+		random = no
+		ai_focus_defense_factor = 0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+
+#####-----------------------------------------------------------> Mod by Sig "Greatexperiment" Altre

@@ -1,0 +1,1419 @@
+
+USA_senate = {
+	
+	USA_start_one_party_republic = {
+	
+		available = {
+			has_stability > 0.8
+			if = {
+				limit = { has_government = democratic }
+				democratic > 0.5
+			}
+			if = {
+				limit = { has_government = conservative }
+				conservative > 0.5
+			}
+			if = {
+				limit = { has_government = social_democracy }
+				social_democracy > 0.5
+			}
+		}
+
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = one_party_democracy
+					has_idea = liberal_conservative_government
+					has_idea = liberal_social_democrat_government
+					has_idea = rightist_conservative_government
+					has_idea = leftist_social_democrat_government
+				}
+			}
+		}
+		
+		cost = 700
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_major = no
+			}
+		}
+		
+		complete_effect = {
+			clr_country_flag = two_party_democracy
+			set_country_flag = one_party_democracy
+			add_stability = -0.2
+			add_war_support = -0.4
+			if = {
+				limit = { has_government = democratic }
+				add_popularity = { ideology = democratic popularity = 0.2 }
+			}
+			if = {
+				limit = { has_government = conservative }
+				add_popularity = { ideology = conservative popularity = 0.2 }
+			}
+			if = {
+				limit = { has_government = social_democracy }
+				add_popularity = { ideology = social_democracy popularity = 0.2 }
+			}
+		}
+	}
+
+	USA_end_one_party_republic = {
+	
+		available = {
+			has_stability > 0.6
+		}
+
+		visible = {
+			has_country_flag = one_party_democracy
+		}
+		
+		cost = 400
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			clr_country_flag = one_party_democracy
+			add_stability = 0.1
+			add_war_support = 0.3
+			if = {
+				limit = { has_government = democratic }
+				add_popularity = { ideology = democratic popularity = -0.2 }
+			}
+			if = {
+				limit = { has_government = conservative }
+				add_popularity = { ideology = conservative popularity = -0.2 }
+			}
+			if = {
+				limit = { has_government = social_democracy }
+				add_popularity = { ideology = social_democracy popularity = -0.2 }
+			}
+		}
+	}
+
+	USA_two_party_system = {
+	
+		available = {
+			has_stability > 0.7
+			if = {
+				limit = { has_government = democratic }
+				democratic > 0.4
+			}
+			if = {
+				limit = { has_government = conservative }
+				conservative > 0.4
+			}
+			if = {
+				limit = { has_government = social_democracy }
+				social_democracy > 0.4
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = two_party_democracy }
+			NOT = { has_country_flag = one_party_democracy }
+			NOT = {
+				OR = {
+					has_idea = liberal_conservative_government
+					has_idea = liberal_social_democrat_government
+					has_idea = rightist_conservative_government
+					has_idea = leftist_social_democrat_government
+				}
+			}
+		}
+		
+		cost = 500
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			set_country_flag = two_party_democracy
+			add_stability = -0.2
+			add_war_support = -0.3
+			if = {
+				limit = { has_government = democratic }
+				add_popularity = { ideology = democratic popularity = 0.2 }
+				add_popularity = { ideology = conservative popularity = 0.2 }
+			}
+			if = {
+				limit = { has_government = conservative }
+				add_popularity = { ideology = conservative popularity = 0.2 }
+				add_popularity = { ideology = social_democracy popularity = 0.2 }
+			}
+			if = {
+				limit = { has_government = social_democracy }
+				add_popularity = { ideology = social_democracy popularity = 0.2 }
+				add_popularity = { ideology = democratic popularity = 0.2 }
+			}
+		}
+	}
+
+	USA_end_two_party_system = {
+	
+		available = {
+			has_stability > 0.5
+		}
+
+		visible = {
+			has_country_flag = two_party_democracy
+		}
+		
+		cost = 300
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			clr_country_flag = two_party_democracy
+			add_stability = 0.1
+			add_war_support = 0.2
+			if = {
+				limit = { has_government = democratic }
+				add_popularity = { ideology = democratic popularity = -0.2 }
+				add_popularity = { ideology = conservative popularity = -0.2 }
+			}
+			if = {
+				limit = { has_government = conservative }
+				add_popularity = { ideology = conservative popularity = -0.2 }
+				add_popularity = { ideology = social_democracy popularity = -0.2 }
+			}
+			if = {
+				limit = { has_government = social_democracy }
+				add_popularity = { ideology = social_democracy popularity = -0.2 }
+				add_popularity = { ideology = democratic popularity = -0.2 }
+			}
+		}
+	}
+	USA_form_party_coalition = {
+	
+		available = {
+			has_stability > 0.5
+		}
+
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = one_party_democracy
+					has_country_flag = two_party_democracy
+					has_idea = liberal_conservative_government
+					has_idea = liberal_social_democrat_government
+					has_idea = rightist_conservative_government
+					has_idea = leftist_social_democrat_government
+				}
+			}
+		}
+		
+		cost = 200
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			add_stability = 0.1
+			add_war_support = -0.1
+			country_event = { id = nos_elections.2 }
+		}
+	}
+	USA_form_crisis_coalition = {
+	
+		available = {
+			OR = {
+				has_stability < 0.05
+				AND = {
+					is_major = yes
+					has_country_flag = is_in_world_war
+				}
+				AND = {
+					is_major = no
+					has_war = yes
+				}
+			}
+		}
+
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = one_party_democracy
+					has_country_flag = two_party_democracy
+					has_idea = liberal_conservative_government
+					has_idea = liberal_social_democrat_government
+					has_idea = rightist_conservative_government
+					has_idea = leftist_social_democrat_government
+				}
+			}
+		}
+		
+		cost = 100
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		complete_effect = {
+			add_stability = 0.4
+			add_war_support = 0.2
+			set_country_flag = crisis_coalition
+		}
+	}
+
+	USA_socdem_lobbying_effort = {
+	
+		icon = generic_political_discourse
+
+		available = {
+			has_stability > 0.5
+		}
+
+		visible = {
+			has_government = social_democracy
+		}
+		
+		cost = 50
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifier = {
+			social_democracy_drift = 0.01
+			consumer_goods_factor = 0.1
+		}
+
+		days_remove = 30
+		days_re_enable = 50
+	}
+	USA_dem_lobbying_effort = {
+	
+		icon = generic_political_discourse
+
+		available = {
+			has_stability > 0.5
+		}
+
+		visible = {
+			has_government = democratic
+		}
+		
+		cost = 50
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifier = {
+			democratic_drift = 0.01
+			consumer_goods_factor = 0.1
+		}
+
+		days_remove = 30
+		days_re_enable = 50
+	}
+	USA_cons_lobbying_effort = {
+	
+		icon = generic_political_discourse
+
+		available = {
+			has_stability > 0.5
+		}
+
+		visible = {
+			has_government = conservative
+		}
+		
+		cost = 50
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifier = {
+			conservative_drift = 0.01
+			consumer_goods_factor = 0.1
+		}
+
+		days_remove = 30
+		days_re_enable = 50
+	}
+	USA_leak_to_press = {
+	
+		icon = generic_political_discourse
+
+		available = {
+			has_stability > 0.35
+			conservative < 0.6
+		}
+
+		days_re_enable = 100
+
+		visible = {
+			has_stability > 0.35
+		}
+		
+		cost = 100
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_stability < 0.65
+			}
+		}
+		
+		complete_effect = {
+			add_stability = -0.1
+			if = {
+				limit = { has_government = democratic }
+				add_popularity = { ideology = democratic popularity = 0.05 }
+			}
+			if = {
+				limit = { has_government = conservative }
+				add_popularity = { ideology = conservative popularity = 0.05 }
+			}
+			if = {
+				limit = { has_government = social_democracy }
+				add_popularity = { ideology = social_democracy popularity = 0.05 }
+			}
+		}
+	}
+	USA_cons_moral_reform = {
+	
+		icon = generic_political_discourse
+
+		available = {
+			has_stability > 0.4
+			conservative < 0.6
+		}
+
+		visible = {
+			has_government = conservative
+		}
+		
+		cost = 50
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifier = {
+			conservative_drift = 0.01
+			add_stability = 0.01
+		}
+
+		days_remove = 15
+		days_re_enable = 40
+	}
+	USA_cons_corporate_support = {
+	
+		icon = generic_political_discourse
+
+		available = {
+			has_stability > 0.4
+			conservative < 0.6
+		}
+
+		visible = {
+			has_government = conservative
+		}
+		
+		cost = 50
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifier = {
+			conservative_drift = 0.01
+			consumer_goods_factor = 0.05
+		}
+
+		days_remove = 15
+		days_re_enable = 40
+	}
+	USA_cons_appeal_to_religious = {
+	
+		icon = generic_political_discourse
+
+		available = {
+			has_stability > 0.4
+			conservative < 0.6
+		}
+
+		visible = {
+			has_government = conservative
+		}
+		
+		cost = 50
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifier = {
+			conservative_drift = 0.01
+			consumer_goods_factor = 0.05
+		}
+
+		days_remove = 15
+		days_re_enable = 40
+	}
+	USA_dem_social_reform = {
+	
+		icon = generic_political_discourse
+
+		available = {
+			has_stability > 0.4
+			democratic < 0.6
+		}
+
+		visible = {
+			has_government = democratic
+		}
+		
+		cost = 50
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifier = {
+			democratic_drift = 0.01
+			add_stability = 0.01
+		}
+
+		days_remove = 15
+		days_re_enable = 40
+	}
+	USA_dem_promote_humanism = {
+	
+		icon = generic_political_discourse
+
+		available = {
+			has_stability > 0.4
+			democratic < 0.6
+		}
+
+		visible = {
+			has_government = democratic
+		}
+		
+		cost = 50
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifier = {
+			democratic_drift = 0.01
+			add_stability = 0.01
+		}
+
+		days_remove = 15
+		days_re_enable = 40
+	}
+	USA_dem_support_free_trade = {
+	
+		icon = generic_political_discourse
+
+		available = {
+			has_stability > 0.4
+			democratic < 0.6
+		}
+
+		visible = {
+			has_government = democratic
+		}
+		
+		cost = 50
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifier = {
+			democratic_drift = 0.01
+			consumer_goods_factor = 0.05
+		}
+
+		days_remove = 15
+		days_re_enable = 40
+	}
+	USA_socdem_economic_reform = {
+	
+		icon = generic_political_discourse
+
+		available = {
+			has_stability > 0.4
+			social_democracy < 0.6
+		}
+
+		visible = {
+			has_government = social_democracy
+		}
+		
+		cost = 50
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifier = {
+			social_democracy_drift = 0.01
+			consumer_goods_factor = -0.05
+		}
+
+		days_remove = 15
+		days_re_enable = 40
+	}
+	USA_socdem_disenfranchised = {
+	
+		icon = generic_political_discourse
+
+		available = {
+			has_stability > 0.4
+			social_democracy < 0.6
+		}
+
+		visible = {
+			has_government = social_democracy
+		}
+		
+		cost = 50
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifier = {
+			social_democracy_drift = 0.01
+			add_stability = 0.01
+		}
+
+		days_remove = 15
+		days_re_enable = 40
+	}
+	USA_socdem_social_welfare = {
+	
+		icon = generic_political_discourse
+
+		available = {
+			has_stability > 0.4
+			social_democracy < 0.6
+		}
+
+		visible = {
+			has_government = social_democracy
+		}
+		
+		cost = 50
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifier = {
+			social_democracy_drift = 0.01
+			consumer_goods_factor = 0.05
+		}
+
+		days_remove = 15
+		days_re_enable = 40
+	}
+	USA_immigration_act = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_civil_war = no
+			has_war = no
+			hidden_trigger = {
+				NOS_has_civil_war = no
+			}
+		}
+
+		cost = 150
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			always = yes
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = USA_immigration_act_enacted }
+			if = {
+				limit = { has_government = democratic }
+				add_popularity = {
+					ideology = conservative
+					popularity = 0.1
+				}
+			}
+			if = {
+				limit = { has_government = conservative }
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.1
+				}
+			}
+			if = {
+				limit = { has_government = social_democracy }
+				add_popularity = {
+					ideology = conservative
+					popularity = 0.05
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.05
+				}
+			}
+		}
+	}
+	USA_admit_jewish_refugees = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_civil_war = no
+			has_war = no
+		}
+
+		cost = 150
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			has_country_flag = USA_immigration_act_enacted
+		}
+
+		complete_effect = {
+			add_research_slot = 1
+			if = {
+				limit = { has_government = democratic }
+				add_popularity = {
+					ideology = conservative
+					popularity = 0.06
+				}
+			}
+			if = {
+				limit = { has_government = conservative }
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.06
+				}
+			}
+			if = {
+				limit = { has_government = social_democracy }
+				add_popularity = {
+					ideology = conservative
+					popularity = 0.03
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.03
+				}
+			}
+		}
+	}	
+	USA_end_recession = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_idea = usa_recession
+			if = {
+				limit = { has_government = democratic }
+				democratic > 0.6
+			}
+			if = {
+				limit = { has_government = conservative }
+				conservative > 0.6
+			}
+			if = {
+				limit = { has_government = social_democracy }
+				social_democracy > 0.6
+			}
+			OR = {
+				threat > 0.99
+				AND = {
+					has_war = no
+					has_global_flag = american_civil_war_begun
+				}
+			}
+		}
+
+		cost = 150
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			has_idea = usa_recession
+		}
+
+		complete_effect = {
+			remove_ideas = usa_recession
+			add_timed_idea = { idea = usa_recession2 days = 1095 }
+		}
+	}
+	USA_statehood_for_alaska = {
+		icon = infiltrate_state
+		available = {
+			#463 = {
+			#	not = { is_core_of = ROOT }
+			#}
+			political_power_daily > 0.1
+		}
+		visible = {
+			463 = {
+				is_fully_controlled_by = USA
+			}
+			OR = {
+				has_completed_focus = USA_Path_to_Statehood
+				has_completed_focus = USA_The_American_Example
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		fire_only_once = yes
+		days_remove = 240
+		cost = 25
+		modifier = {
+			political_power_gain = -0.1
+		}
+		remove_effect = {
+			USA_congress_add_state = yes
+			#add_state_core = 463
+			USA_calc_stars = yes
+		}
+	}
+	USA_statehood_for_hawaii = {
+		icon = infiltrate_state
+		available = {
+			#629 = {
+			#	not = { is_core_of = ROOT }
+			#}
+			political_power_daily > 0.1
+		}
+		visible = {
+			629 = {
+				is_fully_controlled_by = USA
+			}
+			OR = {
+				has_completed_focus = USA_Path_to_Statehood
+				has_completed_focus = USA_The_American_Example
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		fire_only_once = yes
+		days_remove = 240
+		cost = 25
+		modifier = {
+			political_power_gain = -0.1
+		}
+		remove_effect = {
+			USA_congress_add_state = yes
+			#add_state_core = 629
+			USA_calc_stars = yes
+		}
+	}
+	USA_statehood_for_puerto_rico = {
+		icon = infiltrate_state
+		available = {
+			#686 = {
+			#	not = { is_core_of = ROOT }
+			#}
+			political_power_daily > 0.1
+		}
+		visible = {
+			686 = {
+				is_fully_controlled_by = USA
+			}
+			has_completed_focus = USA_Path_to_Statehood
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		fire_only_once = yes
+		days_remove = 240
+		cost = 25
+		modifier = {
+			political_power_gain = -0.1
+		}
+		remove_effect = {
+			USA_congress_add_state = yes
+			#add_state_core = 686
+			USA_calc_stars = yes
+		}
+	}
+	USA_statehood_for_the_philippines = {
+		icon = infiltrate_state
+		available = {
+			#686 = {
+			#	not = { is_core_of = ROOT }
+			#}
+			political_power_daily > 0.1
+		}
+		visible = {
+			623 = {
+				is_fully_controlled_by = USA
+			}
+			327 = {
+				is_fully_controlled_by = USA
+			}
+			624 = {
+				is_fully_controlled_by = USA
+			}
+			628 = {
+				is_fully_controlled_by = USA
+			}
+			625 = {
+				is_fully_controlled_by = USA
+			}
+			627 = {
+				is_fully_controlled_by = USA
+			}
+			626 = {
+				is_fully_controlled_by = USA
+			}
+			has_completed_focus = USA_Path_to_Statehood
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		fire_only_once = yes
+		days_remove = 240
+		cost = 25
+		modifier = {
+			political_power_gain = -0.1
+		}
+		remove_effect = {
+			USA_congress_add_state = yes
+			#add_state_core = 686
+			USA_calc_stars = yes
+		}
+	}
+}
+
+operations = {
+	USA_mexican_intervention = {
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			is_literally_america = yes
+		}
+
+		available = {
+			any_country = {
+				is_neighbor_of = ROOT
+				exists = yes
+				original_tag = MEX
+				OR = {
+					has_government = fascism
+					has_government = communism
+					fascism > 0.4
+					communism > 0.4
+				}
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				NOS_has_civil_war = yes
+				factor = 0
+			}
+		}
+
+		visible = {
+			has_democratic_government = yes
+		}
+		
+		complete_effect = {
+			random_country = {
+				limit = {
+					is_neighbor_of = ROOT
+					exists = yes
+					original_tag = MEX
+					OR = {
+						has_government = fascism
+						has_government = communism
+						fascism > 0.4
+						communism > 0.4
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						type = puppet_wargoal_focus
+						target = PREV
+					}
+				}
+			}
+		}
+	}
+	
+	operation_polk = {
+
+		icon = generic_operation
+
+		visible = {
+			original_tag = CSA
+			NOS_has_civil_war = no
+		}
+		
+		available = {
+			threat > 0.5
+			date > 1940.1.1
+			has_autocratic_government = yes
+		}
+
+		cost = 30
+
+		ai_will_do = {
+			factor = 900000
+			modifier = {
+				factor = 0
+				date < 1940.3.30
+			}
+		}
+		
+		complete_effect = {
+			every_country = {
+				limit = { original_tag = MEX }
+				ROOT = {
+					declare_war_on = { target = PREV type = annex_everything }
+				}
+			}
+		}
+	}
+	operation_blackbeard = {
+
+		icon = generic_operation
+
+		visible = {
+			original_tag = CSA
+			NOS_has_civil_war = no
+			any_country = {
+				is_literally_america = yes
+				exists = yes
+				NOT = { tag = ROOT }
+			}
+		}
+		
+		available = {
+			threat > 0.9
+			date > 1941.1.1
+			has_autocratic_government = yes
+		}
+
+		cost = 30
+
+		ai_will_do = {
+			factor = 900000
+			modifier = {
+				factor = 0
+				date < 1941.6.30
+			}
+		}
+		
+		complete_effect = {
+			drop_cosmetic_tag = yes
+			every_country = {
+				limit = {
+					is_literally_america = yes
+					exists = yes
+					NOT = { tag = ROOT }
+				}
+				ROOT = {
+					declare_war_on = { target = PREV type = annex_everything }
+				}
+			}
+			hidden_effect = {
+				every_state = {
+					limit = { 
+						OR = {
+							is_core_of = USA 
+							is_core_of = FAS
+							is_core_of = ACO  
+						}
+					}
+					CSA = { add_state_core = PREV }
+				}
+				every_state = {
+					limit = { 
+						OR = {
+							is_claimed_by = USA 
+							is_claimed_by = FAS
+							is_claimed_by = ACO  
+							AND = {
+								OWNER = { tag = USA } 
+								NOT = { is_core_of = USA }
+							} 
+							AND = {
+								OWNER = { tag = FAS } 
+								NOT = { is_core_of = FAS }
+							} 
+							AND = {
+								OWNER = { tag = ACO } 
+								NOT = { is_core_of = ACO }
+							} 
+						}
+					}
+					CSA = { add_state_claim = PREV }
+				}
+			}
+		}
+	}
+}
+
+NOS_foreign_policy = {
+	USA_establish_personal_communication_with_former_naval_person = {
+
+		icon = generic_political_discourse
+
+		allowed = {
+			is_literally_america = yes
+		}
+
+		available = {
+			has_country_leader = { ruling_only = yes name = "Franklin Delano Roosevelt" }
+			has_country_flag = blood_toil_tears_sweat_speech
+			ENG = { has_defensive_war = yes }
+		}
+
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_opinion = { target = ENG value > 60 }
+			}
+			modifier = {
+				factor = 10
+				has_opinion = { target = ENG value > 99 }
+			}
+		}
+
+		visible = {
+			has_war = no
+		}
+
+		complete_effect = {
+			add_war_support = 0.05
+			add_opinion_modifier = { target = ENG modifier = USA_special_relationship }
+			reverse_add_opinion_modifier = { target = ENG modifier = USA_special_relationship }
+		}
+	}
+
+	USA_battle_domestic_isolationism = {
+
+		icon = generic_civil_support
+
+		allowed = {
+			is_literally_america = yes
+		}
+
+		available = {
+			has_country_leader = { ruling_only = yes name = "Franklin Delano Roosevelt" }
+			has_country_flag = fight_on_the_beaches_speech
+			ENG = { has_defensive_war = yes }
+		}
+
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_opinion = { target = ENG value > 60 }
+			}
+			modifier = {
+				factor = 10
+				has_opinion = { target = ENG value > 99 }
+			}
+		}
+
+		modifier = {
+			war_support_weekly = 0.002		
+		}
+
+		days_remove = 180
+
+		visible = {
+			has_war = no
+		}
+
+		complete_effect = {
+			add_war_support = 0.05
+		}
+	}
+
+	USA_emergency_arms_deliveries = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			is_literally_america = yes
+		}
+
+		available = {
+			#has_country_leader = { ruling_only = yes name = "Franklin Delano Roosevelt" }
+			has_country_flag = this_was_their_finest_hour_speech
+			ENG = { has_defensive_war = yes }
+		}
+
+		cost = 100
+		fire_only_once = no
+		days_re_enable = 180
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_opinion = { target = ENG value > 60 }
+			}
+			modifier = {
+				factor = 10
+				has_opinion = { target = ENG value > 99 }
+			}
+		}
+
+		modifier = {
+			war_support_weekly = 0.005		
+		}
+
+		days_remove = 30
+
+		visible = {
+			has_completed_focus = USA_Lend_Lease
+		}
+
+		complete_effect = {
+			ENG = {
+				add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 20000 producer = USA }
+				add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 300 producer = USA }
+				add_equipment_to_stockpile = { type = support_equipment_1 amount = 300 producer = USA }
+				country_event = { id = wtt_britain.30 }
+			}
+		}
+	}
+
+	USA_arsenal_of_democracy_decision = {
+
+		icon = generic_industry
+
+		allowed = {
+			is_literally_america = yes
+		}
+
+		available = {
+			#has_country_leader = { ruling_only = yes name = "Franklin Delano Roosevelt" }
+			has_country_flag = mers_el_kebir_raid
+			ENG = { has_defensive_war = yes }
+		}
+
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 10
+		}
+
+		visible = {
+			has_war = no
+		}
+
+		modifier = {
+			war_support_weekly = 0.001		
+			industrial_capacity_factory = 0.02
+			industrial_capacity_dockyard = 0.02
+			consumer_goods_factor = -0.05
+		}
+
+		days_remove = 360
+
+		complete_effect = {
+		}
+	}
+	USA_support_the_anti_fascist_war = {
+
+		icon = generic_industry
+
+		allowed = {
+			is_literally_america = yes
+			has_democratic_government = yes
+		}
+
+		available = {
+			any_other_country = {
+				has_completed_focus = CHI_mission_to_the_us
+				has_war_with = JAP
+			}
+		}
+
+		visible = {
+			any_other_country = {
+				has_completed_focus = CHI_mission_to_the_us
+				has_war_with = JAP
+			}
+		}
+
+		cost = 25
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 3
+				any_other_country = {
+					has_completed_focus = CHI_mission_to_the_us
+					has_idea = CHI_soong_mei_ling
+					surrender_progress > 0.2
+					has_defensive_war = yes
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				has_war_support > 0.6
+			}
+
+			modifier = {
+				factor = 2
+				has_war_with = JAP
+			}
+		}
+
+		fire_only_once = no
+
+		modifier = {
+			civilian_factory_use = 5			
+		}
+
+		days_remove = 180
+
+		complete_effect = {
+			random_country = {
+				limit = {
+					has_completed_focus = CHI_mission_to_the_us
+				}
+				add_offsite_building = { type = arms_factory level = 3 }
+				set_country_flag = USA_support_the_anti_fascist_war
+			}
+		}
+
+		remove_effect = {
+			add_war_support = 0.05
+			random_country = {
+				limit = {
+					if = {
+						limit = {
+							NOT = { any_other_country = { has_country_flag = USA_support_the_anti_fascist_war } }
+						}
+						has_completed_focus = CHI_mission_to_the_us
+						else = { has_country_flag = USA_support_the_anti_fascist_war }
+					}
+				}
+				add_offsite_building = { type = arms_factory level = -3 }
+			}
+		}
+	}
+
+	USA_guns_for_the_anti_fascist_war = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			is_literally_america = yes
+			has_democratic_government = yes
+		}
+
+		available = {
+			has_equipment = { infantry_equipment > 999 }
+			CHI = {
+				has_completed_focus = CHI_mission_to_the_us
+				has_war_with = JAP
+			}
+		}
+
+		visible = {
+			CHI = {
+				has_completed_focus = CHI_mission_to_the_us
+				has_war_with = JAP
+			}
+			has_completed_focus = USA_Lend_Lease
+		}
+
+		cost = 25
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 3
+				CHI = {
+					has_completed_focus = CHI_mission_to_the_us
+					has_idea = CHI_soong_mei_ling
+					surrender_progress > 0.2
+					has_defensive_war = yes
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				has_war_support < 0.6
+			}
+
+			modifier = {
+				factor = 2
+				has_war_with = JAP
+			}
+		}
+
+		fire_only_once = no	
+
+		days_re_enable = 180
+
+		complete_effect = {
+			ROOT = {
+				send_equipment = {
+					target = CHI
+					type = infantry_equipment
+					amount = 1000
+					old_prioritised = yes
+				}
+			}
+		}
+	}
+}
+
+

@@ -1,0 +1,603 @@
+﻿capital = 431
+
+set_major = yes
+
+set_research_slots = 1
+
+set_cosmetic_tag = OTT
+
+set_province_name = { id = 9833 name= "Konstantinople" }
+431 = { set_state_name = "Konstantinople" }
+950 = { set_state_name = "East Konstantinople" }
+
+set_politics = {
+	ruling_party = monarchism
+	last_election = "1935.2.8"
+	election_frequency = 72
+	elections_allowed = yes
+}
+
+create_country_leader = {
+	name = "Sultan Mehmed V"
+	desc = ""
+	picture = ""
+	expire = "1938.11.10"
+	ideology = absolutism	
+	traits = {
+	}
+}
+
+add_ideas = {
+	etgi_laws_leadership_structure_2
+}
+
+set_popularities = {
+	monarchism = 63
+	neutrality = 25
+	fascism = 12
+}
+
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	} 
+	set_autonomy = {
+		target = YEM
+		autonomous_state = autonomy_royal_protectorate
+		freedom_level = 0.7
+	}
+	else = {
+		puppet = YEM
+	} 
+}
+
+1933.1.1 = {
+	set_province_name = { id = 9833 name= "Istanbul" }
+	431 = { set_state_name = "Istanbul" }
+	950 = { set_state_name = "East Istanbul" }
+
+	set_capital = 49
+	end_puppet = YEM
+	drop_cosmetic_tag = yes
+	oob = "TUR_1936"
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_naval_oob = "TUR_1936_naval_mtg"
+		else = {
+			set_naval_oob = "TUR_1936_naval_legacy"
+		}
+	}
+	set_major = no
+	remove_ideas = { etgi_laws_leadership_structure_2 }
+
+	set_research_slots = 3
+	add_ideas = {
+		debt_of_ottomans
+		neutrality_idea
+	}
+
+	add_timed_idea = {
+		idea = TUR_kurtulus_savasi
+		days = 365
+	}
+	add_timed_idea = {
+		idea = TUR_tecrubeli_subaylar
+		days = 730
+	}
+	add_timed_idea = {
+		idea = TUR_yeni_bir_ulke_insa_etmek
+		days = 730
+	}
+
+	set_technology = {
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+		tech_recon = 1 
+		tech_support = 1 
+		motorised_infantry = 1 
+		gw_artillery = 1 
+		tech_mountaineers = 1
+		early_fighter = 1
+	    CAS1 = 1	
+		early_submarine = 1
+		early_destroyer = 1
+		basic_destroyer = 1
+		early_light_cruiser = 1
+		early_battleship = 1
+		early_battlecruiser = 1
+		transport = 1
+	}
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		set_technology = {
+			early_submarine = 1
+			early_destroyer = 1
+			early_light_cruiser = 1
+			early_battleship = 1
+			early_battlecruiser = 1
+			transport = 1
+		}
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			basic_naval_mines = 1
+			submarine_mine_laying = 1
+			early_ship_hull_light = 1
+			basic_ship_hull_light = 1
+			early_ship_hull_submarine = 1
+			basic_ship_hull_submarine = 1
+			early_ship_hull_cruiser = 1
+			early_ship_hull_heavy = 1
+			basic_battery = 1
+			basic_secondary_battery = 1
+			basic_torpedo = 1
+			coastal_defense_ships = 1
+			mtg_transport = 1
+		}
+	}
+
+	set_politics = {
+		ruling_party = social_democracy
+		last_election = "1935.2.8"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		social_democracy = 89
+		unionism = 11
+	}
+
+	set_convoys = 50
+	set_stability = 0.55
+
+	# Atatürk still alive in '36, however, Inönü was already Prime Minister (but not President)
+	create_country_leader = {
+		name = "Ismet Inönü"
+		desc = "POLITICS_ISMET_INÖNÜ_DESC"
+		picture = "TUR_Ismet_Inonu.dds"
+		expire = "1965.1.1"
+		ideology = social_liberal
+		traits = {
+	 		mpler_ele
+		}
+	}
+
+	create_country_leader = {
+		name = "Mustafa Atatürk"
+		desc = "POLITICS_MUSTAFA_KEMAL_ATATÜRK_DESC"
+		picture = "TUR_Mustafa_Ataturk.dds"
+		expire = "1938.11.10"
+		ideology = social_liberal	
+		traits = {
+			muhtesem_devrimci
+		}
+	}
+
+	create_country_leader = {
+		name = "Sefik Hüsnü"
+		desc = "POLITICS_SEFIK_HUSNU_DESC"
+		picture = "gfx/leaders/TUR/Portrait_Turkey_Sefik_Husnu.dds"
+		expire = "1965.1.1"
+		ideology = marxism
+		traits = {
+			#
+		}
+	}
+
+	create_country_leader = {
+		name = "Celâl Bayar"
+		desc = "POLITICS_CELAL_BAYAR_DESC"
+		picture = "gfx/leaders/TUR/Portrait_Turkey_Celal_Bayar.dds"
+		expire = "1965.1.1"
+		ideology = conservatism
+		traits = {
+			#
+		}
+	}
+
+	create_country_leader = {
+		name = "Fevzi Çakmak"
+		desc = "POLITICS_OGUZ_REMZI_ARIK_DESC"
+		picture = "gfx/leaders/TUR/Portrait_Turkey_Fevzi_Cakmak.dds"
+		expire = "1965.1.1"
+		ideology = fascism_ideology
+		traits = {
+			yeni_lider
+		}
+	}
+
+	create_field_marshal = {      
+		name = "Fevzi Çakmak"   
+		portrait_path = "gfx/leaders/TUR/Pasa_Fevzi_Cakmak.dds"   
+		traits = { Skilled_Staffer Infantry_Leader Infantry_Officer Old_Guard War_Hero Brilliant_Strategist } 
+		skill = 6
+		attack_skill = 5
+		defense_skill = 4
+		planning_skill = 5
+		logistics_skill = 3
+	}
+
+		create_corps_commander = {      
+		name = "İsmet İnönü"   
+		portrait_path = "gfx/leaders/TUR/Pasa_Ismet.dds"   
+		traits = { Skilled_Staffer Organization_First Old_Guard War_Hero Brilliant_Strategist } 
+		skill = 5
+		attack_skill = 4
+		defense_skill = 5
+		planning_skill = 4
+		logistics_skill = 3
+	}
+
+		create_corps_commander = {
+		name = "Kazım Karabekir"
+		portrait_path = "gfx/leaders/TUR/Pasa_Kazim_Karabekir.dds"
+		traits = { trait_engineer Fortress_Buster Improvisation_Expert Winter_Specialist Winter_Expert Old_Guard Brilliant_Strategist }
+		skill = 4
+		attack_skill = 4
+		defense_skill = 4
+		planning_skill = 3
+		logistics_skill = 3
+	}
+
+		create_corps_commander = {      
+		name = "Ömer Fahrettin"   
+		portrait_path = "gfx/leaders/TUR/Pasa_Omer_Fahrettin.dds"   
+		traits = { Infantry_Leader Infantry_Expert Desert_Fox Old_Guard Infantry_Officer Harsh_Leader } 
+		skill = 3
+		attack_skill = 3
+		defense_skill = 5
+		planning_skill = 3
+		logistics_skill = 5
+	}
+
+		create_corps_commander = {      
+		name = "Kâzım Orbay"   
+		portrait_path = "gfx/leaders/TUR/Pasa_Kazim_Orbay.dds"   
+		traits = { Camouflage_Expert Ambusher Infantry_Leader Infantry_Officer Old_Guard } 
+		skill = 3
+		attack_skill = 3
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 2
+	}
+		
+		create_corps_commander = {
+		name = "Selahattin Adil"
+		portrait_path = "gfx/leaders/TUR/Pasa_Selahattin_Adil.dds"	
+		traits = { Old_Guard Media_Personality } 
+		skill = 2
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 1
+	}
+
+		create_corps_commander = {
+		name = "İzzettin Çalışlar"
+		portrait_path = "gfx/leaders/TUR/Pasa_Izzettin_Calislar.dds"
+		traits = { Media_Personality Infantry_Officer }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 1
+	}
+		
+		create_corps_commander = {
+		name = "Refet Bele"
+		portrait_path = "gfx/leaders/TUR/Pasa_Refet_Bele.dds"
+		traits = { Old_Guard Media_Personality Communist_Sympathizer }
+		skill = 2
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+
+		create_corps_commander = {
+		name = "Abdüllatif Naci Eldeniz"
+		portrait_path = "gfx/leaders/TUR/Pasa_Naci_Eldeniz.dds"
+		traits = { Old_Guard Cautious Infantry_Officer }
+	    skill = 2
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 1
+	}
+
+		create_corps_commander = {
+		name = "Asım Gündüz"
+		portrait_path = "gfx/leaders/TUR/Pasa_Asim_Gunduz.dds"
+		traits = { Amphibious Cautious Infantry_Officer }
+	    skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+
+		create_corps_commander = {
+		name = "Reşat Çiğiltepe"
+		portrait_path = "gfx/leaders/TUR/Pasa_Resat_Cigiltepe.dds"
+		traits = { Infantry_Officer War_Hero }
+	    skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 1
+	}
+
+		create_corps_commander = {
+		name = "Yusuf İzzet Met"
+		portrait_path = "gfx/leaders/TUR/Pasa_Yusuf_Izzetmet.dds"
+		traits = { Media_Personality Infantry_Officer }
+	    skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 2
+
+	}
+
+		create_corps_commander = {
+		name = "Cafer Tayyar Eğilmez"
+		portrait_path = "gfx/leaders/TUR/Pasa_Cafer_Tayyar_Egilmez.dds"
+		traits = { Career_Officer Cavalry_Officer }
+	    skill = 1
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 1
+	}
+
+		create_corps_commander = {
+		name = "Osman Fuad"
+		portrait_path = "gfx/leaders/TUR/Pasa_Osman_Fuad.dds"
+		traits = { }
+	    skill = 1
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 1
+	}
+
+		create_navy_leader = {
+		name = "Fahri Korutürk"
+		portrait_path = "gfx/leaders/TUR/Pasa_Fahri_Koruturk.dds"
+		traits = { Spotter Blockade_Runner Superior_Tactician ironside }
+		skill = 5
+		attack_skill = 5
+		defense_skill = 5
+		maneuvering_skill = 5
+		coordination_skill = 5
+	}
+
+		create_navy_leader = {
+		name = "Necdet Uran"
+		portrait_path = "gfx/leaders/TUR/Pasa_Necdet_Uran.dds"
+		traits = { seawolf }
+		skill = 3
+		attack_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		coordination_skill = 3
+	}
+
+		create_navy_leader = {
+		name = "Mehmet Ali Ülgen"
+		portrait_path = "gfx/leaders/TUR/Pasa_Mehmet_Ali_Ulgen.dds"
+		traits = { seawolf }
+		skill = 4
+		attack_skill = 4
+		defense_skill = 1
+		maneuvering_skill = 3
+		coordination_skill = 4
+	}
+
+		create_navy_leader = {
+		name = "Celal Eycioğlu"
+		portrait_path = "gfx/leaders/TUR/Pasa_Celal_Eyiceoglu.dds"
+		traits = { Spotter Air_Controller Fly_swatter }
+		skill = 3
+		attack_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 2
+		coordination_skill = 2
+	}
+
+		create_navy_leader = {
+		name = "Hilmi Fırat"
+		portrait_path = "gfx/leaders/TUR/Pasa_Hilmi_Firat.dds"
+		traits = { Spotter }
+		skill = 3
+		attack_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 2
+		coordination_skill = 2
+	}
+
+		create_navy_leader = {
+		name = "Kemal Kayacan"
+		portrait_path = "gfx/leaders/TUR/Pasa_Kemal_Kayacan.dds"
+		traits = {  }
+		skill = 2
+		attack_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 2
+		coordination_skill = 2
+	}
+
+		create_navy_leader = {
+		name = "Sadık Altıncan"
+		portrait_path = "gfx/leaders/TUR/Pasa_Sadık_Altıncan.dds"
+		traits = {  }
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		coordination_skill = 2
+	}
+
+		create_navy_leader = {
+		name = "Ahmet Zeki Özak"
+		portrait_path = "gfx/leaders/TUR/Pasa_Ahmet_Zeki_Ozak.dds"
+		traits = {  }
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		coordination_skill = 1
+	}
+
+	### Ship Variants ###
+
+	### VARIANTS ###
+	# 1936 Start #
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		### Ship Variants ###
+		create_equipment_variant = {
+			name = "Kocatepe Class"
+			type = destroyer_1
+			upgrades = {
+				ship_torpedo_upgrade = 2
+				destroyer_engine_upgrade = 2
+				ship_ASW_upgrade = 1
+				ship_anti_air_upgrade = 1
+			}
+		}
+		create_equipment_variant = {
+			name = "Tinaztepe Class"
+			type = destroyer_1
+			obsolete = yes
+			upgrades = {
+				ship_torpedo_upgrade = 1
+				destroyer_engine_upgrade = 1
+				ship_ASW_upgrade = 1
+				ship_anti_air_upgrade = 1
+			}
+		}
+		create_equipment_variant = {
+			name = "Dumlupinar Class"
+			type = submarine_1
+			upgrades = {
+				ship_reliability_upgrade = 2
+				sub_engine_upgrade = 2
+				sub_stealth_upgrade = 2
+				sub_torpedo_upgrade = 2
+			}
+		}
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		# Submarines #
+		create_equipment_variant = {
+			name = "Birinci Inönü Class"				
+			type = ship_hull_submarine_1
+			name_group = TUR_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_1
+				fixed_ship_engine_slot = sub_ship_engine_1
+				rear_1_custom_slot = empty
+			}
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Dumlupinar Class"				
+			type = ship_hull_submarine_2
+			name_group = TUR_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_1
+				fixed_ship_engine_slot = sub_ship_engine_2
+				rear_1_custom_slot = ship_mine_layer_sub
+			}
+		}
+		create_equipment_variant = {
+			name = "Sakarya Class"								# represents Sakarya and Gur classes
+			type = ship_hull_submarine_1
+			name_group = TUR_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_2
+				fixed_ship_engine_slot = sub_ship_engine_2
+				rear_1_custom_slot = empty
+			}
+		}
+		# Destroyers #
+		create_equipment_variant = {
+			name = "Peyk Class"									# large torpedo boats		
+			type = ship_hull_light_1
+			name_group = TUR_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = empty
+			}
+			obsolete = yes
+		}
+		create_equipment_variant = {
+			name = "Kocatepe Class"								# represents Kocatepe and Zafer classes
+			type = ship_hull_light_1
+			name_group = TUR_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_2
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = empty
+			}
+		}
+		# Cruisers #
+		create_equipment_variant = {
+			name = "Mecidiye Class"								# represents Mecidiye and Hamidiye protected cruisers		
+			type = ship_hull_cruiser_coastal_defense_ship
+			name_group = TUR_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				fixed_ship_armor_slot = empty
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				mid_1_custom_slot = empty
+				mid_2_custom_slot = empty
+				rear_1_custom_slot = ship_torpedo_1
+			}
+		}
+		# Battlecruiser #
+		create_equipment_variant = {
+			name = "Yavuz Class"	
+			type = ship_hull_heavy_1
+			name_group = TUR_BC_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = heavy_ship_engine_1
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_bc_1
+				front_1_custom_slot = ship_heavy_battery_1
+				mid_1_custom_slot = ship_secondaries_1
+				mid_2_custom_slot = empty
+				rear_1_custom_slot = empty
+			}
+		}
+	}
+}

@@ -1,0 +1,426 @@
+﻿capital = 12
+oob = "LAT_1936"
+if = {
+	 limit = { has_dlc = "Man the Guns" }
+     set_naval_oob = "LAT_1936_naval_mtg"
+	 else = { set_naval_oob = "LAT_1936_naval_legacy"}
+}
+set_convoys = 25
+set_research_slots = 3
+set_stability = 0.75
+set_war_support = 0.3
+
+set_technology = {
+	             infantry_weapons = 1
+	             infantry_weapons1 = 1
+	             motorised_infantry = 1
+	             tech_support = 1
+	             gw_artillery = 1
+	             gwtank = 1
+	             basic_light_tank = 1
+	             early_fighter = 1
+}
+if = {
+	 limit = { not = { has_dlc = "Man the Guns" } }
+	 set_technology = {
+		              early_submarine = 1
+	                  early_destroyer = 1
+	 }
+}
+if = {
+	 limit = { has_dlc = "Man the Guns" }
+	 set_technology = {
+		              submarine_mine_laying = 1
+		              early_ship_hull_submarine = 1
+		              basic_torpedo = 1
+		              improved_ship_torpedo_launcher = 1
+		              basic_naval_mines = 1
+		              early_ship_hull_light = 1
+		              basic_battery = 1
+	 }
+}
+
+1939.1.1 = {
+           add_political_power = 1198
+           
+           oob = "LAT_1939"
+           if = {
+		        limit = { has_dlc = "Man the Guns" }
+			    set_naval_oob = "LAT_1939_naval_mtg"
+		        else = { set_naval_oob = "LAT_1939_naval_legacy" }
+	       }
+
+	       complete_national_focus = LAT_Review_the_Satversme
+	       complete_national_focus = LAT_Finish_the_Coup
+	       complete_national_focus = LAT_Political_Party_Ban
+	       complete_national_focus = LAT_Nationalistic_Ideas
+	       complete_national_focus = LAT_Baltic_Unity
+	       complete_national_focus = LAT_Latvia_for_Latvians
+	       complete_national_focus = LAT_Aizsargi
+	       complete_national_focus = LAT_Rebuild_Our_Industry
+	       complete_national_focus = LAT_Improve_Latvian_Export
+	       complete_national_focus = LAT_Expand_Vairogs_Production
+	       complete_national_focus = LAT_Expand_VEF_Production
+	       complete_national_focus = LAT_Construction_of_Keguma_VES
+	       complete_national_focus = LAT_Supplies_for_Army
+	       complete_national_focus = LAT_Vairogs_in_Army
+	       complete_national_focus = LAT_Modernize_VEF_Aircraft
+	       complete_national_focus = LAT_Rebuild_Vidzeme_Infrastructure
+	       complete_national_focus = LAT_Rebuild_Kurzeme_Infrastructure
+	       complete_national_focus = LAT_Military_Effort
+	       complete_national_focus = LAT_Border_Security
+	       complete_national_focus = LAT_Land_Forces
+	       complete_national_focus = LAT_Infantry_Focus
+	       complete_national_focus = LAT_Air_Forces
+	       complete_national_focus = LAT_Figther_Focus
+	       complete_national_focus = LAT_Deal_of_Gladiators
+	       complete_national_focus = LAT_Sea_Forces
+
+	       create_country_leader = {
+	                    name = "Kārlis Ulmanis"
+	                    picture = "gfx/leaders/LAT/Portrait_Karlis_Ulmanis.dds"
+	                    expire = "1965.1.1"
+	                    ideology = oligarchism
+	                    traits = { dictator }
+           }
+
+	       set_technology = {
+	                        improved_light_tank = 1
+                            tech_engineers = 1
+                            tech_recon = 1
+                            infantry_weapons2 = 1
+		                    interwar_artillery = 1
+		                    support_weapons = 1
+		                    support_weapons2 = 1
+		                    mechanised_infantry = 1
+		                    early_bomber = 1
+		                    fighter1 = 1
+
+		                    #doctrines
+		                    air_superiority = 1
+		                    grand_battle_plan = 1
+		                    trench_warfare = 1
+		                    fleet_in_being = 1
+		                    battlefleet_concentration = 1
+		                    convoy_sailing = 1
+
+		                    #electronics
+		                    electronic_mechanical_engineering = 1
+		                    radio = 1
+		                    radio_detection = 1
+		                    mechanical_computing = 1
+		                    computing_machine = 1
+
+		                    #industry
+		                    basic_machine_tools = 1
+		                    improved_machine_tools = 1
+		                    advanced_machine_tools = 1
+		                    synth_oil_experiments = 1
+		                    fuel_silos = 1
+		                    oil_processing = 1
+		                    improved_oil_processing = 1
+		                    construction1 = 1
+		                    construction2 = 1
+		                    dispersed_industry = 1
+		                    dispersed_industry2 = 1
+	                        }
+}
+
+set_politics = {
+               ruling_party = neutrality
+               last_election = "1931.10.3"
+               election_frequency = 108
+               elections_allowed = no
+}
+set_popularities = {
+                   conservative = 20
+		           fascism = 15
+		           social_democracy = 15
+		           neutrality = 50
+}
+
+add_ideas = {
+	        extensive_conscription
+}
+
+create_country_leader = {
+	                    name = "Alberts Kviesis"
+	                    picture = "gfx/leaders/LAT/Portrait_Alberts_Kviesis.dds"
+	                    expire = "1965.1.1"
+	                    ideology = oligarchism
+	                    traits = { }
+}
+
+create_country_leader = {
+	                    name = "Gustavs Celmiņš"
+	                    picture = "gfx/leaders/LAT/Portrait_Gustavs_Celmins.dds"
+	                    expire = "1965.1.1"
+	                    ideology = nazism
+	                    traits = { }
+}
+
+create_country_leader = {
+	                    name = "Augusts Kirhenšteins"
+	                    picture = "gfx/leaders/LAT/Portrait_Augusts_Krihensteins.dds"
+	                    expire = "1965.1.1"
+	                    ideology = marxism
+	                    traits = { }
+}
+
+create_country_leader = {
+	                    name = "Pēteris Juraševskis"
+	                    picture = "gfx/leaders/LAT/Portrait_Peteris_Jurasevskis.dds"
+	                    expire = "1965.1.1"
+	                    ideology = liberalism
+	                    traits = { }
+}
+
+create_field_marshal = {
+	                   name = "Hermanis Buks"
+	                   picture = "Portrait_Hermanis_Buks.dds"
+	                   traits = { cavalry_officer }
+	                   skill = 3
+	                   attack_skill = 2
+	                   defense_skill = 4
+	                   planning_skill = 2
+	                   logistics_skill = 2
+	                   id = 8001
+}
+
+create_field_marshal = {
+	                   name = "Jānis Liepiņš"
+	                   picture = "Portrait_Janis_Liepins.dds"
+	                   traits = { infantry_officer defensive_doctrine }
+	                   skill = 2
+	                   attack_skill = 1
+	                   defense_skill = 2
+	                   planning_skill = 2
+	                   logistics_skill = 2
+	                   id = 8002
+}
+
+create_field_marshal = {
+	                   name = "Andrejs Krustiņš"
+	                   picture = "Portrait_Andrejs_Krustins.dds"
+	                   traits = { infantry_officer infantry_leader }
+	                   skill = 3
+	                   attack_skill = 3
+	                   defense_skill = 2
+	                   planning_skill = 3
+	                   logistics_skill = 2
+	                   id = 8003
+}
+
+create_field_marshal = {
+	                   name = "Žanis Bahs"
+	                   picture = "Portrait_Zanis_Bahs.dds"
+	                   traits = { infantry_officer }
+	                   skill = 2
+	                   attack_skill = 2
+	                   defense_skill = 2
+	                   planning_skill = 2
+	                   logistics_skill = 1
+	                   id = 8004
+}
+
+create_corps_commander = {
+	                     name = "Arvīds Krīpens"
+	                     picture = "Portrait_Arvids_Kripens.dds"
+	                     traits = { brilliant_strategist infantry_leader }
+	                     skill = 3
+	                     attack_skill = 3
+	                     defense_skill = 3
+	                     planning_skill = 2
+	                     logistics_skill = 2
+	                     id = 8005
+}
+
+create_corps_commander = {
+	                     name = "Augusts Apsītis"
+	                     picture = "Portrait_Augusts_Apsitis.dds"
+	                     traits = { infantry_officer infantry_leader ambusher }
+	                     skill = 3
+	                     attack_skill = 3
+	                     defense_skill = 2
+	                     planning_skill = 3
+	                     logistics_skill = 3
+	                     id = 8006
+}
+
+create_corps_commander = {
+	                     name = "Jānis Skujiņš"
+	                     picture = "Portrait_Janis_Skujins.dds"
+	                     traits = { cavalry_officer trait_engineer fortress_buster }
+	                     skill = 3
+	                     attack_skill = 3
+	                     defense_skill = 3
+	                     planning_skill = 2
+	                     logistics_skill = 2
+	                     id = 8007
+}
+
+create_corps_commander = {
+	                     name = "Roberts Žanis Briesma"
+	                     picture = "Portrait_Roberts_Zanis_Briesma.dds"
+	                     traits = { naval_invader naval_liason }
+	                     skill = 3
+	                     attack_skill = 2
+	                     defense_skill = 2
+	                     planning_skill = 3
+	                     logistics_skill = 3
+	                     id = 8008
+}
+
+create_corps_commander = {
+	                     name = "Voldemārs Skaistlauks"
+	                     picture = "Portrait_Voldemars_Skaistlauks.dds"
+	                     traits = { career_officer trait_engineer }
+	                     skill = 3
+	                     attack_skill = 3
+	                     defense_skill = 3
+	                     planning_skill = 2
+	                     logistics_skill = 2
+	                     id = 8009
+}
+
+create_corps_commander = {
+	                     name = "Vilis Spandegs"
+	                     picture = "Portrait_Vilis_Spandegs.dds"
+	                     traits = { inflexible_strategist commando }
+	                     skill = 3
+	                     attack_skill = 2
+	                     defense_skill = 3
+	                     planning_skill = 2
+	                     logistics_skill = 3
+	                     id = 8010
+}
+
+create_corps_commander = {
+	                     name = "Rūdolfs Ceplītis"
+	                     picture = "Portrait_Rudolfs_Ceplitis.dds"
+	                     traits = { infantry_officer infantry_leader }
+	                     skill = 2
+	                     attack_skill = 2
+	                     defense_skill = 2
+	                     planning_skill = 1
+	                     logistics_skill = 2
+	                     id = 8011
+}
+
+create_corps_commander = {
+	                     name = "Oskars Dankers"
+	                     picture = "Portrait_Oskars_Dankers.dds"
+	                     traits = { politically_connected infantry_leader }
+	                     skill = 3
+	                     attack_skill = 2
+	                     defense_skill = 3
+	                     planning_skill = 2
+	                     logistics_skill = 3
+	                     id = 8012
+}
+
+create_corps_commander = {
+	                     name = "Rūdolfs Bangerskis"
+	                     picture = "Portrait_Rudolfs_Bangerskis.dds"
+	                     traits = { politically_connected }
+	                     skill = 2
+	                     attack_skill = 1
+	                     defense_skill = 2
+	                     planning_skill = 2
+	                     logistics_skill = 2
+	                     id = 8013
+}
+
+create_corps_commander = {
+	                     name = "Oto Grosbarts"
+	                     picture = "Portrait_Oto_Grosbarts.dds"
+	                     traits = { armor_officer panzer_leader }
+	                     skill = 2
+	                     attack_skill = 2
+	                     defense_skill = 2
+	                     planning_skill = 1
+	                     logistics_skill = 2
+	                     id = 8014
+}
+
+create_navy_leader = {
+	                 name = "Arhibalds fon Keizerlings"
+		             picture = "Portrait_Arhibalds_fon_Keizerlings.dds"
+	                 traits = { old_guard }
+	                 skill = 3
+	                 id = 8015
+}
+
+create_navy_leader = {
+	                 name = "Teodors Spāde"
+		             picture = "Portrait_Teodors_Spade.dds"
+	                 traits = { spotter }
+	                 skill = 3
+	                 id = 8016
+}
+
+create_navy_leader = {
+	                 name = "Hugo Legzdiņš"
+		             picture = "Portrait_Hugo_Legzdins.dds"
+	                 traits = { seawolf }
+	                 skill = 2
+	                 id = 8017
+}
+
+create_navy_leader = {
+	                 name = "Ansis Rozenvalds"
+		             picture = "Portrait_Ansis_Rozenvalds.dds"
+	                 traits = { ironside }
+	                 skill = 1
+	                 id = 8018
+}
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+}
+if = {
+	 limit = { has_dlc = "Man the Guns" }
+	 create_equipment_variant = {
+		name = "Loire-Simonet"
+		type = ship_hull_submarine_1
+		name_group = LAT_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			      fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			      fixed_ship_engine_slot = sub_ship_engine_1
+			      rear_1_custom_slot = empty
+		          }
+	 }
+	 create_equipment_variant = {
+		name = "Minensuchboot 1916"
+		type = ship_hull_light_1
+		name_group = LAT_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			      fixed_ship_battery_slot = ship_light_battery_1
+				  fixed_ship_anti_air_slot = ship_anti_air_1
+				  fixed_ship_fire_control_system_slot = empty
+				  fixed_ship_radar_slot = empty
+				  fixed_ship_engine_slot = light_ship_engine_1
+				  fixed_ship_torpedo_slot = empty
+				  mid_1_custom_slot = ship_mine_layer_1
+				  rear_1_custom_slot = ship_mine_layer_1
+		          }
+	 }
+	 create_equipment_variant = {
+		name = "Mīnu Aizžogotājtraleris"
+		type = ship_hull_light_1
+		name_group = LAT_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			      fixed_ship_battery_slot = ship_light_battery_1
+				  fixed_ship_anti_air_slot = ship_anti_air_1
+				  fixed_ship_fire_control_system_slot = empty
+				  fixed_ship_radar_slot = empty
+				  fixed_ship_engine_slot = light_ship_engine_1
+				  fixed_ship_torpedo_slot = empty
+				  mid_1_custom_slot = ship_mine_sweeper_1
+				  rear_1_custom_slot = empty
+		          }
+	 }
+}

@@ -1,0 +1,75 @@
+spriteTypes = {
+### Unit.Battalions ###
+spriteType = {		name = "GFX_unit_heavy_armor_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Armour.Tank.Heavy.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_heavy_sp_anti_air_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.SPAA.Heavy.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_heavy_sp_artillery_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.SPG.Heavy.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_heavy_tank_destroyer_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.TD.Heavy.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_light_armor_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Armour.Tank.Light.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_light_sp_anti_air_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.SPAA.Light.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_light_sp_artillery_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.SPG.Light.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_light_tank_destroyer_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.TD.Light.Div.Map.dds"		noOfFrames = 2		}
+
+spriteType = {		name = "GFX_unit_medium_sp_anti_air_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.SPAA.Medium.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_medium_sp_artillery_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.SPG.Medium.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_medium_tank_destroyer_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.TD.Medium.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_modern_armor_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Armour.Tank.Modern.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_modern_sp_anti_air_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.SPAA.Modern.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_modern_sp_artillery_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.SPG.Modern.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_modern_tank_destroyer_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.TD.Modern.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_super_heavy_armor_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Armour.Tank.SuperHeavy.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_super_heavy_sp_anti_air_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.SPAA.SuperHeavy.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_super_heavy_sp_artillery_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.SPG.SuperHeavy.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_super_heavy_tank_destroyer_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.TD.SuperHeavy.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_anti_air_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.AntiAircraft.Light.Towed.Div.Map.dds"		noOfFrames = 2		}
+
+#MPU duplicates?
+spriteType = {		name = "GFX_unit_medium_armor_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Armour.Tank.Medium.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_medium_tank_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Armour.Tank.Medium.Div.Map.dds"		noOfFrames = 2		}
+
+spriteType = {		name = "GFX_unit_anti_tank_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.AntiTank.Light.Towed.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_at_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.AntiTank.Light.Towed.Div.Map.dds"		noOfFrames = 2		}
+
+spriteType = {		name = "GFX_unit_artillery_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.Gun.Light.Towed.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_art_icon_medium_white"						textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.Gun.Light.Towed.Div.Map.dds"		noOfFrames = 2		}
+#MPU duplicates?
+
+spriteType = {		name = "GFX_unit_bicycle_battalion_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Mobile.Infantry.Bicycle.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_infantry_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Infantry.Foot.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_rocket_artillery_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.Rocket.Towed.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_cavalry_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Mobile.Cavalry.Horsed.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_mechanized_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Mobile.Infantry.Mechanised.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_mot_anti_air_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.AntiAircraft.Light.Motorised.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_mot_anti_tank_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.AntiTank.Light.Motorised.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_mot_artillery_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.Gun.Light.Motorised.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_mot_rocket_artillery_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.Rocket.Motorised.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_motorized_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Mobile.Infantry.Motorised.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_motorized_rocket_brigade_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Artillery.Rocket.Motorised.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_amphibious_armor_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Armour.Amphibious.Light.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_amphibious_mechanized_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Mobile.Infantry.Mechanised.Amphibious.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_marine_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Infantry.Marine.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_mountaineers_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Infantry.Mountain.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_paratrooper_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Infantry.Airborne.Div.Map.dds"		noOfFrames = 2		}
+
+### Unit.SupportCompanies ###
+spriteType = {		name = "GFX_unit_anti_air_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Support.AntiAircraft.Light.Towed.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_anti_tank_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Support.AntiTank.Light.Towed.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_artillery_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Support.Artillery.Light.Towed.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_engineer_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Support.Engineer.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_recon_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Support.Recon.Cavalry.Div.Map.dds"		noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_rocket_artillery_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Support.Artillery.Rocket.Towed.Div.Map.dds"		noOfFrames = 2		}
+#MPU Removed
+#spriteType = {		name = "GFX_unit_field_hospital_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Support.Hospital.Div.Map.dds"		noOfFrames = 2		}
+#spriteType = {		name = "GFX_unit_logistics_company_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Support.Logistics.Div.Map.dds"		noOfFrames = 2		}
+#spriteType = {		name = "GFX_unit_maintenance_company_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Support.Maintenance.Div.Map.dds"		noOfFrames = 2		}
+#spriteType = {		name = "GFX_unit_signal_company_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Support.Signal.Div.Map.dds"		noOfFrames = 2		}
+#spriteType = {		name = "GFX_unit_military_police_icon_medium_white"		textureFile = "gfx/mpu/units_map/MPU.Unit.Support.MilitaryPolice.Div.Map.dds"		noOfFrames = 2		}
+
+# new la resistance unit types
+spriteType = {		name = "GFX_unit_fake_intel_unit_icon_medium_white"	texturefile = "gfx/mpu/units_map/MPU.Unit.Support.Fake.Div.Map.dds"			legacy_lazy_load = no			noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_light_tank_recon_icon_medium_white"	texturefile = "gfx/mpu/units_map/MPU.Unit.Support.Recon.LightTank.Div.Map.dds"			legacy_lazy_load = no			noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_armored_car_recon_icon_medium_white"	texturefile = "gfx/mpu/units_map/MPU.Unit.Support.Recon.ArmouredCar.Div.Map.dds"			legacy_lazy_load = no			noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_mot_recon_icon_medium_white"			texturefile = "gfx/mpu/units_map/MPU.Unit.Support.Recon.Motorised.Div.Map.dds"			legacy_lazy_load = no			noOfFrames = 2		}
+spriteType = {		name = "GFX_unit_armored_car_icon_medium_white"		texturefile = "gfx/mpu/units_map/MPU.Unit.Mobile.Armour.AC.Div.Map.dds"			legacy_lazy_load = no			noOfFrames = 2		}
+
+}
+### EOF ###

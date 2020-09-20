@@ -1,0 +1,701 @@
+AST_immigration = {
+
+	AST_british_immigration = {
+		
+		icon = generic_political_discourse
+		
+		available = {
+			has_democratic_government = yes
+			if = {
+				limit = {
+					has_idea = AST_great_depression_1
+				}
+				NOT = { has_idea = AST_great_depression_1 }
+			}
+			if = {
+				limit = {
+					has_idea = AST_great_depression_2
+				}
+				NOT = { has_idea = AST_great_depression_2 }
+			}
+			if = {
+				limit = {
+					has_idea = AST_great_depression_3
+				}
+				NOT = { has_idea = AST_great_depression_3 }
+			}
+		}
+		
+		allowed = {
+			original_tag = AST
+		}
+		
+		visible = {
+			OR = {
+				has_completed_focus = AST_sever_ties_with_uk
+				has_completed_focus = AST_support_the_policy_of_appeasement
+			}
+			has_democratic_government = yes
+			any_country = {
+				original_tag = ENG
+				has_democratic_government = yes
+			}
+		}
+		
+		fire_only_once = yes
+		
+		cost = 10
+
+		complete_effect = {
+			add_timed_idea = { 
+				idea = AST_british_immigration
+				days = 1825
+			}
+		}
+		
+		remove_effect = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 2
+				has_manpower < 10000
+			}			
+		}
+	}
+	
+	AST_give_asylum_to_british_refugees = {
+		
+		icon = generic_political_discourse
+		
+		available = {
+		
+		}
+		
+		activation = {
+#			OR = {
+#				has_completed_focus = AST_sever_ties_with_uk
+#				has_completed_focus = AST_support_the_policy_of_appeasement
+#			}
+			has_democratic_government = yes
+			any_country = {
+				original_tag = ENG
+				NOT = { has_democratic_government = yes }
+				has_civil_war = no
+			}
+		}
+		
+		allowed = {
+			original_tag = AST
+		}
+		
+		cancel_trigger = {
+		
+		}
+		
+		selectable_mission = yes
+		
+		days_mission_timeout = 30
+		
+		fire_only_once = yes
+		
+		cost = 0
+		
+		timeout_effect = {
+		
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					any_owned_state = {	
+						state_population > 200000
+					}
+				}
+				capital_scope = {
+					add_manpower = 50000
+				}
+				random_owned_state = {
+					prioritize = { 517 }
+					limit = {
+						state_population > 200000
+					}
+					add_manpower = 30000
+				}
+				random_owned_state = {
+					prioritize = { 521 }
+					limit = {
+						state_population > 200000
+					}
+					add_manpower = 30000
+				}
+				random_owned_state = {
+					prioritize = { 522 }
+					limit = {
+						state_population > 200000
+					}
+					add_manpower = 50000
+				}
+			}
+			else = {
+				capital_scope = {
+					add_manpower = 50000
+				}
+				random_owned_state = {
+					prioritize = { 517 }
+					add_manpower = 30000
+				}
+				random_owned_state = {
+					prioritize = { 521 }
+					add_manpower = 30000
+				}
+				random_owned_state = {
+					prioritize = { 522 }
+					add_manpower = 50000
+				}
+			}
+			random_country = {
+				limit = {
+					original_tag = ENG
+				}
+				country_event = { id = tfv_australia.140 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100			
+		}
+	}
+	
+	AST_indonesian_migrants = {
+		
+		icon = generic_nationalism
+		
+		available = {
+		
+		}
+		
+		activation = {
+#			OR = {
+#				has_completed_focus = AST_sever_ties_with_uk
+#				has_completed_focus = AST_support_the_policy_of_appeasement
+#			}
+			has_democratic_government = yes
+			INS = { has_capitulated = yes }
+			INS = { has_war = yes }
+		}
+		
+		allowed = {
+			original_tag = AST
+		}
+		
+		visible = {
+		
+		}
+		
+		cancel_trigger = {
+		
+		}
+		
+		selectable_mission = yes
+		
+		days_mission_timeout = 30
+		
+		fire_only_once = yes
+		
+		cost = 10
+		
+		timeout_effect = {
+		
+		}
+
+		complete_effect = {
+			if = {
+				limit = { 
+					controls_state = 522
+				}
+				522 = {
+					add_manpower = 10000
+				}
+			}
+			else = {
+				capital_scope = {
+					add_manpower = 10000
+				}
+			}
+			HOL = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = AST_accepted_indonesian_migrants
+				}
+			}
+			INS = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = AST_accepted_indonesian_migrants
+				}
+			}
+		}
+		
+		remove_effect = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	AST_post_war_immigration_program = {
+		
+		icon = generic_political_discourse
+		
+		available = {
+			has_democratic_government = yes
+			has_war = no
+		}
+		
+		allowed = {
+			original_tag = AST
+		}
+		
+		visible = {
+			date > 1942.1.1
+			OR = {
+				has_completed_focus = AST_sever_ties_with_uk
+				has_completed_focus = AST_support_the_policy_of_appeasement
+			}
+			has_democratic_government = yes
+		}
+		
+		fire_only_once = yes
+		
+		cost = 100
+
+		complete_effect = {
+			add_timed_idea = { 
+				idea = AST_ten_pound_poms
+				days = 1460
+			}
+			set_country_flag = AST_ten_pound_poms
+		}
+		
+		remove_effect = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 100	
+		}
+	}
+	
+	AST_abolish_the_white_australia_policy = {
+		
+		icon = generic_political_discourse
+		
+		available = {
+			has_democratic_government = yes
+			NOT = { has_war = yes }
+		}
+		
+		allowed = {
+			original_tag = AST
+		}
+		
+		visible = {
+			has_democratic_government = yes
+			has_country_flag = AST_ten_pound_poms
+		}
+		
+		fire_only_once = yes
+		
+		cost = 200
+
+		complete_effect = {
+			add_stability = -0.05
+			add_ideas = AST_abolished_white_australia_policy
+		}
+		
+		remove_effect = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 100	
+		}
+	}
+}
+
+AST_challenge_britain = {
+	
+	AST_rally_the_colonies = {
+		
+		icon = generic_civil_support
+		
+		available = {
+			has_autocratic_government = yes
+		}
+		
+		allowed = {
+			original_tag = AST
+		}
+
+		visible = {
+			has_autocratic_government = yes
+			has_completed_focus = AST_support_the_centre_party
+		}
+		
+		fire_only_once = yes
+
+		modifier = {
+			
+		}
+		
+		cost = 300
+		
+		days_remove = 30
+		
+		complete_effect = {
+			set_variable = {
+				var = AST_num_countries_support
+				value = 0
+			}
+			set_variable = {
+				var = AST_num_countries_for_war
+				value = 0
+			}
+			set_variable = {
+				var = AST_fire_control
+				value = 0
+			}
+			every_country = {
+				limit = {
+					is_subject_of = ENG
+					NOT = { tag = AST }
+				}
+				country_event = { id = tfv_australia.150 }
+			}
+		}
+		
+		remove_effect = {
+			set_country_flag = AST_has_rallied_support
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0.5
+				NOT = { has_idea = AST_king_edward_viii }
+			}
+		}
+	}
+	
+	AST_dethrone_the_empire = {
+		
+		icon = generic_nationalism
+		
+		available = {
+			has_autocratic_government = yes
+		}
+		
+		allowed = {
+			original_tag = AST
+		}
+
+		visible = {
+			any_country = { 
+				is_subject_of = ENG
+				has_country_flag = AST_has_supported_australia 
+			}
+			has_country_flag = AST_has_rallied_support
+			has_autocratic_government = yes
+			has_completed_focus = AST_support_the_centre_party
+		}
+		
+		fire_only_once = yes
+
+		modifier = {
+			
+		}
+		
+		cost = 0
+		
+		complete_effect = {
+			clr_country_flag = AST_has_rallied_support
+			set_variable = {
+				var = AST_fire_control
+				value = 1
+			}
+			every_country = {
+				limit = {
+					is_subject_of = ENG
+					has_country_flag = AST_has_supported_australia
+				}
+				country_event = { id = tfv_australia.153 }
+			}
+		}
+		
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}
+
+AST_anz_union = {
+
+	AST_send_proposal_to_new_zealand = {
+		
+		icon = generic_form_nation
+		
+		available = {
+			is_in_faction_with = NZL
+			has_democratic_government = yes
+			NZL = { 
+				has_democratic_government = yes
+				has_war = yes
+			}
+		}
+		
+		allowed = {
+			original_tag = AST
+		}
+		
+		visible = {
+			has_war = yes
+			OR = {
+				has_completed_focus = AST_sever_ties_with_uk
+				has_completed_focus = AST_support_the_policy_of_appeasement
+			}
+			NZL = {
+				OR = {
+					NOT = {
+						has_completed_focus = NZL_constitution_amendment_act
+						has_completed_focus = NZL_statute_of_westminster 
+					}
+				}
+			}
+			NZL = { exists = yes }
+			NOT = { has_country_flag = AST_ANZ_union_formed }
+		}
+
+		highlight_states = {
+			state = 284
+			state = 723
+			state = 726
+		}
+		
+		fire_only_once = no
+		
+		modifier = {
+			
+		}
+		
+		cost = 75
+
+		complete_effect = {
+			NZL = {
+				country_event = { id = tfv_australia.97 }
+			}
+		}
+		
+		days_re_enable = 730
+		
+		remove_effect = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+	
+	AST_release_new_zealand = {
+	
+		icon = generic_form_nation
+		
+		available = {
+		
+		}
+	
+		allowed = {
+			original_tag = AST
+		}
+		
+		visible = {
+			has_war = yes
+			OR = {
+				has_completed_focus = AST_sever_ties_with_uk
+				has_completed_focus = AST_support_the_policy_of_appeasement
+			}
+			has_country_flag = AST_ANZ_union_formed
+		}
+	
+		highlight_states = {
+			state = 284
+			state = 723
+			state = 726
+		}
+	
+		fire_only_once = no
+	
+		modifier = {
+			
+		}
+	
+		cost = 10
+		
+		complete_effect = {
+			AST = {
+				country_event = { id = tfv_australia.100 }
+				clr_country_flag = AST_ANZ_union_formed
+			}
+		}
+		
+		days_re_enable = 730
+		
+		remove_effect = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+
+AST_protect_south_east_asia = {
+
+	AST_protect_the_dutch_east_indies = {
+		
+		icon = generic_nationalism
+		
+		available = {
+			NOT = { has_war_with = HOL }
+			INS = {
+				is_puppet_of = HOL
+			}
+			OR = {
+				HOL = { has_capitulated = yes }
+				any_country = {
+					OR = {
+						capital_scope = asia
+						capital_scope = pacific
+					}
+					has_war_with = AST
+					has_war_with = INS
+				}
+			}
+			HOL = {
+				OR = {
+					has_democratic_government = yes
+					is_in_faction_with = ROOT
+				}		
+			}
+		}
+		
+		allowed = {
+			original_tag = AST
+		}
+		
+		visible = {
+			OR = {
+				has_completed_focus = AST_sever_ties_with_uk
+				has_completed_focus = AST_support_the_policy_of_appeasement
+			}
+		}
+
+		highlight_states = {
+		
+		}
+		
+		fire_only_once = yes
+		
+		modifier = {
+			
+		}
+		
+		cost = 50
+
+		complete_effect = {
+			HOL = {
+				country_event = { id = tfv_australia.10 }
+			}
+		}
+		
+		remove_effect = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	AST_protect_british_malaya = {
+		
+		icon = generic_nationalism
+		
+		available = {
+			NOT = { has_war_with = ENG }
+			MAL = {
+				is_puppet_of = ENG
+			}
+			OR = {
+				threat > 0.20
+				MAL = { has_war = yes }
+			}
+		}
+		
+		allowed = {
+			tag = AST
+		}
+		
+		visible = {
+			OR = {
+				has_completed_focus = AST_sever_ties_with_uk
+				has_completed_focus = AST_support_the_policy_of_appeasement
+			}
+			NOT = { has_completed_focus = AST_abandon_the_westminster_system }
+		}
+
+		highlight_states = {
+		
+		}
+		
+		fire_only_once = yes
+		
+		modifier = {
+			
+		}
+		
+		cost = 50
+
+		complete_effect = {
+			ENG = {
+				country_event = { id = tfv_australia.1 }
+			}
+		}
+		
+		remove_effect = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}

@@ -1,0 +1,209 @@
+﻿add_namespace = egyptianempire
+
+#Aly Maher Pasha Appointed
+country_event = {
+	id = egyptianempire.1
+	title = egyptianempire.1.t
+	desc = egyptianempire.1.d
+	picture = GFX_report_event_ast_parliament_house
+	
+	trigger = {
+		tag = EGY
+		date > 1936.1.29
+		has_government = neutrality
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	fire_only_once = yes
+
+	option = {
+		name = egyptianempire.1.a
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Aly Maher Pasha"
+			desc = "POLITICS_ALY_MAHER_PASHA_DESC"
+			picture = "Portrait_Egypt_Aly_Maher_Pasha.dds"
+			expire = "1936.5.9"
+			ideology = moderatism
+			traits = {
+				#
+			}
+		}
+	}
+}
+#King Fuad I Dies
+country_event = {
+	id = egyptianempire.2
+	title = egyptianempire.2.t
+	desc = egyptianempire.2.d
+	picture = GFX_report_event_generic_funeral
+	
+	trigger = {
+		tag = EGY
+		date > 1936.4.10
+		date < 1936.5.1
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	fire_only_once = yes
+
+	option = {
+		name = egyptianempire.2.a
+		swap_ideas = {
+			remove_idea = fuad_i_of_egypt
+			add_idea = king_farouk_i
+		}
+		news_event = { id = news.1000 days = 1 }
+	}
+}
+#Britain Influences Egyptian Politics
+country_event = {
+	id = egyptianempire.3
+	title = egyptianempire.3.t
+	desc = egyptianempire.3.d
+	picture = GFX_report_event_ast_parliament_house
+	
+	trigger = {
+		tag = EGY
+		has_idea = sir_miles_lampson
+		has_idea = king_farouk_i
+		NOT = {
+			is_in_faction_with = ENG
+		}
+	}
+	
+	fire_only_once = yes
+
+	option = {
+		name = egyptianempire.3.a
+		add_opinion_modifier = { target = ENG modifier = large_decrease }
+		add_opinion_modifier = { target = ITA modifier = huge_increase }
+	}
+	option = {
+		name = egyptianempire.3.b
+		ai_chance = { factor = 0 }
+	}
+}
+#Makram Ebeid Assassinated
+country_event = {
+	id = egyptianempire.4
+	title = egyptianempire.4.t
+	desc = egyptianempire.4.d
+	picture = GFX_report_event_europe_funeral
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = {
+		name = egyptianempire.4.a
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.01
+		}
+		add_popularity = {
+			ideology = conservative
+			popularity = -0.01
+		}
+	}
+}
+#Makram Ebeid Escapes
+country_event = {
+	id = egyptianempire.5
+	title = egyptianempire.5.t
+	desc = egyptianempire.5.d
+	picture = GFX_report_event_soviet_purge_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { 
+						has_idea = crackdown_on_riots_democracy
+					}
+				}
+				random_list = {
+					70 = { country_event = { id = egyptianempire.1000 days = 1 } }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = egyptianempire.5.a
+		add_stability = -0.05
+	}
+}
+#Egypt gets Suez
+country_event = {
+	id = egyptianempire.6
+	title = egyptianempire.6.t
+	desc = egyptianempire.6.d
+	picture = GFX_report_event_usa_macarthur_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = {
+		name = egyptianempire.6.a
+	}
+}
+#Egypt DOESN'T get Suez
+country_event = {
+	id = egyptianempire.7
+	title = egyptianempire.7.t
+	desc = egyptianempire.7.d
+	picture = GFX_report_event_usa_macarthur_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = {
+		name = egyptianempire.7.a
+	}
+}
+#Democratic Riots
+country_event = {
+	id = egyptianempire.1000
+	title = egyptianempire.1000.t
+	desc = egyptianempire.1000.d
+	picture = GFX_report_event_ast_parliament_house
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	immediate = {
+		add_popularity = {
+			ideology = conservative
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+	}
+	
+	option = {
+		name = egyptianempire.1000.a
+	}
+	option = {
+		name = egyptianempire.1000.b
+		add_timed_idea = {
+			idea = crackdown_on_riots_democracy
+			days = 180
+		}
+	}
+}

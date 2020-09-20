@@ -1,0 +1,54 @@
+##############
+## FASCIST
+##############
+
+fascist_decisions = {
+	icon = generic_fascism
+
+	visible = {
+		has_government = fascism
+		NOT = { tag = GER } # waffen-ss
+		NOT = { tag = ITA } # ccnn
+		NOT = { tag = JAP } # imperial guard
+	}
+}
+
+ccnn_decisions = {
+	icon = generic_fascism
+
+	visible = {
+		has_government = fascism
+		tag = ITA
+	}
+}
+
+imperial_guard_decisions = {
+	icon = generic_fascism
+
+	visible = {
+		has_government = fascism
+		tag = JAP
+	}
+}
+
+##############
+## COMMUNIST
+##############
+
+communist_decisions = {
+	icon = generic_communism
+
+	visible = {
+		has_government = communism
+		NOT = { tag = SOV } # guard
+	}
+}
+
+soviet_guard_decisions = {
+	icon = generic_communism
+
+	visible = {
+		has_government = communism
+		tag = SOV
+	}
+}

@@ -51,6 +51,7 @@ country_event = {
 		name = hungary.2.a
 		HUN = { 
 			transfer_state = 76
+			transfer_state = 82
 			transfer_state = 83
 			transfer_state = 84
 		}
@@ -90,6 +91,7 @@ country_event = {
 	option = {
 		name = hungary.4.a
 		add_state_claim = 76
+		add_state_claim = 82
 		add_state_claim = 83
 		add_state_claim = 84
 		hidden_effect = {

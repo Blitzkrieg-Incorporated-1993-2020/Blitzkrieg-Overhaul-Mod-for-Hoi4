@@ -1,0 +1,8 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			set_global_flag = times_of_peace_2factions
+			set_global_flag = times_of_peace_zero
+		}
+	}
+}

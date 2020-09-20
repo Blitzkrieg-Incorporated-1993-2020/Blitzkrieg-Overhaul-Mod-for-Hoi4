@@ -1,0 +1,30 @@
+soviet_guard_decisions = {
+
+	order_people_commissar_303 = {
+
+		icon = communist_guard
+
+		available = {
+		    has_army_experience > 200
+            communism = 1.00
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		complete_effect = {
+		    ## TODO create event to put those effects inside
+            set_technology = { faction_communist_units = 1 }
+            set_technology = { faction_communist_units_heavy = 1 }
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+}

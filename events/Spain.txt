@@ -2,7 +2,52 @@
 # Spanish Events
 ###########################
 
+#Remember to save in utf-8bom encoding
+
 add_namespace = spain
+
+#I (modman) changed the civil war to more closely reflect the political situation of the civil war. The republicans were fighting for the popular front, not just for communism, anarchism or democratic, but kinda for all of them at the same time. Saying the republicans were just always commies is a gross simplification. Please ask if you want to use this code in your own mod, and take the quality of my "fix" with a grain of salt.
+
+# Election of 1936
+country_event = {
+	id = spain.9
+	title = spain.9.t
+	desc = spain.9.d
+	picture = GFX_report_event_election_vote
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = SPR
+		date < 1937.1.1
+	}
+
+	mean_time_to_happen = {
+		days = 40	# Historical outbreak time after elections
+	}
+	
+	# Popular Front
+	option = {
+		ai_chance = { factor = 1 }
+		name = spain.9.a
+		set_country_flag = SPR_fascist_civil_war
+		add_popularity = {
+			ideology = communism
+			popularity = 0.15
+		}
+	}
+
+	# Falange
+	option = {
+		ai_chance = { factor = 0 }
+		name = spain.9.b
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		set_country_flag = SPR_communist_civil_war
+	}
+}
 
 # Spanish Civil War
 country_event = {
@@ -18,137 +63,124 @@ country_event = {
 		tag = SPR
 		has_defensive_war = no
 		NOT = { has_government = fascism }
-		date > 1936.2.16 # Trigger at some point after 1936 elections
-		NOT = { has_dlc = "La Resistance" }
+		date > 1936.7.1 # Trigger at some point after 1936 elections
+		OR = {
+			has_country_flag = SPR_fascist_civil_war
+			date > 1937.1.1
+		}
 	}
 
 	mean_time_to_happen = {
-		days = 151	# Historical outbreak time after elections
+		days = 1	# Historical outbreak time after elections
 	}
-
+	
 	immediate = {
 		hidden_effect = {
-			if = {
+				CAT = { transfer_state = 165 }
+				puppet = CAT
+				set_autonomy = { target = CAT autonomy_state = autonomy_territory }
+				CAT = { set_politics = { ruling_party = unionism elections_allowed = no } add_popularity = { ideology = unionism popularity = 0.8 } }
+			set_global_flag = scw_happening_now
+			set_cosmetic_tag = CIV
+			add_popularity = { ideology = fascism popularity = -0.5 }
+			add_popularity = { ideology = monarchism popularity = -0.15 }
+			add_popularity = { ideology = unionism popularity = 0.2 }
+			add_popularity = { ideology = communism popularity = 0.1 }
+			add_ideas = SPR_to_the_bitter_end
+			add_ideas = SPA_recovering_from_civil_war
+			load_focus_tree = civilwar_focus
+			set_stability = 0.9
+			set_war_support = 0.8
+			add_timed_idea = {
+				idea = communist_influence
+				days = 720
+			}
+			add_timed_idea = {
+				idea = unionist_influence
+				days = 720
+			}
+			every_state = {
+				limit = { is_core_of = ROOT }
+				SPS = { add_state_core = PREV }
+			}
+			every_state = {
+				limit = { is_owned_by = ROOT NOT = { is_core_of = ROOT } }
+				SPS = { add_state_claim = PREV }
+			}
+			every_state = {
+				limit = { is_claimed_by = ROOT }
+				SPS = { add_state_claim = PREV }
+			}
+			every_state = {
 				limit = {
-					has_country_leader = {
-					    name = "Niceto Alcalá-Zamora"
-					    ruling_only = yes
+					is_owned_by = ROOT
+					OR = {
+						state = 166
+						state = 170
+						state = 171
+						state = 172
+						state = 174
+						state = 176
+						state = 778
+						state = 1050
+						state = 1053
+						state = 1054 
 					}
 				}
-				retire_country_leader = yes
-				create_country_leader = {
-					name = "Manuel Azaña"
-					desc = "POLITICS_MANUEL_AZANA_DESC"
-					picture = "Portrait_Spain_Manuel_Azana.dds"
-					expire = "1965.1.1"
-					ideology = conservatism
-					traits = {
-			
-					}
-				}
+				SPS = { transfer_state = PREV }
+			}
+			transfer_units_fraction= {
+			    target = SPS
+			    size = 0.5
+			    stockpile_ratio = 0.5
+			    army_ratio = 0.2
+			    navy_ratio = 0.6
+			    air_ratio = 0.5
+			    keep_unit_leaders_trigger = {
+			   	}
+			}
+			load_oob = "SPR_Civil_War"
+			SPS = {
+				load_oob = "SPA_Civil_War"
+				set_cosmetic_tag = CIV
+				load_focus_tree = civilwar_focus
+				add_ideas = SPR_to_the_bitter_end
+				add_ideas = SPA_recovering_from_civil_war
+				set_politics = { ruling_party = fascism elections_allowed = no }
+				add_popularity = { ideology = fascism popularity = 0.4 }
+				add_popularity = { ideology = monarchism popularity = 0.15 }
+				declare_war_on = { target = ROOT type = annex_everything } 
 			}
 		}
 	}
-	
+
 	option = { # Support Nationalists
 		name = spain.1.a
-		trigger = { is_ai = no }
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
 		hidden_effect = {
-			set_capital = 176
-			start_civil_war = {
-				ruling_party = fascism
-				ideology = communism
-				size = 0.5
-				capital = 41
-				states = { 41 165 167 168 173 175 1052 1054 1055 1133 }
-			}
-			random_other_country = {
-				limit = {
-					original_tag = SPR
-					has_government = communism
-				}
-				load_oob = "SPR_Civil_War"
-				set_equipment_fraction = 0.5
-				set_stability = 0.9
-				set_war_support = 0.8
-				#country_event = { id = spain.3 days = 1 }
-				add_popularity = {
-					ideology = democratic
-					popularity = 0.35
-				}
-			}
-			news_event = { hours = 6 id = news.63 }
-			set_global_flag = spanish_civil_war
-			
-			load_oob = "SPA_Civil_War"
-			set_equipment_fraction = 0.5
-			set_stability = 0.9
-			set_war_support = 0.8
-			
-			add_popularity = {
-				ideology = fascism
-				popularity = 1
-			}
-			random_other_country = {
-				limit = {
-					original_tag = SPR
-					has_government = communism
-				}
-				set_cosmetic_tag = SPR_civil_war
-			}
-
-			#country_event = { id = spain.2 days = 7 }
+			SPS = { change_tag_from = ROOT }
 		}
 		custom_effect_tooltip = nationalists_chosen
 	}
 	option = { # Support Republicans
 		name = spain.1.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		#trigger = {
+		#	is_historical_focus_on = no
+		#}
 		hidden_effect = {
-			start_civil_war = {
-				ideology = fascism
-				size = 0.5
-				capital = 176
-				states = { 166 169 170 171 172 174 176 177 178 290 297 699 1050 1051 1053 }
-			}
-			random_other_country = {
-				limit = {
-					original_tag = SPR
-					has_government = fascism
-				}
-				set_equipment_fraction = 0.5
-				set_stability = 0.9
-				set_war_support = 0.8
-				#country_event = { id = spain.2 days = 1 }
-				load_oob = "SPA_Civil_War"
-			}
-			news_event = { hours = 6 id = news.63 }
-			set_global_flag = spanish_civil_war
-			
-			set_politics = {
-				ruling_party = communism
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = communism
-				popularity = 0.5
-			}
-			add_popularity = {
-				ideology = fascism
-				popularity = -1
-			}	
-			random_other_country = {
-				limit = {
-					original_tag = SPR
-					has_government = fascism
-				}
-				set_cosmetic_tag = SPR_civil_war
-			}
-			load_oob = "SPR_Civil_War"
-			set_equipment_fraction = 0.5
-			set_stability = 0.9
-			set_war_support = 0.8
-			
-			#country_event = { id = spain.3 days = 7 }
 		}
 		custom_effect_tooltip = republicans_chosen
 	}
@@ -179,7 +211,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				POR = { NOT = { has_government = communism } }
+				POR = { NOT = { OR = { has_government = unionism has_government = communism } } }
 			}
 			POR = { country_event = { id = spain.4 days = 1 } }
 		}
@@ -203,14 +235,16 @@ country_event = {
 
 	trigger = {
 		has_civil_war = yes
+		original_tag = SPR
 	}
 
 	option = {
 		name = spain.3.a
 		every_other_country = {
 			limit = {
-				has_government = communism
-				NOT = { tag = SPR }
+				#NOT = { has_government = fascism }
+				OR = { has_government = unionism has_government = communism }
+				NOT = { original_tag = SPR }
 			}
 			country_event = { id = spain.5 days = 1 }
 		}
@@ -271,11 +305,30 @@ country_event = {
 		name = spain.5.a
 		set_country_flag = promised_help_republican_spain
 		custom_effect_tooltip = spain.4.a.tt
+		#ai_chance = {
+		#	factor = 0
+		#	modifier = {
+		#		factor = 1
+		#		OR = {
+		#			original_tag = SOV
+		#			original_tag = MEX
+		#		}
+		#	}
+		#}
 	}
 
 	option = {
 		name = spain.5.b
-		
+		#ai_chance = {
+		#	factor = 1
+		#	modifier = {
+		#		factor = 0
+		#		OR = {
+		#			original_tag = SOV
+		#			original_tag = MEX
+		#		}
+		#	}
+		#}
 	}
 }
 
@@ -324,6 +377,11 @@ country_event = {
 		has_country_flag = promised_help_republican_spain
 		SPR = { has_civil_war = yes }
 		is_lend_leasing = SPR
+		#any_other_country = {
+		#	original_tag = SPR
+		#	NOT = {has_government = fascism}
+		#	ROOT = { is_lend_leasing = PREV }
+		#}
 	}
 
 	mean_time_to_happen = {
@@ -334,6 +392,13 @@ country_event = {
 		name = spain.7.a
 		clr_country_flag = promised_help_republican_spain
 		SPR = { add_opinion_modifier = { target = ROOT modifier = lend_leased_spanish_civil_war } }
+		#random_other_country = {
+		#	limit = {
+		#		original_tag = SPR
+		#		NOT = {has_government = fascism}
+		#	}
+		#	add_opinion_modifier = { target = ROOT modifier = lend_leased_spanish_civil_war }
+		#}
 	}
 }
 
@@ -349,9 +414,6 @@ country_event = {
 		has_government = fascism
 		has_global_flag = nationalist_victory
 		owns_state = 41
-		NOT = {
-			41 = { is_capital = yes }
-		}
 	}
 
 	fire_only_once = yes
@@ -364,51 +426,16 @@ country_event = {
 		ai_chance = { factor = 1 }
 		name = spain.8.a
 		set_capital = 41
+		hidden_effect = {
+			set_cosmetic_tag = SPF
+		}
 	}
 	option = {
 		ai_chance = { factor = 0 }
 		name = spain.8.b
-	}
-}
-
-# Election of 1936
-country_event = {
-	id = spain.9
-	title = spain.9.t
-	desc = spain.9.d
-	picture = GFX_report_event_election_vote
-	
-	is_triggered_only = yes
-
-	fire_only_once = yes
-
-	trigger = {
-		tag = SPR
-		date < 1937.1.1
-		NOT = {
-			has_dlc = "La Resistance"
+		hidden_effect = {
+			set_cosmetic_tag = SPF
 		}
-	}
-
-	# Popular Front
-	option = {
-		ai_chance = { factor = 1 }
-		name = spain.9.a
-		add_popularity = {
-			ideology = communism
-			popularity = 0.1
-		}
-	}
-
-	# Falange
-	option = {
-		ai_chance = { factor = 0 }
-		name = spain.9.b
-		set_politics = {
-			ruling_party = fascism
-			elections_allowed = no
-		}
-		set_country_flag = SPR_communist_civil_war
 	}
 }
 
@@ -423,9 +450,11 @@ country_event = {
 	
 	trigger = {
 		NOT = { has_global_flag = scw_over }
-		has_country_flag = SPR_communist_civil_war
+		tag = SPR
 		has_defensive_war = no
+		NOT = { has_government = fascism }
 		date > 1936.2.16 # Trigger at some point after 1936 elections
+		has_country_flag = SPR_communist_civil_war
 	}
 
 	mean_time_to_happen = {
@@ -434,20 +463,27 @@ country_event = {
 	
 	option = { # Support Nationalists
 		name = spain.1.a
-		trigger = { is_ai = no }
 		hidden_effect = {
 			set_capital = 176
 			start_civil_war = {
 				ruling_party = fascism
-				ideology = communism
-				size = 0.5
+				ideology = democratic
+				size = 0.35
 				capital = 41
-				states = { 41 165 167 168 173 175 1052 1054 1055 1133 }
+				states = { 41 165 167 168 172 173 175 }
 			}
 			random_other_country = {
 				limit = {
 					original_tag = SPR
-					has_government = communism
+					has_democratic_government = yes
+				}
+				add_timed_idea = {
+					idea = communist_influence
+					days = 720
+				}
+				add_timed_idea = {
+					idea = SPA_recovering_from_civil_war
+					days = 720
 				}
 				load_oob = "SPR_Civil_War"
 				set_equipment_fraction = 0.7
@@ -455,8 +491,10 @@ country_event = {
 				set_war_support = 0.8
 				add_popularity = {
 					ideology = democratic
-					popularity = 0.35
+					popularity = 0.65
 				}
+
+				add_opinion_modifier = { target = SOV modifier = communism_leanings_good }
 			}
 			news_event = { hours = 6 id = news.63 }
 			set_global_flag = spanish_civil_war
@@ -469,24 +507,19 @@ country_event = {
 				ideology = fascism
 				popularity = 1
 			}
-			random_other_country = {
-				limit = {
-					original_tag = SPR
-					has_government = communism
-				}
-				set_cosmetic_tag = SPR_civil_war
-			}
+			
 		}
 		custom_effect_tooltip = nationalists_chosen
 	}
 	option = { # Support Republicans
 		name = spain.10.b
+		trigger = { is_ai = no }
 		hidden_effect = {
 			start_civil_war = {
 				ideology = fascism
 				size = 0.5
 				capital = 176
-				states = { 166 169 170 171 172 174 176 177 178 290 297 699 1050 1051 1053 }
+				states = { 166 699 178 290 169 170 176 174 171 177 297 }
 			}
 			random_other_country = {
 				limit = {
@@ -502,8 +535,17 @@ country_event = {
 			set_global_flag = spanish_civil_war
 			
 			set_politics = {
-				ruling_party = communism
-				elections_allowed = no
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			set_cosmetic_tag = SPR
+			add_timed_idea = {
+				idea = communist_influence
+				days = 720
+			}
+			add_timed_idea = {
+				idea = SPA_recovering_from_civil_war
+				days = 720
 			}
 			load_oob = "SPR_Civil_War"
 			set_equipment_fraction = 0.7
@@ -514,21 +556,1337 @@ country_event = {
 				popularity = -1
 			}
 			add_popularity = {
-				ideology = communism
+				ideology = democratic
 				popularity = 1
 			}	
 			add_popularity = {
-				ideology = democratic
+				ideology = communism
 				popularity = 0.35
 			}
-			random_other_country = {
-				limit = {
-					original_tag = SPR
-					has_government = fascism
-				}
-				set_cosmetic_tag = SPR_civil_war
+
+			ANS = { 
+				transfer_state = 165
 			}
+			ANS = { 
+				core_state = 165
+			}
+			puppet = ANS
+
+			ANS = { 
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = yes
+					election_frequency = 1
+				}
+			}
+
+			add_opinion_modifier = { target = SOV modifier = communism_leanings_good }			
 		}
 		custom_effect_tooltip = republicans_chosen
+	}
+}
+
+
+
+
+
+
+
+
+
+
+#Time for all the mod event shit
+
+# ENG asked about Deal
+country_event = {
+	id = spain.128
+	title = spain.128.t
+	desc = spain.128.d
+	picture = GFX_report_event_bunker_01
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = spain.128.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 1000
+				has_civil_war = yes
+			}
+		}
+		118 = {
+			if = {
+				SPR = { 
+					transfer_state = 118
+				}
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.1360 }
+		}
+	}
+	option = { # Refuse
+		name = spain.128.b
+		ai_chance = {
+			base = 90	
+		}
+		SPR = {
+			country_event = { id = spain.129 days = 7 }
+		}
+	}
+}
+
+# ENG refuses Deal
+country_event = {
+	id = spain.129
+	title = spain.129.t
+	desc = spain.129.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = spain.129.a
+	}
+}
+
+# ENG Deal News
+news_event = {
+	id = news.1360
+	title = news.1360.t
+	desc = news.1360.c
+	picture = GFX_news_event_eng_churchill_sign_treaty
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1360.a
+		trigger = {
+			NOT = {
+				TAG = SPR
+				TAG = ENG
+			}
+		}
+	}
+	option = {
+		name = news.1360.b
+		trigger = { TAG = SPR }
+	}
+	option = {
+		name = news.1360.d
+		trigger = {
+			OR = {
+				TAG = ENG
+			}
+		}
+	}
+}
+
+# FRA asked about Deal
+country_event = {
+	id = spain.228
+	title = spain.228.t
+	desc = spain.228.d
+	picture = GFX_report_event_south_africa_patrol
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = spain.228.a
+		ai_chance = {
+			base = 35
+		}
+		297 = {
+			if = {
+				limit = { is_owned_by = SPR }
+				FRA = { 
+					transfer_state = 297
+				}
+			}
+		}
+		461 = {
+			if = {
+				limit = { is_owned_by = FRA }
+				SPR = { 
+					transfer_state = 461
+				}
+			}
+		}
+		462 = {
+			if = {
+				limit = { is_owned_by = FRA }
+				SPR = { 
+					transfer_state = 462
+				}
+			}
+		}
+		SPR = {
+			country_event = { hours = 2 id = spain.24 }
+		}
+	}
+	option = { # Accept 2
+		name = spain.228.a
+		ai_chance = {
+			base = 35
+		}
+		297 = {
+			if = {
+				limit = { is_owned_by = SPR }
+				FRA = { 
+					transfer_state = 297
+				}
+			}
+		}
+		699 = {
+			if = {
+				limit = { is_owned_by = SPR }
+				FRA = { 
+					transfer_state = 699
+				}
+			}
+		}
+		1106 = {
+			if = {
+				limit = { is_owned_by = SPR }
+				FRA = { 
+					transfer_state = 1106
+				}
+			}
+		}
+		461 = {
+			if = {
+				limit = { is_owned_by = FRA }
+				SPR = { 
+					transfer_state = 461
+				}
+			}
+		}
+		462 = {
+			if = {
+				limit = { is_owned_by = FRA }
+				SPR = { 
+					transfer_state = 462
+				}
+			}
+		}
+		459 = {
+			if = {
+				limit = { is_owned_by = FRA }
+				SPR = { 
+					transfer_state = 459
+				}
+			}
+		}
+		SPR = {
+			country_event = { hours = 2 id = spain.24 }
+		}
+	}
+	option = { # Refuse
+		name = spain.228.c
+		ai_chance = {
+			base = 30	
+		}
+		SPR = {
+			country_event = { id = spain.229 days = 7 }
+		}
+	}
+}
+
+# FRA refuses Deal
+country_event = {
+	id = spain.229
+	title = spain.229.t
+	desc = spain.229.d
+	picture = GFX_report_event_south_africa_patrol
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = spain.229.a
+		create_wargoal = {
+			type = take_state_focus
+			target = FRA
+			generator = { 461 462 }
+		}
+	}
+
+	option = {
+		name = spain.229.b
+	}
+}
+
+# FRA Deal Completed
+country_event = {
+	id = spain.24
+	title = spain.24.t
+	desc = spain.24.d
+	picture = GFX_report_event_south_africa_patrol
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = spain.24.a
+		add_political_power = 75
+		add_war_support = 0.1
+		add_stability = 0.05
+		
+		hidden_effect = {
+			news_event = { hours = 6 id = news.2360 }
+		}
+	}
+}
+
+# FRA Deal News
+news_event = {
+	id = news.2360
+	title = news.2360.t
+	desc = news.2360.d
+	picture = GFX_news_event_hitler_handshake
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.2360.a
+		trigger = {
+			NOT = {
+				TAG = SPR
+				TAG = FRA
+			}
+		}
+	}
+	option = {
+		name = news.2360.b
+		trigger = { TAG = SPR }
+	}
+	option = {
+		name = news.2360.e
+		trigger = { TAG = FRA }
+	}
+}
+
+# Haiti asked about Annex
+country_event = {
+	id = spain.328
+	title = spain.328.t
+	desc = spain.328.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = spain.328.a
+		ai_chance = {
+			base = 100
+		}
+		SPR = {
+			annex_country = { target = HAI transfer_troops = yes }
+			add_political_power = 75
+			add_war_support = 0.1
+			add_stability = 0.05
+
+			remove_ideas = SPR_haiti_rep
+			
+		}
+		hidden_effect = {
+
+				HAI = {
+				every_unit_leader = {
+					set_nationality = SPR
+				}
+			}
+
+			news_event = { hours = 6 id = news.3360 } 
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	option = { # Refuse
+		name = spain.328.b
+		ai_chance = {
+			base = 0	
+		}
+		remove_ideas = HAI_haiti_rep
+		SPR = {
+			add_opinion_modifier = { target = ROOT modifier = GER_anschluss_rejected }
+			country_event = { hours = 2 id = spain.329 }
+			if = { limit = { is_in_faction_with = HAI }
+				remove_from_faction = HAI
+			}
+		}
+	}
+}
+
+# Haiti refuses Annex
+country_event = {
+	id = spain.329
+	title = spain.329.t
+	desc = spain.329.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = spain.329.a
+		create_wargoal = {
+			type = take_state_focus
+			target = HAI
+			generator = { 318 }
+		}
+	}
+}
+
+# Anschluss of Haiti
+news_event = {
+	id = news.3360
+	title = news.3360.t
+	desc = news.3360.d
+	picture = GFX_news_event_009
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.3360.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = ITA
+				TAG = FRA
+				TAG = ENG
+				TAG = DOM
+				TAG = SPR
+			}
+		}
+	}
+	option = {
+		name = news.3360.b
+		trigger = { TAG = SPR }
+	}
+	option = {
+		name = news.3360.c
+		trigger = { TAG = DOM }
+	}
+	option = {
+		name = news.3360.e
+		trigger = {
+			OR = {
+				TAG = FRA
+				TAG = ENG
+			}
+		}
+	}
+	option = {
+		name = news.3360.f
+		trigger = { TAG = ITA }
+	}
+	option = {
+		name = news.3360.g
+		trigger = { TAG = GER }
+	}
+}
+
+# Haiti asked about Puppet
+country_event = {
+	id = spain.428
+	title = spain.428.t
+	desc = spain.428.d
+	picture = GFX_report_event_canadian_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = spain.428.a
+		ai_chance = {
+			base = 100
+		}
+		add_timed_idea = {
+        	idea = HAI_haiti_rep
+      		days = 1080
+       	}
+		SPR = {
+			puppet = HAI
+
+			set_autonomy = {
+			    target = HAI
+			    autonomy_state = autonomy_sreichsprotectorate
+			}
+			
+			add_political_power = 75
+			add_war_support = 0.1
+			add_stability = 0.05
+
+		 	add_timed_idea = {
+        		idea = SPR_haiti_rep
+        		days = 1080
+        	}
+		}
+
+		hidden_effect = {
+			news_event = { hours = 6 id = news.436 } 
+		}
+	}
+	option = { # Refuse
+		name = spain.428.b
+		ai_chance = {
+			base = 0
+		}
+		SPR = {
+			add_opinion_modifier = { target = ROOT modifier = GER_anschluss_rejected }
+			country_event = { hours = 2 id = spain.429 }
+			if = { limit = { is_in_faction_with = HAI }
+				remove_from_faction = HAI
+			}
+		}
+	}
+}
+
+# Haiti refuses Puppet
+country_event = {
+	id = spain.429
+	title = spain.429.t
+	desc = spain.429.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = spain.429.a
+		create_wargoal = {
+			type = take_state_focus
+			target = HAI
+			generator = { 318 }
+		}
+	}
+}
+
+# Puppet of Haiti
+news_event = {
+	id = news.436
+	title = news.436.t
+	desc = news.436.d
+	picture = GFX_news_event_009
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.436.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = ITA
+				TAG = FRA
+				TAG = ENG
+				TAG = DOM
+				TAG = SPR
+			}
+		}
+	}
+	option = {
+		name = news.436.b
+		trigger = { TAG = SPR }
+	}
+	option = {
+		name = news.436.c
+		trigger = { TAG = DOM }
+	}
+	option = {
+		name = news.436.e
+		trigger = {
+			OR = {
+				TAG = FRA
+				TAG = ENG
+			}
+		}
+	}
+	option = {
+		name = news.436.f
+		trigger = {
+			OR = {
+				TAG = ITA
+				TAG = GER
+			}
+		}
+	}
+}
+
+# Portugal asked about Revenge
+country_event = {
+	id = spain.528
+	title = spain.528.t
+	desc = spain.528.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = spain.528.a
+		ai_chance = {
+			base = 67
+		}
+		180 = {
+			if = {
+				limit = { is_owned_by = POR }
+				SPR = { 
+					transfer_state = 180
+				}
+			}
+		}
+		181 = {
+			if = {
+				limit = { is_owned_by = POR }
+				SPR = { 
+					transfer_state = 181
+				}
+			}
+		}
+		296 = {
+			if = {
+				limit = { is_owned_by = POR }
+				SPR = { 
+					transfer_state = 296
+				}
+			}
+		}
+		540 = {
+			if = {
+				limit = { is_owned_by = POR }
+				SPR = { 
+					transfer_state = 540
+				}
+			}
+		}
+		1036 = {
+			if = {
+				limit = { is_owned_by = POR }
+				SPR = { 
+					transfer_state = 1036
+				}
+			}
+		}
+		544 = {
+			if = {
+				limit = { is_owned_by = POR }
+				SPR = { 
+					transfer_state = 544
+				}
+			}
+		}
+		1128 = {
+			if = {
+				limit = { is_owned_by = POR }
+				SPR = { 
+					transfer_state = 1128
+				}
+			}
+		}
+		702 = {
+			if = {
+				limit = { is_owned_by = POR }
+				SPR = { 
+					transfer_state = 702
+				}
+			}
+		}
+		321 = {
+			if = {
+				limit = { is_owned_by = POR }
+				SPR = { 
+					transfer_state = 321
+				}
+			}
+		}
+		729 = {
+			if = {
+				limit = { is_owned_by = POR }
+				SPR = { 
+					transfer_state = 729
+				}
+			}
+		}
+		721 = {
+			if = {
+				limit = { is_owned_by = POR }
+				SPR = { 
+					transfer_state = 721
+				}
+			}
+		}
+			add_timed_idea = {
+				idea = SPR_portuguese_resistance
+				days = 720
+			}		
+		hidden_effect = {
+			news_event = { hours = 6 id = news.536 } 
+		}
+	}
+	option = { # Refuse
+		name = spain.528.b
+		ai_chance = {
+			base = 33
+		}
+		SPR = {
+			add_political_power = -75
+			add_stability = -0.25	
+			add_timed_idea = {
+   	     		idea = SPR_portuguese_resistance
+   	   			days = 1080
+   	    	}
+   	    	declare_war_on = {
+		  	 	 target = POR
+		   		 type = annex_everything
+	        }
+		}
+	}
+}
+
+# Portugal asked about Puppet
+country_event = {
+	id = spain.530
+	title = spain.530.t
+	desc = spain.530.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = spain.530.a
+		ai_chance = {
+			base = 80
+		}
+		180 = {
+			if = {
+				limit = { is_owned_by = POR }
+				SPR = { 
+					transfer_state = 180
+				}
+			}
+		}
+		SPR = {
+			puppet = POR
+
+			set_autonomy = {
+			    target = POR
+			    autonomy_state = autonomy_sreichsprotectorate
+			}
+			add_timed_idea = {
+				idea = SPR_portuguese_resistance
+				days = 360
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = news.536 } 
+			}
+		}
+	}
+	option = { # Refuse
+		name = spain.530.b
+		ai_chance = {
+			base = 20
+		}
+		SPR = {
+			add_political_power = -75
+			add_stability = -0.25	
+			add_timed_idea = {
+				idea = SPR_portuguese_resistance
+				days = 1080
+			}
+			declare_war_on = {
+				target = POR
+				type = annex_everything
+			}
+		}
+	}
+}
+
+# Portugal asked about Annex
+country_event = {
+	id = spain.567
+	title = spain.567.t
+	desc = spain.567.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = spain.567.a
+		ai_chance = {
+			base = 34
+		}
+		SPR = {
+		annex_country = { target = POR transfer_troops = yes }
+			add_timed_idea = {
+				idea = SPR_portuguese_resistance
+				days = 720
+			}
+		add_war_support = 0.1
+		add_stability = 0.05
+
+		remove_ideas = SPR_haiti_rep
+		
+		hidden_effect = {
+
+			POR = {
+				every_unit_leader = {
+					set_nationality = SPR
+				}
+			}
+
+				news_event = { hours = 6 id = news.536 } 
+			}
+		}
+	}
+	option = { # Refuse
+		name = spain.567.b
+		ai_chance = {
+			base = 66
+		}
+		SPR = {
+			add_political_power = -75
+			add_stability = -0.25	
+			add_timed_idea = {
+				idea = SPR_portuguese_resistance
+				days = 1080
+			}
+			declare_war_on = {
+				target = POR
+				type = annex_everything
+			}
+		}
+	}
+}
+
+# Anschluss of Portugal
+news_event = {
+	id = news.536
+	title = news.536.t
+	desc = news.536.d
+	picture = GFX_news_event_german_speech
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.536.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = ITA
+				TAG = FRA
+				TAG = ENG
+				TAG = SPR
+			}
+		}
+	}
+	option = {
+		name = news.536.b
+		trigger = { TAG = SPR }
+	}
+	option = {
+		name = news.536.e
+		trigger = {
+			OR = {
+				TAG = FRA
+				TAG = ENG
+			}
+		}
+	}
+	option = {
+		name = news.536.f
+		trigger = { TAG = ITA }
+	}
+	option = {
+		name = news.536.g
+		trigger = { TAG = GER }
+	}
+}
+
+# Flag Change
+country_event = {
+	id = spain.609
+	title = spain.609.t
+	desc = spain.609.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SPR
+		has_global_flag = nationalist_victory
+		date < 1945.10.11
+	}
+
+
+	# Flag
+	option = {
+		name = spain.609.a
+		set_cosmetic_tag = SP3
+	}
+}
+
+country_event = {
+	id = spain.900
+	title = spain.900.t
+	desc = spain.900.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = scw_over
+		tag = SPR
+		ANS = exists
+		NOT = { has_government = fascism }
+		NOT = { OR = { has_government = monarchism has_government = neutrality } }
+		date > 1939.2.16
+	}
+
+	option = {
+		name = spain.900.a
+		hidden_effect = {
+			SPR = { 
+				transfer_state = 165
+			}
+			ANS = { 
+				transfer_state = 165
+			}
+		}
+		create_wargoal = {
+			type = take_state_focus
+			target = ANS
+			generator = { 165 }
+		}
+	}
+
+	option = {
+		name = spain.900.b
+		hidden_effect = {
+			SPR = { 
+				transfer_state = 165
+			}
+			ANS = { 
+				transfer_state = 165
+			}
+		}
+	}
+
+	option = {
+		name = spain.900.c
+		hidden_effect = {
+			SPR = { 
+				transfer_state = 165
+			}
+			ANS = { 
+				transfer_state = 165
+			}
+		}
+		give_guarantee = ANS
+	}
+
+	option = {
+		name = spain.900.e
+		SPR = { 
+			transfer_state = 165
+		}
+		set_cosmetic_tag = ANS
+	}
+
+}
+
+
+
+
+
+
+
+
+# Despotism on the Rise
+country_event = {
+	id = spain.800
+	title = spain.800.t
+	desc = spain.800.d
+	picture = GFX_report_event_fascist_gathering
+
+	trigger = {
+		NOT = { OR = { has_government = monarchism has_government = neutrality } }
+		neutrality > 0.50
+		NOT = { neutrality > 0.7 }
+	}
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	# We need a referendum
+	option = {
+		name = spain.800.a
+		add_political_power = -100
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+	}
+
+	# Not right now
+	option = {
+		name = spain.800.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip = impending_civil_war_tt
+	}
+}
+
+# The Threat of Republicanism
+country_event = {
+	id = spain.801
+	title = spain.801.t
+	desc = spain.801.d
+	picture = GFX_report_event_worker_protests
+	
+	trigger = {
+		has_idea_with_trait = staunch_monarchist
+		NOT = { OR = { has_government = monarchism has_government = neutrality } }
+		neutrality > 0.25
+		NOT = { neutrality > 0.59 }
+		any_neighbor_country = {
+			has_democratic_government = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 365
+		#modifier = {
+		#	factor = 0.5
+		#	has_country_flag = neutrality_popular_movement
+		#}
+	}
+	
+	option = {
+		name = spain.801.a
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+	}
+}
+
+### Revolution
+# spain.802 Legitimist
+country_event = {
+	id = spain.802
+	title = spain.802.t
+	desc = spain.802.d
+	picture = GFX_report_event_fascist_militia
+
+	trigger = {
+		neutrality > 0.7
+		#has_idea = fascist_revolutionaries
+		NOT = { OR = { has_government = monarchism has_government = neutrality } }
+		has_civil_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	#immediate = {
+	#	hidden_effect = { remove_ideas = fascist_revolutionaries }
+	#}
+
+	option = {
+		name = spain.802.a
+		ai_chance = {
+			factor = 0
+		}
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.2
+		}
+	}
+
+	option = {
+		name = spain.802.b
+		ai_chance = {
+			factor = 0
+		}
+		if = {
+			limit = {
+				has_democratic_government = yes
+			}
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = democratic
+				size = 0.1
+			}
+		}
+		if = {
+			limit = {
+				OR = { has_government = unionism has_government = communism }
+			}
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = communism
+				size = 0.1
+			}
+		}
+		if = {
+			limit = {
+				has_government = fascism
+			}
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = fascism
+				size = 0.1
+			}
+		}
+	}
+
+	# We need a referendum
+	option = {
+		name = spain.802.c
+		trigger = {
+			is_ai = yes
+		}
+		add_political_power = -100
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+	}
+}
+
+country_event = {
+	id = spain.803			# May Days
+	title = spain.803.t
+	desc = spain.803.d
+	picture = GFX_report_event_fascist_militia
+
+	trigger = {
+		date > 1937.4.20
+		NOS_has_civil_war = yes
+		is_literally_spain = yes
+		OR = {
+			has_government = communism
+			has_government = social_democracy
+		}
+		OR = {
+			AND = {
+				date > 1939.1.1
+				surrender_progress > 0.1
+				surrender_progress < 0.5
+			}
+			AND = {
+				date > 1937.4.20
+				surrender_progress < 0.25
+				NOS_has_civil_war = yes
+				is_literally_spain = yes
+				has_government = social_democracy
+				OR = {
+					unionism > 0.3
+					communism > 0.3
+					social_democracy < 0.4
+				}
+				CAT = {
+					has_capitulated = no
+					is_subject_of = ROOT
+					has_government = unionism
+				}
+				NOT = {
+					date > 1938.6.1
+					any_country = {
+						is_literally_spain = yes
+						OR = {
+							has_government = unionism
+							has_government = monarchism
+						}
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	immediate = {
+		annex_country = { 
+			target = CAT
+			transfer_troops = yes
+		}
+		start_civil_war = {
+			ruling_party = communism
+			ideology = unionism
+			size = 0.25
+			capital = 165
+			states = { 165 166 1133 }
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.15
+		}
+		random_country = {
+			limit = {
+				is_literally_spain = yes
+				has_government = unionism
+			}
+			set_capital = 41
+			set_cosmetic_tag = CIV
+			load_focus_tree = "civilwar_focus"
+			add_ideas = SPR_to_the_bitter_end
+			add_ideas = SPA_recovering_from_civil_war
+			set_stability = 0.9
+			set_war_support = 0.8
+			every_country = {
+				limit = {
+					is_literally_spain = yes
+					NOT = { has_war_with = PREV }
+				}
+				declare_war_on = { target = PREV type = annex_everything }
+			}
+			create_country_leader = {
+				name = "Anarchist Commune"
+				desc = "POLITICS_ANARCHIST_COMMUNE_DESC"
+				picture = "GFX_portrait_SPR_anarchist_commune"
+				expire = "1965.1.1"
+				ideology = anarchist_communism
+				traits = {
+					our_right_to_survive
+				}
+			}
+			every_state = {
+				limit = { is_core_of = ROOT }
+				PREV = { add_state_core = PREV }
+			}
+			every_state = {
+				limit = { is_owned_by = ROOT NOT = { is_core_of = ROOT } }
+				PREV = { add_state_claim = PREV }
+			}
+			every_state = {
+				limit = { is_claimed_by = ROOT }
+				PREV = { add_state_claim = PREV }
+			}
+		}
+	}
+
+	option = { # Support CNT-FAI
+		name = spain.803.a
+		trigger = { is_ai = no }
+		random_country = {
+			limit = {
+				is_literally_spain = yes
+				has_government = unionism
+			}
+			change_tag_from = ROOT
+		}
+	}
+	option = { # Support Communists
+		name = spain.803.b
+	}
+}
+
+country_event = {
+	id = spain.804
+	title = spain.804.t
+	desc = spain.804.d
+	picture = GFX_report_event_fascist_militia
+
+	trigger = {
+		date < 1938.6.1
+		NOS_has_civil_war = yes
+		is_literally_spain = yes
+		has_government = fascism
+		any_country = {
+			is_literally_spain = yes
+			surrender_progress > 0.5
+			has_war_with = ROOT
+			OR = {
+				has_government = social_democracy
+				has_government = communism
+			}
+		}
+		NOT = {
+			date > 1938.6.1
+			any_country = {
+				is_literally_spain = yes
+				OR = {
+					has_government = unionism
+					has_government = monarchism
+				}
+			}
+		}
+	}
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	immediate = {
+		start_civil_war = {
+			ideology = monarchism
+			size = 0.15
+			capital = 1050
+			states = { 1050 170 }
+		}
+		random_country = {
+			limit = {
+				is_literally_spain = yes
+				has_government = monarchism
+			}
+			set_capital = 41
+			set_cosmetic_tag = CIV
+			load_focus_tree = "civilwar_focus"
+			add_ideas = SPR_to_the_bitter_end
+			add_ideas = SPA_recovering_from_civil_war
+			set_stability = 0.9
+			set_war_support = 0.8
+			every_country = {
+				limit = {
+					is_literally_spain = yes
+					NOT = { has_war_with = PREV }
+				}
+				declare_war_on = { target = PREV type = annex_everything }
+			}
+			every_state = {
+				limit = { is_core_of = ROOT }
+				PREV = { add_state_core = PREV }
+			}
+			every_state = {
+				limit = { is_owned_by = ROOT NOT = { is_core_of = ROOT } }
+				PREV = { add_state_claim = PREV }
+			}
+			every_state = {
+				limit = { is_claimed_by = ROOT }
+				PREV = { add_state_claim = PREV }
+			}
+		}
+	}
+
+	option = { # Support Carlists
+		name = spain.804.a
+		trigger = { is_ai = no }
+		random_country = {
+			limit = {
+				is_literally_spain = yes
+				has_government = monarchism
+			}
+			change_tag_from = ROOT
+		}
+	}
+	option = { # Support Franco
+		name = spain.804.b
 	}
 }

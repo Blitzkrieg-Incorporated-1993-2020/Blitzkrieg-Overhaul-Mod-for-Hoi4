@@ -1,0 +1,2296 @@
+###########################
+# Federal Focuses
+###########################
+
+focus_tree = {
+	id = fas_focus
+
+	country = {
+		factor = 0
+	}
+	
+	default = no
+	
+	focus = {
+		id = FAS_Enter_Despotism
+		icon = GFX_goal_generic_demand_territory
+		#mutually_exclusive = { focus = FAS_Enter_Communism }
+		x = 27
+		y = 0
+		cost = 10
+		available = {
+			#has_civil_war = yes
+			has_government = neutrality
+			date > 1937.1.1
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			set_cosmetic_tag = FAS_IMPERIAL
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = FAS_Reassert_Dominance_Over_the_Philippines
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Enter_Despotism }
+		x = 27
+		y = 1
+		cost = 5
+		available = {
+			#has_civil_war = yes
+			has_government = neutrality
+		}
+		bypass = {
+			#PHI = { is_puppet_of = FAS }
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			#puppet = PHI
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Bully_Thailand
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Reassert_Dominance_Over_the_Philippines }
+		x = 27
+		y = 2
+		cost = 15
+		available = {
+			#has_civil_war = yes
+			has_government = neutrality
+		}
+		bypass = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		 
+		completion_reward = {
+			puppet = SIA
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Policies_of_Peacetime
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Enter_Despotism }
+		x = 29
+		y = 1
+		cost = 5
+		available = {
+			#has_civil_war = yes
+			has_government = neutrality
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Purge_the_Old_Guard
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Policies_of_Peacetime }
+		x = 39
+		y = 2
+		cost = 2
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Encourage_Young_Blood
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Purge_the_Old_Guard }
+		x = 39
+		y = 3
+		cost = 4
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_The_MacArthur_School
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Encourage_Young_Blood }
+		x = 39
+		y = 4
+		cost = 16
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Strategic_Situation
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Enter_Despotism }
+		x = 25
+		y = 1
+		cost = 5
+		available = {
+			#has_civil_war = yes
+			has_government = neutrality
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	
+	
+	focus = {
+		id = FAS_30_Days
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_The_Second_American_Civil_War }
+		x = 11
+		y = 1
+		cost = 1
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_timed_idea = { idea = FAS_30_Days days = 30 }
+		}
+			
+			
+	}
+	
+	#focus = {
+	#	id = FAS_72_Day_Offensive
+	#	icon = GFX_goal_generic_demand_territory
+	#	prerequisite = { focus = FAS_30_Days }
+	#	x = 11
+	#	y = 2
+	#	cost = 2
+	#	available = {
+	#		
+	#	}
+	#	ai_will_do = {
+	#		factor = 10
+	#	}	
+	#	
+	#	completion_reward = {
+	#		
+	#	}
+	#		
+	#		
+	#}
+	
+	focus = {
+		id = FAS_Emergency_Mobilization
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_The_Second_American_Civil_War }
+		x = 9
+		y = 1
+		cost = 2
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_ideas = extensive_conscription
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Intensive_War_Propaganda
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Emergency_Mobilization }
+		x = 9
+		y = 2
+		cost = 4
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_war_support = 0.2
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Persecute_Protesters
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Intensive_War_Propaganda }
+		x = 9
+		y = 3
+		cost = 8
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			remove_ideas = usa_bill_of_rights
+		}
+		
+	}
+	
+	focus = {
+		id = FAS_Skytrains
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = FAS_The_Second_American_Civil_War }
+		x = 3
+		y = 1
+		cost = 5
+		available = {
+			has_government = democratic
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		completion_reward = {
+			set_technology = { transport_plane_20 = 1 }
+		}
+	}
+	
+	focus = {
+		id = FAS_Focus_on_Airborne_Infantry
+		icon = GFX_focus_generic_paratrooper
+		prerequisite = { focus = FAS_Skytrains }
+		x = 3
+		y = 2
+		cost = 5
+		available = {
+			has_government = democratic
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		completion_reward = {
+			#add_ideas = usa_special_forces_focus
+			
+			if = {
+				limit = { NOT = { has_tech = paratroopers  } }
+				set_technology = { paratroopers = 1 }
+			}
+			
+			if = {
+				limit = { NOT = { has_tech = paratroopers2  } }
+				set_technology = { paratroopers2 = 1 }
+			}
+			
+			army_experience = 30
+			
+		}
+					
+	}
+	
+	focus = {
+		id = FAS_Deploy_Airborne_Divisions
+		icon = GFX_focus_generic_paratrooper
+		prerequisite = { focus = FAS_Focus_on_Airborne_Infantry }
+		x = 3
+		y = 3
+		cost = 5
+		available = {
+			has_government = democratic
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		completion_reward = {
+			custom_effect_tooltip = USA_aiborne_divisions_tt
+			hidden_effect = { USA = { load_oob = "USA_aiborne_divisions" } }
+		}
+	}
+	
+	
+	focus = {
+		id = FAS_Motorized_Artillery_Brigades
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = FAS_The_Second_American_Civil_War }
+		x = 1
+		y = 1
+		cost = 10
+		available = {
+			has_government = neutrality
+			has_tech = mechanised_infantry
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		completion_reward = {
+			set_technology = { usa_tech_motorized_artillery_units = 1 }
+				
+		}
+					
+	}
+
+	focus = {
+		id = FAS_Expanded_Support_Artillery
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = FAS_Motorized_Artillery_Brigades }
+		x = 0
+		y = 2
+		cost = 10
+		available = {
+			has_government = neutrality
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		completion_reward = {
+			set_technology = { usa_tech_support_artillery_units = 1 }
+				
+		}
+					
+	}
+	
+	focus = {
+		id = FAS_Tank_Destroyer_Doctrine
+		icon = GFX_focus_generic_army_tanks2
+		prerequisite = { focus = FAS_Motorized_Artillery_Brigades }
+		x = 1
+		y = 3
+		cost = 10
+		available = {
+			has_government = neutrality
+		}
+		ai_will_do = {
+			factor = 15
+		}	
+		completion_reward = {
+			set_technology = { usa_tech_support_tank_destroyer_units = 1 }
+				
+		}
+					
+	}
+	
+	focus = {
+		id = FAS_The_Second_American_Civil_War
+		icon = GFX_goal_generic_demand_territory
+		x = 7
+		y = 0
+		cost = 1
+		available = {
+			
+		}
+		bypass = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = usa.91
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Emergency_Industrial_Effort
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_The_Second_American_Civil_War }
+		x = 5
+		y = 1
+		cost = 2
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		 
+		completion_reward = {
+			add_timed_idea = { idea = fas_Emergency_Industrial_Effort_focus days = 60 }
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Secure_New_Military_Contracts
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Emergency_Industrial_Effort }
+		x = 5
+		y = 2
+		cost = 4
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}	
+			}
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Assist_Arms_Monopolies
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Secure_New_Military_Contracts }
+		x = 5
+		y = 3
+		cost = 6
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_political_power = -250
+			
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}	
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Declare_Martial_Law
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_The_Second_American_Civil_War }
+		x = 7
+		y = 1
+		cost = 4
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}	
+		
+		completion_reward = {
+			remove_ideas = usa_american_constitution
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Mobilize_Industry
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Declare_Martial_Law }
+		x = 7
+		y = 2
+		cost = 6
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_ideas = fas_industry_mobilized_for_war_effort
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Prod_the_Dragon
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Mobilize_Industry }
+		x = 7
+		y = 3
+		cost = 8
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_ideas = fas_prod_the_giant
+		}
+			
+			
+	}
+	
+	#focus = {
+	#	id = FAS_Solidify_the_Political_Position
+	#	icon = GFX_goal_generic_demand_territory
+	#	prerequisite = { focus = FAS_Prod_the_Dragon }
+	#	x = 7
+	#	y = 4
+	#	cost = 10
+	#	available = {
+	#		
+	#	}
+	#	ai_will_do = {
+	#		factor = 10
+	#	}	
+	#	
+	#	completion_reward = {
+	#		#drop the soap for corporate fatcats		
+	#	}
+	#		
+	#		
+	#}
+	
+	focus = {
+		id = FAS_Acquire_Strategic_Resources
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Strategic_Situation }
+		x = 21
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Purchase_Greenland
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Strategic_Situation }
+		x = 23
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Develop_the_Midwest
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Policies_of_Peacetime }
+		x = 34
+		y = 2
+		cost = 8
+		available = {
+			has_government = neutrality
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Develop_the_Upper_Midwest
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Develop_the_Midwest }
+		x = 33
+		y = 3
+		cost = 10
+		available = {
+			has_government = neutrality
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Develop_the_West
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Develop_the_Midwest }
+		x = 35
+		y = 3
+		cost = 10
+		available = {
+			has_government = neutrality
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = FAS_The_Average_Joe
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Develop_the_West focus = FAS_Develop_the_Upper_Midwest }
+		x = 34
+		y = 4
+		cost = 10
+		available = {
+			has_government = neutrality
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Extend_Labor_Hours
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_The_Average_Joe }
+		x = 34
+		y = 5
+		cost = 15
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_End_to_Overtime
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_The_Average_Joe }
+		prerequisite = { focus = FAS_Our_Engineers }
+		x = 30
+		y = 9
+		cost = 20
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Restore_the_Nation
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Strategic_Situation }
+		mutually_exclusive = { focus = FAS_Kill_Japan }
+		x = 19
+		y = 2
+		cost = 5
+		available = {
+			country_exists = CSA
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_war_support = 0.25
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Encircle_the_Confederacy
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Restore_the_Nation }
+		x = 21
+		y = 3
+		cost = 10
+		available = {
+			country_exists = CSA
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = MEX
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Carribean_Bases
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Restore_the_Nation }
+		x = 19
+		y = 3
+		cost = 10
+		available = {
+			NOT = { owns_state = 318 }
+			NOT = { owns_state = 319 }
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			transfer_state = 318
+			transfer_state = 319
+		}
+		
+	}
+	
+	focus = {
+		id = FAS_Carribean_Purchase
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Carribean_Bases }
+		x = 19
+		y = 4
+		cost = 10
+		available = {
+			NOT = { owns_state = 693 }
+			NOT = { owns_state = 690 }
+			NOT = { owns_state = 689 }
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			transfer_state = 693
+			transfer_state = 690
+			transfer_state = 689
+			
+			
+			
+			ENG = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}							
+				}
+			}
+			ENG = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}							
+				}
+			}
+			
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+		}
+		
+	}
+	
+	focus = {
+		id = FAS_Invade_Cuba
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Carribean_Purchase }
+		x = 19
+		y = 5
+		cost = 20
+		available = {
+			NOT = { owns_state = 315 }
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			transfer_state = 315
+		}
+	}
+	
+	focus = {
+		id = FAS_Mobilize_for_a_First_Strike
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Invade_Cuba }
+		x = 19
+		y = 6
+		cost = 10
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = FAS_Naval_Expansion_Programme
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Mobilize_for_a_First_Strike }
+		x = 17
+		y = 7
+		cost = 10
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}							
+			}
+		}
+	}
+	
+	focus = {
+		id = FAS_Arms_Industry_Expansion
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Mobilize_for_a_First_Strike }
+		x = 21
+		y = 7
+		cost = 10
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}							
+			}
+		}
+	}
+	
+	focus = {
+		id = FAS_Reconquest_of_the_South
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Mobilize_for_a_First_Strike }
+		x = 19
+		y = 7
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = CSA
+			}
+		}
+	}
+	
+	focus = {
+		id = FAS_Institute_a_Draft
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Reconquest_of_the_South }
+		x = 19
+		y = 8
+		cost = 10
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	
+	focus = {
+		id = FAS_Kill_Japan
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Strategic_Situation }
+		mutually_exclusive = { focus = FAS_Restore_the_Nation }
+		x = 17
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			JAP = { add_ideas = usa_american_belligerence }
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Carrier_Building_Programme
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Kill_Japan }
+		x = 17
+		y = 3
+		cost = 10
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_ideas = fas_carrier_dominance
+			remove_ideas = usa_attachment_to_battleships
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Our_Axis_of_Power_in_the_Pacific
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Carrier_Building_Programme }
+		x = 17
+		y = 4
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			638 = {
+				add_building_construction = {
+					type = naval_base
+					level = 9
+					province = 12140
+					instant_build = yes
+				}
+					
+			}
+			638 = {
+				add_building_construction = {
+					type = air_base 
+					level = 10
+					instant_build = yes
+				}							
+			}
+			638 = {
+				add_building_construction = {
+					type = anti_air_building  
+					level = 5
+					instant_build = yes
+				}							
+			}
+			638 = {
+				add_building_construction = {
+					type = radar_station
+					level = 5
+					instant_build = yes
+				}							
+			}
+			638 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 10
+					instant_build = yes
+				}							
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_American_Macau
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Our_Axis_of_Power_in_the_Pacific }
+		x = 17
+		y = 5
+		cost = 10
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			transfer_state = 729
+			
+			POR = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}							
+				}
+			}
+			
+			POR = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}							
+				}
+			}
+			
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			
+		}
+		
+	}
+	
+	
+	
+	focus = {
+		id = FAS_Create_the_War_Bureau
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Strategic_Situation }
+		x = 25
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Increase_Officer_Pay
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Create_the_War_Bureau }
+		x = 26
+		y = 3
+		cost = 10
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Modern_Military_Doctrines
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Create_the_War_Bureau }
+		x = 24
+		y = 3
+		cost = 10
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Elite_Officer_Corps
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Modern_Military_Doctrines }
+		prerequisite = { focus = FAS_Increase_Officer_Pay }
+		x = 25
+		y = 4
+		cost = 10
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Modern_Airpower
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Elite_Officer_Corps }
+		x = 25
+		y = 5
+		cost = 10
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Modern_Navy
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Elite_Officer_Corps }
+		x = 27
+		y = 5
+		cost = 10
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Modern_Army
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Elite_Officer_Corps }
+		x = 23
+		y = 5
+		cost = 10
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	
+	
+	
+	focus = {
+		id = FAS_Our_Engineers
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Modern_Army focus = FAS_Modern_Airpower focus = FAS_Modern_Navy }
+		x = 25
+		y = 6
+		cost = 15
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Industrial_Collusion
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_End_to_Overtime }
+		x = 32
+		y = 10
+		cost = 16
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_A_Different_Country
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_End_to_Overtime }
+		x = 28
+		y = 10
+		cost = 20
+		available = {
+			has_government = neutrality
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_The_Big_Brother_Policies
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_End_to_Overtime }
+		x = 30
+		y = 10
+		cost = 10
+		available = {
+			has_government = neutrality
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	
+	
+	
+	focus = {
+		id = FAS_Invite_Foreign_Advisors
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Policies_of_Peacetime }
+		x = 30
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_Establish_Foreign_Policy
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Invite_Foreign_Advisors }
+		x = 31
+		y = 3
+		cost = 10
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_European_Ties
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Establish_Foreign_Policy }
+		x = 32
+		y = 4
+		cost = 10
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+		
+	}
+	
+	focus = {
+		id = FAS_Future_of_Asia
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Invite_Foreign_Advisors }
+		x = 29
+		y = 3
+		cost = 10
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = FAS_Attack_the_Japanese_Empire
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_American_Macau }
+		x = 17
+		y = 6
+		cost = 10
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			MEN = { add_ideas = fas_rebellions }
+			MAN = { add_ideas = fas_rebellions }
+		}
+			
+			
+	}
+	
+	focus = {
+		id = FAS_American_Tsingtao
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Kill_Japan }
+		x = 15
+		y = 3
+		cost = 10
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			transfer_state = 743
+			
+			CHI = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}							
+				}
+			}
+			
+			CHI = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}							
+				}
+			}
+			
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			
+		}
+		
+	}
+	
+	focus = { #China Support
+		id = FAS_Support_for_China
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Kill_Japan }
+		x = 13
+		y = 3
+		cost = 5
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+
+            CHI = {
+                add_manpower = 100000
+                add_command_power = 25
+                add_political_power = 50
+                army_experience = 15
+                air_experience = 15
+                navy_experience = 15
+                add_country_leader_trait = likes_fas
+            }
+            send_equipment = {
+                equipment = infantry_equipment
+                amount = 3000
+                target = CHI
+            }
+            create_production_license = {
+                target = CHI
+                equipment = {
+                    type = infantry_equipment_1
+                }
+                cost_factor = 0
+            }
+            diplomatic_relation = {
+                country = CHI
+                relation = military_access
+                active = no
+            }
+            #add_opinion_modifier = {
+            #    target = CHI
+            #    modifier = beneficiary
+            #}
+			#licence production infantry_3 M
+        }
+			
+			
+	}
+	
+	focus = { #Mineral Assistance
+		id = FAS_Mineral_Assistance
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Support_for_China }
+		x = 15
+		y = 4
+		cost = 5
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+            activate_targeted_decision = {
+                target = CHI
+                decision = fas_minerals_chi #option to give 743 (Qingdao) to FAS for future material support
+            }
+            add_resource = {
+                type = oil
+                amount = 8
+                state = 750 # Changde
+            }
+            add_resource = {
+                type = steel
+                amount = 12
+                state = 750 # Changde
+            }
+		}
+			
+			
+	}
+	
+	
+	focus = { #Industrial Assistance
+		id = FAS_Industrial_Assistance
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Support_for_China }
+		x = 11
+		y = 4
+		cost = 5
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+            activate_targeted_decision = {
+                target = CHI
+                decision = fas_industry_chi_1 #option to reward FAS for continued material support. Basing (military access) rights?
+            }
+			596 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 7
+					instant_build = yes
+				}
+			}	
+			597 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 7
+					instant_build = yes
+				}
+			}	
+			598 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 7
+					instant_build = yes
+				}
+			}	
+			600 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 7
+					instant_build = yes
+				}
+			}	
+			602 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 7
+					instant_build = yes
+				}
+			}	
+			750 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 7
+					instant_build = yes
+				}
+			}	
+			620 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 7
+					instant_build = yes
+				}
+			}	
+			634 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 7
+					instant_build = yes
+				}
+			}	
+			750 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 7
+					instant_build = yes
+				}
+			}	
+            #Coastal Province Infrastructure 3
+            #coastal Province Infrastructure 3
+            #inland Province Infrastructure 3
+            #Inland Province Infrastructure 3
+            #Inland Province Infrastructure 3
+		}
+			
+			
+	}
+	
+	focus = { #Industrial Assistance
+		id = FAS_Industrial_Assistance_II
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Industrial_Assistance }
+		x = 11
+		y = 5
+		cost = 10
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+            activate_targeted_decision = {
+                target = CHI
+                decision = fas_industry_chi_2 # Event to accept offsite factories
+            }
+            #add_offsite_building = { type = industrial_complex = 8 }
+			
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			
+			#random state Civ Factory 2 and build slots
+            #random state Civ Factory 2 and build slots
+            #off map Civ Factory 8
+			
+		}
+			
+			
+	}
+	
+	focus = { #Scientific Assistance
+		id = FAS_Scientific_Assistance
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Industrial_Assistance_II }
+		x = 11
+		y = 6
+		cost = 10
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+            CHI = {
+                #research_speed_factor = -0.05
+                add_research_slot = 1
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 2
+					category = artillery
+				}
+            }
+			#Research slot 1
+            #Artillery Boost 2
+		}
+			
+			
+	}
+	
+	
+	focus = { #Military Assistance
+		id = FAS_Military_Assistance
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Support_for_China }
+		x = 13
+		y = 4
+		cost = 5
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+            CHI = {
+                add_manpower = 350000
+                #training_time_factor = -0.13
+            }
+            #Unlock 'send more troops to China' decision (Send Infantry in batches of 4)
+            activate_targeted_decision = {
+                target = CHI
+                decision = fas_military_chi
+            }
+            #spawn experienced Mountaineer Divisions 3
+            #create_unit = {
+                #division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
+                #owner = CHI
+            #}
+            #create_unit = {
+                #division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
+                #owner = CHI
+            #}
+            #create_unit = {
+                #division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
+                #owner = CHI
+            #}
+		}
+			
+			
+	}
+	
+	focus = { #Share Technology
+		id = FAS_Share_Technology
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Military_Assistance }
+		x = 15
+		y = 5
+		cost = 5
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+            CHI = {
+                add_to_tech_sharing_group = chi_fas
+            }
+            FAS = {
+                add_to_tech_sharing_group = chi_fas
+            }
+		}
+			
+			
+	}
+	
+	focus = { #Joint Military Exercises
+		id = FAS_Joint_Military_Exercises
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Military_Assistance }
+		x = 13
+		y = 5
+		cost = 5
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+            CHI = {
+                #air_accidents_factor = -0.05
+                #air_ace_generation_chance_factor = 0.10
+                #air_experience_factor = 10
+                #army_attack_factor = 0.1
+                #army_core_attack_factor = 0.1
+                #army_core_defence_factor = 0.1
+                #army_defence_factor = 0.1
+                #army_experience_factor = 10
+                #army_org_Factor = 0.05
+                #army_speed_factor = 0.1
+                #navy_experience_factor = 10
+				army_experience = 250
+				navy_experience = 100
+				air_experience = 100
+            }
+            FAS = {
+                #air_accidents_factor = -0.05
+                #air_ace_generation_chance_factor = 0.10
+                #air_experience = 10
+                #army_attack_factor = 0.1
+                #army_core_attack_factor = 0.1
+                #army_core_defence_factor = 0.1
+                #army_defence_factor = 0.1
+                #army_experience = 10
+                #army_org_Factor = 0.05
+                #army_speed_factor = 0.1
+                #navy_experience = 10
+				army_experience = 250
+				navy_experience = 100
+				air_experience = 100
+            }
+		}
+			
+			
+	}
+	
+	focus = { #Cooperation Against Japan
+		id = FAS_Cooperation_Against_Japan
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Joint_Military_Exercises }
+		x = 13
+		y = 6
+		cost = 10
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+            #add_core_of = FAS
+            #add_core_of = CHI
+            #Fires Event to Puppet or form Alliance with CHI
+			#Half of Japan Cored by FAS
+            #Half of Japan Cored by CHI
+		}
+			
+			
+	}
+	
+	focus = { #One China Policy
+		id = FAS_Support_One_China_Policy
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Joint_Military_Exercises }
+		x = 15
+		y = 6
+		cost = 10
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			#Support China taking all of East Asia, unifying it under CHI
+		}
+			
+			
+	}
+	
+	
+	focus = { #Cooperation Against Japan
+		id = FAS_Vital_US_Interests
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = FAS_Cooperation_Against_Japan }
+		prerequisite = { focus = FAS_Scientific_Assistance }
+		prerequisite = { focus = FAS_Support_One_China_Policy }
+		x = 13
+		y = 7
+		cost = 10
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+            
+		}
+			
+			
+	}
+	
+	focus = { #Cooperation Against Japan
+		id = FAS_Regime_Change
+		icon = GFX_goal_generic_demand_territory
+		mutually_exclusive = { focus = FAS_In_Our_Own_Image }
+		prerequisite = { focus = FAS_Vital_US_Interests }
+		x = 12
+		y = 8
+		cost = 10
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+            
+		}
+			
+			
+	}
+	
+	focus = { #Cooperation Against Japan
+		id = FAS_In_Our_Own_Image
+		icon = GFX_goal_generic_demand_territory
+		mutually_exclusive = { focus = FAS_Regime_Change }
+		prerequisite = { focus = FAS_Vital_US_Interests }
+		x = 14
+		y = 8
+		cost = 10
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+            
+		}
+			
+			
+	}
+	
+
+}
+

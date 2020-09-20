@@ -1,6 +1,100 @@
 ideas = {
 
 	country = {
+	    economic_depression_4 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.20
+				war_support_factor = -0.20
+				consumer_goods_factor = 0.20
+				industrial_capacity_factory = -0.20
+				industrial_capacity_dockyard = -0.20
+				production_factory_start_efficiency_factor = -0.20
+				production_factory_max_efficiency_factor = -0.15
+			}
+			
+		}
+		economic_depression_3 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.15
+				consumer_goods_factor = 0.15
+				industrial_capacity_factory = -0.15
+				industrial_capacity_dockyard = -0.15
+				production_factory_start_efficiency_factor = -0.15
+				production_factory_max_efficiency_factor = -0.10
+			}
+			
+		}
+		
+		economic_depression_2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.10
+				war_support_factor = -0.10
+				consumer_goods_factor = 0.10
+				industrial_capacity_factory = -0.10
+				industrial_capacity_dockyard = -0.10
+				production_factory_start_efficiency_factor = -0.10
+				production_factory_max_efficiency_factor = -0.05
+			}
+			
+		}
+		
+		economic_depression_1 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				consumer_goods_factor = 0.05
+				industrial_capacity_factory = -0.05
+				industrial_capacity_dockyard = -0.05
+				production_factory_start_efficiency_factor = -0.05
+			}
+			
+		}
+		
 		sour_loser = {
 			
 			allowed = {
@@ -224,7 +318,7 @@ ideas = {
 			picture = generic_build_infrastructure
 
 			modifier = {
-				production_speed_infrastructure_factor = 0.15
+				production_speed_infrastructure_factor = 0.10
 				local_resources_factor = 0.10 
 				consumer_goods_factor = 0.05
 			}
@@ -1634,8 +1728,7 @@ ideas = {
 				original_tag = GER
 			}
 			available = {
-				has_completed_focus = GER_four_year_plan
-				NOT = { has_completed_focus = GER_demand_sudetenland }
+				has_completed_focus = GER_the_4_year_plan
 			}
 			
 			traits = { captain_of_industry }

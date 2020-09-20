@@ -1,0 +1,97 @@
+
+ai_focus_defense_CZE = {
+	research = {
+		defensive = 10.0	
+	}
+}
+
+ai_focus_aggressive_CZE = {
+	research = {
+		offensive = 10.0
+	}
+}
+
+ai_focus_war_production_CZE = {
+	research = {
+		industry = 80.0
+		construction_tech = 20.0
+		electronics = 20.0
+		computing_tech = 20.0	
+		synth_resources = 5.0
+	}
+}
+
+ai_focus_military_equipment_CZE = {
+	research = {
+		infantry_weapons = 160.0
+		infantry_tech = 80.0
+		night_vision = 10.0
+		support_tech = 20.0
+		artillery = 80.0
+		motorized_equipment = 10.0
+		cat_light_armor = 40.0
+		cat_medium_armor = 40.0
+		cat_heavy_armor = 0.0
+	}
+}
+
+ai_focus_military_advancements_CZE = {
+	research = {
+		land_doctrine = 160.0
+		radar_tech = 0.0
+		encryption_tech = 40.0
+		decryption_tech = 40.0
+		armor = 10.0
+		rocketry = 1.0
+		jet_technology = 1.0
+		synth_resources = 10.0
+		motorized_equipment = 20.0
+		nuclear = 0.0
+	}
+}
+
+ai_focus_peaceful_CZE = {
+	research = {
+		industry = 160.0
+		construction_tech = 80.0
+		electronics = 20.0
+		computing_tech = 20.0
+		synth_resources = 1.0
+	}
+}
+
+ai_focus_naval_CZE = {
+	research = {
+		naval_doctrine = 40.0
+		naval_equipment = 20.0
+		dd_tech = 40.0
+		cl_tech = 80.0
+		ca_tech = 80.0
+		bc_tech = 20.0
+		bb_tech = 10.0
+		shbb_tech = 0.0
+		cv_tech = 0.0
+		ss_tech = 40.0
+		tp_tech = 10.0
+		marine_tech = 20.0
+	}
+}
+
+ai_focus_naval_air_CZE = {
+	research = {
+		naval_air = 10.0
+	}
+}
+
+ai_focus_aviation_CZE = {
+	research = {
+		air_doctrine = 40.0
+		air_equipment = 20.0
+		cas_bomber = 80.0		
+		light_fighter = 160.0
+		naval_bomber = 1.0
+		tactical_bomber = 20.0
+		cat_strategic_bomber = 0.0
+		para_tech = 20.0
+	}
+}

@@ -1,0 +1,320 @@
+﻿capital = 266
+
+oob = "PER_1936"
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	gw_artillery = 1
+	gwtank = 1
+	basic_light_tank = 1
+	early_fighter = 1
+	CAS1 = 1
+}
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	oob = "PER_1939"
+	set_technology = {
+		tech_support = 1
+		tech_recon = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		gw_artillery = 1
+		interwar_antiair = 1
+		interwar_artillery = 1
+		gwtank = 1
+
+		#doctrines
+		air_superiority = 1
+		mass_assault = 1
+		pocket_defence = 1
+		defence_in_depth = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}
+
+set_convoys = 10
+
+
+set_popularities = {
+	conservative = 22
+	fascism = 3
+	communism = 6
+	monarchism = 69
+}
+
+set_politics = {
+
+	ruling_party = monarchism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+add_ideas = {
+PER_government_corruption
+PER_religous_discontent
+PER_rural_economy_1
+PER_untrained_officer
+PER_aioc
+PER_skoda_armor
+PER_unruly_tribes
+}
+
+create_country_leader = {
+	name = "Reza Shah Pahlavi"
+	desc = "POLITICS_REZA_SHAH_PAHLAVI_DESC"
+	picture = "Portrait_Iran_Reza_Shah_Pahlavi.dds"
+	expire = "1965.1.1"
+	ideology = absolutism
+	traits = {
+		#
+	}
+}
+
+# His son, who came to power 41
+#create_country_leader = {
+#	name = "Mohammad Reza Pahlavi"
+#	desc = "POLITICS_MOHAMMAD_REZA_PAHLAVI_DESC"
+#	picture = "gfx/leaders/SAU/Portrait_Arabia_Generic_3.dds"
+#	expire = "1965.1.1"
+#	ideology = despotism
+#	traits = {
+#		#
+#	}
+#}
+
+create_country_leader = {
+	name = "Iraj Eskandari"
+	desc = "POLITICS_SOLEYMAN_MIRZA_ESKANDARI_DESC"
+	picture = "Iraj.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	name = "Fazlollah Zahedi"
+	desc = "POLITICS_SOLEYMAN_MIRZA_ESKANDARI_DESC"
+	picture = "fazlollah_zahedi_political.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	name = "Mohammad Mosaddegh"
+	desc = "Mohammad Mosaddegh_DESC"
+	picture = "Mohammed_Mossadeq.dds"
+	expire = "1965.1.1"
+	ideology = liberalism
+	traits = {	}
+}
+
+1939.1.1 = {
+	set_politics = {
+
+		parties = {
+		democratic = { 
+			popularity = 0
+		}
+
+		fascism = {
+			popularity = 0
+		}
+		
+		communism = {
+			popularity = 0
+		}
+		
+		neutrality = { 
+			popularity = 100
+		}
+	}
+	
+		ruling_party = neutrality
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+}
+create_corps_commander = {
+	name = "Karim Buzarjomehri"
+	portrait_path = "gfx/leaders/PER/Karim_Buzarjomehri.dds"
+	traits = { old_guard politically_connected trait_mountaineer }
+	skill = 2
+	id = 9000
+	attack_skill = 1
+	defense_skill = 4
+	planning_skill = 1
+	logistics_skill = 3
+}
+#################### he died in 1928
+#	create_corps_commander = {
+#		name = "Mahmud Khan Puladeen"
+#		portrait_path = "gfx/leaders/PER/Mahmud_Khan_Puladeen.dds"
+#		traits = { ambusher trait_reckless career_officer }
+#		skill = 2
+#		id = 9001
+#		attack_skill = 4
+#		defense_skill = 1
+#		planning_skill = 1
+#		logistics_skill = 5
+#	
+#	}
+#############################
+create_corps_commander = {
+	name = "Ahmad Amir-Ahmadi"
+	portrait_path = "gfx/leaders/PER/Amir_Ahmadi.dds"
+	traits = { old_guard infantry_officer logistics_wizard unyielding_defender }
+	skill = 3
+	id = 9002
+	attack_skill = 1
+	defense_skill = 5
+	planning_skill = 4
+	logistics_skill = 4
+}
+create_corps_commander = {
+	name = "Mohammad-Hosayn Ayrom"
+	portrait_path = "gfx/leaders/PER/Mohammad_Hosayn_Ayrom.dds"
+	traits = { politically_connected media_personality defensive_doctrine }
+	skill = 1
+	id = 9003
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 1
+}
+create_corps_commander = {
+	name = "Amanullah Jahanbani"
+	portrait_path = "gfx/leaders/PER/Amanullah_Jahanbani.dds"
+	traits = { old_guard career_officer defensive_doctrine }
+	skill = 2
+	id = 9004
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Jafar Shafaghat"
+	portrait_path = "gfx/leaders/PER/Jafar_Shafaghat.dds"
+	traits = { old_guard politically_connected infantry_officer }
+	skill = 3
+	id = 9005
+	attack_skill = 6
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 4
+}
+create_corps_commander = {
+	name = "Fazlollah Zahedi"
+	portrait_path = "gfx/leaders/PER/Fazlollah_Zahedi.dds"
+	traits = {  media_personality logistics_wizard skilled_staffer }
+	skill = 2
+	id = 9006
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 4
+}
+create_corps_commander = {
+	name = "Ali Razmara"
+	portrait_path = "gfx/leaders/PER/Ali_Razmara.dds"
+	traits = {  media_personality  }
+	skill = 2
+	id = 9007
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+create_corps_commander = {
+	name = "Assadollah Hosseinpoor"
+	portrait_path = "gfx/leaders/PER/Assadollah_Hosseinpoor.dds"
+	traits = { adaptable trait_mountaineer skirmisher commando }
+	skill = 3
+	id = 9008
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 4
+	logistics_skill = 5
+}
+create_field_marshal = {
+	name = "Bahram Aryana"
+	portrait_path = "gfx/leaders/PER/Bahram_Aryana.dds"
+	traits = {  logistics_wizard trait_mountaineer }
+	skill = 3
+	id = 9009
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 5
+	logistics_skill = 1
+}
+create_field_marshal = {
+	name = "Hasan Arfa"
+	portrait_path = "gfx/leaders/PER/hassan_arfa.dds"
+	traits = { old_guard trait_mountaineer  }
+	skill = 2
+	id = 9012
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+
+create_field_marshal = {
+	name = "Reza Khan Mirpanj"
+	portrait_path = "gfx/leaders/PER/Reza_Khan.dds"
+	traits = {  old_guard career_officer harsh_leader cavalry_officer inspirational_leader }
+	skill = 3
+	id = 9010
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_navy_leader = {
+	name = "Ahmad Khan Nakhjaavan"
+		picture = "Ahmad_Khan_Nakhjaavan.dds"
+		id = 9011
+	traits = { old_guard_navy }
+	skill = 3
+}
+

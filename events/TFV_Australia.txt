@@ -1,0 +1,3647 @@
+﻿###########################
+# Australian TFV events Events
+###########################
+
+add_namespace = tfv_australia
+
+# Completed AST_the_singapore_strategy.
+# Australian national focus.
+country_event = {
+	id = tfv_australia.1
+	title = tfv_australia.1.t	# Democratic Australia proposes to govern Singapore/Borneo colonies.
+	desc = tfv_australia.1.d	#
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.1.a # Transfer ownership of colonies to Australia.
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		effect_tooltip = {
+			AST = {
+				puppet = MAL
+			}
+		}
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.2 }
+			}
+			MAL = {
+				country_event = { id = tfv_australia.4 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.1.b # Diplomatically refuse Australia's proposal.
+		
+		ai_chance = {
+			base = 100
+		}
+		
+		AST = {
+			country_event = { id = tfv_australia.3 }
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.2
+	title = tfv_australia.2.t	# Great Britain transferred Singapore/Borneo colonies to Australia.
+	desc = tfv_australia.2.d	#
+	picture = GFX_report_event_ast_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.2.a
+		
+		puppet = MAL
+		
+		hidden_effect = {
+			MAL = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = MAL_AST
+			}
+		}
+		
+		news_event = { hours = 6 id = news.238 }
+	}
+}
+
+country_event = {
+	id = tfv_australia.3
+	title = tfv_australia.3.t	# Great Britain refused Australia's offer to govern Singapore/Borneo.
+	desc = tfv_australia.3.d	#
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.3.a
+	}
+}
+
+country_event = {
+	id = tfv_australia.4
+	title = tfv_australia.4.t	# Malaya get notified about Change
+	desc = tfv_australia.4.d	
+	picture = GFX_report_event_ast_troops_landing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.4.a
+	}
+}
+
+#Return the Malaya back to the British
+country_event = {
+	id = tfv_australia.5
+	
+	fire_only_once = no
+	
+	hidden = yes
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	trigger = {
+		ENG = {
+			exists = yes
+			has_war = no
+			has_democratic_government = yes
+		}
+		MAL = {
+			is_subject_of = AST
+			has_war = no
+		}
+		AST = {
+			has_war = no
+			has_democratic_government = yes
+			NOT = {
+				has_country_flag = AST_return_malaya_trigger
+			}
+		}
+	}
+	
+	immediate = {
+		AST = {
+			set_country_flag = AST_return_malaya_trigger
+			country_event = { id = tfv_australia.6 }
+		}
+	}
+	
+	option = {
+		name = tfv_australia.5.a
+	}
+}
+
+country_event = {
+	id = tfv_australia.6
+	title = tfv_australia.6.t	#Australia gives the Malaya Back
+	desc = tfv_australia.6.d	
+	picture =  GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.6.a
+		
+		effect_tooltip = {
+			ENG = {
+				puppet = MAL
+			}
+		}
+		
+		hidden_effect = {
+			ENG = {
+				country_event = { id = tfv_australia.7 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.7
+	title = tfv_australia.7.t	# England gets Malaya back
+	desc = tfv_australia.7.d  	
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.7.a
+		
+		puppet = MAL
+		
+		
+		hidden_effect = {
+			AST = {
+				clr_country_flag = AST_return_malaya_trigger
+			}
+			MAL = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = MAL_UK
+			}
+		}
+		
+		#news_event = { id = news.240 hours = 6 }
+	}
+}
+
+# Completed AST_protect_the_dutch_colonies.
+# Australian national focus.
+country_event = {
+	id = tfv_australia.10
+	title = tfv_australia.10.t	# Democratic Australia offers protection of the Dutch colonies in SEA.
+	desc = tfv_australia.10.d	#
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.10.a # Accept Australia's offer.
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		effect_tooltip = {
+			AST = {
+				puppet = INS
+			}
+		}
+		
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.11 }
+			}
+			INS = {
+				country_event = { id = tfv_australia.13 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.10.b # Deny Australia's offer.
+		
+		ai_chance = {
+			base = 100
+		}
+		
+		AST = {
+			country_event = { id = tfv_australia.12 }
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.11
+	title = tfv_australia.11.t	# Netherlands accepts protectorate over SEA colonies.
+	desc = tfv_australia.11.d  	#
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.11.a
+		
+		puppet = INS
+		
+		hidden_effect = {
+			INS = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = INS_AST
+			}
+		}
+		
+		news_event = { id = news.240 hours = 6 }
+	}
+}
+
+country_event = {
+	id = tfv_australia.12
+	title = tfv_australia.12.t	# Netherlands denies the protection offer of SEA colonies.
+	desc = tfv_australia.12.d	#
+	picture = GFX_report_event_ast_troops_landing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.12.a
+	}
+}
+
+country_event = {
+	id = tfv_australia.13
+	title = tfv_australia.13.t	# The Dutch East Indies get notified about Change
+	desc = tfv_australia.13.d	
+	picture = GFX_report_event_ast_troops_landing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.13.a
+	}
+}
+
+#Return the Dutch East Indies to Netherlands
+country_event = {
+	id = tfv_australia.14
+	
+	fire_only_once = no
+	
+	hidden = yes
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	trigger = {
+		HOL = {
+			exists = yes
+			has_war = no
+			has_democratic_government = yes
+		}
+		any_country = {
+			original_tag = INS
+			is_subject_of = AST
+			has_war = no
+		}
+		AST = {
+			NOT = { has_country_flag = AST_return_dutch_east_indies_trigger }
+			has_war = no
+			has_democratic_government = yes
+		}
+	}
+	
+	immediate = {
+		AST = {
+			set_country_flag = AST_return_dutch_east_indies_trigger
+			country_event = { id = tfv_australia.15 }
+		}
+	}
+	
+	option = {
+		name = tfv_australia.14.a
+	}
+}
+
+country_event = {
+	id = tfv_australia.15
+	title = tfv_australia.15.t	#Australia gives the Dutch East Indies Back
+	desc = tfv_australia.15.d	
+	picture =  GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.15.a
+		
+		effect_tooltip = {
+			random_country = {
+				limit = {
+					original_tag = INS
+				}
+				HOL = {
+					puppet = PREV
+				}
+			}
+		}
+		
+		hidden_effect = {
+			HOL = {
+				country_event = { id = tfv_australia.16 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.16
+	title = tfv_australia.16.t	# Netherlands gets DEI back
+	desc = tfv_australia.16.d  	
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.16.a
+		
+		random_country = {
+			limit = {
+				original_tag = INS
+			}
+			drop_cosmetic_tag = yes
+			HOL = {
+				puppet = PREV
+			}
+		}
+		
+		hidden_effect = {
+			random_country = {
+				limit = {
+					original_tag = INS
+				}
+				set_cosmetic_tag = INS_HOL
+			}
+			AST = {
+				clr_country_flag = AST_return_dutch_east_indies_trigger
+			}
+		}
+		
+		#news_event = { id = news.240 hours = 6 }
+	}
+}
+
+# Completed AST_demand_new_zealand.
+# Australian national focus.
+country_event = {
+	id = tfv_australia.20
+	title = tfv_australia.20.t	# Fascist Australia demands annexation of New Zealand.
+	desc = tfv_australia.20.d	#
+	picture = GFX_report_event_generic_rally
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.20.a # Accept Australia's demands
+		
+		ai_chance = {
+			base = 100
+			modifier = {
+				add = 20
+				OR = {
+					AND = {
+						is_in_faction_with = ENG
+						ENG = {
+							surrender_progress > 0.3
+						}
+					}
+					NZL = { is_in_faction = no }
+					has_government = fascism
+				}
+			}
+			modifier = {
+				add = 10
+				is_subject_of = ENG
+				CAN = { NOT = { is_subject_of = ENG } }
+				RAJ = { NOT = { is_subject_of = ENG } }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = {
+					strength_ratio = {
+						tag = ROOT
+						ratio > 2
+					}
+				}
+			}
+		}
+		
+		AST = {
+			country_event = { id = tfv_australia.21 }
+		}
+
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	
+	option = {
+		name = tfv_australia.20.b # Refuse Australia's demands
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		effect_tooltip = {
+			AST = {
+				create_wargoal = {
+					type = annex_everything
+					target = NZL
+				}
+			}
+		}
+
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.22 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.21
+	title = tfv_australia.21.t	# New Zealand accepted annexation peacefully.
+	desc = tfv_australia.21.d	#
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.21.a
+		
+		annex_country = { target = NZL transfer_troops = yes }
+		
+		add_state_core = 284
+		add_state_core = 723
+		add_state_core = 726
+
+		news_event = {
+			id = news.254 hours = 2
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.22
+	title = tfv_australia.22.t	# New Zealand refused Australia's annexation demands.
+	desc = tfv_australia.22.d	#
+	picture = GFX_report_event_ast_troops_landing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.22.a
+		
+		create_wargoal = {
+			type = annex_everything
+			target = NZL
+		}
+		
+		add_state_core = 284
+		add_state_core = 723
+		add_state_core = 726
+	}
+}
+
+country_event = {
+	id = tfv_australia.31  
+	title = tfv_australia.31.t #Creates Australian faction
+	desc = tfv_australia.31.d
+	picture = GFX_report_event_ANZAC_day
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.31.a
+		
+		create_faction = "south_west_pacific_initiative"
+		if = {
+			limit = {
+				has_country_flag = INS_is_a_puppet
+			}
+			add_to_faction = INS
+		}
+		
+		news_event = { id = news.244 hours = 6 }
+	}
+}
+
+country_event = {
+	id = tfv_australia.32
+	title = tfv_australia.32.t # USA is asked to join faction
+	desc = tfv_australia.32.d
+	picture = GFX_report_event_generic_usa_treaty
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.32.a
+		
+		ai_chance = {
+			base = 70
+		}
+
+		effect_tooltip = {
+			AST  = { 
+				if = {
+					limit = {
+						CAN = {
+							is_in_faction_with = USA
+							is_faction_leader = yes
+						}
+					}
+					CAN = {
+						add_to_faction = AST
+					}
+				}
+				else = {
+					create_faction = "south_west_pacific_initiative"
+					add_to_faction = USA
+				}
+			}
+		}
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.33 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.32.b
+		
+		ai_chance = {
+			base = 30
+		}
+		
+		AST = {
+			country_event = { id = tfv_australia.34 }
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.33
+	title = tfv_australia.33.t # USA joins faction
+	desc = tfv_australia.33.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.33.a
+		
+		if = {
+			limit = {
+				CAN = {
+					is_in_faction_with = USA
+					is_faction_leader = yes
+				}
+			}
+			CAN = {
+				add_to_faction = AST
+			}
+		}
+		else = {
+			create_faction = "south_west_pacific_initiative"
+			add_to_faction = USA
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = INS_is_a_puppet
+			}
+			add_to_faction = INS
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = MAL_is_a_puppet
+			}
+			add_to_faction = MAL
+		}
+		
+		news_event = { id = news.245 hours = 6 }
+	}
+}
+
+country_event = {
+	id = tfv_australia.34
+	title = tfv_australia.34.t # USA refused to join faction
+	desc = tfv_australia.34.d
+	picture = GFX_report_event_FDR_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.34.a # Form a faction anyway
+		trigger = {
+			OR = { 
+				has_country_flag = INS_is_a_puppet
+				has_country_flag = MAL_is_a_puppet
+			}
+		}
+		
+		create_faction = "south_west_pacific_initiative"
+		if = {
+			limit = {
+				has_country_flag = INS_is_a_puppet
+			}
+			add_to_faction = INS
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = MAL_is_a_puppet
+			}
+			add_to_faction = MAL
+		}
+		news_event = { id = news.244 hours = 6 }
+	}
+	
+	option = {
+		name = tfv_australia.34.b
+	}
+}
+
+#TRIGGER event for post INS Civil War puppet
+country_event = {
+	id = tfv_australia.40
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		AST = { has_government = fascism }
+		AST = { has_completed_focus = AST_support_indonesian_uprising }
+		#INS = { exists = no }
+		any_country = {
+			original_tag = INS
+			has_civil_war = no
+			has_government = fascism
+		}
+	}
+	
+	immediate = {
+		AST = {
+			country_event = { id = tfv_australia.41 }
+		}
+	}
+
+	option = {
+		name = tfv_australia.40.a
+	}
+}
+
+#AST_support_indonesian_uprising - End the civil war in INS and puppet fascist side if they won
+country_event = {
+	id = tfv_australia.41
+	title = tfv_australia.41.t
+	desc = tfv_australia.41.d
+	picture = GFX_report_event_ast_troops_landing
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		
+	}
+
+	option = {
+		name = tfv_australia.41.a
+		random_country = {
+			limit = {
+				original_tag = INS
+				has_government = fascism
+			}
+			hidden_effect = {
+				white_peace = HOL
+			}
+			AST = { 
+				puppet = PREV
+				set_autonomy = {
+					target = PREV
+					autonomous_state = autonomy_integrated_puppet
+					freedom_level = 0.75
+				}
+			}
+		}
+		
+		hidden_effect = {
+			random_country = {
+				limit = {
+					original_tag = INS
+					has_government = fascism
+				}
+				set_cosmetic_tag = INS_AST
+			}
+		}
+	}
+}
+# Completed AST_join_comintern.
+# Australian national focus.
+country_event = {
+	id = tfv_australia.50
+	title = tfv_australia.50.t	# Australia asks USSR to join Comintern.
+	desc = tfv_australia.50.d	#
+	picture = GFX_report_event_generic_rally
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.50.a
+		
+		ai_chance = {
+			base = 100
+		}
+		
+		effect_tooltip = {
+			add_to_faction = AST
+		}
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.51 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.50.b
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.52 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.51
+	title = tfv_australia.51.t	# USSR accepts Comintern membership.
+	desc = tfv_australia.51.d	#
+	picture = GFX_report_event_stalin_meeting
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.51.a
+		SOV = {
+			add_to_faction = AST
+		}
+		news_event = { hours = 6 id = news.239 }
+	}
+}
+
+country_event = {
+	id = tfv_australia.52
+	title = tfv_australia.52.t	# USSR denies Comintern membership.
+	desc = tfv_australia.52.d	#
+	picture = GFX_report_event_stalin_02
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.52.a
+	}
+}
+
+# Completed AST_nz_puppet.
+# Australian national focus.
+country_event = {
+	id = tfv_australia.60
+	title = tfv_australia.60.t	# Australia requests NZ to submit to Australian Hegemony
+	desc = tfv_australia.60.d	#
+	picture = GFX_report_event_ast_planning
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.60.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 50
+				has_government = fascism
+			}
+			modifier = {
+				add = -20
+				is_in_faction_with = ENG
+			}
+		}
+		effect_tooltip = {
+			AST = {
+				puppet = NZL
+			}
+		}
+		hidden_effect = {
+			AST = { 
+				country_event = { id = tfv_australia.61 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.60.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				factor = 0
+				OR = { has_government = unionism has_government = communism }
+			}
+		}
+		
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.62 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.61
+	title = tfv_australia.61.t	# NZ submits to Australian Hegemony.
+	desc = tfv_australia.61.d	#
+	picture = GFX_report_event_troops_landing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.61.a
+		puppet = NZL
+		
+		add_state_core = 284
+		add_state_core = 723
+		add_state_core = 726
+		
+		news_event = { id = news.241 }
+	}
+}
+
+country_event = {
+	id = tfv_australia.62
+	title = tfv_australia.62.t	# NZ rejects Australian as an overlord.
+	desc = tfv_australia.62.d	#
+	picture = GFX_report_event_ANZAC_day
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.62.a
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = NZL
+		}
+		
+		add_state_core = 284
+		add_state_core = 723
+		add_state_core = 726
+	}
+}
+
+# Completed AST_protect_the_south_west_pacific.
+# Australian national focus.
+country_event = {
+	id = tfv_australia.70
+	title = tfv_australia.70.t	# 
+	desc = tfv_australia.70.d	#
+	picture = GFX_report_event_ast_troops_landing
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.70.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		effect_tooltip = {
+			AST = {
+				puppet = MAL
+			}
+		}
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.71 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.70.b
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.72 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.71
+	title = tfv_australia.71.t	#
+	desc = tfv_australia.71.d	#
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.71.a
+		
+		puppet = MAL
+		set_autonomy = {
+			target = MAL
+			autonomous_state = autonomy_integrated_puppet
+			freedom_level = 0.75
+		}
+		
+		hidden_effect = {
+			MAL = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = MAL_AST
+			}
+		}
+		
+		news_event = { id = news.242 hours = 6 }
+	}
+}
+
+country_event = {
+	id = tfv_australia.72
+	title = tfv_australia.72.t	#
+	desc = tfv_australia.72.d	#
+	picture = GFX_report_event_ast_paras
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.72.a
+	}
+}
+
+# Completed AST_a_deal_with_japan.
+# Australian national focus.
+country_event = {
+	id = tfv_australia.80
+	title = tfv_australia.80.t	# Australia proposes alliance \w Japan in exchange for some SEA islands.
+	desc = tfv_australia.80.d	#
+	picture = GFX_report_event_ast_planning
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.80.a
+		
+		ai_chance = {
+			base = 100
+			
+		}
+		
+		effect_tooltip = {
+			AST = {
+				if = {
+					limit = {
+						MAL = { is_puppet_of = AST }
+					}
+					JAP = {
+						puppet = MAL
+					}
+					
+					else = {
+						JAP = {
+							transfer_state = 334
+							transfer_state = 673
+							transfer_state = 668
+						}
+					}
+				}
+
+				if = {
+					limit = { JAP = { is_faction_leader = yes } }
+					JAP = {
+						add_to_faction = AST
+					}
+					else = {
+						create_faction = "western_pacific_sphere"
+						add_to_faction = JAP					
+					}
+				}				
+			}
+		}
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.81 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.80.b
+		
+		ai_chance = {
+			base = 0
+			modifier = {
+				is_faction_leader = yes
+				add = 10
+			}
+		}
+		
+		hidden_effect = {
+			AST = {	
+				country_event = { id = tfv_australia.82 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.81
+	title = tfv_australia.81.t	# Japan forms alliance \w Australia.
+	desc = tfv_australia.81.d	#
+	picture = GFX_report_event_ast_transfer_singapore
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.81.a
+		if = {
+			limit = {
+				MAL = { is_puppet_of = AST }
+			}
+			JAP = {
+				puppet = MAL
+			}
+			
+			else = {
+				JAP = { transfer_state = 334 }
+				JAP = { transfer_state = 673 }
+				JAP = { transfer_state = 668 }
+			}
+		}
+		
+		if = {
+			limit = { JAP = { is_faction_leader = yes } }
+			JAP = { add_to_faction = AST }
+			else = {
+				create_faction = "western_pacific_sphere"
+				add_to_faction = JAP					
+			}
+		}
+		
+		news_event = { id = news.243 hours = 6 }
+	}
+}
+
+country_event = {
+	id = tfv_australia.82
+	title = tfv_australia.82.t	# Japan denies Australian alliance offer.
+	desc = tfv_australia.82.d	#
+	picture = GFX_report_event_japanese_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.82.a
+	}
+}
+
+#coronation visit
+country_event = {
+	id = tfv_australia.90
+	title = tfv_australia.90.t	
+	desc = tfv_australia.90.desc	#
+	picture = GFX_report_event_royal_visit
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			base = 33
+		}
+		name = tfv_australia.90.a
+		add_stability = 0.05
+	}
+
+	option = {
+		ai_chance = {
+			base = 34
+		}
+		name = tfv_australia.90.b
+		add_manpower = 10000
+		add_war_support = 0.05
+	}
+
+	option = {
+		ai_chance = {
+			base = 33
+		}
+		name = tfv_australia.90.c
+		add_political_power = 75
+	}
+}
+
+# Indonesian Nationalists Alert 
+country_event = {
+	id = tfv_australia.95
+	title = tfv_australia.95.t	
+	desc = tfv_australia.95.desc	#
+	picture = GFX_report_event_merchant_ship_01
+	
+	
+
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.95.a
+		
+	}
+
+}
+
+# Indonesian Nationalists Alert 
+country_event = {
+	id = tfv_australia.96
+	title = tfv_australia.96.t	
+	desc = tfv_australia.96.desc
+	picture = GFX_report_event_fascist_gathering
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.96.a
+		trigger = {
+			is_ai = no
+		}
+		start_civil_war = {
+			ideology = fascism
+			size = 0.5
+			states = { 334 673 669 668 738 667 }
+		}
+	}
+	option = {
+		name = tfv_australia.96.b
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.5
+		}
+		if = {
+			limit = {
+				has_democratic_government = yes
+			}
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = democratic
+				size = 0.5
+				states = { 672 }
+			}
+		}
+		if = {
+			limit = {
+				OR = { has_government = unionism has_government = communism }
+			}
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = communism
+				size = 0.5
+				states = { 672 }
+			}
+		}
+		if = {
+			limit = {
+				OR = { has_government = unionism has_government = communism }
+			}
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = neutrality
+				size = 0.5
+				states = { 672 }
+			}
+		}
+	}
+
+}
+
+# Completed decision
+# Australian decision
+country_event = {
+	id = tfv_australia.97
+	title = tfv_australia.97.t	# Democratic Australia proposes the creation of the ANZ Union
+	desc = tfv_australia.97.d	
+	picture = GFX_report_event_generic_rally
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.97.a # Accept Australia's proposal
+		
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 20
+				has_democratic_government = yes 
+			}
+			modifier = {
+				add = 20
+				has_war_together_with = ENG
+			}
+			modifier = { 
+				add = -20
+				NOT = { has_completed_focus = NZL_strengthen_the_commonwealth }
+			}
+		}
+		
+		AST = {
+			country_event = { id = tfv_australia.98 }
+		}
+		custom_effect_tooltip = GAME_OVER_TT		
+	}
+	
+	option = {
+		name = tfv_australia.97.b # Refuse Australia's demands
+		
+		ai_chance = {
+			base = 5
+			modifier = { 
+				factor = 0
+				has_completed_focus = NZL_strengthen_the_commonwealth
+			}
+		}
+
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.99 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.98
+	title = tfv_australia.98.t	# New Zealand accepted annexation.
+	desc = tfv_australia.98.d	#
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.98.a
+		
+		NZL = {
+			every_unit_leader = {
+				set_nationality = AST
+				set_unit_leader_flag = AST_new_zealand_unit_leaders
+			}
+			transfer_navy = {
+				target = AST
+			}
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = NZL
+					}
+					add_core_of = AST
+					remove_core_of = NZL
+					set_state_flag = AST_new_zealands_pre_war_cores
+				}
+				every_owned_state = {
+					set_state_flag = AST_new_zealands_pre_war_states
+				}
+			}
+		}
+		
+		annex_country = { target = NZL transfer_troops = yes }
+		
+		set_country_flag = AST_ANZ_union_formed
+
+		news_event = {
+			id = tfvo_news.2 hours = 2
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.99
+	title = tfv_australia.99.t	# New Zealand refused Australia's annexation Proposal.
+	desc = tfv_australia.99.d	#
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.99.a
+	}
+}
+
+country_event = {
+	id = tfv_australia.100
+	title = tfv_australia.100.t
+	desc = tfv_australia.100.d
+	picture = GFX_report_event_ast_parliament_house
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	
+	}
+	
+	option = {
+		name = tfv_australia.100.a
+		custom_effect_tooltip = AST_ANZ_union_deformation_tt
+		hidden_effect = {
+			every_owned_state = {
+				limit = {
+					has_state_flag = AST_new_zealands_pre_war_states
+				}
+				NZL = {
+					transfer_state = PREV
+				}
+				clr_state_flag = AST_new_zealands_pre_war_states
+			}
+			every_owned_state = {
+				limit = {
+					has_state_flag = AST_new_zealands_pre_war_cores
+				}
+				NZL = {
+					transfer_state = PREV
+				}
+			}
+			every_state = {
+				limit = {
+					has_state_flag = AST_new_zealands_pre_war_cores
+				}
+				add_core_of = NZL
+				remove_core_of = AST
+				clr_state_flag = AST_new_zealands_pre_war_cores
+			}
+		}
+		every_unit_leader = {
+			limit = {
+				has_unit_leader_flag = AST_new_zealand_unit_leaders
+			}
+			set_nationality = NZL
+			clr_unit_leader_flag = AST_new_zealand_unit_leaders
+		}
+		if = {
+			limit = {
+				NZL = { 
+					has_completed_focus = NZL_transfer_the_new_zealand_division
+				}
+			}
+			transfer_ship = {
+				prefer_name = "HMS Achilles"
+				type = light_cruiser
+				target = NZL
+			}
+			transfer_ship = {
+				prefer_name = "HMS Leander"
+				type = light_cruiser
+				target = NZL
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					ROOT = { is_in_faction = yes }
+				}
+				random_country = {
+					limit = {
+						is_faction_leader = yes
+						is_in_faction_with = ROOT
+					}
+					add_to_faction = NZL
+				}
+			}
+		}
+	}
+}
+
+#Release New Zealand
+country_event = {
+	id = tfv_australia.101
+	
+	fire_only_once = no
+	
+	hidden = yes
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	trigger = {
+		AST = {
+			any_owned_state = {
+				has_state_flag = new_zealands_pre_war_states
+			}
+			OR = {
+				has_war = no
+				NOT = { has_democratic_government = yes }
+			}
+			has_country_flag = AST_ANZ_union_formed
+		}
+	}
+	
+	immediate = {
+		AST = {
+			country_event = { id = tfv_australia.100 }
+			clr_country_flag = AST_ANZ_union_formed
+		}
+	}
+	
+	option = {
+		name = tfv_australia.101.a
+	}
+}
+
+country_event = {
+	id = tfv_australia.102
+	title = tfv_australia.102.t
+	desc = tfv_australia.102.d
+	picture = GFX_report_event_ast_parliament_house
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	
+	}
+	
+	option = {
+		name = tfv_australia.102.a
+		create_country_leader = {
+			name = "John Curtin"
+			desc = "POLITICS_JOHN_CURTIN_DESC"
+			picture = "Portrait_Australia_John_Curtin.dds"
+			expire = "1965.1.1"
+			ideology = socialism
+			traits = {
+				AST_support_for_war_effort
+			}
+		}
+	}
+}
+
+#Election of 1941
+country_event = {
+	id = tfv_australia.103
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		date < 1941.10.08
+		date > 1941.10.06
+		AST = {
+			has_elections = yes
+			NOT = { has_completed_focus = AST_never_another_gallipoli }
+			has_democratic_government = yes
+		}
+	}
+	
+	immediate = {
+		AST = {
+			country_event = { id = tfv_australia.101 }
+		}
+	}
+	
+	option = {
+		name = tfv_australia.103.a
+	}
+}
+
+# Completed AST_demand_british_swpa_islands
+# Australian national focus
+country_event = {							# Australia demands British SWPA Islands from anyone
+	id = tfv_australia.110
+	title = tfv_australia.110.t
+	desc = tfv_australia.110.d	
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.110.a # Accept Australia's proposal
+		
+		ai_chance = {
+			base = 70
+			modifier = {
+				add = 20
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+				}
+			}
+			modifier = {
+				add = 30
+				has_capitulated = yes
+			}
+			modifier = {
+				factor = 0 
+				has_war_with = AST
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 636
+				}
+				AST = {
+					transfer_state = 636
+					add_state_core = 636
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 639
+				}
+				AST = {
+					transfer_state = 639
+					add_state_core = 639
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 643
+				}
+				AST = {
+					transfer_state = 643
+					add_state_core = 643
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 711
+				}
+				AST = {
+					transfer_state = 711
+					add_state_core = 711
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 712
+				}
+				AST = {
+					transfer_state = 712
+					add_state_core = 712
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 725
+				}
+				AST = {
+					transfer_state = 725
+					add_state_core = 725
+				}
+			}
+		}
+		
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.111 }
+			}
+		}
+
+	}
+	
+	option = {
+		name = tfv_australia.110.b # Refuse Australia's demands
+		
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = -20
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+				}
+			}
+			modifier = {
+				factor = 0
+				has_capitulated = yes
+			}
+			modifier = {
+				factor = 100
+				has_war_with = AST
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 636
+				}
+				AST = {
+					add_state_core = 636
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 639
+				}
+				AST = {
+					add_state_core = 639
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 643
+				}
+				AST = {
+					add_state_core = 643
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 711
+				}
+				AST = {
+					add_state_core = 711
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 712
+				}
+				AST = {
+					add_state_core = 712
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 725
+				}
+				AST = {
+					add_state_core = 725
+				}
+			}
+		}
+		
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.112 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.111
+	title = tfv_australia.111.t	# Anyone gives British SWPA Islands
+	desc = tfv_australia.111.d
+	picture = GFX_report_event_ast_troops_landing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.111.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 636 }
+			}
+			transfer_state = 636
+			add_state_core = 636
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 639 }
+			}
+			transfer_state = 639
+			add_state_core = 639
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 643 }
+			}
+			transfer_state = 643
+			add_state_core = 643
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 711 }
+			}
+			transfer_state = 711
+			add_state_core = 711
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 712 }
+			}
+			transfer_state = 712
+			add_state_core = 712
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 725 }
+			}
+			transfer_state = 725
+			add_state_core = 725
+		}
+
+		#news_event = {
+		#	id = tfvo_news.2 hours = 2
+		#}
+	}
+}
+
+country_event = {
+	id = tfv_australia.112
+	title = tfv_australia.112.t	# Anyone refused to give up British SWPA Islands
+	desc = tfv_australia.112.d
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.112.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 636 }
+			}
+			add_state_core = 636
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 639 }
+			}
+			add_state_core = 639
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 643 }
+			}
+			add_state_core = 643
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 711 }
+			}
+			add_state_core = 711
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 712 }
+			}
+			add_state_core = 712
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 725 }
+			}
+			add_state_core = 725
+		}
+	}
+}
+
+# Completed AST_demand_french_swpa_islands
+# Australian national focus
+country_event = {							# Australia demands French SWPA Islands from anyone
+	id = tfv_australia.113
+	title = tfv_australia.113.t
+	desc = tfv_australia.113.d	
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.113.a # Accept Australia's proposal
+		
+		ai_chance = {
+			base = 70
+			modifier = {
+				add = 20
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+				}
+			}
+			modifier = {
+				add = 30
+				has_capitulated = yes
+			}
+			modifier = {
+				factor = 0
+				has_war_with = AST
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 635
+				}
+				AST = {
+					transfer_state = 635
+					add_state_core = 635
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 641
+				}
+				AST = {
+					transfer_state = 641
+					add_state_core = 641
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 713
+				}
+				AST = {
+					transfer_state = 713
+					add_state_core = 713
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 734
+				}
+				AST = {
+					transfer_state = 734
+					add_state_core = 734
+				}
+			}
+		}
+		
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.114 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.113.b # Refuse Australia's demands
+		
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = -20
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+				}
+			}
+			modifier = {
+				factor = 0
+				has_capitulated = yes
+			}
+			modifier = {
+				factor = 100
+				has_war_with = AST
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 635
+				}
+				AST = {
+					add_state_core = 635
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 641
+				}
+				AST = {
+					add_state_core = 641
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 713
+				}
+				AST = {
+					add_state_core = 713
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 734
+				}
+				AST = {
+					add_state_core = 734
+				}
+			}
+		}
+		
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.115 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.114
+	title = tfv_australia.114.t	# Anyone gives French SWPA Islands
+	desc = tfv_australia.114.d
+	picture = GFX_report_event_ast_troops_landing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.114.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 635 }
+			}
+			transfer_state = 635
+			add_state_core = 635
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 641 }
+			}
+			transfer_state = 641
+			add_state_core = 641
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 713 }
+			}
+			transfer_state = 713
+			add_state_core = 713
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 734 }
+			}
+			transfer_state = 734
+			add_state_core = 734
+		}
+
+		#news_event = {
+		#	id = tfvo_news.2 hours = 2
+		#}
+	}
+}
+
+country_event = {
+	id = tfv_australia.115
+	title = tfv_australia.115.t	# Anyone refused to give up French SWPA Islands
+	desc = tfv_australia.112.d
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.115.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 635 }
+			}
+			add_state_core = 635
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 641 }
+			}
+			add_state_core = 641
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 713 }
+			}
+			add_state_core = 713
+		}
+		if = {
+			limit = {
+				FROM = { controls_state = 734 }
+			}
+			add_state_core = 734
+		}
+	}
+}
+
+# Completed AST_demand_portuguese_timor
+# Australian national focus
+country_event = {							# Australia demands Portuguese Timor
+	id = tfv_australia.116
+	title = tfv_australia.116.t
+	desc = tfv_australia.116.d	
+	picture = GFX_report_event_ast_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.116.a # Accept Australia's proposal
+		
+		ai_chance = {
+			base = 95
+			modifier = {
+				add = 3
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+				}
+			}
+			modifier = {
+				add = 30
+				has_capitulated = yes
+			}
+			modifier = {
+				factor = 0
+				has_war_with = AST
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 721
+				}
+				AST = {
+					transfer_state = 721
+					add_state_core = 721
+				}
+			}
+		}
+		
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.117 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.116.b # Refuse Australia's demands
+		
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = -3
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+				}
+			}
+			modifier = {
+				factor = 0
+				has_capitulated = yes
+			}
+			modifier = {
+				factor = 100
+				has_war_with = AST
+			}
+		}
+		
+		effect_tooltip = {
+			if = {
+				limit = {
+					controls_state = 721
+				}
+				AST = {
+					add_state_core = 721
+				}
+			}
+		}
+		
+		hidden_effect = {
+			AST = {
+				country_event = { id = tfv_australia.118 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.117
+	title = tfv_australia.117.t	# Anyone gives up Portuguese Timor
+	desc = tfv_australia.117.d
+	picture = GFX_report_event_ast_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.117.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 721 }
+			}
+			transfer_state = 721
+			add_state_core = 721
+		}
+
+		#news_event = {
+		#	id = tfvo_news.2 hours = 2
+		#}
+	}
+}
+
+country_event = {
+	id = tfv_australia.118
+	title = tfv_australia.118.t	# Anyone refused to give up Portuguese Timor
+	desc = tfv_australia.118.d
+	picture = GFX_report_event_ast_troops_landing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.118.a
+		
+		if = {
+			limit = {
+				FROM = { controls_state = 721 }
+			}
+			add_state_core = 721
+		}
+	}
+}
+
+#From Australian Decision AST_ask_for_china_fleet
+country_event = {
+	id = tfv_australia.130
+	title = tfv_australia.130.t					# Australia asks Britain for China Fleet
+	desc = tfv_australia.130.d	
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.130.a
+		
+		ai_chance = {
+			base = 95
+		}
+		
+		effect_tooltip = {
+			transfer_ship = {
+				prefer_name = "HMS Eagle"
+				type = carrier
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Kent"
+				type = heavy_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Cornwall"
+				type = heavy_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Dorsetshire"
+				type = heavy_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Caledon"
+				type = light_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Calypso"
+				type = light_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Scout"
+				type = destroyer
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Tenedos"
+				type = destroyer
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Thanet"
+				type = destroyer
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Thracian"
+				type = destroyer
+				target = AST
+			}
+		}
+		
+		hidden_effect = {
+			FROM = {
+				country_event = { id = tfv_australia.131 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.130.b
+		
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 0
+				has_capitulated = yes
+			}
+			modifier = {
+				factor = 0
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+					has_navy_size = {
+						size > 39
+					}
+				}
+			}
+		}
+		
+		hidden_effect = {
+			FROM = {
+				country_event = { id = tfv_australia.132 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.131
+	title = tfv_australia.131.t	# Britain Gives Australia their china fleet
+	desc = tfv_australia.131.d	
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.131.a
+		
+		ENG = {
+			transfer_ship = {
+				prefer_name = "HMS Eagle"
+				type = carrier
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Kent"
+				type = heavy_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Cornwall"
+				type = heavy_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Dorsetshire"
+				type = heavy_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Caledon"
+				type = light_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Calypso"
+				type = light_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Scout"
+				type = destroyer
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Tenedos"
+				type = destroyer
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Thanet"
+				type = destroyer
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Thracian"
+				type = destroyer
+				target = AST
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.132
+	title = tfv_australia.132.t	# Britain refuses to give Australia their china fleet
+	desc = tfv_australia.132.d	
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.132.a
+	}
+}
+
+#From Australian Decision AST_demand_china_fleet
+country_event = {
+	id = tfv_australia.133
+	title = tfv_australia.133.t				# Australia demands China Fleet from Britain
+	desc = tfv_australia.133.d	
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.133.a
+		
+		ai_chance = {
+			base = 7
+			modifier = {
+				factor = 2
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+					has_navy_size = {
+						size > 39
+					}
+				}
+			}
+		}
+		
+		effect_tooltip = {
+			transfer_ship = {
+				prefer_name = "HMS Eagle"
+				type = carrier
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Kent"
+				type = heavy_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Cornwall"
+				type = heavy_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Dorsetshire"
+				type = heavy_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Caledon"
+				type = light_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Calypso"
+				type = light_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Scout"
+				type = destroyer
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Tenedos"
+				type = destroyer
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Thanet"
+				type = destroyer
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Thracian"
+				type = destroyer
+				target = AST
+			}
+		}
+		
+		hidden_effect = {
+			FROM = {
+				country_event = { id = tfv_australia.134 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.133.b
+		
+		ai_chance = {
+			base = 3
+			modifier = {
+				factor = 0.5
+				has_capitulated = yes
+			}
+		}
+		
+		hidden_effect = {
+			FROM = {
+				country_event = { id = tfv_australia.135 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.134
+	title = tfv_australia.134.t			# Britain Gives Australia their china fleet
+	desc = tfv_australia.134.d	
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.134.a
+		
+		ENG = {
+			transfer_ship = {
+				prefer_name = "HMS Eagle"
+				type = carrier
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Kent"
+				type = heavy_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Cornwall"
+				type = heavy_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Dorsetshire"
+				type = heavy_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Caledon"
+				type = light_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Calypso"
+				type = light_cruiser
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Scout"
+				type = destroyer
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Tenedos"
+				type = destroyer
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Thanet"
+				type = destroyer
+				target = AST
+			}
+			transfer_ship = {
+				prefer_name = "HMS Thracian"
+				type = destroyer
+				target = AST
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.135
+	title = tfv_australia.135.t			# Britain refuses to give Australia their china fleet
+	desc = tfv_australia.135.d	
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.135.a
+	}
+}
+
+#from Australian Decisions
+country_event = {
+	id = tfv_australia.140 			#Australia take Britains people
+	title = tfv_australia.140.t	
+	desc = tfv_australia.140.d	
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.140.a
+		add_opinion_modifier = {
+			target = AST
+			modifier = AST_accepted_british_refugees
+		}
+		if = {
+			limit = {
+				any_owned_state = {	
+					state_population > 1000000
+				}
+			}
+			random_owned_state = {
+				prioritize = { 126 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -40000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				limit = {
+					state_population > 1000000
+				}
+				add_manpower = -20000
+			}
+		}
+		else = {
+			random_owned_state = {
+				prioritize = { 126 }
+				add_manpower = -40000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+			random_owned_state = {
+				prioritize = { 121 122 123 125 127 128 129 130 131 132 133 338 }
+				add_manpower = -20000
+			}
+		}
+	}
+}
+
+#Rival Empire decision for Australia
+country_event = {
+	id = tfv_australia.150
+	title = tfv_australia.150.t			#Rally the British Colonies
+	desc = tfv_australia.150.d	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.150.a          #Help Australia to fight against Britain
+		
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 0
+				OR = {
+					has_capitulated = yes
+					has_war = yes
+				}
+			}
+			modifier = {
+				factor = 0.25
+				tag = SAF
+				has_completed_focus = SAF_support_the_policy_of_appeasement
+			}
+			modifier = {
+				factor = 0.25
+				tag = RAJ
+				has_completed_focus = RAJ_indian_national_congress
+			}
+			modifier = {
+				factor = 0.25
+				tag = CAN
+				has_completed_focus = CAN_strengthen_the_commonwealth_ties
+			}
+			modifier = {
+				factor = 0.25
+				tag = NZL
+				has_completed_focus = NZL_strengthen_the_commonwealth
+			}
+		}
+		
+		set_country_flag = AST_has_supported_australia
+		
+		hidden_effect = {
+			FROM = {
+				country_event = { id = tfv_australia.151 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.150.b               #Refuse to help Australia to fight against Britain
+		
+		ai_chance = {
+			base = 25
+			#Focuses
+			modifier = {
+				factor = 0
+				tag = SAF
+				has_completed_focus = SAF_abandon_westminster
+			}
+			modifier = {
+				factor = 0
+				tag = RAJ
+				has_completed_focus = RAJ_swaraj
+			}
+			modifier = {
+				factor = 0
+				tag = CAN
+				has_completed_focus = CAN_patriation
+				NOT = { has_completed_focus = CAN_permanent_joint_defense_board }
+			}
+			modifier = {
+				factor = 0
+				tag = NZL
+				has_completed_focus = NZL_statute_of_westminster
+				NOT = { has_completed_focus = NZL_independent_new_zealand }
+			}
+			#Distance to Australia
+			modifier = {
+				factor = 0.9
+				tag = SAF
+			}
+			modifier = {
+				factor = 0.7
+				tag = RAJ
+			}
+			modifier = {
+				factor = 0.2
+				tag = NZL
+			}
+			modifier = {
+				add = 1
+				OR = {
+					has_capitulated = yes
+					has_war = yes
+				}
+			}
+		}
+		
+		hidden_effect = {
+			FROM = {
+				country_event = { id = tfv_australia.152 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.151
+	title = tfv_australia.151.t			# Any British Dominion Accepts
+	desc = tfv_australia.151.d	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.151.a
+		
+		add_to_variable = {
+			var = AST_num_countries_support
+			value = 1
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.152
+	title = tfv_australia.152.t			# Any British Dominion Denys
+	desc = tfv_australia.152.d	
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.152.a
+	}
+}
+
+#Australia challenges Britain
+country_event = {
+	id = tfv_australia.153
+	title = tfv_australia.153.t			#Event to dominions confirming them
+	desc = tfv_australia.153.d	
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.153.a          #We want independence
+		
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				OR = {
+					has_capitulated = yes
+					has_war = yes
+				}
+			}
+			modifier = {
+				factor = 0.5
+				tag = SAF
+				has_completed_focus = SAF_support_the_policy_of_appeasement
+			}
+			modifier = {
+				factor = 0.5
+				tag = RAJ
+				has_completed_focus = RAJ_indian_national_congress
+			}
+			modifier = {
+				factor = 0.5
+				tag = CAN
+				OR = {
+					has_completed_focus = CAN_strengthen_the_commonwealth_ties
+					has_completed_focus = CAN_permanent_joint_defense_board
+				}
+			}
+			modifier = {
+				factor = 0.5
+				tag = NZL
+				OR = {
+					has_completed_focus = NZL_strengthen_the_commonwealth
+					has_completed_focus = NZL_constitution_amendment_act
+				}
+			}
+		}
+		
+		clr_country_flag = AST_has_supported_australia
+		set_country_flag = AST_has_supported_australia_into_war
+		
+		hidden_effect = {
+			FROM = {
+				country_event = { id = tfv_australia.154 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.153.b               #Nah Fam
+		
+		ai_chance = {
+			base = 0
+			#Focuses
+			modifier = {
+				add = 50
+				tag = SAF
+				has_completed_focus = SAF_support_the_policy_of_appeasement
+			}
+			modifier = {
+				add = 50
+				tag = RAJ
+				has_completed_focus = RAJ_indian_national_congress
+			}
+			modifier = {
+				add = 50
+				tag = CAN
+				OR = {
+					has_completed_focus = CAN_strengthen_the_commonwealth_ties
+					has_completed_focus = CAN_permanent_joint_defense_board
+				}
+			}
+			modifier = {
+				add = 50
+				tag = NZL
+				OR = {
+					has_completed_focus = NZL_strengthen_the_commonwealth
+					has_completed_focus = NZL_constitution_amendment_act
+				}
+			}
+			modifier = {
+				add = 25
+				OR = {
+					has_capitulated = yes
+					has_war = yes
+				}
+			}
+		}
+		
+		clr_country_flag = AST_has_supported_australia
+		
+		hidden_effect = {
+			FROM = {
+				country_event = { id = tfv_australia.155 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.154
+	title = tfv_australia.154.t			# Any British Dominion Accepts
+	desc = tfv_australia.154.d	
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.154.a
+		
+		add_to_variable = {
+			var = AST_num_countries_for_war
+			value = 1
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.155
+	title = tfv_australia.155.t			# Any British Dominion Denys
+	desc = tfv_australia.155.d	
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.155.a
+		
+		add_to_variable = {
+			var = AST_num_countries_for_war
+			value = 1
+		}
+	}
+}
+
+#nobody wants to support Australia
+country_event = {
+	id = tfv_australia.156
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		every_country = {
+			limit = {
+				is_subject_of = ENG
+			}
+			NOT = {
+				has_country_flag = AST_has_supported_australia
+			}
+		}
+		check_variable = {
+			var = AST_num_countries_support
+			value = 0
+			compare = equals
+		}
+		AST = { has_country_flag = AST_has_rallied_support }
+	}
+	
+	immediate = {
+	#	AST = {
+	#		country_event = { id = tfv_australia.157 }
+	#	}
+	}
+	
+	option = {
+		name = tfv_australia.156.a
+	}
+}
+
+country_event = {
+	id = tfv_australia.157
+	title = tfv_australia.157.t			# nobody accepts
+	desc = tfv_australia.157.d	
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.157.a
+	}
+}
+
+#nobody wants to go to war with Australia
+country_event = {
+	id = tfv_australia.158
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		every_country = {
+			limit = {
+				is_subject_of = ENG
+			}
+			AND = {
+				NOT = { has_county_flag = AST_has_supported_australia_into_war }
+				NOT = { has_county_flag = AST_has_supported_australia }
+			}
+		}
+		check_variable = { AST_num_countries_support = AST_num_countries_for_war }
+		check_variable = {
+			var = AST_fire_control
+			value = 0
+			compare = not_equals
+		}
+	}
+	
+	immediate = {
+	#	AST = {
+	#		country_event = { id = tfv_australia.159 }
+	#	}
+	}
+	
+	option = {
+		name = tfv_australia.158.a
+	}
+}
+
+country_event = {
+	id = tfv_australia.159
+	title = tfv_australia.159.t			# nobody wants to go to war
+	desc = tfv_australia.159.d	
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.159.a
+	}
+}
+
+country_event = {
+	id = tfv_australia.160
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		any_country = {
+			is_subject_of = ENG
+			has_county_flag = AST_has_supported_australia_into_war
+		}
+		check_variable = { AST_num_countries_support = AST_num_countries_for_war }
+		check_variable = {
+			var = AST_fire_control
+			value = 0
+			compare = not_equals
+		}
+	}
+	
+	immediate = {
+		AST = {
+			country_event = { id = tfv_australia.161 }
+		}
+	}
+	
+	option = {
+		name = tfv_australia.160.a
+	}
+}
+
+country_event = {
+	id = tfv_australia.161
+	title = tfv_australia.161.t			# Send ultimatum to Britain
+	desc = tfv_australia.161.d	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.161.a
+		
+		ai_chance = {
+			base = 100
+			modifier = {
+				add = -66
+				check_variable = {
+					var = AST_num_countries_for_war
+					value = 1
+					compare = equals
+				}
+			}
+			modifier = {
+				add = -33
+				check_variable = {
+					var = AST_num_countries_for_war
+					value = 2
+					compare = equals
+				}
+			}
+		}
+		
+		every_country = {
+			limit = {
+				is_subject_of = ENG
+				has_country_flag = AST_has_supported_australia_into_war
+			}
+			custom_effect_tooltip = AST_supports_australia
+		}
+		
+		ENG = {
+			country_event = { id = tfv_australia.162 }
+		}
+	}
+	
+	option = {
+		name = tfv_australia.161.b
+		
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 66
+				check_variable = {
+					var = AST_num_countries_for_war
+					value = 1
+					compare = equals
+				}
+			}
+			modifier = {
+				add = 33
+				check_variable = {
+					var = AST_num_countries_for_war
+					value = 2
+					compare = equals
+				}
+			}
+		}
+		
+		every_country = {
+			limit = {
+				is_subject_of = ENG
+				has_country_flag = AST_has_supported_australia_into_war
+			}
+			country_event = { id = tfv_australia.173 }
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.162
+	title = tfv_australia.162.t			# Australia advocates independence for British colonies
+	desc = tfv_australia.162.d	
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.162.a
+		
+		ai_chance = {			#allow freedom
+			base = 50
+			modifier = {
+				add = 25
+				any_country = {
+					is_major = no
+					has_war_with = ENG
+				}
+			}
+			modifier = {
+				add = 25
+				ROOT = {
+					has_navy_size = {
+						size < 50
+					}
+				}
+			}
+			modifier = {
+				add = 25
+				check_variable = {
+					var = AST_num_countries_for_war
+					value = 1
+					compare = equals
+				}
+			}
+		}
+		
+		effect_tooltip = {
+			
+		}
+		
+		every_country = {
+			limit = {
+				is_subject_of = ROOT
+				has_country_flag = AST_has_supported_australia_into_war
+			}
+			custom_effect_tooltip = AST_supports_australia
+		}
+		
+		every_country = {
+			limit = {
+				is_subject_of = ROOT
+				has_country_flag = AST_has_supported_australia_into_war
+			}
+			country_event = { id = tfv_australia.163 }
+		}
+		
+		AST = {
+			country_event = { id = tfv_australia.164 }
+		}
+	}
+	
+	option = {
+		name = tfv_australia.162.b					#deny freedom
+		
+		ai_chance = {
+			base = 50
+			modifier = {
+				modifier = {
+					factor = 0
+					any_country = {
+						is_major = yes
+						has_war_with = ROOT
+					}
+				}
+				modifier = {
+					factor = 0
+					ROOT = {
+						has_navy_size = {
+							size < 25
+						}
+					}
+				}
+				modifier = {
+					add = -25
+					ROOT = {
+						has_navy_size = {
+							size < 50
+						}
+					}
+				}
+				modifier = {
+					add = -25
+					any_country = {
+						is_major = no
+						has_war_with = ROOT
+					}
+				}
+				modifier = {
+					add = -40
+					check_variable = {
+						var = AST_num_countries_for_war
+						value = 3
+						compare = greater_than
+					}
+				}
+				modifier = {
+					add = -30
+					check_variable = {
+						var = AST_num_countries_for_war
+						value = 3
+						compare = equals
+					}
+				}
+				modifier = {
+					add = -20
+					check_variable = {
+						var = AST_num_countries_for_war
+						value = 2
+						compare = equals
+					}
+				}
+			}
+		}
+		
+		AST = {
+			country_event = { id = tfv_australia.170 }
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.163
+	title = tfv_australia.163.t			# FREEEEEDOM
+	desc = tfv_australia.163.d	
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.163.a
+		
+		set_autonomy = {
+			target = ROOT
+			autonomy_state = autonomy_free
+		}
+		
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.2
+		}
+		
+		add_timed_idea = { 
+			idea = AST_australian_influence
+			days = 200
+		}
+		
+		give_guarantee = AST
+		
+		if = { 
+			limit = {
+				is_in_faction_with = ENG
+			}
+			leave_faction = yes
+		}
+		
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_war with = ROOT
+				}
+				white_peace = {
+					tag = ROOT
+				}
+			}
+			AST = {
+				diplomatic_relation = {
+					country = ROOT
+					relation = guarantee
+					active = yes
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = AST_australian_independence_movement
+				}
+			}
+			add_opinion_modifier = {
+				target = AST
+				modifier = AST_australian_independence_movement
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.164
+	title = tfv_australia.164.t			#WE did it BOIS
+	desc = tfv_australia.164.d	
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.164.a
+		custom_effect_tooltip = AST_guarantee_all_helped_subjects
+	}
+}
+
+country_event = {
+	id = tfv_australia.170
+	title = tfv_australia.170.t			#The United Kingdom has denied us
+	desc = tfv_australia.170.d	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.170.a				#Press on
+		ai_chance = {
+			base = 90
+		}
+		if = { 
+			limit = {
+				is_in_faction = no
+			}
+			create_faction = "south_west_pacific_initiative"
+		}
+		custom_effect_tooltip = AST_guarantee_all_helped_subjects
+		every_country = {
+			limit = {
+				is_subject_of = ENG
+				has_country_flag = AST_has_supported_australia_into_war
+			}
+			set_country_flag = AST_australia_has_freed_us
+			clr_country_flag = AST_has_supported_australia_into_war
+			country_event = { id = tfv_australia.171 }
+		}
+		ENG = {
+			country_event = { id = tfv_australia.172 }
+		}
+	}
+	
+	option = {
+		name = tfv_australia.170.b					#back off
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = -10
+				check_variable = {
+					var = AST_num_countries_for_war
+					value = 2
+					compare = greater_than
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				is_subject_of = ENG
+				has_country_flag = AST_has_supported_australia_into_war
+			}
+			country_event = { id = tfv_australia.173 }
+		}
+		ENG = {
+			country_event = { id = tfv_australia.174 }
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.171
+	title = tfv_australia.171.t			# FREEEEEDOM Maybe War
+	desc = tfv_australia.171.d	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.171.a
+		
+		set_autonomy = {
+			target = ROOT
+			autonomy_state = autonomy_free
+		}
+		
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.2
+		}
+		
+		add_timed_idea = { 
+			idea = AST_australian_influence
+			days = 200
+		}
+		
+		give_guarantee = AST
+		
+		if = { 
+			limit = {
+				is_in_faction_with = ENG
+			}
+			leave_faction = yes
+		}
+		
+		if = { 
+			limit = {
+				AST = { is_in_faction = yes }
+			}
+			AST = { add_to_faction = ROOT }
+		}
+		
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_war with = ROOT
+				}
+				white_peace = {
+					tag = ROOT
+				}
+			}
+			AST = {
+				diplomatic_relation = {
+					country = ROOT
+					relation = guarantee
+					active = yes
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = AST_australian_independence_movement
+				}
+			}
+			add_opinion_modifier = {
+				target = AST
+				modifier = AST_australian_independence_movement
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.172
+	title = tfv_australia.172.t			#British get word that Subjects have left them
+	desc = tfv_australia.172.d	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.172.a
+		
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 25
+				any_country = {
+					is_major = no
+					has_war_with = ENG
+				}
+			}
+			modifier = {
+				add = 25
+				check_variable = {
+					var = AST_num_countries_for_war
+					value = 1
+					compare = equals
+				}
+			}
+		}
+		custom_effect_tooltip = AST_wargoals_against_all_former_subjects
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = AST_australia_has_freed_us
+				}
+				country_event = { id = tfv_australia.175 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.172.a
+		
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				any_country = {
+					is_major = yes
+					has_war_with = ENG
+				}
+			}
+			modifier = {
+				factor = 0
+				ENG = {
+					has_navy_size = {
+						size < 50
+					}
+				}
+			}
+			modifier = {
+				add = -25
+				any_country = {
+					is_major = no
+					has_war_with = ENG
+				}
+			}
+			modifier = {
+				add = -40
+				check_variable = {
+					var = AST_num_countries_for_war
+					value = 3
+					compare = greater_than
+				}
+			}
+			modifier = {
+				add = -30
+				check_variable = {
+					var = AST_num_countries_for_war
+					value = 3
+					compare = equals
+				}
+			}
+			modifier = {
+				add = -20
+				check_variable = {
+					var = AST_num_countries_for_war
+					value = 2
+					compare = equals
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.173
+	title = tfv_australia.173.t			#Australia backs down to colonies
+	desc = tfv_australia.173.d	
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.173.a
+	}
+	
+	option = {
+		name = tfv_australia.173.b
+		add_opinion_modifier = {
+			target = AST
+			modifier = AST_australian_betrayal
+		}
+	}
+}
+
+country_event = {
+	id = tfv_australia.174
+	title = tfv_australia.174.t			#Australia backs down to Britian
+	desc = tfv_australia.174.d	
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_australia.174.a
+	}
+}
+
+country_event = {
+	id = tfv_australia.175               #Puppet war goals
+
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	immediate = {
+		ENG = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_australia.175.a
+	}
+}

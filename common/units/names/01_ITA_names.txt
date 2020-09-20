@@ -1,0 +1,50 @@
+﻿ITA = {
+	fascist_militia = {
+		prefix = ""
+		generic = { "Divisione CC.NN." }
+		generic_pattern = "UNIT_GENERIC_NAME_ITA"
+		unique = {}
+	}
+    fascist_infantry = {
+		prefix = ""
+		generic = { "Divisione CC.NN." }
+		generic_pattern = "UNIT_GENERIC_NAME_ITA"
+		unique = {}
+	}
+	fascist_cavalry = {
+		prefix = ""
+		generic = { "Divisione CC.NN. Celere" }
+		generic_pattern = "UNIT_GENERIC_NAME_ITA"
+		unique = {}
+	}
+	fascist_motorized = {
+		prefix = ""
+		generic = { "Divisione CC.NN. Celere" }
+		generic_pattern = "UNIT_GENERIC_NAME_ITA"
+		unique = {}
+	}
+	fascist_mechanized = {
+		prefix = ""
+		generic = { "Divisione CC.NN. Corazzata" }
+		generic_pattern = "UNIT_GENERIC_NAME_ITA"
+		unique = {}
+	}
+	fascist_light_armor = {
+		prefix = ""
+		generic = { "Divisione CC.NN. Corazzata" }
+		generic_pattern = "UNIT_GENERIC_NAME_ITA"
+		unique = {}
+	}
+	fascist_medium_armor = {
+		prefix = ""
+		generic = { "Divisione CC.NN. Corazzata" }
+		generic_pattern = "UNIT_GENERIC_NAME_ITA"
+		unique = {}
+	}
+	fascist_heavy_armor = {
+		prefix = ""
+		generic = { "Divisione CC.NN. Corazzata" }
+		generic_pattern = "UNIT_GENERIC_NAME_ITA"
+		unique = {}
+	}
+}

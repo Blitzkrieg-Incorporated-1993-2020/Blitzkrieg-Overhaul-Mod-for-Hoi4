@@ -1,0 +1,3455 @@
+###########################
+# Confederate Focuses
+###########################
+
+#needswork
+
+focus_tree = {
+	id = csa_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 20
+			original_tag = CSA
+		}
+	}
+	
+	default = no
+	
+	focus = {
+		id = CSA_Develop_Military_Industry
+		icon = GFX_goal_generic_demand_territory
+		x = 3
+		y = 0
+		cost = 5
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_political_power = 150
+			364 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Establish_Birmingham_Armory
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Develop_Military_Industry }
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			#has_war = yes
+		}
+		bypass = {
+			#has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			367 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}	
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Expand_Birmingham_Iron_Works
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Establish_Birmingham_Armory }
+		x = 1
+		y = 2
+		cost = 15
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_resource = { type = steel amount = 60 state = 367 }
+			367 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}	
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Develop_Birmingham
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Expand_Birmingham_Iron_Works }
+		x = 0
+		y = 3
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			367 = {
+				add_extra_state_shared_building_slots = 10
+			}
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = CSA_Develop_the_Appalachian_Region
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Develop_Birmingham }
+		x = 0
+		y = 4
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			362 = {
+				add_extra_state_shared_building_slots = 7
+			}
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = CSA_Expand_Augusta_Arsenal
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Develop_Military_Industry }
+		x = 3
+		y = 1
+		cost = 5
+		available = {
+			#has_war = yes
+		}
+		bypass = {
+			#has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			365 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}	
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Confederate_Military_Arsenals_Throughout_the_South
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Expand_Augusta_Arsenal }
+		x = 3
+		y = 2
+		cost = 15
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			371 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}	
+			}
+			363 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}	
+			}
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = CSA_Establish_Tredegar_Ironworks
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Expand_Birmingham_Iron_Works }
+		prerequisite = { focus = CSA_Confederate_Military_Arsenals_Throughout_the_South }
+		x = 2
+		y = 3
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = csa_tredegar_ironworks
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Establish_Atlanta_Arsenal
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Establish_Tredegar_Ironworks }
+		x = 2
+		y = 4
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = csa_atlanta_arsenal
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = CSA_Expand_Newport_News_Drydocks
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Develop_Military_Industry }
+		x = 5
+		y = 1
+		cost = 5
+		available = {
+			#has_war = yes
+		}
+		bypass = {
+			#has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Cuban_Chromium
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Expand_Newport_News_Drydocks }
+		x = 5
+		y = 2
+		cost = 10
+		available = {
+			OR = {
+				controls_state = 315
+				CUB = { is_puppet_of = CSA }
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_resource = { type = chromium amount = 90 state = 315 }
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_New_Orleans_Dockyard
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Cuban_Chromium }
+		prerequisite = { focus = CSA_Confederate_Military_Arsenals_Throughout_the_South }
+		x = 4
+		y = 3
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = csa_new_orleans_dockyard_co
+			
+			371 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Mobile_Dockyard
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_New_Orleans_Dockyard }
+		x = 4
+		y = 4
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = csa_mobile_dockyard_co
+			
+			367 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Houston_Dockyard
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Mobile_Dockyard }
+		x = 4
+		y = 5
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = csa_houston_dockyard_co
+			
+			375 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = CSA_Establish_the_Confederate_General_Staff
+		icon = GFX_goal_generic_demand_territory
+		x = 10
+		y = 0
+		cost = 10
+		available = {
+			OR = {
+				has_war = yes
+				date > 1937.1.1
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_ideas = csa_general_staff
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Motorized_Artillery_Brigades
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = CSA_Establish_the_Confederate_General_Staff }
+		x = 15
+		y = 1
+		cost = 10
+		available = {
+			has_government = democratic
+			has_tech = mechanised_infantry
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		completion_reward = {
+			set_technology = { usa_tech_motorized_artillery_units = 1 }
+				
+		}
+					
+	}
+
+	
+	focus = {
+		id = CSA_Tank_Destroyer_Doctrine
+		icon = GFX_focus_generic_army_tanks2
+		prerequisite = { focus = CSA_Motorized_Artillery_Brigades }
+		x = 15
+		y = 2
+		cost = 10
+		available = {
+			has_government = democratic
+		}
+		ai_will_do = {
+			factor = 15
+		}	
+		completion_reward = {
+			set_technology = { usa_tech_support_tank_destroyer_units = 1 }
+				
+		}
+					
+	}
+	
+	focus = {
+		id = CSA_Establish_Lee_Motor_Company
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Establish_the_Confederate_General_Staff }
+		x = 10
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = csa_lee_motor_company
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Embrace_the_Cavalry
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Establish_the_Confederate_General_Staff }
+		x = 8
+		y = 1
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.8
+				uses = 1
+				category = cat_mobile_warfare 
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Influence_of_Hart_and_Guderian
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Embrace_the_Cavalry }
+		x = 8
+		y = 2
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.65
+				uses = 2
+				category = cat_mobile_warfare 
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Study_the_Mongol_Campaigns
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Influence_of_Hart_and_Guderian }
+		x = 7
+		y = 3
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			set_technology = { usa_tech_tsubodai_campaigns = 1 }
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Mechanization_of_the_Confederate_Armed_Forces
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Study_the_Mongol_Campaigns }
+		x = 7
+		y = 4
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = mechanised_infantry 
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = mechanised_infantry2 
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = mechanised_infantry3
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Establish_Forrest_Halftrack_Arsenal
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Mechanization_of_the_Confederate_Armed_Forces }
+		x = 7
+		y = 5
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = csa_forrest_halftrack_arsenal
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Permit_German_Armored_Experimentation
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Influence_of_Hart_and_Guderian }
+		x = 9
+		y = 3
+		cost = 10
+		available = {
+			has_completed_focus = CSA_Inroads_with_Germany
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			GER = { army_experience = 45 }
+			army_experience = 45
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = basic_light_tank  
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = improved_light_tank  
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Establish_a_Confederate_Armored_Force
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Permit_German_Armored_Experimentation }
+		x = 9
+		y = 4
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				technology = advanced_light_tank  
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				technology = basic_medium_tank  
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				technology = improved_medium_tank   
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Establish_Stuart_Tank_Arsenal
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Establish_a_Confederate_Armored_Force }
+		x = 9
+		y = 5
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = csa_stuart_tank_arsenal
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = CSA_Expand_Virginia_Military_Institute
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Establish_the_Confederate_General_Staff }
+		x = 12
+		y = 1
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			swap_ideas = { 
+				remove_idea = csa_general_staff
+				add_idea = csa_general_staff2
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Create_a_Confederate_Naval_Academy
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Expand_Virginia_Military_Institute }
+		x = 11
+		y = 2
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			remove_ideas = usa_attachment_to_battleships
+		
+			if = {
+				limit = { has_idea = csa_general_staff2 }
+				swap_ideas = { 
+					remove_idea = csa_general_staff2
+					add_idea = csa_general_staff4
+				}
+			
+			}
+			
+			if = {
+				limit = { has_idea = csa_general_staff3 }
+				swap_ideas = { 
+					remove_idea = csa_general_staff3
+					add_idea = csa_general_staff5
+				}
+			
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Confederate_Proving_Grounds
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Create_a_Confederate_Naval_Academy }
+		x = 11
+		y = 3
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Birth_of_an_Airforce
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Confederate_Proving_Grounds }
+		x = 11
+		y = 4
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				technology = strategic_bomber1    
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				technology = fighter1   
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				technology = fighter2   
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				technology = CAS2   
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				technology = naval_bomber2   
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				technology = tactical_bomber2    
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Establish_Atlanta_Aircraft_Corporation
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Birth_of_an_Airforce }
+		x = 11
+		y = 5
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = csa_atlanta_aircraft_corporation
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Establish_Jackson_Aircraft_Corporation
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Birth_of_an_Airforce }
+		x = 13
+		y = 5
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = csa_jackson_aircraft_corporation
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Establish_Hill_Aircraft_Corporation
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Establish_Atlanta_Aircraft_Corporation }
+		prerequisite = { focus = CSA_Establish_Jackson_Aircraft_Corporation }
+		x = 11
+		y = 6
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = csa_hill_aircraft_corporation
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Establish_Piper_Aircraft_Corporation
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Establish_Hill_Aircraft_Corporation }
+		x = 11
+		y = 7
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = csa_piper_aircraft_corporation
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = CSA_Create_the_Confederate_Military_Tradition
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Expand_Virginia_Military_Institute }
+		x = 13
+		y = 2
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			swap_ideas = { 
+				remove_idea = csa_the_southern_fighting_man
+				add_idea = csa_the_southern_fighting_man2
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_The_Deification_of_Lee_and_Jackson
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Create_the_Confederate_Military_Tradition }
+		x = 13
+		y = 3
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = csa_general_staff2 }
+				swap_ideas = { 
+					remove_idea = csa_general_staff2
+					add_idea = csa_general_staff3
+				}
+			
+			}
+			
+			if = {
+				limit = { has_idea = csa_general_staff4 }
+				swap_ideas = { 
+					remove_idea = csa_general_staff4
+					add_idea = csa_general_staff5
+				}
+			
+			}
+		}
+			
+			
+	}
+
+	focus = {
+		id = CSA_Expand_Military_Training_Opportunities
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_The_Deification_of_Lee_and_Jackson }
+		x = 13
+		y = 4
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			swap_ideas = { 
+				remove_idea = csa_the_southern_fighting_man2
+				add_idea = csa_the_southern_fighting_man3
+			}
+		}
+			
+			
+	}
+	
+	
+	
+	
+	
+	focus = {
+		id = CSA_Draft_a_Constitution
+		icon = GFX_goal_generic_demand_territory
+		#x = 17
+		x = 28
+		y = 0
+		cost = 25
+		available = {
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_ideas = csa_confederate_constitution
+		}
+		
+		
+	}
+	
+	focus = {
+		id = CSA_Confederate_Bill_of_Rights
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Draft_a_Constitution }
+		mutually_exclusive = { focus = CSA_Embedded_within_the_Constitution }
+		x = 27
+		y = 1
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_ideas = csa_bill_of_rights
+			remove_ideas = usa_bill_of_rights
+		}
+		
+	}
+	
+	focus = {
+		id = CSA_Embedded_within_the_Constitution
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Draft_a_Constitution }
+		mutually_exclusive = { focus = CSA_Confederate_Bill_of_Rights }
+		x = 29
+		y = 1
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = csa_confederate_constitution
+				add_idea = csa_confederate_constitution2
+			}
+			remove_ideas = usa_bill_of_rights
+		}
+		
+	}
+	
+	focus = {
+		id = CSA_Establish_Foreign_Relations
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Embedded_within_the_Constitution focus = CSA_Confederate_Bill_of_Rights }
+		x = 21
+		y = 2
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Inroads_with_the_UK
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Establish_Foreign_Relations }
+		x = 20
+		y = 3
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			ENG = {
+				add_opinion_modifier = { target = CSA modifier = cs_british_cooperation }
+			}
+			CSA = {
+				add_opinion_modifier = { target = ENG modifier = cs_british_cooperation }
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Purchase_Barbados
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Inroads_with_the_UK }
+		x = 19
+		y = 4
+		cost = 10
+		available = {
+			NOT = { owns_state = 689 }
+			NOT = { owns_state = 690 }
+			NOT = { owns_state = 693 }
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			transfer_state = 689
+			transfer_state = 690
+			transfer_state = 693
+			
+			ENG = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}							
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}							
+				}
+			}
+			
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			
+		}
+		
+	}
+	
+	focus = {
+		id = CSA_Secure_Cuban_Chromium
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Inroads_with_the_UK }
+		x = 17
+		y = 4
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = CUB
+			}
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Puppet_Cuba
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Secure_Cuban_Chromium }
+		prerequisite = { focus = CSA_Purchase_Barbados }
+		x = 16
+		y = 5
+		cost = 10
+		available = {
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		bypass = {
+			CUB = { is_puppet_of = CSA }
+		}
+		
+		completion_reward = {
+			puppet = CUB
+			add_resource = { type = chromium amount = 40 state = 315 }
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Lock_on_the_Carribean
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Secure_Cuban_Chromium }
+		prerequisite = { focus = CSA_Purchase_Barbados }
+		x = 18
+		y = 5
+		cost = 15
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		bypass = {
+			NOT = { owns_state = 318 }
+			NOT = { owns_state = 319 }
+		}
+		completion_reward = {
+			transfer_state = 318
+			transfer_state = 319
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Secure_Panama
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Puppet_Cuba }
+		x = 16
+		y = 6
+		cost = 15
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		bypass = {
+			NOT = { owns_state = 304 }
+		}
+		completion_reward = {
+			transfer_state = 304
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Puppet_Central_America
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Secure_Panama }
+		x = 14
+		y = 7
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		bypass = {
+			NOT = { owns_state = 316 }
+			NOT = { owns_state = 317 }
+		}
+		completion_reward = {
+			transfer_state = 316
+			transfer_state = 317
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Amphibious_Exercises
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Secure_Panama }
+		prerequisite = { focus = CSA_Secure_Guatemala focus = CSA_Secure_the_Mexican_Borders }
+		x = 16
+		y = 7
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.6
+				uses = 2
+				category = tp_tech 
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Secure_Guatemala
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Lock_on_the_Carribean }
+		mutually_exclusive = { focus = CSA_Secure_the_Mexican_Borders }
+		x = 18
+		y = 6
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		bypass = {
+			NOT = { owns_state = 313 }
+		}
+		completion_reward = {
+			transfer_state = 313
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = CSA_Secure_the_Mexican_Borders
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Request_British_Loans }
+		mutually_exclusive = { focus = CSA_Secure_Guatemala }
+		x = 20
+		y = 6
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		bypass = {
+			NOT = { owns_state = 311 }
+		}
+		completion_reward = {
+			transfer_state = 311
+			
+			ENG = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}							
+				}
+			}
+			
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}				
+			}
+		}
+		
+	}
+	
+	focus = {
+		id = CSA_Puppet_Mexico
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Secure_Guatemala focus = CSA_Secure_the_Mexican_Borders }
+		x = 18
+		y = 7
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = MEX
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Eliminate_the_Competition
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Puppet_Mexico }
+		prerequisite = { focus = CSA_Amphibious_Exercises }
+		prerequisite = { focus = CSA_Puppet_Central_America }
+		x = 15
+		y = 8
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Demand_Columbian_Submission
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Puppet_Mexico }
+		prerequisite = { focus = CSA_Amphibious_Exercises }
+		prerequisite = { focus = CSA_Puppet_Central_America }
+		x = 17
+		y = 8
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Demand_South_American_Fealty
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Eliminate_the_Competition }
+		prerequisite = { focus = CSA_Demand_Columbian_Submission }
+		x = 15
+		y = 9
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	
+	
+	#focus = {
+	#	id = CSA_Assume_Central_and_South_American_Monroe_Obligations
+	#	icon = GFX_goal_generic_demand_territory
+	#	prerequisite = { focus = CSA_Inroads_with_Germany focus = CSA_Inroads_with_the_UK }
+	#	x = 21
+	#	y = 4
+	#	cost = 10
+	#	available = {
+	#	}
+	#	ai_will_do = {
+	#		factor = 10
+	#	}	
+	#	
+	#	completion_reward = {
+	#		every_other_country = {
+	#			limit = { 
+	#				has_country_flag = monroe_doctrine 
+	#				has_government = democratic
+	#			}
+	#			add_ideas = american_protection_defence_democratic
+	#		}
+	#		every_other_country = {
+	#			limit = { 
+	#				has_country_flag = monroe_doctrine 
+	#				NOT = { has_government = democratic }
+	#			}
+	#			add_ideas = american_protection_drift_democratic
+	#			country_event = { id = usa.23 }
+	#		}
+	#		custom_effect_tooltip = USA_pax_americana_tt
+	#	}
+	#		
+	#		
+	#}
+	
+	focus = {
+		id = CSA_Request_British_Loans
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Purchase_Barbados }
+		#prerequisite = { focus = CSA_Assume_Central_and_South_American_Monroe_Obligations }
+		mutually_exclusive = { focus = CSA_Accept_German_Oil_Investments }
+		x = 20
+		y = 5
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = csa_loans1
+				days = 730
+			}
+			ENG = {
+				add_timed_idea = {
+					idea = csa_loans2
+					days = 730
+				}
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Naval_Cooperation
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Secure_the_Mexican_Borders }
+		x = 20
+		y = 7
+		cost = 20
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine 
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = dd_tech 
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cl_tech 
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = ca_tech 
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = bc_tech 
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = bb_tech 
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cv_tech 
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = ss_tech 
+			}
+			navy_experience = 240
+			ENG = { 
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = naval_doctrine 
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = dd_tech 
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = cl_tech 
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = ca_tech 
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = bc_tech 
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = bb_tech 
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = cv_tech 
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = ss_tech 
+				}
+				navy_experience = 240 
+			}
+		} 
+		
+	}
+	
+	focus = {
+		id = CSA_A_Mutually_Beneficial_Arrangement
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Naval_Cooperation }
+		x = 20
+		y = 8
+		cost = 20
+		available = {
+			ENG = { is_faction_leader = yes }
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_ideas = csa_commonwealth_trading_sphere
+			ENG = { add_ideas = csa_commonwealth_trading_sphere }
+			every_other_country = {
+				limit = { is_puppet_of = ENG }
+				add_ideas = csa_commonwealth_trading_sphere
+			}
+			ENG = {
+				add_to_faction = CSA
+			}
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = CSA_French_Tit_for_Tat
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_A_Mutually_Beneficial_Arrangement focus = CSA_Anti_Communist_Partners }
+		x = 20
+		y = 9
+		cost = 10
+		available = {
+			NOT = { has_war_with = FRA }
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = CSA_African_Purchase
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_A_Mutually_Beneficial_Arrangement }
+		x = 18
+		y = 9
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = CSA_The_Confederate_Dominion_of_North_America
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_African_Purchase }
+		prerequisite = { focus = CSA_French_Tit_for_Tat }
+		x = 19
+		y = 10
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = CSA_The_Aresenal_of_Democracy
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_The_Confederate_Dominion_of_North_America }
+		x = 18
+		y = 11
+		cost = 10
+		available = {
+			has_war_with = GER
+			has_war_with = JAP
+			has_war_with = SOV
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	
+	focus = {
+		id = CSA_The_Makings_of_a_Great_Power
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Expand_Military_Facilities focus = CSA_The_Confederate_Dominion_of_North_America }
+		#prerequisite = { focus = CSA_A_Mutually_Beneficial_Arrangement focus = CSA_Anti_Communist_Partners }
+		x = 21
+		y = 11
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = CSA_Accept_German_Oil_Investments
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Trade_Ties }
+		#prerequisite = { focus = CSA_Assume_Central_and_South_American_Monroe_Obligations }
+		mutually_exclusive = { focus = CSA_Request_British_Loans }
+		x = 22
+		y = 5
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = { 
+			CSA = { add_opinion_modifier = { target = GER modifier = confederate_oil_investment }  }
+			GER = { add_opinion_modifier = { target = CSA modifier = ger_confederate_oil_investment }  }
+			add_ideas = csa_german_oil_money
+		}
+	}
+	
+	focus = {
+		id = CSA_Encourage_German_Subsidiaries
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Accept_German_Oil_Investments }
+		mutually_exclusive = { focus = CSA_Made_in_the_CSA }
+		x = 22
+		y = 6
+		cost = 15
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			#German Focus Rework
+			add_ideas = csa_german_subsidiaries
+		}
+	}
+	
+	focus = {
+		id = CSA_Made_in_the_CSA
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_A_New_Economic_System }
+		prerequisite = { focus = CSA_Build_Federal_Highways }
+		mutually_exclusive = { focus = CSA_Encourage_German_Subsidiaries }
+		x = 25
+		y = 6
+		cost = 15
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_ideas = csa_made_in_the_csa_idea
+		}
+	}
+	
+	focus = {
+		id = CSA_German_Military_Cooperation
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Encourage_German_Subsidiaries }
+		x = 22
+		y = 7
+		cost = 15
+		available = {
+			NOT = { GER = { has_war = yes } }
+			NOT = { has_war = yes } 
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_mobile_warfare 
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_mechanized_equipment 
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = armor 
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_weapons 
+			}
+			army_experience = 75
+			
+			GER = {
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = cat_mobile_warfare 
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = cat_mechanized_equipment 
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = armor 
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 2
+					category = infantry_weapons 
+				}
+				army_experience = 75
+			}
+		}
+	}
+	
+	focus = {
+		id = CSA_Anti_Communist_Partners
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_German_Military_Cooperation }
+		x = 22
+		y = 8
+		cost = 10
+		available = {
+			NOT = { 
+				has_government = communism
+				GER = { has_government = communism } 
+				GER = { has_war = yes }
+			}
+			ACO = { has_government = communism }
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = CSA_Inroads_with_Germany
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Establish_Foreign_Relations }
+		x = 22
+		y = 3
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Trade_Ties
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Inroads_with_Germany }
+		x = 22
+		y = 4
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Portugese_Tit_for_Tat
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Anti_Communist_Partners focus = CSA_A_Mutually_Beneficial_Arrangement }
+		x = 22
+		y = 9
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Atlantic_Purchase
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Anti_Communist_Partners }
+		#prerequisite = { focus = CSA_Portugese_Tit_for_Tat }
+		x = 24
+		y = 9
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Expand_Military_Facilities
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Atlantic_Purchase }
+		prerequisite = { focus = CSA_Portugese_Tit_for_Tat }
+		x = 23
+		y = 10
+		cost = 20
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = CSA_Preemptive_Strike
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Expand_Military_Facilities }
+		#prerequisite = { focus = CSA_German_Military_Cooperation }
+		x = 24
+		y = 11
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+			
+			
+	}
+	
+	
+	focus = {
+		id = CSA_Centralized_Confederate_Government
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Embedded_within_the_Constitution focus = CSA_Confederate_Bill_of_Rights }
+		x = 28
+		y = 2
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_ideas = USA_government_spending_level_ii
+		}
+		
+	}
+	
+	focus = {
+		id = CSA_Fair_Trade_Act
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Centralized_Confederate_Government }
+		x = 25
+		y = 3
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			USA_government_spending_level_level_down = yes
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Public_Utilities_Act
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Fair_Trade_Act }
+		prerequisite = { focus = CSA_Public_Health_Act }
+		x = 26
+		y = 4
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			USA_government_spending_level_level_up = yes
+			
+			if = {
+				limit = { 
+					NOT = { has_idea = usa_improved_standard_of_living_i }
+				    NOT = { has_idea = usa_improved_standard_of_living_ii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iv } 
+					NOT = { has_idea = usa_improved_standard_of_living_v } 
+					NOT = { has_idea = usa_improved_standard_of_living_vi } 
+					NOT = { has_idea = usa_improved_standard_of_living_vii } 
+					NOT = { has_idea = usa_improved_standard_of_living_viii } 
+					NOT = { has_idea = usa_improved_standard_of_living_ix } 
+					NOT = { has_idea = usa_improved_standard_of_living_x } 
+				}
+				add_ideas = usa_improved_standard_of_living_i
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_i }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_i
+					add_idea = usa_improved_standard_of_living_ii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ii
+					add_idea = usa_improved_standard_of_living_iii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iii
+					add_idea = usa_improved_standard_of_living_iv
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iv }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iv
+					add_idea = usa_improved_standard_of_living_v
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_v }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_v
+					add_idea = usa_improved_standard_of_living_vi
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vi }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vi
+					add_idea = usa_improved_standard_of_living_vii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vii
+					add_idea = usa_improved_standard_of_living_viii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_viii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_viii
+					add_idea = usa_improved_standard_of_living_ix
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ix }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ix
+					add_idea = usa_improved_standard_of_living_x
+				}
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Build_Federal_Highways
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Public_Utilities_Act }
+		x = 24
+		y = 5
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			USA_government_spending_level_level_up = yes
+			
+			
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}							
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}							
+			}
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_A_New_Economic_System
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Public_Utilities_Act }
+		prerequisite = { focus = CSA_Public_Education_Act }
+		x = 26
+		y = 5
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_ideas = civilian_economy
+			
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Veteran_Care_Act
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Public_Utilities_Act }
+		prerequisite = { focus = CSA_Public_Education_Act }
+		x = 27
+		y = 6
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			USA_government_spending_level_level_up = yes
+			
+			if = {
+				limit = { 
+					NOT = { has_idea = usa_improved_standard_of_living_i }
+				    NOT = { has_idea = usa_improved_standard_of_living_ii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iv } 
+					NOT = { has_idea = usa_improved_standard_of_living_v } 
+					NOT = { has_idea = usa_improved_standard_of_living_vi } 
+					NOT = { has_idea = usa_improved_standard_of_living_vii } 
+					NOT = { has_idea = usa_improved_standard_of_living_viii } 
+					NOT = { has_idea = usa_improved_standard_of_living_ix } 
+					NOT = { has_idea = usa_improved_standard_of_living_x } 
+				}
+				add_ideas = usa_improved_standard_of_living_i
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_i }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_i
+					add_idea = usa_improved_standard_of_living_ii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ii
+					add_idea = usa_improved_standard_of_living_iii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iii
+					add_idea = usa_improved_standard_of_living_iv
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iv }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iv
+					add_idea = usa_improved_standard_of_living_v
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_v }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_v
+					add_idea = usa_improved_standard_of_living_vi
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vi }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vi
+					add_idea = usa_improved_standard_of_living_vii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vii
+					add_idea = usa_improved_standard_of_living_viii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_viii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_viii
+					add_idea = usa_improved_standard_of_living_ix
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ix }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ix
+					add_idea = usa_improved_standard_of_living_x
+				}
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Public_Health_Act
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Centralized_Confederate_Government }
+		x = 27
+		y = 3
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			USA_government_spending_level_level_up = yes
+			
+			if = {
+				limit = { 
+					NOT = { has_idea = usa_improved_standard_of_living_i }
+				    NOT = { has_idea = usa_improved_standard_of_living_ii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iv } 
+					NOT = { has_idea = usa_improved_standard_of_living_v } 
+					NOT = { has_idea = usa_improved_standard_of_living_vi } 
+					NOT = { has_idea = usa_improved_standard_of_living_vii } 
+					NOT = { has_idea = usa_improved_standard_of_living_viii } 
+					NOT = { has_idea = usa_improved_standard_of_living_ix } 
+					NOT = { has_idea = usa_improved_standard_of_living_x } 
+				}
+				add_ideas = usa_improved_standard_of_living_i
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_i }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_i
+					add_idea = usa_improved_standard_of_living_ii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ii
+					add_idea = usa_improved_standard_of_living_iii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iii
+					add_idea = usa_improved_standard_of_living_iv
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iv }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iv
+					add_idea = usa_improved_standard_of_living_v
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_v }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_v
+					add_idea = usa_improved_standard_of_living_vi
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vi }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vi
+					add_idea = usa_improved_standard_of_living_vii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vii
+					add_idea = usa_improved_standard_of_living_viii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_viii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_viii
+					add_idea = usa_improved_standard_of_living_ix
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ix }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ix
+					add_idea = usa_improved_standard_of_living_x
+				}
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Public_Education_Act
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Public_Health_Act }
+		prerequisite = { focus = CSA_Wage_Act }
+		x = 28
+		y = 4
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			USA_government_spending_level_level_up = yes
+			
+			if = {
+				limit = { 
+					NOT = { has_idea = usa_improved_standard_of_living_i }
+				    NOT = { has_idea = usa_improved_standard_of_living_ii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iv } 
+					NOT = { has_idea = usa_improved_standard_of_living_v } 
+					NOT = { has_idea = usa_improved_standard_of_living_vi } 
+					NOT = { has_idea = usa_improved_standard_of_living_vii } 
+					NOT = { has_idea = usa_improved_standard_of_living_viii } 
+					NOT = { has_idea = usa_improved_standard_of_living_ix } 
+					NOT = { has_idea = usa_improved_standard_of_living_x } 
+				}
+				add_ideas = usa_improved_standard_of_living_i
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_i }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_i
+					add_idea = usa_improved_standard_of_living_ii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ii
+					add_idea = usa_improved_standard_of_living_iii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iii
+					add_idea = usa_improved_standard_of_living_iv
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iv }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iv
+					add_idea = usa_improved_standard_of_living_v
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_v }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_v
+					add_idea = usa_improved_standard_of_living_vi
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vi }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vi
+					add_idea = usa_improved_standard_of_living_vii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vii
+					add_idea = usa_improved_standard_of_living_viii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_viii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_viii
+					add_idea = usa_improved_standard_of_living_ix
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ix }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ix
+					add_idea = usa_improved_standard_of_living_x
+				}
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Fully_Subsidized_Universities
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Public_Education_Act }
+		x = 28
+		y = 5
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_research_slot = 2
+			USA_government_spending_level_level_up = yes
+			
+			if = {
+				limit = { 
+					NOT = { has_idea = usa_improved_standard_of_living_i }
+				    NOT = { has_idea = usa_improved_standard_of_living_ii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iv } 
+					NOT = { has_idea = usa_improved_standard_of_living_v } 
+					NOT = { has_idea = usa_improved_standard_of_living_vi } 
+					NOT = { has_idea = usa_improved_standard_of_living_vii } 
+					NOT = { has_idea = usa_improved_standard_of_living_viii } 
+					NOT = { has_idea = usa_improved_standard_of_living_ix } 
+					NOT = { has_idea = usa_improved_standard_of_living_x } 
+				}
+				add_ideas = usa_improved_standard_of_living_i
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_i }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_i
+					add_idea = usa_improved_standard_of_living_ii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ii
+					add_idea = usa_improved_standard_of_living_iii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iii
+					add_idea = usa_improved_standard_of_living_iv
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iv }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iv
+					add_idea = usa_improved_standard_of_living_v
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_v }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_v
+					add_idea = usa_improved_standard_of_living_vi
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vi }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vi
+					add_idea = usa_improved_standard_of_living_vii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vii
+					add_idea = usa_improved_standard_of_living_viii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_viii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_viii
+					add_idea = usa_improved_standard_of_living_ix
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ix }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ix
+					add_idea = usa_improved_standard_of_living_x
+				}
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Wage_Act
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Centralized_Confederate_Government }
+		x = 29
+		y = 3
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = { 
+					NOT = { has_idea = usa_improved_standard_of_living_i }
+				    NOT = { has_idea = usa_improved_standard_of_living_ii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iv } 
+					NOT = { has_idea = usa_improved_standard_of_living_v } 
+					NOT = { has_idea = usa_improved_standard_of_living_vi } 
+					NOT = { has_idea = usa_improved_standard_of_living_vii } 
+					NOT = { has_idea = usa_improved_standard_of_living_viii } 
+					NOT = { has_idea = usa_improved_standard_of_living_ix } 
+					NOT = { has_idea = usa_improved_standard_of_living_x } 
+				}
+				add_ideas = usa_improved_standard_of_living_i
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_i }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_i
+					add_idea = usa_improved_standard_of_living_ii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ii
+					add_idea = usa_improved_standard_of_living_iii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iii
+					add_idea = usa_improved_standard_of_living_iv
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iv }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iv
+					add_idea = usa_improved_standard_of_living_v
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_v }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_v
+					add_idea = usa_improved_standard_of_living_vi
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vi }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vi
+					add_idea = usa_improved_standard_of_living_vii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vii
+					add_idea = usa_improved_standard_of_living_viii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_viii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_viii
+					add_idea = usa_improved_standard_of_living_ix
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ix }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ix
+					add_idea = usa_improved_standard_of_living_x
+				}
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Labor_Act
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Wage_Act }
+		prerequisite = { focus = CSA_Church_Act }
+		x = 30
+		y = 4
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = { 
+					NOT = { has_idea = usa_improved_standard_of_living_i }
+				    NOT = { has_idea = usa_improved_standard_of_living_ii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iv } 
+					NOT = { has_idea = usa_improved_standard_of_living_v } 
+					NOT = { has_idea = usa_improved_standard_of_living_vi } 
+					NOT = { has_idea = usa_improved_standard_of_living_vii } 
+					NOT = { has_idea = usa_improved_standard_of_living_viii } 
+					NOT = { has_idea = usa_improved_standard_of_living_ix } 
+					NOT = { has_idea = usa_improved_standard_of_living_x } 
+				}
+				add_ideas = usa_improved_standard_of_living_i
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_i }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_i
+					add_idea = usa_improved_standard_of_living_ii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ii
+					add_idea = usa_improved_standard_of_living_iii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iii
+					add_idea = usa_improved_standard_of_living_iv
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iv }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iv
+					add_idea = usa_improved_standard_of_living_v
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_v }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_v
+					add_idea = usa_improved_standard_of_living_vi
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vi }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vi
+					add_idea = usa_improved_standard_of_living_vii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vii
+					add_idea = usa_improved_standard_of_living_viii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_viii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_viii
+					add_idea = usa_improved_standard_of_living_ix
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ix }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ix
+					add_idea = usa_improved_standard_of_living_x
+				}
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Establish_Federal_Grants
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Labor_Act }
+		x = 30
+		y = 5
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = csa_rural_society
+				add_idea = csa_rural_society2
+			}
+			USA_government_spending_level_level_up = yes
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Church_Act
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Centralized_Confederate_Government }
+		x = 31
+		y = 3
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_political_power = 200
+			#moral society idea and stage 2 buff
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Fundamental_Rights
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Labor_Act }
+		prerequisite = { focus = CSA_Public_Education_Act }
+		x = 29
+		y = 6
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = { 
+					NOT = { has_idea = usa_improved_standard_of_living_i }
+				    NOT = { has_idea = usa_improved_standard_of_living_ii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iv } 
+					NOT = { has_idea = usa_improved_standard_of_living_v } 
+					NOT = { has_idea = usa_improved_standard_of_living_vi } 
+					NOT = { has_idea = usa_improved_standard_of_living_vii } 
+					NOT = { has_idea = usa_improved_standard_of_living_viii } 
+					NOT = { has_idea = usa_improved_standard_of_living_ix } 
+					NOT = { has_idea = usa_improved_standard_of_living_x } 
+				}
+				add_ideas = usa_improved_standard_of_living_i
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_i }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_i
+					add_idea = usa_improved_standard_of_living_ii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ii
+					add_idea = usa_improved_standard_of_living_iii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iii
+					add_idea = usa_improved_standard_of_living_iv
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iv }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iv
+					add_idea = usa_improved_standard_of_living_v
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_v }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_v
+					add_idea = usa_improved_standard_of_living_vi
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vi }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vi
+					add_idea = usa_improved_standard_of_living_vii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vii
+					add_idea = usa_improved_standard_of_living_viii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_viii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_viii
+					add_idea = usa_improved_standard_of_living_ix
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ix }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ix
+					add_idea = usa_improved_standard_of_living_x
+				}
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Education_Initiative
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Veteran_Care_Act }
+		prerequisite = { focus = CSA_Fully_Subsidized_Universities }
+		prerequisite = { focus = CSA_Fundamental_Rights }
+		x = 28
+		y = 7
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_research_slot = 1
+			if = {
+				limit = { 
+					NOT = { has_idea = usa_improved_standard_of_living_i }
+				    NOT = { has_idea = usa_improved_standard_of_living_ii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iii } 
+					NOT = { has_idea = usa_improved_standard_of_living_iv } 
+					NOT = { has_idea = usa_improved_standard_of_living_v } 
+					NOT = { has_idea = usa_improved_standard_of_living_vi } 
+					NOT = { has_idea = usa_improved_standard_of_living_vii } 
+					NOT = { has_idea = usa_improved_standard_of_living_viii } 
+					NOT = { has_idea = usa_improved_standard_of_living_ix } 
+					NOT = { has_idea = usa_improved_standard_of_living_x } 
+				}
+				add_ideas = usa_improved_standard_of_living_i
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_i }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_i
+					add_idea = usa_improved_standard_of_living_ii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ii
+					add_idea = usa_improved_standard_of_living_iii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iii
+					add_idea = usa_improved_standard_of_living_iv
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_iv }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_iv
+					add_idea = usa_improved_standard_of_living_v
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_v }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_v
+					add_idea = usa_improved_standard_of_living_vi
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vi }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vi
+					add_idea = usa_improved_standard_of_living_vii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_vii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_vii
+					add_idea = usa_improved_standard_of_living_viii
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_viii }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_viii
+					add_idea = usa_improved_standard_of_living_ix
+				}
+			}
+			
+			if = {
+				limit = { has_idea = usa_improved_standard_of_living_ix }
+				swap_ideas = {
+					remove_idea = usa_improved_standard_of_living_ix
+					add_idea = usa_improved_standard_of_living_x
+				}
+			}
+		}
+			
+			
+	}
+	
+	
+	
+	focus = {
+		id = CSA_Talks_with_the_Klan
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Embedded_within_the_Constitution focus = CSA_Confederate_Bill_of_Rights }
+		x = 34
+		y = 2
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_A_Fourth_Estate
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Talks_with_the_Klan }
+		mutually_exclusive = { focus = CSA_War_on_the_Klan }
+		x = 33
+		y = 3
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			swap_ideas = { 
+				remove_idea = csa_the_klan
+				add_idea = csa_the_klan2
+			}
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Economic_Slavery
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_A_Fourth_Estate }
+		mutually_exclusive = { focus = CSA_Kindness_in_Absence_of_Equality }
+		mutually_exclusive = { focus = CSA_End_Segregation }
+		x = 32
+		y = 4
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			swap_ideas = { 
+				remove_idea = usa_segregation
+				add_idea = csa_segregation2
+			}
+			add_political_power = -50
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Racial_Hierarchy
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Economic_Slavery }
+		x = 32
+		y = 5
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			swap_ideas = { 
+				remove_idea = csa_segregation2
+				add_idea = csa_segregation3
+			}
+			add_political_power = 250
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_War_on_the_Klan
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_Talks_with_the_Klan }
+		mutually_exclusive = { focus = CSA_A_Fourth_Estate }
+		x = 35
+		y = 3
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			remove_ideas = csa_the_klan
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_Kindness_in_Absence_of_Equality
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_War_on_the_Klan focus = CSA_A_Fourth_Estate }
+		mutually_exclusive = { focus = CSA_End_Segregation }
+		mutually_exclusive = { focus = CSA_Economic_Slavery }
+		x = 34
+		y = 4
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			swap_ideas = { 
+				remove_idea = usa_segregation
+				add_idea = csa_segregation
+			}
+			add_political_power = -50
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_End_Segregation
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_War_on_the_Klan }
+		mutually_exclusive = { focus = CSA_Kindness_in_Absence_of_Equality }
+		mutually_exclusive = { focus = CSA_Economic_Slavery }
+		x = 36
+		y = 4
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			swap_ideas = { 
+				remove_idea = usa_segregation
+				add_idea = usa_segregation2
+			}
+			add_political_power = -150
+		}
+			
+			
+	}
+	
+	focus = {
+		id = CSA_End_Discrimination
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSA_End_Segregation }
+		x = 36
+		y = 5
+		cost = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			remove_ideas = usa_segregation2
+			add_timed_idea = { idea = usa_segregation2 days = 730 }
+			add_political_power = 150
+		}
+			
+			
+	}
+	
+	
+	
+	
+}
+

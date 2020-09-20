@@ -1,0 +1,585 @@
+ideas = {
+
+	country = {
+
+		SPR_to_the_bitter_end = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+			
+			cancel = {
+				OR = {
+					has_capitulated = yes
+				}
+			}
+				
+			removal_cost = -1
+
+			picture = generic_victors_of_ww1
+			
+			research_bonus = {
+				land_doctrine = 0.05
+			}
+			modifier = {
+				surrender_limit = 0.12
+				conscription = 0.1
+				war_support_factor = -0.05
+			}
+		}
+
+		SPA_recovering_from_civil_war = {
+
+			picture = FRA_matignon_agreements
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			cancel = {
+				any_country = { is_major = yes has_war_with = ROOT }
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			rule = {
+				can_join_factions = no
+				can_send_volunteers = no
+			}
+
+			modifier = {
+				join_faction_tension = 1
+				ai_join_ally_desire_factor = -900
+				ai_call_ally_desire_factor = -900
+			}
+		}
+
+		SPR_haiti_rep = {
+
+			picture = spr_hai_treaty
+
+			allowed = {
+				is_literally_spain = yes
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_cost = 0.5
+			}
+
+		}
+
+		HAI_haiti_rep = {
+
+			picture = man_five_year_plan_industry
+
+			allowed = {
+				original_tag = HAI
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1
+				stability_factor = -0.025
+				autonomy_gain = 0.85
+			}
+
+		}
+
+		
+		SPR_castilian_dominance_idea = {
+
+			allowed = {
+				always = no
+			}
+
+
+			allowed_civil_war = {
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+
+			removal_cost = -1
+
+			picture = generic_morale_bonus
+			
+			modifier = {
+				political_power_gain = 0.10
+				stability_weekly = 0.01
+				autonomy_gain = 1.10
+			}
+		}
+
+		SPR_castilian_dominance_idea2 = {
+
+			allowed = {
+				always = no
+			}
+
+
+			allowed_civil_war = {
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+
+			removal_cost = -1
+
+			picture = spr_castilian_dominance2
+			
+			modifier = {
+				political_power_gain = 0.20
+				stability_weekly = 0.025
+				autonomy_gain = 1.25
+				non_core_manpower = 0.03
+			}
+		}
+		
+		SPR_church_power_3 = {
+		
+			picture = spr_church_power_3
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+			modifier = {
+				stability_factor = 0.05
+			}
+		}
+		
+		SPR_church_power_4 = {
+		
+			picture = spr_church_power_4
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.02
+				fascism_drift = 0.05
+				mobilization_speed = 0.1
+			}
+		}
+		
+		SPR_church_power_5 = {
+		
+			picture = spr_church_power_5
+		
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				fascism_drift = 0.1
+				mobilization_speed = 0.1
+			}			
+		}
+
+	}
+
+	political_advisor = {
+
+		SPA_luis_valdes_cavanillas = {
+
+			picture = generic_army_europe_2
+
+			allowed = {
+				is_literally_spain = yes
+			}
+			
+			available = {
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+			traits = { prince_of_terror }
+		}
+
+		SPA_tomas_garciano_goni = {
+
+			picture = generic_political_advisor_europe_1
+
+			allowed = {
+				is_literally_spain = yes
+			}
+			
+			available = {
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+
+			traits = { compassionate_gentleman }
+		}
+
+		SPA_joaquin_kindelan_duany = {
+
+			picture = generic_political_advisor_europe_2
+
+			allowed = {
+				is_literally_spain = yes
+			}
+
+			available = {
+				has_completed_focus = SPR_reconquista
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+			traits = { staunch_monarchist }
+		}
+
+		SPA_fidel_davila_arrondo = {
+
+			picture = generic_army_europe_4
+
+			allowed = {
+				is_literally_spain = yes
+			}
+			
+			available = {
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+			traits = { war_industrialist }
+		}
+	}
+
+	theorist = {
+
+		SPA_jose_enrique_varela = {
+				
+				
+			allowed = {
+				is_literally_spain = yes
+					OR = {
+						has_autocratic_government = yes
+					}
+			}
+		
+			picture = generic_army_europe_3
+			
+			research_bonus = {
+				land_doctrine = 0.10
+			}
+			
+			traits = { military_theorist }
+		}
+
+		SPA_emilio_herrera = {
+					
+					
+			allowed = {
+				is_literally_spain = yes
+					OR = {
+						has_autocratic_government = yes
+					}
+			}
+			
+			picture = generic_air_europe_3
+			
+			research_bonus = {
+				air_doctrine = 0.10
+			}
+		
+			traits = { air_warfare_theorist }
+		}
+	}
+	# MILITARY
+	army_chief = {
+		
+
+		SPA_miguel_cabanellas_ferrer = {
+			
+			picture = generic_army_europe_3
+			
+			allowed = {
+				is_literally_spain = yes
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+
+			
+			traits = { army_chief_old_guard }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SPA_ricardo_rada = {
+			
+			picture = generic_army_europe_1
+			
+			allowed = {
+				is_literally_spain = yes
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+
+			
+			traits = { army_chief_defensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SPA_emilio_mola_vidal = {
+			
+			picture = generic_army_europe_5
+			
+			allowed = {
+				is_literally_spain = yes
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+	air_chief = {
+
+		SPA_alfredo_kindelan_duany = {
+			
+			picture = generic_air_europe_1
+			
+			allowed = {
+				is_literally_spain = yes
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+
+			
+			traits = { air_chief_ground_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SPA_juan_yague_blanco = {
+			
+			picture = generic_air_europe_3
+			
+			allowed = {
+				is_literally_spain = yes
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+
+			
+			traits = { air_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	navy_chief = {
+		
+
+		SPA_salvador_moreno_fernandez = {
+			
+			picture = generic_navy_europe_1
+			
+			allowed = {
+				is_literally_spain = yes
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+
+			
+			traits = { navy_chief_decisive_battle_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SPA_fransisco_moreno_fernandez = {
+			
+			picture = generic_navy_europe_2
+			
+			allowed = {
+				is_literally_spain = yes
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+
+			
+			traits = { navy_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SPA_luis_carrero_blanco = {
+			
+			picture = generic_navy_europe_1
+			
+			allowed = {
+				is_literally_spain = yes
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+
+			
+			traits = { navy_chief_old_guard }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	
+	high_command = {
+		SPA_emilio_esteban_infantes = {
+			
+			picture = generic_army_europe_5
+			allowed = {
+				is_literally_spain = yes
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+
+			
+			traits = { army_logistics_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		SPA_agustin_munoz_grandes = {
+			
+			picture = generic_army_europe_3
+			allowed = {
+				is_literally_spain = yes
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	
+		SPA_joaquin_garcia_morato = {
+			
+			picture = generic_air_europe_2
+			allowed = {
+				is_literally_spain = yes
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+
+			
+			traits = { air_air_combat_training_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		SPA_angel_salas_larrazabal = {
+			
+			picture = generic_air_europe_1
+			allowed = {
+				is_literally_spain = yes
+				OR = {
+					has_autocratic_government = yes
+				}
+			}
+			
+
+			
+			traits = { air_strategic_bombing_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

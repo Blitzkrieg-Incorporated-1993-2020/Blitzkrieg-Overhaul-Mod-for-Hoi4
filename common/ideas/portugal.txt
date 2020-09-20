@@ -1,0 +1,1549 @@
+ideas = {
+
+	#GOVERNMENT
+	political_advisor = {
+		
+		POR_pais_sousa = {
+
+			picture = POR_pais_sousa
+				
+			allowed = {
+				original_tag = POR
+			}
+			
+			traits = { silent_workhorse }
+		}
+		
+		POR_mario_sousa = {
+
+			picture = generic_political_advisor_europe_1
+
+			allowed = {
+				original_tag = POR
+			}
+			
+			traits = { backroom_backstabber }
+		}
+
+		POR_manuel_rodrigues = {
+
+			picture = generic_political_advisor_europe_3
+				
+			allowed = {
+				original_tag = POR
+			}
+			
+			traits = { prince_of_terror }
+		}
+
+		POR_raul_brandao = {
+
+			picture = generic_political_advisor_europe_2
+				
+			allowed = {
+				original_tag = POR
+			}
+			
+			traits = { fortification_engineer }
+		}
+
+		POR_jaime_cortesao = {
+
+			picture = jaime_cortesao
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+			traits = { captain_of_industry }
+		}
+
+	}
+	
+	#MILITARY STAFF
+	army_chief = {
+		
+
+		POR_rolao_preto = {
+			
+			picture = rolao_pretea
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+
+			
+			traits = { army_chief_morale_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		POR_silva_bastos = {
+			
+			picture = silva_bastos
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+
+			
+			traits = { army_chief_drill_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		POR_lobato_guerra = {
+			
+			picture = lobato_guerra
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+
+			
+			traits = { army_chief_defensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	air_chief = {
+		
+		POR_manuel_gouveia = {
+			
+			picture = manuel_gouveia
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+
+			
+			traits = { air_chief_safety_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		POR_humberto_delgado = {
+			
+			picture = humberto_delgado
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+			traits = { air_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	navy_chief = {
+		
+
+		POR_jaime_afreixo = {
+			
+			picture = jaime_afreixo
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+
+			
+			traits = { navy_chief_commerce_raiding_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		POR_americo_tomas = {
+			
+			picture = americo_tomas
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+
+			
+			traits = { navy_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+
+	high_command = {
+
+		POR_quintao_meireles = {
+	
+			picture = manuel_quintao_meireles
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+			traits = { navy_capital_ship_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		POR_rebelo_pequito = {
+	
+			picture = jose_adriano_rebelo_pequito
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		POR_francisco_craveiro_lopes = {
+
+			picture = francisco_craveiro_lopes
+		
+			allowed = {
+				original_tag = POR
+			}
+			
+			traits = { air_air_combat_training_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		POR_rodrigues_de_barros = {
+
+			picture = jose_filipe_rodrigues_de_barros
+		
+			allowed = {
+				original_tag = POR
+			}
+			
+			traits = { army_artillery_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		POR_fernando_costa = {
+
+			picture = generic_air_europe_2
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+			traits = { air_tactical_bombing_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		POR_luis_correia = {
+
+			picture = generic_air_europe_3
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+			traits = { army_cavalry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	#RESEARCH AND PRODUCTION
+	tank_manufacturer = {
+
+		fiat_p = {
+			
+			picture = fiat
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { tank_manufacturer }
+		}
+
+		man_p = {
+			
+			picture = GER_MAN
+
+			allowed = {
+				original_tag = POR
+			}
+
+			available ={
+				has_completed_focus = POR_tank
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+			
+			traits = { medium_tank_manufacturer }
+		}
+	}	
+
+	aircraft_manufacturer = {	
+		
+		designer = yes
+		
+		omga = {
+
+			picture = macchi
+			
+			allowed = {
+				original_tag = POR
+			}
+
+			available ={
+				has_completed_focus = POR_light_planes
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+		}
+
+		junkers_p = { 
+			
+			picture = junkers
+
+			allowed = {
+				original_tag = POR
+			}
+						
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+		
+
+		amiot_p = { 
+
+			picture = amiot
+
+			allowed = {
+				original_tag = POR
+			}
+			
+			available ={
+				has_completed_focus = POR_fap
+			}
+						
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { CAS_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		heinkel_p = {
+
+			picture = heinkel
+
+			allowed = {
+				original_tag = POR
+			}
+			
+			available ={
+				has_completed_focus = POR_heavy_planes
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		ana_p = {
+
+			picture = generic_air_manufacturer_1
+
+			allowed = {
+				original_tag = POR
+			}
+			
+			available ={
+				has_completed_focus = POR_dominar_costa
+			}
+						
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { naval_aircraft_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+	}
+	
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		alfeite = {
+		
+			picture = alfeite
+			
+			allowed = {
+				original_tag = POR
+			}
+
+			available ={
+				has_completed_focus = POR_navy_dockyard_porto
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		lisnave = {
+		
+			picture = lisnave
+			
+			allowed = {
+				original_TAG = POR
+			}
+
+			available ={
+				has_completed_focus = POR_navy_dockyard_lisbon
+			}
+						
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { atlantic_fleet_naval_manufacturer }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		bdprata1 = {
+			
+			picture = idea_bdprata1
+			
+			allowed = {
+				original_TAG = POR
+			}
+						
+			research_bonus = {
+				artillery = 0.10
+			}
+			
+			traits = { artillery_manufacturer }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		arsenalp = {
+			
+			picture = idea_arsenalp
+			
+			allowed = {
+				original_TAG = POR
+			}
+
+			available ={
+				has_completed_focus = POR_inf
+			}
+						
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		edfor = {
+
+			picture = edfor
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.10
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	industrial_concern = {
+	
+		designer = yes
+		
+		itl = {
+			
+			picture = idea_itl
+			
+			allowed = {
+				original_TAG = POR
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+			}
+			
+			traits = { electronics_concern }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		cuf = {
+		
+			picture = idea_cuf
+
+			allowed = {
+				original_tag = POR
+			}
+			
+			research_bonus = {
+				industry = 0.10	
+			}
+			
+			traits = { industrial_concern }
+		}
+
+		sacor = {
+		
+			picture = idea_sacor_oil
+
+			allowed = {
+				original_tag = POR
+			}
+			
+			research_bonus = {
+				synth_resources = 0.1
+				
+			}
+			
+			traits = { refinery_concern }
+		}				
+		
+	}
+
+	theorist = {
+
+		POR_jose_norton_de_matos = {
+			
+			picture = jose_norton_de_matos
+
+			allowed = {
+				original_tag = POR
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.1
+			}
+			
+			traits = { military_theorist }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		POR_sarmento_de_beires = {
+			
+			picture = sarmento_de_beires
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+			research_bonus = {
+				air_doctrine = 0.1
+			}
+			
+			traits = { air_warfare_theorist }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		POR_manuel_bettencourt = {
+
+			picture = manuel_bettencourt
+			
+			allowed = {
+				original_tag = POR
+			}
+			
+			research_bonus = {
+				naval_doctrine = 0.1
+			}
+			
+			traits = { naval_theorist }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}	
+
+	country = {
+		
+		POR_oscar_carmona = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = president_oscarmona	
+						
+			modifier = {
+				political_power_gain = 0.05
+			}
+		}
+
+		POR_oscar_carmona1 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = president_oscarmona	
+						
+			modifier = {
+				political_power_gain = -0.15
+			}
+		}
+
+		POR_disorganized_army = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = desorganizado
+						
+			modifier = {
+				training_time_army_factor = 0.10
+				planning_speed = -0.50
+				army_org_Factor = -0.30
+			}
+		}
+
+		POR_holy_see = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = separacao
+						
+			modifier = {
+				stability_factor = -0.15
+			}
+		}
+
+		POR_Saeculo = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = exeunte
+						
+			modifier = {
+				stability_weekly = 0.01
+			}
+		}
+		
+		POR_salazar = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = president_salazar	
+						
+			modifier = {
+				political_power_gain = 0.1
+			}
+		}
+		
+		POR_duke_duarte_nuno = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = duarte_nuno2
+						
+			modifier = {
+				justify_war_goal_time = -0.10
+			}
+		}
+		
+		POR_casa_braganza_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = casa_braganca
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		POR_casa_braganza_idea1 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = casa_braganca
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				army_leader_start_planning_level= 1
+				army_leader_start_attack_level= 1
+			}
+		}
+
+		POR_deus_patria_familia = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = patria_familia
+			
+			modifier = {
+				MONTHLY_POPULATION = 0.2
+				production_factory_efficiency_gain_factor = 0.10
+			}
+		}
+		
+		POR_mocidade = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = mocidadept	
+			
+			modifier = {
+				conscription_factor = 0.20
+			}
+		}
+
+		POR_escuteirosreais = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = royal_scouts
+
+			modifier = {
+				conscription_factor = 0.20
+			}
+		}
+
+
+		POR_legiaopt = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = legiao_portuguesa
+			
+			modifier = {
+				conscription = 0.05
+				army_org_Factor = 0.10
+			}
+		}
+
+		POR_actocolonial = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = legiao_portuguesa	
+			
+			modifier = {
+				conscription = 0.05
+				army_org_Factor = 0.10
+				non_core_manpower = 0.025
+			}
+		}
+
+
+
+		POR_king_duarte_nuno = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = duarte_nuno2
+						
+			modifier = {
+				justify_war_goal_time = -0.20
+			}
+		}
+
+		POR_king_duarte_nuno1 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = duarte_nuno2
+						
+			modifier = {
+				justify_war_goal_time = -0.20
+				political_power_gain = 0.10
+			}
+		}
+		
+		estado_novo = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = uniao_nacional_flag
+
+			rule = {
+				can_join_opposite_factions = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		estado_novo2 = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = uniao_nacional_flag
+
+			rule = {
+				can_join_opposite_factions = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+
+		POR_liberdade = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = idea_POR_liberdade
+
+			rule = {
+				can_join_opposite_factions = yes
+			}
+			
+			modifier = {
+				stability_factor = 0.20
+				army_core_defence_factor  = 0.1
+				research_speed_factor  = -0.05 
+			}
+		}
+
+		POR_juventude_vermelha = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			rule = {
+				can_join_opposite_factions = yes
+			}
+			
+			modifier = {
+				stability_factor = 0.05
+			}
+		}
+
+		POR_juventude_vermelha1 = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			rule = {
+				can_join_opposite_factions = yes
+			}
+			
+			modifier = {
+				stability_factor = 0.05
+				mobilization_speed = 0.1
+			}
+		}
+
+		POR_nationalizedindustry = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_production_bonus
+
+			rule = {
+				can_join_opposite_factions = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				line_change_production_efficiency_factor = 0.1
+			}
+		}
+
+		brigada_negra = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			rule = {
+				can_join_opposite_factions = yes
+			}
+
+			picture = generic_fascism_drift_2
+			
+			modifier = {
+				conscription_factor = 0.10
+			}
+		}
+
+		brigada_negra1 = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			rule = {
+				can_join_opposite_factions = yes
+			}
+
+			picture = generic_fascism_drift_2
+			
+			modifier = {
+				training_time_army_factor = -0.1
+				conscription_factor = 0.20
+			}
+		}
+		
+		pvde = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_pvde
+			
+			modifier = {   
+				compliance_gain = -0.25
+				foreign_subversive_activites = -0.5
+				drift_defence_factor = 0.3
+			}
+		}
+		
+		POR_intervention_spain_focus = {
+			picture = FRA_scw_intervention_republicans_focus
+			allowed = {
+				always = no
+			}
+			
+			modifier = {
+				send_volunteer_divisions_required = -0.7
+				send_volunteers_tension = -0.5
+			}
+		}
+
+		POR_return_monarchy = {
+
+			allowed = {
+				original_tag = POR
+				always = no
+					}
+
+				allowed_civil_war = {
+				always = yes
+					}
+
+			removal_cost = -1
+
+			picture = generic_constitutional_guarantees
+				modifier = {
+					neutrality_drift = 0.1
+				}
+			}	
+
+		quinto_imperio = {
+			
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = quinto_imperio
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_dockyard = 0.3
+			}
+		}
+
+		quinto_imperio1 = {
+			
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = quinto_imperio
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_dockyard = 0.3
+				non_core_manpower = 0.1
+			}
+		}
+
+		orgulhosamente_sos_idea = {
+			
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = orgulhosmentesos
+			
+			modifier = {
+				conscription = 0.05
+				training_time_army_factor = -0.1
+				industrial_capacity_factory = 0.2
+				industrial_capacity_dockyard = 0.2
+			}
+		}
+
+		herois_do_mar = {
+			
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_reserve_divisions
+			
+			modifier = {
+				amphibious_invasion = 0.10
+				navy_max_range_factor = 0.10
+			}
+		}
+
+		nobre_povo = {
+			
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_nobre_povo
+			
+			modifier = {
+				army_morale_factor = 0.10
+				army_core_defence_factor = 0.10
+			}
+		}
+
+		interchange_army_contractors = {
+			
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = iberianinterchange
+			
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+
+		interchange_navy_contractors = {
+			
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = iberianinterchange
+			
+			modifier = {
+				production_speed_dockyard_factor = 0.1
+			}
+		}
+
+		interchange_building_contractors = {
+			
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = iberianinterchange
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+
+
+###### NAVY #####
+
+		lisnave_mordernizada = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = lisnave_modern
+
+			modifier = {
+				naval_speed_factor = 0.1
+			}
+		}
+
+		almada_capital = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = almada_modern
+			
+			equipment_bonus = {
+				light_cruiser = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				destroyer = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				submarine = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+
+		alfeite_mordernizado = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = alfeite_modern
+			
+				modifier = {
+				naval_hit_chance = 0.1
+			}
+		}
+
+###### INF AND TANKS #####
+
+		increase_tanks = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_increase_tanks
+			
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+
+		increase_equipment = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_increase_equipment
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+
+		lusitanos = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_lusitanos
+			
+			modifier = {
+				special_forces_cap = 0.05
+				army_attack_factor = 0.10
+			}
+		}
+
+
+################ AIR FORCE #########
+
+			increase_naval = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_increase_naval
+
+			modifier = {
+				naval_strike_targetting_factor = 0.1
+				naval_strike_agility_factor = 0.1
+			}
+		}
+
+			dom_skies = {
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_dom_skies
+			
+			modifier = {
+				army_bonus_air_superiority_factor = 0.10
+			}
+		}
+
+###DECISIONS IDEAS###
+
+		POR_planocentenario_idea = {
+
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = planocentenario
+			
+			modifier = {
+				research_speed_factor = -0.1
+			}
+
+		}
+
+		POR_planorodoviario_idea = {
+
+			allowed = {
+				original_tag = POR
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = planorodoviario
+			
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+			}
+
+		}

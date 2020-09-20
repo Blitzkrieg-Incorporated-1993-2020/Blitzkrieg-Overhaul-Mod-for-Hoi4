@@ -1,0 +1,867 @@
+ideas = {
+
+	trade_laws = {
+	
+		IRQ_anglo_iraqi_treaties = {
+
+			picture = generic_constitutional_guarantees
+
+			allowed = {
+				original_tag = IRQ
+				always = no
+			}
+			
+			modifier = {
+				min_export = 1
+				consumer_goods_factor = 0.2
+			}
+
+			allowed_to_remove = {
+				OR = {
+					has_completed_focus = IRQ_revise_anglo_iraqi_treaties
+					has_completed_focus = IRQ_defied_british_treaty
+					has_completed_focus = IRQ_befriend_the_west
+				}
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	# MILITARY
+	country = {
+	
+		IRQ_nationalism_idea_1 = {
+
+			picture = triumphant_will
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				fascism_drift = 0.03
+				justify_war_goal_time = -0.10
+				conscription = 0.002
+				political_advisor_cost_factor = 0.20
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_nationalism_idea_2 = {
+
+			picture = triumphant_will
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				fascism_drift = 0.05
+				justify_war_goal_time = -0.10
+				conscription = 0.002
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_nationalist_government = {
+
+			picture = triumphant_will
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				neutrality_drift = 0.05
+				justify_war_goal_time = -0.10
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_religious_revolts_1 = {
+
+			picture = generic_purge
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				stability_factor = -0.20
+				political_advisor_cost_factor = 0.05
+				ai_get_ally_desire_factor = -120
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_religious_revolts_2 = {
+
+			picture = generic_purge
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				stability_factor = -0.15
+				ai_get_ally_desire_factor = -90
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_religious_revolts_3 = {
+
+			picture = generic_purge
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				stability_factor = -0.10
+				ai_get_ally_desire_factor = -60
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_religious_revolts_4 = {
+
+			picture = generic_purge
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				stability_factor = -0.05
+				ai_get_ally_desire_factor = -30
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_kurdish_unrest_1 = {
+
+			picture = raj_marginalized_muslim_community
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				stability_factor = -0.10
+				conscription_factor = -0.10
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+			
+		IRQ_kurdish_unrest_2 = {
+
+			picture = raj_marginalized_muslim_community_angry
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				stability_factor = -0.30
+				conscription_factor = -0.10
+				political_advisor_cost_factor = 0.10
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_king_ghazi_1 = {
+
+			picture = king_ghazi
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_king_ghazi_2 = {
+
+			picture = king_ghazi
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_king_ghazi_3 = {
+
+			picture = king_ghazi
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				stability_factor = 0.1
+				political_power_gain = 0.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_king_ghazi_4 = {
+
+			picture = king_ghazi
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				stability_factor = 0.15
+				political_power_gain = 0.15
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_king_ghazi_5 = {
+
+			picture = king_ghazi
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				stability_factor = 0.2
+				political_power_gain = 0.2
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		IRQ_religious_revolts_mended = {
+
+			picture = generic_volunteer_expedition_bonus
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				conscription_factor = -0.10
+				stability_factor = 0.10
+				political_advisor_cost_factor = 0.05
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_british_investments = {
+
+			picture = generic_central_management
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				conservative_drift = 0.03
+				social_democracy_drift = 0.03
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_local_self_management = {
+
+			picture = generic_agrarian_reform
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_stable_country_1 = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_stable_country_2 = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				stability_factor = 0.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_leftwinged_self_management = {
+
+			picture = generic_agrarian_reform
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				communism_drift = 0.05
+				communism_acceptance = 75
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_workers_peril_idea_1 = {
+
+			picture = generic_communism_drift_bonus
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				communism_drift = 0.03
+				communism_acceptance = 25
+				unionism_drift = 0.03
+				unionism_acceptance = 25
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_workers_peril_idea_2 = {
+
+			picture = generic_communism_drift_bonus
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				communism_drift = 0.03
+				communism_acceptance = 25
+				unionism_drift = 0.03
+				unionism_acceptance = 25
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_leftist_influenced_industry = {
+
+			picture = generic_agrarian_reform
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				social_democracy_drift = 0.04
+				social_democracy_acceptance = 75
+				unionism_drift = 0.04
+				unionism_acceptance = 50
+				communism_acceptance = 25
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_al_ahali_group_idea = {
+
+			picture = generic_democratic_drift_bonus
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				democratic_drift = 0.02
+				democratic_acceptance = 25
+				conservative_drift = 0.02
+				conservative_acceptance = 25
+				social_democracy_drift = 0.02
+				social_democracy_acceptance = 25
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_axis_influence = {
+
+			picture = generic_fascism_drift_2
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				fascism_drift = 0.05
+				fascism_acceptance = 50
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_international_revolution = {
+
+			picture = generic_communism_drift_bonus
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			rule = {
+				can_send_volunteers = yes
+			}
+			
+			modifier = {
+				send_volunteer_size = 3
+				send_volunteers_tension = -0.5
+				send_volunteer_divisions_required = -1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		IRQ_abd_al_ilah = {
+
+			picture = abd_al_ilah
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+	political_advisor = {
+		
+		IRQ_muhammad_as_sadr = {
+
+			picture = muhammad_al_sadr
+			
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = IRQ_does_not_support_coalition_government_tooltip
+					has_completed_focus = IRQ_accept_shia_differences
+				}
+			}
+			
+			traits = { silent_workhorse }
+		}
+		
+		IRQ_husain_al_radi = {
+
+			picture = husain_al_radi
+			
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = IRQ_does_not_support_coalition_government_tooltip
+					has_completed_focus = IRQ_accept_shia_differences
+				}
+			}
+			
+			traits = { propaganda_expert }
+		}
+		
+		IRQ_hamdi_al_pachachi_idea = {
+
+			picture = hamdi_al_pachachi
+			
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			traits = { captain_of_industry }
+		}
+		
+		IRQ_naji_al_suwaydi= {
+
+			picture = naji_al_suwaydi
+			
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			traits = { prince_of_terror }
+		}
+		
+		IRQ_muhammad_fadhel_al_jamali = {
+
+			picture = muhammad_fadhel_al_jamali
+			
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			traits = { compassionate_gentleman }
+		}
+	}
+
+	army_chief = {
+	
+		IRQ_bakr_sidqi = {
+
+			picture = bakr_sidqi
+			
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = IRQ_bakr_sidqi_unavailable_tooltip
+					NOT = {
+						has_country_flag = IRQ_bakr_sidqi_unavailable
+					}
+				}
+			}
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		IRQ_abdulrazzaq_aswad = {
+
+			picture = generic_army_arab_1
+			
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			traits = { army_chief_reform_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	air_chief = {
+	
+		IRQ_mohammad_ali_jawad = {
+
+			picture = generic_air_arab_3
+			
+			allowed = {
+				original_tag = IRQ
+			}
+
+			traits = { air_chief_ground_support_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	IRQ_jalal_al_awqati = {
+
+			picture = generic_air_arab_2
+			
+			allowed = {
+				original_tag = IRQ
+			}
+
+			traits = { air_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	navy_chief = {
+
+		IRQ_jamil_al_midfai = {
+
+			picture = generic_navy_arab_2
+			
+			allowed = {
+				original_tag = IRQ
+			}
+					
+			traits = { navy_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		IRQ_husain_reis = {
+
+			picture = generic_navy_arab_1
+			
+			allowed = {
+				original_tag = IRQ
+			}
+					
+			traits = { navy_chief_decisive_battle_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	high_command = {
+		
+		IRQ_abdul_salam_arif = {
+
+			picture = abdul_salam_arif
+			
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			traits = { army_regrouping_2 }
+			
+			ai_will_do = {
+				factor = 1.5
+			}
+		}
+		
+		IRQ_ghazi_mohammed_daghistani = {
+
+			picture = generic_army_arab_3
+			
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			traits = { army_entrenchment_2 }
+			
+			ai_will_do = {
+				factor = 1.5
+			}
+		}
+		
+		IRQ_hardan_al_tikriti = {
+
+			picture = hardan_al_tikriti
+			
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			traits = { air_chief_safety_1 }
+			
+			ai_will_do = {
+				factor = 1.5
+			}
+		}
+		
+		IRQ_abd_al_wahab_al_shawaf = {
+
+			picture = generic_army_arab_1
+			
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			traits = { army_logistics_2 }
+			
+			ai_will_do = {
+				factor = 1.5
+			}
+		}
+
+	}
+	
+	
+	industrial_concern = {
+	
+		IRQ_north_oil_company = {
+		
+			picture = generic_refining_concern_1
+			
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.1
+			}
+			
+			traits = { refinery_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	
+		IRQ_telecommunications_post = {
+			
+			picture = generic_electronics_concern_3
+			
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+			}
+			
+			traits = { electronics_concern }
+		}	
+	}
+
+	theorist = {
+	
+		IRQ_abd_al_karim_qasim = {
+			
+			picture = abd_al_karim_qasim
+
+			allowed = {
+				original_tag = IRQ
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.07
+			}
+			
+			traits = { military_theorist }
+		}
+		
+		IRQ_mahmud_salman = {
+
+			picture = mahmud_salman
+			
+			allowed = {
+				original_tag = IRQ
+			}
+
+			traits = { air_warfare_theorist }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

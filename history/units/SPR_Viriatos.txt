@@ -1,0 +1,22 @@
+﻿units = {
+    division = {
+		name = "1ros Viriatos"
+		location = 6734  # Pontevedra
+		division_template = "Brigada Nacional"
+	}
+	division = {
+		name = "2ndos Viriatos"
+		location = 6734  # Pontevedra
+		division_template = "Brigada Nacional"
+	}
+	division = {
+		name = "3os Viriatos"
+		location = 6734  # Pontevedra
+		division_template = "Brigada Nacional"
+	}
+	division = {
+		name = "4os Viriatos"
+		location = 6734  # Pontevedra
+		division_template = "Brigada Nacional"
+	}
+}

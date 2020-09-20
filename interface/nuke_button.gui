@@ -1,0 +1,733 @@
+guiTypes = {
+
+containerWindowType = {
+		name = "gcg_nuclear_button_window"
+		position = { x = 135 y = 393 }
+		iconType ={
+			name ="gcg_nuclear_button_bg"
+			#spriteType = "GFX_generic_box"
+			position = { x=18 y=-5 }
+		}
+		
+		#iconType = {
+		#	name ="gcg_nuclear_button_icon" 
+		#	spriteType = "GFX_nuke_button_2"
+		#	position = { x= -40 y = 25 }
+		#}
+
+		instantTextBoxType = {
+			name ="gcg_nuke_icon_text"
+			position = { x= 46 y = 4 }
+			font = "hoi_18mbs"
+			format = center
+			maxWidth = 65
+			maxHeight = 24
+			fixedsize = yes
+			
+			pdx_tooltip = "gcg_nuke_icon_tooltip"
+		}
+		
+		buttonType = {
+			name = "icon_gcg_nuke_window_command"
+			position = { x= -40 y = 25 }
+			spriteType = "GFX_nuke_button_2" #GFX_custom_set_button_2
+		}
+		
+		
+	}
+	
+		############################################ NUKE TAB ############################################
+	containerWindowType = {
+		name = "gcg_nuke_window"
+		position = { x = -5 y = 75 }	
+		size = { width=512 height=300 }
+		verticalScrollbar = "right_vertical_slider"
+		show_sound = open_sub_window
+		moveable = no
+		margin = { top = 2 bottom = 10}	
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_window2_1b_border"
+		}
+		
+		
+		instantTextboxType = {
+			name = "gcg_box_title"
+			position = { x = 15 y = 14 }
+			font = "hoi_20b"
+			text = "Strategic Nuclear Deployment Pannel"
+			maxWidth = 450
+			maxHeight = 20
+			format = center
+		}
+		instantTextboxType = {
+			name = "gcg_button_text1"
+			position = { x = 130 y = 80 }
+			font = "hoi_18b"
+			text = "gcg_missile_pannel_tooltip_1" 
+			maxWidth = 450
+			maxHeight = 300
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "gcg_button_text2"
+			position = { x = -90 y = 80 }
+			font = "hoi_18b"
+			text = "gcg_missile_pannel_tooltip_3" 
+			maxWidth = 450
+			maxHeight = 300
+			format = center
+		}
+		
+		
+		buttonType = {
+			name = "gcg_ballistic_missile_box" 
+			position = { x = 320 y = 100 }
+			spriteType = "GFX_100kt_nuke"
+			pdx_tooltip = "gcg_ballistic_box_tooltip"
+		}
+		
+		buttonType = {
+			name = "gcg_conversion_box" 
+			position = { x = 100 y = 120 }
+			spriteType = "GFX_nuke_button_2"
+			pdx_tooltip = "gcg_conversion_box_tooltip"
+		}
+	
+		
+		buttonType = {
+			name = "gcg_nuke_button_close"
+			position = { x = -35 y = 0 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+	}
+	
+	############################################ ROCKET TAB ############################################	
+	containerWindowType = {
+		name = "gcg_rocket_nuke_window"
+		position = { x = 499 y = 75 }	
+		size = { width=300 height=375 }
+		verticalScrollbar = "right_vertical_slider"
+		show_sound = open_sub_window
+		moveable = no
+		margin = { top = 2 bottom = 10}	
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_window2_1b_border"
+		}
+		
+		containerWindowType = {
+		name = "gcg_range_box"
+	    position = { x = 110 y = 40  }
+		iconType ={
+			name ="rad_bg"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x=0 y=0 }
+		}	
+	} 
+		
+		instantTextboxType = {
+			name = "gcg_ballistic_box_title"
+			position = { x = -80 y = 15 }
+			font = "hoi_20b"
+			text = "Ballistic Missile Pannel"
+			maxWidth = 450
+			maxHeight = 20
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "gcg_ballistic_out_range" 
+			position = { x = 80 y = 43 }
+			font = "hoi_18b"
+			text = "gcg_out_of_range"  
+			pdx_tooltip = "gcg_range_tooltip"
+			maxWidth = 128
+			maxHeight = 64
+			format = center
+		}
+		
+		
+		containerWindowType = {
+		name = "gcg_in_range_box"
+	    position = { x = 110 y = 40  }   
+		iconType ={
+			name ="gcg_range_hide_box"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x=0 y=0 }
+		}	
+	}	
+	
+		
+		instantTextboxType = {
+			name = "gcg_ballistic_in_range"
+			position = { x = 80 y = 43 }
+			font = "hoi_18b"
+			text = "gcg_in_range" 
+			pdx_tooltip = "gcg_range_tooltip"
+			maxWidth = 128
+			maxHeight = 64
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "gcg_ballistic_button_text2"
+			position = { x = 130 y = 100 }
+			font = "hoi_18b"
+			text = "gcg_missile_pannel_tooltip_2" 
+			maxWidth = 450
+			maxHeight = 300
+			format = center
+		}
+		
+		containerWindowType = {
+		name = "gcg_the_blocker"
+	    position = { x = 40 y = 81 }
+		iconType ={
+			name ="gcg_the_blocker_0"
+			spriteType = "GFX_gcg_big_coloured_button"
+			position = { x=0 y=0 }  
+		}	
+		}
+	
+		
+		buttonType = {
+			name = "gcg_balistic_100kt_launch" 
+			position = { x = 40 y = 81 }
+			spriteType = "GFX_gcg_big_red_button"
+			clicksound = gcg_nuclear_launch
+		}
+		
+		
+		buttonType = {
+			name = "gcg_balistic_100kt_safety" 
+			position = { x = 40 y = 81 }
+			spriteType = "GFX_gcg_big_coloured_button"
+			#clicksound = click_close
+		}
+		
+		containerWindowType = {
+		name = "gcg_ballistic_100kt_box"
+	    position = { x = 175 y = 98  }
+		iconType ={
+			name ="gcg_ballistic_100kt_box_0"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x=0 y=0 }  
+		}	
+		} 
+	
+		instantTextboxType = {
+			name = "gcg_ballistic_100kt" 
+			position = { x = 147 y = 101 }
+			font = "hoi_18b"
+			text = "gcg_100kt_ballistic_num_tt"  
+			maxWidth = 128
+			maxHeight = 64
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "gcg_100kt_title"
+			position = { x = -80 y = 100 }
+			font = "hoi_20b"
+			text = "100kt."
+			maxWidth = 450
+			maxHeight = 20
+			format = center
+		}
+		
+		##
+		
+		containerWindowType = {
+		name = "gcg_the_blocker250"
+	    position = { x = 40 y = 175 }
+		iconType ={
+			name ="gcg_the_blocker250_0"
+			spriteType = "GFX_gcg_big_coloured_button"
+			position = { x=0 y=0 }  
+		}	
+		}
+	
+		
+		buttonType = {
+			name = "gcg_balistic_250kt_launch" 
+			position = { x = 40 y = 175 }
+			spriteType = "GFX_gcg_big_red_button"
+			clicksound = gcg_nuclear_launch
+		}
+		
+		
+		buttonType = {
+			name = "gcg_balistic_250kt_safety" 
+			position = { x = 40 y = 175 }
+			spriteType = "GFX_gcg_big_coloured_button"
+			#clicksound = click_close
+		}
+		
+		containerWindowType = {
+		name = "gcg_ballistic_250kt_box"
+	    position = { x = 175 y = 192 }
+		iconType ={
+			name ="gcg_ballistic_250kt_box_0"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x=0 y=0 }  
+		}	
+		} 
+	
+		instantTextboxType = {
+			name = "gcg_ballistic_250kt" 
+			position = { x = 147 y = 195 }
+			font = "hoi_18b"
+			text = "gcg_250kt_ballistic_num_tt"  
+			maxWidth = 128  
+			maxHeight = 64
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "gcg_250kt_title"
+			position = { x = -80 y = 195 }
+			font = "hoi_20b"
+			text = "250kt."
+			maxWidth = 450
+			maxHeight = 20
+			format = center
+		}
+		
+		##
+		
+		
+		containerWindowType = {
+		name = "gcg_the_blocker5000"
+	    position = { x = 40 y = 270 }
+		iconType ={
+			name ="gcg_the_blocker250_0"
+			spriteType = "GFX_gcg_big_coloured_button"
+			position = { x=0 y=0 }  
+		}	
+		}
+	
+		
+		buttonType = {
+			name = "gcg_balistic_5000kt_launch" 
+			position = { x = 40 y = 270 }
+			spriteType = "GFX_gcg_big_red_button"
+			clicksound = gcg_nuclear_launch
+		}
+		
+		
+		buttonType = {
+			name = "gcg_balistic_5000kt_safety" 
+			position = { x = 40 y = 270 }
+			spriteType = "GFX_gcg_big_coloured_button"
+			#clicksound = click_close
+		}
+		
+		containerWindowType = {
+		name = "gcg_ballistic_5000kt_box"
+	    position = { x = 175 y = 290 }
+		iconType ={
+			name ="gcg_ballistic_5000kt_box_0"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x=0 y=0 }  
+		}	
+		} 
+	
+		instantTextboxType = {
+			name = "gcg_ballistic_5000kt" 
+			position = { x = 147 y = 293 }
+			font = "hoi_18b"
+			text = "gcg_5000kt_ballistic_num_tt"  
+			maxWidth = 128  
+			maxHeight = 64
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "gcg_5000kt_title"
+			position = { x = -80 y = 293 }
+			font = "hoi_20b"
+			text = "5mt."
+			maxWidth = 450
+			maxHeight = 20
+			format = center
+		}
+		
+	
+		
+		buttonType = {
+			name = "gcg_ballistic_nuke_button_close"
+			position = { x = -35 y = 0 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+	}
+	
+	
+	############################################ CONVERSION TAB ############################################
+	
+	containerWindowType = {
+		name = "gcg_conversion_box_window"
+		position = { x = 499 y = 75 }	
+		size = { width=300 height=500 }
+		#verticalScrollbar = "right_vertical_slider"
+		show_sound = open_sub_window
+		moveable = no
+		margin = { top = 2 bottom = 10}	
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_window2_1b_border"
+		}
+		
+		
+		instantTextboxType = {
+			name = "gcg_ballistic_box_title"
+			position = { x = -80 y = 15 }
+			font = "hoi_20b"
+			text = "Conversion Pannel"
+			maxWidth = 450
+			maxHeight = 20
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "gcg_ballistic_button_text1"
+			position = { x = -80 y = 50 }
+			font = "hoi_18b"
+			text = "gcg_missile_pannel_tooltip_2" 
+			maxWidth = 450
+			maxHeight = 300
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "gcg_ballistic_button_text2"
+			position = { x = -80 y = 190 }
+			font = "hoi_18b"
+			text = "250 kt." 
+			maxWidth = 450
+			maxHeight = 300
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "gcg_ballistic_button_text3"
+			position = { x = 130 y = 100 }
+			font = "hoi_18b"
+			text = "gcg_missile_pannel_tooltip_2" 
+			maxWidth = 450
+			maxHeight = 300
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "gcg_ballistic_button_text4"
+			position = { x = -80 y = 330 }
+			font = "hoi_18b"
+			text = "5 mt." 
+			maxWidth = 450
+			maxHeight = 300
+			format = center
+		}
+		
+	
+	instantTextboxType = {
+			name = "gcg_100kt_convertion_progress"
+			position = { x = 145 y = 80 }
+			font = "hoi_18b"
+			text = "Progress" 
+			maxWidth = 128
+			maxHeight = 32
+			format = center
+		}
+		
+		containerWindowType = {
+		name = "gcg_convert_100_kt_button_box"
+		position = {x = 40 y = 70 }
+		size = { width=780 height=496 }
+		
+		iconType = {
+			name = "gcg_convert_100_kt" 
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_slider_202"
+			pdx_tooltip = "gcg_convert_text_tooltip"
+		}
+		
+		buttonType = {
+			name = "gcg_convert_100_kt_add" 
+			position = { x = 145 y = 40 }
+			spriteType = "GFX_add_one"
+		}
+		
+		buttonType = {
+			name = "gcg_convert_100_kt_subtract" 
+			position = { x = 30 y = 40 }
+			spriteType = "GFX_subtract_one"
+		}
+		
+		containerWindowType = {
+		name = "gcg_100kt_que_box"
+	    position = { x = 65 y = 40  }
+		iconType ={
+			name ="rad_bg"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x=0 y=0 }
+		}
+		instantTextBoxType = {
+			name ="gcg_100kt_que_box_count"
+			position = { x= 5 y = 2 }
+			font = "hoi_18mbs"
+			text = "[?gcg_100kt_converting_que]"   
+			format = center
+			maxWidth = 64
+			maxHeight = 32
+			fixedsize = yes
+		}		
+	} 
+		
+		instantTextBoxType = {
+			name ="gcg_100kt_stockpile"
+			position = { x= 90 y = 10 }
+			font = "hoi_18mbs"
+			text = "      [?gcg_100kt]"
+			format = center
+			maxWidth = 64
+			maxHeight = 32   
+			fixedsize = yes
+			pdx_tooltip = "gcg_100kt_stockpile_text"
+		}
+
+		}
+		
+		
+		containerWindowType = {
+		name = "gcg_100kt_production"
+		position = {x=12 y=82}
+		size = { width=100 height=20 }
+		
+		iconType = {
+			name = "gcg_100kt_production_bar"
+			spriteType = "GFX_gcg_conversion_progress_bar_bg"
+			position = { x = 53 y = 0 }
+			pdx_tooltip = "production_info_100kt"
+		}
+		containerWindowType = {
+			name = "gcg_100kt_production_bar_progress"
+			position = {x=53 y=0}
+			size = { width=150 height=17 }
+			orientation = upper_left
+			clipping = yes
+			
+			iconType = {
+				name = "gcg_100kt_production_bar_progress_bar"
+				spriteType = "GFX_gcg_conversion_bar"
+				position = { x=0 y=-17 }
+				alwaystransparent = yes
+			}
+		}
+	}
+	
+	
+	containerWindowType = {
+		name = "gcg_convert_250_kt_button_box"
+		position = {x = 40 y = 210 }
+		size = { width=780 height=496 }
+		
+		iconType = {
+			name = "gcg_convert_250_kt" 
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_slider_202"
+			pdx_tooltip = "gcg_convert_250_text_tooltip"
+		}
+		
+		buttonType = {
+			name = "gcg_convert_250_kt_add" 
+			position = { x = 145 y = 40 }
+			spriteType = "GFX_add_one" 
+		}
+		
+		buttonType = {
+			name = "gcg_convert_250_kt_subtract" 
+			position = { x = 30 y = 40 }
+			spriteType = "GFX_subtract_one"
+		}
+		
+		containerWindowType = {
+		name = "gcg_250kt_que_box"
+	    position = { x = 65 y = 40  }
+		iconType ={
+			name ="rad_bg"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x=0 y=0 }
+		}
+		instantTextBoxType = {
+			name ="gcg_250kt_que_box_count"
+			position = { x= 5 y = 2 }
+			font = "hoi_18mbs"
+			text = "[?gcg_250kt_converting_que]"   
+			format = center
+			maxWidth = 64
+			maxHeight = 32
+			fixedsize = yes
+		}		
+	} 
+		
+		instantTextBoxType = {
+			name ="gcg_250kt_stockpile"
+			position = { x= 90 y = 10 }
+			font = "hoi_18mbs"
+			text = "      [?gcg_250kt]"
+			format = center
+			maxWidth = 64
+			maxHeight = 32   
+			fixedsize = yes
+			pdx_tooltip = "gcg_100kt_stockpile_text"
+		}
+
+		}
+		
+		
+		containerWindowType = {
+		name = "gcg_250kt_production"
+		position = {x=12 y=222}
+		size = { width=100 height=20 }
+		
+		iconType = {
+			name = "gcg_250kt_production_bar"
+			spriteType = "GFX_gcg_conversion_progress_bar_bg"
+			position = { x = 53 y = 0 }
+			pdx_tooltip = "production_info_250kt"
+		}
+		containerWindowType = {
+			name = "gcg_250kt_production_bar_progress"
+			position = {x=53 y=0}
+			size = { width=150 height=17 }
+			orientation = upper_left
+			clipping = yes
+			
+			iconType = {
+				name = "gcg_250kt_production_bar_progress_bar"
+				spriteType = "GFX_gcg_conversion_bar"
+				position = { x=0 y=-17 }
+				alwaystransparent = yes
+			}
+		}
+	}
+	
+	
+	
+	containerWindowType = {
+		name = "gcg_convert_5000_kt_button_box"
+		position = {x = 40 y = 350 }
+		size = { width=780 height=496 }
+		
+		iconType = {
+			name = "gcg_convert_5000_kt" 
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_slider_202"
+			pdx_tooltip = "gcg_convert_5000_text_tooltip"
+		}
+		
+		buttonType = {
+			name = "gcg_convert_5000_kt_add" 
+			position = { x = 145 y = 40 }
+			spriteType = "GFX_add_one"
+		}
+		
+		buttonType = {
+			name = "gcg_convert_5000_kt_subtract" 
+			position = { x = 30 y = 40 }
+			spriteType = "GFX_subtract_one"
+		}
+		
+		containerWindowType = {
+		name = "gcg_5000kt_que_box"
+	    position = { x = 65 y = 40  }
+		iconType ={
+			name ="rad_bg"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x=0 y=0 }
+		}
+		instantTextBoxType = {
+			name ="gcg_5000kt_que_box_count"
+			position = { x= 5 y = 2 }
+			font = "hoi_18mbs"
+			text = "[?gcg_5000kt_converting_que]"   
+			format = center
+			maxWidth = 64
+			maxHeight = 32
+			fixedsize = yes
+		}		
+	} 
+		
+		instantTextBoxType = {
+			name ="gcg_5000kt_stockpile"
+			position = { x= 90 y = 10 }
+			font = "hoi_18mbs"
+			text = "      [?gcg_5000kt]"
+			format = center
+			maxWidth = 64
+			maxHeight = 32   
+			fixedsize = yes
+			pdx_tooltip = "gcg_100kt_stockpile_text"
+		}
+
+		}
+		
+		
+		containerWindowType = {
+		name = "gcg_5000kt_production"
+		position = {x=12 y=362}
+		size = { width=100 height=20 }
+		
+		iconType = {
+			name = "gcg_5000kt_production_bar"
+			spriteType = "GFX_gcg_conversion_progress_bar_bg"
+			position = { x = 53 y = 0 }
+			pdx_tooltip = "production_info_5000kt"
+		}
+		containerWindowType = {
+			name = "gcg_5000kt_production_bar_progress"
+			position = {x=53 y=0}
+			size = { width=150 height=17 }
+			orientation = upper_left
+			clipping = yes
+			
+			iconType = {
+				name = "gcg_5000kt_production_bar_progress_bar"
+				spriteType = "GFX_gcg_conversion_bar"
+				position = { x=0 y=-17 }
+				alwaystransparent = yes
+			}
+		}
+	}
+		
+		
+		buttonType = {
+			name = "gcg_ballistic_nuke_button_close"
+			position = { x = -35 y = 0 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+	}
+	
+	
+
+}

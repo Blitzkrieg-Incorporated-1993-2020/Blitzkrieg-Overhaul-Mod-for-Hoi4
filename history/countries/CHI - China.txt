@@ -1,0 +1,417 @@
+﻿capital = 613 # Nanjing
+
+oob = "CHI_1936"
+
+set_stability = 0.5
+set_war_support = 0.5
+
+CHI = {
+	puppet = MEN 
+	puppet = GXC
+	puppet = XSM
+	if = {
+		limit = {
+			has_dlc = "Together for Victory"
+		} 
+		set_autonomy = {
+			target = MEN
+			autonomous_state = autonomy_integrated_region
+		}
+		set_autonomy = {
+			target = GXC
+			autonomous_state = autonomy_protected_state
+		}
+		set_autonomy = {
+			target = XSM
+			autonomous_state = autonomy_free_regime
+		}
+	}
+}
+
+diplomatic_relation = {
+	country = PRC
+	relation = non_aggression_pact
+	active = yes
+}
+save_global_event_target_as = WTT_current_china_leader
+set_global_flag = KMT_mod_enabled
+set_global_flag = KMT_first_chinese_civil_war
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	gwtank = 1
+	early_fighter = 1
+	early_bomber = 1
+	mass_assault = 1
+	fleet_in_being = 1
+	early_destroyer = 1
+	early_light_cruiser = 1
+	basic_light_cruiser = 1
+	gw_artillery = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_engineers = 1
+	tech_mountaineers = 1
+	support_weapons = 1
+	motorised_infantry = 1
+}
+set_party_name = { ideology = fascism long_name = KMT_blueshirt name = KMT_blueshirt }
+
+set_popularities = {
+	social_democracy = 4
+	fascism = 0
+	communism = 2
+	neutrality = 94
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+create_country_leader = {
+	name = "Chiang Kai-Shek"
+	desc = "POLITICS_CHIANG_KAI-SHEK_DESC"
+	picture = "CHI_Chiang_Kai_Shek.dds"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+		generallissimo
+	}
+}
+
+create_field_marshal = {
+	name = "Chiang Kai-shek"
+	portrait_path = "gfx/leaders/CHI/CHI_Chiang_Kai_Shek.dds"
+	traits = { politically_connected media_personality KMT_cks_generalissimo war_hero }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+	id = 1001
+}
+
+set_country_flag = KMT_central_government_flag
+save_global_event_target_as = KMT_central_gov_tag
+capital_scope = {
+	set_state_flag = KMT_central_gov_capital
+	save_global_event_target_as = KMT_central_gov_capital_state
+}
+set_party_name = { ideology = communism long_name = KMT_CPWDP_long name = KMT_CPWDP }
+add_ideas = cg_true
+
+add_ideas = {
+	CHI_china_broken
+	german_advisors
+	public_iliteracy
+	incompetent_industry_fake
+	incompetent_industry_fake_navy
+	KMT_falkenhausen
+	KMT_weak_army
+	KMT_corrupted_government
+	cu_cg_warlords_all
+}
+
+set_convoys = 40
+
+1936.12.24 = {
+	clr_global_flag = KMT_first_chinese_civil_war
+	set_global_flag = KMT_xian_incident_fired
+}
+
+create_country_leader = {
+	name = "Huang Qixiang"
+	desc = "POLITICS_HUANG_QIXIANG_DESC"
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Dai Li"
+	desc = "POLITICS_DAI_LI_DESC"
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_fascism.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Hu Shih"
+	desc = "POLITICS_HU_SHIH_DESC"
+	picture = "gfx/leaders/kmt_mod/Hu_Shih.dds"
+	expire = "1965.1.1"
+	ideology = socialism
+	traits = {
+		#
+	}
+}
+
+add_opinion_modifier = { target = PRC modifier = hostile_status }
+add_opinion_modifier = { target = JAP modifier = hostile_status }
+JAP = {
+	add_opinion_modifier = { target = CHI modifier = hostile_status }
+}
+add_opinion_modifier = { target = GER modifier = sino_german_cooperation }
+GER = {
+	add_opinion_modifier = { target = CHI modifier = sino_german_cooperation }
+}
+
+create_corps_commander = {
+	name = "Tu Yu-ming"
+	portrait_path = "gfx/leaders/kmt_mod/Portrait_Tu_Yu-ming.dds"
+	traits = { inflexible_strategist fortress_buster }
+	id = 1002
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+	skill = 3
+}
+
+create_corps_commander = {
+	name = "Hsueh Yueh"
+	portrait_path = "gfx/leaders/kmt_mod/Portrait_Hsueh_Yueh.dds"
+	traits = { career_officer brilliant_strategist infantry_expert }
+	id = 1003
+	attack_skill = 5
+	defense_skill = 4
+	planning_skill = 4
+	logistics_skill = 4
+	skill = 5
+}
+
+create_corps_commander = {
+	name = "Tai An-lan"
+	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
+	traits = { trait_reckless }
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
+	id = 1004
+	skill = 3
+}
+
+create_corps_commander = {
+	name = "Wang Yao-wu"
+	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_4.dds"
+	traits = { skilled_staffer }
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
+	id = 1005
+	skill = 3
+}
+
+create_corps_commander = {
+	name = "Sun Li-jen"
+	portrait_path = "gfx/leaders/kmt_mod/Sun_Li_jen.dds"
+	traits = { career_officer brilliant_strategist organizer skilled_staffer expert_improviser}
+	id = 1006
+	attack_skill = 5
+	defense_skill = 5
+	planning_skill = 4
+	logistics_skill = 3
+	skill = 5
+}
+
+create_corps_commander = {
+	name = "Hu Tsung-nan"
+	portrait_path = "gfx/leaders/kmt_mod/Portrait_Hu_Zongnan.dds"
+	traits = { politically_connected }
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+	id = 1016
+	skill = 3
+}
+
+create_corps_commander = {
+	name = "Ho Ying-chin"
+	portrait_path = "gfx/leaders/kmt_mod/Portrait_He_Yingqin.dds"
+	traits = { infantry_officer }
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
+	id = 1017
+	skill = 3
+}
+
+create_corps_commander = {
+	name = "Wei Li-huang"
+	portrait_path = "gfx/leaders/kmt_mod/Portrait_Wei_Lihuang.dds"
+	traits = { }
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+	id = 1018
+	skill = 3
+}
+
+create_corps_commander = {
+	name = "Ku Chu-tong"
+	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_5.dds"
+	traits = { infantry_officer }
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+	id = 1019
+	skill = 3
+}
+
+create_corps_commander = {
+	name = "Sun Lian-chung"
+	portrait_path = "gfx/leaders/kmt_mod/Portrait_Sun_Lianzhong.dds"
+	traits = { career_officer }
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+	id = 1020
+	skill = 3
+}
+
+create_corps_commander = {
+	name = "Chang Ling-fu"
+	portrait_path = "gfx/leaders/kmt_mod/Portrait_Zhang_Lingfu.dds"
+	traits = { trait_reckless }
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+	id = 1022
+	skill = 3
+}
+
+create_corps_commander = {
+	name = "Sun Liangcheng"
+	portrait_path = "gfx/leaders/kmt_mod/Portrait_Sun_Liangcheng.dds"
+	traits = { }
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1033
+	skill = 1
+}
+
+create_corps_commander = {
+	name = "Bao Wenyue"
+	portrait_path = "gfx/leaders/kmt_mod/Portrait_Bao_Wenyue.tga"
+	traits = { }
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1034
+	skill = 1
+}
+
+create_corps_commander = {
+	name = "Zhang Lanfeng"
+	portrait_path = "gfx/leaders/Asia/portrait_asia_generic_land_5.dds"
+	traits = { politically_connected }
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1035
+	skill = 1
+}
+
+create_corps_commander = {
+	name = "Hao Pengju"
+	portrait_path = "gfx/leaders/Asia/portrait_asia_generic_land_3.dds"
+	traits = { harsh_leader }
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1036
+	skill = 1
+}
+
+create_corps_commander = {
+	name = "Shi Yousan"
+	portrait_path = "gfx/leaders/kmt_mod/Portrait_Shi_Yousan.dds"
+	traits = { harsh_leader }
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1037
+	skill = 1
+}
+
+create_corps_commander = {
+	name = "Wu Huawen"
+	portrait_path = "gfx/leaders/Asia/portrait_asia_generic_land_3.dds"
+	traits = { }
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1039
+	skill = 1
+}
+
+create_navy_leader = {
+	name = "Chen Shaokuan"
+	portrait_path = "gfx/leaders/kmt_mod/Portrait_Chen_Shaokuan.dds"
+	traits = { }
+	id = 1007
+	skill = 2
+}
+
+every_unit_leader = {
+	limit = {	
+		OR = {
+			has_id = 1033
+			has_id = 1034
+			has_id = 1035
+			has_id = 1036
+			has_id = 1037
+			has_id = 1039
+		}
+	}
+	set_unit_leader_flag = KMT_will_stay_after_pro_jap_coup
+}
+
+1944.1.1 = {
+	disband_faction = yes
+	declare_war_on = {
+		target = PRC
+		type = annex_everything
+	}
+	every_state = {
+		limit = {
+			NOT = { state = 618 }
+			OR = {
+				state = 524
+				state = 971
+				is_core_of = YUN
+				is_core_of = GXC
+				is_core_of = SIK
+			}
+		}
+		CHI = { transfer_state = PREV }
+		remove_core_of = YUN
+		remove_core_of = GXC
+	}
+}

@@ -1,0 +1,2409 @@
+ideas = {
+
+	country = {
+	
+		aco_the_third_american_civil_war = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = yes
+			}
+			
+			available = {
+				
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.05
+				consumer_goods_factor = -0.05
+				training_time_army_factor = -0.15
+				stability_factor = -0.1
+				justify_war_goal_time = 0.5
+			}
+		}
+		
+		aco_new_communist_orthodoxy_idea = {
+
+			picture = home_of_the_revolution
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				global_building_slots_factor = 0.20 
+				production_factory_efficiency_gain_factor = -0.05
+				industrial_capacity_factory = 0.1 
+				consumer_goods_factor = -0.05
+				industry_free_repair_factor = 1 
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				subversive_activites_upkeep = -0.2
+			}		
+		}
+		
+		aco_internationalism_idea = {
+
+			picture = home_of_the_revolution
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				justify_war_goal_time = -0.25
+				subversive_activites_upkeep = -0.5
+				send_volunteer_size = 6
+			}		
+		}
+		
+		aco_internationalism_idea2 = {
+
+			picture = home_of_the_revolution
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				justify_war_goal_time = -0.65
+				subversive_activites_upkeep = -0.5
+				send_volunteer_size = 6
+			}		
+		}
+		
+		aco_internationalism_idea3 = {
+
+			picture = home_of_the_revolution
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				subversive_activites_upkeep = -0.5
+				send_volunteer_size = 24
+			}		
+		} 
+		
+		aco_internationalism_idea4 = {
+
+			picture = home_of_the_revolution
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				guarantee_cost = -0.8
+				improve_relations_maintain_cost_factor = -0.8
+				enemy_justify_war_goal_time = 1 
+			}		
+		} 
+		
+		aco_america_first_communism = {
+			
+			picture = man_five_year_plan_industry
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				global_building_slots_factor = 0.2
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+			}
+			
+		}
+		
+		aco_america_first_communism2 = {
+			
+			picture = man_five_year_plan_industry
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				global_building_slots_factor = 0.25
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = -0.05
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+			}
+			
+		}
+		
+		aco_america_first_communism3 = {
+			
+			picture = man_five_year_plan_industry
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				global_building_slots_factor = 0.4
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = -0.05
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+			}
+			
+		}
+		
+		aco_america_first_fascism = {
+			
+			picture = man_five_year_plan_industry
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				global_building_slots_factor = 0.1
+				production_speed_buildings_factor = 0.3
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+			}
+			
+		}
+		
+		aco_america_first_fascism2 = {
+			
+			picture = man_five_year_plan_industry
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				global_building_slots_factor = 0.1
+				production_speed_buildings_factor = 0.3
+				army_attack_factor = 0.15
+				army_defence_factor = 0.15
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				MONTHLY_POPULATION = 0.3
+			}
+			
+		}
+	
+		aco_to_arms = {
+			
+			picture = generic_manpower_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_attack_factor = 0.15
+				army_defence_factor = 0.15
+				training_time_army_factor = 0.15
+				conscription = 0.05	
+				out_of_supply_factor = -0.25
+			}
+			
+			research_bonus = {
+				
+			}
+			
+		}
+		
+		aco_industry_ties = {
+			
+			picture = generic_agrarian_reform
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				production_factory_start_efficiency_factor = 0.05 
+			}
+			
+			
+		}
+		
+		aco_industry_ties2 = {
+			
+			picture = generic_agrarian_reform
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				global_building_slots_factor = 0.2
+				production_speed_buildings_factor = 0.2
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05 
+			}
+			
+			
+		}
+		
+		aco_inner_city_rennovations_idea = {
+			
+			picture = generic_agrarian_reform
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				global_building_slots_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+			
+			
+		}
+		
+		aco_inner_city_rennovations_idea2 = {
+			
+			picture = generic_agrarian_reform
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				global_building_slots_factor = 0.35
+				production_factory_efficiency_gain_factor = 0.15
+				production_factory_max_efficiency_factor = 0.15
+			}
+			
+			
+		}
+		
+	
+		aco_fascist_idea1 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				political_power_gain = 0.4
+			}		
+		}
+		
+		aco_fascist_idea2 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				war_support_factor = 0.2
+			}		
+		}
+		
+		aco_fascist_idea3 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				political_power_gain = 0.4
+				stability_factor = 0.1
+			}		
+		}
+		
+		aco_fascist_idea4 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				political_power_gain = 0.4
+				research_speed_factor = 0.05
+			}		
+		}
+		
+		aco_fascist_idea5 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				war_support_factor = 0.2
+				stability_factor = 0.1
+			}		
+		}
+		
+		aco_fascist_idea6 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				war_support_factor = 0.2
+				research_speed_factor = 0.05
+			}		
+		}
+		
+		aco_fascist_idea7 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				political_power_gain = 0.4
+				stability_factor = 0.1
+				experience_gain_army = 0.05 
+			}		
+		}
+		
+		aco_fascist_idea8 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				political_power_gain = 0.4
+				research_speed_factor = 0.05
+				experience_gain_army = 0.05 
+			}		
+		}
+		
+		aco_fascist_idea9 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				war_support_factor = 0.2
+				stability_factor = 0.1
+				experience_gain_army = 0.05 
+			}		
+		}
+		
+		aco_fascist_idea10 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				war_support_factor = 0.2
+				research_speed_factor = 0.05
+				experience_gain_army = 0.05 
+			}		
+		}
+		
+		
+		aco_fascist_idea11 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				political_power_gain = 0.4
+				stability_factor = 0.1
+				special_forces_cap = 0.07
+			}		
+		}
+		
+		aco_fascist_idea12 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				political_power_gain = 0.4
+				research_speed_factor = 0.05
+				special_forces_cap = 0.07
+			}		
+		}
+		
+		aco_fascist_idea13 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				war_support_factor = 0.2
+				stability_factor = 0.1
+				special_forces_cap = 0.07
+			}		
+		}
+		
+		aco_fascist_idea14 = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				war_support_factor = 0.2
+				research_speed_factor = 0.05
+				special_forces_cap = 0.07
+			}		
+		}
+	
+		
+		aco_remnants_of_the_federal_system = {
+
+			picture = generic_pp_unity_bonus
+			
+			allowed = {
+				always = yes
+			}
+			
+			available = {
+				#has_war = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			rule = {
+				can_join_opposite_factions = yes
+				can_create_factions = yes
+				can_only_justify_war_on_threat_country = yes
+			}
+			modifier = {
+				#justify_war_goal_time = 0.25
+				army_core_attack_factor = 0.1 
+				army_core_defence_factor = 0.1 
+				trade_laws_cost_factor = 4
+				economy_cost_factor = 2
+				mobilization_laws_cost_factor = 1
+			}		
+		}
+	
+		aco_new_deal = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_build_infrastructure
+			
+			modifier = {
+				global_building_slots_factor = 0.1
+				communism_drift = 0.05
+				unionism_drift = 0.05
+				production_speed_infrastructure_factor = 0.45
+			}
+		}
+	
+		aco_second_bill_of_rights = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = HUN_treaty_of_triannon
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				global_building_slots_factor = 0.15
+				research_speed_factor = 0.05
+				communism_drift = 0.1
+				unionism_drift = 0.1
+				drift_defence_factor = -0.1
+				partisan_effect = 0.85
+				stability_factor = 0.35
+				MONTHLY_POPULATION = 0.2
+				
+			}
+		}
+		
+		aco_second_bill_of_rights2 = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = HUN_treaty_of_triannon
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				global_building_slots_factor = 0.15
+				research_speed_factor = 0.05
+				fascism_drift = 0.2
+				drift_defence_factor = -0.1
+				partisan_effect = 0.85
+				stability_factor = 0.35
+				MONTHLY_POPULATION = 0.2
+				
+			}
+		}
+	
+		aco_no_interest_loans = {
+		
+			picture = goods_red_bonus
+				
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.2
+			}
+			
+		}
+		
+		aco_no_interest_loans_given = {
+		
+			picture = goods_red_bonus
+				
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.2
+			}
+			
+		}
+		
+		aco_folk_heroes_of_the_revolution = {
+		
+			picture = goods_red_bonus
+				
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			available = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				communism_drift = 0.05
+				unionism_drift = 0.05
+			}
+			
+		}
+		
+		aco_share_our_wealth = {
+		
+			picture = goods_red_bonus
+				
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+			
+			available = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.02
+				stability_factor = 0.1
+				research_speed_factor = -0.05
+				fascism_drift = 0.05
+			}
+			
+		}
+		
+		aco_share_our_wealth2 = {
+		
+			picture = goods_red_bonus
+				
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.1
+				global_building_slots_factor = 0.2
+				production_speed_buildings_factor = 0.1
+				stability_factor = 0.1
+				research_speed_factor = -0.05
+			}
+			
+		}
+	
+		aco_anti_industrialist = {
+				
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+			
+			available = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.4
+				industrial_capacity_factory = -0.2
+				industrial_capacity_dockyard = -0.2
+				production_factory_max_efficiency_factor = -0.1
+				production_factory_efficiency_gain_factor = -0.3
+			}
+			
+		}
+		
+		
+		
+		aco_struggle_for_survival = {
+		
+			picture = FRA_army_of_aggression_focus
+				
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+			
+			available = {
+				has_war = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.2
+				war_support_factor = 0.15
+				training_time_army_factor = -0.5
+				army_core_attack_factor = 0.2
+			}
+			
+		}
+		
+		aco_american_military = {
+		
+			picture = generic_infantry_bonus
+				
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				army_artillery_attack_factor = 0.2
+				army_bonus_air_superiority_factor = 0.25 				
+				training_time_army_factor = 0.15
+			}
+			
+		}
+		
+		aco_american_military2 = {
+		
+			picture = generic_infantry_bonus
+				
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_attack_factor = 0.1 
+				army_defence_factor = 0.1
+				army_artillery_attack_factor = 0.2
+				army_bonus_air_superiority_factor = 0.25 				
+				training_time_army_factor = 0.15
+			}
+			
+		}
+		
+		aco_american_military3 = {
+		
+			picture = generic_infantry_bonus
+				
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org = 5 
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				army_artillery_attack_factor = 0.2
+				army_bonus_air_superiority_factor = 0.25 				
+				training_time_army_factor = 0.15
+			}
+			
+		}
+		
+		
+		aco_american_military4 = {
+				
+			picture = generic_infantry_bonus
+			
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+				
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org = 5 
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				army_artillery_attack_factor = 0.2
+				army_bonus_air_superiority_factor = 0.25 				
+				training_time_army_factor = 0.15
+			}
+			
+		}
+	
+	}
+	
+	
+	
+	
+	political_advisor = {
+	
+		#henry_wallace = {
+		#	
+		#	
+		#	allowed = {
+		#		original_tag = ACO
+		#	}
+		#	
+		#	#leader man
+		#	
+		#	traits = { communist_revolutionary }
+		#
+		#	available = {
+		#		has_government = communism
+		#	}
+		#
+		#	
+		#	ai_will_do = {
+		#		factor = 0
+		#	}
+		#}	
+		
+		earl_browder = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			
+			traits = { smooth_talking_charmer }
+		
+			available = {
+				has_government = communism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}	
+		
+		
+		robert_hale_merriman = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#intellectual 'Hero' of the Spanish Civil War -> Hero of the American Civil War
+			
+			available = {
+				#has_country_flag = story_of_heroism_merriman
+				has_idea = aco_folk_heroes_of_the_revolution
+			}
+			available = {
+				has_government = communism
+			}
+		
+			traits = { usa_intellectual_warrior }
+		
+		
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}	
+		
+		marty_hourihan = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#everyman 'Hero' of the Spanish Civil War -> Hero of the American Civil War
+		
+			available = {
+				#has_country_flag = story_of_heroism_hourihan
+				has_idea = aco_folk_heroes_of_the_revolution
+			}
+			available = {
+				has_government = communism
+			}
+			
+			traits = { popular_figurehead }
+		
+		
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}	
+		
+		
+		william_z_foster = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			available = {
+				has_government = communism
+			}
+			
+			#labor organizer
+			
+			traits = { ideological_crusader }
+		
+		
+		
+			ai_will_do = {
+				factor = 0
+			}
+		}	
+		
+		
+		raya_dunayevskaya = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			available = {
+				has_government = communism
+			}
+			
+			#marxist intellectual/philosopher
+			
+			traits = { communist_revolutionary }
+		
+			on_add = {
+				country_event = political.1
+			}
+		
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}	
+		
+		
+		aj_muste = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#anti war and pacifist and civil rights advocate
+			
+			traits = { compassionate_gentleman }
+		
+			available = {
+				has_government = communism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}	
+		
+		norman_thomas = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#socialist presidential candidate
+			
+			traits = { silent_workhorse }
+		
+			available = {
+				has_government = communism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}	
+		
+		
+		james_w_ford = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#vice presidential candidate for communist party usa, party organizer
+			
+			traits = { silent_workhorse }
+		
+			available = {
+				has_government = communism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}	
+		
+		
+		##benjamin_j_davis_jr = {
+		#	
+		#	
+		#	allowed = {
+		#		original_tag = ACO
+		#	}
+		#	
+		#	#leading black communist 
+		#	
+		#	traits = { communist_revolutionary }
+		#
+		#	available = {
+		#		has_government = communism
+		#	}
+		#	
+		#	ai_will_do = {
+		#		factor = 0
+		#	}
+		#}	
+		
+		web_du_bois = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#civil rights advocate and intellectual
+			
+			traits = { usa_civil_rights_black_advocate }
+		
+			available = {
+				has_government = communism
+			}
+		
+			ai_will_do = {
+				factor = 0
+			}
+		}	
+		
+		paul_sweezy = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#marxist economist and activist
+		
+			traits = { usa_marxist_economist }
+		
+			available = {
+				has_government = communism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}	
+		
+		lee_pressman = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#soviet spy and socialist labor organizer
+			
+			traits = { usa_soviet_agent }
+		
+			available = {
+				has_government = communism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}	
+			
+			
+		
+		#charles_coughlin = {
+		#	
+		#	
+		#	allowed = {
+		#		original_tag = ACO
+		#	}
+		#	
+		#	#leader man
+		#	
+		#	traits = { fascist_demagogue }
+		#
+		#	available = {
+		#		has_government = fascism
+		#	}
+		#
+		#	
+		#	ai_will_do = {
+		#		factor = 0
+		#	}
+		#}
+		
+		lawrence_dennis = {
+			
+		
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#intellectual
+			
+			traits = { usa_intellectual_fascist }
+		
+			available = {
+				has_government = fascism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		charles_lindbergh = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#isolationist and anti communist
+			
+			traits = { usa_american_nationalist }
+		
+			available = {
+				has_government = fascism
+				has_completed_focus = ACO_Embrace_Isolationism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		robert_e_wood = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#isolationist
+			
+			traits = { usa_american_isolationist }
+		
+			available = {
+				has_government = fascism
+				has_completed_focus = ACO_Embrace_Isolationism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		elizabeth_dilling = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#isolationist and right wing anti-semite
+			
+			traits = { usa_fascist_anti_communist }
+		
+			available = {
+				has_government = fascism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		william_dudley_pelley = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#anti-semitic fascist
+			
+			traits = { usa_fascist_demagogue }
+		
+			on_add = {
+				country_event = political.7
+			}
+		
+			available = {
+				has_government = fascism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		gerald_lk_smith = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#far right populist white supremacist
+			
+			traits = { fascist_demagogue }
+		
+			on_add = {
+				country_event = political.7
+			}
+		
+			available = {
+				has_government = fascism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		gerald_burton_winrod = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#pro nazi anti semite
+			
+			traits = { silent_workhorse }
+		
+			available = {
+				has_government = fascism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		
+		robert_edward_edmondson = {
+			
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#anti semitic anti communist 
+			
+			traits = { backroom_backstabber }
+		
+			available = {
+				has_government = fascism
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		
+		
+		
+		
+	}
+	
+
+	army_chief = {
+		
+		
+	}
+	
+	air_chief = {
+		
+		
+		carl_spaatz4 = {
+			
+			picture = carl_spaatz
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			available = {
+				NOT = {
+					has_idea = carl_spaatz41
+				}
+				OR = {
+					#has_government = neutrality
+					#has_government = fascism
+				}
+			}
+			
+			traits = { air_chief_night_operations_2 }
+			# TODO Strategic bombing secondary trait?
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	navy_chief = {
+	
+		william_halsey4 = {
+			
+			picture = william_halsey
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#Cali
+			
+			available = {
+				date > 1944.1.1
+			}
+			
+			traits = { navy_chief_naval_aviation_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+	}
+	
+	
+	high_command = {
+		
+		
+		maxwell_taylor4 = {
+			
+			picture = maxwell_taylor
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#Kansas City
+			
+			available = {
+				
+			}
+			
+			#traits = { army_commando_3 }
+			traits = { usa_army_airborne_infantry }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		george_windle_read_jr = {
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			available = {
+				
+			}
+			
+			traits = { usa_army_airborne_infantry }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		
+		jimmy_doolittle4 = {
+			
+			picture = jimmy_doolittle
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			available = {
+				OR = {
+					#has_government = neutrality
+					#has_government = fascism
+				}
+			}
+			
+			#anticommunist but meh
+			
+			traits = { air_air_superiority_3 }
+			
+			ai_will_do = {
+				factor = 5
+			}
+		}
+		
+		john_cannon4 = {
+			
+			picture = john_cannon
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#Utah
+			
+			available = {
+				
+			}
+			
+			traits = { air_close_air_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		carl_spaatz41 = {
+			
+			
+			picture = carl_spaatz
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			available = {
+				NOT = {
+					has_idea = carl_spaatz4
+				}
+				OR = {
+					#has_government = neutrality
+					#has_government = fascism
+				}
+			}
+			
+
+			
+			traits = { air_strategic_bombing_3 }
+			# TODO Strategic bombing secondary trait?
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		raymond_spruance4 = {
+			
+			picture = raymond_spruance
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#Cali
+			
+			available = {
+				
+			}
+			
+			traits = { navy_naval_air_defense_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		frank_jack_fletcher4 = {
+			
+			picture = frank_jack_fletcher
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#Cali
+			
+			available = {
+				
+			}
+			
+			traits = { navy_carrier_3 }
+			
+			ai_will_do = {
+				factor = 5
+			}
+		}
+		
+	}
+		
+	tank_manufacturer = { 
+	
+		designer = yes
+		
+		army_ordnance_department40 = {
+			
+			picture = army_ordnance_department
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#btm1
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { USA_heavy_tank_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.01
+			}
+		}	
+		
+		
+	}
+	
+	naval_manufacturer = { 
+	
+		designer = yes
+		
+		
+		todd_pacific_shipyards4 = {
+			
+			picture = todd_pacific_shipyards
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#Seattle
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		
+		mare_island_naval_shipyard4 = {
+		
+			picture = mare_island_naval_shipyard
+		
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#San Francisco
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { raiding_fleet_naval_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		
+		union_iron_works4 = {
+		
+			allowed = {
+				original_tag = ACO
+			}
+		
+			#FSA West only - San Francisco, owned by Bethlehem	
+		
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { USA_pacific_screen_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		
+	}
+	
+	aircraft_manufacturer = { 
+		
+		designer = yes
+		
+		north_american_aviation4 = {
+			
+			picture = north_american_aviation
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#LA
+			
+			cost = 250
+			
+			research_bonus = {
+				air_equipment = 0.2
+			}
+			
+			traits = { usa_air_superiority_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		
+		northrop4 = {
+			
+			picture = northrop
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#Cali
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { usa_heavy_light_aircraft_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		douglas4 = {
+			
+			picture = douglas_aircraft_company
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#So Cal
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { USA_air_support_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		lockheed4 = {
+			
+			picture = lockheed
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#Burbank CA
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { usa_heavy_fighter_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		
+		consolidated_aircraft4 = {
+			
+			picture = consolidated_aircraft
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#San Diego
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { usa_heavy_aircraft_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.01
+			}
+		}
+		
+		
+		#fairchild_aircraft = {
+		#
+		#	allowed = {
+		#		original_tag = FAS
+		#	}
+		#	
+		#	research_bonus = {
+		#		air_equipment = 0.10
+		#	}
+		#	
+		#	traits = { CAS_manufacturer }
+		#	
+		#	modifier = {
+		#	}
+		#}
+		
+		
+	}
+	
+	
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		ford_motor_company40 = {
+			
+			picture = ford_motor_company
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#btm
+			
+			#Detroit
+			
+			research_bonus = {
+				motorized_equipment = 0.10
+			}
+			
+			traits = { USA_motorized_equipment_manufacturer }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+	
+		army_ordnance_department41 = {
+			
+			picture = army_ordnance_department
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#btm
+			
+			research_bonus = {
+				artillery = 0.10
+			}
+			
+			traits = { US_general_artillery_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		
+	}
+	
+
+	
+	industrial_concern = {
+					
+		
+		standard_oil_california_im4 = {
+			
+			picture = standard_oil_of_california_im
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+
+			
+			research_bonus = {
+				#industry = 0.10
+			}
+			
+			traits = { USA_drilling_concern }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		
+		
+		#dupont = {
+		#
+		#	allowed = {
+		#		original_tag = FAS
+		#	}
+		#	
+		#	research_bonus = {
+		#		electronics = 0.10
+		#	}
+		#
+		#	#Imperial Chemical Industries similar Nuclear work
+		#	
+		#	traits = { electronics_concern }
+		#	
+		#	modifier = {
+		#	}
+		#}
+		
+		#rolls_royce_fas = {
+		#	
+		#	
+		#	allowed = {
+		#		original_tag = FAS
+		#	}
+		#	
+		#	available = {
+		#		#has_completed_focus = USA_Mustangs
+		#	}
+		#	
+		#	cost = 50
+		#	
+		#	research_bonus = {
+		#		air_equipment = 0.05
+		#	}
+		#	
+		#	traits = { usa_rolls_royce_manufacturer }
+		#	
+		#	modifier = {
+		#		consumer_goods_factor = 0.01
+		#	}
+		#}
+		
+		
+		#general_motors = {
+		#
+		#	allowed = {
+		#		original_tag = USA
+		#	}
+		#	
+		#	research_bonus = {
+		#		electronics = 0.10
+		#	}
+		#	
+		#	traits = { electronics_concern }
+		#	
+		#	modifier = {
+		#	}
+		#}
+		
+		american_smelting_and_refining_company4 = {
+		
+			picture = american_smelting_and_refining_company
+		
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#Tucson, Arizona
+			
+			research_bonus = {
+				#electronics = 0.10
+			}
+			
+			traits = { US_resources_concern }
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		
+		union_pacific4 = {
+		
+			picture = union_pacific
+		
+			allowed = {
+				original_tag = ACO
+			}
+		
+			#Operating significant US rail
+			
+			cost = 100
+			
+			research_bonus = {
+			}
+			
+			traits = { US_railroad_concern }
+			
+			modifier = {
+				consumer_goods_factor = 0.03
+				production_speed_infrastructure_factor = 0.45
+			}
+		}
+		
+		#End
+	}
+	
+	
+	theorist = {
+		
+		dewitt_clinton_ramsey4 = {
+			
+			picture = dewitt_clinton_ramsey
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+
+			
+			research_bonus = {
+				naval_doctrine = 0.07
+			}
+			
+			traits = { naval_theorist }
+		}
+		
+		harold_mcclelland4 = {
+			
+			picture = harold_mcclelland
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+
+			
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+		
+		theodore_von_karman4 = {
+			
+			picture = theodore_von_karman
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#Cal Tech
+			
+			research_bonus = {
+				rocketry = 0.2
+				jet_technology = 0.1
+			}
+			
+			traits = { rocket_scientist }
+		}
+		
+		qian_xuesen4 = {
+			
+			picture = qian_xuesen
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			available = {
+				has_government = communism
+			}
+
+			cancel_if_invalid = yes
+			
+			research_bonus = {
+				rocketry = 0.15
+				nuclear = 0.1
+			}
+			
+			traits = { rocket_scientist }
+		}
+		
+		robert_oppenheimer4 = {
+			
+			picture = robert_oppenheimer
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			#Berkeley
+			available = {
+				has_government = communism
+			}
+			
+			research_bonus = {
+				nuclear = 0.2
+			}
+			
+			traits = { nuclear_scientist }
+		}
+		
+		
+		john_garand4 = {
+			
+			picture = john_garand
+			
+			allowed = {
+				original_tag = ACO
+			}
+			
+			available = {
+				date < 1937.1.1
+			}
+			
+			#btm
+			
+			cost = 10
+
+			
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			
+			traits = { usa_weapons_genius }
+			
+			cancel_if_invalid = yes
+		}
+	}
+	
+}

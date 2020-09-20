@@ -1,0 +1,195 @@
+﻿capital = 271
+
+oob = "ETH_1936"
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	motorised_infantry = 1
+	tech_mountaineers = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1	
+	interwar_antiair = 1
+	interwar_antitank = 1
+	gwtank = 1
+	mass_assault = 1
+	early_fighter = 1
+	early_bomber = 1
+}
+
+set_convoys = 5
+add_command_power = 100
+add_ideas = war_economy
+add_ideas = limited_conscription
+add_ideas = ETH_african_expertise
+add_ideas = ETH_gas_attacks
+add_ideas = ETH_medieval_warfare1
+add_ideas = ETH_bad_encryption
+ITA = { 
+	add_command_power = 100
+}
+
+set_variable = { ROOT.ETH_noble_influence_value = 75 }
+set_variable = { global.ETH_seized_weapon_stockpile = 10000 }
+
+set_popularities = {
+	democratic = 6
+	fascism = 2
+	communism = 10
+	unionism = 4
+	monarchism = 78
+}
+
+set_politics = {
+	ruling_party = monarchism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+create_country_leader = {
+	name = "Emperor Haile Selassie I"
+	desc = "POLITICS_HAILE_SELASSIE_DESC"
+	picture = "Portrait_Ethiopia_Haile_Selassie.dds"
+	expire = "1965.1.1"
+	ideology = absolutism
+	traits = { DARK_lion_of_judah }
+}
+create_country_leader = {
+	name = "Makonnen Endelkachew"
+	desc = "POLITICS_MAKONNEN_ENDELKACHEW_DESC"
+	picture = "gfx/leaders/SAF/Portrait_South_Africa_Political_Leader_Generic_2.dds"
+	expire = "1965.1.1"
+	ideology = liberalism
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	name = "Takele Wolde Hawariat"
+	desc = "POLITICS_TAKELE_WOLDE_HAWARIAT_DESC"
+	picture = "gfx/leaders/Africa/Portrait_Africa_Generic_1.dds"
+	expire = "1965.1.1"
+	ideology = anti_revisionism
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	name = "Haile Selassie Gugsa" #Most notable defector to Italy
+	desc = "POLITICS_HAILE_SELASSIE_GUGSA_DESC"
+	picture = "gfx/leaders/Africa/portrait_africa_generic_land_6.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+	id = 30100
+}
+
+
+#Now a colony of Italy  However, if independent it would have
+1939.1.1 = {
+	set_politics = {
+
+		parties = {
+		democratic = { 
+			popularity = 0
+		}
+
+		fascism = {
+			popularity = 0
+		}
+		
+		communism = {
+			popularity = 0
+			#banned = no #default is no
+		}
+		
+		neutrality = { 
+			popularity = 100
+		}
+	}
+		
+		ruling_party = neutrality
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+}
+
+create_field_marshal = {
+	name = "Haile Selassie"
+	portrait_path = "gfx/leaders/ETH/Portrait_Ethiopia_Haile_Selassie.dds"
+	traits = { media_personality brilliant_strategist offensive_doctrine inspirational_leader }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
+	
+	id = 30110
+}
+create_corps_commander = {
+	name = "Mulugeta Yeggazu" #Veteran of Adowa, Commander of the Mahel Sefari (Army of the Center), Imperial Fitaurari
+	portrait_path = "gfx/leaders/DARK/Portrait_DARK_Mulugeta_Yeggazu.dds"
+	traits = { DARK_ethiopian_old_guard war_hero trait_reckless harsh_leader infantry_officer desert_fox trait_mountaineer }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 4
+	
+	id = 30111
+}
+create_corps_commander = {
+	name = "Kassa Haile Darge" #Commander of the Army of the Right
+	portrait_path = "gfx/leaders/Africa/Portrait_Africa_Generic_land_4.dds" #Pretty sure this is based off the man
+	traits = { trait_reckless infantry_officer trait_mountaineer }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 3
+	
+	id = 30112
+}
+create_corps_commander = {
+	name = "Imru Haile Selassie" #Commander of the Army of the Left, only Ras who understood guerilla tactics in 1936
+	portrait_path = "gfx/leaders/Africa/portrait_africa_generic_land_6.dds"
+	traits = { brilliant_strategist infantry_officer trickster skirmisher trait_mountaineer }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 4
+	
+	id = 30113
+}
+create_corps_commander = {
+	name = "Birru Wolde Gabriel" #Imperial Fitaurari after the death of Mulugeta Yeggazu (I assume he also commanded what was left of the Center Army at Mai Ceu?)
+	portrait_path = "gfx/leaders/Africa/portrait_africa_generic_land_5.dds"
+	traits = { DARK_ethiopian_old_guard trait_reckless infantry_officer desert_fox }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+	
+	id = 30114
+}
+create_corps_commander = {
+	name = "Nasibu Zeamanuel" #Commander of the Southern Front, died in late 1936, possibly from complications related to Mustard Gas
+	portrait_path = "gfx/leaders/Africa/portrait_africa_generic_land_7.dds"
+	traits = { brilliant_strategist trait_reckless infantry_officer desert_fox }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 3
+	
+	id = 30115
+}

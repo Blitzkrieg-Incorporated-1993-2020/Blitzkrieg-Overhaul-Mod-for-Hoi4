@@ -1,0 +1,1118 @@
+﻿add_namespace = NOS_iran 
+country_event = { 
+   id =  NOS_iran.1 
+   title = NOS_iran.1.t 
+   desc = NOS_iran.1.d
+   picture = GFX_report_event_PER_agrarian_policy
+   
+   is_triggered_only = yes
+   
+   fire_only_once = yes 
+   
+   option = { 
+	   name = NOS_iran.1.a
+	   add_political_power = 120 
+	   add_popularity = {
+		   ideology = democratic
+		   popularity = 0.03
+	   }
+	   add_popularity = {
+		   ideology = conservative
+		   popularity = 0.02
+	   }
+	   add_popularity = {
+		   ideology = social_democracy
+		   popularity = 0.02
+	   }
+   }
+   
+   option = {
+	   name = NOS_iran.1.b
+	   add_stability = 0.05
+	   add_popularity = { 
+		   ideology = communism
+		   popularity = 0.05
+	   }
+	   add_popularity = { 
+		   ideology = unionism
+		   popularity = 0.02
+	   }
+	}
+
+   	option = {
+	   name = NOS_iran.1.c
+	   add_ideas = PER_farmer_status_quo
+	}
+}
+#######################
+## Kashf_E_hijab ######
+#######################
+country_event = { 
+    id =  NOS_iran.2
+    title = NOS_iran.2.t 
+    desc = NOS_iran.2.d
+    picture = GFX_report_event_PER_kashfe_hijab
+   
+    is_triggered_only = yes
+   
+    fire_only_once = yes 
+   
+    option = {
+    name = NOS_iran.2.a
+	}
+}
+###############
+# nowruz ######
+###############
+country_event = { 
+    id =  NOS_iran.3
+    title = NOS_iran.3.t 
+    desc = NOS_iran.3.d
+    picture = GFX_report_event_PER_nowruz
+   
+    is_triggered_only = no
+   
+    fire_only_once = yes 
+	
+	trigger = {
+	original_tag = PER
+	date > 1936.3.16
+	date < 1936.3.22
+	}
+   
+    option = {
+    name = NOS_iran.3.a
+	add_stability = 0.01
+	}
+}
+###############
+# demo coup ###
+###############
+country_event = { 
+    id =  NOS_iran.4
+    title = NOS_iran.4.t 
+    desc = NOS_iran.4.d
+    picture = GFX_report_event_PER_demo_coup
+   
+    is_triggered_only = yes
+   
+    fire_only_once = yes 
+	
+	option = {
+	name = NOS_iran.4.a
+	}
+}
+###############
+# oil national#
+###############
+country_event = { 
+    id =  NOS_iran.5
+    title = NOS_iran.5.t 
+    desc = NOS_iran.5.d
+    picture = GFX_report_event_PER_oil_nationalization
+   
+    is_triggered_only = yes
+   
+    fire_only_once = yes 
+	
+	option = {
+	name = NOS_iran.5.a
+	add_stability = -0.05
+	set_global_flag = PER_backed_down
+	custom_effect_tooltip = PER_nationalize_oil_again_tt
+	}
+	option = {
+	name = NOS_iran.5.b
+    ENG = { country_event = { id = NOS_iran.6 days = 2 }
+	custom_effect_tooltip = PER_better_negotiations
+	set_global_flag = PER_negotiate_aioc
+	}
+	}
+	option = {
+	name = NOS_iran.5.c
+    add_stability = 0.05
+	custom_effect_tooltip = PER_abandon_aioc_tt
+	set_global_flag = PER_abandon_aioc
+	remove_ideas = PER_aioc
+	}
+}
+#############################
+## continuation aioc ########
+#############################
+country_event = { 
+    id =  NOS_iran.6
+    title = NOS_iran.6.t 
+    desc = NOS_iran.6.d
+    picture = GFX_report_event_PER_oil_nationalization
+   
+    is_triggered_only = yes
+   
+    fire_only_once = yes 
+	
+	option = {
+	name = NOS_iran.6.a
+	ai_chance = { 
+		factor = 30
+		modifier = { 
+		factor = 4
+		PER = { has_completed_focus = PER_western_advisors }
+		}
+	}
+	PER = { country_event = { id = NOS_iran.7 days = 3 } }
+	}
+
+	option = {
+	name = NOS_iran.6.b
+	ai_chance = { factor = 70 }
+	PER = { country_event = { id = NOS_iran.8 days = 3 } }
+	}
+}
+############################
+#### negotiation agreed ####
+############################
+country_event = { 
+    id =  NOS_iran.7
+    title = NOS_iran.7.t 
+    desc = NOS_iran.7.d
+    picture = GFX_report_event_PER_oil_nationalization
+   
+    is_triggered_only = yes
+   
+    fire_only_once = yes 
+	
+	option = {
+	name = NOS_iran.7.a
+	remove_ideas = PER_aioc
+	add_stability = 0.05
+	}
+}
+############################
+# negotiation breaksdown ###
+############################
+country_event = { 
+    id =  NOS_iran.8
+    title = NOS_iran.8.t 
+    desc = NOS_iran.8.d
+    picture = GFX_report_event_PER_oil_nationalization
+   
+    is_triggered_only = yes
+   
+    fire_only_once = yes 
+	
+	option = {
+	name = NOS_iran.8.a
+	add_stability = -0.05
+	set_global_flag = PER_backed_down
+	custom_effect_tooltip = PER_nationalize_oil_again_tt
+	}
+	
+	option = {
+	name = NOS_iran.8.b
+	custom_effect_tooltip = PER_abandon2_aioc_tt
+	remove_ideas = PER_aioc
+	add_war_support = 0.05
+	PER_british_opinion_down = yes
+	if = {
+		limit = {
+				check_variable = {
+	var = var_german_opinion
+	value = 50
+	compare = greater_than_or_equals
+	}
+		}
+		ENG = { create_wargoal = {
+    type = puppet_wargoal_focus
+    target = PER
+}
+}
+}
+}
+}
+########################
+### british demand #####
+########################
+country_event = { 
+    id =  NOS_iran.9
+    title = NOS_iran.9.t 
+    desc = NOS_iran.9.d
+    picture = GFX_report_event_PER_oil_nationalization
+   
+    is_triggered_only = no
+   
+    fire_only_once = yes
+	
+	trigger = {
+	tag = PER
+	check_variable = {
+    var = var_german_opinion
+    value = 60
+    compare = greater_than_or_equals
+	}
+	}
+		
+	option = {
+	name = NOS_iran.9.a
+	set_variable = { var = var_german_opinion value = -30 }
+	add_stability = -0.05
+	set_global_flag = PER_agreed_to_demand
+}
+	option = {
+	name = NOS_iran.9.b
+	add_stability = 0.05
+	set_global_flag = PER_per_eng_breakdown
+	custom_effect_tooltip = PER_per_eng_breakdown_tt
+	
+}
+}
+
+#############################
+#### breaking point #########
+#############################
+country_event = { 
+    id = NOS_iran.10
+    title = NOS_iran.10.t 
+    desc = NOS_iran.10.d
+    picture = GFX_report_event_PER_oil_nationalization
+	
+	fire_only_once = yes
+	
+	is_triggered_only = no
+	
+	trigger = {
+	tag = PER
+	has_global_flag = PER_per_eng_breakdown
+	date > 1941.9.17
+	}
+	
+	option = { 
+	name = NOS_iran.10.a
+	ENG = { add_to_faction = PER }
+	set_global_flag = PER_agreed_to_demand
+	}
+	
+	option = {
+	name = NOS_iran.10.b
+	PER = { country_event = { id = NOS_iran.11 days = 10 }
+	}
+	}
+}
+################
+country_event = { 
+    id =  NOS_iran.11
+    title = NOS_iran.11.t 
+    desc = NOS_iran.11.d
+    picture = GFX_report_event_PER_anglo_invasion
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+	name = NOS_iran.11.a
+	custom_effect_tooltip = PER_do_not_lose_tt
+	ENG = { declare_war_on = {
+    target = PER
+    type = topple_government
+}
+}
+add_manpower = 10000
+remove_ideas = PER_aioc
+
+}
+}
+################
+country_event = { 
+    id =  NOS_iran.12
+    title = NOS_iran.12.t 
+    desc = NOS_iran.12.d
+    picture = GFX_report_event_PER_demo_coup
+   
+    is_triggered_only = yes
+   
+    fire_only_once = yes 
+	
+	option = {
+	name = NOS_iran.12.a
+	ai_chance = { factor = 30 }
+	set_global_flag = PER_go_with_reza
+	}
+	option = {
+	name = NOS_iran.12.c
+	ai_chance = { factor = 0 }
+	set_global_flag = PER_go_with_tudeh
+	}
+}
+#############################
+###### tudeh protests #######
+#############################
+country_event = { 
+    id =  NOS_iran.13
+    title = NOS_iran.13.t 
+    desc = NOS_iran.13.d
+    picture = GFX_report_event_PER_tudeh_protest
+
+    is_triggered_only = yes
+   
+    fire_only_once = yes 
+	
+	option = {
+	name = NOS_iran.13.a
+	}
+}
+##########################
+#### cossacks history ####
+##########################
+country_event = { 
+    id =  NOS_iran.14
+    title = NOS_iran.14.t 
+    desc = NOS_iran.14.d
+    picture = GFX_report_event_PER_cossacks
+
+    is_triggered_only = yes
+   
+    fire_only_once = yes 
+	
+	option = {
+	name = NOS_iran.14.a
+	}
+}
+###########################
+#### iranian surrender ####
+###########################
+country_event = { 
+    id =  NOS_iran.15
+    title = NOS_iran.15.t 
+    desc = NOS_iran.15.d
+    picture = GFX_report_event_PER_anglo_invasion
+
+	is_triggered_only = yes
+   
+	mean_time_to_happen = { days = 10 }
+	
+	option = {
+	name = NOS_iran.15.a 
+	if = {
+		limit = {
+			SOV = {
+				has_war_with = PER
+				not = { has_war_with = ENG }
+			}
+			any_state = {
+				is_owned_by = PER
+				controller = {
+					tag = SOV
+				}
+			}
+		}
+		every_state = {
+			limit = {
+				is_owned_by = PER
+				OR = {
+					state = 266
+					state = 416
+					state = 418
+					state = 419
+					state = 420
+					state = 1086
+				}
+			}
+			SOV = { transfer_state = PREV }
+		}
+	}
+	ENG = { puppet = PER }
+	ENG = { set_autonomy = { target = PER autonomous_state = autonomy_integrated_puppet freedom_level = 0.75 } }
+	set_politics = { ruling_party = monarchism }
+	add_popularity = { ideology = monarchism popularity = 0.6 }
+	PER = {
+		create_country_leader = {
+		name = "Mohammed Reza Shah"
+		desc = "mohammed_desc"
+		picture = "Mohammed_Reza_Shah.dds"
+		expire = "1965.1.1"
+		ideology = absolutism
+		traits = {
+		}
+	}
+}
+#####################################
+#### turkemnistan for consession ####
+#####################################
+country_event = { 
+    id =  NOS_iran.16
+    title = NOS_iran.16.t 
+    desc = NOS_iran.16.d
+    picture = GFX_report_event_PER_turkmenistan
+		
+	is_triggered_only = yes
+   
+    fire_only_once = yes
+	
+	option = {
+	name = NOS_iran.16.a
+	ai_chance = { factor = 70 }
+	PER = { country_event = { id = NOS_iran.17 days = 3 }
+	set_global_flag = PER_SOV_accepted 
+	}
+	}
+	
+	option = {
+	name = NOS_iran.16.b
+	ai_chance = { factor = 30 }
+    PER = { country_event = { id = NOS_iran.17 days = 3 }
+	set_global_flag = PER_SOV_denied
+	}
+	}
+}
+#############################
+### soviet reaction #########
+#############################
+country_event = { 
+    id =  NOS_iran.17
+    title = {
+	text = NOS_iran.17.t.accepted
+	trigger = { has_global_flag = PER_SOV_accepted  }
+	}
+    title = {
+	text = NOS_iran.17.t.denied
+	trigger = { has_global_flag = PER_SOV_denied }
+	}
+	###
+    desc = {
+	text = NOS_iran.17.d.accepted
+	trigger = { has_global_flag = PER_SOV_accepted  }
+	}
+    desc = {
+	text = NOS_iran.17.d.denied
+	trigger = { has_global_flag = PER_SOV_denied }
+	}
+	###
+	picture = GFX_report_event_PER_turkmenistan
+			
+	is_triggered_only = yes
+   
+    fire_only_once = yes
+	
+	option = {
+	name = NOS_iran.17.a
+	trigger = { has_global_flag = PER_SOV_accepted } 
+	PER = { 
+	transfer_state = 584
+	}
+	add_resource = {
+    type = oil
+    amount = -14
+    state = 411
+	}
+	add_resource = {
+    type = oil
+    amount = 14
+    state = 229
+	}
+	}
+	option = {
+	name = NOS_iran.17.b
+	trigger = { has_global_flag = PER_SOV_denied }
+	PER = {
+	add_state_claim = 584
+	create_wargoal = {
+    type = take_claimed_state
+    target = SOV
+}
+}
+}
+}
+
+################################
+######### farah peace ##########
+################################
+country_event = { 
+    id =  NOS_iran.18
+    title = NOS_iran.18.t 
+    desc = NOS_iran.18.d
+    picture = GFX_report_event_PER_afghanistan
+		
+	is_triggered_only = no
+   
+    fire_only_once = yes
+	
+	trigger = {
+	tag = PER
+	PER = {
+	controls_state = 415
+	has_completed_focus = PER_claim_farah
+	}
+	}
+	
+	option = {
+	name = NOS_iran.18.a
+	white_peace = {
+    tag = AFG
+    message = PER_peace_afg_tt
+	}
+	set_state_owner = 415
+	set_state_owner = 1131
+	}
+}
+########################
+##### bahrain #########
+########################
+country_event = { 
+    id =  NOS_iran.19
+    title = NOS_iran.19.t 
+    desc = NOS_iran.19.d
+    picture = GFX_report_event_PER_bahrain
+		
+	is_triggered_only = yes
+   
+    fire_only_once = yes
+	
+	option = {
+	name = NOS_iran.19.a
+	transfer_state = 658
+	transfer_state = 876
+	PER_british_opinion_down = yes
+	658 = { add_claim_by = ENG }
+	876 = { add_claim_by = ENG }
+}
+
+}
+
+###############################
+########## flavour events #####
+###############################
+#####################
+### look to moscow###
+#####################
+
+country_event = { 
+    id =  NOS_iran.22
+    title = NOS_iran.22.t
+    desc = NOS_iran.22.d
+	picture = GFX_report_event_PER_tudeh_protest
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+		
+	option = {
+	name = NOS_iran.22.a
+	}
+}
+
+#########################
+#### hassan modarres ####
+#########################
+country_event = { 
+    id =  NOS_iran.24
+    title = NOS_iran.24.t 
+    desc = NOS_iran.24.d
+	picture = GFX_report_event_PER_hassan_modarres
+	
+	is_triggered_only = no
+	
+	fire_only_once = yes 
+	
+	trigger = {
+	tag = PER
+	date > 1937.12.1
+	date < 1937.12.10
+	NOT = { has_global_flag = PER_clergy_coup_flag }
+	}
+	
+	option = {
+	name = NOS_iran.24.a
+	set_global_flag = PER_hassan_died_tt
+	}
+	option = {
+	name = NOS_iran.24.b
+	add_stability = 0.05
+	custom_effect_tooltip = PER_hassan_lives_tt
+	hidden_effect = {
+	complete_national_focus = PER_support_clergy
+	}
+	}
+}
+
+add_namespace = PER_flavour_fascist
+
+
+##########################
+#### pick side mos za ####
+##########################
+country_event = {
+   id = PER_flavour_fascist.1
+   title = PER_flavour_fascist.1.t
+   desc = PER_flavour_fascist.1.d 
+   picture = GFX_report_event_PER_demo_coup
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = { 
+   name = PER_flavour_fascist.1.a
+   set_global_flag = PER_go_with_mossadegh
+   }
+   option = {
+   name = PER_flavour_fascist.1.b
+   set_global_flag = PER_go_fascist
+   }  
+}
+##################
+## street brawl ##
+##################
+country_event = {
+   id = PER_flavour_fascist.2
+   title = PER_flavour_fascist.2.t
+   desc = PER_flavour_fascist.2.d 
+   picture = GFX_report_event_generic_rally2
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = { 
+   name = PER_flavour_fascist.2.a
+   add_stability = -0.05
+   add_popularity = {
+      ideology = fascism
+      popularity = 0.1
+   }
+   }
+}
+####################
+#### majlis storm ##
+####################
+country_event = {
+   id = PER_flavour_fascist.3
+   title = PER_flavour_fascist.3.t
+   desc = PER_flavour_fascist.3.d 
+   picture = GFX_report_event_gathering_protest
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = { 
+   name = PER_flavour_fascist.3.a
+   add_stability = -0.05
+   add_popularity = {
+      ideology = fascism
+      popularity = 0.15
+   }
+   411 = {
+   damage_building = {
+    type = infrastructure
+    damage = 1
+   }
+   }
+   }
+}
+######################
+### coup king or no ##
+######################
+country_event = {
+   id = PER_flavour_fascist.4
+   title = PER_flavour_fascist.4.t
+   desc = PER_flavour_fascist.4.d 
+   picture = GFX_report_event_PER_reza_shah
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = { 
+   name = PER_flavour_fascist.4.a
+   add_stability = 0.05
+   set_politics = {
+      ruling_party = fascism
+      }
+   retire_country_leader = yes
+   create_country_leader = {
+   name = "Reza Shah Sardar Sepah"
+   desc = "POLITICS_MOHAMMED_ZAHIR_SHAH_DESC"
+   picture = "Portrait_Iran_Reza_Shah_Pahlavi.dds"
+   expire = "1965.1.1"
+   ideology = fascism_ideology
+   traits = { fascist_sympathies }
+   }
+   country_event = { id = PER_flavour_fascist.5 days = 1 }
+   }
+   option = { 
+   name = PER_flavour_fascist.4.b
+   set_politics = {
+   ruling_party = fascism
+   }
+   add_popularity = {
+      ideology = fascism
+      popularity = 0.1
+   }
+   remove_unit_leader = 9010
+   country_event = { id = PER_flavour_fascist.5 days = 1 }
+   }
+}
+#######################
+####### flag ##########
+#######################
+country_event = {
+   id = PER_flavour_fascist.5
+   title = PER_flavour_fascist.5.t
+   desc = PER_flavour_fascist.5.d 
+   picture = GFX_report_event_generic_sign_treaty2
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = { 
+   name = PER_flavour_fascist.5.a
+   hidden_effect = {
+   set_cosmetic_tag = PER_fascism_cos
+   }
+   }
+   option = { 
+   name = PER_flavour_fascist.5.b
+   hidden_effect = {
+   set_cosmetic_tag = PER_fascism_cos2
+   }
+   }
+}  
+   
+   
+
+add_namespace = PER_flavour_economic
+
+##############################
+##### variable for money #####
+##############################
+#### per_var_money ###########
+##############################
+
+###############################
+#### trans iranian railway ####
+###############################
+country_event = {
+   id = PER_flavour_economic.1
+   title = PER_flavour_economic.1.t
+   desc = PER_flavour_economic.1.d 
+   picture = GFX_report_event_PER_trans_railway
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = { 
+   name = PER_flavour_economic.1.a
+   add_stability = 0.01
+   }
+}
+
+######################
+#### bank e melli ####
+######################
+country_event = {
+   id = PER_flavour_economic.2
+   title = PER_flavour_economic.2.t
+   desc = PER_flavour_economic.2.d 
+   picture = GFX_report_event_PER_bank
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = { 
+   name = PER_flavour_economic.2.a
+   PER_money_up_stab_down = yes
+   }
+}
+####################################
+##### adabadan refinery built ######
+####################################
+country_event = {
+   id = PER_flavour_economic.3
+   title = PER_flavour_economic.3.t
+   desc = PER_flavour_economic.3.d
+   picture = GFX_report_event_PER_abadan_refinery
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = { 
+   name = PER_flavour_economic.3.a
+      add_tech_bonus = {
+         bonus = 0.5
+         uses = 1
+         category = excavation_tech
+      }
+      PER_money_up_stab_down = yes
+   }
+}
+#######################################
+######## extra building slots #########
+#######################################
+country_event = {
+   id = PER_flavour_economic.4
+   title = PER_flavour_economic.4.t
+   desc = PER_flavour_economic.4.d
+   picture = GFX_report_event_PER_abadan_refinery
+   
+   fire_only_once = yes
+   
+   is_triggered_only = no
+   
+   trigger = {
+   original_tag = PER
+   date > 1939.1.1
+   }
+   
+   option = { 
+   name = PER_flavour_economic.4.a
+   random_state = {
+   add_extra_state_shared_building_slots = 2
+   }
+   random_state = {
+   add_extra_state_shared_building_slots = 2
+   }
+   }
+}
+######################################
+######## money control ###############
+######################################
+country_event = {
+   id = PER_flavour_economic.5
+   title = PER_flavour_economic.5.t
+   desc = PER_flavour_economic.5.d 
+   picture = GFX_report_event_PER_bank
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = { 
+   name = PER_flavour_economic.5.a
+   PER_money_up_stab_down = yes
+
+}
+}
+##############################
+### com government restruc ###
+##############################
+country_event = {
+   id = PER_flavour_economic.6
+   title = PER_flavour_economic.6.t
+   desc = PER_flavour_economic.6.d 
+   picture = GFX_report_event_election_vote
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = { 
+   name = PER_flavour_economic.6.a
+   PER_soviet_opinion_up = yes
+}
+
+add_namespace = PER_flavour_diplomacy
+
+#########################
+#### turkey_alliance ####
+#########################
+country_event = {
+   id = PER_flavour_diplomacy.1
+   title = PER_flavour_diplomacy.1.t
+   desc = PER_flavour_diplomacy.1.d 
+   picture = GFX_report_event_generic_sign_treaty1
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = { 
+   name = PER_flavour_diplomacy.1.a
+   FROM = { country_event = { id = PER_flavour_diplomacy.2 days = 1 } }
+   ai_chance = { 
+         factor = 50
+         modifier = { 
+            factor = 4
+            has_idea = PER_tur_economy_idea
+            }
+         }
+      }
+   option = {
+   name = PER_flavour_diplomacy.1.b
+   ROOT = { PER = { country_event = { id = PER_flavour_diplomacy.3 days = 1 } } }
+   }  
+}
+###################################
+######### yes  ally turkey ########
+###################################
+country_event = {
+   id = PER_flavour_diplomacy.2
+   title = PER_flavour_diplomacy.2.t
+   desc = PER_flavour_diplomacy.2.d 
+   picture = GFX_report_event_generic_sign_treaty1
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = { 
+   name = PER_flavour_diplomacy.2.a
+   create_faction = PER_sadabad_pact
+   add_to_faction = FROM
+   }
+}
+###########################
+###### germany ############
+##########################
+###### steel #######
+country_event = {
+   id = PER_flavour_diplomacy.3
+   title = PER_flavour_diplomacy.3.t
+   desc = PER_flavour_diplomacy.3.d 
+   picture = GFX_Portrait_Germany_Adolf_Hitler.dds
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = {
+   name = PER_flavour_diplomacy.3.a
+   ai_chance = {
+      factor = 50
+      modifier = {
+         factor = 4
+         check_variable = {
+         var = var_german_opinion
+         value = 10
+         compare = greater_than_or_equals
+         }
+      }
+   }
+   PER = { country_event = { id = PER_flavour_diplomacy.4 days = 1 } }
+}
+   option = {
+   name = PER_flavour_diplomacy.3.b
+   ai_chance = {
+      factor = 50
+   }
+   PER = { country_event = { id = PER_flavour_diplomacy.5 days = 1 } }
+}
+}
+#######
+# yes #
+#######
+country_event = {
+   id = PER_flavour_diplomacy.4
+   title = PER_flavour_diplomacy.4.t
+   desc = PER_flavour_diplomacy.4.d 
+   picture = GFX_report_event_generic_sign_treaty1
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = {
+   name = PER_flavour_diplomacy.4.a
+      add_resource = {
+         type = steel
+         amount = 20
+         state = 266
+      }
+      PER_german_opinion_up = yes
+   }
+}
+country_event = {
+   id = PER_flavour_diplomacy.5
+   title = PER_flavour_diplomacy.5.t
+   desc = PER_flavour_diplomacy.5.d 
+   picture = GFX_report_event_generic_sign_treaty1
+   
+   fire_only_once = yes
+   
+   is_triggered_only = yes
+   
+   option = {
+   name = PER_flavour_diplomacy.5.a
+   PER_german_opinion_down = yes
+   }
+}
+
+add_namespace = iran_clergy_event
+#######################
+#### clergy revolt ####
+#######################
+country_event = { 
+   id =  iran_clergy_event.1 
+   title = iran_clergy_event.1.t 
+   desc = iran_clergy_event.1.d
+   picture = GFX_report_event_gathering_protest
+   
+   is_triggered_only = yes
+   
+   fire_only_once = yes 
+   
+   option = {
+   name = iran_clergy_event.1.a
+   country_event = { id = iran_clergy_event.2 days = 1}
+   }
+   option = { 
+   name = iran_clergy_event.1.b
+   trigger = { NOT = { has_global_flag = PER_hassan_died_tt } }
+   set_global_flag = PER_clergy_coup_flag
+   retire_country_leader = yes
+   create_country_leader = {
+	name = "Hassan Modarres"
+	desc = "#"
+	picture = "HassanModarres.dds"
+	expire = "1965.1.1"
+	ideology = oligarchism
+	traits = {	
+	}
+	}
+set_party_name = { 
+    ideology = neutrality 
+    long_name = PER_clergy_party_long 
+    name = PER_clergy_party
+}
+	
+remove_unit_leader = 9010
+complete_national_focus = PER_fascist_path
+complete_national_focus = PER_republic_mossadeq
+}
+}
+##############
+## stab hit ##
+##############
+country_event = { 
+   id =  iran_clergy_event.2 
+   title = iran_clergy_event.2.t 
+   desc = iran_clergy_event.2.d
+   picture = GFX_report_event_gathering_protest
+   
+   is_triggered_only = yes
+   
+   fire_only_once = yes 
+   
+   option = {
+   name = iran_clergy_event.2.a
+   add_stability = -0.25
+   add_political_power = -300
+   }
+   }
+   
+   
+	
+	
+	
+	
+	
+   
+	
+	
+
+
+	
+
+

@@ -775,16 +775,14 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		NOT = {
-			has_dlc = "Waking the Tiger"
-		}
 		tag = CHI
 		has_war_with = JAP
 		JAP = { has_offensive_war = yes }
 		has_defensive_war = yes
-		NOT = { owns_state = 622 }		
-		NOT = { has_global_flag = CHI_unite }
-		NOT = { has_global_flag = CHI_no_national_front_flag }
+		NOT = { has_global_flag = CHI_unite } 
+		NOT = { has_global_flag = KMT_mao_says_kys }
+		has_global_flag = KMT_united_front_enabled
+		NOT = { has_completed_focus = KMT_strike_PRC }
 	}
 
 	mean_time_to_happen = {
@@ -813,9 +811,6 @@ country_event = {
 	picture = GFX_report_event_chinese_officers
 
 	trigger = {
-		NOT = {
-			has_dlc = "Waking the Tiger"
-		}
 		NOT = { has_country_flag = china.101_fired }
 		has_global_flag = CHI_unite
 		OR = {
@@ -989,10 +984,7 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		NOT = {
-			has_dlc = "Waking the Tiger"
-		}
-		has_global_flag = CHI_unite_PRC
+		has_global_flag = CHI_unite
 		tag = PRC
 		CHI = {
 			has_war_with = JAP 

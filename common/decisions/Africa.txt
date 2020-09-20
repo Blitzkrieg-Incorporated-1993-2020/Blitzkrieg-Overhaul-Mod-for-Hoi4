@@ -1,0 +1,481 @@
+
+DARK_revive_ethiopia_category = {
+	
+	DARK_revive_ethiopia_decision = {
+		
+		icon = generic_form_nation
+		
+		target_trigger = {
+			FROM = {
+				has_war_with = ROOT
+				271 = { OWNER = { tag = FROM } }
+			}
+		}
+		
+		available = {
+			271 = { is_controlled_by_ROOT_or_subject = yes }
+		}
+		
+		visible = {
+			271 = {
+				OWNER = { has_war_with = ROOT }
+			}
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { NOT = { country_exists = ETH } }
+				set_global_flag = ETH_revived_during_ww2
+				every_state = {
+					limit = {
+						is_core_of = ETH
+						owner = { has_war_with = ROOT }
+						is_controlled_by_ROOT_or_subject = yes
+					}
+					ETH = { transfer_state = PREV }
+				}
+				every_state = {
+					limit = {
+						is_core_of = ETH
+						owner = { has_war_with = ROOT }
+						is_controlled_by_ROOT_or_subject = no
+					}
+					ETH = { set_state_owner = PREV }
+				}
+				send_equipment = {
+					type = infantry_equipment
+					target = ETH
+					amount = 1000
+				}
+				add_to_faction = ETH
+				ETH = {
+					declare_war_on = {
+						type = take_state_focus
+						target = FROM
+						generator = { 550 271 }
+					}
+					add_ideas = { 
+						POL_ulitmat_badass
+					}
+					hidden_effect = {
+						if = {
+							limit = { NOT = has_cosmetic_tag = DARK_evil_ethiopia }
+							set_cosmetic_tag = DARK_ethiopia_reborn
+						}
+						
+						division_template = {
+							name = "Freedom Force"
+							priority = 2
+							division_names_group = ETH_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+								infantry = { x = 0 y = 3 }
+								infantry = { x = 0 y = 4 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+								infantry = { x = 1 y = 3 }
+								infantry = { x = 1 y = 4 }
+							}
+							support = {
+								recon = { x = 0 y = 0 }
+							}
+						}
+						random_owned_controlled_state = {
+								prioritize = { 271 }
+								create_unit = {
+									division = "name = \"Gideon Force\" division_template = \"Freedom Force\" start_experience_factor = 0.5" 
+									owner = PREV
+								}
+							}
+						division_template = {
+							name = "Arbegnoch" #Patriots, the various rebel groups in Ethiopia (Known as Shifta to Italy)
+							priority = 1
+							division_names_group = ETH_GAR_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+							}
+							support = {
+								recon = { x = 0 y = 0 }
+							}
+						}
+						random_owned_controlled_state = {
+							prioritize = { 271 }
+							create_unit = {
+								division = "name = \"Gojjam Arbegnoch\" division_template = \"Arbegnoch\" start_experience_factor = 0.5" 
+								owner = ETH
+							}
+						}
+						random_owned_controlled_state = {
+							prioritize = { 271 }
+							create_unit = {
+								division = "name = \"Gore Arbegnoch\" division_template = \"Arbegnoch\" start_experience_factor = 0.5" 
+								owner = ETH
+							}
+						}
+						random_owned_controlled_state = {
+							prioritize = { 271 }
+							create_unit = {
+								division = "name = \"Ogaden Arbegnoch\" division_template = \"Arbegnoch\" start_experience_factor = 0.5" 
+								owner = ETH
+							}
+						}
+					}
+				}
+			}
+			else = {
+				ETH = {
+					hidden_effect = {
+						set_global_flag = ETH_revived_during_ww2
+						every_state = {
+							limit = {
+								is_core_of = ETH
+								owner = { has_war_with = ROOT }
+								is_controlled_by_ROOT_or_subject = yes
+							}
+							set_state_flag = DARK_revolting_eth_state
+							ETH = { transfer_state = PREV }
+						}
+						if = {
+							limit = { NOT = has_cosmetic_tag = DARK_evil_ethiopia }
+							set_cosmetic_tag = DARK_ethiopia_reborn
+						}
+					}
+					if = {
+						limit = { ETH = { has_government = neutrality } }
+						start_civil_war = {
+							ruling_party = neutrality
+							ideology = monarchism
+							size = 0.25
+							states_filter = {
+								has_state_flag = DARK_revolting_eth_state
+							}
+						}
+					}
+					if = {
+						limit = { ETH = { has_government = fascism } }
+						start_civil_war = {
+							ruling_party = fascism
+							ideology = monarchism
+							size = 0.25
+							states_filter = {
+								has_state_flag = DARK_revolting_eth_state
+							}
+						}
+					}
+					if = {
+						limit = { ETH = { has_government = unionism } }
+						start_civil_war = {
+							ruling_party = unionism
+							ideology = monarchism
+							size = 0.25
+							states_filter = {
+								has_state_flag = DARK_revolting_eth_state
+							}
+						}
+					}
+					else_if = {
+						limit = { ETH = { has_government = communism } }
+						start_civil_war = {
+							ruling_party = communism
+							ideology = monarchism
+							size = 0.25
+							states_filter = {
+								has_state_flag = DARK_revolting_eth_state
+							}
+						}
+					}
+					else_if = {
+						limit = { ETH = { has_government = democratic } }
+						start_civil_war = {
+							ruling_party = democratic
+							ideology = monarchism
+							size = 0.25
+							states_filter = {
+								has_state_flag = DARK_revolting_eth_state
+							}
+						}
+					}
+					else_if = {
+						limit = { ETH = { has_government = conservative } }
+						start_civil_war = {
+							ruling_party = conservative
+							ideology = monarchism
+							size = 0.25
+							states_filter = {
+								has_state_flag = DARK_revolting_eth_state
+							}
+						}
+					}
+					else_if = {
+						limit = { ETH = { has_government = social_democracy } }
+						start_civil_war = {
+							ruling_party = social_democracy
+							ideology = monarchism
+							size = 0.25
+							states_filter = {
+								has_state_flag = DARK_revolting_eth_state
+							}
+						}
+					}
+					random_other_country = {
+						limit = {
+							original_tag = ETH
+							NOT = { tag = ETH }
+						}						
+						send_equipment = {
+							type = infantry_equipment
+							amount = 1000
+						}
+						ROOT = { add_to_faction = PREV }
+						hidden_effect = {
+							create_country_leader = {
+								name = "Makonnen Endelkachew"
+								desc = "POLITICS_MAKONNEN_ENDELKACHEW_DESC"
+								picture = "gfx/leaders/SAF/Portrait_South_Africa_Political_Leader_Generic_2.dds"
+								expire = "1965.1.1"
+								ideology = liberalism
+								traits = {
+									#
+								}
+							}
+							create_country_leader = {
+								name = "Takele Wolde Hawariat"
+								desc = "POLITICS_TAKELE_WOLDE_HAWARIAT_DESC"
+								picture = "gfx/leaders/Africa/Portrait_Africa_Generic_1.dds"
+								expire = "1965.1.1"
+								ideology = anti_revisionism
+								traits = {
+									#
+								}
+							}
+							create_country_leader = {
+								name = "Hailu Tekle Haimonot"
+								desc = "POLITICS_HAILU_TEKLE_HAIMONOT_DESC"
+								picture = "gfx/leaders/SYR/Portrait_Arabia_Generic_navy_1.dds"
+								expire = "1965.1.1"
+								ideology = fascism_ideology
+								traits = {
+									war_industrialist
+								}
+							}
+							save_event_target_as = DARK_revolting_eth_country
+							every_unit_leader = {
+								set_nationality = ETH
+							}
+							ETH = {
+								every_unit_leader = {
+									limit = {
+										OR = {
+											has_id = 30110
+											#has_id = 30111 IS DEAD
+											has_id = 30112
+											has_id = 30113
+											has_id = 30114
+											#has_id = 30115 IS DEAD
+										}
+									}
+									set_nationality = event_target:DARK_revolting_eth_country
+								}
+							}
+							if = {
+								limit = { NOT = { has_unit_leader = 30110 } }
+								create_field_marshal = {
+									name = "Haile Selassie"
+									portrait_path = "gfx/leaders/ETH/Portrait_Ethiopia_Haile_Selassie.dds"
+									traits = { media_personality brilliant_strategist offensive_doctrine inspirational_leader }
+									skill = 3
+									attack_skill = 3
+									defense_skill = 3
+									planning_skill = 3
+									logistics_skill = 3
+									
+									id = 30110
+								}
+							}
+							division_template = {
+								name = "Freedom Force"
+								priority = 2
+								division_names_group = ETH_INF_01
+								regiments = {
+									infantry = { x = 0 y = 0 }
+									infantry = { x = 0 y = 1 }
+									infantry = { x = 0 y = 2 }
+									infantry = { x = 0 y = 3 }
+									infantry = { x = 0 y = 4 }
+									infantry = { x = 1 y = 0 }
+									infantry = { x = 1 y = 1 }
+									infantry = { x = 1 y = 2 }
+									infantry = { x = 1 y = 3 }
+									infantry = { x = 1 y = 4 }
+								}
+								support = {
+									recon = { x = 0 y = 0 }
+								}
+							}
+							random_owned_controlled_state = {
+								prioritize = { 271 }
+								create_unit = {
+									division = "name = \"Gideon Force\" division_template = \"Freedom Force\" start_experience_factor = 0.5" 
+									owner = PREV
+								}
+							}
+							division_template = {
+								name = "Arbegnoch" #Patriots, the various rebel groups in Ethiopia (Known as Shifta to Italy)
+								priority = 1
+								division_names_group = ETH_GAR_01
+								regiments = {
+									infantry = { x = 0 y = 0 }
+									infantry = { x = 0 y = 1 }
+									infantry = { x = 0 y = 2 }
+									infantry = { x = 1 y = 0 }
+									infantry = { x = 1 y = 1 }
+									infantry = { x = 1 y = 2 }
+								}
+								support = {
+									recon = { x = 0 y = 0 }
+								}
+							}
+							random_owned_controlled_state = {
+								prioritize = { 271 }
+								create_unit = {
+									division = "name = \"Gojjam Arbegnoch\" division_template = \"Arbegnoch\" start_experience_factor = 0.5" 
+									owner = PREV
+								}
+							}
+							random_owned_controlled_state = {
+								prioritize = { 271 }
+								create_unit = {
+									division = "name = \"Gore Arbegnoch\" division_template = \"Arbegnoch\" start_experience_factor = 0.5" 
+									owner = PREV
+								}
+							}
+							random_owned_controlled_state = {
+								prioritize = { 271 }
+								create_unit = {
+									division = "name = \"Ogaden Arbegnoch\" division_template = \"Arbegnoch\" start_experience_factor = 0.5" 
+									owner = PREV
+								}
+							}
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = DARK_eth_troops_tt
+		}
+		
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 0
+				has_government = communism
+				surrender_progress < 0.15
+			}
+		}
+	}
+}
+
+DARK_restore_sultan_category = {
+	
+	DARK_restore_sultan_decision = {
+		
+		icon = generic_form_nation
+		
+		available = {
+			is_subject = no
+		}
+		
+		visible = {
+			is_subject = no
+			OR = {
+				AND = {
+					has_government = monarchism
+					NOT = { has_country_leader = { name = "Ali Yusuf Kenadid" ruling_only = yes } }
+				}
+				AND = {
+					has_government = fascism
+					NOT = { has_country_leader = { name = "Osman Mahamuud" ruling_only = yes } }
+				}
+			}
+		}
+		
+		cost = 0
+		
+		complete_effect = {		
+			if = {
+				limit = { has_government = fascism }
+				retire_country_leader = yes
+				if = {
+					limit = { NOT = { has_unit_leader = 30311 } }
+					create_field_marshal = {
+						name = "Olol Dinke"
+						portrait_path = "gfx/leaders/SYR/Portrait_Arabia_Generic_land_1.dds"
+						traits = { brilliant_strategist cavalry_officer offensive_doctrine cavalry_leader commando skirmisher desert_fox }
+						skill = 5
+						attack_skill = 5
+						defense_skill = 6
+						planning_skill = 4
+						logistics_skill = 5
+						
+						id = 30311
+					}
+				}
+				create_country_leader = {
+					name = "Osman Mahamuud"
+					desc = "POLITICS_OSMAN_MAHAMUUD_DESC"
+					picture = "gfx/leaders/DARK/Portrait_DARK_Osman_Mahamuud.tga"
+					ideology = fascism_ideology
+					traits = {
+						#
+					}
+				}
+			}
+			else_if = {
+				limit = { has_government = monarchism }
+				retire_country_leader = yes
+				if = {
+					limit = { NOT = { has_unit_leader = 30310 } }
+					create_field_marshal = {
+						name = "Omar Samanthar"
+						portrait_path = "gfx/leaders/SYR/Portrait_Arabia_Generic_land_2.dds"
+						traits = { brilliant_strategist cavalry_officer offensive_doctrine cavalry_leader cavalry_expert trickster desert_fox }
+						skill = 5
+						attack_skill = 6
+						defense_skill = 5
+						planning_skill = 4
+						logistics_skill = 5
+						
+						id = 30310
+					}
+				}
+				create_country_leader = {
+					name = "Ali Yusuf Kenadid"
+					desc = "POLITICS_ALI_YUSUF_KENADID_DESC"
+					picture = "gfx/leaders/YEM/portrait_yem_imam_yaha.dds"
+					ideology = despotism
+					traits = {
+						#
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+}

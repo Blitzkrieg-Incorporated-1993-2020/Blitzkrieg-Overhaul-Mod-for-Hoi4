@@ -1,0 +1,18 @@
+################
+#### SOVIET ####
+################
+
+SOV_industry_relocation = {
+	
+	allowed = {
+		is_literally_russia = yes
+	}
+
+	available = {
+		has_completed_focus = SOV_Move_Industry_Eastward
+	}
+
+	visible = {
+		has_war = yes
+	}
+}

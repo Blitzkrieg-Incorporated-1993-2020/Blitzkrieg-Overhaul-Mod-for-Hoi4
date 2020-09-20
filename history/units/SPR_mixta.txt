@@ -1,0 +1,65 @@
+division_template = {
+	name = "Brigada Mixta"			# International volunteers -- poor equipment, no experience (militia)
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+units = {
+    division = {
+		name = "I Brigada Mixta"
+		location = 3938  # Madrid
+		division_template = "Brigada Mixta"
+	}
+	division = {
+		name = "II Brigada Mixta"
+		location = 3938  # Madrid
+		division_template = "Brigada Mixta"
+	}
+    division = {
+		name = "III Brigada Mixta"
+		location = 3938  # Madrid
+		division_template = "Brigada Mixta"
+	}
+	division = {
+		name = "IV Brigada Mixta"
+		location = 3938  # Madrid
+		division_template = "Brigada Mixta"
+	}
+	division = {
+		name = "V Brigada Mixta"
+		location = 9764  # Barcelona
+		division_template = "Brigada Mixta"
+	}
+    division = {
+		name = "VI Brigada Mixta"
+		location = 9764  # Barcelona
+		division_template = "Brigada Mixta"
+	}
+	division = {
+		name = "VII Brigada Mixta"
+		location = 9764  # Barcelona
+		division_template = "Brigada Mixta"
+	}
+	division = {
+		name = "VIII Brigada Mixta"
+		location = 9764  # Barcelona
+		division_template = "Brigada Mixta"
+	}
+	division = {
+		name = "IX Brigada Mixta"
+		location = 9764  # Barcelona
+		division_template = "Brigada Mixta"
+	}
+	division = {
+		name = "X Brigada Mixta"
+		location = 9764  # Barcelona
+		division_template = "Brigada Mixta"
+	}
+}

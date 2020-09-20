@@ -1,0 +1,17 @@
+opinion_modifiers = {
+	protecting_from_russia = {
+		value = 70
+	}
+	protector_of_democracy = {
+		value = 30
+	}
+	ERW_german_interest = {
+		value = 50
+	}
+	ERW_german_internationale = {
+		value = -100
+	}
+	ERW_german_arms_offers = {
+		value = 25
+	}
+}

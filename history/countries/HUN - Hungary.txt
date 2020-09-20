@@ -18,32 +18,15 @@ set_technology = {
 	fuel_silos = 1
 }
 
-add_ideas = {
-HUN_trianon
-HUN_sluggish_economy
-HUN_kingdom_without_a_king
-HUN_gombos
+if = {
+	limit = {
+		has_dlc = "Death or Dishonor"
+	}
+	add_ideas = {
+		disarmed_nation
+		HUN_treaty_of_triannon
+	}
 }
-
-set_variable = {
-        var = HUN_german_influence
-        value = 20
-    }
-    
-set_variable = {
-        var = HUN_british_influence
-        value = 5
-    }
-    
-    add_to_variable = {
-        var = HUN_filler
-        value = 3
-    }
-	
-	add_to_variable = {
-        var = HUN_filler
-        value = 6
-    }
 
 1939.1.1 = {
 	remove_ideas = HUN_treaty_of_triannon
@@ -142,16 +125,15 @@ set_variable = {
 }
 
 set_politics = {
-	ruling_party = reactionary
+	ruling_party = neutrality
 	last_election = "1935.3.31"
 	election_frequency = 48
-	elections_allowed = no
+	elections_allowed = yes
 }
 set_popularities = {
-    reactionary = 65
-    monarchy = 15
-    fascism = 15
-    democratic = 15
+	democratic = 25
+	fascism = 31
+	neutrality = 44
 }
 
 #Start Horty as neutral if DOD
@@ -164,7 +146,7 @@ if = {
 		desc = "POLITICS_MIKLOS_HORTHY_DESC"
 		picture = "Portrait_Hungary_Miklos_Horthy.dds"
 		expire = "1965.1.1"
-		ideology = populism
+		ideology = oligarchism
 		traits = {
 			fascist_sympathies
 			anti_communist
@@ -177,7 +159,7 @@ if = {
 			desc = "POLITICS_MIKLOS_HORTHY_DESC"
 			picture = "Portrait_Hungary_Miklos_Horthy.dds"
 			expire = "1965.1.1"
-			ideology = populism
+			ideology = despotism
 		}
 		create_country_leader = {
 			name = "Miklós Horthy"
@@ -203,20 +185,9 @@ create_country_leader = {
 create_country_leader = {
 	name = "Árpád Szakasits"
 	desc = "POLITICS_ARPAD_SZAKASITS_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+	picture = "Portrait_Arpad_Szakasits.dds"
 	expire = "1965.1.1"
 	ideology = socialism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Hungarian Anarchist"
-	desc = "POLITICS_HUN_ANARCHIST_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
-	expire = "1965.1.1"
-	ideology = anarchism_ideology
 	traits = {
 		#
 	}

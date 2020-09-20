@@ -12,22 +12,33 @@ country_event = {
 	picture = GFX_report_event_soviet_tanks_snow
 	
 	is_triggered_only = yes
-	
+
 	option = { # Accept demands
 		name = finland.1.a
 		ai_chance = { 
-		factor = 25
-		modifier = { # Don't accept if in a faction that can protect them
+			factor = 25
+			modifier = {
 				factor = 0
 				OR = {
 					any_other_country = {
 						is_major = yes
 						OR = {
-							is_in_faction_with = FIN
-							has_guaranteed = FIN
+							is_in_faction_with = ROOT
+							has_guaranteed = ROOT
 						}
 					}
 					has_idea = anti_soviet_pact
+					AND = {
+						is_historical_focus_on = yes
+						date < 1941.1.1
+					}
+				}
+			}
+			modifier = {
+				factor = 1000
+				AND = {
+					is_historical_focus_on = yes
+					date > 1941.1.1
 				}
 			}
 		}
@@ -46,7 +57,7 @@ country_event = {
 			effect_tooltip = {
 				create_wargoal = {
 					type = take_state
-					target = FIN
+					target = ROOT
 					generator = { 146 }
 				}
 			}
@@ -107,7 +118,7 @@ country_event = {
 				factor = 10
 				OR = {
 					has_war = yes
-					has_government = communism
+					OR = { has_government = unionism has_government = communism }
 				}
 			}
 		}
@@ -128,9 +139,9 @@ country_event = {
 			factor = 25
 			modifier = {
 				factor = 5							
-				has_government = democratic
+				has_democratic_government = yes
 				FIN = {
-				 has_government = democratic
+				 has_democratic_government = yes
 				}
 			}
 		}
@@ -139,7 +150,7 @@ country_event = {
 			AND = {
 				has_war = no
 				NOT = {
-					has_government = communism
+					OR = { has_government = unionism has_government = communism }
 				}
 			}	
 			has_manpower > 8402
@@ -169,11 +180,6 @@ country_event = {
 				amount = 250
 			}
 		}
-		add_ai_strategy = {
-			type = support
-			id = FIN
-			value = 100
-		}
 		FIN = {
 			country_event = { id = finland.5 days = 3 }
 		}
@@ -192,13 +198,13 @@ country_event = {
 			modifier = {
 				factor = 100
 				has_war = no
-				has_government = democratic
+				has_democratic_government = yes
 				strength_ratio = {
 					tag = SOV
 					ratio > 0.2
 				}
 				FIN = {
-					has_government = democratic
+					has_democratic_government = yes
 					strength_ratio = {
 						tag = SOV 
 						ratio > 0.3
@@ -299,14 +305,15 @@ country_event = {
 	picture = GFX_report_event_soviet_tanks_snow
 	
 	trigger = {
-		tag = FIN
+		owns_state = 146
+		146 = { is_claimed_by = SOV }
 		has_war_with = SOV
-		surrender_progress > 0.25
+		surrender_progress > 0.1
 		has_civil_war = no
 		is_in_faction = no
 	}
 
-	mean_time_to_happen = { days = 20 }
+	mean_time_to_happen = { days = 10 }
 
 	fire_only_once = yes
 
@@ -314,53 +321,17 @@ country_event = {
 	option = {
 		name = finland.7.a
 		ai_chance = {
-			base = 8
+			base = 9
 		}
-		SOV = {
-			country_event = { id = finland.8 }
-		}
-		custom_effect_tooltip = finland.7.a_tt
-		effect_tooltip = {
-			SOV = { 
-				white_peace = {
-					tag = FIN 
-					message = FIN_agree_peace 
-				} 
-			}
-			transfer_state = 146
-			transfer_state = 147
-			if = {
-				limit = {
-					722 = {
-						is_claimed_by = SOV
-					}
-				}
-				SOV = { remove_state_claim = 722 }
-			}
-			if = {
-				limit = {
-					1067 = {
-						is_claimed_by = SOV
-					}
-				}
-				SOV = { remove_state_claim = 1067 }
-			}
-			if = {
-				limit = {
-					1068 = {
-						is_claimed_by = SOV
-					}
-				}
-				SOV = { remove_state_claim = 1068 }
-			}
-		}
+		SOV = { country_event = { id = finland.8 } }
+		hidden_effect = { set_country_flag = FIN_surrender }
 	}
 
 	#Never give up!
 	option = {
 		name = finland.7.b
 		ai_chance = {
-			base = 2
+			base = 1
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
@@ -384,63 +355,43 @@ country_event = {
 		ai_chance = {
 			base = 9
 		}
-		white_peace = FIN
-		transfer_state = 146
-		transfer_state = 147
 		if = {
 			limit = {
-				722 = {
-					is_claimed_by = SOV
-				}
+				FROM = { original_tag = FIN }
 			}
-			remove_state_claim = 722
-		}
-		if = {
-			limit = {
-				1067 = {
-					is_claimed_by = SOV
-				}
-			}
-			SOV = { remove_state_claim = 1067 }
-		}
-		if = {
-			limit = {
-				1068 = {
-					is_claimed_by = SOV
-				}
-			}
-				SOV = { remove_state_claim = 1068 }
-		}
-		FIN = {
-			add_ai_strategy = {
-				type = antagonize
-				id = "SOV"			
-				value = 200
+			white_peace = FROM
+			diplomatic_relation = { country = FROM relation = non_aggression_pact }
+			transfer_state = 146
+			transfer_state = 147
+			transfer_state = 1067
+			hidden_effect = {
+				add_state_core = 146
+				add_state_core = 147
+				remove_state_claim = 722
+				remove_state_claim = 146
+				remove_state_claim = 147
 			}
 		}
 		if = {
 			limit = {
-				GER = {
-					is_subject = no
-					not = { is_in_faction_with = SOV}
+				NOT = { FROM = { original_tag = FIN } }
+			}
+			white_peace = FROM
+			diplomatic_relation = { country = FROM relation = non_aggression_pact }
+			every_state = {
+				limit = {
+					is_core_of = FIN
+					is_owned_by = FROM
 				}
+				transfer_state = PREV
 			}
-			add_ai_strategy = {
-				type = alliance
-				id = "GER"			
-				value = 200
-			}
-			add_ai_strategy = {
-				type = befriend
-				id = "GER"			
-				value = 200
-			}
-			GER = {
-				add_ai_strategy = {
-					type = alliance
-					id = "FIN"			
-					value = 200
-				}
+			hidden_effect = {
+				remove_state_claim = 722
+				remove_state_claim = 146
+				remove_state_claim = 147
+				add_state_core = 146
+				add_state_core = 147
+				add_state_core = 722
 			}
 		}
 	}
@@ -455,7 +406,7 @@ country_event = {
 				is_historical_focus_on = yes
 			}			
 		}
-		FIN = { country_event = { id = finland.9 } }
+		FROM = { country_event = { id = finland.9 } }
 	}
 }
 

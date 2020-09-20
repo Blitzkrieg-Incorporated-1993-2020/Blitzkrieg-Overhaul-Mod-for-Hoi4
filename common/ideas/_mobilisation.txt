@@ -1,0 +1,182 @@
+ideas = {
+	### Mobilization/Level of Readiness
+	mobilization = { 
+		law = yes
+		use_list_view = yes
+		
+		mob_reserve = {
+					
+			cost = 25
+			removal_cost = -1
+			level = 4
+			
+			available = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = 0.05
+				army_org_factor = -0.75
+				army_morale_factor = -0.5
+				navy_org_factor = -0.5
+				army_attack_factor = -0.3
+				army_defence_factor = -0.3
+				air_superiority_efficiency = -0.5
+				air_cas_efficiency = -0.5
+				air_strategic_bomber_bombing_factor = -0.9
+				air_escort_efficiency = -0.5
+				air_intercept_efficiency = -0.5
+				air_nav_efficiency = -0.5
+				air_ace_generation_chance_factor = -0.75
+				training_time_army_factor = 0.25
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = -0.1
+				production_speed_dockyard_factor = -0.1
+				
+				industrial_capacity_dockyard = -0.1
+				industrial_capacity_factory = 0.1
+				
+			}
+			
+			default = yes
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+   				factor = 1
+			}
+		}
+		mob_standing = {
+					
+			cost = 25
+			removal_cost = -1
+			level = 3
+			
+			available = {
+				 OR = {
+					has_idea = unity_broken_nation
+					has_idea = unity_divided_nation
+					has_idea = unity_united_nation
+				}
+			}
+			
+			modifier = {
+				political_power_factor = 0.025
+				army_org_factor = -0.50
+				army_morale_factor = -0.25
+				navy_org_factor = -0.25
+				army_attack_factor = -0.2
+				army_defence_factor = -0.2
+				air_superiority_efficiency = -0.25
+				air_cas_efficiency = -0.25
+				air_strategic_bomber_bombing_factor = -0.5
+				air_escort_efficiency = -0.25
+				air_intercept_efficiency = -0.25
+				air_nav_efficiency = -0.25
+				air_ace_generation_chance_factor = -0.40
+				training_time_army_factor = 0.125
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = -0.05
+				production_speed_dockyard_factor = -0.05			
+				industrial_capacity_dockyard = -0.05
+				industrial_capacity_factory = 0.05
+				
+			}
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 2
+			}
+		}
+		mob_limited = {
+			
+			available = {
+				 OR = {
+					has_idea = unity_broken_nation
+					has_idea = unity_divided_nation
+					has_idea = unity_united_nation
+				}
+				OR = {
+					has_war = yes
+					is_major = yes
+					threat > 0.5
+					any_country = { is_justifying_wargoal_against = ROOT }
+					any_country = { ROOT = { is_justifying_wargoal_against = PREV } }
+				}
+			}
+					
+			cost = 25
+			removal_cost = -1
+			level = 2
+			
+			modifier = {
+				
+				
+				army_org_factor = -0.125
+				army_morale_factor = -0.125
+				navy_org_factor = -0.125
+				army_attack_factor = -0.1
+				army_defence_factor = -0.1
+				air_superiority_efficiency = -0.125
+				air_cas_efficiency = -0.125
+				air_strategic_bomber_bombing_factor = -0.125
+				air_escort_efficiency = -0.125
+				air_intercept_efficiency = -0.125
+				air_nav_efficiency = -0.125
+				air_ace_generation_chance_factor = -0.125
+				training_time_army_factor = 0.025
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+			}
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 3
+			}
+		}
+		
+		mob_general = {
+			
+			available = {
+				 OR = {
+					has_idea = unity_divided_nation
+					has_idea = unity_united_nation
+				}	
+				OR = {
+					has_war = yes
+					threat > 0.9
+					any_country = { is_justifying_wargoal_against = ROOT }
+					any_country = { ROOT = { is_justifying_wargoal_against = PREV } }
+				}						
+			}
+					
+			cost = 25
+			removal_cost = -1
+			level = 1
+			
+			modifier = {
+				air_superiority_efficiency = 0.1
+				army_org_factor = 0.1
+				army_morale_factor = 0.1
+				navy_org_factor = 0.15
+				training_time_army_factor = -0.10
+				production_speed_industrial_complex_factor = -0.1
+				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+				industrial_capacity_dockyard = -0.05
+				industrial_capacity_factory = -0.05
+				
+			}
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+   				factor = 4
+			}
+		}
+
+	}
+}

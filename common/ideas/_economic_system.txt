@@ -1,0 +1,245 @@
+ideas = {
+
+	nationalization = { 
+
+		law = yes
+		use_list_view = yes
+
+		private_control = {
+			level = 4
+			
+			available = {
+				NOT = {
+					OR = {
+						has_government = communism
+						has_government = unionism
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_industrial_complex_factor = -0.025
+				production_speed_dockyard_factor = -0.025
+				#relations = 0.10
+				political_power_factor = -0.05
+				research_speed_factor = -0.015
+				industrial_capacity_factory = -0.04
+				industrial_capacity_dockyard = -0.04
+				production_factory_max_efficiency_factor = 0.04
+				production_factory_efficiency_gain_factor = 0.04
+				line_change_production_efficiency_factor = 0.04
+				stability_factor = -0.0025
+				war_support_factor = -0.0025
+				communism_drift = 0.0001
+
+			}
+			
+			on_add = {
+				custom_effect_tooltip = sd_communism_increase_TT
+			}
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 0
+					OR = {
+						has_government = social_democracy
+						political_power_daily > 1
+						has_stability < 0.35
+						AND = {
+							has_war = yes
+							has_war_support < 0.35
+						}
+					}
+				}
+			}
+		}
+		key_industries = {
+			level = 3
+
+			available = {
+				NOT = {
+					OR = {
+						has_government = communism
+						has_government = unionism
+					}
+				}
+			}
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_industrial_complex_factor = -0.0125
+				production_speed_arms_factory_factor = 0.025
+				production_speed_dockyard_factor = -0.0125
+				political_power_factor = -0.025
+				research_speed_factor = -0.005			
+				industrial_capacity_factory = -0.0125
+				industrial_capacity_dockyard = -0.0125			
+				production_factory_max_efficiency_factor = -0.0125
+				production_factory_efficiency_gain_factor = -0.0125
+				line_change_production_efficiency_factor = -0.0125				
+				stability_factor = 0.001				
+				war_support_factor = 0.001				
+				local_resources_factor = 0.025
+			}
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 0
+					political_power_daily > 1
+				}
+			}
+		}
+		major_industries = {
+			level = 2
+			
+			available = {
+			}
+		
+			default = yes
+			
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {			
+				production_speed_industrial_complex_factor = 0.03
+				production_speed_arms_factory_factor = 0.03
+				production_speed_dockyard_factor = 0.03
+				
+				political_power_factor = 0.05
+				research_speed_factor = 0.0075
+				
+				industrial_capacity_factory = 0.025
+				industrial_capacity_dockyard = 0.025
+				
+				production_factory_max_efficiency_factor = -0.025
+				production_factory_efficiency_gain_factor = -0.025
+				line_change_production_efficiency_factor = -0.025
+				
+				
+				stability_factor = 0.0025
+				war_support_factor = 0.0025
+				local_resources_factor = 0.05
+				social_democracy_drift = 0.0002
+				unionism_drift = 0.0001
+				communism_drift = 0.0001
+			}
+			
+			cancel_if_invalid = yes
+
+			on_add = {
+				custom_effect_tooltip = cm_liberal_increase_TT
+				custom_effect_tooltip = cs_communism_increase_TT
+				custom_effect_tooltip = lb_socialism_increase_TT
+			}
+			
+			ai_will_do = {
+				factor = 3
+				modifier = {
+					factor = 0
+					OR = {
+						has_government = communism
+						has_government = conservative
+						AND = {
+							has_war = no
+							has_government = democratic
+						}
+					}
+				}
+			}
+		}
+		planned_economy = {
+			level = 1
+			
+			available = {
+				NOT = {
+					OR = {
+						has_government = conservative
+						has_government = democratic
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.075
+				production_speed_dockyard_factor = 0.05
+				
+				political_power_factor = 0.10
+				research_speed_factor = 0.015
+				
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				
+				
+				production_factory_max_efficiency_factor = -0.0375
+				production_factory_efficiency_gain_factor = -0.0375
+				line_change_production_efficiency_factor = -0.0375
+				
+				
+				
+				stability_factor = 0.005
+				stability_weekly  = 0.00015
+				
+				
+				
+				war_support_factor = 0.005
+				
+				local_resources_factor = 0.075
+				communism_drift = 0.0002
+
+			}
+			
+			on_add = {
+				custom_effect_tooltip = all_communism_increase_TT
+			}
+			
+			cancel_if_invalid = yes
+
+			ai_will_do = {
+				factor = 4
+				modifier = {
+					factor = 0
+					OR = {
+						AND = {
+							communism > 0.05
+							OR = {
+								has_government = social_democracy
+								has_government = fascism
+							}
+						}
+						AND = {
+							OR = {
+								has_government = monarchism
+								has_government = neutrality
+							}
+							OR = {
+								has_war = no
+								communism > 0.15
+							}
+						}
+						AND = {
+							communism > 0.25
+							has_government = unionism
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+##finished

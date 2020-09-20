@@ -1,0 +1,8 @@
+
+ITA_civil_war = {
+	picture = decision_cat_generic_GER_ISR
+	icon = category_generic_crisis
+	allowed = {
+		original_tag = ITA
+	}
+}

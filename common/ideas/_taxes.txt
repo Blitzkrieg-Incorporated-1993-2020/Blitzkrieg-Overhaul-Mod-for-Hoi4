@@ -1,0 +1,326 @@
+ideas = {
+	## Taxes
+	taxes = { 
+		law = yes
+		use_list_view = yes
+		tax_minimal = {
+		
+			available = {
+			}
+					
+			cost = 50
+			removal_cost = -1
+			level = 5
+			
+			modifier = {
+				consumer_goods_factor = 0.025
+				
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+				industrial_capacity_factory = -0.025
+				industrial_capacity_dockyard = -0.025
+				production_factory_max_efficiency_factor = 0.05
+				line_change_production_efficiency_factor = 0.05
+				
+				political_power_factor = 0.05
+				
+				
+				
+				conscription = -0.05
+				
+				stability_weekly = 0.0001
+				war_support_weekly = 0.0001
+				
+				
+			}
+
+			on_add = {
+				custom_effect_tooltip = taxes_TT
+			}
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 0
+					OR = {
+						has_government = fascism
+						has_government = unionism
+						has_government = communism
+						has_government = monarchism
+						has_war = yes
+						threat > 0.5
+						any_country = { is_justifying_wargoal_against = ROOT }
+						any_country = { ROOT = { is_justifying_wargoal_against = PREV } }
+					}
+				}
+			}
+		}
+		tax_low = {
+			available = {
+				
+			}
+			default = yes
+					
+			cost = 50
+			removal_cost = -1
+			level = 4
+			
+			modifier = {
+				consumer_goods_factor = 0.0125
+			
+				production_speed_industrial_complex_factor = 0.025
+				production_speed_arms_factory_factor = 0.025
+				production_speed_dockyard_factor = 0.025
+				
+				industrial_capacity_factory = -0.0125
+				industrial_capacity_dockyard = -0.0125
+				production_factory_max_efficiency_factor = 0.025
+				line_change_production_efficiency_factor = 0.025
+				
+				
+				political_power_factor = 0.025
+				conscription = -0.02
+				stability_weekly = 0.00005
+				war_support_weekly = 0.00005
+				
+				
+			}
+			on_add = {
+				custom_effect_tooltip = taxes_TT
+			}
+
+			
+			cancel_if_invalid = yes
+			
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 5
+					has_war = no
+					NOT = { any_country = { ROOT = { is_justifying_wargoal_against = PREV } } }
+					NOT = { any_country = { is_justifying_wargoal_against = ROOT } }
+					threat < 0.9
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						has_war = yes
+						threat > 0.9
+						any_country = { is_justifying_wargoal_against = ROOT }
+						any_country = { ROOT = { is_justifying_wargoal_against = PREV } }
+					}
+				}
+			}
+		}
+		tax_average = {
+			
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = past_division_limit
+					is_past_division_limit = no 
+				}
+			}
+					
+			cost = 50
+			removal_cost = -1
+			level = 3
+			
+			modifier = {
+				production_speed_industrial_complex_factor = -0.01
+				production_speed_arms_factory_factor = -0.01
+				production_speed_dockyard_factor = -0.0
+				#democratic_drift = 0.01
+				industrial_capacity_factory = 0.01
+				industrial_capacity_dockyard = 0.01
+				
+				line_change_production_efficiency_factor = -0.01
+				
+				political_power_factor = -0.025
+				stability_factor = 0.001
+				war_support_factor = 0.001
+			}
+			on_add = {
+				custom_effect_tooltip = taxes_TT
+			}
+			cancel_if_invalid = yes
+
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 5
+					OR = {
+						has_war = yes
+						threat > 0.9
+						any_country = { is_justifying_wargoal_against = ROOT }
+						any_country = { ROOT = { is_justifying_wargoal_against = PREV } }
+					}
+				}
+				modifier = {
+					factor = 0
+					has_war = no
+					NOT = { any_country = { ROOT = { is_justifying_wargoal_against = PREV } } }
+					NOT = { any_country = { is_justifying_wargoal_against = ROOT } }
+					threat < 0.9
+				}
+			}
+		}
+		tax_high = {
+			
+			available = {	
+				custom_trigger_tooltip = {
+					tooltip = past_division_limit
+					is_past_division_limit = no 
+				}
+				OR = {
+					has_government = neutrality
+					has_government = monarchism
+					has_government = fascism
+					has_government = unionism
+					has_government = communism
+					AND = {
+						has_war = yes
+						OR = {
+							has_government = democratic
+							has_government = conservative
+							has_government = social_democracy
+						}
+					}
+				}
+			}
+					
+			cost = 50
+			removal_cost = -1
+			level = 2
+			
+			modifier = {
+				consumer_goods_factor = -0.0125
+				
+				production_speed_industrial_complex_factor = -0.025
+				production_speed_arms_factory_factor = -0.025
+				production_speed_dockyard_factor = -0.025
+				
+				industrial_capacity_factory = 0.02
+				industrial_capacity_dockyard = 0.02
+				production_factory_max_efficiency_factor = -0.025
+				line_change_production_efficiency_factor = -0.0125
+				
+				political_power_factor = -0.05
+				conscription = 0.01
+				stability_weekly = -0.0005
+				war_support_weekly = -0.0005
+				
+			}
+			
+			on_add = {
+				custom_effect_tooltip = taxes_TT
+			}
+			
+			cancel_if_invalid = yes
+
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 10
+					OR = {
+						has_war = yes
+						threat > 0.9
+						any_country = { is_justifying_wargoal_against = ROOT }
+						any_country = { ROOT = { is_justifying_wargoal_against = PREV } }
+					}
+				}
+				modifier = {
+					factor = 0
+					has_war = no
+					NOT = { any_country = { ROOT = { is_justifying_wargoal_against = PREV } } }
+					NOT = { any_country = { is_justifying_wargoal_against = ROOT } }
+					threat < 0.9
+				}
+			}
+		}
+		tax_extreme = {
+			
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = past_division_limit
+					is_past_division_limit = no 
+				}
+				OR = { 
+					has_government = neutrality
+					has_government = monarchism
+					has_government = fascism
+					has_government = unionism
+					has_government = communism
+				}
+			}
+					
+			cost = 50
+			removal_cost = -1
+			level = 1
+			
+			modifier = {
+				consumer_goods_factor = -0.025
+				
+				production_speed_industrial_complex_factor = -0.04
+				production_speed_arms_factory_factor = -0.04
+				production_speed_dockyard_factor = -0.04
+				
+				industrial_capacity_factory = 0.04
+				industrial_capacity_dockyard = 0.04
+				production_factory_max_efficiency_factor = -0.05
+				line_change_production_efficiency_factor = -0.025
+				
+				
+				political_power_factor = -0.075
+				conscription = 0.02
+				stability_weekly = -0.0015
+				war_support_weekly = -0.015
+				
+				
+			}
+			
+			on_add = {
+				custom_effect_tooltip = taxes_TT
+			}
+			
+			cancel_if_invalid = yes
+
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 15
+					has_war = yes
+					surrender_progress > 0.5
+					OR = {
+						is_faction_leader = yes
+						is_major = yes
+					}
+				}
+				modifier = {
+					factor = 0
+					NOT = {
+						has_war = yes
+						surrender_progress > 0.5
+						OR = {
+							is_faction_leader = yes
+							is_major = yes
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							is_faction_leader = yes
+							is_major = yes
+						}
+					}
+				}
+			}
+		}	
+	}
+}
+
+##finished

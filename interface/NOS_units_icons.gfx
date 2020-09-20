@@ -1,0 +1,144 @@
+## fascist_militia
+## fascist_infantry
+## fascist_cavalry
+## fascist_motorized
+## fascist_mechanized
+## fascist_light_armor
+## fascist_medium_armor
+## fascist_heavy_armor
+#
+## communist_militia
+## communist_infantry
+## communist_cavalry
+## communist_motorized
+## communist_mechanized
+## communist_light_armor
+## communist_medium_armor
+## communist_heavy_armor
+#
+## allies_paramarine
+#
+## militia
+## special_infantry
+## special_mountaineers
+## amphibious_armor_brigade
+## motorized_anti_air_brigade
+## motorized_artillery_brigade
+## motorized_anti_tank_brigade
+#
+## glider_light_armor_brigade
+## medium_assault_gun_brigade
+## rangers
+## armored_car_brigade
+#
+spriteTypes = {
+
+#####large icons (used in the division template screen)#####
+
+#####fascist#####
+	spriteType = {	    name = "GFX_unit_fascist_militia_icon_medium"	                textureFile = "gfx/interface/counters/divisions_large/unit_fascist_militia_icon.dds"	                    noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_infantry_icon_medium"	                textureFile = "gfx/interface/counters/divisions_large/unit_fascist_infantry_icon.dds"	                    noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_cavalry_icon_medium"	                textureFile = "gfx/interface/counters/divisions_large/unit_fascist_cavalry_icon.dds"	                    noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_motorized_icon_medium"	                textureFile = "gfx/interface/counters/divisions_large/unit_fascist_motorized_icon.dds"	                    noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_mechanized_icon_medium"	            textureFile = "gfx/interface/counters/divisions_large/unit_fascist_mechanized_icon.dds"	                    noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_light_armor_icon_medium"	            textureFile = "gfx/interface/counters/divisions_large/unit_fascist_light_armor_icon.dds"	                noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_medium_armor_icon_medium"	            textureFile = "gfx/interface/counters/divisions_large/unit_fascist_medium_armor_icon.dds"	                noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_heavy_armor_icon_medium"	            textureFile = "gfx/interface/counters/divisions_large/unit_fascist_heavy_armor_icon.dds"	                noOfFrames = 2	}
+
+#####communist#####
+	spriteType = {	    name = "GFX_unit_communist_militia_icon_medium"	                textureFile = "gfx/interface/counters/divisions_large/unit_communist_militia_icon.dds"	                    noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_infantry_icon_medium"	            textureFile = "gfx/interface/counters/divisions_large/unit_communist_infantry_icon.dds"	                    noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_cavalry_icon_medium"	                textureFile = "gfx/interface/counters/divisions_large/unit_communist_cavalry_icon.dds"	                    noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_motorized_icon_medium"	            textureFile = "gfx/interface/counters/divisions_large/unit_communist_motorized_icon.dds"	                noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_mechanized_icon_medium"	            textureFile = "gfx/interface/counters/divisions_large/unit_communist_mechanized_icon.dds"	                noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_light_armor_icon_medium"	            textureFile = "gfx/interface/counters/divisions_large/unit_communist_light_armor_icon.dds"	                noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_medium_armor_icon_medium"	        textureFile = "gfx/interface/counters/divisions_large/unit_communist_medium_armor_icon.dds"	                noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_heavy_armor_icon_medium"	            textureFile = "gfx/interface/counters/divisions_large/unit_communist_heavy_armor_icon.dds"	                noOfFrames = 2	}
+
+#####allies#####
+	spriteType = {	    name = "GFX_unit_allies_paramarine_icon_medium"	                textureFile = "gfx/interface/counters/divisions_large/unit_allies_paramarine_icon.dds"	                    noOfFrames = 2	}
+
+#####small icons (when hovering over the division)#####
+
+#####fascist#####
+
+	spriteType = {	    name = "GFX_unit_fascist_militia_icon_medium_white"	            textureFile = "gfx/interface/counters/divisions_small/onmap_unit_fascist_militia_icon.dds"	                noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_infantry_icon_medium_white"	        textureFile = "gfx/interface/counters/divisions_small/onmap_unit_fascist_infantry_icon.dds"	                noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_cavalry_icon_medium_white"	            textureFile = "gfx/interface/counters/divisions_small/onmap_unit_fascist_cavalry_icon.dds"	                noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_motorized_icon_medium_white"	        textureFile = "gfx/interface/counters/divisions_small/onmap_unit_fascist_motorized_icon.dds"	            noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_mechanized_icon_medium_white"	        textureFile = "gfx/interface/counters/divisions_small/onmap_unit_fascist_mechanized_icon.dds"	            noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_light_armor_icon_medium_white"	        textureFile = "gfx/interface/counters/divisions_small/onmap_unit_fascist_light_armor_icon.dds"	            noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_medium_armor_icon_medium_white"	    textureFile = "gfx/interface/counters/divisions_small/onmap_unit_fascist_medium_armor_icon.dds"	            noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_fascist_heavy_armor_icon_medium_white"	        textureFile = "gfx/interface/counters/divisions_small/onmap_unit_fascist_heavy_armor_icon.dds"	            noOfFrames = 2	}
+
+#####communist#####
+
+	spriteType = {	    name = "GFX_unit_communist_militia_icon_medium_white"	        textureFile = "gfx/interface/counters/divisions_small/onmap_unit_communist_militia_icon.dds"	            noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_infantry_icon_medium_white"	        textureFile = "gfx/interface/counters/divisions_small/onmap_unit_communist_infantry_icon.dds"	            noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_cavalry_icon_medium_white"	        textureFile = "gfx/interface/counters/divisions_small/onmap_unit_communist_cavalry_icon.dds"	            noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_motorized_icon_medium_white"	        textureFile = "gfx/interface/counters/divisions_small/onmap_unit_communist_motorized_icon.dds"	            noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_mechanized_icon_medium_white"	    textureFile = "gfx/interface/counters/divisions_small/onmap_unit_communist_mechanized_icon.dds"	            noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_light_armor_icon_medium_white"	    textureFile = "gfx/interface/counters/divisions_small/onmap_unit_communist_light_armor_icon.dds"	        noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_medium_armor_icon_medium_white"	    textureFile = "gfx/interface/counters/divisions_small/onmap_unit_communist_medium_armor_icon.dds"	        noOfFrames = 2	}
+	spriteType = {	    name = "GFX_unit_communist_heavy_armor_icon_medium_white"	    textureFile = "gfx/interface/counters/divisions_small/onmap_unit_communist_heavy_armor_icon.dds"	        noOfFrames = 2	}
+
+#####allies#####
+
+	spriteType = {	    name = "GFX_unit_allies_paramarine_icon_medium_white"	        textureFile = "gfx/interface/counters/divisions_small/onmap_unit_allies_paramarine_icon.dds"	            noOfFrames = 2	}
+
+#####text-icons##### (when hovering the division on the map)
+
+#####fascist#####
+
+	spriteType = {		name = "GFX_unit_fascist_militia_icon_small"		            texturefile = "gfx/texticons/unit_fascist_militia_icon_small.dds"		            legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_fascist_infantry_icon_small"		            texturefile = "gfx/texticons/unit_fascist_infantry_icon_small.dds"		            legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_fascist_cavalry_icon_small"		            texturefile = "gfx/texticons/unit_fascist_cavalry_icon_small.dds"		            legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_fascist_motorized_icon_small"		            texturefile = "gfx/texticons/unit_fascist_motorized_icon_small.dds"		        legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_fascist_mechanized_icon_small"		            texturefile = "gfx/texticons/unit_fascist_mechanized_icon_small.dds"		        legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_fascist_light_armor_icon_small"		        texturefile = "gfx/texticons/unit_fascist_light_armor_icon_small.dds"		        legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_fascist_medium_armor_icon_small"		        texturefile = "gfx/texticons/unit_fascist_medium_armor_icon_small.dds"		        legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_fascist_heavy_armor_icon_small"		        texturefile = "gfx/texticons/unit_fascist_heavy_armor_icon_small.dds"		        legacy_lazy_load = no		noOfFrames = 2	}
+
+#####communist#####
+
+	spriteType = {		name = "GFX_unit_communist_militia_icon_small"		            texturefile = "gfx/texticons/unit_communist_militia_icon_small.dds"		        legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_communist_infantry_icon_small"		            texturefile = "gfx/texticons/unit_communist_infantry_icon_small.dds"		        legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_communist_cavalry_icon_small"		            texturefile = "gfx/texticons/unit_communist_cavalry_icon_small.dds"		        legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_communist_motorized_icon_small"		        texturefile = "gfx/texticons/unit_communist_motorized_icon_small.dds"		        legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_communist_mechanized_icon_small"		        texturefile = "gfx/texticons/unit_communist_mechanized_icon_small.dds"		        legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_communist_light_armor_icon_small"		        texturefile = "gfx/texticons/unit_communist_light_armor_icon_small.dds"		    legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_communist_medium_armor_icon_small"		        texturefile = "gfx/texticons/unit_communist_medium_armor_icon_small.dds"		    legacy_lazy_load = no		noOfFrames = 2	}
+	spriteType = {		name = "GFX_unit_communist_heavy_armor_icon_small"		        texturefile = "gfx/texticons/unit_communist_heavy_armor_icon_small.dds"		    legacy_lazy_load = no		noOfFrames = 2	}
+
+#####allies#####
+
+	spriteType = {		name = "GFX_unit_allies_paramarine_icon_small"		            texturefile = "gfx/texticons/unit_allies_paramarine_icon_small.dds"		        legacy_lazy_load = no		noOfFrames = 2	}
+
+#####nato-icons#####
+
+    #####fascist#####
+
+    spriteType = {    	name = "GFX_nato_unit_fascist_militia_icon_small"    		    texturefile = "gfx/texticons/nato_unit_fascist_militia_icon_small.dds"    		        legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_fascist_infantry_icon_small"    		    texturefile = "gfx/texticons/nato_unit_fascist_infantry_icon_small.dds"    		        legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_fascist_cavalry_icon_small"    		    texturefile = "gfx/texticons/nato_unit_fascist_cavalry_icon_small.dds"    		        legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_fascist_motorized_icon_small"    		    texturefile = "gfx/texticons/nato_unit_fascist_motorized_icon_small.dds"    	        legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_fascist_mechanized_icon_small"    		texturefile = "gfx/texticons/nato_unit_fascist_mechanized_icon_small.dds"    	        legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_fascist_light_armor_icon_small"    		texturefile = "gfx/texticons/nato_unit_fascist_light_armor_icon_small.dds"    	        legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_fascist_medium_armor_icon_small"    		texturefile = "gfx/texticons/nato_unit_fascist_medium_armor_icon_small.dds"    	        legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_fascist_heavy_armor_icon_small"    		texturefile = "gfx/texticons/nato_unit_fascist_heavy_armor_icon_small.dds"    	        legacy_lazy_load = no    	}
+
+    #####communist#####
+
+    spriteType = {    	name = "GFX_nato_unit_communist_militia_icon_small"    		    texturefile = "gfx/texticons/nato_unit_communist_militia_icon_small.dds"    	        legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_communist_infantry_icon_small"    		texturefile = "gfx/texticons/nato_unit_communist_infantry_icon_small.dds"    	        legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_communist_cavalry_icon_small"    		    texturefile = "gfx/texticons/nato_unit_communist_cavalry_icon_small.dds"    	        legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_communist_motorized_icon_small"    		texturefile = "gfx/texticons/nato_unit_communist_motorized_icon_small.dds"    	        legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_communist_mechanized_icon_small"    		texturefile = "gfx/texticons/nato_unit_communist_mechanized_icon_small.dds"    	        legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_communist_light_armor_icon_small"    		texturefile = "gfx/texticons/nato_unit_communist_light_armor_icon_small.dds"    	    legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_communist_medium_armor_icon_small"    	texturefile = "gfx/texticons/nato_unit_communist_medium_armor_icon_small.dds"    	    legacy_lazy_load = no    	}
+    spriteType = {    	name = "GFX_nato_unit_communist_heavy_armor_icon_small"    		texturefile = "gfx/texticons/nato_unit_communist_heavy_armor_icon_small.dds"    	    legacy_lazy_load = no    	}
+
+    #####allies#####
+
+    spriteType = {    	name = "GFX_nato_unit_allies_paramarine_icon_small"    		    texturefile = "gfx/texticons/nato_unit_allies_paramarine_icon_small.dds"    		    legacy_lazy_load = no    	}
+}

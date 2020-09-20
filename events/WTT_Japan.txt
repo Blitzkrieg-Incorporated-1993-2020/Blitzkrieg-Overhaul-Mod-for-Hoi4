@@ -72,110 +72,6 @@ country_event = {
 				}
 				FROM = { transfer_state = 741 }
 			}
-			if = {
-				limit = {
-					1073 = {
-						is_fully_controlled_by = FRA
-					}
-				}
-				FROM = { transfer_state = 1073 }
-			}
-			if = {
-				limit = {
-					1074 = {
-						is_fully_controlled_by = FRA
-					}
-				}
-				FROM = { transfer_state = 1074 }
-			}
-			if = {
-				limit = {
-					1075 = {
-						is_fully_controlled_by = FRA
-					}
-				}
-				FROM = { transfer_state = 1075 }
-			}
-			if = {
-				limit = {
-					1076 = {
-						is_fully_controlled_by = FRA
-					}
-				}
-				FROM = { transfer_state = 1076 }
-			}
-			if = {
-				limit = {
-					1077 = {
-						is_fully_controlled_by = FRA
-					}
-				}
-				FROM = { transfer_state = 1077 }
-			}
-			if = {
-				limit = {
-					1078 = {
-						is_fully_controlled_by = FRA
-					}
-				}
-				FROM = { transfer_state = 1078 }
-			}
-			if = {
-				limit = {
-					1079 = {
-						is_fully_controlled_by = FRA
-					}
-				}
-				FROM = { transfer_state = 1079 }
-			}
-			if = {
-				limit = {
-					1080 = {
-						is_fully_controlled_by = FRA
-					}
-				}
-				FROM = { transfer_state = 1080 }
-			}
-			if = {
-				limit = {
-					1081 = {
-						is_fully_controlled_by = FRA
-					}
-				}
-				FROM = { transfer_state = 1081 }
-			}
-			if = {
-				limit = {
-					1082 = {
-						is_fully_controlled_by = FRA
-					}
-				}
-				FROM = { transfer_state = 1082 }
-			}
-			if = {
-				limit = {
-					1083 = {
-						is_fully_controlled_by = FRA
-					}
-				}
-				FROM = { transfer_state = 1083 }
-			}
-			if = {
-				limit = {
-					1084 = {
-						is_fully_controlled_by = FRA
-					}
-				}
-				FROM = { transfer_state = 1084 }
-			}
-			if = {
-				limit = {
-					1085 = {
-						is_fully_controlled_by = FRA
-					}
-				}
-				FROM = { transfer_state = 1085 }
-			}
 		}
 		FROM = { country_event = { id = wtt_japan.2 days = 1 } }
 	}
@@ -237,71 +133,6 @@ country_event = {
 					limit = { 741 = { is_fully_controlled_by = ROOT }
 					}
 					transfer_state = 741
-				}
-				if = {
-					limit = { 1073 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1073
-				}
-				if = {
-					limit = { 1074 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1074
-				}
-				if = {
-					limit = { 1075 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1075
-				}
-				if = {
-					limit = { 1076 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1076
-				}
-				if = {
-					limit = { 1077 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1077
-				}
-				if = {
-					limit = { 1078 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1078
-				}
-				if = {
-					limit = { 1079 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1079
-				}
-				if = {
-					limit = { 1080 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1080
-				}
-				if = {
-					limit = { 1081 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1081
-				}
-				if = {
-					limit = { 1082 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1082
-				}
-				if = {
-					limit = { 1083 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1083
-				}
-				if = {
-					limit = { 1084 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1084
-				}
-				if = {
-					limit = { 1085 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1085
 				}
 			}
 			hidden_effect = {
@@ -620,38 +451,6 @@ country_event = {
 			}
 			FROM = {
 				transfer_state = 612
-			}
-		}
-		if = {
-			limit = {
-				controls_state = 1023
-			}
-			FROM = {
-				transfer_state = 1023
-			}
-		}
-		if = {
-			limit = {
-				controls_state = 1024
-			}
-			FROM = {
-				transfer_state = 1024
-			}
-		}
-		if = {
-			limit = {
-				controls_state = 1025
-			}
-			FROM = {
-				transfer_state = 1025
-			}
-		}
-		if = {
-			limit = {
-				controls_state = 1026
-			}
-			FROM = {
-				transfer_state = 1026
 			}
 		}
 	}
@@ -1111,8 +910,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				any_state = {
-					is_controlled_by = ROOT
+				any_controlled_state = {
 					is_core_of = KOR
 				}
 			}
@@ -1460,10 +1258,6 @@ country_event = {
 			transfer_state = 328
 			transfer_state = 717
 			transfer_state = 714
-			transfer_state = 1023
-			transfer_state = 1024
-			transfer_state = 1025
-			transfer_state = 1026
 		}
 	}
 }
@@ -1493,16 +1287,6 @@ country_event = {
 						MAN = {
 							controls_state = 525
 							controls_state = 527
-							controls_state = 903
-							controls_state = 904
-							controls_state = 905
-							controls_state = 906
-							controls_state = 907
-							controls_state = 908
-							controls_state = 909
-							controls_state = 911
-							controls_state = 1108
-							controls_state = 1109
 						}
 					}
 				}
@@ -1547,16 +1331,6 @@ country_event = {
 							NOT = {
 								state = 525
 								state = 527
-								state = 903
-								state = 904
-								state = 905
-								state = 906
-								state = 907
-								state = 908
-								state = 909
-								state = 911
-								state = 1108
-								state = 1109
 							}
 						}
 						every_country = {
@@ -1707,16 +1481,6 @@ country_event = {
 					MAN = {
 						controls_state = 525
 						controls_state = 527
-						controls_state = 903
-						controls_state = 904
-						controls_state = 905
-						controls_state = 906
-						controls_state = 907
-						controls_state = 908
-						controls_state = 909
-						controls_state = 911
-						controls_state = 1108
-						controls_state = 1109
 					}
 				}
 			}
@@ -1869,20 +1633,12 @@ country_event = {
 			if = {
 				limit = {
 					NOT = {
-						any_country = {
-							is_literally_china = yes
-							controls_state = 525
-							controls_state = 527
-							controls_state = 903
-							controls_state = 904
-							controls_state = 905
-							controls_state = 906
-							controls_state = 907
-							controls_state = 908
-							controls_state = 909
-							controls_state = 911
-							controls_state = 1108
-							controls_state = 1109
+						525 = {
+							controller = {
+								is_literally_china = yes
+								controls_state = 525
+								controls_state = 527
+							}
 						}
 					}
 				}
@@ -1910,17 +1666,6 @@ country_event = {
 						NOT = {
 							state = 525
 							state = 527
-							state = 903
-							state = 904
-							state = 905
-							state = 906
-							state = 907
-							state = 908
-							state = 909
-							state = 911
-							state = 1108
-							state = 1109
-
 						}
 					}
 					every_country = {
@@ -1966,20 +1711,12 @@ country_event = {
 		if = {
 			limit = {
 				NOT = {
-					any_country = {
-						is_literally_china = yes
-						controls_state = 525
-						controls_state = 527
-						controls_state = 903
-						controls_state = 904
-						controls_state = 905
-						controls_state = 906
-						controls_state = 907
-						controls_state = 908
-						controls_state = 909
-						controls_state = 911
-						controls_state = 1108
-						controls_state = 1109
+					525 = {
+						controller = {
+							is_literally_china = yes
+							controls_state = 525
+							controls_state = 527
+						}
 					}
 				}
 			}

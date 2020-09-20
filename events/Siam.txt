@@ -1,0 +1,318 @@
+﻿###########################
+# siam Events
+###########################
+
+add_namespace = siam
+
+# Demand Indochina
+country_event = {
+	id = siam.1
+	title = siam.1.t
+	desc = siam.1.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = siam.1.a
+
+		SIA = {
+			transfer_state = 741
+			country_event = { days = 1 id = siam.6 }
+		}
+
+		ai_chance = {
+			factor = 20
+			modifier = {
+			factor = 80
+				if = {
+					SIA = {
+						is_in_faction_with = JAP
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = siam.1.b
+		ai_chance = {
+			factor = 80
+		}
+
+		SIA = {
+			country_event = { days = 1 id = siam.7 }
+		}
+	}
+}
+
+# Ally Japan
+country_event = {
+	id = siam.2
+	title = siam.2.t
+	desc = siam.2.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = siam.2.a
+		ai_chance = {
+			factor = 1
+		}
+		add_to_faction = SIA
+	}
+
+	option = {
+		name = siam.2.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# Ally China
+country_event = {
+	id = siam.3
+	title = siam.3.t
+	desc = siam.3.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = siam.3.a
+		ai_chance = {
+			factor = 70
+		}
+
+		create_faction = pact_of_nanjing
+		add_to_faction = SIA
+	}
+
+	option = {
+		name = siam.3.b
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# Allied Summit
+country_event = {
+	id = siam.4
+	title = siam.4.t
+	desc = siam.4.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = siam.4.a
+		ai_chance = {
+			factor = 60
+		}
+
+		SIA = { transfer_state = 743 }
+	}
+
+	option = {
+		name = siam.4.b
+		trigger = {
+			any_country = {
+				owns_state = 741
+				owns_state = 286
+				owns_state = 671
+				owns_state = 670
+				OR = {
+					is_subject_of = FRA
+					AND = {
+						original_tag = FRA
+						OR = {
+							AND = {
+								has_democratic_government = yes
+								ENG = { has_democratic_government = yes }
+							}
+							AND = {
+								has_socialist_government = yes
+								ENG = { has_socialist_government = yes }
+							}
+							AND = {
+								has_autocratic_government = yes
+								ENG = { has_autocratic_government = yes }
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+
+		SIA = {
+			if = {
+				limit = { any_country = { original_tag = VIN is_subject_of = FRA exists = yes } }
+		    	annex_country = { target = VIN transfer_troops = no }
+			}
+			transfer_state = 743
+			transfer_state = 741
+			transfer_state = 286
+			transfer_state = 671
+			transfer_state = 670
+			transfer_state = 1073
+			transfer_state = 1074
+			transfer_state = 1075
+			transfer_state = 1076
+			transfer_state = 1077
+			transfer_state = 1078
+			transfer_state = 1079
+			transfer_state = 1080
+			transfer_state = 1081
+			transfer_state = 1082
+			transfer_state = 1084
+			transfer_state = 1085
+		}
+	}
+
+	option = {
+		name = siam.4.c
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# Free Indochina
+country_event = {
+	id = siam.5
+	title = siam.5.t
+	desc = siam.5.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = siam.5.a
+		ai_chance = {
+			factor = 20
+		}
+		random_country = {
+			limit = {
+				OR = { is_subject_of = FRA original_tag = FRA }
+				owns_state = 741
+				owns_state = 286
+				owns_state = 671
+				owns_state = 670
+			}
+			release = LAO
+			release = CAM
+			release = VIN
+		}
+		every_country = {
+			limit = {
+				is_subject_of = FRA
+				OR = {
+					original_tag = LAO
+					original_tag = CAM
+					original_tag = VIN
+				}
+			}
+			FRA = { end_puppet = PREV }
+		}
+	}
+
+	option = {
+		name = siam.5.b
+		ai_chance = {
+			factor = 80
+		}
+	}
+}
+
+# Have Phra Tabong
+country_event = {
+	id = siam.6
+	title = siam.6.t
+	desc = siam.6.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = siam.6.a
+		ai_chance = {
+			factor = 80
+		}
+	}
+}
+
+# No Phra Tabong for you!
+country_event = {
+	id = siam.7
+	title = siam.7.t
+	desc = siam.7.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = siam.7.a
+		ai_chance = {
+			factor = 80
+		}
+	}
+}
+
+# Demand Indochina without Cambodia
+country_event = {
+	id = siam.8
+	title = siam.8.t
+	desc = siam.8.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = siam.8.a
+		ai_chance = {
+			factor = 30
+		}
+		random_country = {
+			limit = {
+				OR = { is_subject_of = FRA original_tag = FRA }
+				owns_state = 741
+				owns_state = 286
+				owns_state = 671
+				owns_state = 670
+			}
+			release = LAO
+			release = VIN
+		}
+		every_country = {
+			limit = {
+				is_subject_of = FRA
+				OR = {
+					original_tag = LAO
+					original_tag = VIN
+				}
+			}
+			FRA = { end_puppet = PREV }
+		}
+	}
+	
+	option = {
+		name = siam.8.b
+		ai_chance = {
+			factor = 70
+		}
+	}
+}

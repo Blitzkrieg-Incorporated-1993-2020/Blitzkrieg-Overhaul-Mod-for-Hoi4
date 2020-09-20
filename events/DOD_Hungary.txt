@@ -1274,15 +1274,11 @@ country_event = {
 		ai_chance = {
 			factor = 10
 			modifier = {
-				ROM_is_on_historical_plan_trigger = yes
-				factor = 0
-			}
-			modifier = {
-				strength_ratio = { tag = HUN ratio < 0.8 }
+				strength_ratio = { tag = FROM ratio < 0.8 }
 				factor = 2
 			}
 		}
-		HUN = { country_event = { id = DOD_hungary.51 } }
+		FROM = { country_event = { id = DOD_hungary.51 } }
 		add_stability = -0.25
 		add_war_support = -0.1
 
@@ -1293,7 +1289,7 @@ country_event = {
 		ai_chance = {
 			factor = 90
 		}
-		HUN = { country_event = { id = DOD_hungary.52 } }
+		FROM = { country_event = { id = DOD_hungary.52 } }
 	}
 }
 
@@ -1315,11 +1311,11 @@ country_event = {
 	option = {# 
 		name = DOD_hungary.51.a
 		hidden_effect = {
-			ROM = {
+			ROOT = {
 				set_country_flag = second_vienna_accepted_all #needed for event bulgaria.4
 			}
 		}
-		HUN = {
+		ROOT = {
 			if = {
 				limit = {
 					FROM = {
@@ -1383,12 +1379,8 @@ country_event = {
 		ai_chance = {
 			factor = 20
 			modifier = {
-				strength_ratio = { tag = ROM ratio < 1 } #weaker than Romania
+				strength_ratio = { tag = FROM ratio < 1 } #weaker than Romania
 				factor = 2
-			}
-			modifier = {
-				HUN_is_on_historical_plan_trigger = yes
-				factor = 0
 			}
 		}
 		add_stability = -0.2
@@ -1404,11 +1396,11 @@ country_event = {
 		ai_chance = {
 			factor = 80
 			modifier = {
-				strength_ratio = { tag = ROM ratio > 1.2 }
+				strength_ratio = { tag = FROM ratio > 1.2 }
 				factor = 3
 			}
 		}
-		ROM = { country_event = { id = DOD_hungary.53 hours = 24} }
+		FROM = { country_event = { id = DOD_hungary.53 hours = 24} }
 		add_ideas = HUN_war_preparation
 		add_war_support = 0.1
 		add_threat = 2

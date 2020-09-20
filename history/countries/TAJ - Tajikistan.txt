@@ -1,0 +1,104 @@
+﻿capital = 742
+set_research_slots = 4
+
+set_technology = {
+	gw_artillery = 1
+	interwar_artillery = 1
+	interwar_antiair = 1
+	gwtank = 1
+	basic_light_tank = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	infantry_weapons2 = 1
+	support_weapons = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_mountaineers = 1
+	tech_engineers = 1
+	early_fighter = 1
+	early_bomber = 1
+	CAS1 = 1
+}
+
+1939.1.1 = {
+	
+	add_political_power = 1198
+
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	set_technology = {
+		#doctrines
+		formation_flying = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1 
+		construction1 = 1
+		concentrated_industry = 1
+	}
+}
+
+set_popularities = {
+	democratic = 10
+	fascism = 10
+	communism = 70
+	neutrality = 10
+}
+
+set_politics = {
+	ruling_party = communism
+	last_election = "1928.5.8"
+	election_frequency = 120
+	elections_allowed = no
+}
+
+create_country_leader = {
+	name = "Dmitriy Protopov"
+	desc = ""
+	picture = "gfx/leaders/Tadjik/Portarit_Dmitriy_Protopov.dds"
+	expire = "1953.3.1"
+	ideology = conservatism
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Munavar Shagadayev"
+	desc = ""
+	picture = "gfx/leaders/TAJ/TAJ_Shagadaev.dds"
+	expire = "1953.3.1"
+	ideology = marxism
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Vladimir Uldzabev"
+	desc = ""
+	picture = "gfx/leaders/Tadjik/Portrait_Uldzabaev.dds"
+	expire = "1953.3.1"
+	ideology = fascism_ideology
+	traits = {
+		
+	}
+}

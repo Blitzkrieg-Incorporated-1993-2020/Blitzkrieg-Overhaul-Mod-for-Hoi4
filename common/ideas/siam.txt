@@ -1,0 +1,681 @@
+ideas = {
+
+	country = {
+
+		SIA_legacy_of_the_royal_dynasty = {
+
+			picture = royal_dynasty
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				monarchism_drift = 0.01
+				political_power_gain = 0.3
+			}
+		}
+
+		SIA_royalty = {
+
+			picture = HUN_hungarian_monarchy
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				monarchism_drift = 0.05
+			}
+		}
+
+		SIA_experienced_naval_builders = {
+
+			picture = generic_production_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_dockyard = 0.2
+			}
+		}
+
+		SIA_radicalisation_against_china_idea = {
+
+			picture = FRA_matignon_agreements
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.05
+			}
+		}
+
+		SIA_exiled_royals = {
+
+			picture = ast_abandon_the_westminster_system
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.5
+				stability_factor = -0.1
+			}
+		}
+
+		SIA_honoured_royals = {
+
+			picture = generic_morale_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = 0.5
+				monarchism_drift = 0.01
+			}
+		}
+
+		SIA_kingdom_a_parliament = {
+
+			picture = generic_democratic_drift_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = 0.5
+				democratic_drift = 0.01
+				conservative_drift = 0.01
+				social_democracy_drift = 0.01
+			}
+		}
+
+		SIA_divided_people = {
+
+			picture = generic_disjointed_gov
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_advisor_cost_factor = 0.25
+				trade_laws_cost_factor = 0.25
+				stability_factor = -0.05
+				political_power_cost = 0.5
+				drift_defence_factor = -0.5
+			}
+		}
+
+		SIA_siam_with_fascist_characteristics = {
+
+			picture = generic_fascism_drift_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				fascism_drift = 0.01
+				fascism_acceptance = 75
+				justify_war_goal_time = -0.05
+				monarchism_drift = -0.02
+			}
+		}
+
+		SIA_siam_with_fascist_influences = {
+
+			picture = generic_fascism_drift_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				fascism_acceptance = 75
+			}
+		}
+
+		SIA_rice_exports_idea = {
+
+			picture = raj_risk_of_famine
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.05
+				trade_opinion_factor = 0.2
+			}
+		}
+
+		SIA_royal_kingdom_of_siam = {
+
+			picture = FRA_scw_intervention_nationalists_focus
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				drift_defence_factor = 0.5
+				monarchism_drift = 0.01
+			}
+		}
+
+		SIA_rule_of_the_majority = {
+
+			picture = generic_democratic_drift_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				democratic_drift = 0.02
+				conservative_drift = 0.3
+				social_democracy_drift = 0.02
+			}
+		}
+
+		SIA_land_of_the_free = {
+
+			picture = FRA_scw_intervention_republicans_focus
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+
+		SIA_voradejs_legacy_idea = {
+
+			picture = FRA_fortification_focus
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = 0.05
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+
+		SIA_new_thai_nationalism_idea = {
+
+			picture = FRA_scw_intervention_nationalists_focus
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			research_bonus = {
+				industry = 0.10
+				electronics = 0.10
+			}
+		}
+
+		SIA_the_twelve_mandates = {
+
+			picture = HUN_treaty_of_triannon
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.3
+			}
+		}
+
+	SIA_local_development = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_air_bonus
+
+			equipment_bonus = {
+				fighter_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				cv_fighter_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				CAS_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				cv_CAS_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				cv_nav_bomber_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				nav_bomber_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				tac_bomber_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				heavy_fighter_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				strat_bomber_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+	}
+
+	political_advisor = {
+
+		SIA_phot_bhahalyodin = {
+
+			picture = generic_political_advisor_asia_2
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { prince_of_terror }
+		}
+
+		SIA_kuang_abhayavongsa = {
+
+			picture = generic_political_advisor_asia_3
+				
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { silent_workhorse }
+		}
+
+		SIA_thawee_punyaketu = {
+
+			picture = generic_political_advisor_asia_1
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { captain_of_industry }
+		}
+	}	
+
+	army_chief = {
+		
+		SIA_luang_phibunsongkhram = {
+			
+			picture = generic_army_asia_2
+
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { army_chief_morale_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+
+		SIA_phraya_chitnasongkhla = {
+
+			picture = generic_army_asia_4
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+
+	air_chief = {
+		
+
+		SIA_phra_vechayanrangsarit = {
+			
+			picture = generic_air_asia_2
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { air_chief_ground_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		SIA_phraya_chalermarkiart = {
+
+			picture = generic_air_asia_3
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { air_chief_night_operations_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	navy_chief = {
+		
+
+		SIA_phraya_wichcitcholathai = {
+			
+			picture = generic_navy_asia_1
+
+			allowed = {
+				original_tag = SIA
+			}
+					
+			traits = { navy_chief_decisive_battle_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		SIA_thawon_thamrongnawasawat = {
+			
+			picture = generic_navy_asia_3
+
+			allowed = {
+				original_tag = SIA
+			}
+					
+			traits = { navy_chief_maneuver_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	high_command = {
+
+		SIA_tianliang_huntrakool = {
+
+			picture = generic_army_asia_3
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { army_armored_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		SIA_sindhu_kamalanavin = {
+
+			picture = generic_army_asia_1
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { army_logistics_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SIA_phraya_thayarnpikart = {
+
+			picture = generic_air_asia_3
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { air_close_air_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SIA_luang_sinthusongkhramchai = {
+
+			picture = generic_air_asia_1
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { air_naval_strike_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SIA_pridi_phanomyong = {
+
+			picture = generic_navy_asia_3
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { navy_screen_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SIA_phraya_preechacholayudha = {
+
+			picture = generic_navy_asia_1
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { navy_submarine_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+
+
+	theorist = {
+		SIA_manphya_khanphialong = {
+
+			picture = generic_army_asia_5
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.07
+			}
+			
+			traits = { military_theorist }
+		}
+		
+		SIA_sawat_phutianands = { 
+
+			picture = generic_navy_asia_3
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			research_bonus = {
+				naval_doctrine = 0.07
+			}
+			
+			traits = { naval_theorist }
+		}
+
+		SIA_phra_silpasakrakorn = {
+
+			picture = generic_air_asia_3
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+
+	}
+
+	materiel_manufacturer = {
+
+		chaiseri = {
+			
+			picture = GFX_idea_chaiseri
+
+			allowed = {
+				original_tag = SIA
+			}
+			
+			available = {
+				has_completed_focus = SIA_found_chaiseri
+			}
+
+			research_bonus = {
+				motorized_equipment = 0.20
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+	}
+
+	industrial_concern = {	
+
+		siam_cement = {
+			
+			picture = thai_cement
+
+			allowed = {
+				original_tag = SIA
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				industry = 0.10
+			}
+			
+			traits = { industrial_concern }
+		}
+
+		international_engineering = {
+
+			picture = international_engineering
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+				
+			}
+			
+			traits = { electronics_concern }
+		}	
+	}
+}

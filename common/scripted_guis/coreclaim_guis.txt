@@ -1,0 +1,137 @@
+scripted_gui = {
+
+	make_core = {
+		context_type = selected_state_context
+		
+		window_name = "make_core_button"
+		parent_window_token = selected_state_view
+		
+		visible = {
+			ROOT = { has_war = no }
+			is_owned_by = ROOT
+			NOT = { is_core_of = ROOT }
+		}
+		
+		effects = {
+			make_core_shade_click = {
+				ROOT = {
+					if = {
+						limit = {
+							NOT = { is_in_array = { coring_check_popup = PREV } }
+						}
+						add_to_array = { coring_check_popup = PREV }
+					}
+				}
+			}
+		}
+		
+		triggers = {
+			make_core_shade_click_enabled = {
+				is_controlled_by = ROOT
+				NOT = { has_variable = progress }
+				state_coring_cost_trigger = yes
+				multiply_temp_variable = { core_cost = temp_cost_modifier }
+				check_variable = { ROOT.political_power > core_cost }
+			}
+			make_core_icon_visible = {
+				is_controlled_by = ROOT
+				NOT = { has_variable = progress }
+				state_coring_cost_trigger = yes
+				multiply_temp_variable = { core_cost = temp_cost_modifier }
+				check_variable = { ROOT.political_power > core_cost }
+			}
+		}
+		
+		ai_test_scopes = test_self_owned_states
+		ai_test_interval = 24
+		ai_test_variance = 0.2
+		
+		ai_enabled = {
+			always = yes
+		}
+		
+		ai_check = {
+			has_political_power > 150
+		}
+		
+		ai_weights = {
+			make_core_shade_click = {
+				ai_will_do = {
+					factor = 0
+					modifier = {
+						state_coring_cost_trigger = yes
+						check_variable = { temp_cost_modifier < 0.75 }
+						add = 10
+					}
+					modifier = {
+						ROOT = { has_political_power > 500 }
+						add = 10
+					}
+					modifier = {
+						is_coastal = yes
+						factor = 2
+					}
+					modifier = {
+						any_neighbor_state = {
+							is_core_of = ROOT
+						}
+						factor = 10
+					}
+					modifier = {
+						capital_scope = {
+							set_temp_variable = { distance_to_capital = 1000 }
+							divide_temp_variable = { distance_to_capital = distance_to@prev }
+							clamp_temp_variable = {
+								var = distance_to_capital
+								min = 1
+								max = 10
+							}
+						}
+						factor = distance_to_capital
+					}
+					modifier = {
+						check_variable = { global.CORING_BLOCKED = 1 }
+						factor = 0
+					}
+				}
+			}
+		}
+	}
+	coreization = {
+		context_type = selected_state_context
+		
+		window_name = "make_core_progress"
+		parent_window_token = selected_state_view
+		
+		visible = {
+			has_variable = progress
+		}
+		
+		effects = {
+			make_core_cancel_click = {
+				ROOT = {
+					if = {
+						limit = {
+							NOT = { is_in_array = { coring_cancel_popup = PREV } }
+						}
+						add_to_array = { coring_cancel_popup = PREV }
+					}
+				}
+			}
+		}
+		
+		triggers = {
+			make_core_cancel_click_enabled = {
+			}
+			make_core_cancel_visible = {
+				is_owned_by = ROOT
+			}
+		}
+		
+		properties = {
+			coreization_bar = {
+				x = progress
+			}
+		}
+	}
+}

@@ -1,0 +1,541 @@
+﻿add_namespace = turkey
+
+country_event = {
+	id = turkey.1
+	title = turkey.1.t
+	desc = turkey.1.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TUR
+		date > 1938.03.01
+	}	
+
+	mean_time_to_happen = {
+		days = 30
+		modifier = {
+			factor = 0.5
+			date > 1936.03.01
+		}
+		modifier = {
+			factor = 0.2
+			date > 1936.04.01
+		}
+	}
+	
+	option = {
+		name = turkey.1.a
+		kill_ideology_leader = social_democracy
+		add_timed_idea  = {
+	    idea = TUR_ataturk_died
+		days = 365
+        }
+	}
+}
+
+country_event = {
+	id = turkey.2
+	title = turkey.2.t
+	desc = turkey.2.d
+	picture = GFX_report_event_lithuania_army
+
+	trigger = {
+		NOT = { has_country_flag = pickedaside }
+		is_subject = no 
+		has_war = no
+		GER = { is_faction_leader = yes }
+		OR = {
+			tag = SAU
+			tag = PER
+			tag = IRQ
+			tag = TUR
+		}
+		NOT = {
+			OR = {
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+		}
+		OR = {
+			ENG = { is_faction_leader = yes }
+			USA = { is_faction_leader = yes }
+		}
+		GER = {
+			OR = {
+				has_war_with = ENG
+				has_war_with = USA
+				has_war_with = SOV
+			}
+		}
+		OR = {
+			126 = { controller = { has_full_control_of_state = 126 is_in_faction_with = GER } }
+			219 = { controller = { has_full_control_of_state = 219 is_in_faction_with = GER } }
+			217 = { controller = { has_full_control_of_state = 217 is_in_faction_with = GER } }
+			GER = { surrender_progress > 0.1 }
+		}
+	}	
+
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = turkey.1.a
+		set_country_flag = pickedaside
+		if = {
+			limit = {
+				GER = { surrender_progress > 0.1 }
+			}
+			if = {
+	            limit = {
+	                ENG = {
+	                    is_faction_leader = yes
+	                    has_war_with = GER
+	                }
+	            }
+	            ENG = { 
+	                add_to_faction = ROOT
+	            }
+	            ROOT = {
+	                add_to_war = { 
+	                    targeted_alliance = ENG
+	                    enemy = GER
+	                    hostility_reason = asked_to_join
+	                }
+	            }
+	        }
+	        if = {
+	            limit = {
+	                USA = {
+	                    is_faction_leader = yes
+	                    has_war_with = GER
+	                }
+	            }
+	            USA = { 
+	                add_to_faction = ROOT
+	            }
+	            ROOT = {
+	                add_to_war = { 
+	                    targeted_alliance = USA
+	                    enemy = GER
+	                    hostility_reason = asked_to_join
+	                }
+	            }
+	        }
+		}
+		if = {
+			limit = {
+				126 = { controller = { is_in_faction_with = GER } }
+			}
+			GER = { 
+                add_to_faction = ROOT
+            }
+            ROOT = {
+                add_to_war = { 
+                    targeted_alliance = GER
+                    enemy = ENG
+                    hostility_reason = asked_to_join
+                }
+            }
+		}	
+		if = {
+			limit = {
+				OR = {
+					219 = { controller = { is_in_faction_with = GER } }
+					217 = { controller = { is_in_faction_with = GER } }
+				}
+			}
+			GER = { 
+                add_to_faction = ROOT
+            }
+            ROOT = {
+                add_to_war = { 
+                    targeted_alliance = GER
+                    enemy = SOV
+                    hostility_reason = asked_to_join
+                }
+            }
+		}
+	}
+}
+
+
+
+country_event = {
+	id = turkey.33
+	title = turkey.33.t
+	desc = turkey.33.d
+	picture = GFX_report_event_ANZAC_day
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = turkey.33.a
+		ai_chance = { factor = 90 }
+		TUR = {
+			country_event = { days = 1 id = turkey.26 }
+			}
+		}
+	option = { # Refuse
+		name = turkey.33.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				}
+			}
+			effect_tooltip = {
+				TUR = {
+					create_wargoal = {
+					type = take_state_focus
+					target = ENG
+					generator = { 183 952 }
+					}
+					country_event = { days = 1 id = turkey.27 }
+				}
+			}
+			hidden_effect = {
+				TUR = {
+					country_event = { days = 1 id = turkey.27 }
+				}
+			}
+		}
+	}
+	
+country_event = {
+	id = turkey.26
+	title = turkey.26.t
+	desc = turkey.26.d
+	picture = GFX_report_event_ANZAC_day
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.26.a
+		transfer_state = 183
+		transfer_state = 952
+	}
+}
+
+country_event = {
+	id = turkey.27
+	title = turkey.27.t
+	desc = turkey.27.d
+	picture = GFX_report_event_lithuania_army
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.27.a
+		create_wargoal = {
+			type = take_state_focus
+			target = ENG
+			generator = { 183 952 }
+			}
+		}
+	}
+	
+country_event = {
+	id = turkey.31
+	title = turkey.31.t
+	desc = turkey.31.d
+	picture = GFX_report_event_ANZAC_day
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = turkey.31.a
+		ai_chance = { factor = 90 }
+		TUR = {
+			country_event = { days = 1 id = turkey.22 }
+			}
+		}
+	option = { # Refuse
+		name = turkey.31.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				}
+			}
+			effect_tooltip = {
+			}
+			hidden_effect = {
+				TUR = {
+					country_event = { days = 1 id = turkey.23 }
+				}
+			}
+		}
+	}
+	
+country_event = {
+	id = turkey.22
+	title = turkey.22.t
+	desc = turkey.22.d
+	picture = GFX_report_event_ANZAC_day
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.22.a
+		transfer_state = 877
+	}
+}
+
+country_event = {
+	id = turkey.23
+	title = turkey.23.t
+	desc = turkey.23.d
+	picture = GFX_report_event_lithuania_army
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.23.a
+		create_wargoal = {
+			type = take_state_focus
+			generator = { 877 }
+			target = FRA
+		}
+	}
+	
+
+country_event = {
+	id = turkey.20
+	title = turkey.20.t
+	desc = turkey.20.d
+	picture = GFX_report_event_ANZAC_day
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = turkey.20.a
+		TUR = {
+			transfer_state = 137
+		}
+	}
+}
+
+country_event = {
+	id = turkey.21
+	title = turkey.21.t
+	desc = turkey.21.d
+	picture = GFX_report_event_ANZAC_day
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = turkey.21.a
+		create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SOV
+			}
+		SOV = {
+			add_opinion_modifier = { target = TUR modifier = soviet_reject_our_offer }	
+		}
+	}
+}
+
+country_event = {
+	id = turkey.34
+	title = turkey.34.t
+	desc = turkey.34.d
+	picture = GFX_report_event_ANZAC_day
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = turkey.34.a
+		ai_chance = { factor = 90 }
+		TUR = {
+			country_event = { days = 1 id = turkey.28 }
+			}
+		}
+	option = { # Refuse
+		name = turkey.34.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				}
+			}
+			effect_tooltip = {
+				TUR = {
+					create_wargoal = {
+					type = take_state_focus
+					target = ITA
+					generator = { 164 }
+					}
+					country_event = { days = 1 id = turkey.29 }
+				}
+			}
+			hidden_effect = {
+				TUR = {
+					country_event = { days = 1 id = turkey.29 }
+				}
+			}
+		}
+	}
+
+country_event = {
+	id = turkey.28
+	title = turkey.28.t
+	desc = turkey.28.d
+	picture = GFX_report_event_ANZAC_day
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.28.a
+		164 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = TUR
+			}
+		TUR = {
+			transfer_state = 164
+			}
+		}
+	}
+}
+
+country_event = {
+	id = turkey.29
+	title = turkey.29.t
+	desc = turkey.29.d
+	picture = GFX_report_event_lithuania_army
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.29.a
+		create_wargoal = {
+			type = take_state_focus
+			target = ITA
+			generator = { 164 }
+			}
+		}
+	}
+	
+	country_event = {
+	id = turkey.35
+	title = turkey.35.t
+	desc = turkey.35.d
+	picture = GFX_report_event_yugoslavian_cavalry
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.35.a
+		}
+	}
+	
+	
+	country_event = {
+	id = turkey.68
+	title = turkey.68.t
+	desc = turkey.68.d
+	picture = GFX_report_event_soldiers_marching
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TUR
+		date > 1937.3.3
+		date < 1938.3.3
+	}
+	
+	option = {
+		name = turkey.68.a
+		add_stability = -0.05
+		army_experience = 25
+	}
+}
+
+country_event = {
+	id = turkey.69
+	title = turkey.69.t
+	desc = turkey.69.d
+	picture = GFX_report_event_ANZAC_day
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = turkey.69.a
+		ai_chance = { factor = 90 }
+		TUR = {
+			country_event = { days = 1 id = turkey.70 }
+			}
+		}
+	option = { # Refuse
+		name = turkey.69.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				}
+			}
+			effect_tooltip = {
+				TUR = {
+					create_wargoal = {
+					type = take_state_focus
+					target = ENG
+					generator = { 656 }
+					}
+					country_event = { days = 1 id = turkey.71 }
+				}
+			}
+			hidden_effect = {
+				TUR = {
+					country_event = { days = 1 id = turkey.71 }
+				}
+			}
+		}
+	}
+	
+	country_event = {
+	id = turkey.70
+	title = turkey.70.t
+	desc = turkey.70.d
+	picture = GFX_report_event_ANZAC_day
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.70.a
+		656 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = TUR
+			}
+		TUR = {
+			transfer_state = 656
+			}
+		}
+	}
+ }
+
+country_event = {
+	id = turkey.71
+	title = turkey.71.t
+	desc = turkey.71.d
+	picture = GFX_report_event_ANZAC_day
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.71.a
+		create_wargoal = {
+			type = take_state_focus
+			target = ENG
+			generator = { 656 }
+			}
+		}
+	}
+}

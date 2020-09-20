@@ -1,0 +1,215 @@
+ideas = {
+
+	political_advisor = {
+
+		AZR_tahire_tahirova = {
+
+			picture = Tahire_Tahirova
+
+			allowed = {
+				original_tag = AZR
+			}
+			
+			traits = { captain_of_industry }
+		}
+
+		AZR_gazanfer_musabeyov = {
+
+			picture = generic_political_advisor_arab_1
+				
+			allowed = {
+				original_tag = AZR
+			}
+			
+			traits = { ideological_crusader }
+		}
+
+		AZR_mohsun_palodav = {
+
+			picture = generic_political_advisor_arab_3
+			
+			allowed = {
+				original_tag = AZR
+			}
+			
+			traits = { war_industrialist }
+		}
+
+		AZR_veli_axundov = {
+
+			picture = generic_political_advisor_europe_1
+			
+			allowed = {
+				original_tag = AZR
+			}
+			
+			traits = { silent_workhorse }
+		}
+	}
+
+	theorist = {
+
+		AZR_xosrov_bey_sultanov = {
+				
+			picture = generic_army_south_america_2
+
+			allowed = {
+			original_tag = AZR
+			}
+		
+			research_bonus = {
+				land_doctrine = 0.07
+			}
+		
+			traits = { military_theorist }
+		}
+
+		AZR_ali_haydar_karabey = {
+				
+			picture = generic_army_europe_6
+
+			allowed = {
+				original_tag = AZR
+			}
+		
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+		
+			traits = { naval_theorist }
+		}
+	}
+
+	army_chief = {
+
+		AZR_cengiz_yildirim = {
+			
+			picture = generic_army_europe_1
+			
+			allowed = {
+				original_tag = AZR
+			}
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		AZR_sultan_bey_sultanov = {
+			
+			picture = generic_army_europe_2
+			
+			allowed = {
+				original_tag = AZR
+			}
+			
+			traits = { army_chief_defensive_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	air_chief = {
+
+		AZR_zuleyxa_seyidmemmedova = {
+			
+			picture = zuleyxa_seyidmemmedova
+			
+			allowed = {
+				original_tag = AZR
+			}
+			
+			traits = { air_chief_ground_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	navy_chief = {
+		
+		AZR_cengiz_yildirim = {
+			
+			picture = generic_navy_europe_2
+			
+			allowed = {
+				original_tag = AZR
+			}
+
+			traits = { navy_chief_decisive_battle_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	high_command = {
+
+		AZR_mirza_bala = {
+			
+			picture = generic_army_europe_1
+			
+			allowed = {
+				original_tag = AZR
+			}
+
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		AZR_yakup_guliyev = {
+			
+			picture = generic_army_europe_3
+			
+			allowed = {
+				original_tag = AZR
+			}
+
+			traits = { army_armored_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		AZR_ali_haydar_karabey = {
+			
+			picture = generic_army_europe_6
+			
+			allowed = {
+				original_tag = AZR
+			}
+
+			
+			traits = { army_logistics_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		AZR_leyla_mehmedbeyova = {
+			
+			picture = Leyla_Mammadbeyova
+			
+			allowed = {
+				original_tag = AZR
+			}
+
+			traits = { air_tactical_bombing_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

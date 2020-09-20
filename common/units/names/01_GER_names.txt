@@ -1,0 +1,44 @@
+﻿GER = {
+	fascist_infantry = {
+		prefix = ""
+		generic = { "SS-Infanterie-Division" }
+		generic_pattern = "UNIT_GENERIC_NAME_GER"
+		unique = {}
+	}
+	fascist_cavalry = {
+		prefix = ""
+		generic = { "SS-Kavallerie-Kommando" }
+		generic_pattern = "UNIT_GENERIC_NAME_GER"
+		unique = {}
+	}
+	fascist_motorized = {
+		prefix = ""
+		generic = { "SS-Motorisierte-Division" }
+		generic_pattern = "UNIT_GENERIC_NAME_GER"
+		unique = {}
+	}
+	fascist_mechanized = {
+		prefix = ""
+		generic = { "SS-Panzer-Grenadier-Division" }
+		generic_pattern = "UNIT_GENERIC_NAME_GER"
+		unique = {}
+	}
+	fascist_light_armor = {
+		prefix = ""
+		generic = { "SS-Panzer-Division" }
+		generic_pattern = "UNIT_GENERIC_NAME_GER"
+		unique = {}
+	}
+	fascist_medium_armor = {
+		prefix = ""
+		generic = { "SS-Panzer-Division" }
+		generic_pattern = "UNIT_GENERIC_NAME_GER"
+		unique = {}
+	}
+	fascist_heavy_armor = {
+		prefix = ""
+		generic = { "SS-Panzer-Division" }
+		generic_pattern = "UNIT_GENERIC_NAME_GER"
+		unique = {}
+	}
+}

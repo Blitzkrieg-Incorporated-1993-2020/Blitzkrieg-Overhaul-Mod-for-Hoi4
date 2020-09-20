@@ -1,0 +1,113 @@
+IRQ_british_investors  = {
+	
+	IRQ_civilian_factories = {
+
+		icon = generic_construction
+
+		available = {
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = IRQ_has_invited_investors
+			}
+			has_completed_focus = IRQ_invite_british_investors
+		}
+
+		fire_only_once = yes
+
+		remove_effect = {
+			add_offsite_building = { type = industrial_complex level = 2 }
+		}
+
+		complete_effect = {
+			set_country_flag = IRQ_has_invited_investors
+		}
+		
+		days_remove = 50
+
+		cost = 100
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_stability < 0.6
+			}
+		}
+	}
+	
+	IRQ_synthetic_refineries = {
+
+		icon = generic_construction
+
+		available = {
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = IRQ_has_invited_investors
+			}
+			has_completed_focus = IRQ_invite_british_investors
+		}
+
+		fire_only_once = yes
+
+		remove_effect = {
+			add_offsite_building = { type = synthetic_refinery level = 2 }
+		}
+		
+		complete_effect = {
+			set_country_flag = IRQ_has_invited_investors
+		}
+
+		days_remove = 50
+
+		cost = 100
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_stability < 0.6
+			}
+		}
+	}
+	
+	IRQ_arms_factories = {
+
+		icon = generic_construction
+
+		available = {
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = IRQ_has_invited_investors
+			}
+			has_completed_focus = IRQ_invite_british_investors
+		}
+
+		fire_only_once = yes
+
+		remove_effect = {
+			add_offsite_building = { type = arms_factory level = 2 }
+		}
+		
+		complete_effect = {
+			set_country_flag = IRQ_has_invited_investors
+		}
+
+		days_remove = 50
+
+		cost = 100
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_stability < 0.6
+			}
+		}
+	}
+}

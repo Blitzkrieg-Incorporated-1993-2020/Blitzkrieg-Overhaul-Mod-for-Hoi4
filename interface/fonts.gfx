@@ -1,0 +1,10 @@
+bitmapfonts = {
+
+	bitmapfont_override = {
+		name = "tahoma_60"		# Country Names on Map
+		fontfiles = { 
+			"gfx/fonts/hoi_nosmapfont41"		
+		}			
+		languages = { "l_english" } 
+	}
+}

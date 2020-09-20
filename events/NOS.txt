@@ -1,0 +1,2906 @@
+##############################
+# Better European Events #
+##############################
+add_namespace = nos
+
+country_event = { # America AI Nukes Japan
+    id = nos.1
+    hidden = yes
+    
+    mean_time_to_happen = { days = 30 }
+    
+    trigger = {
+        tag = USA
+        has_war_with = JAP
+        date < 1946.1.1
+        is_ai = yes
+        has_country_flag = warned_japs
+        has_country_flag = unconditional_surrender
+        OR = {
+            645 = { NOT = { is_owned_by = JAP } }
+            645 = {
+                is_owned_by = JAP
+                NOT = { is_fully_controlled_by = JAP }
+            }
+        }
+        OR = {
+            646 = { NOT = { is_owned_by = JAP } }
+            646 = {
+                is_owned_by = JAP
+                NOT = { is_fully_controlled_by = JAP }
+            }
+        }
+    }
+    
+    option = {
+        if = {
+            limit = {
+                NOT = {
+                    OR = {
+                        JAP = { has_country_flag = tokyo_destroyed }
+                        JAP = { has_country_flag = nagasaki_destroyed }
+                        JAP = { has_country_flag = hiroshima_destroyed }
+                    }
+                }
+            }
+            launch_nuke = {
+                province = 1092
+                state = 529
+                controller = JAP
+                use_nuke = no
+            }
+        }
+        if = {
+            limit = {
+                JAP = { has_country_flag = hiroshima_destroyed }
+                NOT = {
+                    OR = {
+                        JAP = { has_country_flag = tokyo_destroyed }
+                        JAP = { has_country_flag = nagasaki_destroyed }
+                    }
+                }
+            }
+            launch_nuke = {
+                province = 9950
+                state = 528
+                controller = JAP
+                use_nuke = no
+            }
+        }
+        if = {
+            limit = {
+                JAP = { has_country_flag = nagasaki_destroyed }
+                NOT = {
+                    OR = {
+                        JAP = { has_country_flag = tokyo_destroyed }
+                        JAP = { has_country_flag = hiroshima_destroyed }
+                    }
+                }
+            }
+            launch_nuke = {
+                province = 1182
+                state = 282
+                controller = JAP
+                use_nuke = no
+            }
+        }
+        if = {
+            limit = {
+                JAP = { has_country_flag = tokyo_destroyed }
+                NOT = {
+                    OR = {
+                        JAP = { has_country_flag = nagasaki_destroyed }
+                        JAP = { has_country_flag = hiroshima_destroyed }
+                    }
+                }
+            }
+            launch_nuke = {
+                province = 1092
+                state = 529
+                controller = JAP
+                use_nuke = no
+            }
+        }
+        if = {
+            limit = {
+                JAP = { has_country_flag = hiroshima_destroyed }
+                JAP = { has_country_flag = nagasaki_destroyed }
+                NOT = {
+                    JAP = { has_country_flag = tokyo_destroyed }
+                }
+            }
+            launch_nuke = {
+                province = 1182
+                state = 282
+                controller = JAP
+                use_nuke = no
+            }
+        }
+        if = {
+            limit = {
+                JAP = { has_country_flag = tokyo_destroyed }
+                JAP = { has_country_flag = nagasaki_destroyed }
+                NOT = {
+                    JAP = { has_country_flag = hiroshima_destroyed }
+                }
+            }
+            launch_nuke = {
+                province = 1092
+                state = 529
+                controller = JAP
+                use_nuke = no
+            }
+        }
+        if = {
+            limit = {
+                JAP = { has_country_flag = tokyo_destroyed }
+                JAP = { has_country_flag = hiroshima_destroyed }
+                NOT = {
+                    JAP = { has_country_flag = nagasaki_destroyed }
+                }
+            }
+            launch_nuke = {
+                province = 9950
+                state = 528
+                controller = JAP
+                use_nuke = no
+            }
+        }
+    }
+} 
+
+country_event = {
+    id = nos.2
+
+    hidden = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+        log = "[GetDateText]: [Root.GetName]: nos.2"
+        if = {
+            limit = { has_government = democratic }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = conservative
+                        has_government = social_democracy
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = fascism
+                        has_government = neutrality
+                        has_government = monarchism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = conservative }
+            every_country = {
+                limit = { has_government = democratic }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+            }
+            every_country = {
+                limit = { has_government = social_democracy }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = unionism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = social_democracy }
+            every_country = {
+                limit = { has_government = democratic }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = conservative
+                        has_government = unionism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = neutrality
+                        has_government = monarchism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = unionism }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = social_democracy
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = conservative
+                        has_government = neutrality
+                        has_government = monarchism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = communism }
+            every_country = {
+                limit = {
+                    has_government = unionism
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = neutrality
+                        has_government = conservative
+                        has_government = democratic
+                        has_government = monarchism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = fascism }
+            every_country = {
+                limit = {
+                    has_government = neutrality
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = unionism
+                        has_government = social_democracy
+                        has_government = democratic
+                        has_government = conservative
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = monarchism }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = neutrality
+                        has_government = conservative
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = unionism
+                        has_government = social_democracy
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = neutrality }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = monarchism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = unionism
+                        has_government = social_democracy
+                        has_government = democratic
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        every_country = {
+            limit = { exists = yes }
+            set_country_flag = party_opinions_set
+        }
+    }
+}
+
+country_event = {
+    id = nos.3
+
+    hidden = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+        log = "[GetDateText]: [Root.GetName]: event nos.3"
+        every_country = {
+            remove_opinion_modifier = {
+                target = ROOT
+                modifier = NOS_similar_ideology
+            }
+            ROOT = {
+                remove_opinion_modifier = {
+                    target = PREV
+                    modifier = NOS_similar_ideology
+                }
+            }
+            remove_opinion_modifier = {
+                target = ROOT
+                modifier = NOS_same_ideology
+            }
+            ROOT = {
+                remove_opinion_modifier = {
+                    target = PREV
+                    modifier = NOS_same_ideology
+                }
+            }
+            remove_opinion_modifier = {
+                target = ROOT
+                modifier = NOS_different_ideology
+            }
+            ROOT = {
+                remove_opinion_modifier = {
+                    target = PREV
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = democratic }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = conservative
+                        has_government = social_democracy
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = fascism
+                        has_government = neutrality
+                        has_government = monarchism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = fascism
+                        has_government = neutrality
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = conservative }
+            every_country = {
+                limit = { has_government = democratic }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+            }
+            every_country = {
+                limit = { has_government = social_democracy }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = social_democracy
+                        has_government = monarchism
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = unionism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = fascism
+                        has_government = unionism
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = social_democracy }
+            every_country = {
+                limit = { has_government = democratic }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = conservative
+                        has_government = unionism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = neutrality
+                        has_government = monarchism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = unionism }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = social_democracy
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = conservative
+                        has_government = neutrality
+                        has_government = monarchism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = communism }
+            every_country = {
+                limit = {
+                    has_government = unionism
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = conservative
+                        has_government = democratic
+                        has_government = monarchism
+                        has_government = neutrality
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = conservative
+                        has_government = democratic
+                        has_government = monarchism
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = fascism }
+            every_country = {
+                limit = { has_government = neutrality }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = unionism
+                        has_government = social_democracy
+                        has_government = democratic
+                        has_government = conservative
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                    has_government = communism
+                        has_government = unionism
+                        has_government = social_democracy
+                        has_government = democratic
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }   
+        }
+        if = {
+            limit = { has_government = monarchism }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = neutrality
+                        has_government = conservative
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    has_government = neutrality
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = unionism
+                        has_government = social_democracy
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = unionism
+                        has_government = social_democracy
+                        has_government = democratic
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = neutrality }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = monarchism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = unionism
+                        has_government = social_democracy
+                        has_government = democratic
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = unionism
+                        has_government = communism
+                        has_government = social_democracy
+                        has_government = democratic
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = nos.4
+
+    hidden = yes
+
+    mean_time_to_happen = { days = 2 }
+    
+    trigger = {
+        exists = yes
+        NOT = { has_country_flag = party_opinions_set }
+    }
+    
+    immediate = {
+        log = "[GetDateText]: [Root.GetName]: event nos.4"
+        every_country = {
+            remove_opinion_modifier = {
+                target = ROOT
+                modifier = NOS_similar_ideology
+            }
+            ROOT = {
+                remove_opinion_modifier = {
+                    target = PREV
+                    modifier = NOS_similar_ideology
+                }
+            }
+            remove_opinion_modifier = {
+                target = ROOT
+                modifier = NOS_same_ideology
+            }
+            ROOT = {
+                remove_opinion_modifier = {
+                    target = PREV
+                    modifier = NOS_same_ideology
+                }
+            }
+            remove_opinion_modifier = {
+                target = ROOT
+                modifier = NOS_different_ideology
+            }
+            ROOT = {
+                remove_opinion_modifier = {
+                    target = PREV
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = democratic }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = conservative
+                        has_government = social_democracy
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = fascism
+                        has_government = neutrality
+                        has_government = monarchism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = fascism
+                        has_government = neutrality
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = conservative }
+            every_country = {
+                limit = { has_government = democratic }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+            }
+            every_country = {
+                limit = { has_government = social_democracy }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = social_democracy
+                        has_government = monarchism
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = unionism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = fascism
+                        has_government = unionism
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = social_democracy }
+            every_country = {
+                limit = { has_government = democratic }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_same_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = conservative
+                        has_government = unionism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = neutrality
+                        has_government = monarchism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = unionism }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = social_democracy
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = conservative
+                        has_government = neutrality
+                        has_government = monarchism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = communism }
+            every_country = {
+                limit = {
+                    has_government = unionism
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = conservative
+                        has_government = democratic
+                        has_government = monarchism
+                        has_government = neutrality
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = conservative
+                        has_government = democratic
+                        has_government = monarchism
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = fascism }
+            every_country = {
+                limit = { has_government = neutrality }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = unionism
+                        has_government = social_democracy
+                        has_government = democratic
+                        has_government = conservative
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                    has_government = communism
+                        has_government = unionism
+                        has_government = social_democracy
+                        has_government = democratic
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }   
+        }
+        if = {
+            limit = { has_government = monarchism }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = neutrality
+                        has_government = conservative
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    has_government = neutrality
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = unionism
+                        has_government = social_democracy
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = communism
+                        has_government = unionism
+                        has_government = social_democracy
+                        has_government = democratic
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        if = {
+            limit = { has_government = neutrality }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = fascism
+                        has_government = monarchism
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_similar_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = unionism
+                        has_government = social_democracy
+                        has_government = democratic
+                    }
+                }
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        has_government = unionism
+                        has_government = communism
+                        has_government = social_democracy
+                        has_government = democratic
+                    }
+                }
+                reverse_add_opinion_modifier = {
+                    target = ROOT
+                    modifier = NOS_different_ideology
+                }
+            }
+        }
+        set_country_flag = party_opinions_set
+    }
+}
+
+country_event = { # CORES ARE NOT CLAIMS
+    id = nos.5
+    hidden = yes
+    
+    fire_only_once = yes
+    
+    mean_time_to_happen = {
+        days = 2 
+    }
+
+    trigger = {
+        any_state = {
+            is_claimed_by = ROOT
+            is_core_of = ROOT
+        }
+    }
+    
+    option = {
+        name = nos.9.a
+        every_state = {
+            limit = {
+                is_claimed_by = ROOT
+                is_core_of = ROOT
+            }
+            remove_claim_by = ROOT
+        }
+    }
+}
+
+country_event = { # KILL YOURSELF HITLER
+    id = nos.9
+    hidden = yes
+    
+    fire_only_once = yes
+    
+    mean_time_to_happen = {
+        days = 2 
+    }
+
+    trigger = {
+    	original_tag = GER
+        has_government = fascism
+        has_country_leader = { name = "Adolf Hitler" }
+        OR = {
+            surrender_progress > 0.5
+            64 = { CONTROLLER = { NOT = { tag = GER } } }
+        }
+    }
+    
+    option = {
+        name = nos.9.a
+        news_event = { id = NOS_germany_news.16 hours = 1 }
+		kill_country_leader = yes
+		set_country_flag = hitler_suicide
+		create_country_leader = {
+			name = "Karl Dönitz"
+			desc = ""
+			picture = "gfx/leaders/GER/Portrait_Germany_Karl_Donitz.dds"
+			expire = "1965.1.1"
+			ideology = nazism
+			traits = {
+				
+			}
+		}
+    }
+}
+
+country_event = { # Soviet Invasion of Manchuria, Germans almost dead
+    id = nos.10
+    hidden = yes
+    
+    fire_only_once = yes
+    
+    mean_time_to_happen = {
+        days = 10 
+    }
+
+    trigger = {
+		has_global_flag = yalta_yes
+		SOV = { NOT = { has_war_with = JAP } }
+		any_country = {
+			is_faction_leader = yes
+			NOT = { has_war_with = SOV }
+			has_war_with = GER
+			has_war_with = JAP
+		}
+        OR = {
+            GER = { surrender_progress > 0.5 }
+            64 = { CONTROLLER = { NOT = { tag = GER } } }
+        }
+    }
+    
+    option = {
+        name = nos.10.a
+   	 	SOV = { set_country_flag = invade_manchuria }
+    }
+}
+
+country_event = { # Stalin has autism and wont make Medium Tank Divisions
+    id = nos.11
+    hidden = yes
+    
+    fire_only_once = yes
+    
+    mean_time_to_happen = {
+        days = 10 
+    }
+
+    trigger = {
+		original_tag = SOV
+		has_tech = basic_medium_tank
+		NOT = { has_template_majority_unit = medium_armor }
+        date > 1940.6.1
+		is_ai = yes
+    }
+
+    option = {
+        name = nos.11.a
+		division_template = {
+			name = "Tankovaya Brigada" 				# Tank Brigade - Represents a pair of independent tank brigades (1 heavy (medium) + 1 regular (light) brigades) 
+			division_names_group = SOV_ARM_04
+			regiments = {
+				medium_armor = { x = 0 y = 0 }		# T-28 (medium) infantry tanks
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }		# T-26 or BT-5/7 tanks		
+				light_armor = { x = 1 y = 0 }		# T-26 or BT-5/7 tanks		
+				light_armor = { x = 1 y = 1 }		
+				light_armor = { x = 1 y = 2 }		
+				motorized = { x = 2 y = 0 }	
+				motorized = { x = 2 y = 1 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 } 		
+			}
+		}
+    }
+}
+
+country_event = { # Stalin has autism and wont make Katyusha Divisions
+    id = nos.12
+    hidden = yes
+    
+    fire_only_once = yes
+    
+    mean_time_to_happen = {
+        days = 10 
+    }
+
+    trigger = {
+		original_tag = SOV
+		has_tech = motorized_rocket_unit
+		NOT = { has_template_majority_unit = motorized_rocket_brigade }
+        date > 1941.1.1
+		is_ai = yes
+    }
+    
+    option = {
+        name = nos.11.a
+		division_template = {
+			name = "Katyusha Brigada"
+			division_names_group = SOV_ARM_04
+			regiments = {
+				motorized_rocket_brigade = { x = 0 y = 0 }
+				motorized_rocket_brigade = { x = 0 y = 1 }
+				motorized_rocket_brigade = { x = 0 y = 2 }
+				motorized = { x = 1 y = 0 }	
+				motorized = { x = 1 y = 1 }		
+				motorized = { x = 1 y = 2 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 } 		
+			}
+		}
+    }
+}
+
+country_event = { # Took too long
+    id = nos.13
+    hidden = yes
+    
+    fire_only_once = yes
+    
+    trigger = {
+        has_war_with = POL
+    }
+    
+    option = {
+        name = nos.13.a
+        set_country_flag = SOV_took_too_long_against_poland
+    }
+}
+
+# Vichy France demands Colonial Subjugation
+country_event = {
+    id = nos.15
+    title = nos.15.t
+    desc = nos.15.d
+    picture = GFX_report_event_soviet_invasion_map
+    
+    is_triggered_only = yes
+    
+    option = {
+        name = nos.15.a
+        ai_chance = {
+            factor = 100
+            modifier = {
+                factor = 0
+                OR = {
+                    tag = RCG
+                    tag = VIN
+                    tag = MAD
+                    tag = SYR
+                    has_completed_focus = colonial_independence
+                }
+            }
+        }
+        VCF = {
+            annex_country = {
+                target = ROOT
+                transfer_troops = yes
+            }
+        }
+    }
+    option = {
+        name = nos.15.b
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 100
+                OR = {
+                    tag = RCG
+                    tag = VIN
+                    tag = MAD
+                    tag = SYR
+                    has_completed_focus = colonial_independence
+                }
+            }
+        }
+    }
+}
+
+country_event = { # Stalin is old now
+    id = nos.17
+    hidden = yes
+    fire_only_once = yes
+
+    mean_time_to_happen = {
+        days = 121 
+    }
+
+    trigger = { 
+        date > 1943.1.1
+        tag = SOV
+        has_government = communism
+        has_country_leader = {
+            name = "Josef Stalin"
+        }
+    }
+
+    option = {
+        retire_country_leader = yes
+        create_country_leader = {
+            name = "Josef Stalin"
+            desc = "POLITICS_JOSEPH_STALIN_DESC"
+            picture = "SOV_Old_Stalin.dds"
+            expire = "1953.3.1"
+            ideology = stalinism
+            traits = {
+                man_of_steel
+            }
+        }
+    }
+}
+
+country_event = { # Stubborn Stalin
+    id = nos.18
+    hidden = yes
+    mean_time_to_happen = { days = 2 }
+    trigger = { 
+        tag = SOV
+        has_government = communism
+        NOT = { has_idea = POL_ulitmat_badass_major }
+        surrender_progress > 0.01
+        any_country = {
+            is_major = yes
+            has_war_with = SOV
+        }
+        has_country_leader = {
+            name = "Josef Stalin"
+        }
+    }
+
+    option = {
+        add_ideas = POL_ulitmat_badass_major
+    }
+}
+
+country_event = { # Stubborn Hitler
+    id = nos.19
+    hidden = yes
+    mean_time_to_happen = { days = 2 }
+    trigger = { 
+        tag = GER
+        surrender_progress > 0.1
+        NOT = { has_idea = POL_ulitmat_badass_major }
+        any_country = {
+            is_major = yes
+            has_war_with = GER
+        }
+        has_government = fascism
+        has_country_leader = {
+            name = "Adolf Hitler"
+        }
+    }
+
+    option = {
+        add_ideas = POL_ulitmat_badass_major
+    }
+}
+
+country_event = {
+    id = nos.20
+    hidden = yes
+    fire_only_once = yes
+
+    mean_time_to_happen = {
+        days = 2
+    }
+
+    trigger = { 
+        tag = IRQ
+        is_in_faction_with = GER
+        has_capitulated = yes
+        any_state = {
+            is_owned_by = IRQ
+            controller = {
+                is_in_faction_with = ENG
+            }
+        }
+    }
+
+    option = {
+        name = nos.20.a
+        ai_chance = {
+            factor = 100
+        }
+        every_state = {
+            limit = {
+                is_owned_by = IRQ
+            }
+            ENG = {
+                set_state_controller = PREV
+            }
+        }
+    }
+}
+
+country_event = {
+    id = nos.21
+    hidden = yes
+    
+    fire_only_once = yes
+    
+    mean_time_to_happen = {
+        days = 2
+    }
+
+    trigger = { 
+        tag = PER
+        is_in_faction_with = GER
+        has_capitulated = yes
+        any_state = {
+            is_owned_by = PER
+            controller = {
+                is_in_faction_with = ENG
+            }
+        }
+    }
+
+    option = {
+        name = nos.21.a
+        ai_chance = {
+            factor = 100
+        } 
+        if = {
+            limit = {
+                SOV = {
+                    has_war_with = PER
+                    not = { has_war_with = ENG }
+                }
+                any_state = {
+                    is_owned_by = PER
+                    controller = {
+                        tag = SOV
+                    }
+                }
+            }
+            every_state = {
+                limit = {
+                    is_owned_by = PER
+                    OR = {
+                        state = 266
+                        state = 416
+                        state = 418
+                        state = 419
+                        state = 420
+                        state = 1086
+                    }
+                }
+                SOV = { transfer_state = PREV }
+            }
+        }
+        every_state = {
+            limit = {
+                is_owned_by = PER
+            }
+            ENG = {
+                set_state_controller = PREV
+            }
+        }
+    }
+}
+
+country_event = {
+    id = nos.23
+    hidden = yes
+    
+    is_triggered_only = yes
+    
+    option = {
+        hidden_effect = {
+            if = {
+                limit = {
+                    ENG = {
+                        is_faction_leader = yes
+                        has_war_with = GER
+                    }                   
+                } 
+                ENG = { 
+                    add_to_faction = ROOT
+                }
+                ROOT = {
+                    add_to_war = { 
+                        targeted_alliance = ENG
+                        enemy = GER
+                        hostility_reason = asked_to_join
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    USA = {
+                        is_faction_leader = yes
+                        has_war_with = GER
+                    }                   
+                } 
+                USA = { 
+                    add_to_faction = ROOT
+                }
+                ROOT = {
+                    add_to_war = { 
+                        targeted_alliance = USA
+                        enemy = GER
+                        hostility_reason = asked_to_join
+                    }
+                }
+            } 
+        }
+    }
+}
+
+country_event = {
+    id = nos.26
+    hidden = yes
+     
+    mean_time_to_happen = {
+        days = 2
+    }
+
+    trigger = { 
+        tag = VCF
+        VCF = { exists = yes }
+        has_capitulated = yes
+    }
+    
+    option = {
+        FRA = {
+            annex_country = {
+                target = VCF
+                transfer_troops = no
+            }
+        }
+        every_state = {
+            limit = {
+                is_core_of = VCF
+            }
+            VCF = {
+                remove_state_core = PREV
+            }
+        }
+        every_state = {
+            limit = {
+                is_claimed_by = VCF
+            }
+            VCF = {
+                remove_state_claim = PREV
+            }
+        }
+    }
+} 
+
+# Poland Cedes Danzig (Danzig or War)
+country_event = {
+    id = nos.35
+    title = germany.87.t
+    desc = germany.87.d
+    picture = GFX_report_event_german_polish_border
+
+    is_triggered_only = yes
+    
+    option = {
+        name = germany.87.a
+        ai_chance = {
+            factor = 1
+        }
+        if = { 
+            limit = { DAN = { exists = yes is_subject_of = FROM } } 
+            annex_country = { target = DAN transfer_troops = yes }
+        }
+        transfer_state = 85
+        transfer_state = 865
+        remove_state_claim = 86
+        if = {
+            limit = {
+                ENG = {
+                    NOT = {
+                        is_in_faction_with = GER
+                    }
+                }
+            }
+            ENG = {
+                add_war_support = -0.1 #dodged a bullet there
+            }
+        }
+        if = {
+            limit = {
+                FRA = {
+                    NOT = {
+                        is_in_faction_with = GER
+                    }
+                }
+            }
+            FRA = {
+                add_war_support = -0.1 #dodged a bullet there
+            }
+        }
+    }
+}
+
+# Poland Refuses to Cede Danzig (Danzig or War)
+country_event = {
+    id = nos.36
+    title = germany.88.t
+    desc = germany.88.d
+    picture = GFX_report_event_polish_tanks_02
+
+    is_triggered_only = yes
+    
+    option = {
+        name = germany.88.a 
+        ai_chance = {
+            factor = 1
+        }
+        add_state_core = 85
+        add_state_core = 865
+        if = {
+            limit = { 
+                NOT = { 
+                    any_country = { 
+                        has_guaranteed = FROM
+                        is_faction_leader = yes
+                    } 
+                } 
+            }
+            GER = { declare_war_on = { target = FROM type = annex_everything } }
+            FROM = { add_ideas = POL_oh_god_oh_fuck }
+            SOV = {
+                if = {
+                    limit = {
+                        has_global_flag = sov_yes_pact
+                        FROM = { tag = POL }
+                    }
+                    country_event = {
+                        id = nos.38
+                        days = 18
+                        random = 0
+                    }
+                }
+            }
+        }
+        if = { 
+            limit = { any_country = { has_guaranteed = FROM is_faction_leader = yes } }
+            random_country = {
+                limit = {
+                    has_guaranteed = FROM
+                    is_faction_leader = yes
+                }
+                country_event = { id = nos.37 days = 1 } 
+            }
+            SOV = {
+                if = {
+                    limit = {
+                        has_global_flag = sov_yes_pact
+                        FROM = { tag = POL }
+                    }
+                    country_event = {
+                        id = nos.38
+                        days = 18
+                        random = 0
+                    }
+                }
+            }
+        }
+    }
+}
+
+# Poland Requests British Assistance
+country_event = {
+    id = nos.37
+    title = NOS_germany.22.t
+    desc = NOS_germany.22.d
+    picture = GFX_report_event_german_speech
+
+    is_triggered_only = yes
+    
+    option = {
+        name = NOS_germany.22.a
+        ai_chance = {
+            factor = 1
+        }
+        hidden_effect = {
+            set_global_flag = POL_abandoned
+            random_country = {
+                limit = { owns_state = 865 }
+                add_opinion_modifier = { target = ROOT modifier = ENG_Poland_Abandoned }
+                every_country = {
+                    limit = {  has_guaranteed = PREV }
+                    add_ai_strategy = {
+                        type = ignore
+                        id = "PREV"
+                        value = 9000
+                    }
+                    diplomatic_relation = {
+                        country = PREV
+                        relation = guarantee
+                        active = no
+                    }
+                }
+                every_country = {
+                    limit = { is_guaranteed_by = PREV }
+                    PREV.PREV = {
+                        diplomatic_relation = {
+                            country = PREV
+                            relation = guarantee
+                            active = no
+                        }
+                    }
+                }
+                GER = { declare_war_on = { target = PREV type = annex_everything } }
+                every_country = {
+                    limit = {
+                        OR = {
+                            is_subject_of = GER
+                            is_in_faction_with = GER
+                        }
+                    }
+                    add_to_war = { 
+                        targeted_alliance = GER
+                        enemy = PREV
+                        hostility_reason = asked_to_join
+                    }
+                }
+            }
+        }
+    }
+    
+    option = {
+        name = NOS_germany.22.b
+        ai_chance = {
+            factor = 99
+        }
+        GER = { declare_war_on = { target = ROOT type = puppet_wargoal_focus } }
+        every_country = {
+            limit = {
+                OR = {
+                    is_subject_of = GER
+                    is_in_faction_with = GER
+                }
+            }
+            add_to_war = { 
+                targeted_alliance = GER
+                enemy = ROOT
+                hostility_reason = asked_to_join
+            }
+        }
+        random_country = {
+            limit = { owns_state = 865 }
+            ROOT = { add_to_faction = PREV }
+            add_ideas = POL_oh_god_oh_fuck
+            add_to_war = { 
+                targeted_alliance = ROOT
+                enemy = GER
+                hostility_reason = asked_to_join
+            }
+        }
+        hidden_effect = {
+            every_country = {
+                limit = {
+                    is_in_faction_with = ROOT
+                    is_ai = yes
+                }
+                add_to_war = { 
+                    targeted_alliance = ROOT
+                    enemy = GER
+                    hostility_reason = asked_to_join
+                }
+            }
+        }
+    }
+}
+
+# Obligation to the Nazis
+country_event = {
+    id = nos.38
+    title = nos.38.t
+    desc = nos.38.d
+    picture = GFX_report_event_molotov_ribentrop_handshake
+
+    is_triggered_only = yes
+    
+    trigger = { GER = { has_war_with = POL } }
+
+    option = {
+        name = nos.38.a
+        ai_chance = {
+            factor = 99
+        }
+        hidden_effect = {
+            every_country = {
+                limit = {
+                    has_guaranteed = POL
+                }
+                add_ai_strategy = {
+                    type = ignore
+                    id = "POL"
+                    value = 9000
+                }
+                diplomatic_relation = {
+                    country = POL
+                    relation = guarantee
+                    active = no
+                }
+            }
+            every_country = {
+                limit = {
+                    is_guaranteed_by = POL
+                }
+                POL = {
+                    diplomatic_relation = {
+                        country = PREV
+                        relation = guarantee
+                        active = no
+                    }
+                }
+            }
+        }
+        SOV = {
+            declare_war_on = { target = POL type = puppet_wargoal_focus }
+            set_global_flag = SOV_fucked_poland
+            add_ideas = SOV_polish_invasion
+        }
+        hidden_effect = {
+            SOV = { country_event = { id = nos.13 days = 128 } }
+            every_country = {
+                limit = {
+                    is_in_faction_with = POL
+                }
+                add_ideas = european_focus
+            }
+            every_country = {
+                limit = {
+                    OR = {
+                        is_subject_of = SOV
+                        is_in_faction_with = SOV
+                    }
+                }
+                add_to_war = { 
+                    targeted_alliance = SOV
+                    enemy = POL
+                    hostility_reason = asked_to_join
+                }
+            }
+        }
+    }
+    
+    option = {
+        name = nos.38.b
+        ai_chance = {
+            factor = 1
+        }
+        POL = {
+            country_event = {
+                id = nos.39
+                days = 1
+                random = 0
+            }
+        }
+    }
+
+    option = {
+        name = nos.38.c
+        ai_chance = {
+            factor = 0
+        }
+        SOV = {
+            set_global_flag = SOV_didnt_fuck_poland
+        }
+    }
+}
+
+# Stalin says Territory for Help
+country_event = {
+    id = nos.39
+    title = nos.39.t
+    desc = nos.39.d
+    picture = GFX_report_event_stalin_propaganda
+
+    is_triggered_only = yes
+    
+    option = {
+        name = nos.39.a
+        ai_chance = {
+            factor = 9
+        }
+        SOV = {
+            country_event = {
+                id = nos.40
+                days = 1
+                random = 0
+            }
+        }
+    }
+    
+    option = {
+        name = nos.39.b
+        ai_chance = {
+            factor = 1
+        }
+        SOV = {
+            country_event = {
+                id = nos.41
+                days = 1
+                random = 0
+            }
+        }
+    }
+}
+
+# Poland Says u sav big gae
+country_event = {
+    id = nos.40
+    title = nos.40.t
+    desc = nos.40.d
+    picture = GFX_report_event_soviet_invasion_map
+
+    is_triggered_only = yes
+    
+    option = {
+        name = nos.40.a
+        ai_chance = {
+            factor = 1
+        }
+        hidden_effect = {
+            SOV = { country_event = { id = nos.13 days = 128 } }
+            every_country = {
+                limit = {
+                    has_guaranteed = POL
+                }
+                add_ai_strategy = {
+                    type = ignore
+                    id = "POL"
+                    value = 9000
+                }
+                diplomatic_relation = {
+                    country = POL
+                    relation = guarantee
+                    active = no
+                }
+            }
+            every_country = {
+                limit = {
+                    is_guaranteed_by = POL
+                }
+                POL = {
+                    diplomatic_relation = {
+                        country = PREV
+                        relation = guarantee
+                        active = no
+                    }
+                }
+            }
+        }
+        SOV = {
+            declare_war_on = { target = POL type = puppet_wargoal_focus }
+            set_global_flag = SOV_fucked_poland
+            add_ideas = SOV_polish_invasion
+        }
+        POL = { add_ideas = POL_oh_god_oh_fuck }
+        every_country = {
+            limit = {
+                is_in_faction_with = POL
+            }
+            add_ideas = european_focus
+        }
+        every_country = {
+            limit = {
+                OR = {
+                    is_subject_of = SOV
+                    is_in_faction_with = SOV
+                }
+            }
+            add_to_war = { 
+                targeted_alliance = SOV
+                enemy = POL
+                hostility_reason = asked_to_join
+            }
+        }
+    }
+}
+
+# Poland says help me Senpai Stalin
+country_event = {
+    id = nos.41
+    title = nos.41.t
+    desc = nos.41.d
+    picture = GFX_report_event_stalin_02
+
+    is_triggered_only = yes
+    
+    option = {
+        name = nos.41.a
+        ai_chance = {
+            factor = 1
+        }
+        SOV = { create_faction = wp }
+        SOV = { add_to_faction = POL }
+        SOV = {
+            add_to_war = { 
+                targeted_alliance = POL
+                enemy = GER
+                hostility_reason = asked_to_join
+            }
+        }
+        SOV = {
+            transfer_state = 96
+            transfer_state = 784
+            transfer_state = 95
+            transfer_state = 933
+            transfer_state = 996
+            transfer_state = 91
+            transfer_state = 93
+            transfer_state = 89
+            transfer_state = 94
+        }
+        hidden_effect = {
+            BLR = { remove_state_core = 97 }
+            every_country = {
+                limit = {
+                    is_in_faction_with = SOV
+                    is_ai = yes
+                }
+                add_to_war = { 
+                    targeted_alliance = SOV
+                    enemy = GER
+                    hostility_reason = asked_to_join
+                }
+            }
+            every_state = {
+                limit = { 
+                    is_core_of = POL
+                    is_owned_by = SOV
+                    OR = { 
+                        state = 96
+                        state = 933
+                        state = 996
+                        state = 95
+                        state = 91
+                        state = 93
+                        state = 89
+                        state = 94 
+                        state = 784
+                    }
+                }
+                remove_core_of = POL
+            }
+            every_state = {
+                limit = { 
+                    is_core_of = POL
+                    is_claimed_by = GER
+                }
+                remove_claim_by = GER
+            }
+        }
+    }
+}
+
+country_event = {
+    id = nos.42
+    title = nos.42.t
+    desc = nos.42.d
+    picture = GFX_report_event_stalin_02
+    
+    is_triggered_only = yes
+
+    option = {
+        name = nos.42.a
+        set_country_flag = emergency_annexed_colony
+        FROM = {
+            annex_country = {
+                target = ROOT
+                transfer_troops = yes
+            }
+        }
+    }
+} 
+
+country_event = { # Stubborn Japan
+    id = nos.44
+    hidden = yes
+    mean_time_to_happen = { days = 2 }
+    trigger = { 
+        tag = JAP
+        has_government = fascism
+        surrender_progress > 0.02
+        NOT = { has_idea = POL_ulitmat_badass_major }
+        any_country = {
+            is_major = yes
+            has_war_with = JAP
+        }
+    }
+
+    option = {
+        add_ideas = POL_ulitmat_badass_major
+    }
+}
+
+### Emergency Annexation
+
+country_event = {
+    id = nos.45
+    title = nos.45.t
+    desc = nos.45.d
+    picture = GFX_report_event_canada_patriation
+    
+    mean_time_to_happen = { days = 10 }
+    
+    trigger = {
+        original_tag = ENG
+        has_war = yes
+        surrender_progress > 0.5
+        has_democratic_government = yes
+        NOT = { has_country_flag = ebe_process_begun }
+        NOT = { has_country_flag = emergency_british_empire }
+        NOT = { has_country_flag = new_world_power_and_might }
+        NOT = { has_cosmetic_tag = FRA_UK }
+        OR = {
+            
+            has_cosmetic_tag = ENG_monarchy
+            has_cosmetic_tag = BRI_monarchy
+        }
+        any_country = {
+            is_subject_of = ROOT
+            has_capitulated = no
+            capital_scope = { NOT = { is_on_continent = europe } }
+            has_autonomy_state = autonomy_imperial_dominion
+        }
+    }
+    
+    immediate = {
+        set_country_flag = ebe_process_begun
+        hidden_effect = {
+            every_country = {
+                limit = {
+                    is_subject_of = ROOT
+                    NOT = { original_tag = RAJ }
+                    OR = {
+                        has_autonomy_state = autonomy_crown_colony
+                        has_autonomy_state = autonomy_royal_protectorate
+                        has_autonomy_state = autonomy_integrated_region
+                    }
+                }
+                country_event = {
+                    id = nos.42
+                    days = 1
+                    random = 0
+                }
+            }
+        }
+    }
+
+    option = {
+        name = nos.45.a
+        ai_chance = { base = 6 }
+        if = {
+            limit = { ROOT = { is_ai = no } }
+            country_event = {
+                id = nos.49
+                days = 1
+                random = 0
+            }
+        }
+        every_country = {
+            limit = {
+                is_subject_of = ROOT
+                has_autonomy_state = autonomy_imperial_dominion
+                has_capitulated = no
+            }
+            country_event = {
+                id = nos.46
+                days = 5
+                random = 0
+            }
+        }
+    }
+    option = {
+        name = nos.45.b
+        ai_chance = { base = 4 }
+        every_country = {
+            limit = {
+                is_subject_of = ROOT
+                has_autonomy_state = autonomy_imperial_dominion
+            }
+            country_event = {
+                id = nos.50
+                days = 5
+                random = 0
+            }
+        }
+    }
+    option = {
+        name = nos.45.c
+        ai_chance = { base = 0 }
+        every_country = {
+            limit = {
+                is_subject_of = ROOT
+                has_autonomy_state = autonomy_imperial_dominion
+                has_capitulated = no
+            }
+            ROOT = { end_puppet = PREV }
+            if = {
+                limit = { is_in_faction_with = ROOT }
+                random_country = {
+                    limit = {
+                        is_faction_leader = yes
+                        is_in_faction_with = PREV
+                    }
+                    remove_from_faction = PREV
+                }
+            }
+            every_country = {
+                limit = {
+                    has_war_with = ROOT
+                    has_war_with = PREV
+                    OR = {
+                        is_faction_leader = yes
+                        is_major = yes
+                    }
+                }
+                white_peace = PREV
+            }
+        }
+    }
+}
+
+country_event = {
+    id = nos.46
+    title = nos.46.t
+    desc = nos.46.d
+    picture = GFX_news_event_churchill_ruins
+    
+    is_triggered_only = yes
+
+    option = {
+        name = nos.46.a
+        ai_chance = { base = 1 }
+        FROM = {
+            country_event = {
+                id = nos.47
+                days = 1
+                random = 0
+            }
+        }
+    }
+    option = {
+        name = nos.46.b
+        ai_chance = { base = 9 }
+        set_country_flag = new_major_dominion
+        FROM = {
+            country_event = {
+                id = nos.48
+                days = 1
+                random = 0
+            }
+        }
+    }
+} 
+
+country_event = {
+    id = nos.47
+    title = nos.47.t
+    desc = nos.47.d
+    picture = GFX_report_event_dead_soldiers
+    
+    is_triggered_only = yes
+
+    option = {
+        name = nos.47.a
+        hidden_effect = {
+            clr_country_flag = ebe_process_begun
+            ROOT = { end_puppet = FROM }
+            if = {
+                limit = { is_in_faction_with = ROOT }
+                random_country = {
+                    limit = {
+                        is_faction_leader = yes
+                        is_in_faction_with = FROM
+                    }
+                    remove_from_faction = FROM
+                }
+            }
+            every_country = {
+                limit = {
+                    has_war_with = ROOT
+                    has_war_with = FROM
+                    OR = {
+                    	is_in_faction = no
+                        is_faction_leader = yes
+                        is_major = yes
+                    }
+                }
+                white_peace = FROM
+            }
+        }
+    }
+} 
+
+country_event = {
+    id = nos.48
+    title = nos.48.t
+    desc = nos.48.d
+    picture = GFX_report_event_generic_sign_treaty1
+    
+    is_triggered_only = yes
+
+    option = {
+        name = nos.48.a
+        if = {
+            limit = { OR = { has_cosmetic_tag = BRI has_cosmetic_tag = BRI_monarchy } }
+            hidden_effect = { drop_cosmetic_tag = yes add_popularity = { ideology = communism popularity = 2 } }
+            set_cosmetic_tag = BRI_resistance
+        }
+        hidden_effect = {
+            clr_country_flag = ebe_process_begun
+            set_country_flag = new_world_power_and_might
+            FROM = { set_major = yes }
+            every_country = {
+                limit = { has_country_flag = new_major_dominion }
+                clr_country_flag = new_major_dominion
+                set_major = yes
+            }
+            if = {
+                limit = {
+                    NOT = { has_country_flag = emergency_navy_swap }
+                    any_country = { 
+                        original_tag = CAN 
+                        is_subject_of = ROOT
+                        has_capitulated = no
+                        has_autonomy_state = autonomy_imperial_dominion
+                    }
+                }
+                random_country = {
+                    limit = {
+                        original_tag = CAN 
+                        is_subject_of = ROOT
+                        has_capitulated = no
+                        has_autonomy_state = autonomy_imperial_dominion
+                    }
+                    ROOT = { transfer_navy = { target = PREV } }
+                    set_country_flag = emergency_navy_swap
+                    if = {
+                        limit = { has_country_flag = evacuate_government }
+                        FROM = { change_tag_from = ROOT }
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_country_flag = emergency_navy_swap }
+                    NOT = {
+                        any_country = { 
+                            original_tag = CAN 
+                            is_subject_of = ROOT
+                            has_capitulated = no
+                            has_autonomy_state = autonomy_imperial_dominion
+                        }
+                    }
+                }
+                FROM = {
+                    ROOT = { transfer_navy = { target = PREV } }
+                    set_country_flag = emergency_navy_swap
+                    if = {
+                        limit = { has_country_flag = evacuate_government }
+                        FROM = { change_tag_from = ROOT }
+                    }
+                }
+            }
+        }
+    }
+} 
+
+country_event = {
+    id = nos.49
+    title = nos.49.t
+    desc = nos.49.d
+    picture = GFX_news_event_churchill_ruins
+    
+    is_triggered_only = yes
+
+    option = {
+        name = nos.49.a
+        set_country_flag = evacuate_government
+    }
+
+    option = {
+        name = nos.49.b
+    }
+} 
+
+country_event = {
+    id = nos.50
+    title = nos.50.t
+    desc = nos.50.d
+    picture = GFX_news_event_churchill_ruins
+    
+    is_triggered_only = yes
+
+    option = {
+        name = nos.50.a
+        ai_chance = { base = 1 }
+        FROM = {
+            country_event = {
+                id = nos.47
+                days = 1
+                random = 0
+            }
+        }
+    }
+    option = {
+        name = nos.50.b
+        ai_chance = { base = 5 }
+        FROM = {
+            country_event = {
+                id = nos.51
+                days = 1
+                random = 0
+            }
+        }
+        if = {
+            limit = { is_ai = no }
+            set_country_flag = colonyswap
+        }
+    }
+} 
+
+country_event = {
+    id = nos.51
+    title = nos.51.t
+    desc = nos.51.d
+    picture = GFX_report_event_generic_sign_treaty1
+    
+    is_triggered_only = yes
+
+    option = {
+        name = nos.51.a
+        hidden_effect = {
+            clr_country_flag = ebe_process_begun
+            set_country_flag = emergency_british_empire
+            every_state = {
+                limit = { is_core_of = FROM }
+                ROOT = { add_state_core = PREV }
+            }
+            if = {
+                limit = { NOT = { has_cosmetic_tag = ENG_emergency_empire } }
+                drop_cosmetic_tag = yes
+                set_cosmetic_tag = ENG_emergency_empire
+            }
+            every_country = {
+                limit = { has_country_flag = colonyswap }
+                ROOT = { change_tag_from = PREV }
+            }
+            FROM = { set_country_flag = emergency_annexed_dominion }
+            annex_country = {
+                target = FROM
+                transfer_troops = yes
+            }
+        }
+    }
+} 
+
+country_event = {
+    id = nos.52
+    hidden = yes
+    mean_time_to_happen = { days = 2 }
+    trigger = { 
+        is_in_democratic_faction = yes
+        NOT = { has_country_flag = original_puppets_secured }
+    }
+
+    option = {
+        every_country = {
+            limit = {
+                is_subject_of = ROOT
+                NOT = { has_autonomy_state = autonomy_provisional_government }
+            }
+            set_country_flag = original_puppet
+        }
+        set_country_flag = original_puppets_secured
+    }
+}
+
+country_event = {
+    id = nos.53
+    hidden = yes
+    mean_time_to_happen = { days = 2 }
+    trigger = {
+        is_in_democratic_faction = no
+        NOT = {
+            any_country = {
+                is_subject_of = ROOT
+                has_autonomy_state = autonomy_provisional_government
+            }
+        }
+    }
+
+    option = {
+        clr_country_flag = original_puppets_secured
+        every_country = {
+            limit = {
+                is_subject_of = ROOT
+            }
+            clr_country_flag = original_puppet
+        }
+    }
+}
+
+### All is Lost, French are Surrender Monkeys
+
+country_event = {
+    id = nos.56
+    title = nos.56.t
+    desc = nos.56.d
+    picture = GFX_report_event_canada_patriation
+    
+    mean_time_to_happen = { days = 10 }
+    
+    trigger = {
+        original_tag = FRA
+        has_war = yes
+        has_capitulated = yes
+        is_faction_leader = no
+        is_in_faction = yes
+        VCF = { exists = yes }
+        any_country = { 
+            original_tag = GER 
+            is_major = yes 
+            has_war_with = ROOT 
+            any_country = {
+                OR = { original_tag = SOV original_tag = RUS }
+                has_war_with = PREV
+                NOT = { controls_state = 219 }
+            }
+            any_country = {
+                original_tag = ENG
+                has_war_with = PREV
+                NOT = { controls_state = 126 }
+            }
+        }
+    }
+    
+    immediate = {
+        set_country_flag = france_is_ded_lol
+    }
+
+    option = {
+        name = nos.45.a
+        ai_chance = { base = 6 }
+        VCF = { change_tag_from = ROOT }
+        hidden_effect = {
+            VCF = { set_capital = 16 }
+            every_state = {
+                limit = { is_core_of = FRA }
+                PREV = { remove_core_of = FRA }
+            }
+            every_state = {
+                limit = { is_claimed_by = FRA }
+                PREV = { remove_claim_by = FRA }
+            }
+            every_state = {
+                limit = {
+                    is_owned_by = FRA
+                    is_core_of = FRA
+                    controller = {
+                        OR = {
+                            tag = GER
+                            is_in_faction_with = GER
+                            is_subject_of = GER
+                        }
+                    }
+                }
+                VCF = { transfer_state = PREV }
+            }
+            FRA = { transfer_navy = { target = VCF } }
+            VCF = {
+                annex_country = {
+                    target = FRA
+                    transfer_troops = yes
+                }
+            }
+        }
+    }
+}
+
+country_event = { # Stubborn Mao
+    id = nos.57
+    hidden = yes
+    mean_time_to_happen = { days = 20 }
+    trigger = { 
+        tag = PRC
+        has_government = communism
+        622 = { NOT = { is_fully_controlled_by = PRC } }
+        has_country_leader = { name = "Mao Zedong"  }
+        date < 1953.1.1
+        NOT = {
+            any_state = {
+                is_core_of = ROOT
+                is_owned_by = ROOT
+                is_controlled_by = ROOT
+                is_coastal = yes
+            }
+        }
+        any_country = {
+            is_major = yes
+            has_war_with = PRC
+        }
+    }
+
+    option = {
+        PRC = { add_ideas = YUG_partisan_power }
+    }
+}
+
+# Danzig or War (Poland)
+country_event = {
+    id = nos.43
+    title = germany.86.t
+    desc = germany.86.d
+    picture = GFX_report_event_german_troops
+
+    is_triggered_only = yes
+
+    trigger = {
+        NOT = { has_war_with = GER }
+    }
+    
+    option = {
+        name = germany.86.a
+        ai_chance = {
+            factor = 20
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        GER = { country_event = { id = nos.35 days = 1 } }
+        effect_tooltip = {
+            GER = {
+                transfer_state = 85
+                add_state_core = 85
+                transfer_state = 865
+                add_state_core = 865
+                remove_state_claim = 86
+                remove_state_claim = 762
+            }
+        }
+        country_event = { id = poland.1 days = 7 }
+        hidden_effect = {
+            news_event = { id = news.203 hours = 6 }
+        }
+    }
+    
+    option = {
+        name = germany.86.b
+        ai_chance = {
+            factor = 80
+            modifier = {
+                factor = 3
+                strength_ratio = {
+                    tag = GER
+                    ratio > 0.7
+                }
+            }
+            modifier = {
+                factor = 0.1
+                any_other_country = {
+                    is_major = yes
+                    is_in_faction_with = ROOT
+                }
+            }
+        }
+        GER = { country_event = { id = nos.36 days = 1 } }
+        effect_tooltip = {
+            GER = {
+                declare_war_on = {
+                    target = ROOT
+                    type = take_state
+                    generator = { 865 }
+                }
+            }
+        }   
+        hidden_effect = {
+            news_event = { hours = 1 id = news.204 }
+        }
+    }
+}
+
+country_event = { # Stubborn Mao
+    id = nos.54
+    hidden = yes
+    mean_time_to_happen = { days = 2 }
+    trigger = { 
+        tag = PRC
+        has_government = communism
+        NOT = { has_idea = POL_ulitmat_badass }
+        surrender_progress > 0.01
+        any_country = {
+            is_major = yes
+            has_war_with = PRC
+        }
+        has_country_leader = {
+            name = "Mao Zedong"
+        }
+    }
+
+    option = {
+        add_ideas = POL_ulitmat_badass
+    }
+}

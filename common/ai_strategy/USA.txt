@@ -1,0 +1,1466 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+USA_template_design_1 = {
+	enable = {
+		is_literally_america = yes
+		date < 1939.1.1				
+	}
+	abort = { 
+		date > 1939.1.1
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = 20
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = 40
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = -10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = heavy_armor
+		value = -50
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = paratroopers
+		value = -50
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 200
+	}
+}
+
+USA_template_design_2 = {
+	enable = {
+		is_literally_america = yes
+		date > 1939.1.1				
+	}
+
+	abort = {
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = mechanized
+		value = -20
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = 20
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = modern_armor
+		value = 100
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = heavy_armor
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = paratroopers
+		value = -50
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = marines
+		value = 100
+	}
+}
+
+USA_halt_light_armor_production_in_transitioning = {
+	enable = {
+		is_literally_america = yes
+		has_template_majority_unit = medium_armor
+		date > 1941.1.1
+		has_equipment = { light_tank_equipment > 200 }
+	}
+	abort = {
+		has_equipment = { light_tank_equipment < 0 }
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = light_tank_equipment
+		value = -500
+	}
+}
+
+USA_dont_waste_xp_until_medium_armor = {
+	enable = {
+		is_literally_america = yes		
+	}
+
+	abort = {	
+		has_template_majority_unit = medium_armor
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = paratrooper
+		value = -100
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = mountaineers
+		value = -100
+	}
+}
+
+USA_super_boost_light_for_med_armor = {
+	
+	enable = {
+		is_literally_america = yes
+		has_tech = basic_medium_tank
+		NOT = { has_template_ai_majority_unit = medium_armor }
+	}
+
+	abort = {	
+		has_template_ai_majority_unit = medium_armor
+	}
+
+	# lets do changes more often during this period too
+	ai_strategy = {
+		type = template_xp_reserve 
+		value = -125
+	}
+
+	# this is gateway
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = 50
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 200
+	}
+}
+
+USA_halt_medium_armor_production_in_transitioning = {
+	enable = {
+		is_literally_america = yes
+		has_template_majority_unit = modern_armor
+		date > 1950.1.1	
+	}
+	abort = {
+		# once we start we never go back to light armor
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = modern_tank_equipment
+		value = 500
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_equipment
+		value = -50
+	}
+}
+
+USA_super_boost_light_for_modern_armor = {
+	
+	enable = {
+		is_literally_america = yes
+		has_tech = main_battle_tank
+		NOT = { has_template_ai_majority_unit = modern_armor }
+	}
+
+	abort = {	
+		has_template_ai_majority_unit = modern_armor
+	}
+
+	# lets do changes more often during this period too
+	ai_strategy = {
+		type = template_xp_reserve 
+		value = -125
+	}
+
+	# this is gateway
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 100
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = modern_armor
+		value = 150
+	}
+}
+
+USA_armored_production = {
+	enable = {
+		date > 1940.1.1
+		is_literally_america = yes
+		ai_wants_divisions > 40 #Decreasing the amount of tanks the AI wants
+	}
+	abort = {
+		ai_wants_divisions < 39 #Decreasing the amount of tanks the AI wants
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 10
+	}
+}
+
+USA_naval_role_ratios_historical = {
+	allowed = {
+		has_dlc = "Man the Guns"
+		is_literally_america = yes
+	}
+	enable = {
+		always = yes
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bb
+		value = 10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bc
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_carrier
+		value = 25
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_submarine
+		value = 25
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_screen
+		value = 130 
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_escort
+		value = 65 
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_light
+		value = 40
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_heavy
+		value = 5
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_mine_sweeper
+		value = 15
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_mine_layer
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = capital_ship
+		value = 1		 #1 to 2
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = screen_ship
+		value = 100		 #1 to 2
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = carrier
+		value = 1		 #1 to 2
+	}
+}
+
+USA_naval_role_ratios_anti_submarine = {
+	allowed = {
+		has_dlc = "Man the Guns"
+		is_literally_america = yes
+	}
+	enable = {
+		anti_submarine_strategy_required_trigger = yes
+	}
+
+	abort = {
+		not = { anti_submarine_strategy_required_trigger = yes }
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bb
+		value = -10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_screen
+		value = -20 
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_escort
+		value = 50 
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_light
+		value = 40
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_heavy
+		value = -15
+	}
+}
+
+USA_semper_fi = {
+	enable = {
+		is_literally_america = yes
+		has_war_with = JAP
+	}
+	abort = {
+		JAP = {
+			has_capitulated = yes
+		}
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = marines
+		value = 5
+	}
+	ai_strategy = {
+		type = template_prio
+		id = marines
+		value = 100
+	}
+}
+
+USA_garrison_production = {
+	enable = {
+		is_literally_america = yes
+		ai_wants_divisions >  12 #Massively decreasing the amount of paratroopers the AI wants
+	}
+	abort = {
+		ai_wants_divisions < 13 #Massively decreasing the amount of paratroopers the AI wants
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 6
+	}
+}
+
+USA_medium_armor = {
+	enable = {
+		is_literally_america = yes
+		has_tech = basic_medium_tank
+		has_tech = motorised_infantry
+	}
+	abort = { 
+		has_tech = main_battle_tank
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = medium_armor
+		value = 25
+	}
+}
+USA_modern_armor = {
+	enable = {
+		is_literally_america = yes
+		has_tech = main_battle_tank
+		has_tech = mechanised_infantry
+		or = {
+			has_tech = modern_art
+			has_tech = modern_art2
+			has_tech = modern_art3
+			has_tech = modern_art4
+			has_tech = modern_art5
+		}
+	}
+	abort = {
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = modern_armor
+		value = 20
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = -15
+	}
+}
+
+USA_heavy_armor = {
+	enable = {
+		is_literally_america = yes
+		has_tech = improved_heavy_tank
+	}
+	abort = {
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = heavy_armor
+		value = 5
+	}
+}
+
+USA_giant_awakens = {
+	enable = {
+		is_literally_america = yes
+	}
+	abort = {
+		OR = {
+			num_divisions > 500
+			AND = {
+				date > 1943.1.1
+				has_war = no
+			}
+		}
+	}
+
+	ai_strategy = { 
+		type = force_build_armies
+		value = 90000
+	}
+}
+
+USA_industry_we_are_the_champions_but_not_yet = {
+    enable = {
+        is_literally_america = yes
+        date < 1938.1.1
+    }
+    abort={
+        date > 1938.1.1
+    }
+
+    ai_strategy = {
+        type = air_factory_balance
+        value = 150
+    } 
+    ai_strategy = {
+        type = role_ratio
+        id = armor
+        value = -50 #because doctrine this = 3
+    }
+}
+
+USA_industry_we_are_the_champions = {
+    enable = {
+        is_literally_america = yes
+        date > 1938.1.1
+        date < 1941.1.1
+    }
+    abort={
+        date > 1941.1.1
+    }
+
+    ai_strategy = {
+        type = added_military_to_civilian_factory_ratio
+        value = 70
+    }
+    ai_strategy = {
+        type = air_factory_balance
+        value = 140
+    } 
+}
+
+USA_industry_we_are_the_champions_2 = {
+    enable = {
+        is_literally_america = yes
+        date > 1941.1.1
+    }
+
+    ai_strategy = {
+        type = air_factory_balance
+        value = 130
+    } 
+}
+
+USA_building_boats_is_great = {
+	
+	enable = {
+		is_literally_america = yes
+	}
+
+	abort = {
+	}
+
+	ai_strategy = {
+		type = dockyard_to_military_factory_ratio
+		value = 40
+	}
+}
+
+USA_wants_civ = {
+    enable = {
+        is_literally_america = yes
+        has_democratic_government = yes
+        date < 1939.6.1
+        has_war = no
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = {
+        type = building_target
+        id = industrial_complex
+        value = 500
+    }
+}
+
+# This will prompt USA to try and support countries who are fighting against extremist elements.
+# Should improve alt-history situations like democratic Germany fighting the USSR etc.
+USA_protect_against_extremism = { # Reverse strategy
+	reversed = yes
+
+	enable = {
+		NOT = { is_literally_america = yes }
+		USA = {
+			has_democratic_government = yes
+		}
+		NOT = {
+			is_in_faction = yes
+			any_country = {
+				is_in_faction_with = ROOT
+				is_faction_leader = yes
+				OR = {
+					has_government = communism
+					has_government = monarchism
+					has_government = fascism
+				}
+			}
+		}
+		NOT = { has_government = communism }
+		NOT = { has_government = monarchism }
+		NOT = { has_government = fascism }
+		OR = {
+			capital_scope = {
+				is_on_continent = europe # lets avoid smaller conflicts elsewhere
+			}
+			AND = {
+				num_of_civilian_factories > 10
+				is_subject = no
+			}
+		}
+		any_country = {
+			NOT = { is_literally_america = yes }
+			has_war_with = ROOT
+			OR = {
+				has_government = communism
+				has_government = monarchism
+				has_government = fascism
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = support
+		id = "USA"
+		value = 1000
+	}
+}
+
+USA_so_you_have_chosen_death = {
+	enable = {
+		is_guaranteed_by = USA
+		OR = {
+			capital_scope = { is_on_continent = north_america }
+			capital_scope = { is_on_continent = south_america }
+		}
+		OR = {
+			USA = {	has_war_with = GER }
+			USA = {	has_war_with = JAP }
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = ignore
+		id = "GER"			
+		value = 90000
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = "GER"			
+		value = -90000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "GER"			
+		value = -90000
+	}
+
+	ai_strategy = {
+		type = ignore
+		id = "JAP"			
+		value = 90000
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = "JAP"			
+		value = -90000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "JAP"			
+		value = -90000
+	}
+
+	ai_strategy = {
+		type = ignore
+		id = "ITA"			
+		value = 90000
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = "ITA"			
+		value = -90000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "ITA"			
+		value = -90000
+	}	
+}
+
+to_support_CHI = {
+	enable = {
+		is_literally_america = yes
+		CHI = { has_defensive_war_with = JAP }
+		date > 1941.3.11
+	}
+	abort = {
+		OR = {
+			not = {CHI = { has_defensive_war_with = JAP }}
+			CHI = {is_in_faction_with = JAP}
+			CHI = {has_government = fascism}
+		}
+	}
+	ai_strategy = {
+		type = support
+		id = "CHI"
+		value = 1000
+	}
+}
+
+USA_lend_lease = {
+	enable = {
+		is_literally_america = yes
+		NOT = { has_government = fascism }
+		NOT = { is_in_faction_with = GER }
+		NOT = { has_war_with = ENG }
+		ENG = { has_capitulated = no }
+		GER = {
+			has_war_with = ENG
+			has_government = fascism
+		}
+	}
+
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = support
+		id = "ENG"
+		value = 1000
+	}
+}
+
+USA_stop_soviet_from_falling = {
+	enable = {
+		date > 1941.1.1
+		SOV = { surrender_progress > 0.05 }
+		NOT = { has_government = fascism }
+		NOT = { is_in_faction_with = GER }
+		NOT = { has_war_with = SOV }
+		SOV = { has_capitulated = no }
+		GER = { 
+			has_war_with = SOV 
+			has_war_with = ENG
+			has_government = fascism
+		}
+		OR = {
+			is_literally_america = yes
+			tag = ENG
+		}
+	}
+
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = support
+		id = "SOV"
+		value = 90000
+	}
+}
+
+USA_hitler_is_ok = {
+	enable = {
+		is_literally_america = yes
+		NOS_has_civil_war = yes
+		has_government = GER
+	}
+
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = befriend
+		id = "GER"
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "GER"
+		value = 2000000
+	}
+}
+
+USA_stalin_is_ok = {
+	enable = {
+		is_literally_america = yes
+		has_war_with = GER
+		SOV = { has_war_with = GER }
+	}
+
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = befriend
+		id = "SOV"
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "SOV"
+		value = 2000000
+	}
+}
+
+USA_churchill_is_ok = {
+	enable = {
+		is_literally_america = yes
+		has_war_with = GER
+		ENG = { has_war_with = GER }
+	}
+
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = befriend
+		id = "ENG"
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "ENG"
+		value = 2000000
+	}
+}
+
+
+USA_save_the_aussies = {
+	enable = {
+		date > 1943.1.1
+		is_literally_america = yes
+		has_democratic_government = yes
+		is_in_faction = no
+		has_war = no
+
+		JAP = {	has_war_with = AST }
+		AST = {
+			has_democratic_government = yes			
+			surrender_progress > 0.15
+		}
+		has_opinion = {
+			target = AST
+			value > 0 # not if we hate AST
+		}
+	}
+	abort = {
+		OR = {
+			has_war_with = AST
+			is_in_faction_with = JAP
+			JAP = {	
+				NOT = { has_war_with = AST } 
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = contain
+		id = "JAP"			
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = protect
+		id = "AST"			
+		value = 200
+	}
+}
+
+USA_save_india = { # in the case where japan has beaten china and is moving on india we should step up
+	enable = {
+		date > 1943.1.1
+		is_literally_america = yes
+		has_democratic_government = yes
+		is_in_faction = no
+		has_war = no
+
+		JAP = {	
+			has_war_with = RAJ 
+			NOT = { has_war_with = CHI }
+		}
+		RAJ = {
+			is_in_faction_with = ENG
+			surrender_progress > 0.15
+		}
+	}
+	abort = {
+		OR = {
+			has_war_with = RAJ
+			is_in_faction_with = JAP
+			JAP = {	
+				NOT = { has_war_with = RAJ } 
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = contain
+		id = "JAP"			
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = protect
+		id = "RAJ"			
+		value = 200
+	}
+}
+
+USA_help_waters_around_GER = {
+	allowed = { is_literally_america = yes }
+	enable = {
+		is_in_faction_with = ENG
+		has_war_with = GER
+		ENG = { has_war_with = GER }
+	}
+	abort = {
+		GER = {
+			has_capitulated = yes
+		}
+	}
+
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 18 # channel
+	}
+}
+
+DOM_bannana_republics_dont_care_about_war = {
+	reversed = yes
+	enable = { 
+		is_in_faction_with = DOM
+		DOM = { is_subject_of = USA }
+		DOM = { is_democratic_puppet = yes }
+		OR = {
+			has_war_with = GER
+			has_war_with = JAP
+		}
+		OR = {
+			is_in_faction_with = ENG
+			is_in_faction_with = USA
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "DOM"
+		value = 5000
+	}
+}
+
+GUA_bannana_republics_dont_care_about_war = {
+	reversed = yes
+	enable = { 
+		is_in_faction_with = GUA
+		GUA = { is_subject_of = USA }
+		GUA = { is_democratic_puppet = yes }
+		OR = {
+			has_war_with = GER
+			has_war_with = JAP
+		}
+		OR = {
+			is_in_faction_with = ENG
+			is_in_faction_with = USA
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "GUA"
+		value = 5000
+	}
+}
+
+HAI_bannana_republics_dont_care_about_war = {
+	reversed = yes
+	enable = { 
+		is_in_faction_with = HAI
+		HAI = { is_subject_of = USA }
+		HAI = { is_democratic_puppet = yes }
+		OR = {
+			has_war_with = GER
+			has_war_with = JAP
+		}
+		OR = {
+			is_in_faction_with = ENG
+			is_in_faction_with = USA
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "HAI"
+		value = 5000
+	}
+}
+
+HON_bannana_republics_dont_care_about_war = {
+	reversed = yes
+	enable = { 
+		is_in_faction_with = HON
+		HON = { is_subject_of = USA }
+		HON = { is_democratic_puppet = yes }
+		OR = {
+			has_war_with = GER
+			has_war_with = JAP
+		}
+		OR = {
+			is_in_faction_with = ENG
+			is_in_faction_with = USA
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "HON"
+		value = 5000
+	}
+}
+
+PAN_bannana_republics_dont_care_about_war = {
+	reversed = yes
+	enable = { 
+		is_in_faction_with = PAN
+		PAN = { is_subject_of = USA }
+		PAN = { is_democratic_puppet = yes }
+		OR = {
+			has_war_with = GER
+			has_war_with = JAP
+		}
+		OR = {
+			is_in_faction_with = ENG
+			is_in_faction_with = USA
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "PAN"
+		value = 5000
+	}
+}
+
+USA_democracy_on_JAP = {
+	enable = {
+		is_literally_america = yes
+		has_war_with = JAP
+	}
+	abort = {
+		JAP = {
+			has_capitulated = yes
+		}
+	}
+
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 105 # perl harbor
+	}
+}
+
+JAP_ignore_mainland_jap_empire = {
+	enable = {
+		is_in_faction_with = ENG
+		has_war_with = JAP
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "SIA"		
+		value = -5000
+	} 
+	ai_strategy = {
+		type = invade
+		id = "MAN"		
+		value = -5000
+	} 
+	ai_strategy = {
+		type = invade
+		id = "RGR"		
+		value = -5000
+	}
+}
+
+USA_island_hopping = {
+	allowed = {
+		OR = {
+			is_literally_america = yes
+			tag = AST
+		}
+	}
+	enable = {
+		date < 1946.1.1
+		has_war_with = JAP
+	}
+	
+	abort = {
+		OR = {
+			date > 1946.1.1
+			NOT = { has_war_with = JAP }
+		}
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "JAP"			
+		value = 70000000
+	}
+
+	ai_strategy = {
+		type = consider_weak
+		id = "JAP"	
+		value = -9000000
+	}
+
+    ai_strategy = {
+        type = front_control
+        
+        area = japan
+        area = coastal_china
+        area = manchuria
+        area = southeast_asia
+        area = indonesia
+        area = fareast
+
+        ordertype = invasion
+        execute_order = no
+        value = -2000
+    }
+
+    ai_strategy = { 
+        type = invasion_unit_request
+        area = japan
+        area = coastal_china
+        area = manchuria
+        area = southeast_asia
+        area = indonesia
+        area = fareast
+        value = -9000000
+    }
+
+    ai_strategy = {
+        type = front_control
+    
+        area = pacific
+        
+        ratio = 0.1
+        
+        priority = 200
+        ordertype = front
+    }
+
+    ai_strategy = {
+        type = front_control
+
+        area = pacific
+        
+        ratio = 0.1
+     
+        priority = 200
+        ordertype = invasion
+    }
+
+    ai_strategy = { 
+        type = invasion_unit_request
+        area = pacific
+        state_trigger = {
+        	NOT = { is_core_of = PHI }
+        }
+        value = 40
+    }
+
+	ai_strategy = {
+	 	type = put_unit_buffers
+	 	
+	 	ratio = 0.2
+
+	 	order_id = 2
+	 	
+	 	area = pacific
+	 	
+	 	subtract_invasions_from_need = yes
+	 	subtract_fronts_from_need = yes
+	}
+}
+
+JAP_dont_retake_the_philippines_immediately = {
+	allowed = {
+		is_historical_focus_on = yes
+		OR = {
+			is_literally_america = yes
+			is_in_faction_with = ENG
+			is_in_faction_with = USA
+			tag = FRA
+		}
+	}
+	enable = {
+		date < 1944.1.1
+		PHI = { has_capitulated = yes }
+		327 = { controller = { OR = { tag = JAP is_subject_of = JAP } } }
+		646 = { controller = { OR = { tag = JAP is_subject_of = JAP } } }
+		647 = { controller = { OR = { tag = JAP is_subject_of = JAP } } }
+		648 = { controller = { OR = { tag = JAP is_subject_of = JAP } } }
+	}
+	
+	abort = {
+		OR = {
+			date > 1944.1.1
+			NOT = { has_war_with = JAP }
+		}
+	}
+
+    ai_strategy = {
+        type = front_control
+        
+        state_trigger = { is_core_of = PHI }
+
+        ratio = 0.1
+        ordertype = invasion
+        execute_order = no
+        value = -2000
+    }
+
+    ai_strategy = { 
+        type = invasion_unit_request
+        state_trigger = { is_core_of = PHI }
+        value = -9000000
+    }
+}
+
+JAP_focus_on_siam_and_indonesia_if_not_USA = {
+	enable = {
+		date < 1946.1.1
+		has_war_with = JAP
+		is_in_faction_with = USA
+		NOT = {
+			OR = {
+				is_literally_america = yes
+				is_subject_of = USA
+				tag = AST
+				is_subject_of = AST
+				capital_scope = { is_on_continent = north_america }
+				capital_scope = { is_on_continent = south_america }
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "JAP"		
+		value = -90000000000
+	}
+}
+
+JAP_x_day = {
+	allowed = {
+		OR = {
+			is_literally_america = yes
+			is_literally_russia = yes
+			tag = ENG
+			tag = CHI
+		}
+	}
+	enable = {
+		has_war_with = JAP
+		date > 1946.1.1
+		NOT = { 
+			282 = { controller = { NOT = { tag = SOV } } NOT = { is_controlled_by = JAP } }
+			528 = { controller = { NOT = { tag = SOV } } NOT = { is_controlled_by = JAP } }
+			529 = { controller = { NOT = { tag = SOV } } NOT = { is_controlled_by = JAP } }
+			530 = { controller = { NOT = { tag = SOV } } NOT = { is_controlled_by = JAP } }
+			536 = { controller = { NOT = { tag = SOV } } NOT = { is_controlled_by = JAP } }
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+	 	type = put_unit_buffers
+	 	
+	 	ratio = 0.1
+
+	 	order_id = 1
+	 	order_id = 2
+	 	
+	 	area = pacific
+	 	
+	 	subtract_invasions_from_need = yes
+	 	subtract_fronts_from_need = yes
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = japan
+		value = 800000000000
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = indonesia	
+		value = -900000000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "JAP"		
+		value = 900000000
+	}
+}
+
+USA_u_have_a_foothold_stop = {
+	enable = {
+		has_war_with = JAP
+		NOT = { tag = SOV }
+		date > 1946.1.1
+		OR = { 
+			282 = { controller = { NOT = { tag = SOV } } NOT = { is_controlled_by = JAP } }
+			528 = { controller = { NOT = { tag = SOV } } NOT = { is_controlled_by = JAP } }
+			529 = { controller = { NOT = { tag = SOV } } NOT = { is_controlled_by = JAP } }
+			530 = { controller = { NOT = { tag = SOV } } NOT = { is_controlled_by = JAP } }
+			536 = { controller = { NOT = { tag = SOV } } NOT = { is_controlled_by = JAP } }
+		}
+		OR = {
+			is_in_faction_with = ENG
+			is_in_faction_with = USA
+			tag = FRA
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = garrison
+		value = 10
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "JAP"		
+		value = -5000
+	}
+}
+
+# USA should put some buffer units in africa and ENG to help with invasions
+USA_unit_buffer_for_europe = {
+	allowed = {
+		is_literally_america = yes
+	}
+	enable = {
+		date > 1941.1.1
+		
+		should_USA_invade_europe_or_africa = yes
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = put_unit_buffers
+		
+		order_id = 2
+		
+		ratio = 0.4
+		
+        area = alps
+        area = northern_france
+        area = britannia
+        area = central_europe
+        area = italy
+        area = iberia
+		
+		subtract_invasions_from_need = no
+	}
+}
+
+USA_unit_buffer_for_africa = {
+	allowed = {
+		is_literally_america = yes
+	}
+	enable = {
+		date > 1941.1.1
+		
+		should_USA_invade_europe_or_africa = yes
+		
+		all_state = {
+			OR = {
+				is_on_continent = africa
+				AND = {
+					GER = {
+						divisions_in_state = { state = PREV size < 1 }
+					}
+					ITA = {
+						divisions_in_state = { state = PREV size < 1 }
+					}
+				}
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = put_unit_buffers
+		
+		order_id = 1
+		
+		ratio = 0.2
+		
+		area = north_africa
+		area = west_africa
+		area = congo
+		area = east_africa
+		area = south_africa
+		
+		subtract_invasions_from_need = no
+	}
+}

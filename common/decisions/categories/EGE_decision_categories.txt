@@ -1,0 +1,26 @@
+EGE_disestablish_british_influence = {
+	icon = GFX_decision_category_generic_independence
+	
+	picture = GFX_decision_cat_picture_disestablish_british_influence
+	
+	priority = 100
+	allowed = {
+		original_tag = EGY
+	}
+	visible = {
+		has_completed_focus = EGE_purge_the_british
+	}
+}
+EGE_a_flourishing_economy = {
+	icon = GFX_decision_category_generic_economy
+	
+	picture = GFX_decision_cat_picture_a_flourishing_economy
+	
+	priority = 90
+	allowed = {
+		original_tag = EGY
+	}
+	visible = {
+		has_completed_focus = EGE_establish_gold_mining_operation
+	}
+}

@@ -1,0 +1,183 @@
+﻿###########################
+# Switzerland Events
+###########################
+
+add_namespace = switzerland
+
+# General Recruitment
+country_event = {
+	id = switzerland.100
+	title = switzerland.100.t
+	desc = switzerland.100.d
+	picture = GFX_report_event_henri_guisan
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = switzerland.100.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+# Switzerland demands Vorarlberg
+country_event = {
+	id = switzerland.101
+	title = switzerland.101.t
+	desc = switzerland.101.d
+	picture = GFX_report_event_pro_vorarlberg
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = switzerland.101.a
+		ai_chance = { factor = 100 }
+		SWI = {
+			transfer_state = 153
+			add_state_core = 153
+			add_stability = -0.15
+		}
+	}
+}
+
+country_event = {
+	id = switzerland.102
+	title = switzerland.102.t
+	desc = switzerland.102.d
+	picture = GFX_report_event_pro_vorarlberg
+
+	is_triggered_only = yes
+
+	option = { # Reject
+		name = switzerland.102.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+
+# Switzerland demands Tessin
+country_event = {
+	id = switzerland.103
+	title = switzerland.103.t
+	desc = switzerland.103.d
+	picture = GFX_report_event_journalists_speech
+
+	is_triggered_only = yes
+
+	option = { # Accept demands
+		name = switzerland.103.a
+		ai_chance = { factor = 100 }
+		SWI = {
+			add_stability = -0.05
+		} 
+	}
+}
+
+country_event = {
+	id = switzerland.104
+	title = switzerland.104.t
+	desc = switzerland.104.d
+	picture = GFX_report_event_journalists_speech
+
+	is_triggered_only = yes
+
+	option = { # Reject
+		name = switzerland.104.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+# Switzerland demands Haute-Savoy
+country_event = {
+	id = switzerland.105
+	title = switzerland.105.t
+	desc = switzerland.105.d
+	picture = GFX_report_event_swiss_army
+
+	major = no
+
+	trigger = {
+		FRA = { controls_state = 764
+						has_war = yes }
+		NOT = { SWI = { has_war_with = FRA
+										has_country_flag = SWI_haute_savoy }
+					}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # Takes
+		name = switzerland.105.a
+		ai_chance = { factor = 0 }
+		SWI = {
+			transfer_state = 764
+		}
+		if = {
+			limit = {
+				NOT = { FRA = { has_war_with = GER } }
+			}
+			FRA = { add_opinion_modifier = { target = SWI modifier = SWI_strong_haute } }
+		}
+		if = {
+			limit = {
+				FRA = { has_war_with = GER }
+			}
+			FRA = { add_opinion_modifier = { target = SWI modifier = SWI_haute } }
+		}
+
+		hidden_effect = { SWI = { set_country_flag = SWI_haute_savoy } }
+	}
+
+	option = { # Doesn't take
+		name = switzerland.105.b
+		ai_chance = { factor = 100 }
+		hidden_effect = { SWI = { set_country_flag = SWI_haute_savoy } }
+	}
+}
+
+# Trains
+country_event = {
+	id = switzerland.106
+	title = switzerland.106.t
+	desc = switzerland.106.d
+	picture = GFX_report_event_swiss_border
+
+	trigger = {
+			OR = {
+				2 = { is_controlled_by = ENG }
+				2 = { is_controlled_by = USA }
+				2 = { is_controlled_by = AST }
+				2 = { is_controlled_by = CAN }
+				2 = { is_controlled_by = NZL }
+				2 = { is_controlled_by = SAF }
+			}
+			NOT = {
+				SWI = { has_war_with = ITA
+								is_in_faction_with = GER
+								has_country_flag = SWI_fall_of_rome }
+			}
+		}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # Takes
+		name = switzerland.106.a
+		ai_chance = { factor = 0 }
+		ENG = { add_opinion_modifier = { target = SWI modifier = SWI_german_yes } }
+		USA = { add_opinion_modifier = { target = SWI modifier = SWI_german_yes } }
+		AST = { add_opinion_modifier = { target = SWI modifier = SWI_german_yes } }
+		CAN = { add_opinion_modifier = { target = SWI modifier = SWI_german_yes } }
+		SAF = { add_opinion_modifier = { target = SWI modifier = SWI_german_yes } }
+		GER = { give_military_access = SWI }
+		hidden_effect = { SWI = { set_country_flag = SWI_fall_of_rome } }
+	}
+
+	option = { # Doesn't take
+		name = switzerland.106.b
+		ai_chance = { factor = 100 }
+		hidden_effect = { SWI = { set_country_flag = SWI_fall_of_rome } }
+	}
+}

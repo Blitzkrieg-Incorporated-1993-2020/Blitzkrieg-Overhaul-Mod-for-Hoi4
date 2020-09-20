@@ -1,0 +1,109 @@
+
+ai_focus_defense_GER = {
+	research = {
+		defensive = 10.0	
+	}
+}
+
+ai_focus_aggressive_GER = {
+	research = {
+		offensive = 10.0
+		synth_resources = 40.0
+		motorized_equipment = 10.0
+		armor = 25.0
+	}
+}
+
+ai_focus_war_production_GER = {
+	research = {
+		industry = 40.0
+		construction_tech = 20.0
+		electronics = 20.0
+		computing_tech = 20.0	
+		synth_resources = 80.0
+	}
+}
+
+ai_focus_military_equipment_GER = {
+	research = {
+		infantry_weapons = 320.0
+		infantry_tech = 20.0
+		night_vision = 20.0
+		support_tech = 20.0
+		hospital_tech = 40.0
+		signal_company_tech = 20.0
+		military_police_tech = 20.0
+		encryption_tech = 80.0
+		decryption_tech = 40.0
+		artillery = 40.0
+		motorized_equipment = 80.0
+		armor = 10.0
+		cat_light_armor = 40.0
+		cat_medium_armor = 160.0
+		cat_heavy_armor = 160.0
+		mot_rockets = 10.0
+		rocketry = 20.0
+	}
+}
+
+ai_focus_military_advancements_GER = {
+	research = {
+		land_doctrine = 160.0
+		encryption_tech = 160.0
+		decryption_tech = 80.0
+		rocketry = 80.0
+		jet_technology = 160.0
+		motorized_equipment = 20.0
+		mot_rockets = 80.0
+		cat_mechanized_equipment = 20.0
+		cat_light_armor = 5.0
+		cat_medium_armor = 20.0
+		nuclear = 10.0
+		synth_resources = 40.0
+	}
+}
+
+ai_focus_peaceful_GER = {
+	research = {
+		industry = 80.0
+		construction_tech = 40.0
+		electronics = 20.0
+		computing_tech = 20.0
+		synth_resources = 60.0
+	}
+}
+
+ai_focus_naval_GER = {
+	research = {
+		naval_doctrine = 320.0
+		naval_equipment = 20.0
+		dd_tech = 10.0
+		cl_tech = 20.0
+		ca_tech = 80.0
+		bc_tech = 40.0
+		bb_tech = 80.0
+		shbb_tech = 1.0
+		cv_tech = 10.0
+		ss_tech = 160.0
+		tp_tech = 20.0
+		marine_tech = 1.0
+	}
+}
+
+ai_focus_naval_air_GER = {
+	research = {
+		naval_air = 30.0
+	}
+}
+
+ai_focus_aviation_GER = {
+	research = {
+		air_doctrine = 160.0
+		cas_bomber = 80.0		
+		light_fighter = 80.0
+		naval_bomber = 10.0
+		cat_heavy_fighter = 40.0
+		tactical_bomber = 80.0
+		para_tech = 40.0
+	}
+}

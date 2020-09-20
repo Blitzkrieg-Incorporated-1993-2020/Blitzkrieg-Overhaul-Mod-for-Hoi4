@@ -1,0 +1,367 @@
+NOS_foreign_policy = {
+
+
+	assist_in_nation_building = {
+
+		icon = eng_propaganda_campaigns
+
+		days_remove = 20
+		
+		available = {
+			political_power_daily > 1
+			NOT = { has_government = neutrality }
+			any_state = {
+				is_owned_by = FROM
+				is_core_of = FROM
+				is_capital = yes
+				ROOT = {
+					divisions_in_state = {
+					    size > 5
+					    state = PREV
+					}
+				}
+				OR = {
+					is_controlled_by = FROM
+					is_controlled_by = ROOT
+				}
+			}
+			FROM = {
+				is_subject = no
+				NOT = {
+					custom_trigger_tooltip = {
+						tooltip = same_ideology_group
+						OR = {
+							AND = {
+								PREV.PREV = { has_democratic_government = yes }
+								ROOT = { has_democratic_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_socialist_government = yes }
+								ROOT = { has_socialist_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_autocratic_government = yes }
+								ROOT = { has_autocratic_government = yes }
+							}
+						}
+					}
+				}
+				OR = {
+					has_capitulated = yes
+					AND = {
+						has_civil_war = yes
+						any_country = {
+							original_tag = FROM
+							is_subject = yes
+							has_capitulated = no
+						}
+					}
+				}
+				OR = {
+					is_in_faction_with = ROOT
+					AND = {
+						NOT = { has_war_with = ROOT }
+						any_country = {
+							is_major = yes
+							has_war_with = FROM
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+
+		visible = {
+			is_major = yes
+			has_capitulated = no
+			FROM = {
+				is_subject = no
+				NOT = {
+					custom_trigger_tooltip = {
+						tooltip = same_ideology_group
+						OR = {
+							AND = {
+								PREV.PREV = { has_democratic_government = yes }
+								ROOT = { has_democratic_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_socialist_government = yes }
+								ROOT = { has_socialist_government = yes }
+							}
+							AND = {
+								PREV.PREV = { has_autocratic_government = yes }
+								ROOT = { has_autocratic_government = yes }
+							}
+						}
+					}
+				}
+				OR = {
+					has_capitulated = yes
+					AND = {
+						has_civil_war = yes
+						any_country = {
+							original_tag = FROM
+							is_subject = yes
+							has_capitulated = no
+						}
+					}
+				}
+				OR = {
+					is_in_faction_with = ROOT
+					AND = {
+						NOT = { has_war_with = ROOT }
+						any_country = {
+							is_major = yes
+							has_war_with = FROM
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					is_in_faction_with = ROOT
+					AND = {
+						NOT = { has_war_with = ROOT }
+						any_country = {
+							is_major = yes
+							has_war_with = FROM
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+
+		complete_effect = {
+			set_country_flag = trying_to_puppet_an_ally
+			FROM = { set_country_flag = getting_puppeted_by_an_ally }
+		}
+	
+		remove_effect = {
+			puppet = FROM
+		}
+
+		modifier = {
+			political_power_gain = -1
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = democratic
+					has_government = social_democracy
+				}
+				FROM = { 
+					is_major = yes 
+					NOT = { OR = { has_government = communism has_government = fascism } }
+				}
+			}
+		}
+	}
+
+	establish_permanent_government = {
+
+		icon = eng_propaganda_campaigns
+
+		days_remove = 40
+		
+		available = {
+			political_power_daily > 1
+			if = {
+				limit = { capital_scope = { is_on_continent = europe } }
+				NOT = {
+					any_country = {
+						OR = {
+							is_major = yes
+							is_faction_leader = yes
+						}
+						has_war_with = ROOT
+						capital_scope = { is_on_continent = europe }
+					}
+				}
+			}
+			if = {
+				limit = { capital_scope = { is_on_continent = north_america } }
+				NOT = {
+					any_country = {
+						OR = {
+							is_major = yes
+							is_faction_leader = yes
+						}
+						has_war_with = ROOT
+						capital_scope = { is_on_continent = north_america }
+					}
+				}
+			}
+			if = {
+				limit = { capital_scope = { is_on_continent = south_america } }
+				NOT = {
+					any_country = {
+						OR = {
+							is_major = yes
+							is_faction_leader = yes
+						}
+						has_war_with = ROOT
+						capital_scope = { is_on_continent = south_america }
+					}
+				}
+			}
+			if = {
+				limit = { capital_scope = { is_on_continent = asia } }
+				NOT = {
+					any_country = {
+						OR = {
+							is_major = yes
+							is_faction_leader = yes
+						}
+						has_war_with = ROOT
+						capital_scope = { is_on_continent = asia }
+					}
+				}
+			}
+			if = {
+				limit = { capital_scope = { is_on_continent = middle_east } }
+				NOT = {
+					any_country = {
+						OR = {
+							is_major = yes
+							is_faction_leader = yes
+						}
+						has_war_with = ROOT
+						capital_scope = { is_on_continent = middle_east }
+					}
+				}
+			}
+			if = {
+				limit = { capital_scope = { is_on_continent = africa } }
+				NOT = {
+					any_country = {
+						OR = {
+							is_major = yes
+							is_faction_leader = yes
+						}
+						has_war_with = ROOT
+						capital_scope = { is_on_continent = africa }
+					}
+				}
+			}
+			if = {
+				limit = { capital_scope = { is_on_continent = oceania } }
+				NOT = {
+					any_country = {
+						OR = {
+							is_major = yes
+							is_faction_leader = yes
+						}
+						has_war_with = ROOT
+						capital_scope = { is_on_continent = oceania }
+					}
+				}
+			}
+			FROM = {
+				is_subject_of = ROOT
+				has_autonomy_state = autonomy_provisional_government
+			}
+		}
+
+		visible = {
+			any_country = {
+				is_subject_of = ROOT
+				has_autonomy_state = autonomy_provisional_government
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				has_autonomy_state = autonomy_provisional_government
+			}
+		}
+
+		complete_effect = {
+			set_country_flag = trying_to_make_puppet_permenant 
+			FROM = { set_country_flag = getting_made_into_permenant_puppet }
+		}
+	
+		remove_effect = {
+			FROM = { set_country_flag = forced_into_puppet }
+		}
+
+		modifier = {
+			political_power_gain = -1
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_democratic_government = yes
+				NOT = {
+					has_idea = western_empire
+					FROM = { has_idea = etgi_laws_leadership_structure_d }
+				}
+			}
+		}
+	}
+
+	targeted_race_for_the_bomb = {
+
+		icon = generic_research
+
+		allowed = {
+			always = no
+		}
+
+		available = {
+			#Target is FROM
+			has_tech = atomic_research
+			NOT = { has_global_flag = first_nuke_dropped }
+			NOT = { has_idea = race_for_the_bomb }
+		}
+
+		#If this trigger matches a country.
+		target_trigger = {
+			#Target is FROM
+			FROM = {
+        		NOT = { is_in_faction_with = ROOT }
+				has_tech = nuclear_reactor
+				any_owned_state = {
+					nuclear_reactor > 0
+				}
+			}
+		}
+
+		visible = {
+            #Target is FROM
+            has_tech = atomic_research
+            NOT = { has_global_flag = first_nuke_dropped }
+            NOT = { has_idea = race_for_the_bomb }
+            FROM = {
+        		NOT = { is_in_faction_with = ROOT }
+				has_tech = nuclear_reactor
+				any_owned_state = {
+					nuclear_reactor > 0
+				}
+			}
+		}
+
+		complete_effect = {
+			set_country_flag = racing_for_the_bomb
+			add_ideas = race_for_the_bomb
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				any_other_country = { has_tech = nukes }
+			}
+		}
+	}
+}

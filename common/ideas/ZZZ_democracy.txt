@@ -1,0 +1,146 @@
+ideas = {
+
+	country = {
+
+		liberal_conservative_government = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_democratic_government = yes
+			}
+			
+			cancel = {
+				OR = {
+					has_stability < 0.15
+					has_capitulated = yes
+					NOT = {
+						OR = {
+							has_government = democratic
+							has_government = conservative
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				democratic_drift = 0.05
+				conservative_drift = 0.05
+			}
+		}
+		liberal_social_democrat_government = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_democratic_government = yes
+			}
+			
+			cancel = {
+				OR = {
+					has_stability < 0.15
+					has_capitulated = yes
+					NOT = {
+						OR = {
+							has_government = democratic
+							has_government = social_democracy
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				democratic_drift = 0.05
+				social_democracy_drift = 0.05
+			}
+		}
+		rightist_conservative_government = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_democratic_government = yes
+			}
+			
+			cancel = {
+				OR = {
+					has_stability < 0.15
+					has_capitulated = yes
+					NOT = {
+						OR = {
+							has_government = conservative
+							AND = {
+								has_government = neutrality
+								has_elections = no
+							}
+							AND = {
+								has_government = fascism
+								has_elections = no
+							}
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				conservative_drift = 0.05
+				fascism_drift = 0.04
+				neutrality_drift = 0.03
+			}
+		}
+		leftist_social_democrat_government = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_democratic_government = yes
+			}
+			
+			cancel = {
+				OR = {
+					has_stability < 0.15
+					has_capitulated = yes
+					NOT = {
+						OR = {
+							has_government = social_democracy
+							AND = {
+								has_government = unionism
+								has_elections = no
+							}
+							AND = {
+								has_government = communism
+								has_elections = no
+							}
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				social_democracy_drift = 0.05
+				communism_drift = 0.04
+				unionism_drift = 0.03
+			}
+		}
+	}
+}

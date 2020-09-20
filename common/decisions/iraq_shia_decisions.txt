@@ -1,0 +1,152 @@
+IRQ_shia_decisions = {
+	
+	IRQ_suppress_shia_1 = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+		}
+
+		visible = {
+			has_completed_focus = IRQ_suppress_shia_revolts
+			has_idea = IRQ_religious_revolts_1
+		}
+
+		fire_only_once = yes
+
+		modifier = {
+			conscription_factor = -0.10
+			experience_gain_army = 0.05
+		}
+
+		days_remove = 100
+
+		cost = 100
+
+		remove_effect = {
+			swap_ideas = {
+				add_idea = IRQ_religious_revolts_2
+				remove_idea = IRQ_religious_revolts_1
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_stability < 0.6
+			}
+		}
+	}
+	
+	IRQ_suppress_shia_2 = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+		}
+
+		visible = {
+			has_idea = IRQ_religious_revolts_2
+		}
+
+		fire_only_once = yes
+
+		modifier = {
+			conscription_factor = -0.10
+			experience_gain_army = 0.05
+		}
+
+		days_remove = 100
+
+		cost = 100
+
+		remove_effect = {
+			swap_ideas = {
+				add_idea = IRQ_religious_revolts_3
+				remove_idea = IRQ_religious_revolts_2
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_stability < 0.6
+			}
+		}
+	}
+	
+	IRQ_suppress_shia_3 = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+		}
+
+		visible = {
+			has_idea = IRQ_religious_revolts_3
+		}
+
+		fire_only_once = yes
+
+		modifier = {
+			conscription_factor = -0.10
+			experience_gain_army = 0.05
+		}
+
+		days_remove = 100
+
+		cost = 100
+
+		remove_effect = {
+			swap_ideas = {
+				add_idea = IRQ_religious_revolts_4
+				remove_idea = IRQ_religious_revolts_3
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_stability < 0.6
+			}
+		}
+	}
+	
+	IRQ_suppress_shia_4 = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+		}
+
+		visible = {
+			has_idea = IRQ_religious_revolts_4
+		}
+
+		fire_only_once = yes
+
+		modifier = {
+			conscription_factor = -0.10
+			experience_gain_army = 0.05
+		}
+
+		days_remove = 100
+
+		cost = 100
+
+		remove_effect = {
+			remove_ideas = IRQ_religious_revolts_4
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_stability < 0.6
+			}
+		}
+	}
+}

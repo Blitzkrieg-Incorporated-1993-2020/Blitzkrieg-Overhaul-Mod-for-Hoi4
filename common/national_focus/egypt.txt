@@ -1,0 +1,2238 @@
+focus_tree = {
+	id = egyptianempire_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = EGY
+		}
+	}
+	
+	default = no
+	reset_on_civilwar = no
+	
+	continuous_focus_position = { x = 50 y = 1400 }
+	
+	focus = {
+		id = EGE_an_independent_government
+		icon = GFX_focus_generic_self_management
+		x = 6
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 8
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.1
+			swap_ideas = {
+				remove_idea = resistance_to_british_occupation
+				add_idea = resistance_to_british_occupation_2
+			}
+		}
+	}
+	focus = {
+		id = EGE_anglo-egyptian_treaty
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = EGE_an_independent_government }
+		x = 6
+		y = 1
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		historical_ai = {
+			has_government = neutrality
+			has_government = democratic
+		}
+		
+		completion_reward = {
+			ENG = {country_event = { days = 1 id = britain.1000 }}
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = EGE_establish_gold_mining_operation
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		prerequisite = { focus = EGE_purge_the_british focus = EGE_support_the_status_quo }
+		x = 6
+		y = 3
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			ENG = { remove_resource_rights = 447 }
+			unlock_decision_category_tooltip = EGE_a_flourishing_economy
+		}
+	}
+	focus = {
+		id = EGE_found_the_gfluke
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = EGE_establish_gold_mining_operation }
+		
+		x = 6
+		y = 4
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			add_ideas = egypt_first
+		}
+	}
+	focus = {
+		id = EGE_purge_the_british
+		icon = GFX_goal_tfv_sever_ties_with_uk
+		mutually_exclusive = { focus = EGE_support_the_status_quo }
+		prerequisite = { focus = EGE_anglo-egyptian_treaty }
+		x = 2
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_idea = british_military_training
+					}
+				}
+				leave_faction = yes
+			}
+			unlock_decision_category_tooltip = EGE_disestablish_british_influence
+		}
+	}
+	focus = {
+		id = EGE_secret_services
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = EGE_found_the_gfluke }
+		x = 6
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = british_military_technology
+		}
+	}
+	focus = {
+		id = EGE_cave_to_the_italians
+		icon = GFX_focus_ege_cave_to_the_italians
+		prerequisite = { focus = EGE_purge_the_british }
+		mutually_exclusive = { focus = EGE_begin_the_arab_socialist_movement }
+
+		available = {
+			is_puppet = no
+			is_subject = no
+			fascism > 0.4
+		}
+
+		x = 4
+		y = 3
+		
+		cost = 10
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = national_fascism
+				days = 720
+			}
+			add_opinion_modifier = { target = ITA modifier = medium_increase }
+			ITA = {
+				add_opinion_modifier = { target = EGE modifier = medium_increase }
+			}
+			remove_ideas = resistance_to_british_occupation_2
+		}
+	}
+	focus = {
+		id = EGE_follow_the_monarch
+		icon = GFX_focus_rom_royal_dictatorship
+		prerequisite = { focus = EGE_cave_to_the_italians }
+		available = {
+			has_idea = king_farouk_i
+		}
+
+		x = 4
+		y = 5
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = follow_the_monarch
+			hidden_effect = {
+				add_war_support = 0.1
+			}
+		}
+	}
+	focus = {
+		id = EGE_strengthen_axis_ties
+		icon = GFX_focus_chi_mission_to_germany
+		prerequisite = { focus = EGE_follow_the_monarch }
+		
+		x = 4
+		y = 7
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 7
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_opinion_modifier = { target = GER modifier = huge_increase }
+			GER = {
+				add_opinion_modifier = { target = EGY modifier = huge_increase }
+			}
+			add_opinion_modifier = { target = JAP modifier = huge_increase }
+			JAP = {
+				add_opinion_modifier = { target = EGY modifier = large_increase }
+			}
+			add_political_power = 200
+		}
+	}
+	focus = {
+		id = EGE_assassinate_lampson
+		icon = GFX_focus_hun_assassinate_horthy
+		prerequisite = { focus = EGE_strengthen_axis_ties }
+		available = {
+			has_idea = sir_miles_lampson
+		}
+
+		x = 5
+		y = 8
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			remove_ideas = sir_miles_lampson
+			add_threat = 2
+			hidden_effect = {
+				ENG = {country_event { id = britain.1001 hours = 6 }}
+			}
+		}
+	}
+	focus = {
+		id = EGE_the_soldiers_leader
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = EGE_assassinate_lampson }
+
+		x = 5
+		y = 9
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			army_experience = 30
+			custom_effect_tooltip = available_chief_of_army
+			show_ideas_tooltip = EGE_aziz_ali_al-misri
+		}
+	}
+	focus = {
+		id = EGE_restore_the_empire
+		icon = GFX_focus_generic_strike_at_democracy2
+		prerequisite = { focus = EGE_follow_the_monarch }
+		
+		x = 3
+		y = 6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			remove_ideas = king_farouk_i
+			create_country_leader = {
+				name = "Emperor Farouk I"
+				desc = "POLITICS_KING_FAROUK_I_DESC"
+				picture = "Portrait_Egypt_King_Farouk_I.dds"
+				expire = "1965.1.1"
+				ideology = nazism
+				traits = { 
+					emperor_of_egypt
+				}
+			}
+			EGY = {
+				set_politics = {
+					ruling_party = fascism
+				}
+			}
+			EGY = { set_cosmetic_tag = EGE_empire }
+			446 = {
+				set_state_name = "Memphis"
+			}
+		}
+	}
+	focus = {
+		id = EGE_join_axis
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = EGE_strengthen_axis_ties }
+		
+		x = 3
+		y = 8
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			GER = {country_event = { id = germany.1001 hours = 6 }}
+		}
+	}
+	focus = {
+		id = EGE_request_libya
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = EGE_join_axis }
+		available = {
+			is_puppet = no
+			NOT =  { 
+				has_war_with = ITA
+			}
+			is_in_faction_with = ITA
+			ITA = {
+				273 = { is_owned_and_controlled_by = ITA }
+				661 = { is_owned_and_controlled_by = ITA }
+				662 = { is_owned_and_controlled_by = ITA }
+				663 = { is_owned_and_controlled_by = ITA }
+				448 = { is_owned_and_controlled_by = ITA }
+				449 = { is_owned_and_controlled_by = ITA }
+				450 = { is_owned_and_controlled_by = ITA }
+				451 = { is_owned_and_controlled_by = ITA }
+			}
+		}
+		
+		x = 3
+		y = 9
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			ITA = {country_event { id = italy.1000 hours = 6 }}
+		}
+	}
+	focus = {
+		id = EGE_begin_the_arab_socialist_movement
+		icon = GFX_focus_generic_soviet_politics
+		prerequisite = { focus = EGE_purge_the_british }
+		mutually_exclusive = { focus = EGE_cave_to_the_italians }
+		
+		available = {
+			communism > 0.4
+			is_puppet = no
+			is_subject = no
+		}
+		
+		x = 1
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = arab_socialist_movement
+			set_rule = {
+				can_boost_other_ideologies = yes
+			}
+			IRQ = {
+				add_ideas = arab_socialist_movement
+			}
+			SAU = {
+				add_ideas = arab_socialist_movement
+			}
+			PER = {
+				add_ideas = arab_socialist_movement
+			}
+			remove_ideas = resistance_to_british_occupation_2
+		}
+	}
+	focus = {
+		id = EGE_reclaim_the_middle_east
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = EGE_restore_the_empire focus = EGE_marx_of_africa }
+		available = {
+			is_puppet = no
+			NOT =  { 
+				is_in_faction_with = ENG
+				is_in_faction_with = FRA
+				has_war_with = ENG
+				has_war_with = FRA
+			}
+			ENG = {
+				OR = {
+					454 = { is_owned_and_controlled_by = ENG }
+					455 = { is_owned_and_controlled_by = ENG }
+				}
+			}
+			FRA = {
+				OR = {
+					553 = { is_owned_and_controlled_by = FRA }
+					554 = { is_owned_and_controlled_by = FRA }
+					677 = { is_owned_and_controlled_by = FRA }
+					680 = { is_owned_and_controlled_by = FRA }
+				}
+			}
+		}
+		
+		x = 2
+		y = 7
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			effect_tooltip = {
+				EGY = {
+					if = {
+						limit = { ENG = { owns_state = 454 controls_state = 454 } }
+						transfer_state = 454
+						EGY = {
+							add_state_core = 454
+						}
+					}
+					if = {
+						limit = { ENG = { owns_state = 455 controls_state = 455 } }
+						transfer_state = 455
+						EGY = {
+							add_state_core = 455
+						}
+					}
+					if = {
+						limit = { FRA = { owns_state = 553 controls_state = 553 } }
+						transfer_state = 553
+						EGY = {
+							add_state_core = 553
+						}
+					}
+					if = {
+						limit = { FRA = { owns_state = 554 controls_state = 554 } }
+						transfer_state = 554
+						EGY = {
+							add_state_core = 554
+						}
+					}
+					if = {
+						limit = { FRA = { owns_state = 677 controls_state = 677 } }
+						transfer_state = 677
+						EGY = {
+							add_state_core = 677
+						}
+					}
+					if = {
+						limit = { FRA = { owns_state = 680 controls_state = 680 } }
+						transfer_state = 680
+						EGY = {
+							add_state_core = 680
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				news_event = { id = news.1004 hours = 6 }
+			}
+			EGY = {
+				if = {
+					limit = { ENG = { owns_state = 454 controls_state = 454 } }
+					transfer_state = 454
+					EGY = {
+						add_state_core = 454
+					}
+				}
+				if = {
+					limit = { ENG = { owns_state = 455 controls_state = 455 } }
+					transfer_state = 455
+					EGY = {
+						add_state_core = 455
+					}
+				}
+				if = {
+					limit = { FRA = { owns_state = 553 controls_state = 553 } }
+					transfer_state = 553
+					EGY = {
+						add_state_core = 553
+					}
+				}
+				if = {
+					limit = { FRA = { owns_state = 554 controls_state = 554 } }
+					transfer_state = 554
+					EGY = {
+						add_state_core = 554
+					}
+				}
+				if = {
+					limit = { FRA = { owns_state = 677 controls_state = 677 } }
+					transfer_state = 677
+					EGY = {
+						add_state_core = 677
+					}
+				}
+				if = {
+					limit = { FRA = { owns_state = 680 controls_state = 680 } }
+					transfer_state = 680
+					EGY = {
+						add_state_core = 680
+					}
+				}
+			}
+			add_threat = 2
+			EGY = {
+				create_wargoal = {
+					type = annex_everything
+					target = IRQ
+				}
+			}
+		}
+	}
+	focus = {
+		id = EGY_seek_foreign_cooperation
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = EGE_begin_the_arab_socialist_movement }
+		mutually_exclusive = { focus = EGE_marx_of_africa }
+		
+		x = 0
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 7
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_opinion_modifier = { target = SOV modifier = huge_increase }
+			SOV = {
+				add_opinion_modifier = { target = EGY modifier = huge_increase }
+			}
+			add_opinion_modifier = { target = PRC modifier = huge_increase }
+			PRC = {
+				add_opinion_modifier = { target = EGY modifier = huge_increase }
+			}
+			add_political_power = 200
+		}
+	}
+	focus = {
+		id = EGE_join_comintern
+		icon = GFX_focus_generic_join_comintern
+		prerequisite = { focus = EGE_marx_of_africa focus = EGE_seek_foreign_cooperation }
+		
+		x = 1
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 7
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			SOV = {
+				country_event = { id = soviet.1000 hours = 6 }
+			}
+		}
+	}
+	focus = {
+		id = EGE_marx_of_africa
+		icon = GFX_focus_ege_marx_of_africa
+		prerequisite = { focus = EGE_begin_the_arab_socialist_movement }
+		mutually_exclusive = { focus = EGE_join_comintern }
+		
+		x = 2
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 7
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			SAF = {
+				add_timed_idea = {
+					idea = arab_socialist_movement
+					days = 365
+				}
+			}
+			set_rule = { can_create_factions = yes }
+			add_political_power = 200
+		}
+	}
+	focus = {
+		id = EGE_political_commissars
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = EGE_join_comintern }
+		available = {
+		}
+		x = 1
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = political_commissars_focus
+			if = {
+				limit = { has_government = communism }
+				add_popularity = {
+					ideology = communism
+					popularity = 0.2
+				}
+			}
+			add_political_power = 200
+		}
+	}
+	focus = {
+		id = EGE_support_the_status_quo
+		icon = GFX_focus_chi_british_cooperation
+		mutually_exclusive = { focus = EGE_purge_the_british }
+		prerequisite = { focus = EGE_anglo-egyptian_treaty }
+		x = 10
+		y = 2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		historical_ai = {
+			has_government = neutrality
+			has_government = democratic
+		}
+		
+		completion_reward = {
+			add_opinion_modifier = { target = ENG modifier = large_increase }
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = EGE_democratic_reforms
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = EGE_support_the_status_quo }
+		available = {
+			has_idea = sir_miles_lampson
+		}
+		
+		x = 10
+		y = 4
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		historical_ai = {
+			has_government = neutrality
+			has_government = democratic
+		}
+		
+		completion_reward = {
+			add_stability = 0.05
+			remove_ideas = resistance_to_british_occupation_2
+			add_political_power = 200
+		}
+	}
+	focus = {
+		id = EGE_complete_decolonization
+		icon = GFX_focus_eng_decolonization
+		prerequisite = { focus = EGE_support_the_status_quo }
+		available = {
+			has_government = democratic
+			has_war = no
+			date > 1948.1.1
+		}
+		
+		x = 11
+		y = 3
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		historical_ai = {
+			has_government = neutrality
+			has_government = democratic
+		}
+		
+		completion_reward = {
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = the_british_protectorate
+				add_idea = british_political_influence
+			}
+			ENG = {
+				end_puppet = EGY
+			}
+		}
+	}
+	focus = {
+		id = EGE_down_with_the_king
+		icon = GFX_focus_rom_handle_king
+		prerequisite = { focus = EGE_elect_lampson }
+		available = {
+			has_idea = king_farouk_i
+		}
+		
+		x = 7
+		y = 7
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = -0.1
+			remove_ideas = king_farouk_i
+			hidden_effect = {
+				add_opinion_modifier = { target = ITA modifier = large_decrease }
+			}
+		}
+	}
+	focus = {
+		id = EGE_prepare_intervention
+		icon = GFX_goal_demand_sudetenland
+		prerequisite = { focus = EGE_democratic_reforms }
+		mutually_exclusive = { focus = EGE_maintain_neutrality }
+		
+		x = 9
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 3
+		}
+		
+		historical_ai = {
+			has_government = democratic
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = national_democracy
+			set_rule = { can_send_volunteers = yes }
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+		}
+	}
+	focus = {
+		id = EGE_maintain_neutrality
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = EGE_democratic_reforms }
+		mutually_exclusive = { focus = EGE_prepare_intervention }
+		
+		x = 11
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 3
+		}
+		
+		historical_ai = {
+			has_government = democratic
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = british_political_influence
+				}
+				remove_ideas = british_political_influence
+			}
+			if = {
+				limit = {
+					has_idea = the_british_protectorate
+				}
+				remove_ideas = the_british_protectorate
+			}
+			add_ideas = national_neutrality
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = yes
+			}
+		}
+	}
+	focus = {
+		id = EGE_elect_lampson
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = { focus = EGE_prepare_intervention }
+		available = {
+			has_idea = sir_miles_lampson
+			NOT = {
+				has_completed_focus = EGE_assassinate_lampson
+			}
+		}
+		
+		x = 7
+		y = 6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			create_country_leader = {
+				name = "Sir Miles Lampson"
+				desc = "POLITICS_SIR_MILES_LAMPSON_DESC"
+				picture = "Portrait_Egypt_Sir_Miles_Lampson.dds"
+				expire = "1965.1.1"
+				ideology = liberalism
+				traits = { 
+					indomitable_perseverance
+					dislikes_germany
+				}
+			}
+			ENG = {
+				add_opinion_modifier = { target = EGY modifier = large_increase }
+			}
+		}
+	}
+	focus = {
+		id = EGE_saharan_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = EGE_prepare_intervention }
+		x = 10
+		y = 7
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}	
+		}
+		completion_reward = {
+			452 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = EGE_operation_compass
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = EGE_saharan_roads }
+		available = {
+			has_war_with = ITA
+		}
+		x = 9
+		y = 8
+
+		cost = 10
+
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+				producer = ENG
+			}
+		}
+	}
+	focus = {
+		id = EGE_fortify_el-alamein
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = EGE_saharan_roads focus = EGE_maintain_neutrality }
+		available = {
+			EGY = {
+				has_full_control_of_state = 447
+			}
+		}
+		x = 11
+		y = 8
+
+		cost = 10
+
+		completion_reward = {
+			if = {
+				limit = { 
+					EGY = {
+						has_full_control_of_state = 447
+					}
+				}
+				447 = {
+					add_building_construction = {
+						type = bunker
+						level = 10
+						province = 1071
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = EGE_italian_defense
+		icon = GFX_focus_attack_italy
+		prerequisite = { focus = EGE_operation_compass }
+		prerequisite = { focus = EGE_fortify_el-alamein }
+		available = {
+			has_war_with = ITA
+		}
+		x = 10
+		y = 9
+
+		cost = 10
+
+		completion_reward = {
+			add_ideas = defense_of_the_motherland
+		}
+	}
+	focus = {
+		id = EGE_western_technology
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = EGE_support_the_status_quo }
+		x = 9
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = electronics_bonus
+				bonus = 0.35
+				uses = 1
+				category = electronics
+			}
+			EGY = {
+				add_to_tech_sharing_group = commonwealth_research
+			}
+		}
+	}
+	focus = {
+		id = EGE_industrial_organization
+		icon = GFX_goal_generic_production
+		x = 16
+		y = 0
+		
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	focus = {
+		id = EGE_ufo_runway
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = EGE_establish_science_facilities }
+		
+		x = 14
+		y = 5
+		
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = ufo_runway_construction
+				days = 180
+			}
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	focus = {
+		id = EGE_establish_science_facilities
+		icon = GFX_focus_research
+		prerequisite = { focus = EGE_industrial_organization }
+		x = 14
+		y = 3
+		
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	focus = {
+		id = EGE_accelerate_research
+		icon = GFX_focus_research2
+		prerequisite = { focus = EGE_ufo_runway }
+		x = 14
+		y = 7
+		
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 2
+			if = {
+				limit = {
+					has_idea = ufo_runway_construction
+				}
+				remove_ideas = ufo_runway_construction
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		id = EGE_expand_cairo
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = EGE_industrial_organization }
+		x = 16
+		y = 2
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			446 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = EGE_colonize_the_nile
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = EGE_amen }
+		x = 26
+		y = 3
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 10
+			add_building_construction = {
+				type = industrial_complex
+				level = 10
+				instant_build = yes
+			}
+			456 = {
+				set_state_category = city
+			}
+		}
+
+		completion_reward = {
+			456 = {
+				add_extra_state_shared_building_slots = 10
+				add_building_construction = {
+					type = industrial_complex
+					level = 10
+					instant_build = yes
+				}
+			}
+			456 = {
+				set_state_category = megalopolis
+			}
+			swap_ideas = {
+				remove_idea = national_poverty
+				add_idea = national_poverty_2
+			}
+		}
+	}
+	focus = {
+		id = EGE_connect_the_towns
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = EGE_colonize_the_nile }
+		x = 26
+		y = 4
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}	
+		}
+		completion_reward = {
+			456 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 6
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = national_poverty_2
+				add_idea = national_poverty_3
+			}
+		}
+	}
+	focus = {
+		id = EGE_nile_immigration
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = EGE_connect_the_towns }
+		x = 26
+		y = 5
+		
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			remove_ideas = national_poverty_3
+			add_ideas = a_colonized_nile
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = EGE_capitalize_on_oil_fields
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = { focus = EGE_expand_cairo }
+		prerequisite = { focus = EGE_ptah }
+		available = {
+			EGY = {
+				controls_state = 457
+				controls_state = 452
+				controls_state = 552
+			}
+		}
+		
+		x = 18
+		y = 3
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			add_resource = {
+				type = oil
+				amount = 10
+				state = 457
+			}
+			add_resource = {
+				type = oil
+				amount = 20
+				state = 452
+			}
+			add_resource = {
+				type = oil
+				amount = 10
+				state = 552
+			}
+		}
+	}
+	focus = {
+		id = EGE_italian_steel_factories
+		icon = GFX_focus_generic_steel
+		prerequisite = { focus = EGE_capitalize_on_oil_fields }
+		available = {
+			EGY = {
+				controls_state = 446
+				controls_state = 447
+			}
+		}
+		
+		x = 18
+		y = 4
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 15
+				state = 446
+			}
+			add_resource = {
+				type = steel
+				amount = 15
+				state = 447
+			}
+		}
+	}
+	focus = {
+		id = EGE_expand_rubber_production
+		icon = GFX_focus_generic_rubber
+		prerequisite = { focus = EGE_italian_steel_factories }
+		available = {
+			EGY = {
+				controls_state = 457
+				controls_state = 552
+			}
+		}
+		
+		x = 18
+		y = 5
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			add_resource = {
+				type = rubber
+				amount = 10
+				state = 457
+			}
+			add_resource = {
+				type = rubber
+				amount = 10
+				state = 552
+			}
+		}
+	}
+
+	focus = {
+		id = EGE_mobilize_the_population
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = EGE_nile_immigration }
+		
+		x = 26
+		y = 7
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			add_stability = -0.05
+			add_ideas = national_mobilization
+		}
+	}
+	focus = {
+		id = EGE_ignite_the_warrior_spirit
+		icon = GFX_focus_RAJ_indian_gentlemen_offcers
+		
+		x = 24
+		y = 0
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}	
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_ideas = ignite_the_warrior_spirit
+		}
+	}
+	focus = {
+		id = EGE_amen
+		icon = GFX_focus_ege_amen
+		prerequisite = { focus = EGE_ignite_the_warrior_spirit }
+		
+		x = 26
+		y = 1
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			add_ideas = amen
+		}
+	}
+	focus = {
+		id = EGE_ra
+		icon = GFX_focus_ege_ra
+		prerequisite = { focus = EGE_ignite_the_warrior_spirit }
+		
+		x = 22
+		y = 1
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			add_ideas = ra
+			hidden_effect = {
+				set_rule = { can_use_kamikaze_pilots = yes }
+			}
+			custom_effect_tooltip = kamikaze_focus_tooltip
+		}
+	}
+	focus = {
+		id = EGE_ptah
+		icon = GFX_focus_ege_ptah
+		prerequisite = { focus = EGE_ignite_the_warrior_spirit }
+		
+		x = 18
+		y = 1
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			add_ideas = ptah
+		}
+	}
+	focus = {
+		id = EGE_set
+		icon = GFX_focus_ege_sutekh
+		prerequisite = { focus = EGE_ignite_the_warrior_spirit }
+		
+		x = 30
+		y = 1
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			add_ideas = set
+		}
+	}
+	focus = {
+		id = EGE_military_expansion
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = EGE_set }
+		x = 33
+		y = 2
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2			
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = EGE_finish_alexandrian_port
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = EGE_set }
+		x = 29
+		y = 2
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = dockyard
+				level = 2
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			447 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = EGE_expand_alexandrian_airfield
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = EGE_ra }
+		x = 22
+		y = 2
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = air_base
+				level = 4
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			447 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = EGE_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = EGE_military_expansion }
+		x = 33
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = EGE_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = EGE_army_effort }
+		x = 33
+		y = 4
+		
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 25
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = EGE_equipment_effort
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = EGE_army_effort focus = EGE_doctrine_effort }
+		x = 32
+		y = 6
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = EGE_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = EGE_army_effort focus = EGE_doctrine_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 34
+		y = 6
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.8
+				technology = motorised_infantry
+			}
+		}
+	}
+	focus = {
+		id = EGE_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = EGE_doctrine_effort }
+		x = 33
+		y = 7
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+	}
+	focus = {
+		id = EGE_mediterranean_fleet
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = EGE_finish_alexandrian_port }
+
+		x = 29
+		y = 3
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 0.75
+				uses = 4
+				category = fleet_in_being_tree
+			}
+		}
+	}
+	focus = {
+		id = EGE_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = EGE_mediterranean_fleet }
+		mutually_exclusive = { focus = EGE_cruiser_effort }
+		x = 28
+		y = 4
+		
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = early_submarine
+				technology = basic_submarine
+				technology = improved_submarine
+				technology = advanced_submarine
+			}
+		}
+	}
+
+	focus = {
+		id = EGE_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = EGE_mediterranean_fleet }
+		mutually_exclusive = { focus = EGE_submarine_effort }
+		x = 30
+		y = 4
+		
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = improved_light_cruiser
+				technology = advanced_light_cruiser
+				technology = improved_heavy_cruiser
+				technology = advanced_heavy_cruiser
+			}
+		}
+	}
+
+	focus = {
+		id = EGE_destroyer_effort
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = EGE_submarine_effort }
+		x = 28
+		y = 5
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = early_destroyer
+				technology = basic_destroyer
+				technology = improved_destroyer
+				technology = advanced_destroyer
+			}
+		}
+	}
+
+	focus = {
+		id = EGE_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = EGE_cruiser_effort }
+		x = 30
+		y = 5
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = basic_battlecruiser
+				technology = basic_battleship
+				technology = improved_battleship
+				technology = advanced_battleship
+				technology = heavy_battleship
+				technology = heavy_battleship2
+				technology = early_carrier
+				technology = basic_carrier
+				technology = improved_carrier
+				technology = advanced_carrier
+			}
+		}
+	}
+	focus = {
+		id = EGE_radar_improvements
+		icon = GFX_goal_generic_radar
+		prerequisite = { focus = EGE_capital_ships_effort focus = EGE_destroyer_effort }
+
+		x = 29
+		y = 7
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = codebreaking_bonus
+				bonus = 0.5
+				uses = 3
+				category = decryption_tech
+				category = computing_tech
+			}
+		}
+	}
+	focus = {
+		id = EGE_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = EGE_expand_alexandrian_airfield }
+		mutually_exclusive = { focus = EGE_bomber_focus }
+		x = 23
+		y = 3
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+		}
+	}
+	focus = {
+		id = EGE_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = EGE_expand_alexandrian_airfield }
+		mutually_exclusive = { focus = EGE_fighter_focus }
+		x = 21
+		y = 3
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+		}
+	}
+	focus = {
+		id = EGE_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = EGE_expand_alexandrian_airfield }
+		x = 22
+		y = 4
+		
+		cost = 10
+
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			air_experience = 25			
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}			
+		}
+
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = EGE_indoctrinate_the_airforce
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = EGE_aviation_effort }
+		x = 22
+		y = 5
+		
+		cost = 10
+
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			air_experience = 75			
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = air_doctrine
+			}			
+		}
+
+		completion_reward = {
+			air_experience = 75
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = EGE_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = EGE_fighter_focus }
+		x = 23
+		y = 6
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+	focus = {
+		id = EGE_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = EGE_indoctrinate_the_airforce focus = EGE_CAS_effort focus = EGE_NAV_effort }
+		x = 22
+		y = 7
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 0.5
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+	}
+	focus = {
+		id = EGE_NAV_effort
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = EGE_bomber_focus }
+		x = 21
+		y = 6
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = naval_bomber
+			}
+		}
+	}
+}

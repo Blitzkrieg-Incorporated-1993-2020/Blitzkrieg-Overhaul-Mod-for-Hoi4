@@ -1,0 +1,1125 @@
+###########################
+# cosmetic events
+###########################
+
+
+add_namespace = cosmetic
+
+country_event = {		### BRITISH COLONIES ###
+	id = cosmetic.1
+	hidden = yes
+
+	trigger = { 
+		OR = {
+			AND = {
+				OR = {
+					any_country = {
+						original_tag = RAJ
+						is_subject_of = ENG
+						NOT = { has_cosmetic_tag = ENG_india }
+						OR = {
+							has_autonomy_state = autonomy_imperial_dominion
+							has_autonomy_state = autonomy_crown_colony
+							has_autonomy_state = autonomy_royal_protectorate
+							has_autonomy_state = autonomy_integrated_region
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								ENG = { has_idea = western_empire }
+							}
+						}
+					}
+					any_country = {
+						original_tag = RAJ
+						has_cosmetic_tag = ENG_india
+						OR = {
+							NOT = { is_subject_of = ENG }
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								NOT = { ENG = { has_idea = western_empire } }
+							}
+							AND = {
+								has_dlc = "Together for Victory"
+								NOT = { has_autonomy_state = autonomy_imperial_dominion }
+								NOT = { has_autonomy_state = autonomy_crown_colony }
+								NOT = { has_autonomy_state = autonomy_royal_protectorate }
+								NOT = { has_autonomy_state = autonomy_integrated_region }
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				OR = {
+					any_country = {
+						original_tag = CAN
+						is_subject_of = ENG
+						NOT = { has_cosmetic_tag = ENG_canada }
+						OR = {
+							has_autonomy_state = autonomy_imperial_dominion
+							has_autonomy_state = autonomy_crown_colony
+							has_autonomy_state = autonomy_royal_protectorate
+							has_autonomy_state = autonomy_integrated_region
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								ENG = { has_idea = western_empire }
+							}
+						}
+					}
+					any_country = {
+						original_tag = CAN
+						has_cosmetic_tag = ENG_canada
+						OR = {
+							NOT = { is_subject_of = ENG }
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								NOT = { ENG = { has_idea = western_empire } }
+							}
+							AND = {
+								has_dlc = "Together for Victory"
+								NOT = { has_autonomy_state = autonomy_imperial_dominion }
+								NOT = { has_autonomy_state = autonomy_crown_colony }
+								NOT = { has_autonomy_state = autonomy_royal_protectorate }
+								NOT = { has_autonomy_state = autonomy_integrated_region }
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				OR = {
+					any_country = {
+						original_tag = AST
+						is_subject_of = ENG
+						NOT = { has_cosmetic_tag = ENG_australia }
+						OR = {
+							has_autonomy_state = autonomy_imperial_dominion
+							has_autonomy_state = autonomy_crown_colony
+							has_autonomy_state = autonomy_royal_protectorate
+							has_autonomy_state = autonomy_integrated_region
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								ENG = { has_idea = western_empire }
+							}
+						}
+					}
+					any_country = {
+						original_tag = AST
+						has_cosmetic_tag = ENG_australia
+						OR = {
+							NOT = { is_subject_of = ENG }
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								NOT = { ENG = { has_idea = western_empire } }
+							}
+							AND = {
+								has_dlc = "Together for Victory"
+								NOT = { has_autonomy_state = autonomy_imperial_dominion }
+								NOT = { has_autonomy_state = autonomy_crown_colony }
+								NOT = { has_autonomy_state = autonomy_royal_protectorate }
+								NOT = { has_autonomy_state = autonomy_integrated_region }
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				OR = {
+					any_country = {
+						original_tag = NZL
+						is_subject_of = ENG
+						NOT = { has_cosmetic_tag = ENG_newzealand }
+						OR = {
+							has_autonomy_state = autonomy_imperial_dominion
+							has_autonomy_state = autonomy_crown_colony
+							has_autonomy_state = autonomy_royal_protectorate
+							has_autonomy_state = autonomy_integrated_region
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								ENG = { has_idea = western_empire }
+							}
+						}
+					}
+					any_country = {
+						original_tag = NZL
+						has_cosmetic_tag = ENG_newzealand
+						OR = {
+							NOT = { is_subject_of = ENG }
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								NOT = { ENG = { has_idea = western_empire } }
+							}
+							AND = {
+								has_dlc = "Together for Victory"
+								NOT = { has_autonomy_state = autonomy_imperial_dominion }
+								NOT = { has_autonomy_state = autonomy_crown_colony }
+								NOT = { has_autonomy_state = autonomy_royal_protectorate }
+								NOT = { has_autonomy_state = autonomy_integrated_region }
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				OR = {
+					any_country = {
+						original_tag = SAF
+						is_subject_of = ENG
+						NOT = { has_cosmetic_tag = ENG_southafrica }
+						OR = {
+							has_autonomy_state = autonomy_imperial_dominion
+							has_autonomy_state = autonomy_crown_colony
+							has_autonomy_state = autonomy_royal_protectorate
+							has_autonomy_state = autonomy_integrated_region
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								ENG = { has_idea = western_empire }
+							}
+						}
+					}
+					any_country = {
+						original_tag = SAF
+						has_cosmetic_tag = ENG_southafrica
+						OR = {
+							NOT = { is_subject_of = ENG }
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								NOT = { ENG = { has_idea = western_empire } }
+							}
+							AND = {
+								has_dlc = "Together for Victory"
+								NOT = { has_autonomy_state = autonomy_imperial_dominion }
+								NOT = { has_autonomy_state = autonomy_crown_colony }
+								NOT = { has_autonomy_state = autonomy_royal_protectorate }
+								NOT = { has_autonomy_state = autonomy_integrated_region }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = { days = 2 }
+	
+	immediate = {
+		random_country = {
+			limit = {
+				original_tag = RAJ
+				is_subject_of = ENG
+				NOT = { has_cosmetic_tag = ENG_india }
+				OR = {
+					has_autonomy_state = autonomy_imperial_dominion
+					has_autonomy_state = autonomy_crown_colony
+					has_autonomy_state = autonomy_royal_protectorate
+					has_autonomy_state = autonomy_integrated_region
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						ENG = { has_idea = western_empire }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = ENG_india
+		}
+		random_country = {
+			limit = {
+				original_tag = RAJ
+				has_cosmetic_tag = ENG_india
+				OR = {
+					NOT = { is_subject_of = ENG }
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { ENG = { has_idea = western_empire } }
+					}
+					AND = {
+						has_dlc = "Together for Victory"
+						NOT = { has_autonomy_state = autonomy_imperial_dominion }
+						NOT = { has_autonomy_state = autonomy_crown_colony }
+						NOT = { has_autonomy_state = autonomy_royal_protectorate }
+						NOT = { has_autonomy_state = autonomy_integrated_region }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+		}
+		random_country = {
+			limit = {
+				original_tag = CAN
+				is_subject_of = ENG
+				NOT = { has_cosmetic_tag = ENG_canada }
+				OR = {
+					has_autonomy_state = autonomy_imperial_dominion
+					has_autonomy_state = autonomy_crown_colony
+					has_autonomy_state = autonomy_royal_protectorate
+					has_autonomy_state = autonomy_integrated_region
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						ENG = { has_idea = western_empire }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = ENG_canada
+		}
+		random_country = {
+			limit = {
+				original_tag = CAN
+				has_cosmetic_tag = ENG_canada
+				OR = {
+					NOT = { is_subject_of = ENG }
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { ENG = { has_idea = western_empire } }
+					}
+					AND = {
+						has_dlc = "Together for Victory"
+						NOT = { has_autonomy_state = autonomy_imperial_dominion }
+						NOT = { has_autonomy_state = autonomy_crown_colony }
+						NOT = { has_autonomy_state = autonomy_royal_protectorate }
+						NOT = { has_autonomy_state = autonomy_integrated_region }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+		}
+		random_country = {
+			limit = {
+				original_tag = AST
+				is_subject_of = ENG
+				NOT = { has_cosmetic_tag = ENG_australia }
+				OR = {
+					has_autonomy_state = autonomy_imperial_dominion
+					has_autonomy_state = autonomy_crown_colony
+					has_autonomy_state = autonomy_royal_protectorate
+					has_autonomy_state = autonomy_integrated_region
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						ENG = { has_idea = western_empire }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = ENG_australia
+		}
+		random_country = {
+			limit = {
+				original_tag = AST
+				has_cosmetic_tag = ENG_australia
+				OR = {
+					NOT = { is_subject_of = ENG }
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { ENG = { has_idea = western_empire } }
+					}
+					AND = {
+						has_dlc = "Together for Victory"
+						NOT = { has_autonomy_state = autonomy_imperial_dominion }
+						NOT = { has_autonomy_state = autonomy_crown_colony }
+						NOT = { has_autonomy_state = autonomy_royal_protectorate }
+						NOT = { has_autonomy_state = autonomy_integrated_region }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+		}
+		random_country = {
+			limit = {
+				original_tag = NZL
+				is_subject_of = ENG
+				NOT = { has_cosmetic_tag = ENG_newzealand }
+				OR = {
+					has_autonomy_state = autonomy_imperial_dominion
+					has_autonomy_state = autonomy_crown_colony
+					has_autonomy_state = autonomy_royal_protectorate
+					has_autonomy_state = autonomy_integrated_region
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						ENG = { has_idea = western_empire }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = ENG_newzealand
+		}
+		random_country = {
+			limit = {
+				original_tag = NZL
+				has_cosmetic_tag = ENG_newzealand
+				OR = {
+					NOT = { is_subject_of = ENG }
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { ENG = { has_idea = western_empire } }
+					}
+					AND = {
+						has_dlc = "Together for Victory"
+						NOT = { has_autonomy_state = autonomy_imperial_dominion }
+						NOT = { has_autonomy_state = autonomy_crown_colony }
+						NOT = { has_autonomy_state = autonomy_royal_protectorate }
+						NOT = { has_autonomy_state = autonomy_integrated_region }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+		}
+		random_country = {
+			limit = {
+				original_tag = SAF
+				is_subject_of = ENG
+				NOT = { has_cosmetic_tag = ENG_southafrica }
+				OR = {
+					has_autonomy_state = autonomy_imperial_dominion
+					has_autonomy_state = autonomy_crown_colony
+					has_autonomy_state = autonomy_royal_protectorate
+					has_autonomy_state = autonomy_integrated_region
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						ENG = { has_idea = western_empire }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = ENG_southafrica
+		}
+		random_country = {
+			limit = {
+				original_tag = SAF
+				has_cosmetic_tag = ENG_southafrica
+				OR = {
+					NOT = { is_subject_of = ENG }
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { ENG = { has_idea = western_empire } }
+					}
+					AND = {
+						has_dlc = "Together for Victory"
+						NOT = { has_autonomy_state = autonomy_imperial_dominion }
+						NOT = { has_autonomy_state = autonomy_crown_colony }
+						NOT = { has_autonomy_state = autonomy_royal_protectorate }
+						NOT = { has_autonomy_state = autonomy_integrated_region }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+		}
+	}
+	
+	option = {
+	}
+}
+
+country_event = {		### FRENCH COLONIES ###
+	id = cosmetic.2
+	hidden = yes
+
+	trigger = { 
+		OR = {
+			AND = {
+				OR = {
+					any_country = {
+						original_tag = VIN
+						is_subject_of = FRA
+						NOT = { has_cosmetic_tag = FRA_indochina }
+						OR = {
+							has_autonomy_state = autonomy_imperial_dominion
+							has_autonomy_state = autonomy_crown_colony
+							has_autonomy_state = autonomy_royal_protectorate
+							has_autonomy_state = autonomy_integrated_region
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								FRA = { has_idea = western_empire }
+							}
+						}
+					}
+					any_country = {
+						original_tag = VIN
+						has_cosmetic_tag = FRA_indochina
+						OR = {
+							NOT = { is_subject_of = FRA }
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								NOT = { ENG = { has_idea = western_empire } }
+							}
+							AND = {
+								has_dlc = "Together for Victory"
+								NOT = { has_autonomy_state = autonomy_imperial_dominion }
+								NOT = { has_autonomy_state = autonomy_crown_colony }
+								NOT = { has_autonomy_state = autonomy_royal_protectorate }
+								NOT = { has_autonomy_state = autonomy_integrated_region }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = { days = 2 }
+	
+	immediate = {
+		random_country = {
+			limit = {
+				original_tag = VIN
+				is_subject_of = FRA
+				NOT = { has_cosmetic_tag = FRA_indochina }
+				OR = {
+					has_autonomy_state = autonomy_imperial_dominion
+					has_autonomy_state = autonomy_crown_colony
+					has_autonomy_state = autonomy_royal_protectorate
+					has_autonomy_state = autonomy_integrated_region
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						ENG = { has_idea = western_empire }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = FRA_indochina
+		}
+		random_country = {
+			limit = {
+				original_tag = VIN
+				has_cosmetic_tag = FRA_indochina
+				OR = {
+					NOT = { is_subject_of = FRA }
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { ENG = { has_idea = western_empire } }
+					}
+					AND = {
+						has_dlc = "Together for Victory"
+						NOT = { has_autonomy_state = autonomy_imperial_dominion }
+						NOT = { has_autonomy_state = autonomy_crown_colony }
+						NOT = { has_autonomy_state = autonomy_royal_protectorate }
+						NOT = { has_autonomy_state = autonomy_integrated_region }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+		}
+	}
+	
+	option = {
+	}
+}
+
+country_event = {		### JAPANESE PUPPETS ###
+	id = cosmetic.6
+	hidden = yes
+
+	trigger = { 
+		OR = {
+			AND = {
+				OR = {
+					any_country = {
+						original_tag = MAN
+						is_subject_of = JAP
+						NOT = { has_cosmetic_tag = JAP_manchuria }
+						OR = {
+							has_autonomy_state = autonomy_subject_state
+							has_autonomy_state = autonomy_imperial_client
+							has_autonomy_state = autonomy_imperial_province
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								FRA = { has_idea = eastern_empire }
+							}
+						}
+					}
+					any_country = {
+						original_tag = MAN
+						has_cosmetic_tag = JAP_manchuria
+						OR = {
+							NOT = { is_subject_of = JAP }
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								NOT = { ENG = { has_idea = eastern_empire } }
+							}
+							AND = {
+								has_dlc = "Together for Victory"
+								NOT = { has_autonomy_state = autonomy_subject_state }
+								NOT = { has_autonomy_state = autonomy_imperial_client }
+								NOT = { has_autonomy_state = autonomy_imperial_province }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = { days = 2 }
+	
+	immediate = { 
+		random_country = {
+			limit = {
+				original_tag = MAN
+				is_subject_of = JAP
+				NOT = { has_cosmetic_tag = JAP_manchuria }
+				OR = {
+					has_autonomy_state = autonomy_subject_state
+					has_autonomy_state = autonomy_imperial_client
+					has_autonomy_state = autonomy_imperial_province
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						FRA = { has_idea = eastern_empire }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = JAP_manchuria
+		}
+		random_country = {
+			limit = {
+				original_tag = MAN
+				has_cosmetic_tag = JAP_manchuria
+				OR = {
+					NOT = { is_subject_of = JAP }
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { ENG = { has_idea = eastern_empire } }
+					}
+					AND = {
+						has_dlc = "Together for Victory"
+						NOT = { has_autonomy_state = autonomy_subject_state }
+						NOT = { has_autonomy_state = autonomy_imperial_client }
+						NOT = { has_autonomy_state = autonomy_imperial_province }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+		}
+	}
+	
+	option = {
+	}
+}
+
+country_event = {		### SOVIET SATELLITES ###
+	id = cosmetic.7
+	hidden = yes
+
+	trigger = { 
+		OR = {
+			AND = {
+				OR = {
+					any_country = {
+						original_tag = MON
+						NOT = { has_cosmetic_tag = MON_SOV_autonomous_ssr }
+						is_subject_of = SOV 
+						has_autonomy_state = autonomy_autonomous_ssr 
+					}
+					any_country = {
+						original_tag = MON
+						exists = yes
+						has_cosmetic_tag = MON_SOV_autonomous_ssr
+						NOT = { has_autonomy_state = autonomy_associate_republic }
+					}
+				}
+			}
+			AND = {
+				OR = {
+					any_country = {
+						original_tag = SIK
+						NOT = { has_cosmetic_tag = SIK_SOV_autonomous_ssr }
+						is_subject_of = SOV 
+						has_autonomy_state = autonomy_autonomous_ssr 
+					}
+					any_country = {
+						original_tag = SIK
+						exists = yes
+						has_cosmetic_tag = SIK_SOV_autonomous_ssr
+						NOT = { has_autonomy_state = autonomy_associate_republic }
+					}
+				}
+			}
+			AND = {
+				OR = {
+					any_country = {
+						original_tag = TAN
+						NOT = { has_cosmetic_tag = TAN_SOV_autonomous_ssr }
+						is_subject_of = SOV 
+						has_autonomy_state = autonomy_autonomous_ssr 
+					}
+					any_country = {
+						original_tag = TAN
+						exists = yes
+						has_cosmetic_tag = TAN_SOV_autonomous_ssr
+						NOT = { has_autonomy_state = autonomy_associate_republic }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = { days = 2 }
+	
+	immediate = { 
+		random_country = {
+			limit = {
+				original_tag = MON
+				NOT = { has_cosmetic_tag = MON_SOV_autonomous_ssr }
+				is_subject_of = SOV 
+				has_autonomy_state = autonomy_autonomous_ssr
+			} 
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = MON_SOV_autonomous_ssr
+		}
+		random_country = {
+			limit = {
+				original_tag = MON
+				exists = yes
+				has_cosmetic_tag = MON_SOV_autonomous_ssr
+				NOT = { has_autonomy_state = autonomy_associate_republic }
+			}
+			drop_cosmetic_tag = yes
+		}
+		random_country = {
+			limit = {
+				original_tag = SIK
+				NOT = { has_cosmetic_tag = SIK_SOV_autonomous_ssr }
+				is_subject_of = SOV 
+				has_autonomy_state = autonomy_autonomous_ssr
+			} 
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = SIK_SOV_autonomous_ssr
+		}
+		random_country = {
+			limit = {
+				original_tag = SIK
+				exists = yes
+				has_cosmetic_tag = SIK_SOV_autonomous_ssr
+				NOT = { has_autonomy_state = autonomy_associate_republic }
+			}
+			drop_cosmetic_tag = yes
+		}
+		random_country = {
+			limit = {
+				original_tag = TAN
+				NOT = { has_cosmetic_tag = TAN_SOV_autonomous_ssr }
+				is_subject_of = SOV 
+				has_autonomy_state = autonomy_autonomous_ssr
+			} 
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = TAN_SOV_autonomous_ssr
+		}
+		random_country = {
+			limit = {
+				original_tag = TAN
+				exists = yes
+				has_cosmetic_tag = TAN_SOV_autonomous_ssr
+				NOT = { has_autonomy_state = autonomy_associate_republic }
+			}
+			drop_cosmetic_tag = yes
+		}
+	}
+	
+	option = {
+	}
+}
+
+country_event = {		### DUTCH COLONIES ###
+	id = cosmetic.10
+	hidden = yes
+
+	trigger = { 
+		OR = {
+			AND = {
+				OR = {
+					any_country = {
+						original_tag = INS
+						is_subject_of = HOL
+						NOT = { has_cosmetic_tag = HOL_indonesia }
+						OR = {
+							has_autonomy_state = autonomy_imperial_dominion
+							has_autonomy_state = autonomy_crown_colony
+							has_autonomy_state = autonomy_royal_protectorate
+							has_autonomy_state = autonomy_integrated_region
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								HOL = { has_idea = western_empire }
+							}
+						}
+					}
+					any_country = {
+						original_tag = INS
+						has_cosmetic_tag = HOL_indonesia
+						OR = {
+							NOT = { is_subject_of = HOL }
+							AND = {
+								NOT = { has_dlc = "Together for Victory" }
+								NOT = { ENG = { has_idea = western_empire } }
+							}
+							AND = {
+								has_dlc = "Together for Victory"
+								NOT = { has_autonomy_state = autonomy_imperial_dominion }
+								NOT = { has_autonomy_state = autonomy_crown_colony }
+								NOT = { has_autonomy_state = autonomy_royal_protectorate }
+								NOT = { has_autonomy_state = autonomy_integrated_region }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = { days = 2 }
+	
+	immediate = {
+		random_country = {
+			limit = {
+				original_tag = INS
+				is_subject_of = HOL
+				NOT = { has_cosmetic_tag = HOL_indonesia }
+				OR = {
+					has_autonomy_state = autonomy_imperial_dominion
+					has_autonomy_state = autonomy_crown_colony
+					has_autonomy_state = autonomy_royal_protectorate
+					has_autonomy_state = autonomy_integrated_region
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						ENG = { has_idea = western_empire }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = FRA_indochina
+		}
+		random_country = {
+			limit = {
+				original_tag = INS
+				has_cosmetic_tag = HOL_indonesia
+				OR = {
+					NOT = { is_subject_of = HOL }
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { ENG = { has_idea = western_empire } }
+					}
+					AND = {
+						has_dlc = "Together for Victory"
+						NOT = { has_autonomy_state = autonomy_imperial_dominion }
+						NOT = { has_autonomy_state = autonomy_crown_colony }
+						NOT = { has_autonomy_state = autonomy_royal_protectorate }
+						NOT = { has_autonomy_state = autonomy_integrated_region }
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+		}
+	}
+	
+	option = {
+	}
+}
+
+country_event = {		### GERMAN PUPPETS ###
+	id = cosmetic.12
+	hidden = yes
+
+	trigger = { 
+		OR = {
+			any_country = {
+				original_tag = ENG
+				is_subject_of = GER
+				has_autonomy_state = autonomy_collaborator_state
+				NOT = { has_cosmetic_tag = GER_ENG_collaborator_state }
+			}
+			any_country = {
+				original_tag = ENG
+				is_subject_of = GER
+				has_autonomy_state = autonomy_satellite_state
+				NOT = { has_cosmetic_tag = GER_ENG_satellite_state }
+			}
+			any_country = {
+				original_tag = ENG
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_united has_cosmetic_tag = GRO } }
+				has_autonomy_state = autonomy_protectorate
+				NOT = { has_cosmetic_tag = GER_puppet }
+			}
+			any_country = {
+				original_tag = ENG
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_clean has_cosmetic_tag = GRO_clean } }
+				has_autonomy_state = autonomy_protectorate
+				NOT = { has_cosmetic_tag = GER_clean_puppet }
+			}
+			any_country = {
+				original_tag = ENG
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_united has_cosmetic_tag = GRO } }
+				NOT = { has_cosmetic_tag = GER_puppet }
+				OR = {
+					has_autonomy_state = autonomy_commissariat
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						GER = { has_government = fascism }
+					}
+				}
+			}
+			any_country = {
+				original_tag = ENG
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_clean has_cosmetic_tag = GRO_clean } }
+				NOT = { has_cosmetic_tag = GER_clean_puppet }
+				OR = {
+					has_autonomy_state = autonomy_commissariat
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						GER = { has_government = fascism }
+					}
+				}
+			}
+			any_country = {
+				original_tag = ENG
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_united has_cosmetic_tag = GRO } }
+				has_autonomy_state = autonomy_occupied_regime
+				NOT = { has_cosmetic_tag = GER_occupied }
+			}
+			any_country = {
+				original_tag = ENG
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_clean has_cosmetic_tag = GRO_clean } }
+				has_autonomy_state = autonomy_occupied_regime
+				NOT = { has_cosmetic_tag = GER_clean_occupied }
+			}
+			any_country = {
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_united has_cosmetic_tag = GRO } }
+				NOT = { has_cosmetic_tag = GER_puppet }
+				OR = {
+					has_autonomy_state = autonomy_commissariat
+					has_autonomy_state = autonomy_protectorate
+					AND = { 
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { 
+							OR = { 
+								is_literally_france = yes 
+								original_tag = ENG 
+								original_tag = SLO 
+								original_tag = GRE 
+								original_tag = ITA 
+							} 
+						}
+					}
+				}
+			}
+			any_country = {
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_united has_cosmetic_tag = GRO } }
+				NOT = { has_cosmetic_tag = GER_occupied }
+				OR = {
+					has_autonomy_state = autonomy_occupied_regime
+					AND = { 
+						NOT = { has_dlc = "Together for Victory" }
+						OR = { 
+							original_tag = POL 
+							original_tag = CZE
+						} 
+					}
+				}
+			}
+			any_country = {
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_clean has_cosmetic_tag = GRO_clean } }
+				NOT = { has_cosmetic_tag = GER_clean_puppet }
+				OR = {
+					has_autonomy_state = autonomy_commissariat
+					has_autonomy_state = autonomy_protectorate
+					AND = { 
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { 
+							OR = { 
+								is_literally_france = yes 
+								original_tag = ENG 
+								original_tag = SLO 
+								original_tag = GRE 
+								original_tag = ITA 
+							} 
+						}
+					}
+				}
+			}
+			any_country = {
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_clean has_cosmetic_tag = GRO_clean } }
+				NOT = { has_cosmetic_tag = GER_clean_occupied }
+				OR = {
+					has_autonomy_state = autonomy_occupied_regime
+					AND = { 
+						NOT = { has_dlc = "Together for Victory" }
+						OR = { 
+							original_tag = POL 
+							original_tag = CZE
+						} 
+					}
+				}
+			}
+			any_country = {
+				OR = {
+					NOT = { is_subject_of = GER }
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { GER = { has_government = fascism } }
+					}
+					AND = {
+						NOT = { has_autonomy_state = autonomy_collaborator_state }
+						NOT = { has_autonomy_state = autonomy_satellite_state }
+						NOT = { has_autonomy_state = autonomy_protectorate }
+						NOT = { has_autonomy_state = autonomy_commissariat }
+						NOT = { has_autonomy_state = autonomy_occupied_regime }
+					}
+				}
+				OR = {
+					has_cosmetic_tag = GER_occupied
+					has_cosmetic_tag = GER_puppet
+					has_cosmetic_tag = GER_clean_occupied
+					has_cosmetic_tag = GER_ENG_satellite_state
+					has_cosmetic_tag = GER_ENG_collaborator_state
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = { days = 2 }
+	
+	immediate = {
+		every_country = {
+			limit = {
+				original_tag = ENG
+				is_subject_of = GER
+				has_autonomy_state = autonomy_collaborator_state
+				NOT = { has_cosmetic_tag = GER_ENG_collaborator_state }
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = GER_ENG_collaborator_state
+		}
+		every_country = {
+			limit = {
+				original_tag = ENG
+				is_subject_of = GER
+				has_autonomy_state = autonomy_satellite_state
+				NOT = { has_cosmetic_tag = GER_ENG_satellite_state }
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = GER_ENG_satellite_state
+		}
+		every_country = {
+			limit = {
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_united has_cosmetic_tag = GRO } }
+				NOT = { has_cosmetic_tag = GER_puppet }
+				OR = {
+					has_autonomy_state = autonomy_commissariat
+					has_autonomy_state = autonomy_protectorate
+					AND = { 
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { 
+							OR = { 
+								is_literally_france = yes
+								original_tag = SLO 
+								original_tag = GRE 
+								original_tag = ITA 
+							} 
+						}
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = GER_puppet
+		}
+		every_country = {
+			limit = {
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_clean has_cosmetic_tag = GRO_clean } }
+				NOT = { has_cosmetic_tag = GER_clean_puppet }
+				OR = {
+					has_autonomy_state = autonomy_commissariat
+					has_autonomy_state = autonomy_protectorate
+					AND = { 
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { 
+							OR = { 
+								is_literally_france = yes
+								original_tag = SLO 
+								original_tag = GRE 
+								original_tag = ITA 
+							} 
+						}
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = GER_clean_puppet
+		}
+		every_country = {
+			limit = {
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_united has_cosmetic_tag = GRO } }
+				NOT = { has_cosmetic_tag = GER_occupied }
+				OR = {
+					has_autonomy_state = autonomy_occupied_regime
+					AND = { 
+						NOT = { has_dlc = "Together for Victory" }
+						OR = { 
+							original_tag = POL 
+							original_tag = CZE
+						} 
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = GER_occupied
+		}
+		every_country = {
+			limit = {
+				is_subject_of = GER
+				GER = { OR = { has_cosmetic_tag = GER_clean has_cosmetic_tag = GRO_clean } }
+				NOT = { has_cosmetic_tag = GER_clean_occupied }
+				OR = {
+					has_autonomy_state = autonomy_occupied_regime
+					AND = { 
+						NOT = { has_dlc = "Together for Victory" }
+						OR = { 
+							original_tag = POL 
+							original_tag = CZE
+						} 
+					}
+				}
+			}
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = GER_clean_occupied
+		}
+		every_country = {
+			limit = {
+				OR = {
+					NOT = { is_subject_of = GER }
+					AND = {
+						NOT = { has_dlc = "Together for Victory" }
+						NOT = { GER = { has_government = fascism } }
+					}
+					AND = {
+						NOT = { has_autonomy_state = autonomy_collaborator_state }
+						NOT = { has_autonomy_state = autonomy_satellite_state }
+						NOT = { has_autonomy_state = autonomy_protectorate }
+						NOT = { has_autonomy_state = autonomy_commissariat }
+						NOT = { has_autonomy_state = autonomy_occupied_regime }
+					}
+				}
+				OR = {
+					has_cosmetic_tag = GER_occupied
+					has_cosmetic_tag = GER_puppet
+					has_cosmetic_tag = GER_clean_occupied
+					has_cosmetic_tag = GER_clean_puppet
+					has_cosmetic_tag = GER_ENG_satellite_state
+					has_cosmetic_tag = GER_ENG_collaborator_state
+				}
+			}
+			drop_cosmetic_tag = yes
+		}
+	}
+	
+	option = {
+	}
+}

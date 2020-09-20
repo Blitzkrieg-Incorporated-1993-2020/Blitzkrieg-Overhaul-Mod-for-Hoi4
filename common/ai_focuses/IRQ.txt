@@ -1,0 +1,13 @@
+ai_historical_focus_list_ALB = {
+	ai_national_focuses = {
+
+		IRQ_suppress_shia_revolts
+		IRQ_consolidate_power
+		IRQ_support_bakr_sidqi_coup
+		IRQ_the_bakr_sidqi_coup
+		IRQ_grant_more_powers_to_the_king
+		IRQ_path_down_to_fascism
+		IRQ_look_to_fascist_europe
+		IRQ_alliance_with_the_axis
+	}
+}

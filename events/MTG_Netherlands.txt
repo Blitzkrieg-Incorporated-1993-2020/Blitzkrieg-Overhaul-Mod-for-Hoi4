@@ -2280,9 +2280,8 @@ country_event = {
 					NOT = { is_in_faction_with = ROOT }
 					NOT = { has_war_with = ROOT }
 					NOT = {
-						any_country = {
+						any_enemy_country = {
 							has_war_with = PREV
-							has_war_with = ROOT
 						}
 					}
 					is_major = no
@@ -2641,9 +2640,8 @@ country_event = {
 	trigger = {
 		has_global_flag = HOL_inundation_lines_flooded
 		has_full_control_of_state = 7
+		has_full_control_of_state = 35
 		has_full_control_of_state = 36
-		has_full_control_of_state = 1061
-		has_full_control_of_state = 1062
 		NOT = { has_global_flag = HOL_inundation_lines_flooded_unhappiness_timer }
 		NOT = { has_country_flag = HOL_draining_in_progress }
 	}
@@ -2693,9 +2691,8 @@ country_event = {
 		if = {
 			limit = {
 				7 = { is_core_of = ROOT }
+				35 = { is_core_of = ROOT }
 				36 = { is_core_of = ROOT }
-				1061 = { is_core_of = ROOT }
-				1062 = { is_core_of = ROOT }
 			}
 			add_war_support = HOL_inundation_lines_flooding_unhappiness_var
 		}
@@ -2704,9 +2701,8 @@ country_event = {
 				NOT = {
 					AND = {
 						7 = { is_core_of = ROOT }
+						35 = { is_core_of = ROOT }
 						36 = { is_core_of = ROOT }
-						1061 = { is_core_of = ROOT }
-						1062 = { is_core_of = ROOT }
 					}
 				}
 			}
@@ -2724,35 +2720,21 @@ country_event = {
 				    damage = 2
 				}
 			}
+			35 = {
+				damage_building = {
+				    type = infrastructure
+				    damage = 3
+				}
+				damage_building = {
+				    type = industrial_complex
+				    damage = 1.5
+				}
+				damage_building = {
+				    type = arms_factory
+				    damage = 1.5
+				}
+			}
 			36 = {
-				damage_building = {
-				    type = infrastructure
-				    damage = 3
-				}
-				damage_building = {
-				    type = industrial_complex
-				    damage = 1.5
-				}
-				damage_building = {
-				    type = arms_factory
-				    damage = 1.5
-				}
-			}
-			1061 = {
-				damage_building = {
-				    type = infrastructure
-				    damage = 3
-				}
-				damage_building = {
-				    type = industrial_complex
-				    damage = 1.5
-				}
-				damage_building = {
-				    type = arms_factory
-				    damage = 1.5
-				}
-			}
-			1062 = {
 				damage_building = {
 				    type = infrastructure
 				    damage = 3
@@ -2801,7 +2783,7 @@ country_event = {
 		name = excellent
 		if = {
 			limit = {
-				any_state = {
+				any_controlled_state = {
 					is_fully_controlled_by = ROOT
 					is_on_continent = europe
 				}
@@ -2861,8 +2843,8 @@ country_event = {
 		has_government = neutrality
 		has_completed_focus = HOL_wilhelminism
 		NOT = {
-			any_country = {
-				original_tag = GER
+			any_country_with_original_tag = {
+				original_tag_to_check = GER
 				has_country_leader = {
 					name = "Wilhelm II"
 					ruling_only = yes
@@ -2997,8 +2979,8 @@ country_event = {
 		has_completed_focus = HOL_wilhelminism
 		NOT = { has_war_with = GER }
 		is_in_faction = no
-		any_country = {
-			original_tag = GER
+		any_country_with_original_tag = {
+			original_tag_to_check = GER
 			has_government = neutrality
 			is_subject_of = HOL
 		}

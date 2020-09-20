@@ -59,7 +59,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state
 					target = ROM
-					generator = { 78 766 925 }
+					generator = { 78 925 }
 				}
 			}
 		}
@@ -231,7 +231,7 @@ country_event = {
 		NOT = { GER = { is_in_faction_with = SOV } }
 		NOT = { has_war_with = GER }
 		NOT = { has_war_with = SOV }
-		NOT = { has_dlc = "Death or Dishonor" }
+		is_ai = no
 	}
 	
 	mean_time_to_happen = { days = 7 }
@@ -248,10 +248,15 @@ country_event = {
 			ideology = fascism
 			popularity = 0.35
 		}
+		add_ai_strategy = {
+			type = alliance
+			id = "GER"
+			value = 200
+		}
 		add_opinion_modifier = { target = GER modifier = ROM_seek_alliance_GER }
 		add_ideas = ROM_revenge_against_soviet
 		ai_chance = { 
-			base = 2
+			base = 99
 			modifier = {
 				factor = 0
 				has_war_with = GER
@@ -267,6 +272,11 @@ country_event = {
 		add_popularity = {
 		ideology = communism
 			popularity = 0.5
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = "SOV"
+			value = 200
 		}
 		add_opinion_modifier = { target = SOV modifier = ROM_seek_alliance_SOV }
 		add_ideas = ROM_revenge_against_germany

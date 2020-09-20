@@ -1,0 +1,13 @@
+﻿l_russian:
+ IMPOSE_TRADE_EMBARGO_TITLE:0 «Эмбарго»
+ IMPOSE_TRADE_EMBARGO_ACTION_DESC:0 «Накладывают эмбарго».
+ EMBARGO_DENIED:0 "Нужно быть не во фракции, не вместе на войне или иметь пакт о ненападении с [This.GetNameWith Flag]. Кроме того, [This.GetName] не является вашей темой ".
+ EMBARGO_ALLOWED:0 "Очистить для продолжения".
+ CANCEL_TRADE_EMBARGO_TITLE:0 «отменяют эмбарго»
+ CANCEL_TRADE_EMBARGO_ACTION_DESC:0 «Отменяют эмбарго».
+ CANCEL_EMBARGO_ALLOWED:0 "Очистить для продолжения".
+ CANCEL_EMBARGO_DENIED:0 "[This.GetNameWith Flag] - ваша тема или вы с ними в спокойствии".
+ IMPOSE_EMBARGO_TARGET_TITLE:0 «Эмбарго!»
+ IMPOSE_EMBARGO_TARGET_DESC:0 "[ROOT.GetNameWith Flag] принял решение ввести эмбарго против нашей нации!"
+ CANCEL_EMBARGO_TARGET_TITLE:0 «Эмбарго отменен!»
+ CANCEL_EMBARGO_TARGET_DESC:0 "[ROOT.GetNameWith Flag] принял решение отменить эмбарго на нашу нацию!"

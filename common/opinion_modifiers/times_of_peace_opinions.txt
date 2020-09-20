@@ -1,0 +1,18 @@
+opinion_modifiers = {
+	peace_at_last = {
+		value = 100
+		days = 360
+	}
+	peace_at_last1 = {
+		value = 100
+		days = 360
+	}
+	peace_at_last2 = {
+		value = 100
+		days = 360
+	}
+	peace_at_last3 = {
+		value = 100
+		days = 360
+	}
+}

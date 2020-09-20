@@ -1,0 +1,673 @@
+﻿
+
+SS_Inf_01 = 
+{
+	name = "SS Infantry Divisions"
+
+	for_countries = { GER }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "Waffen-SS Volks Div."
+
+
+	ordered =
+	{
+		1 = { "Polizei SS Volks Div." }
+		2 = { "Nibelungen SS Volks Div." }
+		3 = { "Dirlewanger SS Volks Div." }
+		4 = { "30 Januar SS Volks Div." }
+		5 = { "Karl der Große SS Volks Div." }
+		6 = { "Kempf SS Volks Div." }
+		7 = { "Reichadler SS Volks Div." }
+		8 = { "Mühlheim Waffen-SS Volks Div." }
+		9 = { "Main Waffen-SS Volks Div." }
+		10 = { "Donau Waffen-SS Volks Div." }
+		11 = { "Tritt Waffen-SS Volks Div." }
+		12 = { "Marktredwitz Waffen-SS Volks Div." }
+		13 = { "Marienberg Waffen-SS Volks Div." }
+		14 = { "Bünde Waffen-SS Volks Div." }
+		15 = { "Burglengenfeld Waffen-SS Volks Div." }
+		16 = { "Reichenbach Waffen-SS Volks Div." }
+		17 = { "Römhild Waffen-SS Volks Div." }
+		18 = { "Völklingen Waffen-SS Volks Div." }
+		19 = { "Wachenheim Waffen-SS Volks Div." }
+		20 = { "Waghäusel Waffen-SS Volks Div." }
+		21 = { "Mennecke Waffen-SS Volks Div." }
+		22 = { "Reiter Waffen-SS Volks Div." }
+		23 = { "Rostock Waffen-SS Volks Div." }
+		24 = { "Hellinger Waffen-SS Volks Div." }
+		25 = { "Bunke Waffen-SS Volks Div." }
+		26 = { "Rindfleisch Waffen-SS Volks Div." }
+		27 = { "Rühl Waffen-SS Volks Div." }
+		28 = { "Schütz Waffen-SS Volks Div." }
+		29 = { "Treite Waffen-SS Volks Div." }
+		30 = { "Ullrich Waffen-SS Volks Div." }
+		31 = { "Holm Waffen-SS Volks Div." }
+		32 = { "Villinger Waffen-SS Volks Div." }
+		33 = { "Weber Waffen-SS Volks Div." }
+		34 = { "Planck Waffen-SS Volks Div." }
+		35 = { "Heisenberg Waffen-SS Volks Div." }
+		36 = { "Zeiss Waffen-SS Volks Div." }		
+		37 = { "Hennecke Waffen-SS Volks Div." }
+		38 = { "Holzlöhner Waffen-SS Volks Div." }
+		39 = { "Zoller Waffen-SS Volks Div." }
+		40 = { "König Waffen-SS Volks Div." }
+		41 = { "Krebsbach Waffen-SS Volks Div." }
+		42 = { "Morell Waffen-SS Volks Div." }
+		43 = { "Rascher Waffen-SS Volks Div." }
+		44 = { "Liechtenstein Waffen-SS Volks Div." }
+		45 = { "Küstenland Waffen-SS Volks Div." }
+		46 = { "Metz Waffen-SS Volks Div." }	
+
+	}
+}
+
+SS_MOT_01 = 
+{
+	name = "SS Motorized Divisions"
+
+	for_countries = { GER }
+
+	can_use = { always = yes }
+	
+	division_types = { "motorized"  }
+
+	fallback_name = "Waffen-SS Gren.Div."
+
+	ordered =
+	{
+		1 = { "Abenberg Waffen-SS Gren.Div." }
+		2 = { "Kindelbrück Waffen-SS Gren.Div." }
+		3 = { "Müritz Waffen-SS Gren.Div." }
+		4 = { "Röbel. Waffen-SS Gren.Div." }
+		5 = { "Plochingen Waffen-SS Gren.Div." }
+		6 = { "Rhön Waffen-SS Gren.Div." }
+		7 = { "Ostheim Waffen-SS Gren.Div." }
+		8 = { "Obertshausen Waffen-SS Gren.Div." }
+		9 = { "Neusäß Waffen-SS Gren.Div." }
+		10 = { "München Waffen-SS Gren.Div." }
+		11 = { "Schlossberg Waffen-SS Gren.Div." }
+		12 = { "Rößel Waffen-SS Gren.Div." }
+		13 = { "Allenstein Waffen-SS Gren.Div." }
+		14 = { "Posen Waffen-SS Gren.Div." }
+		15 = { "Elblag Waffen-SS Gren.Div." }
+		16 = { "Bromberg Waffen-SS Gren.Div." }
+		17 = { "Zinten Waffen-SS Gren.Div." }
+		18 = { "Stallupönen Waffen-SS Gren.Div." }
+		19 = { "Sensburg Waffen-SS Gren.Div." }
+		20 = { "Wormditt Waffen-SS Gren.Div." }
+		21 = { "Konstanz Waffen-SS Gren.Div." }
+		22 = { "Burg Waffen-SS Gren.Div." }
+		23 = { "Künzelsau Waffen-SS Gren.Div." }
+		24 = { "Hohenlohe Waffen-SS Gren.Div." }
+		25 = { "Landsberg Waffen-SS Gren.Div." }
+		26 = { "Neckar Waffen-SS Gren.Div." }
+		27 = { "Friesland Waffen-SS Gren.Div." }
+		28 = { "Erzgebirgskreis Waffen-SS Gren.Div." }
+		29 = { "Heilbad Waffen-SS Gren.Div." }
+		30 = { "Greiz Waffen-SS Gren.Div." }
+		31 = { "Göttingen Waffen-SS Gren.Div." }
+		32 = { "Hochtaunuskreis Waffen-SS Gren.Div." }
+		33 = { "Freising Waffen-SS Gren.Div." }
+		34 = { "Fulda Waffen-SS Gren.Div." }
+		35 = { "Wetzlar Waffen-SS Gren.Div." }
+		36 = { "Kiel Waffen-SS Gren.Div." }	
+
+	}
+
+}
+
+
+SS_MEC_01 = 
+{
+	name = "SS Panzergrenadier Divisions"
+
+	for_countries = { GER }
+
+	can_use = { always = yes }
+
+	division_types = { "mechanized"  }
+
+	fallback_name = "Waffen-SS Pnz.Gren.Div."
+
+
+	ordered =
+	{
+		1 = { "Polizei SS Pnz.Gren.Div." }
+		2 = { "Germania SS Pnz.Gren.Div." }
+		3 = { "Reichsführer-SS Pnz.Gren.Div." }
+		4 = { "Götz von Berlichingen Pnz.Gren.Div." }
+		5 = { "Horst Wessel SS Pnz.Gren.Div." }
+		6 = { "Deutschland SS Pnz.Gren.Div." }
+		7 = { "Graf Spee SS Pnz.Gren.Div." }
+		8 = { "Siegfried SS Pnz.Gren.Div." }
+		9 = { "Haeseler SS Pnz.Gren.Div." }
+		10 = { "Kleist SS Pnz.Gren.Div." }
+		11 = { "Aachen SS Pnz.Gren.Div." }
+		12 = { "Wrangel SS Pnz.Gren.Div." }
+		13 = { "Heyde SS Pnz.Gren.Div." }
+		14 = { "Krockow SS Pnz.Gren.Div." }
+		15 = { "Hansa SS Pnz.Gren.Div." }
+		16 = { "Freya SS Pnz.Gren.Div." }
+		17 = { "Westphalia SS Pnz.Gren.Div." }
+		18 = { "Rhineland SS Pnz.Gren.Div." }
+		19 = { "Friedberg SS Pnz.Gren.Div." }
+		20 = { "Bayern SS Pnz.Gren.Div." }
+		21 = { "Schweinfurt SS Pnz.Gren.Div." }
+		22 = { "Rottweil SS Pnz.Gren.Div." }
+		23 = { "Merseburg SS Pnz.Gren.Div." }
+		24 = { "Saale-Orla SS Pnz.Gren.Div." }
+		25 = { "Neuss SS Pnz.Gren.Div." }
+		26 = { "Bergischer SS Pnz.Gren.Div." }
+		27 = { "Eisenberg SS Pnz.Gren.Div." }
+		28 = { "Belzig SS Pnz.Gren.Div." }
+		29 = { "Potsdam SS Pnz.Gren.Div." }
+		30 = { "Wildeshausen SS Pnz.Gren.Div." }
+		31 = { "Aalen SS Pnz.Gren.Div." }
+		32 = { "Paderborn SS Pnz.Gren.Div." }
+		33 = { "Hesse SS Pnz.Gren.Div." }
+		34 = { "Offenbach SS Pnz.Gren.Div." }
+		35 = { "Mittelmark SS Pnz.Gren.Div." }
+		36 = { "Plön SS Pnz.Gren.Div." }
+		
+		# put all divisions titled "Panzergrenadier" in this list to avoid confusion, even though some (GD, Brandenburg, etc) were full Panzer Divisions in organization.
+		
+	}
+}
+
+SS_Mnt_01 = 
+{
+	name = "SS Mountain Divisions"
+
+	for_countries = { GER }
+
+	can_use = { always = yes }
+
+	division_types = { "mountaineers"  }
+
+	fallback_name = "SS Gebirgsjäger Div."
+
+	ordered =
+	{
+		1 = { "Maria Theresia SS Gebirgs. Div." }
+		2 = { "Amberg SS Gebirgs. Div." }
+		3 = { "Adelegg SS Gebirgs. Div." }
+		4 = { "Elfas SS Gebirgs. Div." }
+		5 = { "Karstjäger SS Gebirgs. Div." }
+		6 = { "Finne SS Gebirgs. Div." }
+		7 = { "Hunsrück SS Gebirgs. Div." }
+		8 = { "Kaiserstuhl SS Gebirgs. Div." }
+		9 = { "Rammert SS Gebirgs. Div." }
+		10 = { "Rotenberg SS Gebirgs. Div." }
+		11 = { "Süntel SS Gebirgs. Div." }
+		12 = { "Teutoburg SS Gebirgs. Div." }
+		13 = { "Vorberge SS Gebirgs. Div." }
+		14 = { "Zittau SS Gebirgs. Div." }
+		15 = { "Aremberg SS Gebirgs. Div." }
+		16 = { "Dollberg SS Gebirgs. Div." }
+		17 = { "Scharfenberg SS Gebirgs. Div." }
+		18 = { "Schönberg SS Gebirgs. Div." }
+		19 = { "Krottenkopf SS Gebirgs. Div." }
+		20 = { "Hülsenberg SS Gebirgs. Div." }
+		21 = { "Helpter SS Gebirgs. Div." }
+		22 = { "Scheelsberg SS Gebirgs. Div." }
+		23 = { "Wolfsköpfe SS Gebirgs. Div." }
+		24 = { "Eisenberg SS Gebirgs. Div." }
+		25 = { "Homert SS Gebirgs. Div." }
+		26 = { "Adlershorst SS Gebirgs. Div." }
+		27 = { "Windmühlenberg SS Gebirgs. Div." }
+		28 = { "Stocksberg SS Gebirgs. Div." }
+		29 = { "Wüstenberg SS Gebirgs. Div." }
+		30 = { "Müggelberg SS Gebirgs. Div." }
+		31 = { "Grasberg SS Gebirgs. Div." }
+		32 = { "Donnersberg SS Gebirgs. Div." }
+		33 = { "Hohwacht SS Gebirgs. Div." }
+		34 = { "Staufenberg  SS Gebirgs. Div." }
+		35 = { "Langenberg SS Gebirgs. Div." }
+		36 = { "Vier SS Gebirgs. Div." }
+		
+	}
+}
+
+
+SS_GAR_01 = 
+{
+	name = "SS Garrison Divisions"
+
+	for_countries = { GER }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry"  }
+
+	fallback_name = "SS-Standarte"
+
+	ordered =
+	{
+		1 = { "%s. SS-Standarte" }
+		2 = { "%s. SS-Standarte" }
+		3 = { "%s. SS-Standarte" }
+		4 = { "%s. SS-Standarte" }
+		5 = { "%s. SS-Standarte" }
+		6 = { "%s. SS-Standarte" }
+		7 = { "%s. SS-Standarte" }
+		8 = { "%s. SS-Standarte" }
+		9 = { "%s. SS-Standarte" }
+		10 = { "%s. SS-Standarte" }
+		11 = { "%s. SS-Standarte" }
+		12 = { "%s. SS-Standarte" }
+		13 = { "%s. SS-Standarte" }
+		14 = { "%s. SS-Standarte" }
+		15 = { "%s. SS-Standarte" }
+		16 = { "%s. SS-Standarte" }
+		17 = { "%s. SS-Standarte" }
+		18 = { "%s. SS-Standarte" }
+		19 = { "%s. SS-Standarte" }
+		20 = { "%s. SS-Standarte" }
+		21 = { "%s. SS-Standarte" }
+		22 = { "%s. SS-Standarte" }
+		23 = { "%s. SS-Standarte" }
+		24 = { "%s. SS-Standarte" }
+		25 = { "%s. SS-Standarte" }
+		26 = { "%s. SS-Standarte" }
+		27 = { "%s. SS-Standarte" }
+		28 = { "%s. SS-Standarte" }
+		29 = { "%s. SS-Standarte" }
+		30 = { "%s. SS-Standarte" }
+		31 = { "%s. SS-Standarte" }
+		32 = { "%s. SS-Standarte" }
+		33 = { "%s. SS-Standarte" }
+		34 = { "%s. SS-Standarte" }
+		35 = { "%s. SS-Standarte" }
+		36 = { "%s. SS-Standarte" }
+		44 = { "%s. SS-Standarte" }
+		45 = { "%s. SS-Standarte" }
+		46 = { "%s. SS-Standarte" }
+		61 = { "%s. SS-Standarte" }
+		50 = { "%s. SS-Standarte" }
+		52 = { "%s. SS-Standarte" }
+		56 = { "%s. SS-Standarte" }
+		57 = { "%s. SS-Standarte" }
+		58 = { "%s. SS-Standarte" }
+		62 = { "%s. SS-Standarte" }
+		68 = { "%s. SS-Standarte" }
+		69 = { "%s. SS-Standarte" }
+		71 = { "%s. SS-Standarte" }
+		73 = { "%s. SS-Standarte" }
+		75 = { "%s. SS-Standarte" }
+		76 = { "%s. SS-Standarte" }
+		78 = { "%s. SS-Standarte" }
+		79 = { "%s. SS-Standarte" }
+		86 = { "%s. SS-Standarte" }
+		87 = { "%s. SS-Standarte" }
+		206 = { "%s. SS-Standarte" }
+		207 = { "%s. SS-Standarte" }
+		208 = { "%s. SS-Standarte" }
+		209 = { "%s. SS-Standarte" }
+		211 = { "%s. SS-Standarte" }
+		212 = { "%s. SS-Standarte" }
+		213 = { "%s. SS-Standarte" }
+		214 = { "%s. SS-Standarte" }
+		215 = { "%s. SS-Standarte" }
+		216 = { "%s. SS-Standarte" }
+		217 = { "%s. SS-Standarte" }
+		218 = { "%s. SS-Standarte" }
+		221 = { "%s. SS-Standarte" }
+		223 = { "%s. SS-Standarte" }
+		225 = { "%s. SS-Standarte" }
+		227 = { "%s. SS-Standarte" }
+		228 = { "%s. SS-Standarte" }
+		231 = { "%s. SS-Standarte" }
+		239 = { "%s. SS-Standarte" }
+		246 = { "%s. SS-Standarte" }
+		251 = { "%s. SS-Standarte" }
+		252 = { "%s. SS-Standarte" }
+		253 = { "%s. SS-Standarte" }
+		254 = { "%s. SS-Standarte" }
+		255 = { "%s. SS-Standarte" }
+		256 = { "%s. SS-Standarte" }
+		257 = { "%s. SS-Standarte" }
+		258 = { "%s. SS-Standarte" }
+		260 = { "%s. SS-Standarte" }
+		262 = { "%s. SS-Standarte" }
+		263 = { "%s. SS-Standarte" }
+		267 = { "%s. SS-Standarte" }
+		268 = { "%s. SS-Standarte" }
+		269 = { "%s. SS-Standarte" }
+		93 = { "%s. SS-Standarte" }
+		94 = { "%s. SS-Standarte" }
+		98 = { "%s. SS-Standarte" }
+		72 = { "%s. SS-Standarte" }
+		95 = { "%s. SS-Standarte" }
+		96 = { "%s. SS-Standarte" }
+		60 = { "%s. SS-Standarte" }
+		163 = { "%s. SS-Standarte" }
+		167 = { "%s. SS-Standarte" }
+		164 = { "%s. SS-Standarte" }
+		196 = { "%s. SS-Standarte" }
+		183 = { "%s. SS-Standarte" }
+		81 = { "%s. SS-Standarte" }
+		82 = { "%s. SS-Standarte" }
+		83 = { "%s. SS-Standarte" }
+		88 = { "%s. SS-Standarte" }
+		162 = { "%s. SS-Standarte" }
+		168 = { "%s. SS-Standarte" }
+		170 = { "%s. SS-Standarte" }
+		181 = { "%s. SS-Standarte" }
+		197 = { "%s. SS-Standarte" }
+		198 = { "%s. SS-Standarte" }
+		169 = { "%s. SS-Standarte" }
+		161 = { "%s. SS-Standarte" }
+		205 = { "%s. SS-Standarte" }
+		297 = { "%s. SS-Standarte" }
+		290 = { "%s. SS-Standarte" }
+		291 = { "%s. SS-Standarte" }
+		292 = { "%s. SS-Standarte" }
+		294 = { "%s. SS-Standarte" }
+		296 = { "%s. SS-Standarte" }
+		298 = { "%s. SS-Standarte" }
+		293 = { "%s. SS-Standarte" }
+		299 = { "%s. SS-Standarte" }
+		295 = { "%s. SS-Standarte" }
+		121 = { "%s. SS-Standarte" }
+		131 = { "%s. SS-Standarte" }
+		132 = { "%s. SS-Standarte" }
+		134 = { "%s. SS-Standarte" }
+		123 = { "%s. SS-Standarte" }
+		122 = { "%s. SS-Standarte" }
+		137 = { "%s. SS-Standarte" }
+		100 = { "%s. SS-Standarte" }
+		126 = { "%s. SS-Standarte" }
+		125 = { "%s. SS-Standarte" }
+		129 = { "%s. SS-Standarte" }
+		199 = { "%s. SS-Standarte" }
+		111 = { "%s. SS-Standarte" }
+		302 = { "%s. SS-Standarte" }
+		304 = { "%s. SS-Standarte" }
+		306 = { "%s. SS-Standarte" }
+		319 = { "%s. SS-Standarte" }
+		332 = { "%s. SS-Standarte" }
+		333 = { "%s. SS-Standarte" }
+		340 = { "%s. SS-Standarte" }
+		337 = { "%s. SS-Standarte" }
+		99 = { "%s. SS-Standarte" }
+		342 = { "%s. SS-Standarte" }
+		335 = { "%s. SS-Standarte" }
+		106 = { "%s. SS-Standarte" }
+		320 = { "%s. SS-Standarte" }
+		97 = { "%s. SS-Standarte" }
+		101 = { "%s. SS-Standarte" }
+		110 = { "%s. SS-Standarte" }
+		112 = { "%s. SS-Standarte" }
+		113 = { "%s. SS-Standarte" }
+		102 = { "%s. SS-Standarte" }
+		305 = { "%s. SS-Standarte" }
+		323 = { "%s. SS-Standarte" }
+		336 = { "%s. SS-Standarte" }
+		339 = { "%s. SS-Standarte" }
+		321 = { "%s. SS-Standarte" }
+		718 = { "%s. SS-Standarte" }
+		704 = { "%s. SS-Standarte" }
+		702 = { "%s. SS-Standarte" }
+		711 = { "%s. SS-Standarte" }
+		714 = { "%s. SS-Standarte" }
+		707 = { "%s. SS-Standarte" }
+		708 = { "%s. SS-Standarte" }
+		709 = { "%s. SS-Standarte" }
+		710 = { "%s. SS-Standarte" }
+		713 = { "%s. SS-Standarte" }
+		716 = { "%s. SS-Standarte" }
+		719 = { "%s. SS-Standarte" }
+		715 = { "%s. SS-Standarte" }
+		717 = { "%s. SS-Standarte" }
+		328 = { "%s. SS-Standarte" }
+		329 = { "%s. SS-Standarte" }
+		330 = { "%s. SS-Standarte" }
+		331 = { "%s. SS-Standarte" }
+		416 = { "%s. SS-Standarte" }
+		384 = { "%s. SS-Standarte" }
+		385 = { "%s. SS-Standarte" }
+		383 = { "%s. SS-Standarte" }
+		389 = { "%s. SS-Standarte" }
+		387 = { "%s. SS-Standarte" }
+		370 = { "%s. SS-Standarte" }
+		371 = { "%s. SS-Standarte" }
+		376 = { "%s. SS-Standarte" }
+		377 = { "%s. SS-Standarte" }
+		38 = { "%s. SS-Standarte" }
+		39 = { "%s. SS-Standarte" }
+		65 = { "%s. SS-Standarte" }
+		348 = { "%s. SS-Standarte" }
+		346 = { "%s. SS-Standarte" }
+		344 = { "%s. SS-Standarte" }
+		343 = { "%s. SS-Standarte" }
+		909 = { "%s. SS-Standarte" }
+		910 = { "%s. SS-Standarte" }
+		911 = { "%s. SS-Standarte" }
+		912 = { "%s. SS-Standarte" }
+		914 = { "%s. SS-Standarte" }
+		913 = { "%s. SS-Standarte" }
+		915 = { "%s. SS-Standarte" }
+		917 = { "%s. SS-Standarte" }
+		919 = { "%s. SS-Standarte" }
+		920 = { "%s. SS-Standarte" }
+		923 = { "%s. SS-Standarte" }
+		347 = { "%s. SS-Standarte" }
+		916 = { "%s. SS-Standarte" }
+		326 = { "%s. SS-Standarte" }
+		338 = { "%s. SS-Standarte" }
+		921 = { "%s. SS-Standarte" }
+		922 = { "%s. SS-Standarte" }
+		334 = { "%s. SS-Standarte" }
+		918 = { "%s. SS-Standarte" }
+		924 = { "%s. SS-Standarte" }
+		925 = { "%s. SS-Standarte" }
+		926 = { "%s. SS-Standarte" }
+		929 = { "%s. SS-Standarte" }
+		282 = { "%s. SS-Standarte" }
+		355 = { "%s. SS-Standarte" }
+		927 = { "%s. SS-Standarte" }
+		928 = { "%s. SS-Standarte" }
+		356 = { "%s. SS-Standarte" }
+		264 = { "%s. SS-Standarte" }
+		265 = { "%s. SS-Standarte" }
+		266 = { "%s. SS-Standarte" }
+		274 = { "%s. SS-Standarte" }
+		242 = { "%s. SS-Standarte" }
+		243 = { "%s. SS-Standarte" }
+		244 = { "%s. SS-Standarte" }
+		245 = { "%s. SS-Standarte" }
+		352 = { "%s. SS-Standarte" }
+		353 = { "%s. SS-Standarte" }
+		357 = { "%s. SS-Standarte" }
+		359 = { "%s. SS-Standarte" }
+		362 = { "%s. SS-Standarte" }
+		367 = { "%s. SS-Standarte" }
+		271 = { "%s. SS-Standarte" }
+		272 = { "%s. SS-Standarte" }
+		275 = { "%s. SS-Standarte" }
+		276 = { "%s. SS-Standarte" }
+		277 = { "%s. SS-Standarte" }
+		278 = { "%s. SS-Standarte" }
+		349 = { "%s. SS-Standarte" }
+		361 = { "%s. SS-Standarte" }
+		363 = { "%s. SS-Standarte" }
+		77 = { "%s. SS-Standarte" }
+		89 = { "%s. SS-Standarte" }
+		91 = { "%s. SS-Standarte" }
+		92 = { "%s. SS-Standarte" }
+		47 = { "%s. SS-Standarte" }
+		48 = { "%s. SS-Standarte" }
+		49 = { "%s. SS-Standarte" }
+		84 = { "%s. SS-Standarte" }
+		85 = { "%s. SS-Standarte" }
+		237 = { "%s. SS-Standarte" }
+		59 = { "%s. SS-Standarte" }
+		64 = { "%s. SS-Standarte" }
+		226 = { "%s. SS-Standarte" }
+		232 = { "%s. SS-Standarte" }
+		541 = { "%s. SS-Standarte" }
+		544 = { "%s. SS-Standarte" }
+		545 = { "%s. SS-Standarte" }
+		547 = { "%s. SS-Standarte" }
+		548 = { "%s. SS-Standarte" }
+		549 = { "%s. SS-Standarte" }
+		551 = { "%s. SS-Standarte" }
+		553 = { "%s. SS-Standarte" }
+		558 = { "%s. SS-Standarte" }
+		559 = { "%s. SS-Standarte" }
+		561 = { "%s. SS-Standarte" }
+		562 = { "%s. SS-Standarte" }
+		70 = { "%s. SS-Standarte" }
+		542 = { "%s. SS-Standarte" }
+		563 = { "%s. SS-Standarte" }
+		148 = { "%s. SS-Standarte" }
+		189 = { "%s. SS-Standarte" }
+		159 = { "%s. SS-Standarte" }
+		176 = { "%s. SS-Standarte" }
+		180 = { "%s. SS-Standarte" }
+		190 = { "%s. SS-Standarte" }
+		286 = { "%s. SS-Standarte" }
+		203 = { "%s. SS-Standarte" }
+		41 = { "%s. SS-Standarte" }
+		281 = { "%s. SS-Standarte" }
+		303 = { "%s. SS-Standarte" }
+		309 = { "%s. SS-Standarte" }
+		947 = { "%s. SS-Standarte" }
+		153 = { "%s. SS-Standarte" }
+		154 = { "%s. SS-Standarte" }
+		155 = { "%s. SS-Standarte" }
+		948 = { "%s. SS-Standarte" }
+		324 = { "%s. SS-Standarte" }
+		160	= { "%s. SS-Standarte" }
+		166 = { "%s. SS-Standarte" }
+		949 = { "%s. SS-Standarte" }
+		156 = { "%s. SS-Standarte" }
+		903 = { "%s. SS-Standarte" }
+		904 = { "%s. SS-Standarte" }
+		905 = { "%s. SS-Standarte" }
+		901 = { "%s. SS-Standarte" }
+		907 = { "%s. SS-Standarte" }
+		906 = { "%s. SS-Standarte" }
+		930 = { "%s. SS-Standarte" }
+		900 = { "%s. SS-Standarte" }
+		902 = { "%s. SS-Standarte" }
+	}
+	
+}
+
+
+
+SS_Arm_01 = 
+{
+	name = "SS Panzer Divisions"
+
+	for_countries = { GER }
+
+	can_use = { always = yes }
+
+	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor" }
+
+	fallback_name = "Waffen-SS Pnz.Div."
+
+	# Names with numbers (only one number per entry)
+	ordered =
+	{
+		1 = { "Leibstandarte AH SS Pnz.Div." }
+		2 = { "Das Reich SS Pnz.Div." }
+		3 = { "Totenkopf SS Pnz.Div." }
+		4 = { "Deutschland SS Pnz.Div." }
+		5 = { "Hohenstaufen SS Pnz.Div." }
+		6 = { "Frundsberg SS Pnz.Div." }
+		7 = { "Hitlerjugend SS Pnz.Div." }
+		8 = { "Der Führer SS Pnz.Div." }
+		9 = { "Feldherrnhalle SS Pnz.Div." }
+		10 = { "Germania SS Pnz.Div." }
+		11 = { "Westland SS Pnz.Div." }
+		12 = { "Nordmark Waffen-SS Pnz.Div." }
+		13 = { "Küstenland Waffen-SS Pnz.Div." }
+		14 = { "Reichsgau Burgund Waffen-SS Pnz.Div." }
+		15 = { "Großdeutschland Waffen-SS Pnz.Div." }
+		16 = { "Gotenland Waffen-SS Pnz.Div." }
+		17 = { "Metz Waffen-SS Pnz.Div." }
+		18 = { "Kurland Waffen-SS Pnz.Div." }
+		19 = { "Dünaland Waffen-SS Pnz.Div." }
+		20 = { "Ostland Waffen-SS Pnz.Div." }
+		21 = { "Radom Waffen-SS Pnz.Div." }
+		22 = { "Reichenau Waffen-SS Pnz.Div." }
+		23 = { "Lublin Waffen-SS Pnz.Div." }
+		24 = { "Wartheland Waffen-SS Pnz.Div." }
+		25 = { "Wien Waffen-SS Pnz.Div." }
+		26 = { "Niederdonau Waffen-SS Pnz.Div." }
+		27 = { "Thüringen Waffen-SS Pnz.Div." }
+		28 = { "Krakau Waffen-SS Pnz.Div." }
+		29 = { "Westpreußen Waffen-SS Pnz.Div." }
+		30 = { "Kärnten Waffen-SS Pnz.Div." }
+		31 = { "Schlesien Waffen-SS Pnz.Div." }
+		32 = { "Saarpfalz Waffen-SS Pnz.Div." }
+		33 = { "Oberbayern Waffen-SS Pnz.Div." }
+		34 = { "Trier Waffen-SS Pnz.Div." }
+		35 = { "Berlin Waffen-SS Pnz.Div." }
+		36 = { "Posen Waffen-SS Pnz.Div." }
+
+	}
+}
+
+SS_Cav_01 = 
+{
+	name = "SS Cavalry Divisions"
+
+	for_countries = { GER }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry"  }
+
+	fallback_name = "SS Kavallerie Div."
+	ordered =
+	{
+		1 = { "Maria Theresia SS Kav.Div." }
+		2 = { "Alpenland SS Kav.Div." }
+		3 = { "Donau SS Kav.Div." }
+		4 = { "Elbe SS Kav.Div." }
+		5 = { "Fulda SS Kav.Div." }
+		6 = { "Werra SS Kav.Div." }
+		7 = { "Lothringen SS Kav.Div." }
+		8 = { "Saarpfalz SS Kav.Div." }
+		9 = { "Main SS Kav.Div." }
+		10 = { "Nordsee SS Kav.Div." }
+		11 = { "Ostland SS Kav.Div." }
+		12 = { "Österreich SS Kav.Div." }
+		13 = { "Rhein SS Kav.Div." }
+		14 = { "Westmark SS Kav.Div." }
+		15 = { "Spree SS Kav.Div." }
+		16 = { "Warthe SS Kav.Div." }
+		17 = { "Weichsel SS Kav.Div." }
+		18 = { "Westmark SS Kav.Div." }
+		19 = { "Metz SS Kav.Div." }
+		20 = { "Neustadt SS Kav.Div." }
+		21 = { "Düsseldorf SS Kav.Div." }
+		22 = { "Danzig SS Kav.Div." }
+		23 = { "Posen SS Kav.Div." }
+		24 = { "Stuttgart SS Kav.Div." }
+		25 = { "Breslau SS Kav.Div." }
+		26 = { "Brieg SS Kav.Div." }
+		27 = { "Berlin SS Kav.Div." }
+		28 = { "Wiesbaden SS Kav.Div." }
+		29 = { "Koblenz SS Kav.Div." }
+		30 = { "Stettin SS Kav.Div." }
+		31 = { "Krakau SS Kav.Div." }
+		32 = { "Altona SS Kav.Div." }
+		33 = { "Königsberg SS Kav.Div." }
+		34 = { "Hamburg SS Kav.Div." }
+		35 = { "Braunschweig SS Kav.Div." }
+		36 = { "Nürnberg SS Kav.Div." }
+
+	}
+}
+
+
+

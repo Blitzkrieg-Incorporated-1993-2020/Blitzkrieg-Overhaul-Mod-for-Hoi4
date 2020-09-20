@@ -1,0 +1,41 @@
+
+animation = {
+	name = "CAF_88aagun_idle_animation"
+	file = "CAF_88aagun_idle.anim"
+}
+
+animation = {
+	name = "CAF_88aagun_combat_idle_animation"
+	file = "CAF_88aagun_combat_idle.anim"
+}
+
+animation = {
+	name = "CAF_88aagun_attack_animation"
+	file = "CAF_88aagun_attack.anim"
+}
+
+animation = {
+	name = "CAF_artillery_idle_animation"
+	file = "CAF_artillery_idle.anim"
+}
+animation = {
+	name = "CAF_artillery_moving_animation"
+	file = "CAF_artillery_moving.anim"
+}
+animation = {
+	name = "CAF_artillery_attack_animation"
+	file = "CAF_artillery_attack.anim"
+}
+
+animation = {
+	name = "CAF_artillery_frame_idle_animation"
+	file = "CAF_artillery_frame_idle.anim"
+}
+animation = {
+	name = "CAF_artillery_frame_moving_animation"
+	file = "CAF_artillery_frame_moving.anim"
+}
+animation = {
+	name = "CAF_artillery_frame_attack_animation"
+	file = "CAF_artillery_frame_attack.anim"
+}

@@ -1,0 +1,3755 @@
+focus_tree = {
+	id = TurkeyRework_Focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = TUR
+		}
+	}
+	default = no
+	focus = {
+		id = ordu_guc
+		text = ordu_guc
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 10,00
+		x = 8
+		y = 0
+			completion_reward = {
+					add_ideas = TUR_ordu
+					add_war_support = 0.05
+					army_experience = 50
+					air_experience = 50
+					navy_experience = 50
+				}
+
+	}
+	focus = {
+		id = anadolu_savun
+		text = anadolu_savun
+		icon = GFX_goal_generic_build_tank
+		cost = 10,00
+		x = 2
+		y = 0
+			completion_reward = {
+					add_ideas =TUR_savunma
+					add_tech_bonus = {
+							name = TUR_anadolu_savun
+							bonus = 0.5
+							uses = 1
+							category = land_doctrine
+						}
+					49 = {
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = hava_guc
+		text = hava_guc
+		icon = GFX_goal_generic_build_airforce
+		cost = 10,00
+		x = 15
+		y = 0
+			completion_reward = {
+					air_experience = 25
+					add_tech_bonus = {
+							name = TUR_hava_guc
+							bonus = 1.0
+							uses = 1
+							category = air_doctrine
+						}
+				}
+
+	}
+	focus = {
+		id = deniz_guc
+		text = deniz_guc
+		icon = GFX_goal_generic_build_navy
+		cost = 10,00
+		x = 21
+		y = 0
+			available_if_capitulated = no
+			available = {
+					any_state = {
+							is_coastal = yes
+							is_controlled_by = ROOT
+						}
+				}
+			complete_tooltip = {
+					navy_experience = 25
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+							type = dockyard
+							level = 3
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					navy_experience = 15
+					if = {
+							limit = {
+									any_owned_state = {
+											is_coastal = yes
+										}
+								}
+							random_owned_controlled_state = {
+									limit = {
+											is_coastal = yes
+										}
+									add_extra_state_shared_building_slots = 5
+									add_building_construction = {
+											type = dockyard
+											level = 2
+											instant_build = yes
+										}
+								}
+							set_state_flag = TUR_deniz_guc
+						}
+				}
+
+	}
+	focus = {
+		id = cimento_odak
+		text = cimento_odak
+		icon = GFX_goal_generic_construction
+		cost = 10,00
+		x = 30
+		y = 0
+			complete_tooltip = {
+					random_state = {
+							limit = {
+									has_state_flag = TUR_build_pasabahce_glass_factory_1
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+			available_if_capitulated = no
+			available = {
+					343_state = {
+							is_controlled_by = ROOT
+						}
+					346_state = {
+							is_controlled_by = ROOT
+						}
+					348_state = {
+							is_controlled_by = ROOT
+						}
+					349_state = {
+							is_controlled_by = ROOT
+						}
+					353_state = {
+							is_controlled_by = ROOT
+						}
+					344_state = {
+							is_controlled_by = ROOT
+						}
+					345_state = {
+							is_controlled_by = ROOT
+						}
+					342_state = {
+							is_controlled_by = ROOT
+						}
+					339_state = {
+							is_controlled_by = ROOT
+						}
+					340_state = {
+							is_controlled_by = ROOT
+						}
+					341_state = {
+							is_controlled_by = ROOT
+						}
+					347_state = {
+							is_controlled_by = ROOT
+						}
+					355_state = {
+							is_controlled_by = ROOT
+						}
+					356_state = {
+							is_controlled_by = ROOT
+						}
+					354_state = {
+							is_controlled_by = ROOT
+						}
+					352_state = {
+							is_controlled_by = ROOT
+						}
+					350_state = {
+							is_controlled_by = ROOT
+						}
+					49_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					343 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					346 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					349 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					348 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					353 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					340 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					339 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					342 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					345 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					344 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					350 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					352 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					354 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					355 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					356 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					347 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					49 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					343 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = diplomatik_caba
+		icon = GFX_goal_generic_improve_relations
+		cost = 10,00
+		x = 43
+		y = 0
+			ai_will_do = {
+					factor = 10
+				}
+			available = {
+					is_puppet = no
+				}
+			completion_reward = {
+					add_political_power = 120
+				}
+
+	}
+	focus = {
+		id = sinir_restore
+		icon = GFX_goal_generic_attack_allies
+		cost = 10,00
+		x = 58
+		y = 0
+		available = {
+			is_major = yes
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			add_political_power = 120
+			add_war_support = 0.05
+			justify_war_goal_time = -0.25
+			add_ideas = TUR_imparatorluk
+		}
+	}
+	focus = {
+		id = cakmak_hat
+		text = cakmak_hat
+		icon = GFX_goal_generic_construct_military
+		cost = 10,00
+		prerequisite = {
+			focus = anadolu_savun
+		}
+		x = 1
+		y = 1
+			available = {
+					341 = {
+							CONTROLLER = {
+									OR = {
+											tag = TUR
+											is_subject_of = TUR
+										}
+								}
+						}
+				}
+			completion_reward = {
+					341 = {
+							add_building_construction = {
+									type = bunker
+									province = 922
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = bunker
+									province = 11842
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = bunker
+									province = 3893
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = bunker
+									province = 849
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = sovyet_hat
+		text = sovyet_hat
+		icon = GFX_goal_generic_construct_military
+		cost = 10,00
+		prerequisite = {
+			focus = anadolu_savun
+		}
+		x = 3
+		y = 1
+			available_if_capitulated = no
+			available = {
+					354 = {
+							is_controlled_by = ROOT
+						}
+					353 = {
+							is_controlled_by = ROOT
+						}
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					354 = {
+							add_building_construction = {
+									type = coastal_bunker
+									province = 3714
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 9932
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = bunker
+									province = 10403
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = bunker
+									province = 7454
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = bunker
+									province = 11753
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 11753
+									level = 2
+									instant_build = yes
+								}
+						}
+					353 = {
+							add_building_construction = {
+									type = bunker
+									province = 10472
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = bunker
+									province = 12376
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = bunker
+									province = 4583
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = trabzon_havaliman
+		text = trabzon_havaliman
+		icon = GFX_goal_generic_air_fighter2
+		cost = 10,00
+		prerequisite = {
+			focus = cakmak_hat
+			focus = sovyet_hat
+		}
+		x = 2
+		y = 2
+			available_if_capitulated = no
+			available = {
+					354 = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					354 = {
+							add_building_construction = {
+									type = air_base
+									state = 354
+									level = 5
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = akdeniz_hat
+		text = akdeniz_hat
+		icon = GFX_goal_generic_fortify_city
+		cost = 10,00
+		prerequisite = {
+			focus = trabzon_havaliman
+		}
+		x = 1
+		y = 3
+			available_if_capitulated = no
+			available = {
+					342 = {
+							is_controlled_by = ROOT
+						}
+					345 = {
+							is_controlled_by = ROOT
+						}
+					344 = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					342 = {
+							add_building_construction = {
+									type = coastal_bunker
+									province = 9941
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 10122
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 12096
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 1119l
+									level = 5
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 1005
+									level = 2
+									instant_build = yes
+								}
+						}
+					345 = {
+							add_building_construction = {
+									type = coastal_bunker
+									province = 1122
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 4127
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 4008
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 7026
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 4124
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 10056
+									level = 2
+									instant_build = yes
+								}
+							344 = {
+									add_building_construction = {
+											type = coastal_bunker
+											province = 11810
+											level = 2
+											instant_build = yes
+										}
+									add_building_construction = {
+											type = coastal_bunker
+											province = 11746
+											level = 2
+											instant_build = yes
+										}
+									add_building_construction = {
+											type = coastal_bunker
+											province = 806
+											level = 2
+											instant_build = yes
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = ege_hat
+		text = ege_hat
+		icon = GFX_goal_generic_fortify_city
+		cost = 10,00
+		prerequisite = {
+			focus = trabzon_havaliman
+		}
+		x = 3
+		y = 3
+			available_if_capitulated = no
+			available = {
+					339 = {
+							is_controlled_by = ROOT
+						}
+					340 = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					339 = {
+							add_building_construction = {
+									type = coastal_bunker
+									province = 10038
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 7130
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 4112
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = coastal_bunker
+									province = 11848
+									level = 2
+									instant_build = yes
+								}
+							340 = {
+									add_building_construction = {
+											type = coastal_bunker
+											province = 9799
+											level = 2
+											instant_build = yes
+										}
+									add_building_construction = {
+											type = coastal_bunker
+											province = 6864
+											level = 2
+											instant_build = yes
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = suriye_hat
+		text = suriye_hat
+		icon = GFX_goal_generic_construct_military
+		cost = 10,00
+		prerequisite = {
+			focus = ege_hat
+			focus = akdeniz_hat
+		}
+		x = 3
+		y = 4
+			available_if_capitulated = no
+			available = {
+					344 = {
+							is_controlled_by = ROOT
+						}
+					350 = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					344 = {
+							add_building_construction = {
+									type = bunker
+									province = 806
+									level = 2
+									instant_build = yes
+								}
+							building_construction = {
+									type = bunker
+									province = 3889
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = bunker
+									province = 9893
+									level = 2
+									instant_build = yes
+								}
+							350 = {
+									add_building_construction = {
+											type = bunker
+											province = 9823
+											level = 2
+											instant_build = yes
+										}
+									add_building_construction = {
+											type = bunker
+											province = 11871
+											level = 2
+											instant_build = yes
+										}
+									add_building_construction = {
+											type = bunker
+											province = 12416
+											level = 2
+											instant_build = yes
+										}
+									add_building_construction = {
+											type = bunker
+											province = 12387
+											level = 2
+											instant_build = yes
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = piyade_ekipman
+		text = piyade_ekipman
+		icon = GFX_focus_secret_rearmament
+		cost = 5,00
+		prerequisite = {
+			focus = ordu_guc
+		}
+		x = 6
+		y = 1
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_piyade_ekipman
+							bonus = 1.0
+							uses = 1
+							category = infantry_weapons
+						}
+				}
+
+	}
+	focus = {
+		id = suvari_modernize
+		text = suvari_modernize
+		icon = GFX_goal_generic_cavalry
+		cost = 5,00
+		prerequisite = {
+			focus = piyade_ekipman
+		}
+		x = 5
+		y = 2
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_suvari_modernize
+							bonus = 0.75
+							uses = 1
+							category = motorized_equipment
+						}
+					if = {
+							limit = {
+									TUR = {
+											owns_state = 49
+										}
+								}
+							TUR = {
+									country_event = {
+											id = turkey.35
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = motorize_birlik
+		text = motorize_birlik
+		icon = GFX_goal_generic_army_motorized
+		cost = 5,00
+		prerequisite = {
+			focus = piyade_ekipman
+		}
+		x = 7
+		y = 2
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_motorize_birlik
+							bonus = 0.75
+							uses = 1
+							category = motorized_equipment
+						}
+				}
+
+	}
+	focus = {
+		id = topcu_modernize
+		text = topcu_modernize
+		icon = GFX_goal_generic_army_artillery2
+		cost = 5,00
+		prerequisite = {
+			focus = motorize_birlik
+		}
+		x = 6
+		y = 3
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_topcu_modernize
+							bonus = 0.75
+							uses = 1
+							category = artillery
+						}
+						
+				if = {
+					else = {
+						division_template = {
+						name = "Topcu Piyade Tümeni"
+						priority = 2
+						division_names_group = TUR_INF_02
+						regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }			
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					}
+					support = {
+					artillery = { x = 0 y = 0 }
+				}
+			}
+		}
+				random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 353 }
+				create_unit = {
+				division = "name = \"Topcu Piyade Tümeni\" division_template = \"Topcu Piyade Tümeni\" start_experience_factor = 0.5" 
+				owner = TUR
+					}
+				create_unit = {
+				division = "name = \"Topcu Piyade Tümeni\" division_template = \"Topcu Piyade Tümeni\" start_experience_factor = 0.5" 
+				owner = TUR
+					}
+				}
+			}					
+		}
+	}
+	focus = {
+		id = etimesgut_okul
+		text = etimesgut_okul
+		icon = GFX_focus_generic_tank_production
+		cost = 5,00
+		prerequisite = {
+			focus = topcu_modernize
+		}
+		x = 6
+		y = 4
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_etimesgut_okul
+							bonus = 1.0
+							uses = 1
+							category = armor
+						}
+				}
+
+	}
+	focus = {
+		id = tank_modernize
+		text = tank_modernize
+		icon = GFX_focus_generic_license_production
+		cost = 5,00
+		prerequisite = {
+			focus = etimesgut_okul
+		}
+		x = 6
+		y = 5
+			completion_reward = {
+					add_ideas = TUR_zirh
+					add_tech_bonus = {
+							name = TUR_tank_modernize
+							bonus = 1.0
+							uses = 1
+							category = armor
+						}
+				}
+
+	}
+	focus = {
+		id = ordu_modernize
+		text = ordu_modernize
+		icon = GFX_focus_generic_little_entente
+		cost = 5,00
+		prerequisite = {
+			focus = ordu_guc
+		}
+		x = 10
+		y = 1
+			completion_reward = {
+					army_experience = 10
+					add_tech_bonus = {
+							name = TUR_ordu_modernize
+							bonus = 0.5
+							uses = 1
+							category = infantry_weapons
+						}
+				}
+
+	}
+	focus = {
+		id = kuleli_kur
+		text = kuleli_kur
+		icon = GFX_focus_generic_military_mission
+		cost = 5,00
+		prerequisite = {
+			focus = ordu_modernize
+		}
+		x = 10
+		y = 2
+			completion_reward = {
+					army_experience = 10
+				}
+
+	}
+	focus = {
+		id = kurmay_yetistir
+		text = kurmay_yetistir
+		icon = GFX_focus_generic_treaty
+		cost = 5,00
+		prerequisite = {
+			focus = kuleli_kur
+		}
+		x = 4
+		y = 0
+		relative_position_id = topcu_modernize
+			completion_reward = {
+					army_experience = 30
+					add_political_power = 50
+					add_tech_bonus = {
+							name = TUR_kurmay_yetistir
+							bonus = 0.5
+							uses = 1
+							category = land_doctrine
+						}
+				}
+
+	}
+	focus = {
+		id = kara_akademi
+		text = kara_akademi
+		icon = GFX_focus_generic_military_mission
+		cost = 5,00
+		prerequisite = {
+			focus = kuleli_kur
+		}
+		x = 8
+		y = 3
+			completion_reward = {
+					army_experience = 50
+				}
+
+	}
+	focus = {
+		id = modern_strategi
+		text = modern_strategi
+		icon = GFX_goal_generic_position_armies
+		cost = 5,00
+		prerequisite = {
+			focus = kurmay_yetistir
+		}
+		x = 10
+		y = 4
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_modern_strategi
+							bonus = 0.5
+							uses = 1
+							category = land_doctrine
+						}
+				}
+
+	}
+	focus = {
+		id = hava_kuv
+		icon = GFX_goal_generic_special_forces
+		cost = 5,00
+		prerequisite = {
+			focus = modern_strategi
+		}
+		x = 10
+		y = 5
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_hava_kuv
+							bonus = 0.5
+							uses = 1
+							technology = paratroopers2
+						}
+				}
+
+	}
+	focus = {
+		id = kara_harp
+		text = kara_harp
+		icon = GFX_focus_generic_military_mission
+		cost = 5,00
+		prerequisite = {
+			focus = kuleli_kur
+		}
+		x = 12
+		y = 3
+			completion_reward = {
+					army_experience = 20
+				}
+
+	}
+	focus = {
+		id = deniz_kuv
+		text = deniz_kuv
+		icon = GFX_goal_generic_special_forces
+		cost = 5,00
+		prerequisite = {
+			focus = modern_strategi
+		}
+		prerequisite = {
+			focus = modern_strategi
+		}
+		x = 12
+		y = 5
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_deniz_kuv
+							bonus = 0.5
+							uses = 1
+							technology = marines2
+						}
+				}
+
+	}
+	focus = {
+		id = ucak_yenileme
+		text = ucak_yenileme
+		icon = GFX_goal_continuous_air_production
+		cost = 5,00
+		prerequisite = {
+			focus = hava_guc
+		}
+		x = 14
+		y = 1
+			ai_will_do = {
+					factor = 10
+				}
+				
+			available = {
+					341 = {
+							is_controlled_by = ROOT
+						}
+					49 = {
+							is_controlled_by = ROOT
+						}
+					339 = {
+							is_controlled_by = ROOT
+						}
+					350 = {
+							is_controlled_by = ROOT
+						}
+				}
+			
+			completion_reward = {
+					add_tech_bonus = {
+							name = ucak_yenileme
+							bonus = 0.5
+							uses = 1
+							category = air_doctrine
+						}
+						
+					341 = {
+							add_building_construction = {
+									type = air_base
+									state = 341
+									level = 6
+									instant_build = yes
+								}
+						}
+						
+					339 = {
+							add_building_construction = {
+									type = air_base
+									state = 339
+									level = 3
+									instant_build = yes
+								}
+						}
+						
+					49 = {
+							add_building_construction = {
+									type = air_base
+									state = 49
+									level = 7
+									instant_build = yes
+								}
+						}
+						
+					350 = {
+							add_building_construction = {
+									type = air_base
+									state = 350
+									level = 3
+									instant_build = yes
+								}
+						}
+						
+				}
+
+	}
+	focus = {
+		id = isiklar_kur
+		text = isiklar_kur
+		icon = GFX_focus_generic_military_mission
+		cost = 5,00
+		prerequisite = {
+			focus = hava_guc
+		}
+		x = 16
+		y = 1
+			completion_reward = {
+					air_experience = 20
+				}
+
+	}
+	focus = {
+		id = avci_odak
+		text = avci_odak
+		icon = GFX_goal_generic_air_fighter
+		cost = 5,00
+		prerequisite = {
+			focus = ucak_yenileme
+			focus = isiklar_kur
+		}
+		x = 14
+		y = 2
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_avci_odak
+							bonus = 0.5
+							uses = 1
+							category = light_fighter
+						}
+				}
+
+	}
+	focus = {
+		id = bombardiman_odak
+		text = bombardiman_odak
+		icon = GFX_goal_generic_air_bomber
+		cost = 5,00
+		prerequisite = {
+			focus = isiklar_kur
+			focus = ucak_yenileme
+		}
+		x = 16
+		y = 2
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_bombardıman_odak
+							bonus = 0.5
+							uses = 1
+							category = tactical_bomber
+						}
+				}
+
+	}
+	focus = {
+		id = havaci_devrim
+		text = havaci_devrim
+		icon = GFX_focus_generic_treaty
+		cost = 5,00
+		prerequisite = {
+			focus = bombardiman_odak
+			focus = avci_odak
+		}
+		x = 15
+		y = 3
+			completion_reward = {
+					add_ideas = TUR_gelecek_gokte
+					air_experience = 25
+					add_tech_bonus = {
+							name = TUR_havaci_devrim
+							bonus = 0.5
+							uses = 1
+							category = air_doctrine
+						}
+					set_rule = {
+							can_generate_female_aces = yes
+						}
+				}
+
+	}
+	focus = {
+		id = yakin_bombar
+		text = yakin_bombar
+		icon = GFX_goal_generic_occupy_start_war
+		cost = 5,00
+		prerequisite = {
+			focus = havaci_devrim
+			focus = avci_odak
+		}
+		x = 14
+		y = 4
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_yakın_bombar
+							bonus = 0.5
+							uses = 1
+							category = cas_bomber
+						}
+				}
+
+	}
+	focus = {
+		id = tersane_milli
+		text = tersane_milli
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 5,00
+		prerequisite = {
+			focus = deniz_guc
+		}
+		x = 20
+		y = 1
+			available_if_capitulated = no
+			available = {
+					339_state = {
+							is_controlled_by = ROOT
+						}
+					354_state = {
+							is_controlled_by = ROOT
+						}
+					355_state = {
+							is_controlled_by = ROOT
+						}
+					356_state = {
+							is_controlled_by = ROOT
+						}
+					347_state = {
+							is_controlled_by = ROOT
+						}
+					341_state = {
+							is_controlled_by = ROOT
+						}
+					342_state = {
+							is_controlled_by = ROOT
+						}
+					344_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					339 = {
+							add_extra_state_shared_building_slots = 5
+							add_building_construction = {
+									type = dockyard
+									level = 2
+									instant_build = yes
+								}
+						}
+					354 = {
+							add_building_construction = {
+									type = naval_base
+									province = 9932
+									level = 2
+									instant_build = yes
+								}
+						}
+					355 = {
+							add_building_construction = {
+									type = naval_base
+									province = 11881
+									level = 1
+									instant_build = yes
+								}
+						}
+					356 = {
+							add_building_construction = {
+									type = naval_base
+									province = 6995
+									level = 2
+									instant_build = yes
+								}
+						}
+					347 = {
+							add_building_construction = {
+									type = naval_base
+									province = 904
+									level = 1
+									instant_build = yes
+								}
+						}
+					341 = {
+							add_building_construction = {
+									type = naval_base
+									province = 9833
+									level = 1
+									instant_build = yes
+								}
+						}
+					342 = {
+							add_building_construction = {
+									type = naval_base
+									province = 1005
+									level = 1
+									instant_build = yes
+								}
+						}
+					344 = {
+							add_building_construction = {
+									type = naval_base
+									province = 11746
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = ucakgem_cabasi
+		text = ucakgem_cabasi
+		icon = GFX_goal_generic_navy_carrier
+		cost = 5,00
+		prerequisite = {
+			focus = tersane_milli
+		}
+		x = 18
+		y = 2
+			completion_reward = {
+					navy_experience = 15
+					add_tech_bonus = {
+							name = TUR_ucakgem_cabası
+							bonus = 0.5
+							uses = 1
+							category = CV_tech
+						}
+				}
+
+	}
+	focus = {
+		id = deniz_bomb
+		text = deniz_bomb
+		icon = GFX_focus_generic_cryptologic_bomb
+		cost = 5,00
+		prerequisite = {
+			focus = ucakgem_cabasi
+		}
+		x = 18
+		y = 3
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_deniz_bomb
+							bonus = 0.2
+							uses = 1
+							category = naval_bomber
+						}
+				}
+
+	}
+	focus = {
+		id = deniz_bombar
+		text = deniz_bombar
+		icon = GFX_goal_generic_air_naval_bomber
+		cost = 5,00
+		prerequisite = {
+			focus = deniz_bomb
+		}
+		x = 18
+		y = 4
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_deniz_bomb
+							bonus = 0.5
+							uses = 1
+							category = naval_bomber
+						}
+				}
+
+	}
+	focus = {
+		id = strat_bombar
+		text = strat_bombar
+		icon = GFX_goal_generic_occupy_start_war
+		cost = 5,00
+		prerequisite = {
+			focus = havaci_devrim
+			focus = bombardiman_odak
+			focus = deniz_bombar
+		}
+		x = 16
+		y = 4
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_strat_bombar
+							bonus = 0.5
+							uses = 1
+							category = cat_strategic_bomber
+						}
+				}
+
+	}
+	focus = {
+		id = hava_modernize
+		text = hava_modernize
+		icon = GFX_goal_generic_air_doctrine
+		cost = 5,00
+		prerequisite = {
+			focus = yakin_bombar
+			focus = strat_bombar
+		}
+		x = 15
+		y = 5
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_hava_modernize
+							bonus = 0.5
+							uses = 1
+							category = cat_heavy_fighter
+						}
+					air_experience = 50
+				}
+
+	}
+	focus = {
+		id = muhrip_cabasi
+		text = muhrip_cabasi
+		icon = GFX_focus_generic_destroyer
+		cost = 5,00
+		prerequisite = {
+			focus = tersane_milli
+		}
+		x = 20
+		y = 2
+			completion_reward = {
+					navy_experience = 15
+					add_tech_bonus = {
+							name = TUR_muhrip_cabasi
+							bonus = 1.5
+							uses = 2
+							category = dd_tech
+						}
+				}
+
+	}
+	focus = {
+		id = kruvazor_cabasi
+		text = kruvazor_cabasi
+		icon = GFX_focus_generic_cruiser2
+		cost = 5,00
+		prerequisite = {
+			focus = tersane_milli
+		}
+		x = 22
+		y = 2
+			completion_reward = {
+					navy_experience = 15
+					add_tech_bonus = {
+							name = TUR_kruvazor_cabasi
+							bonus = 1.5
+							uses = 1
+							category = cl_tech
+						}
+				}
+
+	}
+	focus = {
+		id = savasgem_cabasi
+		text = savasgem_cabasi
+		icon = GFX_focus_generic_navy_battleship2
+		cost = 5,00
+		prerequisite = {
+			focus = muhrip_cabasi
+			focus = kruvazor_cabasi
+		}
+		x = 21
+		y = 3
+			completion_reward = {
+					navy_experience = 15
+					add_tech_bonus = {
+							name = TUR_savasgem_cabasi
+							bonus = 2.0
+							uses = 1
+							category = bb_tech
+						}
+				}
+
+	}
+	focus = {
+		id = ikiz_tehdit
+		text = ikiz_tehdit
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 5,00
+		prerequisite = {
+			focus = savasgem_cabasi
+		}
+		x = 21
+		y = 4
+			completion_reward = {
+					navy_experience = 50
+					add_tech_bonus = {
+							name = TUR_ikiz_tehdit
+							bonus = 5.0
+							uses = 1
+							category = shbb_tech
+						}
+				}
+
+	}
+	focus = {
+		id = harp_filo
+		text = harp_filo
+		icon = GFX_goal_generic_occupy_states_coastal
+		cost = 5,00
+		prerequisite = {
+			focus = ikiz_tehdit
+		}
+		mutually_exclusive = {
+			focus = sahil_guv
+		}
+		x = 20
+		y = 5
+			completion_reward = {
+					navy_experience = 50
+					add_tech_bonus = {
+							name = TUR_harp_filo
+							bonus = 5.0
+							uses = 1
+							category = bc_tech
+						}
+					add_tech_bonus = {
+							name = TUR_harp_filo
+							bonus = 5.0
+							uses = 1
+							category = ca_tech
+						}
+				}
+
+	}
+	focus = {
+		id = heybeliada_deniz_lisesi
+		text = heybeliada_deniz_lisesi
+		icon = GFX_focus_generic_military_mission
+		cost = 5,00
+		prerequisite = {
+			focus = deniz_guc
+		}
+		x = 22
+		y = 1
+			completion_reward = {
+					navy_experience = 50
+				}
+
+	}
+	focus = {
+		id = sahil_guv
+		text = sahil_guv
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 5,00
+		prerequisite = {
+			focus = ikiz_tehdit
+		}
+		mutually_exclusive = {
+			focus = harp_filo
+		}
+		x = 22
+		y = 5
+			completion_reward = {
+					navy_experience = 50
+					add_tech_bonus = {
+							name = TUR_sahil_guv
+							bonus = 5.0
+							uses = 1
+							category = dd_tech
+						}
+					add_tech_bonus = {
+							name = TUR_sahil_guv
+							bonus = 5.0
+							uses = 1
+							category = cl_tech
+						}
+					add_tech_bonus = {
+							name = TUR_sahil_guv
+							bonus = 5.0
+							uses = 1
+							category = ss_tech
+						}
+				}
+
+	}
+	focus = {
+		id = denizalt_cabasi
+		text = denizalt_cabasi
+		icon = GFX_goal_generic_navy_submarine
+		cost = 5,00
+		prerequisite = {
+			focus = tersane_milli
+		}
+		prerequisite = {
+			focus = tersane_milli
+		}
+		x = 24
+		y = 2
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					navy_experience = 15
+					add_tech_bonus = {
+							name = TUR_denizalt_cabasi
+							bonus = 0.5
+							uses = 1
+							category = ss_tech
+						}
+				}
+
+	}
+	focus = {
+		id = denizalt2_cabasi
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 5,00
+		prerequisite = {
+			focus = denizalt_cabasi
+		}
+		x = 24
+		y = 3
+			completion_reward = {
+					navy_experience = 15
+					add_tech_bonus = {
+							name = TUR_denizalt2_cabasi
+							bonus = 0.8
+							uses = 1
+							category = ss_tech
+						}
+				}
+
+	}
+	focus = {
+		id = pasabahce_fab
+		text = pasabahce_fab
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10,00
+		prerequisite = {
+			focus = cimento_odak
+		}
+		x = 28
+		y = 1
+			complete_tooltip = {
+					random_state = {
+							limit = {
+									has_state_flag = TUR_build_pasabahce_glass_factory_1
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+			available_if_capitulated = no
+			available = {
+					356_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					356 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							set_state_flag = TUR_pasabahce_fab
+						}
+				}
+
+	}
+	focus = {
+		id = torku_fabrika
+		text = torku_fabrika
+		icon = GFX_goal_generic_construct_civilian
+		cost = 10,00
+		prerequisite = {
+			focus = cimento_odak
+		}
+		x = 30
+		y = 1
+			complete_tooltip = {
+					random_state = {
+							limit = {
+									has_state_flag = TUR_build_pasabahce_glass_factory_1
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+			available_if_capitulated = no
+			available = {
+					348_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					348 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							set_state_flag = TUR_torku_fabrika
+						}
+				}
+
+	}
+	focus = {
+		id = koy_enstitu
+		text = koy_enstitu
+		icon = GFX_focus_generic_military_academy
+		cost = 10,00
+		prerequisite = {
+			focus = torku_fabrika
+		}
+		x = 30
+		y = 2
+			completion_reward = {
+					add_tech_bonus = {
+
+}
+					add_ideas = TUR_koy_enstitu
+				}
+
+	}
+	focus = {
+		id = itu_modernize
+		text = itu_modernize
+		icon = GFX_focus_research
+		cost = 10,00
+		prerequisite = {
+			focus = koy_enstitu
+		}
+		x = 26
+		y = 3
+			completion_reward = {
+					add_research_slot = 1
+				}
+
+	}
+	focus = {
+		id = organize_sanayi
+		text = organize_sanayi
+		icon = GFX_goal_generic_production
+		cost = 10,00
+		prerequisite = {
+			focus = koy_enstitu
+		}
+		x = 30
+		y = 3
+			complete_tooltip = {
+					random_state = {
+							limit = {
+									has_state_flag = TUR_ankarayi_kalkindir
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}
+						}
+				}
+			available_if_capitulated = no
+			available = {
+					341_state = {
+							is_controlled_by = ROOT
+						}
+					49_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+			
+						add_tech_bonus = {
+							name = organize_sanayi
+							bonus = 2.0
+							uses = 1
+							technology = construction1
+							technology = construction2
+							technology = construction3
+						}
+						
+					341 = {
+							add_extra_state_shared_building_slots = 5
+							set_state_flag = TUR_ankarayi_kalkindir
+						}
+					49 = {
+							add_extra_state_shared_building_slots = 4
+							set_state_flag = TUR_ankarayi_kalkindir
+						}
+				}
+
+	}
+	focus = {
+		id = sivil_fab_1
+		text = sivil_fab_1
+		icon = GFX_focus_generic_industry_2
+		cost = 5,00
+		prerequisite = {
+			focus = organize_sanayi
+		}
+		mutually_exclusive = {
+			focus = ulusal_savunma
+		}
+		x = 29
+		y = 4
+			complete_tooltip = {
+					random_state = {
+							limit = {
+									has_state_flag = TUR_build_pasabahce_glass_factory_1
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+			available_if_capitulated = no
+			available = {
+					49_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					49 = {
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							set_state_flag = TUR_merinos_fab
+						}
+				}
+
+	}
+	focus = {
+		id = ulusal_savunma
+		text = ulusal_savunma
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 20
+		prerequisite = {
+			focus = organize_sanayi
+		}
+		mutually_exclusive = {
+			focus = sivil_fab_1
+		}
+		x = 31
+		y = 4
+			ai_will_do = {
+					factor = 10
+				}
+			available_if_capitulated = no
+			available = {
+					341_state = {
+							is_controlled_by = ROOT
+						}
+					49_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					add_ideas = TUR_ulusalsavun
+					341 = {
+							add_building_construction = {
+									type = arms_factory
+									level = 3
+									instant_build = yes
+								}
+						}
+					49 = {
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = alaybey_tersane
+		text = alaybey_tersane
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 5,00
+		prerequisite = {
+			focus = ulusal_savunma
+		}
+		x = 31
+		y = 5
+			ai_will_do = {
+					factor = 2
+				}
+			available = {
+					339_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			complete_tooltip = {
+					random_state = {
+							limit = {
+									has_state_flag = TUR_alaybey_tersane
+								}
+							add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+			completion_reward = {
+					339 = {
+							add_extra_state_shared_building_slots = 4
+							add_building_construction = {
+									type = dockyard
+									level = 2
+									instant_build = yes
+								}
+							set_state_flag = TUR_develop_turkish_ship_building_1
+						}
+				}
+
+	}
+	focus = {
+		id = merinos_fab
+		text = merinos_fab
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10,00
+		prerequisite = {
+			focus = cimento_odak
+		}
+		x = 32
+		y = 1
+			complete_tooltip = {
+					random_state = {
+							limit = {
+									has_state_flag = TUR_build_pasabahce_glass_factory_1
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+			available_if_capitulated = no
+			available = {
+					348_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					348 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							set_state_flag = TUR_merinos_fab
+						}
+				}
+
+	}
+	focus = {
+		id = kirdemir_as
+		text = kirdemir_as
+		icon = GFX_goal_generic_production2
+		cost = 10,00
+		prerequisite = {
+			focus = koy_enstitu
+		}
+		x = 34
+		y = 3
+			ai_will_do = {
+					factor = 2
+				}
+			complete_tooltip = {
+					random_state = {
+							limit = {
+									has_state_flag = TUR_build_pasabahce_glass_factory_1
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+			available_if_capitulated = no
+			available = {
+					348_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+			
+						add_tech_bonus = {
+							name = organize_sanayi
+							bonus = 2.0
+							uses = 1
+							technology = excavation1	
+							technology = excavation2
+							technology = excavation3
+						}
+		
+					348 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							set_state_flag = TUR_torku_fabrika
+						}
+				}
+
+	}
+	focus = {
+		id = istanbulu_kalkindir
+		text = istanbulu_kalkindir
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10,00
+		prerequisite = {
+			focus = kirdemir_as
+		}
+		x = 33
+		y = 4
+			complete_tooltip = {
+					random_state = {
+							limit = {
+									has_state_flag = TUR_ankarayi_kalkindir
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 5
+									instant_build = yes
+								}
+						}
+				}
+			available_if_capitulated = no
+			available = {
+					341_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					341 = {
+							add_extra_state_shared_building_slots = 5
+							add_building_construction = {
+									type = industrial_complex
+									level = 5
+									instant_build = yes
+								}
+							set_state_flag = TUR_ankarayi_kalkindir
+						}
+				}
+
+	}
+	focus = {
+		id = raman_petrol
+		text = raman_petrol
+		icon = GFX_goal_generic_oil_refinery
+		cost = 5,00
+		prerequisite = {
+			focus = kirdemir_as
+		}
+		x = 34
+		y = 5
+			completion_reward = {
+					add_resource = {
+							type = oil
+							amount = 10
+							state = 352
+						}
+				}
+
+	}
+	focus = {
+		id = ankarayi_kalkindir
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10,00
+		prerequisite = {
+			focus = kirdemir_as
+		}
+		x = 35
+		y = 4
+			complete_tooltip = {
+					random_state = {
+							limit = {
+									has_state_flag = TUR_ankarayi_kalkindir
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 5
+									instant_build = yes
+								}
+						}
+				}
+			available_if_capitulated = no
+			available = {
+					49_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					49 = {
+							add_extra_state_shared_building_slots = 5
+							add_building_construction = {
+									type = industrial_complex
+									level = 5
+									instant_build = yes
+								}
+							set_state_flag = TUR_ankarayi_kalkindir
+						}
+				}
+
+	}
+	focus = {
+		id = demirag_kur
+		text = demirag_kur
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 5,00
+		prerequisite = {
+			focus = ankarayi_kalkindir
+		}
+		x = 36
+		y = 5
+			ai_will_do = {
+					factor = 10
+				}
+			available_if_capitulated = no
+			available = {
+					341_state = {
+							is_controlled_by = ROOT
+						}
+					347_state = {
+							is_controlled_by = ROOT
+						}
+					340_state = {
+							is_controlled_by = ROOT
+						}
+					339_state = {
+							is_controlled_by = ROOT
+						}
+					343_state = {
+							is_controlled_by = ROOT
+						}
+					49_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = infrastructure_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = infrastructure
+											size < 1
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					random_state = {
+							limit = {
+									has_state_flag = TUR_expand_the_ironweb_1
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_state = {
+							limit = {
+									has_state_flag = TUR_expand_the_ironweb_2
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_state = {
+							limit = {
+									has_state_flag = TUR_expand_the_ironweb_3
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_state = {
+							limit = {
+									has_state_flag = TUR_expand_the_ironweb_4
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_state = {
+							limit = {
+									has_state_flag = TUR_expand_the_ironweb_5
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+			completion_reward = {
+					341 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 3
+									instant_build = yes
+								}
+							set_state_flag = TUR_expand_the_ironweb_1
+						}
+					347 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 3
+									instant_build = yes
+								}
+							set_state_flag = TUR_expand_the_ironweb_2
+						}
+					340 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 3
+									instant_build = yes
+								}
+							set_state_flag = TUR_expand_the_ironweb_3
+						}
+					339 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 3
+									instant_build = yes
+								}
+							set_state_flag = TUR_expand_the_ironweb_4
+						}
+					343 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 3
+									instant_build = yes
+								}
+							set_state_flag = TUR_expand_the_ironweb_5
+						}
+					49 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 3
+									instant_build = yes
+								}
+							set_state_flag = TUR_expand_the_ironweb_5
+						}
+				}
+
+	}
+	focus = {
+		id = gunes_dili
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 5,00
+		prerequisite = {
+			focus = diplomatik_caba
+		}
+		x = 38
+		y = 1
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_political_power = 200
+				}
+
+	}
+	focus = {
+		id = sadabat_pactm
+		icon = GFX_goal_generic_major_alliance
+		cost = 5,00
+		prerequisite = {
+			focus = gunes_dili
+		}
+		mutually_exclusive = {
+			focus = balkan_pactm
+		}
+		x = 37
+		y = 2
+			available = {
+					is_puppet = no
+					is_in_faction = no
+					is_major = yes
+				}
+			ai_will_do = {
+					factor = 10
+					modifier = {
+						factor = 0
+						is_historical_focus_on = yes
+					}
+				}
+			completion_reward = {
+					create_faction = sadabat_pact
+					add_political_power = 150
+					hidden_effect = {
+							news_event = {
+									hours = 6
+									id = news.214
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = balkan_pactm
+		icon = GFX_goal_generic_major_alliance
+		cost = 5,00
+		prerequisite = {
+			focus = gunes_dili
+		}
+		mutually_exclusive = {
+			focus = sadabat_pactm
+		}
+		x = 39
+		y = 2
+			available = {
+					is_puppet = no
+					is_in_faction = no
+					is_major = yes
+				}
+			ai_will_do = {
+					factor = 10
+					modifier = {
+						factor = 0
+						is_historical_focus_on = yes
+					}
+				}
+			completion_reward = {
+					create_faction = balkan_pact
+					add_political_power = 150
+				}
+			hidden_effect = {
+					news_event = {
+							hours = 6
+							id = news.215
+						}
+				}
+
+	}
+	focus = {
+		id = yurt_gezisi
+		icon = GFX_goal_generic_demand_territory
+		cost = 10,00
+		prerequisite = {
+			focus = sadabat_pactm
+			focus = balkan_pactm
+		}
+		x = 38
+		y = 3
+			available = {
+					has_war = no
+					has_civil_war = no
+					has_stability > 0.5
+				}
+			completion_reward = {
+					add_political_power = 150
+				}
+
+	}
+	focus = {
+		id = heryerde_sulh
+		icon = GFX_goal_anschluss
+		cost = 10,00
+		prerequisite = {
+			focus = yurt_gezisi
+		}
+		x = 38
+		y = 4
+			available = {
+					has_war = no
+					has_civil_war = no
+					has_stability > 0.5
+				}
+			completion_reward = {
+					add_political_power = 350
+					add_stability = 0.05
+				}
+
+	}
+	focus = {
+		id = montro_ant
+		icon = GFX_goal_generic_military_sphere
+		cost = 5,00
+		prerequisite = {
+			focus = diplomatik_caba
+		}
+		x = 41
+		y = 1
+			available = {
+					is_puppet = no
+					340 = {
+							is_controlled_by = TUR
+						}
+					341 = {
+							is_controlled_by = TUR
+						}
+				}
+			bypass = {
+					340 = {
+							is_demilitarized_zone = no
+						}
+					341 = {
+							is_demilitarized_zone = no
+						}
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					340 = {
+							set_demilitarized_zone = no
+						}
+					341 = {
+							set_demilitarized_zone = no
+						}
+					add_war_support = 0.05
+					add_stability = 0.05
+					add_political_power = 120
+				}
+
+	}
+	focus = {
+		id = sinir_politik
+		icon = GFX_focus_generic_provoke_border_clashes
+		cost = 5,00
+		prerequisite = {
+			focus = montro_ant
+		}
+		x = 41
+		y = 2
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_political_power = 250
+						set_rule = {
+							can_send_volunteers = yes
+						}
+				}
+
+	}
+	focus = {
+		id = hatay_gel
+		icon = GFX_goal_generic_territory_or_war
+		cost = 5,00
+		prerequisite = {
+			focus = sinir_politik
+		}
+		available = {
+			is_major = yes
+		}
+		x = 41
+		y = 3
+			bypass = {
+					788 = {
+							is_owned_by = TUR
+						}
+				}
+			ai_will_do = {
+					factor = 10
+					modifier = {
+							factor = 0
+							date < 1939.8.1
+						}
+				}
+			completion_reward = {
+					add_stability = 0.05
+					if = {
+							limit = {
+									FRA = {
+											owns_state = 788
+										}
+								}
+							FRA = {
+									country_event = {
+											id = turkey.31
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kibris_gel
+		icon = GFX_goal_generic_territory_or_war
+		cost = 5,00
+		prerequisite = {
+			focus = hatay_gel
+		}
+		x = 40
+		y = 4
+			available = {
+					NOT = {
+							has_government = democratic
+						}
+					has_army_manpower = {
+							size > 450000
+						}
+				}
+			bypass = {
+					183 = {
+							is_owned_by = TUR
+						}
+				}
+			ai_will_do = {
+					factor = 0
+				}
+			completion_reward = {
+					if = {
+							limit = {
+									ENG = {
+											owns_state = 183
+										}
+								}
+							ENG = {
+									country_event = {
+											id = turkey.33
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kuwait_gel
+		icon = GFX_goal_generic_territory_or_war
+		cost = 5,00
+		prerequisite = {
+			focus = kibris_gel
+		}
+		x = 41
+		y = 5
+			available = {
+					if = {
+							TUR = {
+									owns_state = 676
+								}
+							TUR = {
+									owns_state = 291
+								}
+							TUR = {
+									owns_state = 675
+								}
+						}
+					has_army_manpower = {
+							size > 450000
+						}
+				}
+			bypass = {
+					656 = {
+							is_owned_by = TUR
+						}
+				}
+			ai_will_do = {
+					factor = 0
+				}
+			completion_reward = {
+					if = {
+							limit = {
+									ENG = {
+											owns_state = 656
+										}
+								}
+							ENG = {
+									country_event = {
+											id = turkey.69
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = rodos_gel
+		icon = GFX_goal_generic_territory_or_war
+		cost = 5,00
+		prerequisite = {
+			focus = hatay_gel
+		}
+		x = 42
+		y = 4
+			available = {
+					has_army_manpower = {
+							size > 450000
+						}
+				}
+			bypass = {
+					164 = {
+							is_owned_by = TUR
+						}
+				}
+			ai_will_do = {
+					factor = 0
+				}
+			completion_reward = {
+					if = {
+							limit = {
+									ITA = {
+											owns_state = 164
+										}
+								}
+							ITA = {
+									country_event = {
+											id = turkey.34
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = enternasyonel
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5,00
+		prerequisite = {
+			focus = diplomatik_caba
+		}
+		x = 48
+		y = 1
+			ai_will_do = {
+					factor = 2.5
+				}
+			completion_reward = {
+					add_stability = 0.05
+				}
+
+	}
+	focus = {
+		id = otokrasi
+		icon = GFX_goal_generic_major_alliance
+		cost = 5,00
+		prerequisite = {
+			focus = enternasyonel
+		}
+		mutually_exclusive = {
+			focus = liberal
+		}
+		x = 46
+		y = 2
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_stability = 0.05
+				}
+
+	}
+	focus = {
+		id = ortada_kal
+		icon = GFX_goal_neu
+		cost = 5,00
+		prerequisite = {
+			focus = otokrasi
+		}
+		mutually_exclusive = {
+			focus = sol
+			focus = sag
+		}
+		x = 44
+		y = 3
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_ideas = TUR_cumhur
+				}
+
+	}
+	focus = {
+		id = sag
+		icon = GFX_goal_support_fascism
+		cost = 5,00
+		prerequisite = {
+			focus = otokrasi
+		}
+		mutually_exclusive = {
+			focus = sol
+			focus = ortada_kal
+		}
+		x = 46
+		y = 3
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_ideas = fascist_influence
+					add_popularity = {
+							ideology = fascism
+							popularity = 0.25
+						}
+				}
+
+	}
+	focus = {
+		id = alman_yakin
+		icon = GFX_goal_generic_military_deal
+		cost = 10,00
+		prerequisite = {
+			focus = sag
+		}
+		x = 46
+		y = 4
+			available = {
+					country_exists = GER
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_opinion_modifier = {
+							target = GER
+							modifier = alman_yakin
+						}
+					GER = {
+							add_opinion_modifier = {
+									target = ROOT
+									modifier = alman_yakin
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = militarist_genclik
+		icon = GFX_goal_generic_wolf_pack
+		cost = 10,00
+		prerequisite = {
+			focus = alman_yakin
+		}
+		available = {
+			date > 1940.1.1
+		}
+		x = 46
+		y = 5
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_ideas = military_youth_focus
+					set_major = yes
+				}
+
+	}
+	focus = {
+		id = sol
+		icon = GFX_goal_support_communism
+		cost = 5,00
+		prerequisite = {
+			focus = otokrasi
+		}
+		mutually_exclusive = {
+			focus = sag
+			focus = ortada_kal
+		}
+		x = 48
+		y = 3
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_ideas = communist_influence
+					add_popularity = {
+							ideology = communism
+							popularity = 0.25
+						}
+				}
+
+	}
+	focus = {
+		id = sovyet_yakin
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10,00
+		prerequisite = {
+			focus = sol
+		}
+		x = 48
+		y = 4
+			available = {
+					country_exists = SOV
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_opinion_modifier = {
+							target = SOV
+							modifier = sovyet_yakin
+						}
+					SOV = {
+							add_opinion_modifier = {
+									target = ROOT
+									modifier = sovyet_yakin
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = politik_komser
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 10,00
+		prerequisite = {
+			focus = sovyet_yakin
+		}
+		available = {
+			date > 1940.1.1
+		}
+		x = 48
+		y = 5
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_ideas = political_commissars_focus
+					set_major = yes
+				}
+
+	}
+	focus = {
+		id = liberal
+		icon = GFX_goal_generic_major_alliance
+		cost = 5,00
+		prerequisite = {
+			focus = enternasyonel
+		}
+		mutually_exclusive = {
+			focus = otokrasi
+		}
+		x = 50
+		y = 2
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_ideas = TUR_liberalizmin
+				}
+
+	}
+	focus = {
+		id = liberalim
+		icon = GFX_goal_support_democracy
+		cost = 5,00
+		prerequisite = {
+			focus = liberal
+		}
+		x = 50
+		y = 3
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_ideas = democratic_influence
+					remove_ideas = TUR_opposition_to_reforms
+				}
+
+	}
+	focus = {
+		id = mudahele_odak
+		icon = GFX_goal_generic_position_armies
+		cost = 10,00
+		prerequisite = {
+			focus = liberalim
+		}
+		x = 50
+		y = 4
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					set_rule = {
+							can_send_volunteers = yes
+						}
+					add_ideas = volunteer_corps_focus
+				}
+
+	}
+	focus = {
+		id = ortadogu_siniri
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 5,00
+		prerequisite = {
+			focus = sinir_restore
+		}
+		x = 56
+		y = 1
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_war_support = 0.05
+					add_political_power = 100
+				}
+
+	}
+	focus = {
+		id = musul_bizim
+		icon = GFX_focus_generic_little_entente
+		cost = 5,00
+		prerequisite = {
+			focus = ortadogu_siniri
+		}
+		x = 55
+		y = 2
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					676 = {
+							add_core_of = TUR
+						}
+					291 = {
+							add_core_of = TUR
+						}
+					675 = {
+							add_core_of = TUR
+						}
+					create_wargoal = {
+							type = take_state_focus
+							target = IRQ
+							generator = { 676 }
+						}
+					add_war_support = 0.05
+				}
+
+	}
+	focus = {
+		id = pers_bizim
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 5,00
+		prerequisite = {
+			focus = musul_bizim
+		}
+		x = 53
+		y = 3
+			available = {
+
+}
+			bypass = {
+					NOT = {
+							country_exists = PER
+						}
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					create_wargoal = {
+							type = annex_everything
+							target = PER
+						}
+				}
+
+	}
+	focus = {
+		id = nejd_bizim
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 5,00
+		prerequisite = {
+			focus = musul_bizim
+		}
+		x = 56
+		y = 3
+			available = {
+					is_puppet = no
+				}
+			bypass = {
+					NOT = {
+							country_exists = SAU
+						}
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					create_wargoal = {
+							type = annex_everything
+							target = SAU
+						}
+				}
+
+	}
+	focus = {
+		id = yemen_bizim
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 5,00
+		prerequisite = {
+			focus = nejd_bizim
+		}
+		x = 55
+		y = 4
+			available = {
+					is_puppet = no
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					create_wargoal = {
+							type = annex_everything
+							target = YEM
+						}
+				}
+
+	}
+	focus = {
+		id = misir_bizim
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 5,00
+		prerequisite = {
+			focus = yemen_bizim
+		}
+		x = 55
+		y = 5
+			available = {
+					is_puppet = no
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					create_wargoal = {
+							type = take_state_focus
+							target = ENG
+							generator = { 446 }
+						}
+				}
+
+	}
+	focus = {
+		id = umman_bizim
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 5,00
+		prerequisite = {
+			focus = nejd_bizim
+		}
+		x = 57
+		y = 4
+			available = {
+					is_puppet = no
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					create_wargoal = {
+							type = annex_everything
+							target = OMA
+						}
+				}
+
+	}
+	focus = {
+		id = avrupa_siniri
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 5,00
+		prerequisite = {
+			focus = sinir_restore
+		}
+		x = 60
+		y = 1
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_war_support = 0.05
+					add_political_power = 100
+				}
+
+	}
+	focus = {
+		id = yunan_bizim
+		icon = GFX_focus_generic_little_entente
+		cost = 5,00
+		prerequisite = {
+			focus = avrupa_siniri
+		}
+		x = 59
+		y = 2
+			available = {
+					is_puppet = no
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_stability = 0.05
+					add_war_support = 0.05
+					army_experience = 50
+					184 = {
+							add_core_of = TUR
+						}
+					187 = {
+							add_core_of = TUR
+						}
+					731 = {
+							add_core_of = TUR
+						}
+					182 = {
+							add_core_of = TUR
+						}
+					create_wargoal = {
+							type = take_state_focus
+							target = GRE
+							generator = { 731 }
+						}
+				}
+
+	}
+	focus = {
+		id = yugoslav_bizim
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 5,00
+		prerequisite = {
+			focus = yunan_bizim
+		}
+		x = 59
+		y = 3
+			available = {
+					country_exists = YUG
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					106 = {
+							add_core_of = TUR
+						}
+					if = {
+							limit = {
+									NOT = {
+											YUG = {
+													is_in_faction_with = TUR
+												}
+										}
+								}
+							create_wargoal = {
+									type = take_state_focus
+									target = YUG
+									generator = { 106 }
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = italya_bizim
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 5,00
+		prerequisite = {
+			focus = yugoslav_bizim
+		}
+		x = 59
+		y = 4
+			available = {
+					is_puppet = no
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					create_wargoal = {
+							type = annex_everything
+							target = ALB
+						}
+				}
+
+	}
+	focus = {
+		id = electronic_direk
+		text = electronic_direk
+		icon = GFX_goal_generic_radar
+		cost = 5,00
+		prerequisite = {
+			focus = itu_modernize
+		}
+		x = 25
+		y = 4
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_electronic_direk
+							bonus = 0.5
+							uses = 4
+							category = electronics
+						}
+					add_ideas = TUR_national_information_center
+				}
+
+	}
+	focus = {
+		id = sivil_fab_2
+		text = sivil_fab_2
+		icon = GFX_focus_generic_industry_3
+		cost = 5,00
+		prerequisite = {
+			focus = sivil_fab_1
+		}
+		x = 29
+		y = 5
+			complete_tooltip = {
+					random_state = {
+							limit = {
+									has_state_flag = TUR_ankarayi_kalkindir
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}
+						}
+				}
+			available_if_capitulated = no
+			available = {
+					341_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					341 = {
+							add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}
+							set_state_flag = TUR_ankarayi_kalkindir
+						}
+				}
+
+	}
+	focus = {
+		id = dag_kuv
+		text = dag_kuv
+		icon = GFX_goal_generic_special_forces
+		cost = 5,00
+		prerequisite = {
+			focus = modern_strategi
+		}
+		prerequisite = {
+			focus = modern_strategi
+		}
+		x = 8
+		y = 5
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_dag_kuv
+							bonus = 0.5
+							uses = 1
+							technology = tech_mountaineers2
+						}
+				}
+
+	}
+	focus = {
+		id = ozel_kuv
+		text = ozel_kuv
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 5,00
+		prerequisite = {
+			focus = hava_kuv
+			focus = deniz_kuv
+			focus = dag_kuv
+		}
+		x = 10
+		y = 6
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					army_experience = 50
+					add_tech_bonus = {
+							name = TUR_ozel_kuv
+							bonus = 0.5
+							uses = 1
+							technology = tech_mountaineers3
+							technology = paratroopers3
+							technology = marines3
+						}
+				}
+
+	}
+	focus = {
+		id = irak_hat
+		text = irak_hat
+		icon = GFX_goal_generic_construct_military
+		cost = 10,00
+		prerequisite = {
+			focus = akdeniz_hat
+			focus = ege_hat
+		}
+		x = 1
+		y = 4
+			available_if_capitulated = no
+			available = {
+					352 = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					352 = {
+							add_building_construction = {
+									type = bunker
+									province = 7530
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = bunker
+									province = 12476
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = bunker
+									province = 1463
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = roket_odak
+		text = roket_odak
+		icon = GFX_focus_rocketry
+		cost = 10,00
+		prerequisite = {
+			focus = hava_modernize
+		}
+		x = 15
+		y = 6
+			completion_reward = {
+					add_tech_bonus = {
+							name = TUR_roket_odak
+							bonus = 1.5
+							uses = 3
+							category = jet_technology
+							category = rocketry
+						}
+				}
+
+	}
+	focus = {
+		id = akdeniz_donanm
+		text = akdeniz_donanm
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10,00
+		prerequisite = {
+			focus = harp_filo
+			focus = sahil_guv
+		}
+		x = 21
+		y = 6
+			completion_reward = {
+					navy_experience = 100
+					add_tech_bonus = {
+							name = TUR_akdeniz_donanm
+							bonus = 0.5
+							uses = 1
+							category = dd_tech
+						}
+					add_tech_bonus = {
+							name = TUR_akdeniz_donanm
+							bonus = 0.5
+							uses = 1
+							category = cl_tech
+						}
+					add_tech_bonus = {
+							name = TUR_akdeniz_donanm
+							bonus = 0.5
+							uses = 1
+							category = ss_tech
+						}
+					add_tech_bonus = {
+							name = TUR_akdeniz_donanm
+							bonus = 0.5
+							uses = 1
+							category = bc_tech
+						}
+				}
+
+	}
+	focus = {
+		id = sivil_fab_3
+		text = sivil_fab_3
+		icon = GFX_focus_generic_self_management
+		cost = 5,00
+		prerequisite = {
+			focus = sivil_fab_2
+		}
+		x = 29
+		y = 6
+			available_if_capitulated = no
+			available = {
+					49_state = {
+							is_controlled_by = ROOT
+						}
+					341_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			completion_reward = {
+					49 = {
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+						}
+					341 = {
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+							set_state_flag = TUR_merinos_fab
+						}
+				}
+
+	}
+	focus = {
+		id = atomic_deney
+		text = atomic_deney
+		icon = GFX_focus_wonderweapons
+		cost = 20,00
+		prerequisite = {
+			focus = itu_modernize
+		}
+		x = 27
+		y = 4
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			date > 1942.6.1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = TUR_atomic_deney
+				bonus = 0.75
+				uses = 2
+				category = nuclear
+			}
+		}
+	}
+	focus = {
+		id = tuzla_tersane
+		text = tuzla_tersane
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 5,00
+		prerequisite = {
+			focus = alaybey_tersane
+		}
+		x = 31
+		y = 6
+			ai_will_do = {
+					factor = 2
+				}
+			available = {
+					341_state = {
+							is_controlled_by = ROOT
+						}
+				}
+			complete_tooltip = {
+					random_state = {
+							limit = {
+									has_state_flag = TUR_alaybey_tersane
+								}
+							add_building_construction = {
+									type = dockyard
+									level = 4
+									instant_build = yes
+								}
+						}
+				}
+			completion_reward = {
+					341 = {
+							add_extra_state_shared_building_slots = 4
+							add_building_construction = {
+									type = dockyard
+									level = 4
+									instant_build = yes
+								}
+							set_state_flag = TUR_develop_turkish_ship_building_1
+						}
+				}
+
+	}
+	focus = {
+		id = demir_bulduk
+		text = demir_bulduk
+		icon = GFX_focus_generic_steel
+		cost = 5,00
+		prerequisite = {
+			focus = raman_petrol
+		}
+		x = 33
+		y = 6
+			completion_reward = {
+					add_resource = {
+							type = steel
+							amount = 5
+							state = 347
+						}
+				}
+
+	}
+	focus = {
+		id = boksit_bulduk
+		text = boksit_bulduk
+		icon = GFX_focus_generic_aluminum
+		cost = 5,00
+		prerequisite = {
+			focus = raman_petrol
+		}
+		x = 35
+		y = 6
+			completion_reward = {
+					add_resource = {
+							type = aluminium
+							amount = 5
+							state = 342
+						}
+				}
+
+	}
+	focus = {
+		id = cumhuriyeti_guclendir
+		icon = GFX_goal_generic_alliance
+		cost = 10,00
+		prerequisite = {
+			focus = ortada_kal
+		}
+		x = 44
+		y = 4
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_stability = 0.05
+					add_ideas = TUR_cumhurum
+				}
+
+	}
+	focus = {
+		id = bulgar_bizim
+		icon = GFX_focus_generic_little_entente
+		cost = 5,00
+		prerequisite = {
+			focus = avrupa_siniri
+		}
+		x = 61
+		y = 2
+			available = {
+					is_puppet = no
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					add_war_support = 0.05
+					211 = {
+							add_core_of = TUR
+						}
+					212 = {
+							add_core_of = TUR
+						}
+					48 = {
+							add_core_of = TUR
+						}
+					create_wargoal = {
+							type = take_state_focus
+							target = BUL
+							generator = { 211 }
+						}
+				}
+
+	}
+	focus = {
+		id = roman_bizim
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 5,00
+		prerequisite = {
+			focus = bulgar_bizim
+		}
+		x = 61
+		y = 3
+			available = {
+					is_puppet = no
+				}
+			bypass = {
+					NOT = {
+							country_exists = ROM
+						}
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					create_wargoal = {
+							type = annex_everything
+							target = ROM
+						}
+				}
+
+	}
+	focus = {
+		id = macar_bizim
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 5,00
+		prerequisite = {
+			focus = roman_bizim
+		}
+		x = 61
+		y = 4
+			available = {
+					is_puppet = no
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					create_wargoal = {
+							type = annex_everything
+							target = HUN
+						}
+				}
+
+	}
+	focus = {
+		id = azeri_kurtar
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 5,00
+		prerequisite = {
+			focus = pers_bizim
+		}
+		x = 53
+		y = 4
+			available = {
+					country_exists = SOV
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					229 = {
+							add_core_of = TUR
+						}
+					if = {
+							limit = {
+									NOT = {
+											SOV = {
+													is_in_faction_with = TUR
+												}
+										}
+								}
+							create_wargoal = {
+									type = take_state_focus
+									target = SOV
+									generator = { 229 }
+								}
+						}
+				}
+
+	}
+}

@@ -1,5 +1,7 @@
 ﻿capital = 219
 
+set_cosmetic_tag = USSR
+
 oob = "SOV_1936"
 if = {
 	limit = { has_dlc = "Man the Guns" }

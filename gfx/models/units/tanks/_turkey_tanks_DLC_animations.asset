@@ -1,0 +1,144 @@
+##########################
+# PANZER I (TUR_light_armor_0)
+##########################
+animation = {
+	name = "TUR_light_armor_0_idle_animation"
+	file = "TUR_light_armor_0_idle.anim"
+}
+
+animation = {
+	name = "TUR_light_armor_0_moving_animation"
+	file = "TUR_light_armor_0_moving.anim"
+}
+
+animation = {
+	name = "TUR_light_armor_0_attack_animation"
+	file = "TUR_light_armor_0_attack.anim"
+}
+
+##########################
+# LEOPARD VK1602 (TUR_light_armor_2)
+##########################
+animation = {
+	name = "TUR_light_armor_2_idle_animation"
+	file = "TUR_light_armor_2_idle.anim"
+}
+
+animation = {
+	name = "TUR_light_armor_2_moving_animation"
+	file = "TUR_light_armor_2_moving.anim"
+}
+
+animation = {
+	name = "TUR_light_armor_2_attack_animation"
+	file = "TUR_light_armor_2_attack.anim"
+}
+
+##########################
+# PANZER III (TUR_medium_armor_0)
+##########################
+animation = {
+	name = "TUR_medium_armor_0_idle_animation"
+	file = "TUR_medium_armor_0_idle.anim"
+}
+
+animation = {
+	name = "TUR_medium_armor_0_moving_animation"
+	file = "TUR_medium_armor_0_moving.anim"
+}
+
+animation = {
+	name = "TUR_medium_armor_0_attack_animation"
+	file = "TUR_medium_armor_0_attack.anim"
+}
+
+##########################
+# PANTHER (TUR_medium_armor_2)
+##########################
+animation = {
+	name = "TUR_medium_armor_2_idle_animation"
+	file = "TUR_medium_armor_2_idle.anim"
+}
+
+animation = {
+	name = "TUR_medium_armor_2_moving_animation"
+	file = "TUR_medium_armor_2_moving.anim"
+}
+
+animation = {
+	name = "TUR_medium_armor_2_attack_animation"
+	file = "TUR_medium_armor_2_attack.anim"
+}
+
+##########################
+# GROSSTRAKTOR (TUR_heavy_armor_0)
+##########################
+animation = {
+	name = "TUR_heavy_armor_0_idle_animation"
+	file = "TUR_heavy_armor_0_idle.anim"
+}
+
+animation = {
+	name = "TUR_heavy_armor_0_moving_animation"
+	file = "TUR_heavy_armor_0_moving.anim"
+}
+
+animation = {
+	name = "TUR_heavy_armor_0_attack_animation"
+	file = "TUR_heavy_armor_0_attack.anim"
+}
+
+##########################
+# KING TITUR (TUR_heavy_armor_2)
+##########################
+animation = {
+	name = "TUR_heavy_armor_2_idle_animation"
+	file = "TUR_heavy_armor_2_idle.anim"
+}
+
+animation = {
+	name = "TUR_heavy_armor_2_moving_animation"
+	file = "TUR_heavy_armor_2_moving.anim"
+}
+
+animation = {
+	name = "TUR_heavy_armor_2_attack_animation"
+	file = "TUR_heavy_armor_2_attack.anim"
+}
+
+##########################
+# MAUS (TUR_super_heavy_armor)
+##########################
+animation = {
+	name = "TUR_super_heavy_armor_idle_animation"
+	file = "TUR_super_heavy_armor_idle.anim"
+}
+
+animation = {
+	name = "TUR_super_heavy_armor_moving_animation"
+	file = "TUR_super_heavy_armor_moving.anim"
+}
+
+animation = {
+	name = "TUR_super_heavy_armor_attack_animation"
+	file = "TUR_super_heavy_armor_attack.anim"
+}
+
+##########################
+# E-50 (TUR_modern_armor)
+##########################
+animation = {
+	name = "TUR_modern_armor_idle_animation"
+	file = "TUR_modern_armor_idle.anim"
+}
+
+animation = {
+	name = "TUR_modern_armor_moving_animation"
+	file = "TUR_modern_armor_moving.anim"
+}
+
+animation = {
+	name = "TUR_modern_armor_attack_animation"
+	file = "TUR_modern_armor_attack.anim"
+}
+

@@ -1,0 +1,72 @@
+ideas = {
+	
+	country = {
+	
+		neutral_leanings = { #From EYE
+			
+			picture = generic_neutrality_drift_bonus
+			
+			modifier = {
+				neutrality_acceptance = 85
+				monarchism_acceptance = 65
+			}
+		}
+		
+		DARK_anti_fascist_sentiment = {
+			
+			picture = generic_fascism_banned
+			
+			cancel = {
+				has_government = fascism
+			}
+			
+			allowed_civil_war = {
+				NOT = { has_government = fascism }
+			}
+			
+			modifier = {
+				fascism_drift = -0.1
+				fascism_acceptance = -85
+			}
+		}
+		
+		DARK_spanish_civil_war_support = {
+			
+			picture = FRA_scw_intervention_republicans_focus
+			
+			cancel = {
+				SPR = { has_civil_war = no }
+			}
+			
+			modifier = {
+				send_volunteer_divisions_required = -1
+				send_volunteers_tension = -1
+				send_volunteer_size = 1
+			}
+		}
+		
+		DARK_closed_suez = {
+			
+			picture = generic_the_london_naval_treaty
+			
+			
+			modifier = {
+				#trade_laws_cost_factor = 1 THIS CAUSES AN ERROR FOR SOME UNKNOWN REASON, FIXES UPON RELOADING, BUT THAT ISN'T USEFUL FOR MOST PEOPLE
+				consumer_goods_factor = 0.15
+				trade_opinion_factor = -0.25				
+			}
+		}
+		
+		DARK_weapons_produced = {
+			
+			picture = MAN_five_year_plan_industry
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = 0.10
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,253 @@
+
+
+####################################################
+#Generic
+####################################################
+
+
+#############
+# CAF_GEN_Dest
+#############
+
+animation = {
+	name = "CAF_GEN_Dest_idle_animation"
+	file = "CAF_GEN_Dest_idle.anim"
+}
+
+animation = {
+	name = "CAF_GEN_Dest_attack_animation"
+	file = "CAF_GEN_Dest_attack.anim"
+}
+
+animation = {
+	name = "CAF_GEN_Dest_defend_animation"
+	file = "CAF_GEN_Dest_defend.anim"
+}
+
+animation = {
+	name = "CAF_GEN_Dest_death_animation"
+	file = "CAF_GEN_Dest_death.anim"
+}
+
+
+
+
+#############
+# CAF_GEN_LtCruz
+#############
+
+animation = {
+	name = "CAF_GEN_LtCruz_idle_animation"
+	file = "CAF_GEN_LtCruz_idle.anim"
+}
+
+animation = {
+	name = "CAF_GEN_LtCruz_attack_animation"
+	file = "CAF_GEN_LtCruz_attack.anim"
+}
+
+animation = {
+	name = "CAF_GEN_LtCruz_defend_animation"
+	file = "CAF_GEN_LtCruz_defend.anim"
+}
+
+animation = {
+	name = "CAF_GEN_LtCruz_death_animation"
+	file = "CAF_GEN_LtCruz_death.anim"
+}
+
+
+
+
+#############
+# CAF_GEN_HvyCruz
+#############
+
+animation = {
+	name = "CAF_GEN_HvyCruz_idle_animation"
+	file = "CAF_GEN_HvyCruz_idle.anim"
+}
+
+animation = {
+	name = "CAF_GEN_HvyCruz_attack_animation"
+	file = "CAF_GEN_HvyCruz_attack.anim"
+}
+
+animation = {
+	name = "CAF_GEN_HvyCruz_defend_animation"
+	file = "CAF_GEN_HvyCruz_defend.anim"
+}
+
+animation = {
+	name = "CAF_GEN_HvyCruz_death_animation"
+	file = "CAF_GEN_HvyCruz_death.anim"
+}
+
+
+
+#############
+# CAF_GEN_BtlShip
+#############
+
+animation = {
+	name = "CAF_GEN_BtlShip_idle_animation"
+	file = "CAF_GEN_BtlShip_idle.anim"
+}
+
+animation = {
+	name = "CAF_GEN_BtlShip_attack_animation"
+	file = "CAF_GEN_BtlShip_attack.anim"
+}
+
+animation = {
+	name = "CAF_GEN_BtlShip_defend_animation"
+	file = "CAF_GEN_BtlShip_defend.anim"
+}
+
+animation = {
+	name = "CAF_GEN_BtlShip_death_animation"
+	file = "CAF_GEN_BtlShip_death.anim"
+}
+
+####################################################MIX
+
+#############
+# CAF_GER_LtCruz & CAF_GEN_BtlCruz
+#############
+
+animation = {
+	name = "CAF_GER_LtCruz_idle_animation"
+	file = "CAF_GER_LtCruz_idle.anim"
+}
+
+animation = {
+	name = "CAF_GER_LtCruz_attack_animation"
+	file = "CAF_GER_LtCruz_attack.anim"
+}
+
+animation = {
+	name = "CAF_GER_LtCruz_defend_animation"
+	file = "CAF_GER_LtCruz_defend.anim"
+}
+
+animation = {
+	name = "CAF_GER_LtCruz_death_animation"
+	file = "CAF_GER_LtCruz_death.anim"
+}
+
+####################################################
+#German
+####################################################
+
+
+#############
+# CAF_GER_Dest & CAF_GER_Dest
+#############
+
+animation = {
+	name = "CAF_GER_Dest_idle_animation"
+	file = "CAF_GER_Dest_idle.anim"
+}
+
+animation = {
+	name = "CAF_GER_Dest_attack_animation"
+	file = "CAF_GER_Dest_attack.anim"
+}
+
+animation = {
+	name = "CAF_GER_Dest_defend_animation"
+	file = "CAF_GER_Dest_defend.anim"
+}
+
+animation = {
+	name = "CAF_GER_Dest_death_animation"
+	file = "CAF_GER_Dest_death.anim"
+}
+
+
+#LtCruz above
+#Carriers0 default
+#Subs default
+#BtlShp0 & SH default
+#Freighters default
+
+#############
+# CAF_GER_battle_cruiser
+#############
+animation = {
+	name = "CAF_GER_battle_cruiser_death_animation"
+	file = "CAF_GER_battle_cruiser_death.anim"
+}
+animation = {
+	name = "CAF_GER_battle_cruiser_attack_animation"
+	file = "CAF_GER_battle_cruiser_attack.anim"
+}
+
+animation = {
+	name = "CAF_GER_battle_cruiser_defend_animation"
+	file = "CAF_GER_battle_cruiser_defend.anim"
+}
+
+animation = {
+	name = "CAF_GER_battle_cruiser_idle_animation"
+	file = "CAF_GER_battle_cruiser_idle.anim"
+}
+
+
+#############
+# CAF_GER_heavy_cruiser
+#############
+animation = {
+	name = "CAF_GER_heavy_cruiser_idle_animation"
+	file = "CAF_GER_heavy_cruiser_idle.anim"
+}
+
+animation = {
+	name = "CAF_GER_heavy_cruiser_attack_animation"
+	file = "CAF_GER_heavy_cruiser_attack.anim"
+}
+
+animation = {
+	name = "CAF_GER_heavy_cruiser_defend_animation"
+	file = "CAF_GER_heavy_cruiser_defend.anim"
+}
+
+animation = {
+	name = "CAF_GER_heavy_cruiser_death_animation"
+	file = "CAF_GER_heavy_cruiser_death.anim"
+}
+
+#############
+# CAF_GER_carrier0
+#############
+animation = {
+	name = "CAF_GER_carrier0_death_animation"
+	file = "CAF_GER_carrier0_death.anim"
+}
+
+animation = {
+	name = "CAF_GER_carrier0_death2_animation"
+	file = "CAF_GER_carrier0_death2.anim"
+}
+
+animation = {
+	name = "CAF_GER_carrier0_idle_animation"
+	file = "CAF_GER_carrier0_idle.anim"
+}
+
+
+
+####################################################
+#Other
+####################################################
+
+
+
+
+
+
+
+####
+# CAF_ENG_carrier0 Uses GER
+####
+

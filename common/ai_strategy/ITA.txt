@@ -1,0 +1,1048 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+ITA_dont_let_churchill_sneak_up_on_ya_broe = {
+	allowed = {
+		is_historical_focus_on = yes
+		original_tag = ITA 
+	}
+	enable = {
+		has_government = fascism
+		country_exists = ENG
+		any_country = {
+			is_literally_germany = yes
+			NOT = { has_war_with = ROOT }
+			has_war_with = ENG
+			has_government = fascism
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+    ai_strategy = { 
+        type = front_unit_request
+        area = north_africa
+        value = -10
+    }
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "ENG"
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "EGY"
+		value = 7000
+	}
+
+    ai_strategy = { 
+        type = front_unit_request
+        area = east_africa
+        value = -100
+    }
+}
+
+ITA_greece_invasion_preparation = {
+	enable = {
+		original_tag = ITA
+		ITA = {
+			OR = {
+				focus_progress = {
+					focus = ITA_warwithgreece
+					progress > 0.01
+				}
+				AND = {
+					has_completed_focus = ITA_warwithgreece
+					GRE = { controls_state = 47 }
+				}
+			}
+		}
+	}
+
+	abort = {
+		ITA = {
+			has_completed_focus = ITA_warwithgreece
+			has_war_with = GRE
+			NOT = { GRE = { controls_state = 47 } }
+		}
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "GRE"			
+		value = 9000000
+	}
+}
+
+ITA_oh_god_oh_fuck = {
+	enable = {
+		original_tag = ITA
+		surrender_progress < 0.01
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = { 
+		type = area_priority
+		id = italy
+		value = 9000000
+	}
+}
+
+ITA_greece_war_strategy = {
+	enable = {
+		original_tag = ITA
+		NOT = { controls_state = 47 }
+		has_war_with = GRE
+		date < 1940.4.1
+	}
+	
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = consider_weak
+		id = "GRE"			
+		value = 90000000000
+	}
+	ai_strategy = {
+		type = invade
+		id = "GRE"			
+		value = -90000
+	}	
+}
+
+# Spanish Civil War
+ITA_help_SPA_win_civil_war = { 
+	enable = {
+		date < 1939.1.1
+		original_tag = ITA
+		has_government = fascism 
+		NOT = { has_global_flag = scw_over }
+		SPS = {
+			has_government = fascism
+			has_war_with = SPR
+		}
+	}
+	abort = {
+		OR = {
+			date > 1939.1.1
+			has_global_flag = scw_over
+			NOT = { 
+				SPS = { 
+					has_government = fascism
+				}
+			}
+			NOT = { 
+				SPS = { 
+					has_war_with = SPR
+				}
+			}  
+		}
+	}
+	
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = SPS
+		value = 150
+	}
+}
+
+albania_war_goal = {
+	enable = {
+		original_tag = ITA
+		has_completed_focus = ITA_albania_war_goal
+		country_exists = ALB
+	}
+	abort = {
+		NOT = {
+			country_exists = ALB
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "ALB"			
+		value = 200
+	}		
+}
+
+MOR_WHAT_THE_FUCK = {
+	enable = {
+		always = yes
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "MOR"			
+		value = -200000
+	}
+	ai_strategy = {
+		type = alliance
+		id = "MOR"			
+		value = -200000
+	}
+	ai_strategy = {
+		type = protect
+		id = "MOR"			
+		value = -200000
+	}
+}
+
+ITA_AAHHHH_WHYYYY = {
+	enable = {
+		NOT = { has_war_with = ITA }
+		ITA = { NOT = { has_government = ROOT } } 
+	}
+	
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = conquer
+		id = "ENG"
+		value = -200000 
+	}
+}
+
+ENG_AAHHHH_WHYYYY = {
+	enable = {
+		NOT = { has_war_with = ENG }
+		ENG = { NOT = { has_government = ROOT } } 
+	}
+	
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = ignore
+		id = "ENG"
+		value = 200000 
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "ENG"
+		value = -200000 
+	}
+}
+
+SIA_AAHHHH_WHYYYY = {
+	enable = {
+		tag = SIA
+		NOT = { has_war_with = JAP }
+	}
+	
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = ignore
+		id = "JAP"
+		value = 200000 
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = "JAP"
+		value = -200000 
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "JAP"
+		value = -200000 
+	}
+}
+
+POLAND_WHY = {
+	enable = {
+		tag = POL
+		NOT = { any_state = { is_owned_by = ITA is_core_of = ROOT } } 
+	}
+	
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = ignore
+		id = "ITA"
+		value = 200000 
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "ITA"
+		value = -200000 
+	}
+}
+
+PER_AAHHHH_WHYYYY = {
+	enable = {
+		NOT = { has_war_with = PER }
+	}
+	
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = ignore
+		id = "PER"
+		value = 200000 
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "PER"
+		value = -200000 
+	}
+}
+
+MOR_AAHHHH_WHYYYY = {
+	enable = {
+		NOT = { has_war_with = MOR }
+	}
+	
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = ignore
+		id = "MOR"
+		value = 200000 
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "MOR"
+		value = -200000 
+	}
+}
+
+EGY_AAHHHH_WHYYYY = {
+	enable = {
+		NOT = { has_war_with = EGY }
+	}
+	
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = ignore
+		id = "EGY"
+		value = 200000 
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "EGY"
+		value = -200000 
+	}
+}
+
+TUN_AAHHHH_WHYYYY = {
+	enable = {
+		NOT = { has_war_with = TUN }
+	}
+	
+	abort_when_not_enabled = yes	
+	
+	ai_strategy = {
+		type = ignore
+		id = "TUN"
+		value = 200000 
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "TUN"
+		value = -200000 
+	}
+}
+
+ITA_stop_it_now = {
+	enable = {
+		original_tag = ITA
+		date < 1941.5.1
+		NOT = {
+			has_war_with = YUG
+		}
+	}
+	abort = {
+		OR = {
+			has_war_with = YUG
+			date > 1941.5.1
+		}
+	}
+
+	ai_strategy = {
+		type = declare_war
+		id = "YUG"			
+		value = -200000
+	}
+	ai_strategy = {
+		type = conquer
+		id = "YUG"
+		value = -200000 
+	}
+
+	ai_strategy = {
+		type = ignore
+		id = "YUG"
+		value = 200000 
+	}
+}
+
+SPR_stop_it_now = {
+	enable = {
+		original_tag = SPR
+		is_historical_focus_on = yes
+		NOT = { has_war_with = ENG }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = "ENG"			
+		value = -200000
+	}
+	ai_strategy = {
+		type = conquer
+		id = "ENG"
+		value = -200000 
+	}
+
+	ai_strategy = {
+		type = ignore
+		id = "ENG"
+		value = 200000 
+	}
+}
+
+anti_uk_war_goals = {
+	enable = {
+		original_tag = ITA
+		has_completed_focus = ITA_anti_uk_war_goals
+		country_exists = ENG
+	}
+	abort = {
+		NOT = {
+			country_exists = ENG
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "ENG"			
+		value = 200
+	}		
+}
+
+yugoslavia_war_goal = {
+	enable = {
+		original_tag = ITA
+		has_completed_focus = ITA_slovenia_dalmatia_claims
+		country_exists = YUG
+	}
+	abort = {
+		NOT = {
+			country_exists = YUG
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "YUG"			
+		value = 200
+	}		
+}
+
+germany_ally = {
+	enable = {
+		original_tag = ITA
+		has_completed_focus = ITA_pact_of_steel
+		country_exists = GER
+	}
+	abort = {
+		NOT = { country_exists = GER }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "GER"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "GER"			
+		value = 100
+	}	
+}
+
+romania_ally = {
+	enable = {
+		original_tag = ITA
+		has_completed_focus = ITA_romania_friend
+		country_exists = ROM
+	}
+	abort = {
+		NOT = { country_exists = ROM }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "ROM"			
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "ROM"			
+		value = 200
+	}	
+}
+
+bulgaria_ally = {
+	enable = {
+		original_tag = ITA
+		has_completed_focus = ITA_bulgaria_friend
+		country_exists = BUL
+	}
+	abort = {
+		NOT = { country_exists = BUL }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "BUL"			
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "BUL"			
+		value = 200
+	}	
+}
+
+yugoslavia_ally = {
+	enable = {
+		original_tag = ITA
+		has_completed_focus = ITA_yugoslavia_friend
+		country_exists = YUG
+	}
+	abort = {
+		NOT = { country_exists = YUG }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "YUG"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "YUG"			
+		value = 100
+	}	
+}
+
+greece_ally = {
+	enable = {
+		original_tag = ITA
+		has_completed_focus = ITA_greece_friend
+		country_exists = GRE
+	}
+	abort = {
+		NOT = { country_exists = GRE }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "GRE"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "GRE"			
+		value = 100
+	}	
+}
+
+turkey_ally = {
+	enable = {
+		original_tag = ITA
+		has_completed_focus = ITA_turkey_friend
+		country_exists = TUR
+	}
+	abort = {
+		NOT = { country_exists = TUR }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "TUR"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "TUR"			
+		value = 100
+	}	
+}
+
+portugal_ally = {
+	enable = {
+		original_tag = ITA
+		has_completed_focus = ITA_portugal_friend
+		country_exists = POR
+	}
+	abort = {
+		NOT = { country_exists = POR }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "POR"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "POR"			
+		value = 100
+	}	
+}
+
+crush_ethiopia = {
+	enable = {
+		original_tag = ITA
+		country_exists = ETH
+		ITA = { has_war_with = ETH }
+		date < 1940.1.1
+	}
+	abort = {
+		NOT = { ITA = { has_war_with = ETH } }
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = east_africa
+		value = 500
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "ETH"			
+		value = 70000
+	}
+
+	ai_strategy = {
+		type = consider_weak
+		id = "ETH"
+		value = 90000
+	}
+}
+
+ITA_not_really_our_fight_yet = {
+	enable = {
+		original_tag = ITA 
+		date < 1942.4.1
+		has_war_with = SOV
+	}
+	abort = {
+		date > 1942.4.1 
+	}
+
+	ai_strategy = {
+		type = consider_weak
+		id = "SOV"			
+		value = -5000
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = "SOV"			
+		value = -5000
+	}
+}
+
+ITA_take_egypt_and_nothing_else = {
+	enable = {
+		original_tag = ITA 
+		surrender_progress < 0.01
+		date < 1944.1.1
+	}
+	abort = {
+		OR = {
+			date > 1944.1.1
+			surrender_progress > 0.01
+		} 
+	}
+
+	ai_strategy = {
+		type = consider_weak
+		id = "JOR"			
+		value = -5000
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = "JOR"			
+		value = -5000
+	}
+
+	ai_strategy = {
+		type = consider_weak
+		id = "PAL"			
+		value = -5000
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = "PAL"			
+		value = -5000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "EGY"			
+		value = -5000
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "EGY"			
+		value = 5000
+	}
+	ai_strategy = {
+		type = consider_weak
+		id = "EGY"			
+		value = 5000
+	}
+	ai_strategy = { 
+		type = area_priority
+		id = north_africa
+		value = 900
+	} 
+	ai_strategy = { 
+		type = area_priority
+		id = east_africa
+		value = -70000
+	} 
+}
+
+ITA_take_malta = {
+	allowed = {
+		is_historical_focus_on = yes
+		original_tag = ITA 
+	}
+	enable = {
+		date < 1942.1.1
+		166 = { controller = { has_war_with = ROOT } }
+	}
+
+    abort = {
+		date > 1942.1.1
+		166 = { controller = { NOT = { has_war_with = ROOT } } }
+    }
+
+    ai_strategy = {
+        type = front_control
+
+        area = italy
+     
+        ratio = 0.1
+     
+        priority = 30
+        ordertype = invasion
+    }
+}
+
+ITA_you_are_actually_retarded = {
+	enable = {
+		original_tag = ITA
+		country_exists = SOV
+		ITA = { has_war_with = SOV }
+		is_faction_leader = no
+	}
+	abort = {
+		OR = {
+			NOT = { ITA = { has_war_with = SOV } }
+			is_faction_leader = yes
+		}
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "SOV"
+		value = -70000
+	}
+}
+
+ITA_template_design_1 = {
+	enable = {
+	
+		original_tag = ITA
+		date < 1940.1.1				
+	}
+	abort = { 
+		date > 1940.1.1
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = 40
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = heavy_armor
+		value = -50
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = paratroopers
+		value = -50
+	}
+}
+
+
+ITA_template_design_2 = {
+	enable = {
+	
+		original_tag = ITA
+		date > 1940.1.1				
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = 30
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = -20
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 40
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = heavy_armor
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = paratroopers
+		value = -50
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = mechanized
+		value = -20
+	}
+}
+
+
+# extra scaryness around italy, this together with sufficient enemy superiority will make ai avoid transports around its coast
+italy_be_careful_transporting_through_the_med = {
+	enable = {
+		original_tag = ITA
+		date < 1942.1.1
+		has_war = yes
+		enemies_naval_strength_ratio > 1
+	}
+	abort = {
+		OR = {
+			date > 1942.1.1
+			has_war = no
+			enemies_naval_strength_ratio < 1
+		}
+	}
+	
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 68
+		value = 50
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 169
+		value = 50
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 168
+		value = 50
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 69
+		value = 50
+	}
+}
+
+dont_take_claims_on_yug = {
+	enable = {
+		original_tag = ITA
+		country_exists = YUG
+		is_historical_focus_on = yes
+		date < 1940.1.1
+		has_war = no
+	}
+
+	abort = {
+		OR = {
+			NOT = { country_exists = YUG }
+			date > 1940.1.1
+			has_war = yes
+		}
+	}
+	
+	ai_strategy = {
+		type = ignore_claim
+		id = "YUG"			
+		value = 1
+	}		
+}
+
+ITA_fdr_is_ok = {
+	enable = {
+		original_tag = ITA
+		has_civil_war = yes
+		has_war_with = GER
+		ENG = { has_war_with = GER }
+	}
+	abort = {
+		OR = {
+			NOT = { has_war_with = GER }
+			ENG = { has_war_with = GER }
+		}
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "USA"
+		value = 2000000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "ENG"
+		value = 2000000
+	}
+}
+
+ITA_stockpile_less_early_game = {
+	allowed = { 
+		original_tag = ITA 
+	}
+
+	enable = {
+		original_tag = ITA
+		date < 1939.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_stockpile_surplus_ratio
+		value = -25 # reduce while we build up troops for africa etc
+	}
+}
+
+ITA_please_help_me_buget_this_my_country_is_dieing = {
+	enable = {
+		original_tag = ITA
+		has_government = fascism
+		date < 1937.6.1
+	}
+
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 35
+	} 
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = artillery
+		value = 2
+	}
+}
+
+ITA_help_fellow_fashy_conquests = { # Reverse strategy
+    reversed = yes
+
+    enable = {
+        NOT = { original_tag = ITA }
+        has_war = yes
+        ITA = { has_government = fascism }
+        has_government = fascism
+        num_of_civilian_factories > 10
+        capital_scope = { NOT = { is_on_continent = asia } }
+        is_subject = no
+        NOT = {
+            has_war_with = ITA
+            any_country = {
+                is_in_faction_with = ITA
+                has_war_with = ROOT
+            }
+        }
+        OR = {
+            NOS_has_civil_war = yes
+            surrender_progress > 0.05
+        }
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = send_volunteers_desire
+        id = "ITA"
+        value = 1000
+    }
+
+    ai_strategy = {
+        type = support
+        id = "ITA"
+        value = 1000
+    }
+}

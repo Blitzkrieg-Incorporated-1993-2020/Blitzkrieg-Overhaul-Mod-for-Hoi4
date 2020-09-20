@@ -1,0 +1,190 @@
+###############
+## Default (GER) fascist_light_armor
+###############
+objectTypes = {	
+	pdxmesh = {
+		name = "fascist_light_armor_mesh"
+		file = "gfx/models/units/tanks/fascist_light_armor.mesh"
+
+		animation = { id = "attack"			type = "GER_tank_light_attack_animation" }
+		animation = { id = "idle"			type = "GER_tank_light_idle_animation" }
+		animation = { id = "move"			type = "GER_tank_light_moving_animation" }
+		
+		scale = 0.9
+		
+	}
+}
+###############
+## Default (GER) fascist_medium_armor
+###############
+objectTypes = {	
+	pdxmesh = {
+		name = "fascist_medium_armor_mesh"
+		file = "gfx/models/units/tanks/fascist_medium_armor.mesh"
+
+		animation = { id = "attack"			type = "GER_tank_medium_attack_animation" }
+		animation = { id = "idle"			type = "GER_tank_medium_idle_animation" }
+		animation = { id = "move"			type = "GER_tank_medium_moving_animation" }
+		scale = 0.8
+	}
+}
+###############
+## Default (GER) fascist_heavy_armor
+###############
+objectTypes = {	
+	pdxmesh = {
+		name = "fascist_heavy_armor_mesh"
+		file = "gfx/models/units/tanks/fascist_heavy_armor.mesh"
+
+		animation = { id = "attack"			type = "GER_tank_heavy_attack_animation" }
+		animation = { id = "idle"			type = "GER_tank_heavy_idle_animation" }
+		animation = { id = "move"			type = "GER_tank_heavy_moving_animation" }
+		animation = { id = "death"			type = "GER_tank_heavy_death_animation" }
+		scale = 1.1
+	}
+}
+###############
+## Default (GER) fascist_mechanized
+###############
+objectTypes = {
+	pdxmesh = {
+		name = "fascist_mechanized_frame_mesh"
+		file = "gfx/models/units/tanks/mechanized_frame.mesh"
+		
+		animation = { id = "idle"			type = "motorized_frame_idle_animation" }
+		animation = { id = "move"			type = "motorized_frame_move_animation" }
+		animation = { id = "attack"			type = "motorized_frame_attack_animation" }
+	}
+
+}
+
+objectTypes = {	
+	pdxmesh = {
+		name = "fascist_mechanized_vehicle_mesh"
+		file = "gfx/models/units/tanks/fascist_mechanized.mesh"
+
+		animation = { id = "idle"			type = "fascist_mechanized_01_idle_animation" }
+		animation = { id = "move"			type = "fascist_mechanized_01_move_animation" }
+		animation = { id = "attack"			type = "fascist_mechanized_01_attack_animation" }
+	}
+}
+
+###############
+## ITA_fascist_mechanized
+###############
+objectTypes = {
+	pdxmesh = {
+		name = "ITA_fascist_mechanized_frame_mesh"
+		file = "gfx/models/units/tanks/mechanized_frame.mesh"
+		
+		animation = { id = "idle"			type = "motorized_frame_idle_animation" }
+		animation = { id = "move"			type = "motorized_frame_move_animation" }
+		animation = { id = "attack"			type = "motorized_frame_attack_animation" }
+	}
+
+}
+
+objectTypes = {	
+	pdxmesh = {
+		name = "ITA_fascist_mechanized_vehicle_mesh"
+		file = "gfx/models/units/tanks/fascist_mechanized.mesh"
+
+		animation = { id = "idle"			type = "fascist_mechanized_01_idle_animation" }
+		animation = { id = "move"			type = "fascist_mechanized_01_move_animation" }
+		animation = { id = "attack"			type = "fascist_mechanized_01_attack_animation" }
+	}
+}
+
+###############
+## Default (GER) armored_car_brigade
+###############
+
+#objectTypes = {
+#	pdxmesh = {
+#		name = "armored_car_brigade_mesh"
+#		file = "gfx/models/units/tanks/sdkfz-13.mesh"
+#
+#		animation = { id = "idle"			type = "armored_car_brigade_idle_animation" }
+#		animation = { id = "idle2"			type = "armored_car_brigade_idle2_animation" }
+#		animation = { id = "move"			type = "armored_car_brigade_move_animation" }
+#		animation = { id = "attack"			type = "armored_car_brigade_attack_animation" }
+#		animation = { id = "death"			type = "armored_car_brigade_death_animation" }
+#
+#
+#	}
+#}
+
+###############
+## Default (GER) early_armored_car
+###############
+
+#objectTypes = {
+#	pdxmesh = {
+#		name = "early_armored_car_mesh"
+#		file = "gfx/models/units/tanks/sdkfz-13.mesh"
+#
+#		animation = { id = "idle"			type = "armored_car_brigade_idle_animation" }
+#		animation = { id = "idle2"			type = "armored_car_brigade_idle2_animation" }
+#		animation = { id = "move"			type = "armored_car_brigade_move_animation" }
+#		animation = { id = "attack"			type = "armored_car_brigade_attack_animation" }
+#		animation = { id = "death"			type = "armored_car_brigade_death_animation" }
+#
+#
+#	}
+#}
+
+###############
+## Default (GER) basic_armored_car
+###############
+
+#objectTypes = {
+#	pdxmesh = {
+#		name = "basic_armored_car_mesh"
+#		file = "gfx/models/units/tanks/sdkfz-221.mesh"
+#
+#		animation = { id = "idle"			type = "armored_car_brigade_idle_animation" }
+#		animation = { id = "idle2"			type = "armored_car_brigade_idle2_animation" }
+#		animation = { id = "move"			type = "armored_car_brigade_move_animation" }
+#		animation = { id = "attack"			type = "armored_car_brigade_attack_animation" }
+#		animation = { id = "death"			type = "armored_car_brigade_death_animation" }
+#
+#
+#	}
+#}
+
+###############
+## Default (GER) improved_armored_car
+###############
+
+#objectTypes = {
+#	pdxmesh = {
+#		name = "improved_armored_car_3_mesh"
+#		file = "gfx/models/units/tanks/sdkfz-231.mesh"
+#
+#		animation = { id = "idle"			type = "armored_car_brigade_idle_animation" }
+#		animation = { id = "idle2"			type = "armored_car_brigade_idle2_animation" }
+#		animation = { id = "move"			type = "armored_car_brigade_move_animation" }
+#		animation = { id = "attack"			type = "armored_car_brigade_attack_animation" }
+#		animation = { id = "death"			type = "armored_car_brigade_death_animation" }
+#
+#
+#	}
+#}
+
+############################
+## Default (GER) medium_assault_gun_brigade
+############################
+
+#objectTypes = {
+#	pdxmesh = {
+#		name = "medium_assault_gun_brigade_mesh"
+#		file = "gfx/models/units/tanks/medium_assault_gun_brigade.mesh"
+#
+#		animation = { id = "idle"			type = "medium_assault_gun_brigade_idle_animation" }
+#		animation = { id = "move"			type = "medium_assault_gun_brigade_move_animation" }
+#		animation = { id = "attack"			type = "medium_assault_gun_brigade_attack_animation" }
+#		animation = { id = "death"			type = "medium_assault_gun_brigade_death_animation" }
+#
+#
+#	}
+#}

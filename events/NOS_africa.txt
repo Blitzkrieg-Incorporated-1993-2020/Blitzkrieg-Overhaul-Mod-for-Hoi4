@@ -1,0 +1,850 @@
+﻿add_namespace = NOS_africa
+
+##Liberation from Ethiopia
+country_event = {
+	id = NOS_africa.1
+	title = NOS_africa.1.t	# Freedom for BOT
+	desc = NOS_africa.1.desc
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	option = { #puppet new state
+		name = NOS_africa.1.a
+		ai_chance = {
+			base = 100
+		}
+		BOT = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 542
+					}
+				}
+					transfer_state = 542
+			}
+		}
+		ETH = { puppet = BOT }
+	}
+
+	option = { #full freedom
+		name = NOS_africa.1.b
+		ai_chance = {
+			base = 0
+		}
+		BOT = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 542
+						} 
+
+					}
+					transfer_state = 542
+				}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}	
+		}
+		ETH = { add_to_faction = BOT }		
+	}
+
+	option = { #refuse them because of reasons
+		name = NOS_africa.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = NOS_africa.2
+	title = NOS_africa.2.t	# Freedom for EGY
+	desc = NOS_africa.2.desc
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = NOS_africa.1.a
+		ai_chance = {
+			base = 100
+		}
+		EGY = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 551
+						controls_state = 457
+						controls_state = 456
+						controls_state = 446
+						controls_state = 447
+						controls_state = 452
+						controls_state = 453
+						controls_state = 552
+					}
+				}
+				transfer_state = 551
+				transfer_state = 457
+				transfer_state = 456
+				transfer_state = 446
+				transfer_state = 447
+				transfer_state = 452
+				transfer_state = 453
+				transfer_state = 552
+			}
+		}
+		ETH = { puppet = EGY }
+	}
+
+	option = { #full freedom
+		name = NOS_africa.1.b
+		ai_chance = {
+			base = 0
+		}
+		EGY = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 551
+						controls_state = 457
+						controls_state = 456
+						controls_state = 446
+						controls_state = 447
+						controls_state = 452
+						controls_state = 453
+						controls_state = 552
+					}
+				}
+				transfer_state = 551
+				transfer_state = 457
+				transfer_state = 456
+				transfer_state = 446
+				transfer_state = 447
+				transfer_state = 452
+				transfer_state = 453
+				transfer_state = 552
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}	
+		}
+		ETH = { add_to_faction = EGY }		
+	}
+
+	option = { #refuse them because of reasons
+		name = NOS_africa.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = NOS_africa.3
+	title = NOS_africa.3.t	# Freedom for LBA
+	desc = NOS_africa.3.desc
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = NOS_africa.1.a
+		ai_chance = {
+			base = 100
+		}
+		LBA = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 451
+						controls_state = 663
+						controls_state = 450
+						controls_state = 273
+						controls_state = 449
+						controls_state = 661
+						controls_state = 662
+						controls_state = 448
+					}
+				}
+				transfer_state = 451
+				transfer_state = 663
+				transfer_state = 450
+				transfer_state = 273
+				transfer_state = 449
+				transfer_state = 661
+				transfer_state = 662
+				transfer_state = 448
+			}
+		}
+		ETH = { puppet = LBA }
+	}
+
+	option = { #full freedom
+		name = NOS_africa.1.b
+		ai_chance = {
+			base = 0
+		}
+		LBA = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 451
+						controls_state = 663
+						controls_state = 450
+						controls_state = 273
+						controls_state = 449
+						controls_state = 661
+						controls_state = 662
+						controls_state = 448
+					}
+				}
+				transfer_state = 451
+				transfer_state = 663
+				transfer_state = 450
+				transfer_state = 273
+				transfer_state = 449
+				transfer_state = 661
+				transfer_state = 662
+				transfer_state = 448
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}	
+		}
+		ETH = { add_to_faction = LBA }		
+	}
+
+	option = { #refuse them because of reasons
+		name = NOS_africa.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = NOS_africa.4
+	title = NOS_africa.4.t	# Freedom for ISR
+	desc = NOS_africa.4.desc
+	picture = GFX_report_event_DARK_arab_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = NOS_africa.1.a
+		ai_chance = {
+			base = 100
+		}
+		ISR = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 454
+					}
+				}
+				transfer_state = 454
+			}
+		}
+		ETH = { puppet = ISR }
+	}
+
+	option = { #full freedom
+		name = NOS_africa.1.b
+		ai_chance = {
+			base = 0
+		}
+		ISR = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 454
+					}
+				}
+				transfer_state = 454
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}	
+		}
+		ETH = { add_to_faction = ISR }		
+	}
+
+	option = { #refuse them because of reasons
+		name = NOS_africa.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = NOS_africa.5
+	title = NOS_africa.5.t	# Freedom for PAL
+	desc = NOS_africa.5.desc
+	picture = GFX_report_event_DARK_arab_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = NOS_africa.1.a
+		ai_chance = {
+			base = 100
+		}
+		PAL = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 454
+					}
+				}
+				transfer_state = 454
+			}
+		}
+		ETH = { puppet = PAL }
+	}
+
+	option = { #full freedom
+		name = NOS_africa.1.b
+		ai_chance = {
+			base = 0
+		}
+		PAL = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 454
+					}
+				}
+				transfer_state = 454
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}	
+		}
+		ETH = { add_to_faction = PAL }		
+	}
+
+	option = { #refuse them because of reasons
+		name = NOS_africa.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = NOS_africa.6
+	title = NOS_africa.6.t	# Freedom for JOR
+	desc = NOS_africa.6.desc
+	picture = GFX_report_event_DARK_arab_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = NOS_africa.1.a
+		ai_chance = {
+			base = 100
+		}
+		JOR = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 455
+					}
+				}
+				transfer_state = 455
+			}
+		}
+		ETH = { puppet = JOR }
+	}
+
+	option = { #full freedom
+		name = NOS_africa.1.b
+		ai_chance = {
+			base = 0
+		}
+		JOR = { 
+			if = {
+				limit = { 
+					JOR = { 
+						controls_state = 455
+					}
+				}
+				transfer_state = 455
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}	
+		}
+		ETH = { add_to_faction = JOR }		
+	}
+
+	option = { #refuse them because of reasons
+		name = NOS_africa.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = NOS_africa.7
+	title = NOS_africa.7.t	# Freedom for LEB
+	desc = NOS_africa.7.desc
+	picture = GFX_report_event_DARK_arab_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = NOS_africa.1.a
+		ai_chance = {
+			base = 100
+		}
+		LEB = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 553
+					}
+				}
+				transfer_state = 553
+			}
+		}
+		ETH = { puppet = LEB }
+	}
+
+	option = { #full freedom
+		name = NOS_africa.1.b
+		ai_chance = {
+			base = 0
+		}
+		LEB = {
+			if = {
+				limit = { 
+					LEB = { 
+						controls_state = 553
+					}
+				}
+				transfer_state = 553
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}
+		ETH = { add_to_faction = LEB }		
+	}
+
+	option = { #refuse them because of reasons
+		name = NOS_africa.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = NOS_africa.8
+	title = NOS_africa.8.t	# Freedom for SYR
+	desc = NOS_africa.8.desc
+	picture = GFX_report_event_DARK_arab_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = NOS_africa.1.a
+		ai_chance = {
+			base = 100
+		}
+		SYR = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 554
+						controls_state = 677
+						controls_state = 680
+					}
+				}
+				transfer_state = 554
+				transfer_state = 677
+				transfer_state = 680
+			}
+		}
+		ETH = { puppet = SYR }
+	}
+
+	option = { #full freedom
+		name = NOS_africa.1.b
+		ai_chance = {
+			base = 0
+		}
+		SYR = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 554
+						controls_state = 677
+						controls_state = 680
+					}
+				}
+				transfer_state = 554
+				transfer_state = 677
+				transfer_state = 680
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}
+		ETH = { add_to_faction = SYR }		
+	}
+
+	option = { #refuse them because of reasons
+		name = NOS_africa.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = NOS_africa.9
+	title = NOS_africa.9.t	# Freedom for SAF
+	desc = NOS_africa.9.desc
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = NOS_africa.1.a
+		ai_chance = {
+			base = 100
+		}
+		SAF = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 541
+						controls_state = 681
+						controls_state = 275
+						controls_state = 719
+					}
+				}
+				transfer_state = 541
+				transfer_state = 681
+				transfer_state = 275
+				transfer_state = 719
+			}
+		}
+		ETH = { puppet = SAF }
+	}
+
+	option = { #full freedom
+		name = NOS_africa.1.b
+		ai_chance = {
+			base = 0
+		}
+		SAF = { 
+			if = {
+				limit = { 
+					ETH = { 
+						controls_state = 541
+						controls_state = 681
+						controls_state = 275
+						controls_state = 719
+					}
+				}
+				transfer_state = 541
+				transfer_state = 681
+				transfer_state = 275
+				transfer_state = 719
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}
+		ETH = { add_to_faction = SAF }		
+	}
+
+	option = { #refuse them because of reasons
+		name = NOS_africa.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+
+##Liberation for SAF
+country_event = {
+	id = NOS_africa.100
+	title = NOS_africa.100.t	# Freedom for ETH
+	desc = NOS_africa.100.desc	#
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = NOS_africa.1.a
+		ai_chance = {
+			base = 100
+		}
+		ETH = { 
+			if = {
+				limit = { 
+					SAF = { 
+						controls_state = 271 
+						controls_state = 764
+						controls_state = 765  
+					} 
+
+				}
+					transfer_state = 271
+					transfer_state = 764
+					transfer_state = 765
+			}
+		}
+		SAF = { puppet = ETH }
+	}
+
+	option = { #full freedom
+		name = NOS_africa.1.b
+		ai_chance = {
+			base = 0
+		}
+			ETH = { 
+				if = {
+					limit = { 
+						SAF = { 
+							controls_state = 271 
+							controls_state = 764
+							controls_state = 765 
+							} 
+
+						}
+						transfer_state = 271
+						transfer_state = 764
+						transfer_state = 765
+					}
+				hidden_effect = {
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.75
+					}
+				}	
+			}
+		SAF = { add_to_faction = ETH }		
+	}
+
+	option = { #refuse them because of reasons
+		name = NOS_africa.1.c
+		ai_chance = {
+			base = 0
+		}
+		
+		add_political_power = -70
+	}		
+}
+country_event = {
+	id = NOS_africa.101
+	title = NOS_africa.101.t	# Freedom for ERI
+	desc = NOS_africa.101.desc	#
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = NOS_africa.1.a
+		ai_chance = {
+			base = 100
+		}
+		ETH = { 
+			if = {
+				limit = { 
+					SAF = { 
+						controls_state = 550 
+					} 
+
+				}
+				transfer_state = 550
+			}
+		}
+		SAF = { puppet = ERI }
+	}
+
+	option = { #full freedom
+		name = NOS_africa.1.b
+		ai_chance = {
+			base = 0
+		}
+			ERI = { 
+				if = {
+					limit = { 
+						SAF = { 
+							controls_state = 550
+							} 
+
+						}
+						transfer_state = 550
+					}
+				hidden_effect = {
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.75
+					}
+				}	
+			}
+		SAF = { add_to_faction = ERI }		
+	}
+
+	option = { #refuse them because of reasons
+		name = NOS_africa.1.c
+		ai_chance = {
+			base = 0
+		}
+		
+		add_political_power = -70
+	}		
+}
+country_event = {
+	id = NOS_africa.102
+	title = NOS_africa.102.t	# Freedom for SOM
+	desc = NOS_africa.102.desc	#
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = NOS_africa.1.a
+		ai_chance = {
+			base = 100
+		}
+		SOM = { 
+			if = {
+				limit = { 
+					SAF = { 
+						controls_state = 268 
+						controls_state = 269
+						controls_state = 559 
+					} 
+
+				}
+				transfer_state = 268
+				transfer_state = 269
+				transfer_state = 559
+			}
+		}
+		SAF = { puppet = SOM }
+	}
+
+	option = { #full freedom
+		name = NOS_africa.1.b
+		ai_chance = {
+			base = 0
+		}
+			SOM = { 
+				if = {
+					limit = { 
+						SAF = { 
+							controls_state = 268 
+							controls_state = 269
+							controls_state = 559 
+							} 
+
+						}
+						transfer_state = 268
+						transfer_state = 269
+						transfer_state = 559
+					}
+				hidden_effect = {
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.75
+					}
+				}	
+			}
+		SAF = { add_to_faction = SOM }		
+	}
+
+	option = { #refuse them because of reasons
+		name = NOS_africa.1.c
+		ai_chance = {
+			base = 0
+		}
+		
+		add_political_power = -70
+	}		
+}

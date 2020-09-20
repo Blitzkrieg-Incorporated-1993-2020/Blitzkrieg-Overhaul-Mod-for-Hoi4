@@ -1,0 +1,183 @@
+ideas = {
+
+	country = {
+	
+		fas_the_home_of_capitalism = {
+			
+			allowed = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_goods_red_bonus
+			
+			
+			modifier = {
+			 	production_factory_max_efficiency_factor = 0.1 
+				production_factory_start_efficiency_factor = 0.1
+				production_speed_buildings_factor = 0.1 
+				industrial_capacity_factory = 0.1 
+				industrial_capacity_dockyard = 0.1
+				stability_factor = -0.1
+				political_power_cost = 0.35
+			}		
+		}
+		
+		
+		fas_rebellions = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = jap_militarism_shogun
+			
+			
+			modifier = {
+				autonomy_gain = 1 
+			}		
+		}
+		
+		
+		fas_carrier_dominance = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_navy_carrier_bonus
+			
+			
+			modifier = {
+				sortie_efficiency = 0.1  
+			}	
+			
+			equipment_bonus = {
+				carrier = {
+					build_cost_ic = -0.15 instant = yes
+				}
+			
+			}
+
+			research_bonus = {
+				cv_tech = 0.15
+			
+			}
+			
+		}
+		
+		
+		fas_Emergency_Industrial_Effort_focus = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			#picture = generic_navy_carrier_bonus
+			
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.75
+			}	
+			
+		}
+		
+		fas_industry_mobilized_for_war_effort = {
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = man_five_year_plan_tank
+			
+			
+			modifier = {
+				consumer_goods_factor = -0.3
+			}	
+			
+		}
+		
+		
+		fas_prod_the_giant = {
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = YUG_federal_defense_council
+			
+			
+			modifier = {
+				production_speed_arms_factory_factor = 0.5
+			}	
+			
+		}
+		
+		fas_permanent_draft = {
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_manpower_bonus
+			
+			
+			modifier = {
+				conscription = 0.05
+				stability_factor = -0.1
+			}	
+			
+		}
+		
+		
+		FAS_30_Days = {
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				has_war = yes
+			}
+			
+			removal_cost = -1
+			
+			#picture = generic_navy_carrier_bonus
+			
+			
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.15
+			}	
+			
+		}
+		
+	
+	}
+}

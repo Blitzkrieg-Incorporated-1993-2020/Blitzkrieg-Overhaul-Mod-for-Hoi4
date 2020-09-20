@@ -1,0 +1,161 @@
+ideas = {
+
+	maximum_age_laws = { 
+		law = yes
+		use_list_view = yes
+
+		age_40 = {
+						
+			cost = 100
+			removal_cost = -1
+			level = 4
+			
+			available = {
+			}
+
+			modifier = {
+				#conscription = 0.005
+			}
+			
+			ai_will_do = {
+   				factor = 1
+   			}
+			
+			cancel_if_invalid = yes
+			default = yes
+		}
+		age_50 = {
+						
+			cost = 100
+			removal_cost = -1
+			level = 3
+			
+			available = {
+                has_war = yes
+			}
+			
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					factor = 10
+					is_major = yes
+					any_country = {
+						has_war_with = ROOT
+						is_major = yes
+					}
+					has_manpower < 1000000
+				}
+
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory <  1000
+				}
+			}
+			
+			modifier = {
+				#conscription = 0.01
+				conscription = 0.005
+				training_time_factor = 0.1
+			}
+			
+			cancel_if_invalid = no
+		}
+		age_60 = {
+						
+			cost = 100
+			removal_cost = -1
+			level = 2
+			
+			available = {
+				has_war = yes
+			}
+			
+			ai_will_do = {
+   				factor = 1
+   				modifier = {
+					factor = 3
+					OR = {
+						AND = {
+					        has_war = yes
+					        is_major = no
+					        has_manpower < 10000
+						}
+						AND = {
+					        has_war = yes
+					        is_major = yes
+					        has_manpower < 100000
+					        NOT = { is_literally_russia = yes }
+						}
+						AND = {
+					        has_war = yes
+					        is_major = yes
+					        has_manpower < 1000000
+					        OR = {
+					        	is_literally_russia = yes
+					        	is_literally_china_proper = yes
+					        }
+						}
+					}
+				}
+   			}
+			
+			modifier = {
+				#conscription = 0.015
+				conscription = 0.01
+				training_time_factor = 0.25
+				political_power_factor = -0.25
+			}
+			
+			cancel_if_invalid = yes
+		}
+		all_must_serve_old = {
+						
+			cost = 100
+			removal_cost = -1
+			level = 1
+			
+			available = {
+				has_war = yes
+			}
+			
+			ai_will_do = {
+   				factor = 1
+   				modifier = {
+					factor = 4
+					OR = {
+						AND = {
+					        has_war = yes
+					        is_major = no
+					        has_manpower < 10000
+						}
+						AND = {
+					        has_war = yes
+					        is_major = yes
+					        has_manpower < 100000
+					        NOT = { is_literally_russia = yes }
+						}
+						AND = {
+					        has_war = yes
+					        is_major = yes
+					        has_manpower < 1000000
+					        OR = {
+					        	is_literally_russia = yes
+					        	is_literally_china_proper = yes
+					        }
+						}
+					}
+				}
+   			}
+			
+			modifier = {
+				#conscription = 0.02
+				conscription = 0.015
+				training_time_factor = 0.5
+				political_power_factor = -0.5
+			}
+			
+			cancel_if_invalid = yes
+		}
+	}
+}

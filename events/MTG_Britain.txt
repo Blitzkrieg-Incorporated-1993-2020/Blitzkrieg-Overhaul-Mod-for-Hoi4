@@ -922,8 +922,7 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			remove_ideas = ENG_king_edward
-			add_ideas = ENG_george_vi
-			set_country_flag = ENG_edward_viii_abdicated
+			add_ideas = ENG_george_vi		
 		}
 	}
 
@@ -1975,16 +1974,6 @@ country_event = {
 				drop_cosmetic_tag = yes
 				retire_country_leader = yes
 			}
-			if = {
-			    limit = {
-				    has_global_flag = BRM_separated
-				}
-
-				BRM = {
-				    drop_cosmetic_tag = yes
-				    retire_country_leader = yes
-				}
-			}
 			CAN = {
 				if = {
 					limit = {
@@ -2653,8 +2642,6 @@ country_event = {
 				has_full_control_of_state = 680
 				owns_state = 554
 				has_full_control_of_state = 554
-				owns_state = 1040
-				has_full_control_of_state = 1040
 			}
 			release = SYR
 		}
@@ -3028,16 +3015,6 @@ country_event = {
 				NOT = { original_tag = LAO }
 				owns_state = 670
 				has_full_control_of_state = 670
-				owns_state = 1073
-				has_full_control_of_state = 1073
-				owns_state = 1074
-				has_full_control_of_state = 1074
-				owns_state = 1075
-				has_full_control_of_state = 1075
-				owns_state = 1076
-				has_full_control_of_state = 1076
-				owns_state = 1077
-				has_full_control_of_state = 1077
 			}
 			release = LAO
 		}
@@ -3055,12 +3032,6 @@ country_event = {
 				NOT = { original_tag = CAM }
 				owns_state = 741
 				has_full_control_of_state = 741
-				owns_state = 1083
-				has_full_control_of_state = 1083
-				owns_state = 1084
-				has_full_control_of_state = 1084
-				owns_state = 1085
-				has_full_control_of_state = 1085
 			}
 			release = CAM
 		}
@@ -3080,14 +3051,6 @@ country_event = {
 				has_full_control_of_state = 671
 				owns_state = 286
 				has_full_control_of_state = 286
-				owns_state = 1078
-				has_full_control_of_state = 1078
-				owns_state = 1079
-				has_full_control_of_state = 1079
-				owns_state = 1080
-				has_full_control_of_state = 1080
-				owns_state = 1081
-				has_full_control_of_state = 1081
 			}
 			release = VIN
 		}
@@ -3113,8 +3076,6 @@ country_event = {
 				NOT = { original_tag = ANG }
 				owns_state = 540
 				has_full_control_of_state = 540
-				owns_state = 1036
-				has_full_control_of_state = 1036
 			}
 			release = ANG
 		}
@@ -3148,9 +3109,7 @@ country_event = {
 			limit = {
 				NOT = { original_tag = MZB }
 				owns_state = 544
-				owns_state = 1128
 				has_full_control_of_state = 544
-				has_full_control_of_state = 1128
 			}
 			release = MZB
 		}
@@ -3224,30 +3183,6 @@ country_event = {
 		if = {
 			limit = {
 				NOT = { original_tag = MOR }
-				owns_state = 1106
-				has_full_control_of_state = 1106
-			}
-			MOR = { transfer_state = 1106 }
-		}
-		if = {
-			limit = {
-				NOT = { original_tag = MOR }
-				owns_state = 1043
-				has_full_control_of_state = 1043
-			}
-			MOR = { transfer_state = 1043 }
-		}
-		if = {
-			limit = {
-				NOT = { original_tag = MOR }
-				owns_state = 1044
-				has_full_control_of_state = 1044
-			}
-			MOR = { transfer_state = 1044 }
-		}
-		if = {
-			limit = {
-				NOT = { original_tag = MOR }
 				owns_state = 783
 				has_full_control_of_state = 783
 			}
@@ -3272,14 +3207,6 @@ country_event = {
 				has_full_control_of_state = 663
 				owns_state = 273
 				has_full_control_of_state = 273
-				owns_state = 998
-				has_full_control_of_state = 998
-				owns_state = 1070
-				has_full_control_of_state = 1070
-				owns_state = 1071
-				has_full_control_of_state = 1071
-				owns_state = 1072
-				has_full_control_of_state = 1072
 			}
 			release = LBA
 		}
@@ -3314,10 +3241,6 @@ country_event = {
 				NOT = { original_tag = SOM }
 				owns_state = 559
 				has_full_control_of_state = 559
-				owns_state = 1087
-				has_full_control_of_state = 1087
-				owns_state = 1088
-				has_full_control_of_state = 1088
 			}
 			release = SOM
 		}
@@ -3335,10 +3258,6 @@ country_event = {
 				NOT = { original_tag = ETH }
 				owns_state = 271
 				has_full_control_of_state = 271
-				owns_state = 1111
-				has_full_control_of_state = 1111
-				owns_state = 1113
-				has_full_control_of_state = 1113
 			}
 			release = ETH
 		}
@@ -7128,15 +7047,12 @@ country_event = {
 			limit = {
 				check_variable = { var = ENG_imperial_conference_federation_answers value = ENG_imperial_conference_number_of_subjects compare = equals }
 				NOT = {
-					any_country = {
-						OR = {
-							tag = CAN
-							tag = SAF
-							tag = RAJ
-							tag = AST
-							tag = NZL
-						}
-						has_country_flag = ENG_rejected_federation
+					OR = {
+						CAN = { has_country_flag = ENG_rejected_federation }
+						SAF = { has_country_flag = ENG_rejected_federation }
+						RAJ = { has_country_flag = ENG_rejected_federation }
+						AST = { has_country_flag = ENG_rejected_federation }
+						NZL = { has_country_flag = ENG_rejected_federation }
 					}
 				}
 			}
@@ -7150,14 +7066,11 @@ country_event = {
 				}
 				check_variable = { var = ENG_imperial_conference_federation_answers value = ENG_imperial_conference_number_of_subjects compare = equals }
 				NOT = {
-					any_country = {
-						OR = {
-							tag = CAN
-							tag = SAF
-							tag = AST
-							tag = NZL
-						}
-						has_country_flag = ENG_rejected_federation
+					OR = {
+						CAN = { has_country_flag = ENG_rejected_federation }
+						SAF = { has_country_flag = ENG_rejected_federation }
+						AST = { has_country_flag = ENG_rejected_federation }
+						NZL = { has_country_flag = ENG_rejected_federation }
 					}
 				}
 			}
@@ -7166,14 +7079,11 @@ country_event = {
 		if = {
 			limit = {
 				check_variable = { var = ENG_imperial_conference_federation_answers value = ENG_imperial_conference_number_of_subjects compare = equals }
-				any_country = {
-					OR = {
-						tag = CAN
-						tag = SAF
-						tag = AST
-						tag = NZL
-					}
-					has_country_flag = ENG_rejected_federation
+				OR = {
+					CAN = { has_country_flag = ENG_rejected_federation }
+					SAF = { has_country_flag = ENG_rejected_federation }
+					AST = { has_country_flag = ENG_rejected_federation }
+					NZL = { has_country_flag = ENG_rejected_federation }
 				}
 			}
 			country_event = { id = mtg_britain.105 hours = 6 }
@@ -7221,14 +7131,11 @@ country_event = {
 				}
 				check_variable = { var = ENG_imperial_conference_federation_answers value = ENG_imperial_conference_number_of_subjects compare = equals }
 				NOT = {
-					any_country = {
-						OR = {
-							tag = CAN
-							tag = SAF
-							tag = AST
-							tag = NZL
-						}
-						has_country_flag = ENG_rejected_federation
+					OR = {
+						CAN = { has_country_flag = ENG_rejected_federation }
+						SAF = { has_country_flag = ENG_rejected_federation }
+						AST = { has_country_flag = ENG_rejected_federation }
+						NZL = { has_country_flag = ENG_rejected_federation }
 					}
 				}
 			}
@@ -7237,14 +7144,11 @@ country_event = {
 		if = {
 			limit = {
 				check_variable = { var = ENG_imperial_conference_federation_answers value = ENG_imperial_conference_number_of_subjects compare = equals }
-				any_country = {
-					OR = {
-						tag = CAN
-						tag = SAF
-						tag = AST
-						tag = NZL
-					}
-					has_country_flag = ENG_rejected_federation
+				OR = {
+					CAN = { has_country_flag = ENG_rejected_federation }
+					SAF = { has_country_flag = ENG_rejected_federation }
+					AST = { has_country_flag = ENG_rejected_federation }
+					NZL = { has_country_flag = ENG_rejected_federation }
 				}
 			}
 			country_event = { id = mtg_britain.105 hours = 6 }
@@ -7301,11 +7205,6 @@ country_event = {
 							is_subject_of = ENG
 							tag = MAL
 						}
-						AND = {
-							is_subject_of = ENG
-							has_global_flag = BRM_separated
-							tag = BRM
-						}
 					}
 				}
 				add_ideas = ENG_federal_integration
@@ -7338,11 +7237,6 @@ country_event = {
 						AND = {
 							is_subject_of = ENG
 							tag = MAL
-						}
-						AND = {
-							is_subject_of = ENG
-							has_global_flag = BRM_separated
-							tag = BRM
 						}
 					}
 				}
@@ -7398,11 +7292,6 @@ country_event = {
 							is_subject_of = ENG
 							tag = MAL
 						}
-						AND = {
-							is_subject_of = ENG
-							has_global_flag = BRM_separated
-							tag = BRM
-						}
 					}
 				}
 				add_ideas = ENG_federal_integration
@@ -7431,11 +7320,6 @@ country_event = {
 						AND = {
 							is_subject_of = ENG
 							tag = MAL
-						}
-						AND = {
-							is_subject_of = ENG
-							has_global_flag = BRM_separated
-							tag = BRM
 						}
 					}
 				}

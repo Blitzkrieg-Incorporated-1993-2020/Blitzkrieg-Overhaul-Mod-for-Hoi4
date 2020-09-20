@@ -1,0 +1,425 @@
+defined_text = {
+	name = make_core_info_delayed
+
+	text = {
+		trigger = {
+			has_variable = progress
+		}
+		localization_key = MAKE_CORE_INFO_DELAYED_NO1
+	}
+	text = {
+		trigger = {
+			NOT = { is_controlled_by = ROOT }
+		}
+		localization_key = MAKE_CORE_INFO_DELAYED_NO2
+	}
+	text = {
+		localization_key = MAKE_CORE_INFO_DELAYED_YES
+	}
+}
+defined_text = {
+	name = GetCoringCost
+
+	text = {
+		trigger = {
+			state_coring_cost_trigger = yes
+			set_temp_variable = { base_cost = core_cost }
+			multiply_temp_variable = { core_cost = temp_cost_modifier }
+		}
+		localization_key = [?core_cost|Y0]
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = core_modifier_sum
+
+	text = {
+		trigger = {
+			check_variable = { temp_cost_modifier < 1 }
+		}
+		localization_key = [?temp_cost_modifier|%0G]
+	}
+	text = {
+		trigger = {
+			check_variable = { temp_cost_modifier > 1 }
+		}
+		localization_key = [?temp_cost_modifier|%0R]
+	}
+	text = {
+		localization_key = [?temp_cost_modifier|%0Y]
+	}
+}
+defined_text = {
+	name = core_claim_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { cost_modifier^0 = 0 } }
+		}
+		localization_key = CORE_CLAIM_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = core_continent_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { cost_modifier^1 = 0 } }
+		}
+		localization_key = CORE_CONTINENT_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = core_government_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { cost_modifier^2 = 0 } }
+		}
+		localization_key = CORE_GOVERNMENT_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = core_threat_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { cost_modifier^3 = 0 } }
+		}
+		localization_key = CORE_THREAT_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = core_puppet_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { cost_modifier^4 = 0 } }
+		}
+		localization_key = CORE_PUPPET_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = core_stability_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { cost_modifier^5 = 0 } }
+		}
+		localization_key = CORE_STABILITY_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = core_homearea_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { cost_modifier^6 = 0 } }
+		}
+		localization_key = CORE_HOMEAREA_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = core_duration_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { cost_modifier^7 = 0 } }
+		}
+		localization_key = CORE_DURATION_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GetCoringDuration
+
+	text = {
+		trigger = {
+			set_temp_variable = { coring_duration = 360 }
+			multiply_temp_variable = { coring_duration = temp_cost_modifier }
+		}
+		localization_key = [?coring_duration|Y0]
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = GetProgress
+
+	text = {
+		trigger = {
+			set_temp_variable = { progress_rate = progress }
+			add_to_temp_variable = { progress_rate = 91 }
+			divide_temp_variable = { progress_rate = 90 }
+		}
+		localization_key = [?progress_rate|%1Y]
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = GetCompletionDate
+
+	text = {
+		trigger = {
+			set_temp_variable = { completion_date = global.date }
+			subtract_from_temp_variable = { completion_date = 0.001 } #on_daily is executed 1:00
+			set_temp_variable = { days_left = progress }
+			add_to_temp_variable = { days_left = 1 }
+			divide_temp_variable = { days_left = daily_progress }
+			round_temp_variable = days_left
+			multiply_temp_variable = { days_left = -0.024 }
+			add_to_temp_variable = { completion_date = days_left }
+		}
+		localization_key = [?completion_date.GetDateStringNoHourLong]
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = progress_no
+
+	text = {
+		trigger = {
+			owner = { tag = ROOT }
+			NOT = { is_controlled_by = ROOT }
+		}
+		localization_key = PROGRESS_NOT_CONTROLL
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = GetClaimPower
+
+	text = {
+		trigger = {
+			get_claim_power_daily_trigger = yes
+			set_temp_variable = { base_power_daily = claim_power_daily }
+			multiply_temp_variable = { claim_power_daily = multiply_power_sum?1 }
+		}
+		localization_key = CLAIM_POWER_DAILY
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = claim_majorwar_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { add_power_modifier^0 = 0 } }
+		}
+		localization_key = CLAIM_MAJORWAR_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = claim_major_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { multiply_power_modifier^0 = 0 } }
+		}
+		localization_key = CLAIM_MAJOR_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = claim_neighbor_modifier
+
+	text = {
+		trigger = {
+			check_variable = { multiply_power_modifier^1 = 0.2 }
+		}
+		localization_key = CLAIM_NEIGHBOR_MODIFIER
+	}
+	text = {
+		trigger = {
+			check_variable = { multiply_power_modifier^1 = 0.1 }
+		}
+		localization_key = CLAIM_NEIGHBOR_MODIFIER_COASTAL
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = claim_core_modifier
+
+	text = {
+		trigger = {
+			check_variable = { multiply_power_modifier^2 = 0.5 }
+		}
+		localization_key = CLAIM_CORE_MODIFIER
+	}
+	text = {
+		trigger = {
+			check_variable = { multiply_power_modifier^2 = 0.3 }
+		}
+		localization_key = CLAIM_CORE_MODIFIER_COASTAL
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = claim_government_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { multiply_power_modifier^3 = 0 } }
+		}
+		localization_key = CLAIM_GOVERNMENT_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = claim_warsupport_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { multiply_power_modifier^4 = 0 } }
+		}
+		localization_key = CLAIM_WARSUPPORT_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = claim_stability_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { multiply_power_modifier^5 = 0 } }
+		}
+		localization_key = CLAIM_STABILITY_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = claim_threat_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { multiply_power_modifier^6 = 0 } }
+		}
+		localization_key = CLAIM_THREAT_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = claim_popularity_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { multiply_power_modifier^7 = 0 } }
+		}
+		localization_key = CLAIM_POPULARITY_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = claim_manpower_modifier
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { multiply_power_modifier^8 = 0 } }
+		}
+		localization_key = CLAIM_MANPOWER_MODIFIER
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = GetClaimCost
+
+	text = {
+		trigger = {
+			state_claim_cost_trigger = yes
+		}
+		localization_key = [?claim_cost|Y0]
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = GetJustifyPower
+	text = {
+		trigger = {
+			owner = {
+				set_temp_variable = { justify_power = ROOT.claim_power@this }
+			}
+		}
+		localization_key = [?justify_power|Y2]
+	}
+
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = claim_power_button_info_delayed
+	
+	text = {
+		trigger = {
+			is_core_of = ROOT
+		}
+		localization_key = CLAIM_POWER_BUTTON_INFO_DELAYED_NO1
+	}
+	text = {
+		trigger = {
+			is_claimed_by = ROOT
+		}
+		localization_key = CLAIM_POWER_BUTTON_INFO_DELAYED_NO2
+	}
+	text = {
+		localization_key = CLAIM_POWER_BUTTON_INFO_DELAYED_YES
+	}
+}

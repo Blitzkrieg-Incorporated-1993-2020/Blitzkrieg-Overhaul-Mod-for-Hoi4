@@ -1,0 +1,72 @@
+﻿set_politics = {
+	ruling_party = democratic
+	last_election = "1934.11.23"
+	election_frequency = 57
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 5
+	fascism = 60
+	communism = 0
+	neutrality = 35
+}
+
+GER =  {
+	set_technology = {
+		siege_artillery1 = 1
+	}
+}
+
+USA =  {
+	set_technology = {
+		siege_artillery1 = 1
+	}
+}
+
+FRA =  {
+	set_technology = {
+		siege_artillery1 = 1
+	}
+}
+
+JAP =  {
+	set_technology = {
+		siege_artillery1 = 1
+	}
+}
+
+YUG =  {
+	set_technology = {
+		siege_artillery1 = 1
+	}
+}
+
+SOV =  {
+	set_technology = {
+		siege_artillery1 = 1
+	}
+}
+
+ITA =  {
+	set_technology = {
+		siege_artillery1 = 1
+	}
+}
+
+SWE = {
+	set_technology = {
+		interwar_antitank = 1
+	}
+}
+CZE = {
+	set_technology = {
+		artillery1 = 1
+		siege_artillery1 = 1
+	}
+}
+HOL = {
+	set_technology = {
+		basic_submarine = 1
+	}
+}

@@ -57,10 +57,6 @@ PRC_infiltrate_nationalist_areas = {
 					#Allow JAP, faction member or puppet to control 5 states at most before triggering civil war
 					count_triggers = {
 						amount = 5
-						1023 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						1024 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						1025 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						1026 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
 						612 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
 						621 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
 						615 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
@@ -76,7 +72,6 @@ PRC_infiltrate_nationalist_areas = {
 						595 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
 						596 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
 						597 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						1027 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
 						598 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
 						600 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
 						601 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
@@ -91,16 +86,6 @@ PRC_infiltrate_nationalist_areas = {
 						620 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
 						744 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
 						746 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						903 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						904 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						905 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						906 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						907 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						908 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						909 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						910 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						911 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
-						902 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
 					}
 				}
 			}
@@ -113,7 +98,6 @@ PRC_infiltrate_nationalist_areas = {
 						amount = 3
 						283 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 						597 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
-						1027 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 						598 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 						607 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 						608 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
@@ -134,10 +118,6 @@ PRC_infiltrate_nationalist_areas = {
 			modifier = {
 				add = 10
 				597 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
-			}
-			modifier = {
-				add = 10
-				1023 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 			}
 			modifier = {
 				add = 10
@@ -180,10 +160,6 @@ PRC_infiltrate_nationalist_areas = {
 			modifier = {
 				add = 3
 				597 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
-			}
-			modifier = {
-				add = 3
-				1027 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
@@ -243,15 +219,6 @@ PRC_infiltrate_nationalist_areas = {
 				}
 			}
 			597 = {
-				if = {
-					limit = {
-						CONTROLLER = { tag = event_target:WTT_current_china_leader }
-						PRC_is_infiltrated_by_PREV = yes
-					}
-					PRC_execute_infiltration_effects_for_PREV = yes
-				}
-			}
-			1027 = {
 				if = {
 					limit = {
 						CONTROLLER = { tag = event_target:WTT_current_china_leader }
@@ -357,7 +324,7 @@ PRC_infiltrate_nationalist_areas = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 283
 		}
 		
@@ -455,14 +422,10 @@ PRC_infiltrate_nationalist_areas = {
 			597 = {
 				PRC_can_increase_infiltration_in_state = yes
 			}
-			1027 = {
-				PRC_can_increase_infiltration_in_state = yes
-			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 597
-			state = 1027
 		}
 		
 		modifier = {
@@ -493,22 +456,10 @@ PRC_infiltrate_nationalist_areas = {
 						value > 0
 					}
 				}
-				1027 = {
-					has_state_flag = {
-						flag = PRC_infiltration_@PREV
-						value > 0
-					}
-				}
 			}
 			modifier = {
 				factor = 50 #Really want to get to troop level
 				597 = {
-					has_state_flag = {
-						flag = PRC_infiltration_@PREV
-						value = 2
-					}
-				}
-				1027 = {
 					has_state_flag = {
 						flag = PRC_infiltration_@PREV
 						value = 2
@@ -538,28 +489,10 @@ PRC_infiltrate_nationalist_areas = {
 					}
 				}
 			}
-			1027 = {
-				if = {
-					limit = {
-						NOT = { has_state_flag = PRC_infiltration_@ROOT }
-					}
-					set_state_flag = {
-						flag = PRC_infiltration_@ROOT
-						value = 0
-					}
-				}
-			}
 		}
 
 		remove_effect = {
 			597 = {
-				PRC_infiltration_succesful_show_uprising_effect = yes
-				modify_state_flag = {
-					flag = PRC_infiltration_@ROOT
-					value = 1
-				}
-			}
-			1027 = {
 				PRC_infiltration_succesful_show_uprising_effect = yes
 				modify_state_flag = {
 					flag = PRC_infiltration_@ROOT
@@ -591,7 +524,7 @@ PRC_infiltrate_nationalist_areas = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 598
 		}
 		
@@ -691,7 +624,7 @@ PRC_infiltrate_nationalist_areas = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 607
 		}
 		
@@ -791,7 +724,7 @@ PRC_infiltrate_nationalist_areas = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 608
 		}
 		
@@ -891,7 +824,7 @@ PRC_infiltrate_nationalist_areas = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 614
 		}
 		
@@ -991,7 +924,7 @@ PRC_infiltrate_nationalist_areas = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 615
 		}
 		
@@ -1091,7 +1024,7 @@ PRC_infiltrate_nationalist_areas = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 621
 		}
 		
@@ -1191,7 +1124,7 @@ PRC_infiltrate_nationalist_areas = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 744
 		}
 		
@@ -1291,7 +1224,7 @@ PRC_infiltrate_nationalist_areas = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 746
 		}
 		
@@ -1398,15 +1331,25 @@ PRC_anti_japanese_expedition = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = PRC_uprising_is_available
-				any_state = {
-					CONTROLLER = {
-						OR = {
-							original_tag = MAN
-							original_tag = MEN
-							original_tag = JAP
+				OR = {
+					any_country_with_original_tag = {
+						original_tag_to_check = MAN
+						any_controlled_state = {
+							PRC_is_infiltrated_by_PREV = yes
 						}
 					}
-					PRC_is_infiltrated_by_PREV = yes
+					any_country_with_original_tag = {
+						original_tag_to_check = MEN
+						any_controlled_state = {
+							PRC_is_infiltrated_by_PREV = yes
+						}
+					}
+					any_country_with_original_tag = {
+						original_tag_to_check = JAP
+						any_controlled_state = {
+							PRC_is_infiltrated_by_PREV = yes
+						}
+					}
 				}
 			}
 		}
@@ -1661,7 +1604,7 @@ PRC_anti_japanese_expedition = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 609
 		}
 		
@@ -1742,7 +1685,7 @@ PRC_anti_japanese_expedition = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 610
 		}
 		
@@ -1823,7 +1766,7 @@ PRC_anti_japanese_expedition = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 611
 		}
 		
@@ -1904,7 +1847,7 @@ PRC_anti_japanese_expedition = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 612
 		}
 		
@@ -1985,7 +1928,7 @@ PRC_anti_japanese_expedition = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 714
 		}
 		
@@ -2066,7 +2009,7 @@ PRC_anti_japanese_expedition = {
 			}
 		}
 
-		highlight_state_targets = {
+		highlight_states = {
 			state = 715
 		}
 		
@@ -2172,15 +2115,6 @@ PRC_provoke_japan = {
 				JAP = {
 					owns_state = 525
 					owns_state = 527
-					owns_state = 903
-					owns_state = 904
-					owns_state = 905
-					owns_state = 906
-					owns_state = 907
-					owns_state = 908
-					owns_state = 909
-					owns_state = 910
-					owns_state = 911
 				}
 			}
 		}
@@ -2198,15 +2132,6 @@ PRC_provoke_japan = {
 				JAP = {
 					owns_state = 525
 					owns_state = 527
-					owns_state = 903
-					owns_state = 904
-					owns_state = 905
-					owns_state = 906
-					owns_state = 907
-					owns_state = 908
-					owns_state = 909
-					owns_state = 910
-					owns_state = 911
 				}
 			}
 		}
@@ -2236,15 +2161,6 @@ PRC_provoke_japan = {
 						JAP = {
 							owns_state = 525
 							owns_state = 527
-							owns_state = 903
-					        owns_state = 904
-					        owns_state = 905
-					        owns_state = 906
-					        owns_state = 907
-					        owns_state = 908
-					        owns_state = 909
-					        owns_state = 910
-					        owns_state = 911
 						}
 					}
 				}
@@ -2301,10 +2217,6 @@ political_actions = {
 					controls_state = 611
 					controls_state = 612
 					controls_state = 609
-					controls_state = 1023
-					controls_state = 1024
-					controls_state = 1025
-					controls_state = 1026
 				}
 			}
 			MAN = {
@@ -2337,10 +2249,6 @@ political_actions = {
 					controls_state = 611
 					controls_state = 612
 					controls_state = 609
-					controls_state = 1023
-					controls_state = 1024
-					controls_state = 1025
-					controls_state = 1026
 				}
 			}
 		}
@@ -2385,7 +2293,6 @@ political_actions = {
 						595 = { is_controlled_by = ROOT }
 						596 = { is_controlled_by = ROOT }
 						597 = { is_controlled_by = ROOT }
-						1027 = { is_controlled_by = ROOT }
 						598 = { is_controlled_by = ROOT }
 						600 = { is_controlled_by = ROOT }
 						601 = { is_controlled_by = ROOT }

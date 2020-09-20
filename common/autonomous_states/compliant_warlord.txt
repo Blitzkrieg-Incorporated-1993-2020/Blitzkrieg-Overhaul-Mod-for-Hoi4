@@ -1,0 +1,59 @@
+autonomy_state = {
+	id = autonomy_compliant_warlord
+	
+	min_freedom_level = 0.8
+	use_overlord_color = yes
+	manpower_influence = 0.3
+	
+	rule = {
+		can_not_declare_war = no
+		can_decline_call_to_war = yes
+		units_deployed_to_overlord = no
+		can_be_spymaster = no
+		contributes_operatives = no
+		can_create_collaboration_government = no
+	}
+	
+	modifier = {
+		autonomy_manpower_share = 0.1
+		extra_trade_to_overlord_factor = 0.3
+		overlord_trade_cost_factor = -0.3
+		cic_to_overlord_factor = 0.05
+		mic_to_overlord_factor = 0.2
+		research_sharing_per_country_bonus_factor = -0.1
+	}
+	
+	ai_subject_wants_higher = {
+		factor = 1.0
+	}
+	
+	ai_overlord_wants_lower = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = no
+	}
+
+	allowed = {
+		has_dlc = "Together for Victory"
+		OR = {
+			tag = XSM
+			tag = GXC
+			tag = SHX
+			tag = YUN
+			tag = SIK
+		}
+		OVERLORD = {
+			has_idea = CHI_china_broken
+		}
+	}
+	
+	can_take_level = {
+		#trigger here
+	}
+
+	can_lose_level = {
+		#trigger here
+	}
+}

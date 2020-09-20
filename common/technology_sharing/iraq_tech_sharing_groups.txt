@@ -1,0 +1,52 @@
+technology_sharing_group = {
+
+	id = IRQ_joint_oil_exploitation_company_tech_group
+	name = IRQ_joint_oil_exploitation_company_name
+	desc = IRQ_joint_oil_exploitation_company_desc
+	picture = GFX_technology_sharing_default
+    
+	research_sharing_per_country_bonus = 0.1
+
+	categories = { industry }
+
+    available = {
+    	is_in_faction_with = ENG
+		has_government = democratic
+    	ENG = {
+    		is_faction_leader = yes
+    		has_government = democratic
+		}
+    }
+}
+
+technology_sharing_group = {
+
+	id = IRQ_joint_air_innovation_tech_group
+	name = IRQ_joint_air_innovation_name
+	desc = IRQ_joint_air_innovation_desc
+	picture = GFX_technology_sharing_default
+    
+	research_sharing_per_country_bonus = 0.1
+
+	categories = { air_equipment armor }
+
+    available = {
+    	NOT = {
+			has_war_with = ITA
+		}
+    }
+}
+
+technology_sharing_group = {
+
+	id = IRQ_baghdad_pact_tech_group
+	name = IRQ_baghdad_pact_name
+	desc = IRQ_baghdad_pact_desc
+	picture = GFX_technology_sharing_default
+    
+	research_sharing_per_country_bonus = 0.1
+
+    available = {
+    	is_in_faction_with = IRQ
+    }
+}

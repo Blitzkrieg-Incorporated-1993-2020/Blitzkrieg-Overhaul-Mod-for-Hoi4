@@ -1,0 +1,298 @@
+﻿###########################
+# Iraqi Events
+###########################
+
+add_namespace = iraqi
+
+# Turkey Alliance
+country_event = {
+	id = iraqi.1
+	title = iraqi.1.t
+	desc = iraqi.1.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = iraqi.1.a
+		ai_chance = { factor = 95 }
+
+		IRQ = {
+			set_country_flag = IRQ_turkey_signed_alliance
+		}
+		TUR = {
+			give_guarantee = IRQ
+		}
+		IRQ = {
+			country_event = iraqi.2
+			give_guarantee = TUR
+		}
+	}
+
+	option = {
+		name = iraqi.1.b
+		ai_chance = { factor = 5 }
+		
+		IRQ = {
+			country_event = iraqi.3
+		}
+	}
+}
+
+country_event = {
+	id = iraqi.2
+	title = iraqi.2.t
+	desc = iraqi.2.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = iraqi.2.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = {
+	id = iraqi.3
+	title = iraqi.3.t
+	desc = iraqi.3.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = iraqi.3.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+# Bakr Sidqi dead
+country_event = {
+	id = iraqi.4
+	title = iraqi.4.t
+	desc = iraqi.4.d
+	picture = GFX_report_event_dead_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_completed_focus = IRQ_the_bakr_sidqi_coup
+		NOT = {
+			has_country_flag = IRQ_bakr_sidqi_unavailable
+		}
+	}
+	
+	option = {
+		name = iraqi.4.a
+		ai_chance = { factor = 100 }
+		
+		remove_unit_leader = 999
+		set_country_flag = IRQ_bakr_sidqi_unavailable
+	}
+}
+
+# King Ghazi dead
+country_event = {
+	id = iraqi.5
+	title = iraqi.5.t
+	desc = iraqi.5.d
+	picture = GFX_report_event_generic_funeral
+	
+	fire_only_once = yes
+	
+	trigger = {
+		date > 1939.4.4
+		NOT = {
+			has_completed_focus = IRQ_arrest_the_king
+		}
+		OR = {
+			has_country_leader = { ruling_only = yes name = "King Ghazi I" }
+			has_idea = IRQ_king_ghazi_1
+			has_idea = IRQ_king_ghazi_2
+			has_idea = IRQ_king_ghazi_3
+			has_idea = IRQ_king_ghazi_4
+			has_idea = IRQ_king_ghazi_5
+		}
+	}
+	
+	option = {
+		name = iraqi.5.a
+		ai_chance = { factor = 100 }
+		
+		if = {
+			limit = {
+				has_idea = IRQ_king_ghazi_1
+			}
+			swap_ideas = {
+				remove_idea = IRQ_king_ghazi_1
+				add_idea = IRQ_abd_al_ilah
+			}
+		}
+		if = {
+			limit = {
+				has_idea = IRQ_king_ghazi_2
+			}
+			swap_ideas = {
+				remove_idea = IRQ_king_ghazi_2
+				add_idea = IRQ_abd_al_ilah
+			}
+		}
+		if = {
+			limit = {
+				has_idea = IRQ_king_ghazi_3
+			}
+			swap_ideas = {
+				remove_idea = IRQ_king_ghazi_3
+				add_idea = IRQ_abd_al_ilah
+			}
+		}
+		if = {
+			limit = {
+				has_idea = IRQ_king_ghazi_4
+			}
+			swap_ideas = {
+				remove_idea = IRQ_king_ghazi_4
+				add_idea = IRQ_abd_al_ilah
+			}
+		}
+		if = {
+			limit = {
+				has_idea = IRQ_king_ghazi_5
+			}
+			swap_ideas = {
+				remove_idea = IRQ_king_ghazi_5
+				add_idea = IRQ_abd_al_ilah
+			}
+		}
+		if = {
+			limit = {
+				has_country_leader = { ruling_only = yes name = "King Ghazi I" }
+			}
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "'Abd al-Ilah"
+				desc = "POLITICS_ABD_AL_ILAH_DESC"
+				picture = "Portrait_Iraq_Abd_al_Ilah.dds"
+				expire = "1965.1.1"
+				ideology = absolutism
+				traits = {
+					#
+				}
+			}
+		}
+        set_country_flag = IRQ_king_ghazi_dead
+	}
+}
+
+# King Ghazi seizes power
+country_event = {
+	id = iraqi.6
+	title = iraqi.6.t
+	desc = iraqi.6.d
+	picture = GFX_report_event_king_speech
+	
+	fire_only_once = yes
+	
+	trigger = {
+		date < 1939.4.4
+        monarchism > 0.6
+		NOT = {
+			has_completed_focus = IRQ_arrest_the_king
+			has_idea = IRQ_abd_al_ilah
+		}
+		OR = {
+			has_idea = IRQ_king_ghazi_4
+			has_idea = IRQ_king_ghazi_5
+		}
+        
+	}
+	
+	option = {
+		name = iraqi.6.a
+		ai_chance = { factor = 100 }
+		
+		retire_country_leader = yes
+		add_popularity = { ideology = monarchism popularity = 0.4 }
+		set_politics = {
+			ruling_party = monarchism
+			elections_allowed = no
+		}
+		set_party_name = { ideology = monarchism long_name = IRQ_house_of_hashim_long name = IRQ_house_of_hashim }
+		create_country_leader = {
+			name = "King Ghazi I"
+			desc = "POLITICS_GHAZI_I_DESC"
+			picture = "GFX_portrait_iraq_ghazi"
+			expire = "1965.1.1"
+			ideology = absolutism
+			traits = {
+				fascist_sympathies
+			}
+		}
+		if = {
+			limit = {
+				has_idea = IRQ_king_ghazi_4
+			}
+			remove_ideas = IRQ_king_ghazi_4
+		}
+		if = {
+			limit = {
+				has_idea = IRQ_king_ghazi_5
+			}
+			remove_ideas = IRQ_king_ghazi_5
+		}
+	}
+}
+
+# Golden Square
+country_event = {
+	id = iraqi.7
+	title = iraqi.7.t
+	desc = iraqi.7.d
+	picture = GFX_report_event_saf_coup
+	
+	fire_only_once = yes
+	
+	trigger = {
+		date > 1941.4.1
+		has_country_leader = { ruling_only = yes name = "'Abd al-Ilah" }
+        NOT = {
+            has_completed_focus = IRQ_path_down_to_fascism
+            has_completed_focus = IRQ_golden_square_takeover
+            has_country_leader = { ruling_only = yes name = "King Ghazi I" }
+        }
+	}
+	
+	option = {
+		name = iraqi.7.a
+		ai_chance = { factor = 90 }
+		
+        set_party_name = { ideology = fascism long_name = IRQ_golden_square name = IRQ_golden_square }
+		load_focus_tree = golden_square_focus
+		set_cosmetic_tag = IRQ_GOLDEN_SQUARE
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Rashid Ali al-Gaylani"
+			desc = "POLITICS_RASHID_ALI_AL_GAYLANI_DESC"
+			picture = "Portrait_Iraq_Rashid_Ali_al_Gaylani.dds"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				#
+			}
+		}
+	}
+	
+	option = {
+		name = iraqi.7.b
+		ai_chance = { factor = 10 }
+		
+		start_civil_war = {
+			ruling_party = monarchism
+			ideology = fascism
+			size = 0.5
+		}
+	}
+}

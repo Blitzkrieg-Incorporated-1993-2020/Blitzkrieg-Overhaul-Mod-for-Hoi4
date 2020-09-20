@@ -23,7 +23,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_government = neutrality
+					OR = { has_government = monarchism has_government = neutrality }
 				}
 				set_variable = {
 					var = civil_war_size_var
@@ -38,7 +38,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					NOT = { has_government = neutrality }
+					NOT = { OR = { has_government = monarchism has_government = neutrality } }
 				}
 				set_variable = {
 					var = civil_war_size_var
@@ -150,7 +150,7 @@ country_event = {
 				}
 				if = {
 					limit = {
-						has_government = neutrality
+						OR = { has_government = monarchism has_government = neutrality }
 					}
 					create_country_leader = {
 						name = "Saturnino Cedillo"
@@ -245,9 +245,9 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_government = communism
+				OR = { has_government = unionism has_government = communism }
 				FROM = {
-					has_government = communism
+					OR = { has_government = unionism has_government = communism }
 				}
 			}
 		}
@@ -298,9 +298,9 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_government = communism
+				OR = { has_government = unionism has_government = communism }
 				FROM = {
-					has_government = communism
+					OR = { has_government = unionism has_government = communism }
 				}
 			}
 		}
@@ -1048,9 +1048,9 @@ country_event = {
 		tag = MEX
 		date > 1936.08.28
 		OR = {
-			has_government = neutrality
+			OR = { has_government = monarchism has_government = neutrality }
 			AND = {
-				has_government = communism
+				OR = { has_government = unionism has_government = communism }
 				NOT = {
 					has_country_leader = { ruling_only = yes name = "Dionisio Encina" }
 				} 
@@ -1210,8 +1210,8 @@ country_event = {
 		
 		trigger = {
 			OR = {
-				has_government = communism
-				has_government = neutrality
+				OR = { has_government = unionism has_government = communism }
+				OR = { has_government = monarchism has_government = neutrality }
 			}
 			has_dlc = "Man the Guns"
 		}
@@ -1297,7 +1297,7 @@ country_event = {
 		
 		trigger = {
 			NOT = {
-				has_government = democratic
+				has_democratic_government = yes
 			}
 		}
 		
@@ -1305,7 +1305,7 @@ country_event = {
 		
 		if = {
 			limit = {
-				has_government = neutrality
+				OR = { has_government = monarchism has_government = neutrality }
 			}
 			set_politics = {
 				ruling_party = neutrality
@@ -1325,7 +1325,7 @@ country_event = {
 		
 		if = {
 			limit = {
-				has_government = communism
+				OR = { has_government = unionism has_government = communism }
 			}
 			set_politics = {
 				ruling_party = communism
@@ -1367,7 +1367,7 @@ country_event = {
 					name = "Francisco Múgica"
 				}
 			}
-			has_government = neutrality
+			OR = { has_government = monarchism has_government = neutrality }
 		}
 
 		create_country_leader = {
@@ -1409,7 +1409,7 @@ country_event = {
 					name = "Manuel Ávila Camacho"
 				}
 			}
-			has_government = neutrality
+			OR = { has_government = monarchism has_government = neutrality }
 		}
 
 		create_country_leader = {
@@ -1455,7 +1455,7 @@ country_event = {
 					name = "Saturnino Cedillo"
 				}
 			}
-			has_government = neutrality
+			OR = { has_government = monarchism has_government = neutrality }
 		}
 
 		create_country_leader = {
@@ -1479,7 +1479,7 @@ country_event = {
 	#				name = "Juan Andreu"
 	#			}
 	#		}
-	#		has_government = neutrality
+	#		OR = { has_government = monarchism has_government = neutrality }
 	#	}
 
 	#	create_country_leader = {
@@ -1506,7 +1506,7 @@ country_event = {
 					name = "Vicente Lombardo"
 				}
 			}
-			has_government = democratic
+			has_democratic_government = yes
 		}
 
 		create_country_leader = {
@@ -1552,7 +1552,7 @@ country_event = {
 					name = "Francisco Múgica"
 				}
 			}
-			has_government = democratic
+			has_democratic_government = yes
 		}
 
 		create_country_leader = {
@@ -1598,7 +1598,7 @@ country_event = {
 					name = "Manuel Ávila Camacho"
 				}
 			}
-			has_government = democratic
+			has_democratic_government = yes
 		}
 
 		create_country_leader = {
@@ -1648,7 +1648,7 @@ country_event = {
 	#				name = "Juan Andreu"
 	#			}
 	#		}
-	#		has_government = democratic
+	#		has_democratic_government = yes
 	#	}
 
 	#	create_country_leader = {
@@ -1675,7 +1675,7 @@ country_event = {
 					name = "Vicente Lombardo"
 				}
 			}
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 		}
 
 		create_country_leader = {
@@ -1699,7 +1699,7 @@ country_event = {
 					name = "Francisco Múgica"
 				}
 			}
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 		}
 
 		create_country_leader = {
@@ -1724,7 +1724,7 @@ country_event = {
 				}
 			}
 
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 			NOT = {
 				has_completed_focus = MEX_focus_communist_revolution
 			}			
@@ -1754,7 +1754,7 @@ country_event = {
 					name = "Hernán Laborde"
 				}
 			}
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 			OR = {
 				NOT = {
 					has_global_flag = flag_mexico_invited_trotsky_to_government
@@ -1793,7 +1793,7 @@ country_event = {
 					has_country_leader = { name = "Leon Trotsky" }
 				}
 			}
-			has_government = communism
+			OR = { has_government = unionism has_government = communism }
 			has_global_flag = flag_mexico_invited_trotsky_to_government
 		}
 
@@ -2413,7 +2413,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_government = communism
+					OR = { has_government = unionism has_government = communism }
 				}
 				start_civil_war = {
 					ideology = fascism
@@ -2433,7 +2433,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					has_government = neutrality
+					OR = { has_government = monarchism has_government = neutrality }
 				}
 				start_civil_war = {
 					ideology = democratic
@@ -2637,7 +2637,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_government = democratic
+					has_democratic_government = yes
 					NOT = {
 						has_completed_focus = MEX_focus_jefe_maximo
 					}
@@ -2649,7 +2649,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					has_government = democratic
+					has_democratic_government = yes
 					has_completed_focus = MEX_focus_jefe_maximo
 				}
 				start_civil_war = {
@@ -2668,7 +2668,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					has_government = neutrality
+					OR = { has_government = monarchism has_government = neutrality }
 				}
 				start_civil_war = {
 					ideology = communism
@@ -2920,7 +2920,7 @@ country_event = {
 		
 		has_war = yes # Ostensibly over fabrics in short supply during wartime. Sumptuary laws help create an orderly and peaceful society under God
 		
-		has_government = democratic # Bigger concerns if they are fascists or communists
+		has_democratic_government = yes # Bigger concerns if they are fascists or communists
 		
 		country_exists = MEX
 		
@@ -4368,5 +4368,1523 @@ news_event = {
 				}
 			}
 		}
+	}
+}
+################
+## ARTICLE 30 ##
+################
+
+add_namespace = mexico_article_30
+
+#####################
+## HIDDEN TRRIGGER ##
+#####################
+country_event = {
+	id = mexico_article_30.1
+	title = mexico_article_30.1.t
+	desc = mexico_article_30.1.d
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		if = {
+			limit = {
+				MEX = {
+					has_completed_focus =  MEX_DFS
+				}
+			}
+			MEX = {
+				country_event = { id = mexico_article_30.3 }
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = MEX_DFS
+				}
+			}
+			MEX = {
+				country_event = { id = mexico_article_30.2 }
+			}
+		}
+	}
+}
+#############
+## NORMAL  ##
+#############
+
+country_event = {
+	id = mexico_article_30.2
+	title = mexico_article_30.2.t
+	desc = mexico_article_30.2.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = mexico_article_30.2.a
+		remove_ideas = { jenkins }
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.10
+		}
+	}
+	option = {
+		name = mexico_article_30.2.b
+		remove_ideas = { jenkins }
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+		add_opinion_modifier = { target = ENG modifier = MEX_expelled_diplomats }
+	}
+	option = {
+		name = mexico_article_30.2.c
+		remove_ideas = { jenkins }
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_drift_democratic }
+			}
+				remove_ideas = { american_protection_drift_democratic }
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_defence_democratic }
+			}
+			remove_ideas = { american_protection_defence_democratic }
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_drift_communism }
+			}
+				remove_ideas = { american_protection_drift_communism } 
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_defence_communism }
+			}
+			remove_ideas = { american_protection_defence_communism }
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_drift_fascism }
+			}
+			remove_ideas = { american_protection_drift_fascism }
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_defence_fascism }
+			}
+			remove_ideas = american_protection_defence_fascism
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = synarchist_support_surge}
+			}
+			remove_ideas = synarchist_support_surge
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.10
+		}
+		custom_effect_tooltip = tt_30
+	}
+}
+
+##################
+## INTEL REPORT ##
+##################
+
+country_event = {
+	id = mexico_article_30.3
+	title = mexico_article_30.3.t
+	desc = mexico_article_30.3.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = mexico_article_30.3.a
+		remove_ideas = { jenkins }
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.10
+		}
+	}
+	option = {
+		name = mexico_article_30.3.b
+		remove_ideas = { jenkins }
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+		add_opinion_modifier = { target = ENG modifier = MEX_expelled_diplomats }
+	}
+	option = {
+		name = mexico_article_30.3.c
+		remove_ideas = { jenkins }
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_drift_democratic }
+			}
+				remove_ideas = { american_protection_drift_democratic }
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_defence_democratic }
+			}
+			remove_ideas = { american_protection_defence_democratic }
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_drift_communism }
+			}
+				remove_ideas = { american_protection_drift_communism } 
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_defence_communism }
+			}
+			remove_ideas = { american_protection_defence_communism }
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_drift_fascism }
+			}
+			remove_ideas = { american_protection_drift_fascism }
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_defence_fascism }
+			}
+			remove_ideas = american_protection_defence_fascism
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = synarchist_support_surge}
+			}
+			remove_ideas = synarchist_support_surge
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.10
+		}
+		custom_effect_tooltip = tt_30
+	}
+}
+
+# checker for american ideas
+country_event = {
+	id = mexico_article_30.4
+	title = mexico_article_30.4.t
+	desc = mexico_article_30.4.d
+	hidden = yes
+	trigger = {
+		MEX = {
+			AND = {
+				has_completed_focus = MEX_DFS
+				OR = {
+					has_idea = american_protection_drift_democratic
+					has_idea = american_protection_defence_democratic
+					has_idea = american_protection_drift_communism
+					has_idea = american_protection_defence_communism
+					has_idea = american_protection_drift_fascism
+					has_idea = american_protection_defence_fascism
+				}
+			}
+		}
+	}
+	fire_only_once = yes
+	option = {
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_drift_democratic }
+			}
+				remove_ideas = { american_protection_drift_democratic }
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_defence_democratic }
+			}
+			remove_ideas = { american_protection_defence_democratic }
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_drift_communism }
+			}
+				remove_ideas = { american_protection_drift_communism } 
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_defence_communism }
+			}
+			remove_ideas = { american_protection_defence_communism }
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_drift_fascism }
+			}
+			remove_ideas = { american_protection_drift_fascism }
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = american_protection_defence_fascism }
+			}
+			remove_ideas = american_protection_defence_fascism
+		}
+		if = {
+			limit = { 
+				MEX = { has_idea = synarchist_support_surge}
+			}
+			remove_ideas = synarchist_support_surge
+		}
+	}
+}
+#canadian checker
+country_event = {
+	id = mexico_article_30.5
+	title = mexico_article_30.5.t
+	desc = mexico_article_30.5.d
+	hidden = yes
+	trigger = {
+		MEX = {
+			AND = {
+				has_completed_focus = MEX_DFS
+				has_idea = synarchist_support_surge
+			}
+		}
+	}
+	fire_only_once = yes
+	option = {
+		remove_ideas = synarchist_support_surge
+	}
+}
+#################
+## mexico_calles TREE ##
+#################
+
+add_namespace = mexico_calles
+
+###################
+##Terrorist attack#
+###################
+
+news_event = {
+	id = mexico_calles.1
+	title = mexico_calles.1.t
+	desc = mexico_calles.1.d
+	picture = GFX_news_Train
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		# WTF is going on?!
+		ai_chance = {
+			factor = 1
+		}
+		name = mexico_calles.1.a
+		trigger = { NOT = { TAG = MEX } }
+	}
+	option = {
+		# A tragedy.
+		ai_chance = {
+			factor = 1
+		}
+		name = mexico_calles.1.b
+		trigger = { TAG = MEX }
+		hidden_effect = {
+			country_event = { id = mexico_calles.2 }
+		}
+	}
+}
+##############
+##Exile PREP##
+##############
+
+country_event = {
+	id = mexico_calles.2
+	title = mexico_calles.2.t
+	desc = mexico_calles.2.d
+	picture = GFX_report_event_Calles
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = mexico_calles.2.a
+		hidden_effect = {
+			country_event = { days = 1 id = mexico_calles.3 }
+		}
+	}
+}
+
+ ##############
+ ##RANDOMIZER##
+ ##############
+
+news_event = {
+	id = mexico_calles.3	
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		random_list = {
+			50 = {
+				MEX = {
+					news_event = { id = mexico_calles.4 }
+				}
+			}
+			50 = {
+				MEX = {
+					news_event = { id = mexico_calles.5 }
+				}
+			}
+		}
+	}
+}
+ ############################
+ ##EXILE (GUNS OR NO GUNS?)##
+ ############################
+# GUNS
+news_event = {
+	id = mexico_calles.4
+	title = mexico_calles.4.t
+	desc = mexico_calles.4.d
+	picture = GFX_news_exile
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		# what? Who is this? What is going on?!
+		name = mexico_calles.4.a
+		trigger = {
+			AND = {
+				NOT = {
+					original_tag = MEX
+					original_tag = USA
+				}
+			}
+		}
+	}
+	option = {
+		# They are not sending their best, folks.
+		name = mexico_calles.4.b
+		trigger = { original_tag = USA }
+	}
+	option = {
+		# He got a taste of his own medicine.
+		name = mexico_calles.4.c
+		trigger = { original_tag = MEX }
+		MEX = {
+			set_country_flag = guns
+		}
+		every_country = {
+			country_event = { id = mexico_calles.4 }
+		}
+	}
+}
+# NO GUNS
+news_event = {
+	id = mexico_calles.5
+	title = mexico_calles.5.t
+	desc = mexico_calles.5.d
+	picture = GFX_news_exile
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		# what? Who is this? What is going on?!
+		name = mexico_calles.5.a
+		trigger = {
+			AND = {
+				NOT = {
+					original_tag = MEX
+					original_tag = USA
+				}
+			}
+		}
+	}
+	option = {
+		# They are not sending their best, folks.
+		name = mexico_calles.5.b
+		trigger = { original_tag = USA }
+	}
+	option = {
+		# He got a taste of his own medicine.
+		name = mexico_calles.5.c
+		trigger = { original_tag = MEX }
+		MEX = {
+			set_country_flag = no_guns
+		}
+		every_country = {
+			country_event = { id = mexico_calles.5 }
+		}
+	}
+}
+#rebellion
+news_event = {
+	id = mexico_calles.6
+	title = mexico_calles.6.t
+	desc = mexico_calles.6.d
+	picture = GFX_news_mexico_callesRevolt
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		# what? Who is this? What is going on?!
+		name = mexico_calles.5.a
+		start_civil_war = {
+			ideology = fascism
+			size = 0.5
+		}
+	}
+}
+
+####################
+## SLEEPY LAGOON  ##
+####################
+
+add_namespace = mexico_zoot_suit
+
+############
+## MURDER ##
+############
+
+	# HIDDEN TRIGGER
+	country_event = {
+		id = mexico_zoot_suit.1
+		title = mexico_zoot_suit.1.t
+		desc = mexico_zoot_suit.1.d
+		hidden = yes
+		fire_only_once = yes
+		trigger = {
+			USA = {
+				OR = {
+					AND = {
+						date > 1942.8.2
+						NOT = {
+							has_global_flag = riot
+						}
+					}
+					has_government = fascism
+				}
+			}
+		}
+		option = {
+			name = mexico_zoot_suit.1.a
+			country_event = { days = 1 id = mexico_zoot_suit.2 }
+		}
+	}
+	
+	# EVENT
+	news_event = {
+		id = mexico_zoot_suit.2
+		title = mexico_zoot_suit.2.t
+		desc = mexico_zoot_suit.2.d
+		picture = GFX_news_lagoon
+		major = yes
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			# A disgusting murder
+			name = mexico_zoot_suit.2.a
+			trigger = {
+				original_tag = MEX
+			}
+			hidden_effect = {
+				#62
+				country_event = { days = 62 id = mexico_zoot_suit.3 }
+			}
+		}
+		option = {
+			# A disgusting murder
+			name = mexico_zoot_suit.2.a
+			trigger = {
+				NOT = {
+					original_tag = MEX
+				}
+			}
+		}
+	}
+
+#################
+## SHOW TRIALS ##
+#################
+
+	news_event = {
+		id = mexico_zoot_suit.3
+		title = mexico_zoot_suit.3.t
+		desc = mexico_zoot_suit.3.d
+		picture = GFX_news_trial
+		major = yes
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			# A disgusting murder
+			name = mexico_zoot_suit.3.a
+			hidden_effect = {
+				#93
+				country_event = { days = 93 id = mexico_zoot_suit.4 }
+			}
+		}
+	}
+	
+##################
+## TRIAL RESULT ##
+##################
+
+	news_event = {
+		id = mexico_zoot_suit.4
+		title = mexico_zoot_suit.4.t
+		desc = mexico_zoot_suit.4.d
+		picture = GFX_news_trial
+		major = yes
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			# A disgusting murder
+			name = mexico_zoot_suit.4.a
+			hidden_effect = {
+				country_event = { days = 1 id = mexico_zoot_suit.5 }
+			}
+		}
+	}
+	
+###########
+## RIOTS ##
+###########
+	
+	news_event = {
+		id = mexico_zoot_suit.5
+		title = mexico_zoot_suit.5.t
+		desc = mexico_zoot_suit.5.d
+		picture = GFX_news_riot
+		major = yes
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			# A disgusting murder
+			name = mexico_zoot_suit.5.a
+			hidden_effect = {
+				set_global_flag = riot
+				country_event = { days = 1 id = mexico_zoot_suit.6 }
+			}
+		}
+	}
+	
+##################
+## MEXICAN RAGE ##
+##################
+
+	news_event = {
+		id = mexico_zoot_suit.6
+		title = mexico_zoot_suit.6.t
+		desc = mexico_zoot_suit.6.d
+		picture = GFX_news_riot2
+		major = yes
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			# Save the mexicans
+			name = mexico_zoot_suit.6.a
+			trigger = {
+				AND = {
+					original_tag = MEX
+					MEX = {
+						OR = {
+							has_government = communism
+							has_government = fascism
+							has_country_flag = mexican_spies
+						}
+					}
+				}
+			}
+		}
+		option = {
+			# Understandable
+			name = mexico_zoot_suit.6.a
+			trigger = {
+				AND = {
+					original_tag = MEX
+					NOT = {
+						MEX = {
+							OR = {
+							has_government = communism
+							has_government = fascism
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+##############################
+## OPTIONAL - MEXICAN SPIES ##
+##############################
+
+#defunct, a decision now
+
+#################
+## WAR TRIGGER ##
+#################
+
+###################
+## MINOR EVENTS  ##
+###################
+
+add_namespace = mexico_minor
+
+	#####################
+	## Escobar returns ##
+	#####################
+	#trigger
+	country_event = {
+		id = mexico_minor.1
+		title = mexico_minor.1.t
+		desc = mexico_minor.1.d
+		hidden = yes
+		trigger = {
+			MEX = { has_war = yes }
+		}
+		fire_only_once = yes
+		option = {
+			name = mexico_minor.1.a
+			hidden_effect = {
+				MEX = {
+					country_event = { days = 1 id = mexico_minor.2 }
+				}
+			}
+		}
+	}
+	news_event = {
+		id = mexico_minor.2
+		title = mexico_minor.2.t
+		desc = mexico_minor.2.d
+		fire_only_once = yes
+		picture = GFX_news_war
+		major = yes
+		is_triggered_only = yes
+		option = {
+			# Vive mexico_minor!
+			name = mexico_minor.2.a
+			MEX = { remove_ideas = curse }
+			MEX = { set_country_flag = escobar_returns}
+		}
+	}
+	##################
+	##HOUSE OF SPAIN##
+	##################
+	#trigger
+	country_event = {
+	id = mexico_minor.3
+	title = mexico_minor.3.t
+	desc = mexico_minor.3.d
+	hidden = yes
+	trigger = {
+		original_tag = SPR
+		has_government = fascism
+	}
+	fire_only_once = yes
+	option = {
+		name = mexico_minor.3.a
+		hidden_effect = {
+			MEX = {
+				country_event = { days = 1 id = mexico_minor.4 }
+			}
+		}
+	}
+	}
+	news_event = {
+	id = mexico_minor.4
+	title = mexico_minor.4.t
+	desc = mexico_minor.4.d
+	picture = GFX_news_refugees
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		# Build it, and they will come.
+		ai_chance = {
+			factor = 1
+		}
+		name = mexico_minor.2.a
+		trigger = { TAG = MEX }
+		MEX = { add_research_slot = 1 }
+	}
+	option = {
+		# mexico_minor is accepting refugees?
+		name = mexico_minor.2.b
+		trigger = { NOT = { TAG = MEX } }
+	}
+	}
+	
+	##################
+	## JUNTA CHOICE ##
+	##################
+	
+country_event = {
+	id = mexico_minor.5
+	title = mexico_minor.5.t
+	desc = mexico_minor.5.d
+	picture = GFX_report_event_Caudillo
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		# guns
+		name = mexico_minor.5.a
+		ai_chance = {
+			factor = 1
+		}
+		add_tech_bonus = {
+			bonus = 0.50
+			uses = 2
+			category = infantry_weapons
+			category = artillery
+		}
+	}
+	option = {
+		# planes
+		name = mexico_minor.5.b
+		ai_chance = {
+			factor = 1
+		}
+		add_tech_bonus = {
+			name = bomber_bonus
+			bonus = 0.5
+			uses = 1
+			category = tactical_bomber
+			category = CAS_bomber
+		}
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.5
+			uses = 1
+			technology = fighter1
+			technology = fighter2
+			technology = fighter3
+			technology = heavy_fighter1
+			technology = heavy_fighter2
+			technology = heavy_fighter3
+		}
+	}
+	option = {
+		# tanks
+		name = mexico_minor.5.c
+		ai_chance = {
+			factor = 1
+		}
+		add_tech_bonus = {
+			name = armor_bonus
+			bonus = 0.5
+			uses = 2
+			category = armor
+		}
+	}
+}
+
+	############
+	## THANKS ##
+	############
+	
+	country_event = {
+		id = mexico_minor.6
+		title = mexico_minor.6.t
+		desc = mexico_minor.6.d
+		picture = GFX_report_event_intro
+		is_triggered_only = yes
+		option = {
+			name = mexico_minor.6.a
+		}
+	}
+	#sources
+	country_event = {
+		id = mexico_minor.7
+		title = mexico_minor.7.t
+		desc = mexico_minor.7.d
+		picture = GFX_report_event_sources
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			#back
+			name = mexico_minor.7.a
+		}
+	}
+	#sources
+	country_event = {
+		id = mexico_minor.8
+		title = mexico_minor.8.t
+		desc = mexico_minor.8.d
+		picture = GFX_report_event_introspecial
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			name = mexico_minor.8.a
+		}
+	}
+
+############
+## PEMEX  ##
+############
+
+add_namespace = mexico_pemex
+
+	#####################
+	## PEMEX STORYLINE ##
+	#####################
+	
+	###################
+	## Worker Strike ##
+	###################
+	
+country_event = {
+	id = mexico_pemex.1
+	title = mexico_pemex.1.t
+	desc = mexico_pemex.1.d
+	picture = GFX_report_event_strike
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		# It is time to make a power play.
+		name = mexico_pemex.1.a
+		country_event = { days = 1 id = mexico_pemex.2 }
+	}
+}
+
+	#############
+	##Formation##
+	#############
+news_event = {
+	id = mexico_pemex.2
+	title = mexico_pemex.2.t
+	desc = mexico_pemex.2.d
+	picture = GFX_report_event_pemex
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		# This could mean war, what are the Mexicans thinking?!
+		name = mexico_pemex.2.a
+		trigger = {
+			NOT = {
+				TAG = MEX
+				TAG = USA
+			}
+		}
+	}
+	option = {
+		# Outrageous!
+		name = mexico_pemex.2.b
+		trigger = { tag = ENG tag = USA}
+	}
+	option = {
+		# Now we wait
+		name = mexico_pemex.2.c
+		trigger = { TAG = MEX }
+		hidden_effect = {
+			USA = {
+				country_event = { days = 3 id = mexico_pemex.3 }
+			}
+			ENG = {
+				country_event = { days = 6 id = mexico_pemex.4 }
+			}
+		}
+	}
+}
+	#########################
+	## WAR OR EMBARGO - US ##
+	#########################
+	
+country_event = {
+	id = mexico_pemex.3
+	title = mexico_pemex.3.t
+	desc = mexico_pemex.3.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+	# war
+		name = mexico_pemex.3.a
+		trigger = { 
+			tag = USA
+			is_historical_focus_on = no
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 25
+				OR = {
+					threat < 0.09
+				}
+			}
+		}
+		declare_war_on = {
+			target = MEX
+			type = puppet_wargoal_focus
+		}
+		hidden_effect = {
+			MEX = {
+				country_event = { id = mexico_pemex.7 }
+			}
+		}
+	}
+	option = {
+	# embargo
+	name = mexico_pemex.3.b
+	trigger = { tag = USA }
+	ai_chance = {
+		factor = 1
+			modifier = {
+			factor = 75
+				OR = {
+					is_historical_focus_on = yes
+					threat > 0.09
+					USA = { has_war = yes }
+				}
+			}
+		}
+		MEX = { 
+			add_opinion_modifier = { target = USA modifier = embargo }
+		}
+		hidden_effect = {
+			MEX = {
+				country_event = { days = 1 id = mexico_pemex.5 }
+			}
+		}
+	}
+}
+
+	#########################
+	## WAR OR EMBARGO - UK ##
+	#########################
+	
+country_event = {
+	id = mexico_pemex.4
+	title = mexico_pemex.4.t
+	desc = mexico_pemex.4.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		#war
+		name = mexico_pemex.4.c
+		trigger = { 
+			tag = ENG
+		}
+		ai_chance = {
+			factor = 1
+		}
+		declare_war_on = {
+			target = MEX
+			type = puppet_wargoal_focus
+		}
+		MEX = {
+			country_event = { id = mexico_pemex.8 }
+		}
+	}
+	option = {
+		# embargo
+	name = mexico_pemex.4.e
+	trigger = { tag = ENG }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 90000
+				OR = {
+					is_historical_focus_on = yes
+					threat > 0.20
+					ENG = { has_war = yes }
+				}
+			}
+		}
+		MEX = { 
+			add_opinion_modifier = { target = ENG modifier = embargo }
+		}
+		hidden_effect = {
+			MEX = {
+				country_event = { days = 1 id = mexico_pemex.6 }
+			}
+		}
+	}
+}
+	################
+	## US EMBARGO ##
+	################
+	
+news_event = {
+	id = mexico_pemex.5
+	title = mexico_pemex.5.t
+	desc = mexico_pemex.5.d
+	picture = GFX_news_mexembargo
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		# I was expecting a war.
+		name = mexico_pemex.5.a
+		trigger = { NOT = { TAG = MEX } }
+	}
+	option = {
+		# predictable.
+		name = mexico_pemex.5.b
+		trigger = { TAG = MEX }
+	}
+}
+	################
+	## UK EMBARGO ##
+	################
+
+#Embargo UK
+news_event = {
+	id = mexico_pemex.6
+	title = mexico_pemex.6.t
+	desc = mexico_pemex.6.d
+	picture = GFX_news_mexembargo
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		# predictable.
+		name = mexico_pemex.6.a
+		trigger = { TAG = MEX }
+	}
+	option = {
+		# predictable.
+		name = mexico_pemex.6.b
+		trigger = { NOT = { TAG = MEX } }
+	}
+}
+
+	############
+	## US WAR ##
+	############
+	
+# US invasion for PEMEX
+news_event = {
+	id = mexico_pemex.7
+	title = mexico_pemex.7.t
+	desc = mexico_pemex.7.d
+	picture = GFX_news_war
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		# My god.
+		name = mexico_pemex.7.a
+		trigger = {
+			NOT = {
+				TAG = MEX
+			}
+		}
+	}
+	option = {
+		# Dios Mio.
+		name = mexico_pemex.7.b
+		trigger = { tag = MEX }
+	}
+}
+
+	#################
+	## UK invasion ##
+	#################
+	
+news_event = {
+	id = mexico_pemex.8
+	title = mexico_pemex.8.t
+	desc = mexico_pemex.8.d
+	picture = GFX_news_war
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		# My god.
+		name = mexico_pemex.8.a
+		trigger = {
+			NOT = {
+				TAG = MEX
+			}
+		}
+	}
+	option = {
+		# Dios Mio.
+		name = mexico_pemex.8.b
+		trigger = { tag = MEX }
+	}
+}
+	
+	################
+	##Compensation##
+	################
+
+########################
+## MEXICAN ELECTIONS  ##
+########################
+
+add_namespace = mexico_1940
+
+###########
+## 1940  ##
+###########
+
+# choose successor - PRI (Mugica or Camacho)
+	country_event = {
+	id = mexico_1940.1
+	title = mexico_1940.1.t
+	desc = mexico_1940.1.d
+	picture = GFX_report_event_leftist
+	trigger = {
+		AND = {
+			date > 1939.1.1
+			original_tag = MEX
+			NOT = {
+				OR = {
+					has_government = fascism
+					has_government = communism
+					has_government = democracy
+					has_idea = Mugica
+					has_idea = Maximino
+					has_idea = padilla
+				}
+			}
+		}
+	}
+	fire_only_once = yes
+		
+		option = {
+			#Mugica
+			name = mexico_1940.1.a
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 10
+					communism > 0.40
+				}
+			}
+			MEX = {
+				country_event = { days = 1 id = mexico_1940.2 }
+			}
+			create_country_leader = { 
+				name = "Fransisco J. Mugica"
+				desc = "mex_mugica_desc"
+				picture = "gfx/leaders/MEX/Mugica.dds" 
+				expire = "1965.1.1" 
+				ideology = stalinism
+				traits = {}
+			}
+			set_party_name = { 
+				ideology = communism
+				long_name = "Cardenistas"
+				name = "Cardenistas"
+			}
+			set_country_flag = election_1940
+			set_country_flag = mugica
+			set_country_flag = mexican_elections
+		}
+		
+		option = {
+			#Camacho
+			name = mexico_1940.1.b
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 100
+					OR = {
+						communism < 0.40
+						is_historical_focus_on = yes
+					}
+				}
+			}
+			MEX = {
+				country_event = { days = 1 id = mexico_1940.2 }
+			}
+			create_country_leader = { 
+				name = "Manuel Ávila Camacho"
+				desc = "mex_manuel_desc"
+				picture = "gfx/leaders/MEX/Camacho.dds" 
+				expire = "1965.1.1" 
+				ideology = despotism
+				traits = {}
+			}
+			set_country_flag = election_1940
+			set_country_flag = camacho
+			set_country_flag = mexican_elections
+		}
+	}
+# choose successor - opponent (Amaro or Almazan)
+	country_event = {
+	id = mexico_1940.2
+	title = mexico_1940.2.t
+	desc = mexico_1940.2.d
+	picture = GFX_report_event_assassin
+	is_triggered_only = yes
+	fire_only_once = yes
+		option = {
+			#Amaro
+			name = mexico_1940.2.b
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 10
+					fascism > 0.40
+				}
+			}
+			create_country_leader = { 
+				name = "Joaquin Amaro"
+				desc = "mex_amaro_desc"
+				picture = "gfx/leaders/MEX/Amaro.dds" 
+				expire = "1965.1.1" 
+				ideology = falangism
+				traits = {}
+			}
+			set_party_name = { 
+			ideology = fascism
+			long_name = "Partido Revolucionario Anticomunista"
+			name = "PRAC"
+			}
+			news_event = mexico_1940.3
+			set_country_flag = amaro
+		}
+		option = {
+			#Juan
+			name = mexico_1940.2.a
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 100
+					OR = {
+						fascism < 0.40
+						is_historical_focus_on = yes
+					}
+				}
+			}
+			create_country_leader = { 
+				name = "Juan Almazan"
+				desc = "mex_juan_desc"
+				picture = "gfx/leaders/MEX/Juan.dds" 
+				expire = "1965.1.1" 
+				ideology = conservatism
+				traits = {}
+			}
+			set_party_name = { 
+			ideology = democratic
+			long_name = "Partido Revolucionario de Unificación Nacional"
+			name = "PRUN"
+			}
+			set_country_flag = juan
+		}
+	}
+# Juan assassinated by maximino (car crash or train derailment at puebla campaign stop)
+	news_event = {
+	id = mexico_1940.3
+	title = mexico_1940.3.t
+	desc = mexico_1940.3.d
+	picture = GFX_news_Train
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+		option = {
+			# Horrific.
+			trigger = {
+				NOT = {
+					original_tag = MEX
+				}
+			}
+			name = mexico_1940.3.a
+		}
+		# world only
+		option = {
+			trigger = {
+				original_tag = MEX
+			}
+			name = mexico_1940.2.a
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.10
+			}
+			remove_unit_leader = 1826
+		}
+	}
+# Actual election
+	country_event = {
+	id = mexico_1940.4
+	title = mexico_1940.4.t
+	desc = mexico_1940.4.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	# mugica
+	option = {
+		name = mexico_1940.4.a
+		trigger = {
+			has_country_flag = mugica
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				communism > 0.40
+			}
+		}
+		if = {
+			limit = { 
+				MEX = { has_country_flag = juan}
+			}
+			set_country_flag = juan_loses
+			clr_country_flag = election_1940
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+		remove_unit_leader = 1822
+		hidden_effect = {
+			create_field_marshal = {
+				name = "Fransisco J. Mugica"
+				portrait_path = "gfx/leaders/MEX/Mugica.dds"
+				traits = { old_guard war_hero trickster swamp_fox trait_mountaineer hill_fighter }
+				skill = 5
+				attack_skill = 3
+				defense_skill = 4
+				planning_skill = 3
+				logistics_skill = 3
+				id = 1823
+			}
+		}
+		custom_effect_tooltip = tt_mexpromotion
+	}
+	# camacho
+	option = {
+		name = mexico_1940.4.b
+		trigger = {
+			has_country_flag = camacho
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		if = {
+			limit = { 
+				MEX = { has_country_flag = juan}
+			}
+			set_country_flag = juan_loses
+		}
+		clr_country_flag = election_1940
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = yes
+		}
+		remove_unit_leader = 1824
+		hidden_effect = {
+			create_field_marshal = {
+				name = "Manuel Ávila Camacho"
+				portrait_path = "gfx/leaders/MEX/Maximino.dds"
+				traits = { old_guard politically_connected trait_reckless harsh_leader}
+				skill = 5
+				attack_skill = 3
+				defense_skill = 4
+				planning_skill = 3
+				logistics_skill = 4
+				id = 1825
+			}
+		}
+		custom_effect_tooltip = tt_mexpromotion
+	}
+	#juan
+	option = {
+		name = mexico_1940.4.c
+		trigger = {
+			has_country_flag = juan
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				democratic > 0.40
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		clr_country_flag = election_1940
+		remove_unit_leader = 1826
+		hidden_effect = {
+			create_field_marshal = {
+				name = "Juan Andreu Almazán"
+				portrait_path = "gfx/leaders/MEX/Juan.dds"
+				traits = { old_guard war_hero politically_connected infantry_officer urban_assault_specialist trait_mountaineer hill_fighter}
+				skill = 5
+				attack_skill = 3
+				defense_skill = 4
+				planning_skill = 3
+				logistics_skill = 2
+				id = 1827
+			}
+		}
+		custom_effect_tooltip = tt_mexpromotion
+	}
+	#amaro
+	option = {
+		name = mexico_1940.4.e
+		trigger = {
+			has_country_flag = amaro
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				fascism > 0.40
+			}
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = yes
+		}
+		if = {
+			limit = { 
+					MEX = { has_country_flag = juan}
+				}
+				set_country_flag = juan_loses
+			}
+		clr_country_flag = election_1940
+		hidden_effect = {
+			create_field_marshal = {
+				name = "Joaquin Amaro"
+				portrait_path = "gfx/leaders/MEX/Amaro.dds"
+				traits = { old_guard organisational_leader offensive_doctrine }
+				skill = 5
+				attack_skill = 3
+				defense_skill = 3
+				planning_skill = 4
+				logistics_skill = 4
+				id = 1829
+			}
+		}
+		custom_effect_tooltip = tt_mexpromotion
+	}	
+}
+
+# CARDENAS REMOVAL
+country_event = {
+	id = mexico_1940.5
+	title =  mexico_1940.5.t
+	desc = mexico_1940.5.d
+	hidden = yes
+	trigger = {
+		original_tag = MEX
+		OR = {
+			has_government = fascism
+			has_government = communism
+			has_government = democracy
+			date > 1940.1.1
+		}
+	}
+	fire_only_once = yes
+	option = {
+		#remove
+		name = mexico_1940.4.e
+		remove_unit_leader = 1821
 	}
 }

@@ -1,0 +1,12 @@
+#################
+#### Denmark ####
+#################
+
+DEN_reintegrate_schleswig_category = {
+
+	icon = border_war
+
+	allowed = {
+		original_tag = DEN
+	}
+}

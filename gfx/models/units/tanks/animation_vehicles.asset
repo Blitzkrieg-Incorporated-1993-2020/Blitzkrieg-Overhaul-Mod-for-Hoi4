@@ -1,0 +1,100 @@
+animation = {
+	name = "fascist_mechanized_01_idle_animation"
+	file = "fascist_mechanized_01_idle.anim"
+}
+
+animation = {
+	name = "fascist_mechanized_01_move_animation"
+	file = "fascist_mechanized_01_moving.anim"
+}
+
+animation = {
+	name = "fascist_mechanized_01_attack_animation"
+	file = "fascist_mechanized_01_attack.anim"
+}
+
+animation = {
+	name = "fascist_motorized_01_idle_animation"
+	file = "fascist_motorized_01_idle.anim"
+}
+
+animation = {
+	name = "fascist_motorized_01_move_animation"
+	file = "fascist_motorized_01_moving.anim"
+}
+
+animation = {
+	name = "communist_mechanized_01_idle_animation"
+	file = "communist_mechanized_01_idle.anim"
+}
+
+animation = {
+	name = "communist_mechanized_01_move_animation"
+	file = "communist_mechanized_01_moving.anim"
+}
+
+animation = {
+	name = "communist_motorized_01_idle_animation"
+	file = "communist_motorized_01_idle.anim"
+}
+
+animation = {
+	name = "communist_motorized_01_move_animation"
+	file = "communist_motorized_01_moving.anim"
+}
+
+##################
+# Armored car brigade
+##################
+
+#animation = {
+#	name = "armored_car_brigade_idle_animation"
+#	file = "armored_car_brigade_idle.anim"
+#}
+#
+#animation = {
+#	name = "armored_car_brigade_idle2_animation"
+#	file = "armored_car_brigade_idle2.anim"
+#}
+#
+#animation = {
+#	name = "armored_car_brigade_move_animation"
+#	file = "armored_car_brigade_moving.anim"
+#}
+#
+#animation = {
+#	name = "armored_car_brigade_attack_animation"
+#	file = "armored_car_brigade_attack.anim"
+#}
+#
+#
+#animation = {
+#	name = "armored_car_brigade_death_animation"
+#	file = "armored_car_brigade_death.anim"
+#}
+
+##################
+# medium_assault_gun_brigade
+##################
+
+#animation = {
+#	name = "medium_assault_gun_brigade_idle_animation"
+#	file = "medium_assault_gun_brigade_idle.anim"
+#}
+#
+#
+#animation = {
+#	name = "medium_assault_gun_brigade_move_animation"
+#	file = "medium_assault_gun_brigade_moving.anim"
+#}
+#
+#animation = {
+#	name = "medium_assault_gun_brigade_attack_animation"
+#	file = "medium_assault_gun_brigade_attack.anim"
+#}
+#
+#
+#animation = {
+#	name = "medium_assault_gun_brigade_death_animation"
+#	file = "medium_assault_gun_brigade_death.anim"
+#}

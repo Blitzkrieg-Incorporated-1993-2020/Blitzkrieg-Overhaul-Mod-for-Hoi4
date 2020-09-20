@@ -1,0 +1,102 @@
+## faction_allies_paramarine
+## enable_legion_etrangere_tech
+## enable_gurkhas_tech
+
+technologies = {
+
+	faction_allies_national_guard = {
+        enable_subunits = {
+            special_infantry
+        }
+
+        research_cost = 1
+        start_year = 1936
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+	faction_allies_paramarine = {
+        enable_subunits = {
+            allies_paramarine
+        }
+
+        research_cost = 1
+        start_year = 1941
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+	enable_legion_etrangere_tech = {
+        enable_subunits = {
+            special_infantry
+        }
+
+        special_infantry = {
+            default_morale = 0.20
+
+            jungle = {
+                attack = 0.25
+                defence = 0.10
+                movement = 0.20
+            }
+
+            desert = { ## doesn't show in division design, bug?
+                attack = 0.25
+                defence = 0.10
+                movement = 0.20
+            }
+        }
+
+        research_cost = 1
+        start_year = 1831
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    enable_gurkhas_tech = {
+        enable_subunits = {
+            special_mountaineers
+        }
+
+        special_mountaineers = {
+            mountain = {
+                attack = 0.15
+                defence = 0.15
+                movement = 0.15
+            }
+        }
+
+        research_cost = 1
+        start_year = 1925
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+}

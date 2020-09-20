@@ -228,38 +228,24 @@ country_event = {
 		}
 		add_opinion_modifier = { target = GER modifier = MR_pact }# pact		
 		custom_effect_tooltip = germany.11.a.tt
-		add_state_claim = 96
-		add_state_claim = 11
-		add_state_claim = 879
-		add_state_claim = 12
-		add_state_claim = 880
-		add_state_claim = 881
-		add_state_claim = 891
-		add_state_claim = 882
-		add_state_claim = 883
-		add_state_claim = 890
-		add_state_claim = 13
-		add_state_claim = 190
-		add_state_claim = 191
-		add_state_claim = 146
-		add_state_claim = 147
-		add_state_claim = 722
-		add_state_claim = 1067
-		add_state_claim = 1068
-		add_state_claim = 189
-		add_state_claim = 78
-		add_state_claim = 89
-		add_state_claim = 91
-		add_state_claim = 93
-		add_state_claim = 94
-		add_state_claim = 95
-		add_state_claim = 933
-		add_state_claim = 96
-		add_state_claim = 97
-		add_state_claim = 80
-		add_state_claim = 784
-		add_state_claim = 996
-		add_state_claim = 997
+		every_state = {
+			limit = {
+				NOT = { is_core_of = ROOT }
+				NOT = { is_core_of = SLO }
+				OR = {
+					state = 146
+					state = 147
+					state = 722
+					is_core_of = LAT
+					is_core_of = LIT
+					is_core_of = EST
+					is_core_of = MOL
+					is_core_of = UKR
+					is_core_of = BLR
+				}
+			}
+			ROOT = { add_state_claim = PREV }
+		}
 		hidden_effect =  { add_timed_idea = { idea = SOV_molotov_ribbentrop_pact days = 730 } }
 		GER = {
 			country_event = { days = 1 id = germany.12 }
@@ -1264,8 +1250,8 @@ country_event = {
 			factor = 90 
 			modifier = {
 				factor = 0.3
-				has_government = communism
-				CZE = { has_government = communism }
+				OR = { has_government = unionism has_government = communism }
+				CZE = { OR = { has_government = unionism has_government = communism } }
 			}
 			modifier = {
 				has_global_flag = GER_has_started_war
@@ -1381,8 +1367,8 @@ country_event = {
 			}				
 			modifier = {
 				factor = 3
-				has_government = communism
-				CZE = { has_government = communism }
+				OR = { has_government = unionism has_government = communism }
+				CZE = { OR = { has_government = unionism has_government = communism } }
 			}
 			modifier = {
 				factor = 0
@@ -1507,8 +1493,8 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.3
-				has_government = communism
-				CZE = { has_government = communism }
+				OR = { has_government = unionism has_government = communism }
+				CZE = { OR = { has_government = unionism has_government = communism } }
 			}
 			modifier = {
 				has_global_flag = GER_has_started_war
@@ -1585,8 +1571,8 @@ country_event = {
 			}
 			modifier = {
 				factor = 6
-				has_government = communism
-				CZE = { has_government = communism }
+				OR = { has_government = unionism has_government = communism }
+				CZE = { OR = { has_government = unionism has_government = communism } }
 			}
 		}
 		if = {
@@ -2135,7 +2121,7 @@ country_event = {
 					country_exists = YUG
 					YUG = { has_war = no }
 					ENG = { NOT = { has_war_with = YUG } }
-					ENG = { has_government = democratic }
+					ENG = { has_democratic_government = yes }
 				}
 				ENG = {
 					country_event = {
@@ -2498,6 +2484,7 @@ country_event = {
 			add_war_support = 0.1
 		}
 		puppet = SLO
+		set_autonomy = { target = SLO autonomy_state = autonomy_satellite_state }
 		every_state = {
 			limit = {
 				is_core_of = CZE
@@ -2860,7 +2847,7 @@ country_event = {
 		if = {
 			limit = {
 				has_idea = FRA_disjointed_government
-				NOT = { has_government = communism }
+				NOT = { OR = { has_government = unionism has_government = communism } }
 			}
 			custom_effect_tooltip = germany.60.a.tt
 			effect_tooltip = {
@@ -2873,7 +2860,7 @@ country_event = {
 		if = { #you're not getting around that, comrade
 			limit = {
 				has_idea = FRA_disjointed_government
-				has_government = communism
+				OR = { has_government = unionism has_government = communism }
 			}
 			custom_effect_tooltip = germany.60.a.tt
 			effect_tooltip = {
@@ -3058,7 +3045,7 @@ country_event = {
 		if = {
 			limit = { 
 				has_idea = FRA_disjointed_government 
-				NOT = { has_government = communism }
+				NOT = { OR = { has_government = unionism has_government = communism } }
 			}
 			custom_effect_tooltip = germany.60.a.tt
 			effect_tooltip = {
@@ -3071,7 +3058,7 @@ country_event = {
 		if = {
 			limit = { 
 				has_idea = FRA_disjointed_government 
-				has_government = communism
+				OR = { has_government = unionism has_government = communism }
 			}
 			custom_effect_tooltip = germany.60.a.tt
 			effect_tooltip = {
@@ -3105,7 +3092,7 @@ country_event = {
 		if = {
 			limit = { 
 				has_idea = FRA_disjointed_government 
-				NOT = { has_government = communism }
+				NOT = { OR = { has_government = unionism has_government = communism } }
 			}
 			custom_effect_tooltip = germany.60.a.tt
 			effect_tooltip = {
@@ -3118,7 +3105,7 @@ country_event = {
 		if = {
 			limit = { 
 				has_idea = FRA_disjointed_government 
-				has_government = communism
+				OR = { has_government = unionism has_government = communism }
 			}
 			custom_effect_tooltip = germany.60.a.tt
 			effect_tooltip = {
@@ -3166,7 +3153,7 @@ country_event = {
 			if = {
 				limit = { 
 					has_idea = FRA_disjointed_government 
-					NOT = { has_government = communism }
+					NOT = { OR = { has_government = unionism has_government = communism } }
 				}
 				start_civil_war = {
 					ideology = communism
@@ -3176,7 +3163,7 @@ country_event = {
 			if = {
 				limit = { 
 					has_idea = FRA_disjointed_government 
-					has_government = communism
+					OR = { has_government = unionism has_government = communism }
 				}
 				start_civil_war = {
 					ideology = democratic
@@ -3256,7 +3243,7 @@ country_event = {
 			if = {
 				limit = { 
 					has_idea = FRA_disjointed_government 
-					NOT = { has_government = communism }
+					NOT = { OR = { has_government = unionism has_government = communism } }
 				}
 				start_civil_war = {
 					ideology = communism
@@ -3266,7 +3253,7 @@ country_event = {
 			if = {
 				limit = { 
 					has_idea = FRA_disjointed_government 
-					has_government = communism
+					OR = { has_government = unionism has_government = communism }
 				}
 				start_civil_war = {
 					ideology = democratic
@@ -3746,7 +3733,7 @@ country_event = {
 				factor = 5 #seems safe
 			}
 			modifier = {
-				has_government = democratic
+				has_democratic_government = yes
 				factor = 5
 			}
 		}
@@ -4074,7 +4061,7 @@ country_event = {
 			if = {
 				limit = {
 					original_tag = GER
-					has_government = neutrality
+					OR = { has_government = monarchism has_government = neutrality }
 				}
 				country_event = { id = germany.127 days = 7 random_days = 7 }
 			}
@@ -4196,7 +4183,7 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
-		GER = { country_event = { id = germany.87 days = 1 } }
+		GER = { country_event = { id = nos.35 days = 1 } }
 		effect_tooltip = {
 			GER = {
 				transfer_state = 85
@@ -4207,7 +4194,10 @@ country_event = {
 				remove_state_claim = 762
 			}
 		}
-		country_event = { id = poland.1 days = 7 }
+		if = {
+			limit = { tag = POL }
+			country_event = { id = poland.1 days = 7 }
+		}
 		hidden_effect = {
 			news_event = { id = news.203 hours = 6 }
 		}
@@ -4225,165 +4215,16 @@ country_event = {
 				}
 			}
 			modifier = {
-				factor = 10
+				factor = 0.1
 				any_other_country = {
 					is_major = yes
 					is_in_faction_with = POL
 				}
 			}
 		}
-		GER = { country_event = { id = germany.88 days = 1 } 
-			if = {
-				limit = {
-					is_in_faction_with = POL
-					is_faction_leader = yes
-				}
-				remove_from_faction = POL
-			}
-			if = {
-				limit = { 
-					is_in_faction_with = POL
-					is_faction_leader = no
-				}
-				random_other_country = {
-					limit = { 
-						is_in_faction_with = GER
-						is_faction_leader = yes
-					}
-					remove_from_faction = GER
-				}
-			}			
-		}		
+		GER = { country_event = { id = nos.36 days = 1 } }
 		hidden_effect = {
-			news_event = { hours = 1 id = news.204 }
-		}
-		effect_tooltip = {
-			GER = {
-				declare_war_on = {
-					target = POL
-					type = take_state
-					generator = { 85 865 }
-				}
-			}
-		}
-	}
-}
-
-# Poland Cedes Danzig (Danzig or War)
-country_event = {
-	id = germany.87
-	title = germany.87.t
-	desc = germany.87.d
-	picture = GFX_report_event_german_polish_border
-
-	is_triggered_only = yes
-	
-	option = {
-		name = germany.87.a
-		if = {
-			limit = { NOT = { country_exists = DAN } }
-			
-			transfer_state = 85
-		}
-		if = {
-			limit = { country_exists = DAN }
-			
-			DAN = {
-				country_event = { hours = 1 id = bshistory.10 }
-			}
-		}
-		transfer_state = 865
-		remove_state_claim = 86
-		if = {
-			limit = {
-				ENG = {
-					NOT = {
-						is_in_faction_with = GER
-					}
-				}
-			}
-			ENG = {
-				add_war_support = -0.1 #dodged a bullet there
-			}
-		}
-		if = {
-			limit = {
-				FRA = {
-					NOT = {
-						is_in_faction_with = GER
-					}
-				}
-			}
-			FRA = {
-				add_war_support = -0.1 #dodged a bullet there
-			}
-		}
-	}
-}
-
-# Poland Refuses to Cede Danzig (Danzig or War)
-country_event = {
-	id = germany.88
-	title = germany.88.t
-	desc = germany.88.d
-	picture = GFX_report_event_polish_tanks_02
-
-	is_triggered_only = yes
-	
-	option = {
-		name = germany.88.a
-		create_wargoal = {
-			type = take_state
-			target = POL
-			generator = { 865 }
-		}
-		add_state_core = 85
-		add_state_core = 865
-		if = {
-			limit = {
-				ENG = {
-					NOT = {
-						is_in_faction_with = GER
-					}
-				}
-			}
-			ENG = {
-				add_war_support = 0.1 #just not cricket
-			}
-		}
-		if = {
-			limit = {
-				FRA = {
-					NOT = {
-						is_in_faction_with = GER
-					}
-				}
-			}
-			FRA = {
-				add_war_support = 0.1
-			}
-		}
-		if = {
-			limit = {
-				CZE = {
-					exists = yes
-					is_subject = no
-					has_government = democratic
-					NOT = { is_in_faction_with = GER }
-				}	
-			}	
-			CZE = {
-				add_ai_strategy = {
-					type = conquer
-					id = "GER"			
-					value = 200
-				}
-				add_ai_strategy = {
-					type = alliance
-					id = "POL"			
-					value = 200
-				}	
-			}
+			news_event = { id = news.204 hours = 1 }
 		}
 	}
 }
@@ -4408,7 +4249,7 @@ country_event = {
 						NOT = { tag = GER }
 						has_government = fascism 
 					}
-					has_government = democratic 
+					has_democratic_government = yes 
 				}
 			}
 			add_opinion_modifier = { target = SOV modifier = unholy_alliance }
@@ -4438,7 +4279,7 @@ country_event = {
 			}
 			every_other_country = {
 				limit = {
-					has_government = democratic 
+					has_democratic_government = yes 
 				}
 				add_opinion_modifier = { target = GER modifier = unholy_alliance }
 			}
@@ -5850,7 +5691,7 @@ country_event = {
 				is_in_faction_with = ROOT
 			}
 		}
-		has_government = democratic
+		has_democratic_government = yes
 		NOT = {
 			tag = SOV
 		}
@@ -6618,7 +6459,7 @@ country_event = {
 			modifier = {
 				add = 1
 				OR = {
-					has_government = neutrality
+					OR = { has_government = monarchism has_government = neutrality }
 					has_government = fascism
 				}
 			}
@@ -6647,8 +6488,8 @@ country_event = {
 			modifier = {
 				add = 1
 				OR = {
-					has_government = communism
-					has_government = democratic
+					OR = { has_government = unionism has_government = communism }
+					has_democratic_government = yes
 				}
 			}
 		}
@@ -6785,7 +6626,7 @@ country_event = {
 #
 #	trigger = {
 #		SOV = {
-#			has_government = communism
+#			OR = { has_government = unionism has_government = communism }
 #			owns_state = 217 
 #			owns_state = 195 
 #		}

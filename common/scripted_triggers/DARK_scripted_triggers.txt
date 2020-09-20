@@ -1,0 +1,35 @@
+DARK_will_dem_USA_support = {
+	any_other_country = {
+		is_literally_america = yes
+		OR = {
+			has_democratic_government = yes
+			has_socialist_government = yes
+		}
+		NOT = { has_war_with = ROOT }
+		OR = {
+			has_opinion = { target = ROOT value > 74 }
+			is_in_faction_with = ROOT
+	        is_subject = yes
+	        any_country = {
+	            ROOT = { is_subject_of = PREV }
+	            is_literally_america = yes
+	        }
+		}
+	}
+}
+DARK_will_dem_USA_not_support = {
+	any_other_country = {
+		is_literally_america = yes
+		OR = {
+			has_autocratic_government = yes
+			has_war_with = ROOT
+			has_opinion = { target = ROOT value < 75 }
+		}
+		NOT = { is_in_faction_with = ROOT }
+        is_subject = yes
+        any_country = {
+            ROOT = { is_subject_of = PREV }
+            NOT = { is_literally_america = yes }
+        }
+	}
+}

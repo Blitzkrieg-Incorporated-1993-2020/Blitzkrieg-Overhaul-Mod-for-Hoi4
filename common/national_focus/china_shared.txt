@@ -1,4 +1,4 @@
-﻿#	shared_focus = {
+#	shared_focus = {
 #		id = CHI_
 #		icon = GFX_
 #		prerequisite = { focus = }
@@ -36,7 +36,7 @@
 
 
 shared_focus = {
-	id = CHI_invite_foreign_investors 
+	id = CHI_invite_foreign_investors #WTT_TODO_CD: Dynamic names for Commies/MAN
 	icon = GFX_focus_generic_concessions
 	x = 40
 	y = 0
@@ -77,6 +77,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_offsite_building = { type = industrial_complex level = 2 }
 	}
@@ -95,10 +99,6 @@ shared_focus = {
 		modifier = {
 			factor = 4
 			tag = CHI
-		}
-		modifier = {
-			factor = 10
-			has_country_flag = GER_befriended_by_germany_flag
 		}
 	}
 
@@ -122,6 +122,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		GER = {
 			add_opinion_modifier = {
@@ -130,22 +134,22 @@ shared_focus = {
 			}
 			add_ai_strategy = {
 				type = alliance
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = protect
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = send_volunteers_desire
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = support
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 		}
@@ -185,6 +189,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		custom_effect_tooltip = available_chief_of_army
@@ -244,6 +252,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		every_army_leader = {
 			add_planning = 1
@@ -279,11 +291,15 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_ideas = CHI_wargaming_division
 		add_tech_bonus = {
 			name = CHI_wargaming_division
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			category = land_doctrine
 		}
@@ -327,6 +343,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_offsite_building = { type = industrial_complex level = 1 }
 	}
@@ -368,6 +388,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		custom_effect_tooltip = CHI_purchase_tanks_tt
@@ -423,10 +447,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_chinese_panzers
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			category = armor
 		}
@@ -534,6 +562,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		custom_effect_tooltip = CHI_experimental_mechanised_unit_effect
@@ -757,10 +789,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_combined_arms_warfare
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			category = cat_mechanized_equipment
 		}
@@ -798,10 +834,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_hire_soviet_designer
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			category = armor
 		}
@@ -839,6 +879,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		SOV = { add_to_tech_sharing_group = CHI_joint_tank_development }
@@ -887,6 +931,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		SOV = {
 			add_opinion_modifier = {
@@ -895,22 +943,22 @@ shared_focus = {
 			}
 			add_ai_strategy = {
 				type = alliance
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = protect
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = send_volunteers_desire
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = support
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 		}
@@ -946,6 +994,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = yes
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		diplomatic_relation = {
@@ -983,12 +1035,9 @@ shared_focus = {
 	}
 
 	bypass = {
-		custom_trigger_tooltip = {
-			tooltip = soviet_advisers_tt
-			any_other_country = {
-				any_army_leader = {
-					has_id = 600
-				}
+		any_other_country = {
+			any_army_leader = {
+				has_id = 600
 			}
 		}
 	}
@@ -996,6 +1045,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		create_corps_commander = {
@@ -1038,14 +1091,16 @@ shared_focus = {
 	}
 
 	bypass = {
-		any_other_country = {
-			has_completed_focus = CHI_the_soviet_volunteer_group
-		}
+
 	}
 
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		SOV = { country_event = wtt_china_shared.11 }
@@ -1086,6 +1141,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		FRA = {
 			add_opinion_modifier = {
@@ -1094,22 +1153,22 @@ shared_focus = {
 			}
 			add_ai_strategy = {
 				type = alliance
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = protect
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = send_volunteers_desire
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = support
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 		}
@@ -1142,10 +1201,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_small_arms_expertise
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			category = infantry_weapons
 		}
@@ -1191,11 +1254,15 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {		
 		add_ideas = CHI_elite_mountaineers
 		add_tech_bonus = {
 			name = CHI_elite_mountaineers
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			category = mountaineers_tech
 		}
@@ -1261,10 +1328,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_heavy_weapons
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			category = artillery
 		}
@@ -1323,6 +1394,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		671 = { #Tonkin
 			set_state_flag = CHI_needed_for_hanoi_route
@@ -1364,11 +1439,15 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_ideas = CHI_construction_battalions
 		add_tech_bonus = {
 			name = CHI_construction_battalions
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			category = engineers_tech
 		}
@@ -1401,6 +1480,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		air_experience = 25
 		if = {
@@ -1421,7 +1504,7 @@ shared_focus = {
 				planning_skill = 2
 				logistics_skill = 3
 				id = 604
-				skill = 3
+				skill = 2
 			}
 		}
 		else_if = {
@@ -1442,7 +1525,7 @@ shared_focus = {
 				planning_skill = 2
 				logistics_skill = 3
 				id = 605
-				skill = 3
+				skill = 2
 			}
 		}
 		else_if = {
@@ -1463,7 +1546,7 @@ shared_focus = {
 				planning_skill = 2
 				logistics_skill = 3
 				id = 606
-				skill = 3
+				skill = 2
 			}
 		}
 	}
@@ -1495,6 +1578,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		every_army_leader = {
@@ -1537,6 +1624,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		every_army_leader = {
 			add_logistics = 1
@@ -1544,7 +1635,7 @@ shared_focus = {
 		add_ideas = CHI_modern_logistics
 		add_tech_bonus = {
 			name = CHI_modern_logistics
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			technology = tech_field_hospital
 			technology = tech_field_hospital2
@@ -1587,6 +1678,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = yes
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		remove_ideas = CHI_nine_power_treaty
@@ -1699,6 +1794,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		if = {
 			limit = {
@@ -1724,7 +1823,6 @@ shared_focus = {
 				create_wargoal = {
 					type = annex_everything
 					target = PREV
-					expire = 0
 				}
 			}
 		}
@@ -1733,7 +1831,7 @@ shared_focus = {
 
 shared_focus = {
 	id = CHI_integrate_tibet
-	icon = GFX_focus_friend_tibet
+	icon = GFX_goal_generic_improve_relations
 	prerequisite = { focus = CHI_one_china_policy }
 	mutually_exclusive = { focus = CHI_conquer_tibet }
 	x = -1
@@ -1759,6 +1857,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		TIB = { country_event = wtt_china.10 }
 	}
@@ -1766,7 +1868,7 @@ shared_focus = {
 
 shared_focus = {
 	id = CHI_conquer_tibet
-	icon = GFX_focus_attack_tibet
+	icon = GFX_goal_generic_demand_territory
 	prerequisite = { focus = CHI_one_china_policy }
 	mutually_exclusive = { focus = CHI_integrate_tibet }
 	x = 1
@@ -1801,6 +1903,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		if = {
 			limit = {
@@ -1810,7 +1916,6 @@ shared_focus = {
 				create_wargoal = {
 					type = take_state_focus
 					target = TIB
-					expire = 0
 					generator = { 322 }
 				}
 			}
@@ -1819,7 +1924,6 @@ shared_focus = {
 			create_wargoal = {
 				type = annex_everything
 				target = TIB				
-				expire = 0
 			}
 		}
 	}
@@ -1852,6 +1956,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_state_claim = 434
 	}
@@ -1859,7 +1967,7 @@ shared_focus = {
 
 shared_focus = {
 	id = CHI_demand_mongolia
-	icon = GFX_focus_attack_mongolia
+	icon = GFX_goal_generic_air_doctrine
 	prerequisite = { focus = CHI_renounce_the_mcmahon_line }
 	x = 0
 	y = 3
@@ -1896,32 +2004,27 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		if = {
 			limit = {
 				330 = { is_owned_and_controlled_by = MON }
-				1015 = { is_owned_and_controlled_by = MON }
-				1016 = { is_owned_and_controlled_by = MON }
-				1017 = { is_owned_and_controlled_by = MON }
-				1018 = { is_owned_and_controlled_by = MON }
-				1019 = { is_owned_and_controlled_by = MON }
-				1020 = { is_owned_and_controlled_by = MON }
-				1021 = { is_owned_and_controlled_by = MON }
 			}
 			ROOT = {
 				create_wargoal = {
 					type = take_state_focus
 					target = MON
-					expire = 0
-					generator = { 330 1015 1016 1017 1018 1019 1020 1021 }
+					generator = { 330 }
 				}
 			}
 		}
 		else = {
 			create_wargoal = {
 				type = annex_everything
-				target = MON
-				expire = 0
+				target = MON				
 			}
 		}
 	}
@@ -1954,6 +2057,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		add_war_support = 0.1
@@ -1996,6 +2103,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		release_autonomy = {
 			target = VIN
@@ -2017,7 +2128,7 @@ shared_focus = {
 
 shared_focus = {
 	id = CHI_commit_to_korean_independence
-	icon = GFX_focus_korean_penisular
+	icon = GFX_goal_generic_national_unity
 	prerequisite = { focus = CHI_guidance_and_support }
 	x = 1
 	y = 2
@@ -2048,49 +2159,49 @@ shared_focus = {
 					is_in_faction_with = ROOT
 				}
 			}
-			903 = {
+			771 = {
 				CONTROLLER = {
 					NOT = { tag = ROOT }
 					is_in_faction_with = ROOT
 				}
 			}
-			904 = {
+			772 = {
 				CONTROLLER = {
 					NOT = { tag = ROOT }
 					is_in_faction_with = ROOT
 				}
 			}
-			905 = {
+			773 = {
 				CONTROLLER = {
 					NOT = { tag = ROOT }
 					is_in_faction_with = ROOT
 				}
 			}
-			906 = {
+			774 = {
 				CONTROLLER = {
 					NOT = { tag = ROOT }
 					is_in_faction_with = ROOT
 				}
 			}
-			907 = {
+			775 = {
 				CONTROLLER = {
 					NOT = { tag = ROOT }
 					is_in_faction_with = ROOT
 				}
 			}
-			908 = {
+			776 = {
 				CONTROLLER = {
 					NOT = { tag = ROOT }
 					is_in_faction_with = ROOT
 				}
 			}
-			909 = {
+			777 = {
 				CONTROLLER = {
 					NOT = { tag = ROOT }
 					is_in_faction_with = ROOT
 				}
 			}
-			911 = {
+			778 = {
 				CONTROLLER = {
 					NOT = { tag = ROOT }
 					is_in_faction_with = ROOT
@@ -2103,20 +2214,24 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		if = {
 			limit = {
 				OR = {
 					527 = { is_owned_and_controlled_by = ROOT }
 					525 = { is_owned_and_controlled_by = ROOT }
-					903 = { is_owned_and_controlled_by = ROOT }
-					904 = { is_owned_and_controlled_by = ROOT }
-					905 = { is_owned_and_controlled_by = ROOT }
-					906 = { is_owned_and_controlled_by = ROOT }
-					907 = { is_owned_and_controlled_by = ROOT }
-					908 = { is_owned_and_controlled_by = ROOT }
-					909 = { is_owned_and_controlled_by = ROOT }
-					911 = { is_owned_and_controlled_by = ROOT }
+					771 = { is_owned_and_controlled_by = ROOT }
+					772 = { is_owned_and_controlled_by = ROOT }
+					773 = { is_owned_and_controlled_by = ROOT }
+					774 = { is_owned_and_controlled_by = ROOT }
+					775 = { is_owned_and_controlled_by = ROOT }
+					776 = { is_owned_and_controlled_by = ROOT }
+					777 = { is_owned_and_controlled_by = ROOT }
+					778 = { is_owned_and_controlled_by = ROOT }
 				}
 			}
 			activate_mission_tooltip = CHI_release_korea
@@ -2128,7 +2243,6 @@ shared_focus = {
 						create_wargoal = {
 							type = take_state_focus
 							target = PREV
-							expire = 0
 							generator = { 527 }
 						}
 					}
@@ -2145,7 +2259,6 @@ shared_focus = {
 							create_wargoal = {
 								type = take_state_focus
 								target = PREV
-								expire = 0
 								generator = { 525 }
 							}
 						}
@@ -2158,7 +2271,7 @@ shared_focus = {
 
 shared_focus = {
 	id = CHI_indian_cooperation
-	icon = GFX_focus_friend_india
+	icon = GFX_goal_generic_improve_relations
 	prerequisite = { focus = CHI_anti_imperialism }
 	mutually_exclusive = { focus = CHI_renounce_the_mcmahon_line }
 	x = -1
@@ -2187,6 +2300,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		if = {
 			limit = {
@@ -2203,7 +2320,7 @@ shared_focus = {
 
 shared_focus = {
 	id = CHI_influence_mongolia
-	icon = GFX_focus_friend_mongolia
+	icon = GFX_goal_generic_neutrality_focus
 	prerequisite = { focus = CHI_indian_cooperation }
 	x = 0
 	y = 1
@@ -2230,6 +2347,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		if = {
@@ -2272,6 +2393,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_stability = 0.1
 	}
@@ -2300,24 +2425,15 @@ shared_focus = {
 		controls_state = 670
 		controls_state = 286
 		controls_state = 741
-		controls_state = 1073
-		controls_state = 1074
-		controls_state = 1075
-		controls_state = 1076
-		controls_state = 1077
-		controls_state = 1078
-		controls_state = 1079
-		controls_state = 1080
-		controls_state = 1081
-		controls_state = 1082
-		controls_state = 1083
-		controls_state = 1084
-		controls_state = 1085
 	}
 
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		every_other_country = {
@@ -2327,44 +2443,17 @@ shared_focus = {
 					owns_state = 670
 					owns_state = 286
 					owns_state = 741
-					owns_state = 1073
-					owns_state = 1074
-					owns_state = 1075
-					owns_state = 1076
-					owns_state = 1077
-					owns_state = 1078
-					owns_state = 1079
-					owns_state = 1080
-					owns_state = 1081
-					owns_state = 1082
-					owns_state = 1083
-					owns_state = 1084
-					owns_state = 1085
 					controls_state = 671
 					controls_state = 670
 					controls_state = 286
 					controls_state = 741
-					controls_state = 1073
-					controls_state = 1074
-					controls_state = 1075
-					controls_state = 1076
-					controls_state = 1077
-					controls_state = 1078
-					controls_state = 1079
-					controls_state = 1080
-					controls_state = 1081
-					controls_state = 1082
-					controls_state = 1083
-					controls_state = 1084
-					controls_state = 1085
 				}
 			}
 			ROOT = {
 				create_wargoal = {
 					type = take_state_focus
 					target = PREV
-					expire = 0
-					generator = { 671 670 286 741 1073 1074 1075 1076 1077 1078 1079 1080 1081 1082 1083 1084 1085 } #TODO_WTT_CODE - ignore states that are not owned or controlled by country
+					generator = { 671 670 286 741 } #TODO_WTT_CODE - ignore states that are not owned or controlled by country
 				}
 			}
 		}
@@ -2391,7 +2480,6 @@ shared_focus = {
 
 	available = {
 		NOT = { has_war_with = JAP }
-		NOT = { is_subject_of = JAP }
 	}
 
 	bypass = {
@@ -2401,6 +2489,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		JAP = { country_event = { id = wtt_china.10 } }
@@ -2435,54 +2527,6 @@ shared_focus = {
 					NOT = { is_in_faction_with = ROOT }
 				}
 			}
-			903 = {
-				CONTROLLER = {
-					NOT = { tag = ROOT }
-					NOT = { is_in_faction_with = ROOT }
-				}
-			}
-			904 = {
-				CONTROLLER = {
-					NOT = { tag = ROOT }
-					NOT = { is_in_faction_with = ROOT }
-				}
-			}
-			905 = {
-				CONTROLLER = {
-					NOT = { tag = ROOT }
-					NOT = { is_in_faction_with = ROOT }
-				}
-			}
-			906 = {
-				CONTROLLER = {
-					NOT = { tag = ROOT }
-					NOT = { is_in_faction_with = ROOT }
-				}
-			}
-			907 = {
-				CONTROLLER = {
-					NOT = { tag = ROOT }
-					NOT = { is_in_faction_with = ROOT }
-				}
-			}
-			908 = {
-				CONTROLLER = {
-					NOT = { tag = ROOT }
-					NOT = { is_in_faction_with = ROOT }
-				}
-			}
-			909 = {
-				CONTROLLER = {
-					NOT = { tag = ROOT }
-					NOT = { is_in_faction_with = ROOT }
-				}
-			}
-			911 = {
-				CONTROLLER = {
-					NOT = { tag = ROOT }
-					NOT = { is_in_faction_with = ROOT }
-				}
-			}
 		}
 	}
 
@@ -2494,6 +2538,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		527 = {
 			CONTROLLER = {
@@ -2501,7 +2549,6 @@ shared_focus = {
 					create_wargoal = {
 						type = take_state_focus
 						target = PREV
-						expire = 0
 						generator = { 527 }
 					}
 				}
@@ -2527,7 +2574,6 @@ shared_focus = {
 						create_wargoal = {
 							type = take_state_focus
 							target = PREV
-							expire = 0
 							generator = { 525 }
 						}
 					}
@@ -2554,10 +2600,6 @@ shared_focus = {
 			factor = 4
 			tag = CHI
 		}
-		modifier = {
-			factor = 10
-			has_country_flag = ENG_influenced_by_britain_flag
-		}
 	}
 
 	available = {
@@ -2579,6 +2621,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		ENG = {
 			add_opinion_modifier = {
@@ -2587,22 +2633,22 @@ shared_focus = {
 			}
 			add_ai_strategy = {
 				type = alliance
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = protect
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = send_volunteers_desire
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = support
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 		}
@@ -2670,15 +2716,6 @@ shared_focus = {
 				}				
 			}
 		}
-		1041 = { #Kengtung
-			CONTROLLER = {
-				NOT = { has_war_with = ROOT }
-				OR = {
-					original_tag = ENG
-					is_subject_of = ENG
-				}				
-			}
-		}
 	}
 
 	bypass = {
@@ -2688,6 +2725,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		288 = { #Burma
@@ -2776,6 +2817,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		432 = { #Assam
 			set_state_flag = CHI_needed_for_ledo_road
@@ -2829,6 +2874,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		custom_effect_tooltip = CHI_purchase_fighters_tt
@@ -2899,6 +2948,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		custom_effect_tooltip = available_designer
 		show_ideas_tooltip = CHI_camco_1
@@ -2932,6 +2985,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		custom_effect_tooltip = available_designer
 		show_ideas_tooltip = CHI_camco_2
@@ -2963,6 +3020,10 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = yes
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		custom_effect_tooltip = available_designer
@@ -3042,6 +3103,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {		
 		434 = { #Arunachal Pradesh
 			set_state_flag = CHI_needed_for_the_hump
@@ -3088,6 +3153,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		USA = {
 			country_event = wtt_china_shared.12
@@ -3125,10 +3194,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_the_chu_x_po
-			ahead_reduction = 2
+			ahead_reduction = 1
 			technology = fighter3				
 		}
 	}
@@ -3159,6 +3232,9 @@ shared_focus = {
 			has_government = neutrality
 			USA = { has_government = ROOT }
 		}
+		not = {
+			has_War_with = USA
+		}
 	}
 
 	bypass = {
@@ -3169,6 +3245,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		USA = {
 			add_opinion_modifier = {
@@ -3177,22 +3257,22 @@ shared_focus = {
 			}
 			add_ai_strategy = {
 				type = alliance
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = protect
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = send_volunteers_desire
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = support
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 		}
@@ -3232,6 +3312,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		custom_effect_tooltip = available_theorist
 		show_ideas_tooltip = CHI_claire_lee_chennault_air_theorist
@@ -3264,14 +3348,16 @@ shared_focus = {
 	}
 
 	bypass = {
-		any_other_country = {
-			has_completed_focus = CHI_invite_the_flying_tigers
-		}
+
 	}
 
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
 
 	completion_reward = {
 		USA = {
@@ -3310,10 +3396,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_sino_american_cooperative_organization
-			bonus = 1.0
+			bonus = 0.5
 			uses = 2
 			category = recon_tech
 			category = para_tech
@@ -3348,10 +3438,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_light_cruiser_project
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			category = cl_tech
 		}
@@ -3384,10 +3478,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_heavy_cruiser_project
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			category = ca_tech
 		}
@@ -3423,10 +3521,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_naval_aviation
-			bonus = 1.0
+			bonus = 0.5
 			uses = 2
 			category = cv_tech
 		}
@@ -3463,10 +3565,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_naval_aviation
-			bonus = 1.0
+			bonus = 0.5
 			uses = 2
 			category = naval_air
 		}
@@ -3564,10 +3670,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_order_destroyers
-			bonus = 1.0
+			bonus = 0.5
 			uses = 2
 			category = dd_tech
 		}
@@ -3603,11 +3713,15 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_ideas = CHI_train_marines
 		add_tech_bonus = {
 			name = CHI_train_marines
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			category = marine_tech
 		}
@@ -3646,6 +3760,10 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		JAP = {
 			add_opinion_modifier = {
@@ -3654,22 +3772,22 @@ shared_focus = {
 			}
 			add_ai_strategy = {
 				type = alliance
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = protect
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = send_volunteers_desire
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 			add_ai_strategy = {
 				type = support
-				id = ROOT
+				id = "ROOT"
 				value = 100
 			}
 		}
@@ -3703,10 +3821,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_modern_submarines
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			category = ss_tech
 		}
@@ -3739,10 +3861,14 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = yes
 
+	complete_tooltip = {
+
+	}
+
 	completion_reward = {
 		add_tech_bonus = {
 			name = CHI_coastal_patrol_planes
-			bonus = 1.0
+			bonus = 0.5
 			uses = 1
 			category = naval_bomber
 		}

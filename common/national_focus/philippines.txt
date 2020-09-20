@@ -1,0 +1,3404 @@
+focus_tree = {
+	id = philippines_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = "PHI"
+		}
+	}
+	
+
+	default = no
+
+	continuous_focus_position = { x = 20 y = 1100 }
+	
+	#######################
+	# Industry & Navy
+	#######################
+	
+	focus = {
+		id = PHI_national_economic_council
+		icon = GFX_focus_generic_industry_1
+		x = 3
+		y = 0
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	focus = {
+		id = PHI_agricultural_exports
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = PHI_national_economic_council }
+		x = 1
+		y = 1
+		cost = 10
+
+		available_if_capitulated = no
+		
+		available = { has_idea = PHI_developing_economy_0 }
+
+		completion_reward = {
+			swap_ideas = { remove_idea = PHI_developing_economy_0 add_idea = PHI_developing_economy_1 }
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = {
+		id = PHI_development_projects
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = PHI_agricultural_exports }
+		x = 1
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		available = { has_idea = PHI_developing_economy_1 }
+
+		completion_reward = {
+			remove_ideas = PHI_developing_economy_1
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = {
+		id = PHI_develop_mindanao
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = PHI_development_projects }
+		mutually_exclusive = { focus = PHI_focus_on_manila }
+		x = 1
+		y = 3
+		cost = 10
+
+		available_if_capitulated = no
+		
+		available = {
+			controls_state = 627
+		}
+
+		completion_reward = {
+			add_stability = 0.1
+			627 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = {
+		id = PHI_resources_of_mindanao
+		icon = GFX_focus_generic_steel
+		prerequisite = { focus = PHI_develop_mindanao }
+		x = 0
+		y = 4
+		cost = 10
+
+		available_if_capitulated = no
+		
+		available = {
+			controls_state = 627
+		}
+
+		completion_reward = {
+			627 = {
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+				add_resource = {
+					type = chromium
+					amount = 16
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = {
+		id = PHI_new_rubber_plantations
+		icon = GFX_focus_generic_rubber
+		prerequisite = { focus = PHI_resources_of_mindanao }
+		x = 0
+		y = 5
+		cost = 10
+
+		available_if_capitulated = no
+		
+		available = {
+			OR = { controls_state = 623 controls_state = 627 }
+		}
+
+		completion_reward = {
+			627 = {
+				add_resource = {
+					type = rubber
+					amount = 14
+				}
+			}
+			623 = {
+				add_resource = {
+					type = rubber
+					amount = 5
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = {
+		id = PHI_expand_shipping
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = PHI_develop_mindanao focus = PHI_focus_on_manila }
+		x = 2
+		y = 4
+		cost = 10
+
+		available_if_capitulated = no
+		
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 10
+			random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+			add_equipment_to_stockpile = {
+				type = convoy_1
+				amount = 50
+				producer = PHI
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = {
+		id = PHI_coastal_fleet
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = PHI_expand_shipping }
+		x = 2
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			any_state = {
+					is_coastal = yes
+					is_controlled_by = ROOT
+				}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			navy_experience = 10
+			add_tech_bonus = {
+				name = PHI_coastal_fleet
+				bonus = 0.75
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_build_submarines
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = PHI_coastal_fleet }
+		mutually_exclusive = { focus = PHI_build_cruisers }
+		x = 0
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 10
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				uses = 2
+				category = ss_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_raiding_plans
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = PHI_build_submarines }
+		x = 0
+		y = 7
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 20
+			add_tech_bonus = {
+				name = PHI_raiding_plans
+				bonus = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_build_cruisers
+		icon = GFX_focus_generic_cruiser2
+		prerequisite = { focus = PHI_coastal_fleet }
+		mutually_exclusive = { focus = PHI_build_submarines }
+		x = 2
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 10
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				uses = 2
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_capital_ships
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = PHI_build_cruisers }
+		x = 2
+		y = 7
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 20
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.5
+				uses = 2
+				category = bc_tech
+				category = bb_tech
+				category = cv_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_marine_corps
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = PHI_coastal_fleet }
+		x = 4
+		y = 6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = PHI_marine_corps
+				bonus = 0.50
+				uses = 1
+				category = marine_tech
+			}
+			add_tech_bonus = {
+				name = PHI_marine_corps
+				bonus = 0.50
+				uses = 1
+				category = tp_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_napocor
+		icon = GFX_focus_generic_industry_2
+		prerequisite = { focus = PHI_national_economic_council }
+		x = 3
+		y = 1
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = PHI_napocor
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = {
+		id = PHI_roads_and_railways
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = PHI_napocor }
+		x = 3
+		y = 2
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_in_home_area = yes
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = {
+		id = PHI_focus_on_manila
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = PHI_roads_and_railways }
+		mutually_exclusive = { focus = PHI_develop_mindanao }
+		x = 3
+		y = 3
+		cost = 10
+
+		available_if_capitulated = no
+		
+		available = {
+			controls_state = 327
+		}
+
+		completion_reward = {
+			327 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = {
+		id = PHI_greater_manila
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = PHI_focus_on_manila }
+		x = 4
+		y = 4
+		cost = 10
+
+		available_if_capitulated = no
+		
+		available = {
+			controls_state = 327
+		}
+
+		completion_reward = {
+			327 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = {
+		id = PHI_defense_of_manila
+		icon = GFX_focus_generic_coastal_fort
+		prerequisite = { focus = PHI_greater_manila }
+		x = 4
+		y = 5
+		cost = 10
+
+		available_if_capitulated = no
+		
+		available = {
+			controls_state = 327
+			OR = { controls_state = 623 controls_state = 624 }
+		}
+
+		completion_reward = {
+			add_stability = 0.1
+			if = {
+					limit = {
+						has_full_control_of_state = 327
+					}
+					327 = {
+						#Fortify naval bases a bit extra close to Calais
+						add_building_construction = {
+							type = coastal_bunker
+							province = {
+								all_provinces = yes
+								limit_to_naval_base = yes
+							}
+							level = 4
+							instant_build = yes
+						}
+						add_building_construction = {
+            	    	    type = coastal_bunker
+            	    	    province = {
+            	    	        all_provinces = yes
+            	    	        limit_to_coastal = yes
+            	    	    }
+            	    	    level = 2
+            	    	    instant_build = yes
+            	    	}
+					}
+				}
+			if = {
+					limit = {
+						has_full_control_of_state = 623
+					}
+					623 = {
+						#Fortify naval bases a bit extra close to Calais
+						add_building_construction = {
+							type = coastal_bunker
+							province = {
+								all_provinces = yes
+								limit_to_naval_base = yes
+							}
+							level = 4
+							instant_build = yes
+						}
+						add_building_construction = {
+            	    	    type = coastal_bunker
+            	    	    province = {
+            	    	        all_provinces = yes
+            	    	        limit_to_coastal = yes
+            	    	    }
+            	    	    level = 2
+            	    	    instant_build = yes
+            	    	}
+					}
+				}
+			if = {
+					limit = {
+						has_full_control_of_state = 624
+					}
+					624 = {
+						#Fortify naval bases a bit extra close to Calais
+						add_building_construction = {
+							type = coastal_bunker
+							province = {
+								all_provinces = yes
+								limit_to_naval_base = yes
+							}
+							level = 4
+							instant_build = yes
+						}
+						add_building_construction = {
+            	    	    type = coastal_bunker
+            	    	    province = {
+            	    	        all_provinces = yes
+            	    	        limit_to_coastal = yes
+            	    	    }
+            	    	    level = 2
+            	    	    instant_build = yes
+            	    	}
+					}
+				}
+			random_owned_controlled_state = {
+				prioritize = { 327 }
+				limit = {
+					is_in_home_area = yes
+					free_building_slots = {
+						building = anti_air_building
+						size > 1
+					}
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = {
+		id = PHI_assist_board_of_education
+		icon = GFX_focus_research
+		prerequisite = { focus = PHI_national_economic_council }
+		x = 5
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		available = {
+			num_of_factories > 10
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	focus = {
+		id = PHI_expand_universities
+		icon = GFX_focus_research2
+		prerequisite = { focus = PHI_assist_board_of_education }
+		x = 5
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		available = {
+			num_of_factories > 20
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	focus = {
+		id = PHI_international_research_networks
+		icon = GFX_goal_tfv_generic_tech_sharing
+		prerequisite = { focus = PHI_expand_universities }
+		x = 5
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		available = {
+			num_of_factories > 30
+			OR = { is_in_faction = yes is_subject = yes }
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	#######################
+	# Army
+	#######################
+	
+	focus = {
+		id = PHI_integrate_the_constabulary
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 9
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			custom_effect_tooltip = PHI_integrate_the_constabulary_tt
+			hidden_effect = {
+				division_template = {
+					name = "Constabulary Force"
+					is_locked = no
+					priority = 1
+					division_names_group = PHI_INF_01
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 327 }
+					create_unit = {
+						division = "name = \"1. Constabulary Force\" division_template = \"Constabulary Force\" start_experience_factor = 0.3" 
+						owner = "PHI"
+					}
+					create_unit = {
+						division = "name = \"2. Constabulary Force\" division_template = \"Constabulary Force\" start_experience_factor = 0.3" 
+						owner = "PHI"
+					}
+				}			
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_fill_out_the_division_plan
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = PHI_integrate_the_constabulary }
+		mutually_exclusive = { focus = PHI_intensive_training }
+		x = 8
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = { remove_idea = PHI_rudimentary_army add_idea = PHI_conscript_army }
+		}
+	}
+	
+	focus = {
+		id = PHI_intensive_training
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = PHI_integrate_the_constabulary }
+		mutually_exclusive = { focus = PHI_fill_out_the_division_plan }
+		x = 10
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = { remove_idea = PHI_rudimentary_army add_idea = PHI_elite_army }
+		}
+	}
+	
+	focus = {
+		id = PHI_equipment_procurement
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = PHI_fill_out_the_division_plan focus = PHI_intensive_training }
+		x = -2
+		y = 2
+		relative_position_id = PHI_integrate_the_constabulary
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = PHI_equipment_procurement
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_support_vehicles
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = PHI_equipment_procurement }
+		x = -2
+		y = 3
+		relative_position_id = PHI_integrate_the_constabulary
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = PHI_support_vehicles
+				bonus = 0.75
+				category = motorized_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_tank_production
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = PHI_international_research_networks }
+		prerequisite = { focus = PHI_support_vehicles }
+		x = -3
+		y = 4
+		relative_position_id = PHI_integrate_the_constabulary
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = PHI_tank_production
+				uses = 2
+				bonus = 0.5
+				category = armor
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_philippine_military_academy
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = PHI_fill_out_the_division_plan focus = PHI_intensive_training }
+		x = 0
+		y = 2
+		relative_position_id = PHI_integrate_the_constabulary
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_promote_new_officers
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = PHI_philippine_military_academy }
+		x = 0
+		y = 3
+		relative_position_id = PHI_integrate_the_constabulary
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_combat_engineers
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = PHI_fill_out_the_division_plan focus = PHI_intensive_training }
+		x = 2
+		y = 2
+		relative_position_id = PHI_integrate_the_constabulary
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = PHI_combat_engineers
+				bonus = 0.5
+				uses = 2
+				category = support_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_modern_artillery
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = PHI_combat_engineers }
+		x = 2
+		y = 3
+		relative_position_id = PHI_integrate_the_constabulary
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = PHI_modern_artillery
+				bonus = 0.75
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_a_modern_army
+		icon = GFX_focus_generic_combined_arms
+		prerequisite = { focus = PHI_support_vehicles focus = PHI_promote_new_officers focus = PHI_modern_artillery }
+		x = 0
+		y = 4
+		relative_position_id = PHI_integrate_the_constabulary
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 20
+			add_war_support = 0.1
+		}
+	}
+	
+	focus = {
+		id = PHI_native_arms_production
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = PHI_a_modern_army }
+		x = 1
+		y = 5
+		relative_position_id = PHI_integrate_the_constabulary
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_military_aircraft_factories
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = PHI_a_modern_army }
+		x = -1
+		y = 5
+		relative_position_id = PHI_integrate_the_constabulary
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+		}
+	}
+	
+	focus = {
+		id = PHI_fighter_designs
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = PHI_military_aircraft_factories }
+		x = -2
+		y = 6
+		relative_position_id = PHI_integrate_the_constabulary
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 2
+				category = light_fighter
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_assemble_a_bomber_force
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = PHI_military_aircraft_factories }
+		mutually_exclusive = { focus = PHI_naval_bombers }
+		x = 0
+		y = 6
+		relative_position_id = PHI_integrate_the_constabulary
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				category = cas_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_naval_bombers
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = PHI_military_aircraft_factories }
+		mutually_exclusive = { focus = PHI_assemble_a_bomber_force }
+		x = 2
+		y = 6
+		relative_position_id = PHI_integrate_the_constabulary
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 1
+				category = naval_bomber
+			}
+			add_ideas = PHI_naval_bomber_discount
+		}
+	}
+	
+	focus = {
+		id = PHI_pilot_schools
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = PHI_fighter_designs focus = PHI_assemble_a_bomber_force focus = PHI_naval_bombers }
+		x = 0
+		y = 7
+		cost = 10
+		relative_position_id = PHI_integrate_the_constabulary
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+	
+	#######################
+	# Politics
+	#######################
+	
+	focus = {
+		id = PHI_maintain_nacionalista_government
+		icon = GFX_goal_generic_national_unity
+		x = 15
+		y = 0
+		cost = 10
+		mutually_exclusive = { focus = PHI_unite_the_left }
+		mutually_exclusive = { focus = PHI_ganap_philippines }
+
+		available_if_capitulated = yes
+		
+		available = {
+			democratic > 0.4
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_government_survey_board
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = PHI_maintain_nacionalista_government }
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = PHI_mediate_workers_disputes
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = PHI_maintain_nacionalista_government }
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
+		}
+	}
+	
+	focus = {
+		id = PHI_the_national_language
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = { focus = PHI_government_survey_board focus = PHI_maintain_nacionalista_government focus = PHI_mediate_workers_disputes }
+		x = 0
+		y = 2
+		cost = 10
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		available_if_capitulated = no
+		
+		available = {
+			is_subject_of = USA
+		}
+		
+		bypass = { }
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			if = { limit = { is_subject = yes }
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = PHI_the_national_language
+			}
+			add_political_power = 50 }
+			else = {
+				add_political_power = 100
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_invite_macarthur
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = PHI_the_national_language }
+		x = -1
+		y = 3
+		cost = 10
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		available_if_capitulated = no
+		
+		available = {
+			has_government = democratic
+			NOT = { has_war_with = USA }
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			army_experience = 20
+			add_ideas = PHI_douglas_macarthur
+			USA = { add_opinion_modifier = { target = ROOT modifier = medium_increase } }
+		}
+	}
+	
+	focus = {
+		id = PHI_bataan_defence_plan
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = PHI_invite_macarthur }
+		x = -2
+		y = 4
+		cost = 10
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		available_if_capitulated = no
+		
+		available = {
+			has_idea = PHI_douglas_macarthur
+			has_government = democratic
+			NOT = { has_war_with = USA }
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = PHI_bataan_defence_plan
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = PHI_bataan_defence_plan
+				bonus = 0.5
+				uses = 1
+				category = air_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_philippine_scouts
+		icon = GFX_focus_prc_infiltration
+		prerequisite = { focus = PHI_invite_macarthur }
+		x = 0
+		y = 4
+		cost = 10
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		available_if_capitulated = no
+		
+		available = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = PHI_philippine_scouts_tt
+			hidden_effect = {
+				division_template = {
+					name = "Philippine Scouts"
+					is_locked = no
+					priority = 2
+					division_names_group = PHI_INF_01
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+			
+	    	   		 	infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+			
+	    	   		 	infantry = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+						artillery_brigade = { x = 2 y = 2 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 327 }
+					create_unit = {
+						division = "name = \"1. Philippine Scouts\" division_template = \"Philippine Scouts\" start_experience_factor = 1.0" 
+						owner = "PHI"
+					}
+					create_unit = {
+						division = "name = \"2. Philippine Scouts\" division_template = \"Philippine Scouts\" start_experience_factor = 1.0" 
+						owner = "PHI"
+					}
+				}			
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_anti_japanese_war
+		icon = GFX_focus_AST_war_japan
+		prerequisite = { focus = PHI_bataan_defence_plan focus = PHI_philippine_scouts }
+		x = 0
+		y = 5
+		cost = 10
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		available_if_capitulated = yes
+		
+		available = {
+			has_war_with = JAP
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			add_ideas = PHI_anti_japan_idea
+		}
+	}
+	
+	focus = {
+		id = PHI_station_cast_focus
+		icon = GFX_focus_generic_cryptologic_bomb
+		prerequisite = { focus = PHI_bataan_defence_plan focus = PHI_philippine_scouts }
+		x = -2
+		y = 5
+		cost = 10
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		available_if_capitulated = yes
+		
+		available = {
+			OR = { JAP = { has_added_tension_amount > 10 } has_war_with = JAP }
+			NOT = { has_war_with = USA }
+			NOT = { is_in_faction_with = JAP is_subject_of = JAP }
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			add_ideas = PHI_station_cast
+			add_tech_bonus = {
+				name = PHI_station_cast_focus
+				bonus = 0.5
+				uses = 1
+				category = decryption_tech
+			}
+			USA = { 
+				add_tech_bonus = {
+				name = PHI_station_cast_focus
+				bonus = 0.5
+				uses = 1
+				category = decryption_tech
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_support_private_enterprise
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = PHI_the_national_language }
+		x = 1
+		y = 3
+		cost = 10
+		
+		available = {
+			
+		}
+		
+		bypass = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 8
+		}
+		
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = PHI_private_enterprises_idea
+		}
+	}
+	
+	focus = {
+		id = PHI_fast_track_independence
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = PHI_support_private_enterprise }
+		x = 2
+		y = 4
+		cost = 10
+		
+		available = {
+			is_subject_of = USA
+			date > 1946.1.1
+		}
+		
+		bypass = {
+			is_subject = no
+		}
+		
+		ai_will_do = {
+			factor = 4
+		}
+		
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = PHI_independence_movement_idea
+		}
+	}
+	
+	focus = {
+		id = PHI_interventionism
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = PHI_fast_track_independence focus = PHI_the_flying_spark focus = PHI_greater_philippines }
+		x = 5
+		y = 5
+		cost = 10
+		
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+		
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+			add_ideas = PHI_foreign_expeditions
+		}
+	}
+	
+	focus = {
+		id = PHI_our_own_faction
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = PHI_interventionism }
+		x = 5
+		y = 6
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+			modifier = { 
+				factor = 10
+				INS = { is_subject = no is_in_faction = no has_government = communism }
+			}
+			modifier = { 
+				factor = 10
+				MAL = { is_subject = no is_in_faction = no has_government = communism }
+			}
+			modifier = { 
+				factor = 2
+				SIA = { is_subject = no is_in_faction = no has_government = communism }
+			}
+			modifier = { 
+				factor = 2
+				VIN = { is_subject = no is_in_faction = no has_government = communism }
+			}
+		}
+
+		available = {
+			is_in_faction = no
+			is_subject = no
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			create_faction = PHI_own_faction
+			if = { limit = { has_completed_focus = PHI_falling_dominos any_other_country = { original_tag = INS is_subject = no is_in_faction = no has_government = communism } } random_other_country = { limit = { original_tag = INS has_government = communism } country_event = { id = generic.5 days = 1 } } }
+			if = { limit = { has_completed_focus = PHI_falling_dominos any_other_country = { original_tag = MAL is_subject = no is_in_faction = no has_government = communism } } random_other_country = { limit = { original_tag = MAL has_government = communism } country_event = { id = generic.5 days = 1 } } }
+			if = { limit = { has_completed_focus = PHI_falling_dominos any_other_country = { original_tag = VIN is_subject = no is_in_faction = no has_government = communism } } random_other_country = { limit = { original_tag = VIN has_government = communism } country_event = { id = generic.5 days = 1 } } }
+			custom_effect_tooltip = PHI_our_own_faction_dominoes_tt
+			hidden_effect = {
+				news_event = { id = phil_news.5 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_invite_siam
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = PHI_our_own_faction }
+		x = 4
+		y = 8
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			is_faction_leader = yes
+			is_subject = no
+			SIA = { has_government = ROOT }
+			SIA = {
+				NOT = { has_war_with = ROOT }
+				is_in_faction = no
+			}
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = "PHI"
+					has_war_with = SIA
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			SIA = { country_event = { id = generic.5 days = 1 } }
+		}
+	}
+	
+	focus = {
+		id = PHI_invite_australia
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = PHI_our_own_faction }
+		x = 5
+		y = 7
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			is_faction_leader = yes
+			is_subject = no
+			OR = {
+				AST = { has_government = neutrality }
+				AST = { has_government = ROOT }
+			}
+			AST = {
+				NOT = { has_war_with = ROOT }
+				is_in_faction = no
+			}
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = "PHI"
+					has_war_with = AST
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			AST = { country_event = { id = generic.5 days = 1 } }
+		}
+	}
+	
+	focus = {
+		id = PHI_invite_nz
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = PHI_our_own_faction }
+		x = 6
+		y = 8
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			is_faction_leader = yes
+			is_subject = no
+			OR = {
+				NZL = { has_government = neutrality }
+				NZL = { has_government = ROOT }
+			}
+			NZL = {
+				NOT = { has_war_with = ROOT }
+				is_in_faction = no
+			}
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = "PHI"
+					has_war_with = NZL
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			NZL = { country_event = { id = generic.5 days = 1 } }
+		}
+	}
+	
+	focus = {
+		id = PHI_join_allies
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = PHI_interventionism }
+		x = 1
+		y = 6
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			is_in_faction = no
+			is_puppet = no
+			OR = {
+				has_government = neutrality
+				ENG = { has_government = ROOT }
+			}
+			ENG = {
+				NOT = { has_war_with = ROOT }
+				has_capitulated = no
+				is_faction_leader = yes
+			}
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = ENG
+					has_war_with = "PHI"
+				}
+			}
+		}
+
+		bypass = {
+			is_in_faction_with = ENG
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			ENG = { country_event = { id = generic.2 days = 1 } }
+		}
+	}
+	
+	focus = {
+		id = PHI_pacific_bulwark
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = PHI_anti_japanese_war }
+		prerequisite = { focus = PHI_join_allies }
+		x = 0
+		y = 7
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			OR = { is_in_faction_with = ENG is_in_faction_with = USA }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			every_army_leader = {
+				add_defense = 1
+			}
+			add_ideas = PHI_pacific_bulwark_idea
+		}
+	}
+	
+	focus = {
+		id = PHI_air_training_scheme_focus
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = PHI_join_allies }
+		x = 1
+		y = 8
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			is_in_faction_with = ENG
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = PHI_air_training_scheme
+		}
+	}
+	
+	focus = {
+		id = PHI_swpa_defence_plan
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = PHI_join_allies }
+		x = 2
+		y = 7
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				num_faction_members > 7
+			}
+			modifier = {
+				factor = 2
+				num_faction_members > 9
+			}
+			modifier = {
+				factor = 2
+				num_faction_members > 11
+			}
+		}
+
+		available = {
+			is_in_faction_with = ENG
+			is_subject = no
+			threat > 0.25
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = PHI_swpa_defence_plan
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = PHI_swpa_defence_plan
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_join_comintern
+		icon = GFX_focus_generic_join_comintern
+		prerequisite = { focus = PHI_interventionism }
+		x = 9
+		y = 6
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			is_in_faction = no
+			is_puppet = no
+			SOV = { has_government = ROOT }
+			SOV = {
+				NOT = { has_war_with = ROOT }
+				has_capitulated = no
+				is_faction_leader = yes
+			}
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = SOV
+					has_war_with = "PHI"
+				}
+			}
+		}
+
+		bypass = {
+			is_in_faction_with = SOV
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			SOV = { country_event = { id = generic.2 days = 1 } }
+		}
+	}
+	
+	focus = {
+		id = PHI_soviet_advisors_focus
+		icon = GFX_focus_generic_socialist_science
+		prerequisite = { focus = PHI_join_comintern }
+		x = 9
+		y = 7
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			is_in_faction_with = SOV
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = PHI_soviet_advisers
+			SOV = { add_to_tech_sharing_group = comintern_research }
+			add_to_tech_sharing_group = comintern_research
+		}
+	}
+	
+	focus = {
+		id = PHI_unite_the_left
+		icon = GFX_goal_support_communism
+		mutually_exclusive = { focus = PHI_maintain_nacionalista_government }
+		mutually_exclusive = { focus = PHI_ganap_philippines }
+		x = 20
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			communism > 0.4
+		}
+
+		bypass = {
+			has_government = communism
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = PHI_united_left
+			add_war_support = 0.1
+		}
+	}
+	
+	focus = {
+		id = PHI_seize_american_interests
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = PHI_unite_the_left }
+		x = -2
+		y = 1
+		relative_position_id = PHI_unite_the_left
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			USA = { add_opinion_modifier = { target = "PHI" modifier = medium_decrease } }
+		}
+	}
+	
+	focus = {
+		id = PHI_economic_plan
+		icon = GFX_goal_generic_soviet_construction
+		prerequisite = { focus = PHI_seize_american_interests }
+		x = -2
+		y = 2
+		relative_position_id = PHI_unite_the_left
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = PHI_five_year_plan
+			add_stability = 0.1
+		}
+	}
+	
+	focus = {
+		id = PHI_peoples_army
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = PHI_unite_the_left }
+		x = 0
+		y = 1
+		relative_position_id = PHI_unite_the_left
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = PHI_peoples_army_idea
+			create_corps_commander = {
+					name = "Luis Taruc"
+					portrait_path = "gfx/leaders/Asia/portrait_asia_generic_land_7.dds"
+					traits = { commando trickster }
+					skill = 3
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 4
+				}
+		}
+	}
+	
+	focus = {
+		id = PHI_the_flying_spark
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = PHI_peoples_army }
+		x = 0
+		y = 2
+		relative_position_id = PHI_unite_the_left
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_idea = PHI_united_left
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = PHI_the_flying_spark_idea
+			add_war_support = 0.2
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_the_flying_spark_jap
+		icon = GFX_focus_AST_war_japan
+		prerequisite = { focus = PHI_the_flying_spark }
+		x = -1
+		y = 3
+		relative_position_id = PHI_unite_the_left
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = communism
+			NOT = { is_subject_of = JAP }
+			NOT = { is_in_faction_with = JAP }
+			JAP = { OR = { has_government = fascism has_government = neutrality } }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = PHI_the_flying_spark_idea_japan
+			JAP = { add_opinion_modifier = { target = "PHI" modifier = large_decrease } }
+		}
+	}
+	
+	focus = {
+		id = PHI_the_flying_spark_usa
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = PHI_the_flying_spark focus = PHI_demand_independence }
+		x = 1
+		y = 3
+		relative_position_id = PHI_unite_the_left
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			OR = { has_government = communism has_war_with = USA }
+			NOT = { is_subject_of = USA }
+			NOT = { is_in_faction_with = USA }
+			USA = { exists = yes is_subject = no }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = PHI_the_flying_spark_idea_usa
+			USA = { add_opinion_modifier = { target = "PHI" modifier = large_decrease } }
+		}
+	}
+	
+	focus = {
+		id = PHI_arm_the_militia
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = PHI_the_flying_spark_jap focus = PHI_the_flying_spark_usa }
+		x = -1
+		y = 4
+		relative_position_id = PHI_unite_the_left
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		available = {
+			has_government = communism
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = PHI_arm_the_militia_idea
+		}
+	}
+	
+	focus = {
+		id = PHI_marxist_training_schools
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = PHI_the_flying_spark_jap focus = PHI_the_flying_spark_usa }
+		x = 1
+		y = 4
+		relative_position_id = PHI_unite_the_left
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			has_government = communism
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = PHI_marxist_training_schools_idea
+			every_army_leader = {
+				add_logistics = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_falling_dominos
+		icon = GFX_goal_generic_war_with_comintern
+		prerequisite = { focus = PHI_interventionism }
+		x = 7
+		y = 6
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_government = communism
+			is_subject = no
+			OR = { INS = { is_subject_of = HOL } MAL = { is_subject_of = ENG } }
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			INS = {
+				add_timed_idea = { days = 500 idea = PHI_export_communism } 
+			}
+			MAL = {
+				add_timed_idea = { days = 500 idea = PHI_export_communism } 
+			}
+			custom_effect_tooltip = PHI_falling_dominos_tt
+		}
+	}
+	
+	focus = {
+		id = PHI_support_communist_china
+		icon = GFX_focus_chi_cooperation_with_the_communists #GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = PHI_our_own_faction focus = PHI_falling_dominos }
+		x = 7
+		y = 7
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				is_faction_leader = yes
+				PRC = { is_in_faction = no is_subject = no }
+			}
+		}
+
+		available = {
+			has_government = communism
+			is_subject = no
+			PRC = { has_government = communism is_subject = no }
+			PRC = {
+				NOT = { has_war_with = ROOT }
+				NOT = { is_in_faction_with = ROOT }
+			}
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = ROOT
+					has_war_with = PRC
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			PRC = {
+				add_opinion_modifier = { target = "PHI" modifier = large_increase }
+				add_ai_strategy = {
+					type = alliance
+					id = "ROOT"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = "ROOT"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = "ROOT"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = "ROOT"
+					value = 100
+					}
+				}
+			add_opinion_modifier = { target = PRC modifier = large_increase }
+			if = { limit = { ROOT = { is_faction_leader = yes } PRC = { is_in_faction = no is_subject = no } } PRC = { country_event = { id = generic.5 days = 1 } } }
+			custom_effect_tooltip = PHI_support_communist_china_tt
+			
+		}
+	}
+	
+	focus = {
+		id = PHI_join_communist_china
+		icon = GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = PHI_interventionism }
+		x = 8
+		y = 8
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_government = communism
+			is_in_faction = no
+			is_subject = no
+			PRC = { exists = yes is_subject = no is_faction_leader = yes }
+			PRC = {
+				NOT = { has_war_with = ROOT }
+			}
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = ROOT
+					has_war_with = PRC
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			PRC = {
+				country_event = { id = generic.2 days = 1 }
+			}			
+		}
+	}
+	
+	focus = {
+		id = PHI_ganap_philippines
+		icon = GFX_goal_support_fascism
+		mutually_exclusive = { focus = PHI_maintain_nacionalista_government }
+		mutually_exclusive = { focus = PHI_unite_the_left }
+		x = 24
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			fascism > 0.4
+		}
+
+		bypass = {
+			has_government = fascism
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_ideas = PHI_jose_p_laurel
+		}
+	}
+	
+	focus = {
+		id = PHI_demand_independence
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		prerequisite = { focus = PHI_unite_the_left focus = PHI_ganap_philippines }
+		x = -2
+		y = 1
+		relative_position_id = PHI_ganap_philippines
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				has_government = fascism
+				factor = 10
+			}
+		}
+
+		available = {
+			is_subject_of = USA
+			OR = { communism > 0.3 fascism > 0.3 }
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			USA = { country_event = { id = phil.1 days = 1 } }
+		}
+	}
+	
+	focus = {
+		id = PHI_befriend_japan
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		prerequisite = { focus = PHI_ganap_philippines }
+		x = 0
+		y = 1
+		relative_position_id = PHI_ganap_philippines
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+			 JAP = { has_government = ROOT }
+			 factor = 10
+			}
+		}
+
+		available = {
+			JAP = { is_puppet = no }
+			NOT = { has_wargoal_against = JAP }
+			NOT = { has_war_with = JAP }
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			JAP = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_increase
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = "ROOT"
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = "ROOT"
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = "ROOT"
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = "ROOT"
+				value = 100
+				}
+			}
+			add_opinion_modifier = {
+				target = JAP
+				modifier = large_increase
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_join_japan
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = PHI_befriend_japan }
+		x = 0
+		y = 2
+		relative_position_id = PHI_ganap_philippines
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			is_in_faction = no
+			is_subject = no
+			OR = { JAP = { has_government = ROOT } JAP = { has_government = neutrality } }
+			JAP = {
+				NOT = { has_war_with = ROOT }
+				has_capitulated = no
+				is_faction_leader = yes
+			}
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = JAP
+					has_war_with = "PHI"
+				}
+			}
+		}
+
+		bypass = {
+			is_in_faction_with = JAP
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			JAP = { country_event = { id = generic.2 days = 1 } }
+		}
+	}
+	
+	focus = {
+		id = PHI_invite_the_zaibatsus
+		icon = GFX_focus_jap_zaibatsu
+		prerequisite = { focus = PHI_join_japan }
+		x = -1
+		y = 3
+		relative_position_id = PHI_ganap_philippines
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			JAP = { is_puppet = no }
+			NOT = { has_wargoal_against = JAP }
+			NOT = { has_war_with = JAP }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					ROOT = { has_full_control_of_state = PREV }
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_ideas = PHI_zaibatsus
+		}
+	}
+	
+	focus = {
+		id = PHI_japanese_metal_imports
+		icon = GFX_focus_generic_steel
+		prerequisite = { focus = PHI_invite_the_zaibatsus }
+		x = -1
+		y = 4
+		relative_position_id = PHI_ganap_philippines
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			is_in_faction_with = JAP
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			623 = {
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+				add_resource = {
+					type = chromium
+					amount = 12
+				}
+			}
+			add_tech_bonus = {
+					name = PHI_japanese_metal_imports
+					bonus = 0.5
+					uses = 1
+					category = excavation_tech
+				}
+			JAP = {
+				add_ideas = PHI_japanese_tank_idea
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_japanese_officers
+		icon = GFX_focus_generic_japanese_imperial_glory
+		prerequisite = { focus = PHI_join_japan }
+		x = 1
+		y = 3
+		relative_position_id = PHI_ganap_philippines
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			is_in_faction_with = JAP
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			army_experience = 10
+			add_ideas = PHI_japanese_advisers
+		}
+	}
+	
+	focus = {
+		id = PHI_naval_cooperation
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = PHI_japanese_officers }
+		x = 1
+		y = 4
+		relative_position_id = PHI_ganap_philippines
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			is_in_faction_with = JAP
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			navy_experience = 10
+			add_tech_bonus = {
+				name = PHI_naval_cooperation
+				bonus = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+			random_owned_controlled_state = {
+					prioritize = { 327 }
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_greater_philippines
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = PHI_makapili focus = PHI_mobilise_for_war }
+		x = 3
+		y = 4
+		relative_position_id = PHI_ganap_philippines
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 8
+		}
+
+		available = {
+			has_government = fascism
+			is_subject = no
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 100
+			add_state_claim = 785
+		}
+	}
+	
+	focus = {
+		id = PHI_claim_the_captaincy_general
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = PHI_greater_philippines }
+		x = 3
+		y = 5
+		relative_position_id = PHI_ganap_philippines
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				any_other_country = {
+					is_in_faction_with = ROOT
+					OR = {
+					owns_state = 785
+					owns_state = 638
+					owns_state = 633
+					owns_state = 646
+					owns_state = 647
+					owns_state = 684
+					}
+				}
+			}
+		}
+
+		available = {
+			has_government = fascism
+			is_subject = no
+			has_army_manpower = { size > 199999 }
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_state_claim = 638
+			add_state_claim = 633
+			add_state_claim = 646
+			add_state_claim = 647
+			add_state_claim = 684
+			custom_effect_tooltip = PHI_claim_the_captaincy_general_tt
+		}
+	}
+	
+	focus = {
+		id = PHI_take_sabah
+		icon = GFX_goal_generic_occupy_states_coastal
+		prerequisite = { focus = PHI_interventionism }
+		x = 3
+		y = 6
+		relative_position_id = PHI_maintain_nacionalista_government
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				any_other_country = { controls_state = 785 has_government = ROOT }
+			}
+			modifier = {
+				factor = 0
+				any_other_country = { controls_state = 785 has_war = no }
+			}
+		}
+
+		available = {
+			OR = { has_government = communism has_government = fascism }
+			any_other_country = { has_full_control_of_state = 785 NOT = { has_war_with = "PHI" } NOT = { is_in_faction_with = "PHI" } NOT = { is_subject_of = "PHI" } }
+			is_subject = no
+			has_army_manpower = { size > 99999 }
+		}
+
+		bypass = {
+			has_full_control_of_state = 785
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		will_lead_to_war_with = MAL
+		completion_reward = {
+			random_other_country = { limit = { has_full_control_of_state = 785 } country_event = { id = phil.15 days = 1 } }
+		}
+	}
+	
+	focus = {
+		id = PHI_komopa
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = PHI_ganap_philippines }
+		x = 2
+		y = 1
+		relative_position_id = PHI_ganap_philippines
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		available = {
+			fascism > 0.3
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = PHI_komopa_idea
+		}
+	}
+	
+	focus = {
+		id = PHI_mobilise_for_war
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = PHI_komopa }
+		x = 4
+		y = 2
+		relative_position_id = PHI_ganap_philippines
+
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			fascism > 0.49
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = {	
+					has_war_support < 0.5
+				}
+				add_war_support = 0.3
+			}
+			else_if = {
+				limit = {
+					has_war_support > 0.5
+				}
+				add_war_support = 0.1
+			}
+			if = { limit = { OR = { has_idea = civilian_economy has_idea = low_economic_mobilisation has_idea = partial_economic_mobilisation } }
+				add_ideas = war_economy
+			}
+		}
+	}
+	
+	focus = {
+		id = PHI_gun_workshops
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = PHI_mobilise_for_war }
+		x = 4
+		y = 3
+		relative_position_id = PHI_ganap_philippines
+
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 2 }
+		}
+	}
+	
+	focus = {
+		id = PHI_makapili
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = PHI_komopa }
+		x = 2
+		y = 2
+		relative_position_id = PHI_ganap_philippines
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = PHI_makapili_idea
+		}
+	}
+	
+	focus = {
+		id = PHI_special_divisions
+		icon = GFX_goal_demand_sudetenland
+		x = 28
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_war_support > 0.49 has_war = yes
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			army_experience = 10
+			custom_effect_tooltip = PHI_special_divisions_tt
+		}
+	}
+	
+	focus = {
+		id = PHI_successful_resistance
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = PHI_special_divisions }
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = PHI_special_divisions
+
+		available_if_capitulated = yes
+		
+		available = {
+			surrender_progress > 0.25
+			has_war = yes
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			add_ideas = PHI_successful_resistance_idea			
+		}
+	}
+}

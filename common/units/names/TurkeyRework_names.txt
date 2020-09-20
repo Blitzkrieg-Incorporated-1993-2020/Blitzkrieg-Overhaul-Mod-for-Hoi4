@@ -1,0 +1,159 @@
+﻿TUR = {
+	submarine = {
+		prefix = "TCG"
+		generic = { "Denizalti" }
+		unique = {
+		"Birinci Inönü" "Ikinci Inönü" "Dumlupinar" "Sakarya" "Saldiray" "Batiray" "Atilay" "Yildiray" "Oruc Reis" "Murat Reis" "Burak Reis" "Salih Reis"
+		"Uluc Ali Reis" "Kilic Ali Reis" "Turgut Reis" "Piri Reis" "Hizir Reis" "Barbaros"
+		}
+	}
+	destroyer = {
+		prefix = "TCG"
+		generic = { "Muhrip" }
+		unique = {
+		"Peyk" "Berk" "Zafer" "Kocatepe" "Adatepe" "Tinaztepe" "Yücetepe" "Savastepe" "Alcitepe" "Anittepe" "Demirhisar" "Sultanhisar" "Gayret" "Muavenet"
+		"Maresal Fevzi Cakmak Pasa" "Piyale Pasa"
+		}
+	}
+	light_cruiser = {
+		prefix = "TCG"
+		generic = { "Hafif Kruvazör" }
+		unique = {
+		"Peyk-i Sevket" "Berk-i Satvet" "Kesan" "Sariyer" "Fethiye" "Bodrum" "Sarımsaklı" "Bandirma"
+		}
+	}
+	heavy_cruiser = {
+		prefix = "TCG"
+		generic = { "Agir Kruvazör" }
+		unique = {
+		"Residiye" "Tuzla" "Yalova" "Gemlik" "Izmit" "Gebze"
+		"Gölcük" "Gelibolu" "Urla" 
+		}
+	}
+	battle_cruiser = {
+		prefix = "TCG"
+		generic = { "Muharebe Kruvazörü" }
+		unique = {
+		"Yavuz" "Yavuzay" "Midilli" 
+		}
+	}
+	battleship = {
+		prefix = "TCG"
+		generic = { "Savas Gemisi" }
+		unique = {
+		"Istanbul" "Izmir" "Samsun" "Trabzon"
+		}
+	}
+	carrier = {
+		prefix = "TCG"
+		generic = { "Ucak Gemisi" }
+		unique = {
+		"Anadolu" "Trakya" "Kafkasya" "Balkan"
+		}
+	}
+	air_wing_names_template = AIR_WING_NAME_TUR_FALLBACK
+
+	#Air wings can only be named through archetype
+	fighter_equipment = {
+		prefix = ""
+		generic = { "Avci Filo" }
+		generic_pattern = AIR_WING_NAME_TUR_GENERIC
+		unique = {
+		}	
+	}
+
+	jet_fighter_equipment = {
+		prefix = ""
+		generic = { "Avci Filo" }
+		generic_pattern = AIR_WING_NAME_TUR_GENERIC
+		unique = {
+		}	
+	}
+
+	heavy_fighter_equipment = {
+		prefix = ""
+		generic = { "Avci Filo" }
+		generic_pattern = AIR_WING_NAME_TUR_GENERIC
+		unique = {
+		}	
+	}
+
+	CAS_equipment = {
+		prefix = ""
+		generic = { "Tank Avci Filo" "Bombardiman Filosu" }
+		generic_pattern = AIR_WING_NAME_TUR_GENERIC
+		unique = {
+		}	
+	}
+
+	cv_fighter_equipment = {
+		prefix = ""
+		generic = { "Avci Filo" }
+		generic_pattern = AIR_WING_NAME_TUR_GENERIC
+		unique = {
+		}	
+	}
+
+	cv_CAS_equipment = {
+		prefix = ""
+		generic = { "Tank Avci Filo" "Bombardiman Filosu" }
+		generic_pattern = AIR_WING_NAME_TUR_GENERIC
+		unique = {
+		}	
+	}
+	cv_nav_bomber_equipment = {
+		prefix = ""
+		generic = { "Torpil Filo" }
+		generic_pattern = AIR_WING_NAME_TUR_GENERIC
+		unique = {
+		}	
+	}
+
+	tac_bomber_equipment = {
+		prefix = ""
+		generic = { "Bombardiman Filosu" }
+		generic_pattern = AIR_WING_NAME_TUR_GENERIC
+		unique = {
+		}	
+	}
+
+	jet_tac_bomber_equipment = {
+		prefix = ""
+		generic = { "Bombardiman Filosu" }
+		generic_pattern = AIR_WING_NAME_TUR_GENERIC
+		unique = {
+		}	
+	}
+
+	nav_bomber_equipment = {
+		prefix = ""
+		generic = { "Deniz Avci Filo" "Torpil Filo" }
+		generic_pattern = AIR_WING_NAME_TUR_GENERIC
+		unique = {
+		}	
+	}
+
+	strat_bomber_equipment = {
+		prefix = ""
+		generic = { "Bombardiman Filosu" }
+		generic_pattern = AIR_WING_NAME_TUR_GENERIC
+		unique = {
+		}	
+	}
+
+	jet_strat_bomber_equipment = {
+		prefix = ""
+		generic = { "Bombardiman Filosu" }
+		generic_pattern = AIR_WING_NAME_TUR_GENERIC
+		unique = {
+		}	
+	}
+
+	transport_plane_equipment = {
+		prefix = ""
+		generic = { "Hava Indirme Filosu" }
+		generic_pattern = AIR_WING_NAME_TUR_GENERIC
+		unique = {
+		}	
+	}
+}

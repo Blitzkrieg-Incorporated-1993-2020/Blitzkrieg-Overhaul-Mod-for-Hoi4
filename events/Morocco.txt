@@ -1,0 +1,113 @@
+﻿###########################
+# Morocan Events
+###########################
+
+add_namespace = morocco
+
+	############################
+	 #### MOD : MOROCCO SECTION ####
+	############################
+	
+#Independance
+country_event = {
+	id = morocco.100
+	title = morocco.100.t
+	desc = morocco.100.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = { # Accept demands
+		name = morocco.100.a
+		ai_chance = {
+			factor = 25 
+			modifier = {
+				factor = 50
+				has_war = yes
+				any_enemy_country = {
+					strength_ratio = { 
+						tag = ROOT 
+						ratio < 0.4
+					}
+				}
+			}
+			modifier = {
+				factor = 75
+				16 = { NOT = { is_controlled_by = FRA } } #Paris	
+			}
+		} 
+	}
+	option = { # Refuse
+		name = morocco.100.b
+		ai_chance = { factor = 25 }
+		FRA = {
+			create_wargoal = {
+				type = annex_everything
+				target = MOR
+			}
+		}
+	}		
+}
+
+#Green March
+country_event = {
+	id = morocco.101
+	title = morocco.101.t
+	desc = morocco.101.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = { # Accept demands
+		name = morocco.101.a
+		ai_chance = {
+			factor = 25 
+			modifier = {
+				factor = 50
+				has_war = yes
+				any_enemy_country = {
+					strength_ratio = { 
+						tag = ROOT 
+						ratio < 0.4
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				MOR = {
+					has_completed_focus = MOR_french_resident_governance
+				}
+			}
+		}
+		if = {
+			limit = {
+				290 = {
+					is_controlled_by = SPR
+				}
+			}
+			MOR = {
+				transfer_state = 290
+			}
+		}
+		if = {
+			limit = {
+				783 = {
+					is_controlled_by = SPR
+				}
+			}
+			MOR = {
+				transfer_state = 783
+			}
+		}		
+	}
+	option = { # Refuse
+		name = morocco.101.b
+		ai_chance = { factor = 25 }
+		MOR = {
+			create_wargoal = {
+				type = annex_everything
+				target = SPR
+			}
+		}
+	}		
+}

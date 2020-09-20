@@ -1,0 +1,61 @@
+################
+##### USA ######
+################
+
+USA_senate = {
+	icon = generic_political_actions
+	priority = 98
+	
+	picture = GFX_decision_cat_generic_USA
+
+	allowed = {
+		is_literally_america = yes
+	}
+
+	visible = {
+		has_elections = yes
+		OR = {
+			has_government = democratic
+			has_government = conservative
+			has_government = social_democracy
+			has_idea = liberal_conservative_government
+			has_idea = liberal_social_democrat_government
+			has_idea = rightist_conservative_government
+			has_idea = leftist_social_democrat_government
+		}
+	}
+}
+
+USA_non_democracy_senate = {
+	icon = generic_political_actions
+	priority = 98
+	
+	picture = GFX_decision_cat_generic_USA
+
+	allowed = {
+		is_literally_america = yes
+	}
+
+	visible = {
+		OR = {
+			AND = {
+				has_elections = yes
+				OR = {
+					has_government = unionism
+					has_government = communism
+					has_government = neutrality
+					has_government = fascism
+					has_government = monarchism
+				}
+			}
+			AND = {
+				has_elections = no
+				OR = {
+					has_government = democratic
+					has_government = conservative
+					has_government = social_democracy
+				}
+			}
+		}
+	}
+}

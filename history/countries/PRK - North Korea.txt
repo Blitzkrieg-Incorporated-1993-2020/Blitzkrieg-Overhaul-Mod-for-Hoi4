@@ -1,0 +1,140 @@
+﻿capital = 527
+
+oob = "NOK_1936"
+
+set_research_slots = 2
+add_manpower=5000000
+add_ideas = {
+	closed_economy
+}
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 2
+	gwtank = 2
+	basic_light_tank = 2
+}
+
+set_popularities = {
+	democratic = 0
+	fascism = 0
+	communism = 100
+	neutrality = 0
+}
+
+set_politics = {
+
+	ruling_party = communism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+# Kim Il Sung (Prime Minister) other potential candidate
+create_country_leader = {
+	name = "Kim Il Sung"
+	desc = ""
+	picture = "gfx/leaders/PRK_Kim.dds"
+	expire = "1965.1.1"
+	ideology = stalinism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Yi Kang"
+	desc = ""
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+		#
+	}
+}
+
+create_field_marshal = {
+	name = "Kim Il-Sung"
+	portrait_path = "gfx/leaders/KOREAS/PRK_Kim_Il_Sung.dds"
+	traits = { }
+	skill = 5
+	attack_skill = 5
+	defense_skill = 5
+	planning_skill = 5
+	logistics_skill = 5
+}
+
+create_corps_commander = {
+	name = "Kim Chaek"
+	picture = "Kim-Chaek.dds"
+	id = 33002
+	traits = { }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 4
+	logistics_skill = 4
+}
+
+create_corps_commander = {
+	name = "Choi Yong-Kun"
+	picture = "Choi.dds"
+	traits = { }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Choe Yong-gon"
+	picture = "Choe.dds"
+	traits = { }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Kim Ung"
+	picture = "Ung.dds"
+	traits = { }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 4
+}
+create_corps_commander = {
+	name = "Lee Kwon-mu"
+	picture = "Kwon.dds"
+	traits = { }
+	skill = 3
+	attack_skill = 4
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Nam Il"
+	picture = "Nam.dds"
+	traits = { }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Kang Kon"
+	id = 33001
+	picture = "Kang_Kon.dds"
+	traits = { }
+	skill = 4
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}

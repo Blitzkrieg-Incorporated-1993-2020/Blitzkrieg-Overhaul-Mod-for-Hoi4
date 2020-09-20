@@ -1,0 +1,94 @@
+ITA_historical_plan = {
+	name = "Italy historical plan"
+	desc = "Historical behavior for Italy"
+
+	enable = {
+		original_tag = ITA
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = ITA_ai_behavior
+					option = DEFAULT
+				}
+			}
+			has_country_flag = ITA_AI_RANDOM_FASCIST_HISTORICAL
+			has_game_rule = {
+				rule = ITA_ai_behavior
+				option = FASCIST_HISTORICAL
+			}
+		}
+	}
+	abort = {
+		OR = {
+			GER = { has_completed_focus = GER_oppose_hitler }
+			AND = {
+				ETH = { exists = yes }
+				NOT = { has_war_with = ETH }
+				ETH = { NOT = { is_subject_of = ROOT } }
+			}
+		}
+	}
+
+	ai_national_focuses = {
+		ITA_triumphinafrica 						#March 10 1936	
+		ITA_ilducesambitions 						#May 20 1936
+		ITA_industrialeffort 						#July 30 1936	
+		ITA_armyprimacy 							#October 10 1936
+		ITA_marenostrum 							#October 10 1936	
+		ITA_lightshipeffort 						#December 20 1936	
+		ITA_industrialeffort2 						#February 30 1937	
+		ITA_modernizedartillery 					#May 10 1937	
+		ITA_airinnovation 							#July 20 1937	
+		ITA_claimsonyugoslavia 						#September 30 1937	
+		ITA_modernizedarmy 							#December 10 1937
+		ITA_fortificationeffort 					#February 20 1938	
+		ITA_extratechslot 							#April 30 1938	
+		ITA_specialforces 							#July 10 1938	
+		ITA_capitalships 							#September 20 1938
+		ITA_befriendbulgaria 						#November 30 1938
+		ITA_occupyalbania 							#February 10 1939	
+		ITA_pactofsteel 							#April 20 1939	
+		ITA_escorteffort 							#June 30 1939
+		ITA_submarineeffort 						#September 10 1939	
+		ITA_italianhighways 						#November 20 1939	
+		ITA_carriereffort 							#January 30 1940
+		ITA_befriendromania  						#April 10 1940
+		ITA_bombereffort 							#June 20 1940	
+		ITA_warwithgreece  							#August 30 1940
+		ITA_invasion_of_yugoslavia
+		ITA_germanrdtreaty 							#November 10 1940
+		ITA_germanmillitarycooperation 				#January 20 1941	
+		ITA_navalaireffort 							#March 30 1941	
+		ITA_atlanticfleet 							#June 10 1941	
+		ITA_marinesandlandingcraft 					#August 20 1941
+		ITA_airinnovation2 							#October 30 1941	
+ 		ITA_armoredeffort 							#January 10
+ 		ITA_claimsonfrance 							#March 20 1942
+ 		ITA_seawolves 								#May 30 1942	
+ 		ITA_secretweapons 							#August 10 1942
+ 		ITA_jetengineeffort 						#October 20 1942	
+ 		ITA_prospectforoil 							#December 30 1942	
+ 		ITA_libyanrefineries 						#March 10 1943
+ 		ITA_libyaninfrastructure					#May 20 1943	
+		 											#July 30 1943		
+	}				
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

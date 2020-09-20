@@ -1,0 +1,323 @@
+latvia_historical = {
+	name = "Authoritarian Regime - Historical"
+	desc = "Kārlis Ulmanis takes full power of the nation and leads it to the Latvian dream."
+
+	enable = {
+		original_tag = LAT
+		OR = {
+			 AND = {
+				   is_historical_focus_on = yes
+				   has_game_rule = {
+					               rule = LAT_ai_behavior
+					               option = DEFAULT
+				                   }
+			 }
+			 has_country_flag = LAT_AI_HISTORICAL
+			 has_game_rule = {
+				             rule = LAT_ai_behavior
+				             option = HISTORICAL_LAT
+			                 }
+		     }
+	}
+	abort = {
+		    OR = {
+			     has_government = fascism
+			     has_government = communism
+			     has_government = democratic
+		         }
+	}
+
+	ai_national_focuses = {
+		LAT_Review_the_Satversme
+		LAT_Finish_the_Coup
+		LAT_Political_Party_Ban
+		LAT_Nationalistic_Ideas
+		LAT_Baltic_Unity
+		LAT_Latvia_for_Latvians
+		LAT_Aizsargi
+		LAT_Victory_Square_Project
+		LAT_The_Dream_State
+	}
+	ideas = { }
+}
+
+latvia_baltic_entente = {
+	name = "Baltic Entente"
+	desc = "Latvia leads it's way into forming the Baltic Entente."
+
+	enable = {
+		original_tag = LAT
+	    has_game_rule = {
+				        rule = LAT_ai_behavior
+				        option = BALTIC_ENTENTE
+			            }
+	}
+	abort = {
+		    OR = {
+			     has_government = fascism
+			     has_government = communism
+			     has_government = democratic
+		         }
+	}
+
+	ai_national_focuses = {
+		LAT_Review_the_Satversme
+		LAT_Finish_the_Coup
+		LAT_Political_Party_Ban
+		LAT_Nationalistic_Ideas
+		LAT_Baltic_Unity
+		LAT_Baltic_Entente
+		LAT_Finnish_Membership
+		LAT_Polish_Membership
+		LAT_The_Big_Baltic_Entente
+	}
+	ideas = { }
+}
+
+latvia_livonian_order = {
+	name = "Livonian Order"
+	desc = "Latvia seeks unification with Estonia to form the Livonian Order."
+
+	enable = {
+		original_tag = LAT
+	    has_game_rule = {
+				        rule = LAT_ai_behavior
+				        option = LIVONIAN_ORDER
+			            }
+	}
+	abort = {
+		    OR = {
+			     has_government = fascism
+			     has_government = communism
+			     has_government = democratic
+		         }
+	}
+
+	ai_national_focuses = {
+		LAT_Review_the_Satversme
+		LAT_Finish_the_Coup
+		LAT_Political_Party_Ban
+		LAT_Monarch_State
+		LAT_Form_the_Latvian_Kingdom
+		LAT_Restore_the_Livonian_Order
+		LAT_Teutonic_Believes
+		LAT_Baltic_Crusade
+		LAT_Deus_Vult
+	}
+	ideas = { }
+}
+
+latvia_livonian_order = {
+	name = "Baltia"
+	desc = "Latvia seeks unification with Lithuania to form Baltia."
+
+	enable = {
+		original_tag = LAT
+	    has_game_rule = {
+				        rule = LAT_ai_behavior
+				        option = BALTIA
+			            }
+	}
+	abort = {
+		    OR = {
+			     has_government = fascism
+			     has_government = communism
+			     has_government = democratic
+		         }
+	}
+
+	ai_national_focuses = {
+		LAT_Review_the_Satversme
+		LAT_Finish_the_Coup
+		LAT_Political_Party_Ban
+		LAT_Monarch_State
+		LAT_Form_the_Latvian_Kingdom
+		LAT_Unite_the_Balts
+		LAT_Baltic_Ancestry
+		LAT_Demand_Vilnius
+		LAT_Demand_Prussia
+	}
+	ideas = { }
+}
+
+latvia_baltic_socialist_union = {
+	name = "Baltic Socialist Union"
+	desc = "Latvia leads to way of an independent communist union in Baltics."
+
+	enable = {
+		original_tag = LAT
+	    has_game_rule = {
+				        rule = LAT_ai_behavior
+				        option = BALTIC_SOCIALIST_UNION
+			            }
+	}
+	abort = {
+		    OR = {
+			     has_government = fascism
+			     has_government = democratic
+		         }
+	}
+
+	ai_national_focuses = {
+		LAT_Review_the_Satversme
+		LAT_Bring_Out_the_Hammers
+		LAT_Communist_Propoganda
+		LAT_Red_Flag_Revolution
+		LAT_Independent_Socialist_Republic
+		LAT_Pressure_On_the_Baltics
+		LAT_Spread_the_Revolution
+		LAT_Baltic_Socialist_Union
+	}
+	ideas = { }
+}
+
+latvia_soviet_cooperation = {
+	name = "Soviet Cooperation"
+	desc = "Latvia cooperates with Soviet Union to bring communism to Baltics."
+
+	enable = {
+		original_tag = LAT
+	    has_game_rule = {
+				        rule = LAT_ai_behavior
+				        option = SOVIET_COOPERATION
+			            }
+	}
+	abort = {
+		    OR = {
+			     has_government = fascism
+			     has_government = democratic
+		         }
+	}
+
+	ai_national_focuses = {
+		LAT_Review_the_Satversme
+		LAT_Bring_Out_the_Hammers
+		LAT_Communist_Propoganda
+		LAT_Red_Flag_Revolution
+		LAT_Soviet_Cooperation
+		LAT_Join_the_Comitern
+		LAT_Big_Brother
+		LAT_Concept_of_Baltic_Revolution
+	}
+	ideas = { }
+}
+
+latvia_baltic_allies = {
+	name = "Baltic Allies"
+	desc = "Latvia brings Democracy to Baltics and tries to form the Baltic Democratic Alliance."
+
+	enable = {
+		original_tag = LAT
+	    has_game_rule = {
+				        rule = LAT_ai_behavior
+				        option = BALTIC_ALLIES
+			            }
+	}
+	abort = {
+		    OR = {
+			     has_government = fascism
+			     has_government = communism
+		         }
+	}
+
+	ai_national_focuses = {
+		LAT_Review_the_Satversme
+		LAT_Strengthen_the_Satversme
+		LAT_the_Riga_Referendum
+		LAT_the_Baltic_Allies
+		LAT_Support_Baltic_Democracy
+		LAT_Support_Finnish_Democracy
+		LAT_Baltic_Democratic_Alliance
+	}
+	ideas = { }
+}
+
+latvia_big_allies = {
+	name = "Big Allies"
+	desc = "Latvia turns into a Democratic Republic and joins the Allies."
+
+	enable = {
+		original_tag = LAT
+	    has_game_rule = {
+				        rule = LAT_ai_behavior
+				        option = BIG_ALLIES
+			            }
+	}
+	abort = {
+		    OR = {
+			     has_government = fascism
+			     has_government = communism
+		         }
+	}
+
+	ai_national_focuses = {
+		LAT_Review_the_Satversme
+		LAT_Strengthen_the_Satversme
+		LAT_the_Riga_Referendum
+		LAT_the_Big_Allies
+		LAT_Alliance_With_Anglosphere
+		LAT_Request_For_Defensive_Measures
+		LAT_Join_The_Allies
+	}
+	ideas = { }
+}
+
+latvia_german_cooperation = {
+	name = "German Cooperation"
+	desc = "Latvia cooperates with the German Reich and brings fascism to the Baltics."
+
+	enable = {
+		original_tag = LAT
+	    has_game_rule = {
+				        rule = LAT_ai_behavior
+				        option = GERMAN_COOPERATION
+			            }
+	}
+	abort = {
+		    OR = {
+			     has_government = democratic
+			     has_government = communism
+		         }
+	}
+
+	ai_national_focuses = {
+		LAT_Review_the_Satversme
+		LAT_Follow_the_Thunder
+		LAT_The_Lightning_Strike
+		LAT_German_Cooperation
+		LAT_Latvian_Legion
+		LAT_Plans_to_United_Baltics
+		LAT_Ostland_Project
+	}
+	ideas = { }
+}
+
+latvia_thunder_over_europe = {
+	name = "Thunder Over Europe"
+	desc = "Latvia stands alone in it's new fascist way and dominates over Baltics."
+
+	enable = {
+		original_tag = LAT
+	    has_game_rule = {
+				        rule = LAT_ai_behavior
+				        option = THUNDER_OVER_EUROPE
+			            }
+	}
+	abort = {
+		    OR = {
+			     has_government = democratic
+			     has_government = communism
+		         }
+	}
+
+	ai_national_focuses = {
+		LAT_Review_the_Satversme
+		LAT_Follow_the_Thunder
+		LAT_The_Lightning_Strike
+		LAT_Tresa_Atmoda
+		LAT_Baltic_Dominance
+		LAT_Legacy_of_Baltic_Tribes
+		LAT_Thunder_Over_Europe
+	}
+	ideas = { }
+}

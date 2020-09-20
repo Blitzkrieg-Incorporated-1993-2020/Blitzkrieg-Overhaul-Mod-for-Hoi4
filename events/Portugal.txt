@@ -1,0 +1,1778 @@
+
+###########################
+# Portugal events Events
+###########################
+
+add_namespace = portugal
+	
+
+	# SALAZAR ASSASSINATION ATTEMPT CHOICE
+
+	country_event = {
+	id = portugal.13
+	title = portugal.13.t
+	desc = portugal.13.d
+	picture = GFX_report_event_hungarian_soldiers
+
+	fire_only_once = yes
+
+	trigger = {
+			original_tag = POR
+			date > 1937.07.01
+			date < 1937.08.01
+	}
+	
+	option = {
+		name = portugal.13.a
+		ai_chance = { factor = 0 }
+		set_global_flag = SALAZAR_DIES
+		custom_effect_tooltip = portugal.13.a_tooltip
+		hidden_effect = {
+		country_event = { id = news.724 }
+		complete_national_focus = POR_assassination_attempt
+		create_country_leader = {
+				name = "Council of Ministers"
+				desc = ""
+				picture = "Portrait_Portugal_Ministerial.dds"
+				expire = "1965.1.1"
+				ideology = moderatism
+				traits = {
+					}
+				}
+			}
+		}
+
+	option = {
+		name = portugal.13.b
+		ai_chance = { factor = 1 }
+		set_global_flag = SALAZAR_LIVES
+		custom_effect_tooltip = portugal.13.b_tooltip
+		hidden_effect = {
+		country_event = { id = news.725 }
+		complete_national_focus = POR_assassination_attempt
+			}
+		}
+
+	option = {
+		name = portugal.13.c
+		ai_chance = { factor = 0 }
+		set_global_flag = SALAZAR_WOUNDED
+		custom_effect_tooltip = portugal.13.c_tooltip
+		hidden_effect = {
+		country_event = { id = news.726 }
+		complete_national_focus = POR_assassination_attempt
+		create_country_leader = {
+				name = "António de Oliveira Salazar"
+				desc = "POLITICS_ANTÓNIO_DE_OLIVEIRA_SALAZAR_DESC"
+				picture = "Portrait_Portugal_Antonio_de_Oliveira_Salazar_Wounded.dds"
+				expire = "1965.1.1"
+				ideology = moderatism
+				traits = {
+				dealbroker
+				diplomat
+					}
+				}
+			}
+		}
+	}
+
+	#SALAZAR DIES NEWS#
+
+	news_event = {
+		id = news.724
+		title = news.724.t
+		desc = news.724.d
+		picture = GFX_news_event_portuguese_assembleia
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+		option = {
+			name = news.724.a
+		}
+	}	
+
+	#SALAZAR LIVES NEWS#
+
+	news_event = {
+		id = news.725
+		title = news.725.t
+		desc = news.725.d
+		picture = GFX_news_event_portuguese_assembleia
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+		option = {
+			name = news.725.a
+		}
+	}	
+
+	#SALAZAR WOUNDED NEWS#
+
+	news_event = {
+		id = news.726
+		title = news.726.t
+		desc = news.726.d
+		picture = GFX_news_event_portuguese_assembleia
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+		option = {
+			name = news.726.a
+		}
+	}	
+
+	#SALAZAR DILEMMA#
+
+	country_event = {
+	id = portugal.14
+	title = portugal.14.t
+	desc = portugal.14.d
+	picture = GFX_report_event_french_liberation
+
+	is_triggered_only = yes
+	
+	option = {
+		name = portugal.14.a
+		ai_chance = { factor = 100 }
+		set_global_flag = SALAZAR_PRESIDENT
+		custom_effect_tooltip = portugal.14.a_tooltip
+		hidden_effect = {
+			country_event = { id = news.704 }
+			complete_national_focus = POR_president_salazar
+			}
+		}
+
+	option = {
+		name = portugal.14.b
+		ai_chance = { factor = 0 }
+		set_global_flag = SALAZAR_SEEKS_HELP
+		custom_effect_tooltip = portugal.14.b_tooltip
+		hidden_effect = {
+			country_event = { id = news.728 }
+			complete_national_focus = POR_support_the_braganzas
+			}
+		}
+	}
+
+	#SALAZAR BLAMES CARMONA NEWS#
+
+	news_event = {
+		id = news.704
+		title = news.704.t
+		desc = news.704.d
+		picture = GFX_news_event_portuguese_assembleia
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+		option = {
+			name = news.704.a
+		}
+	}	
+
+	#SALAZAR FLEES NEWS#
+
+	news_event = {
+		id = news.728
+		title = news.728.t
+		desc = news.728.d
+		picture = GFX_news_event_portuguese_assembleia
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+		option = {
+			name = news.728.a
+		}
+	}	
+
+	# USSR PACT
+
+	country_event = {
+	id = portugal.1
+	title = portugal.1.t
+	desc = portugal.1.d
+	picture = GFX_report_event_soviet_tank_parade
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = portugal.1.a
+
+		ai_chance = { factor = 100 }
+
+		SOV = {
+ 				diplomatic_relation = { country = POR relation = guarantee active = yes }
+ 				give_military_access = POR
+ 			}
+		}
+	}
+
+	# UK HONOR ALLIANCE GUARANTEE 
+
+	country_event = {
+	id = portugal.16
+	title = portugal.16.t
+	desc = portugal.16.d
+	picture = GFX_report_event_soviet_tank_parade
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = portugal.16.a
+
+		ai_chance = { factor = 100 }
+
+		ENG = {
+ 				diplomatic_relation = { country = POR relation = guarantee active = yes }
+ 			}
+		}
+	}
+
+	#DUARTE INVITATION - FASCISTS#
+
+	country_event = {
+	id = portugal.15
+	title = portugal.15.t
+	desc = portugal.15.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = portugal.15.a
+		ai_chance = { factor = 100 }
+		custom_effect_tooltip = portugal.15.a_tooltip
+			add_country_leader_trait = dictator
+			remove_ideas = POR_holy_see
+			add_war_support = 0.2
+		}
+
+	option = {
+		name = portugal.14.b
+		ai_chance = { factor = 0 }
+		custom_effect_tooltip = portugal.15.b_tooltip
+		add_ideas = POR_king_duarte_nuno
+		remove_ideas = POR_holy_see
+		set_cosmetic_tag = POR_miguelist_restoration
+		hidden_effect = {
+			country_event = { id = news.729 }
+			country_event = { id = portugal.2 hours = 12 }
+			}
+		}
+	}
+
+	#KING ACCEPT FASCISM#
+
+	news_event = {
+		id = news.729
+		title = news.729.t
+		desc = news.729.d
+		picture = GFX_news_event_portuguese_assembleia
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+		option = {
+			name = news.729.a
+		}
+	}	
+
+# Changing GNR or not
+
+country_event = {
+	id = portugal.2
+	title = portugal.2.t
+	desc = portugal.2.d
+	picture = GFX_report_event_british_inspect_troops
+
+	is_triggered_only = yes
+	
+	option = {
+		name = portugal.2.a
+		ai_chance = { factor = 100 }
+		custom_effect_tooltip = portugal.2.a_tooltip
+		hidden_effect = {
+		delete_unit_template_and_units = { division_template = "Guarda Nacional Republicana" }
+		load_oob = "POR_MONARCHY_NOGNR"
+		set_technology = { grp = 1 }
+			}
+		}
+
+	option = {
+		name = portugal.2.b
+		ai_chance = { factor = 0 }
+		custom_effect_tooltip = portugal.2.b_tooltip
+		hidden_effect = {
+		load_oob = "POR_MONARCHY_YESGNR"
+		set_technology = { grp = 1 }
+			}
+		}
+	}
+
+# Alliances if NAT SPAIN join AXIS
+country_event = {
+	id = portugal.3
+	title = portugal.3.t
+	desc = portugal.3.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	fire_only_once = yes
+   
+    trigger = {
+        tag = POR
+        has_completed_focus = POR_luso_pact
+        NOT = { has_war_with = ENG }
+        NOT = { has_war_with = GER }
+        any_other_country = {
+            original_tag = SPR
+            has_government = fascism
+            is_in_faction_with = GER
+        }
+    }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		ai_chance = { factor = 0 }
+		name = portugal.3.a
+		custom_effect_tooltip = portugal.3.a_tooltip
+		complete_national_focus = POR_british_cooperation	
+	}
+	option = {
+		ai_chance = { factor = 0 }
+		name = portugal.3.b
+		custom_effect_tooltip = portugal.3.b_tooltip
+		complete_national_focus = POR_mission_to_germany
+	}
+	option = {
+		ai_chance = { factor = 1 }
+		name = portugal.3.c
+	}
+}
+
+# Spain surrenders in war against Portugal
+country_event = {
+	id = portugal.18
+	title = portugal.18.t
+	desc = portugal.18.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	fire_only_once = yes
+   
+    trigger = {
+        tag = POR
+        NOT = { has_completed_focus = POR_iberian_unity }
+        OR = {
+        	has_completed_focus = POR_rekindle_feuds
+        	has_completed_focus = POR_galiza_referendum
+        }
+        any_other_country = {
+            original_tag = SPR
+            is_in_faction = no
+            has_war_with = POR
+            OR = {
+            casualties > 300000
+            NOT = { controls_state = 41 }
+            }
+        }
+    }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		ai_chance = { factor = 0 }
+		name = portugal.18.a
+		random_country = {
+		limit = { original_tag = SPR }
+		white_peace = POR
+			}
+		if = {
+    		limit = {
+        		has_completed_focus = POR_rekindle_feuds
+   					}   
+    			set_state_owner = 290
+				}
+		if = {
+    		limit = {
+        		has_completed_focus = POR_galiza_referendum
+        		has_defensive_war = yes
+   					}   
+    			set_state_owner = 171
+				}
+		if = {
+    		limit = {
+        		has_completed_focus = POR_galiza_referendum
+        		has_offensive_war = yes
+   					}   
+    			set_state_owner = 290
+    			set_state_owner = 171
+				}
+			}
+	option = {
+		ai_chance = { factor = 0 }
+		name = portugal.18.b
+		custom_effect_tooltip = portugal.18.b_tooltip
+	}
+}
+
+
+#GALIZA REFEREDUM NEWS - PORTUGAL#
+news_event = {
+		id = news.730
+		title = news.730.t
+		desc = news.730.d
+		picture = GFX_news_event_portuguese_assembleia
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+		option = {
+			name = news.730.a
+			add_state_core = 171
+		}
+	}	
+
+#GALIZA REFEREDUM NEWS - SPAIN#
+news_event = {
+		id = news.731
+		title = news.731.t
+		desc = news.731.d
+		picture = GFX_news_event_portuguese_assembleia
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+		option = {
+			name = news.731.a
+			POR={ country_event = { id = portugal.17 } }
+		}
+	}	
+
+#Galiza Referendum
+country_event = {
+	id = portugal.17
+	title = portugal.17.t
+	desc = portugal.17.d
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+	
+	option = {
+		name = portugal.17.a
+		ai_chance = { factor = 35 }
+		PREV = { set_state_owner = 171 }
+		FROM = { set_state_controller = 171 }
+		FROM = {
+				declare_war_on = {
+    			target = POR
+    			type = take_core_state
+				}
+			}
+		}
+
+	option = {
+		name = portugal.17.b
+		ai_chance = { factor = 35 }
+		remove_state_core = 171
+		PREV = { transfer_state = 290 }
+		}
+
+	option = {
+		name = portugal.17.c
+		ai_chance = { factor = 35 }
+		POR = {
+					add_state_claim = 290
+					create_wargoal = {
+					type = take_claimed_state
+					generator = { 290 }
+					target = FROM
+					}
+					create_wargoal = {
+					type = take_core_state
+					generator = { 171 }
+					target = FROM
+				}
+			}
+		}
+	}
+
+#PORTUGUESE ULTIMATUM#
+news_event = {
+		id = news.732
+		title = news.732.t
+		desc = news.732.d
+		picture = GFX_news_event_portuguese_assembleia
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+		option = {
+			name = news.732.a
+			FROM = { transfer_state = 545 }
+		}
+	}	
+
+# USA PACT
+country_event = {
+	id = portugal.9
+	title = portugal.9.t
+	desc = portugal.9.d
+	picture = GFX_report_event_generic_usa_treaty
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = portugal.9.a
+		trigger = {
+			any_other_country = {
+			original_tag = POR
+			has_completed_focus = POR_spanish_king
+			}
+		}
+
+		ai_chance = { factor = 100 }
+
+		USA = {
+ 				diplomatic_relation = { country = BRA relation = guarantee active = no }
+ 				diplomatic_relation = { country = URG relation = guarantee active = no }
+ 				diplomatic_relation = { country = PAR relation = guarantee active = no }
+ 				diplomatic_relation = { country = ARG relation = guarantee active = no }
+ 				diplomatic_relation = { country = CHL relation = guarantee active = no }
+ 				diplomatic_relation = { country = BOL relation = guarantee active = no }
+ 				diplomatic_relation = { country = PRU relation = guarantee active = no }
+ 				diplomatic_relation = { country = ECU relation = guarantee active = no }
+ 				diplomatic_relation = { country = COL relation = guarantee active = no }
+ 				diplomatic_relation = { country = VEN relation = guarantee active = no }
+ 			}	
+
+ 		
+		BRA = {
+				add_ideas = partial_economic_mobilisation
+				remove_ideas = american_influence_defence_democratic
+ 				remove_ideas = american_protection_defence_democratic
+ 				remove_ideas = american_protection_drift_democratic
+ 				remove_ideas = nationalism
+ 				remove_ideas = internationalism
+ 				remove_ideas = fascist_influence
+ 				remove_ideas = communist_influence
+				set_politics = { ruling_party = neutrality }
+				add_popularity = {
+				ideology = neutrality
+				popularity = 1
+					}	
+				create_faction = Brazil_Axis
+					add_to_faction = ARG
+ 					add_to_faction = URG
+ 					add_to_faction = PAR
+ 					add_to_faction = CHL
+ 					add_to_faction = BOL
+ 					add_to_faction = PRU
+ 					add_to_faction = ECU
+ 					add_to_faction = COL
+ 					add_to_faction = VEN
+				}	
+
+ 		ARG = {
+ 				add_ideas = partial_economic_mobilisation
+ 				remove_ideas = american_influence_defence_democratic
+ 				remove_ideas = american_protection_defence_democratic
+ 				remove_ideas = american_protection_drift_democratic
+ 				remove_ideas = nationalism
+ 				remove_ideas = internationalism
+ 				remove_ideas = fascist_influence
+ 				remove_ideas = communist_influence
+ 				set_politics = { ruling_party = neutrality }
+ 				add_popularity = {
+				ideology = neutrality
+				popularity = 1
+					}	
+				}
+
+		URG = {
+				add_ideas = partial_economic_mobilisation
+				remove_ideas = american_influence_defence_democratic
+ 				remove_ideas = american_protection_defence_democratic
+ 				remove_ideas = american_protection_drift_democratic
+ 				remove_ideas = nationalism
+ 				remove_ideas = internationalism
+ 				remove_ideas = fascist_influence
+ 				remove_ideas = communist_influence
+				set_politics = { ruling_party = neutrality }
+				add_popularity = {
+				ideology = neutrality
+				popularity = 1
+					}
+				}
+
+		PAR = {
+				add_ideas = partial_economic_mobilisation
+				remove_ideas = american_influence_defence_democratic
+ 				remove_ideas = american_protection_defence_democratic
+ 				remove_ideas = american_protection_drift_democratic
+ 				remove_ideas = nationalism
+ 				remove_ideas = internationalism
+ 				remove_ideas = fascist_influence
+ 				remove_ideas = communist_influence
+				set_politics = { ruling_party = neutrality }
+				add_popularity = {
+				ideology = neutrality
+				popularity = 1
+					}	
+				}
+
+		CHL = {
+				add_ideas = partial_economic_mobilisation
+				remove_ideas = american_influence_defence_democratic
+ 				remove_ideas = american_protection_defence_democratic
+ 				remove_ideas = american_protection_drift_democratic
+ 				remove_ideas = nationalism
+ 				remove_ideas = internationalism
+ 				remove_ideas = fascist_influence
+ 				remove_ideas = communist_influence
+				set_politics = { ruling_party = neutrality }
+				add_popularity = {
+				ideology = neutrality
+				popularity = 1
+					}
+				}		
+		
+		PRU = {
+				add_ideas = partial_economic_mobilisation
+				remove_ideas = american_influence_defence_democratic
+ 				remove_ideas = american_protection_defence_democratic
+ 				remove_ideas = american_protection_drift_democratic
+ 				remove_ideas = nationalism
+ 				remove_ideas = internationalism
+ 				remove_ideas = fascist_influence
+ 				remove_ideas = communist_influence
+				set_politics = { ruling_party = neutrality }
+				add_popularity = {
+				ideology = neutrality
+				popularity = 1
+					}
+				}
+
+		ECU = {
+				add_ideas = partial_economic_mobilisation
+				remove_ideas = american_influence_defence_democratic
+ 				remove_ideas = american_protection_defence_democratic
+ 				remove_ideas = american_protection_drift_democratic
+ 				remove_ideas = nationalism
+ 				remove_ideas = internationalism
+ 				remove_ideas = fascist_influence
+ 				remove_ideas = communist_influence
+				set_politics = { ruling_party = neutrality }
+				add_popularity = {
+				ideology = neutrality
+				popularity = 1
+					}
+				}
+
+		BOL = {
+				add_ideas = partial_economic_mobilisation
+				remove_ideas = american_influence_defence_democratic
+ 				remove_ideas = american_protection_defence_democratic
+ 				remove_ideas = american_protection_drift_democratic
+ 				remove_ideas = nationalism
+ 				remove_ideas = internationalism
+ 				remove_ideas = fascist_influence
+ 				remove_ideas = communist_influence
+				set_politics = { ruling_party = neutrality }
+				add_popularity = {
+				ideology = neutrality
+				popularity = 1
+					}	
+				}
+
+		COL = {
+				add_ideas = partial_economic_mobilisation
+				remove_ideas = american_influence_defence_democratic
+ 				remove_ideas = american_protection_defence_democratic
+ 				remove_ideas = american_protection_drift_democratic
+ 				remove_ideas = nationalism
+ 				remove_ideas = internationalism
+ 				remove_ideas = fascist_influence
+ 				remove_ideas = communist_influence
+				set_politics = { ruling_party = neutrality }
+				add_popularity = {
+				ideology = neutrality
+				popularity = 1
+					}
+				}
+
+		VEN = {
+				add_ideas = partial_economic_mobilisation
+				remove_ideas = american_influence_defence_democratic
+ 				remove_ideas = american_protection_defence_democratic
+ 				remove_ideas = american_protection_drift_democratic
+ 				remove_ideas = nationalism
+ 				remove_ideas = internationalism
+ 				remove_ideas = fascist_influence
+ 				remove_ideas = communist_influence
+				set_politics = { ruling_party = neutrality }
+				add_popularity = {
+				ideology = neutrality
+				popularity = 1
+					}
+				}
+
+		random_country = {
+				limit = { original_tag = SPR }
+					add_opinion_modifier = { target = BRA modifier = iberian_interests }
+					add_opinion_modifier = { target = ARG modifier = iberian_interests }
+					add_opinion_modifier = { target = URG modifier = iberian_interests }
+					add_opinion_modifier = { target = PAR modifier = iberian_interests }
+					add_opinion_modifier = { target = CHL modifier = iberian_interests }
+					add_opinion_modifier = { target = PRU modifier = iberian_interests }
+					add_opinion_modifier = { target = ECU modifier = iberian_interests }
+					add_opinion_modifier = { target = BOL modifier = iberian_interests }
+					add_opinion_modifier = { target = COL modifier = iberian_interests }
+					add_opinion_modifier = { target = VEN modifier = iberian_interests }
+					reverse_add_opinion_modifier  = { target = BRA modifier = afraid_colonization }
+					reverse_add_opinion_modifier  = { target = ARG modifier = afraid_colonization }
+					reverse_add_opinion_modifier  = { target = URG modifier = afraid_colonization }
+					reverse_add_opinion_modifier  = { target = PAR modifier = afraid_colonization }
+					reverse_add_opinion_modifier  = { target = CHL modifier = afraid_colonization }
+					reverse_add_opinion_modifier  = { target = PRU modifier = afraid_colonization }
+					reverse_add_opinion_modifier  = { target = ECU modifier = afraid_colonization }
+					reverse_add_opinion_modifier  = { target = BOL modifier = afraid_colonization }
+					reverse_add_opinion_modifier  = { target = COL modifier = afraid_colonization }
+					reverse_add_opinion_modifier  = { target = VEN modifier = afraid_colonization }
+				}
+
+		POR = {
+			country_event = { id = news.713 }
+			hidden_effect = {
+			add_opinion_modifier = { target = BRA modifier = iberian_interests }
+			add_opinion_modifier = { target = ARG modifier = iberian_interests }
+			add_opinion_modifier = { target = URG modifier = iberian_interests }
+			add_opinion_modifier = { target = PAR modifier = iberian_interests }
+			add_opinion_modifier = { target = CHL modifier = iberian_interests }
+			add_opinion_modifier = { target = PRU modifier = iberian_interests }
+			add_opinion_modifier = { target = ECU modifier = iberian_interests }
+			add_opinion_modifier = { target = BOL modifier = iberian_interests }
+			add_opinion_modifier = { target = COL modifier = iberian_interests }
+			add_opinion_modifier = { target = VEN modifier = iberian_interests }
+			reverse_add_opinion_modifier  = { target = BRA modifier = afraid_colonization }
+			reverse_add_opinion_modifier  = { target = ARG modifier = afraid_colonization }
+			reverse_add_opinion_modifier  = { target = URG modifier = afraid_colonization }
+			reverse_add_opinion_modifier  = { target = PAR modifier = afraid_colonization }
+			reverse_add_opinion_modifier  = { target = CHL modifier = afraid_colonization }
+			reverse_add_opinion_modifier  = { target = PRU modifier = afraid_colonization }
+			reverse_add_opinion_modifier  = { target = ECU modifier = afraid_colonization }
+			reverse_add_opinion_modifier  = { target = BOL modifier = afraid_colonization }
+			reverse_add_opinion_modifier  = { target = COL modifier = afraid_colonization }
+			reverse_add_opinion_modifier  = { target = VEN modifier = afraid_colonization }
+				}
+			}
+		}
+
+	option = {
+		name = portugal.9.b
+		trigger = {
+			any_other_country = {
+			original_tag = POR
+			OR = {
+			has_completed_focus = POR_orgulhosamente_sos
+			has_completed_focus = POR_portugal_strong
+				}
+			}
+		}
+		ai_chance = { factor = 100 }
+		USA = {
+ 				diplomatic_relation = { country = BRA relation = guarantee active = no }
+ 				diplomatic_relation = { country = URG relation = guarantee active = no }
+ 			}	
+
+		BRA = {
+				add_ideas = partial_economic_mobilisation
+				remove_ideas = american_influence_defence_democratic
+ 				remove_ideas = american_protection_defence_democratic
+ 				remove_ideas = american_protection_drift_democratic
+ 				remove_ideas = nationalism
+ 				remove_ideas = internationalism
+ 				remove_ideas = fascist_influence
+ 				remove_ideas = communist_influence
+				set_politics = { ruling_party = neutrality }
+				add_popularity = {
+				ideology = neutrality
+				popularity = 1
+					}	
+				}
+		URG = {
+				add_ideas = partial_economic_mobilisation
+				remove_ideas = american_influence_defence_democratic
+ 				remove_ideas = american_protection_defence_democratic
+ 				remove_ideas = american_protection_drift_democratic
+ 				remove_ideas = nationalism
+ 				remove_ideas = internationalism
+ 				remove_ideas = fascist_influence
+ 				remove_ideas = communist_influence
+				set_politics = { ruling_party = neutrality }
+				add_popularity = {
+				ideology = neutrality
+				popularity = 1
+					}
+				}
+		POR={
+			country_event = { id = news.714 }
+			hidden_effect = {
+				add_opinion_modifier = { target = BRA modifier = iberian_interests }
+				add_opinion_modifier = { target = URG modifier = iberian_interests }
+				reverse_add_opinion_modifier  = { target = BRA modifier = afraid_colonization }
+				reverse_add_opinion_modifier  = { target = URG modifier = afraid_colonization }
+			}
+		}
+	}
+
+	option = {
+		name = portugal.9.c
+		trigger = {
+			any_other_country = {
+			original_tag = POR
+			has_completed_focus = POR_iberian_interchange_program
+			}
+		}
+		ai_chance = { factor = 100 }
+		POR={
+			country_event = { id = news.715 }
+		}
+	}
+}
+
+## US SCARED ##
+news_event = {
+	id = news.713
+	title = news.713.t
+	desc = news.713.d
+	picture = GFX_news_event_generic_read_write
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {
+		name = news.713.a
+	}
+}	
+
+## US AMAZED ##
+news_event = {
+	id = news.714
+	title = news.714.t
+	desc = news.714.d
+	picture = GFX_news_event_generic_read_write
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {
+		name = news.714.a
+	}
+}	
+
+## US LAUGH ##
+news_event = {
+	id = news.715
+	title = news.715.t
+	desc = news.715.d
+	picture = GFX_news_event_generic_read_write
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {
+		name = news.715.a
+	}
+}	
+
+# LUSO PACT
+country_event = {
+	id = portugal.7
+	title = portugal.7.t
+	desc = portugal.7.d
+	picture = GFX_report_event_hitler_handshake
+
+	is_triggered_only = yes
+	
+	option = {
+		name = portugal.7.a
+		ai_chance = { factor = 100 }
+		random_country = {
+					limit = { original_tag = SPR }
+					diplomatic_relation = {
+					country = FROM
+					relation = non_aggression_pact
+					active = yes
+				}	
+			}
+			POR = { country_event = { id = news.712 } }
+		}
+	}
+
+#SPAIN ACCEPTS LUSO PACT#
+news_event = {
+	id = news.712
+	title = news.712.t
+	desc = news.712.d
+	picture = GFX_news_event_portuguese_assembleia
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {
+		name = news.712.a
+	}
+}	
+
+
+#Spain accepts interchange program#
+country_event = {
+	id = portugal.4
+	title = portugal.4.t
+	desc = portugal.4.d
+	picture = GFX_report_event_hitler_handshake
+
+	is_triggered_only = yes
+	
+	option = {
+		name = portugal.7.a
+		ai_chance = { factor = 100 }
+			POR = { country_event = { id = portugal.5 } }
+		}
+	}
+
+
+#Portugal chooses wich program
+country_event = {
+	id = portugal.5
+	title = portugal.5.t
+	desc = portugal.5.d
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+	
+	option = {
+		name = portugal.5.a
+		ai_chance = { factor = 35 }
+		POR = { add_ideas = interchange_army_contractors }
+		random_country = {
+					limit = { original_tag = SPR }
+					add_ideas = interchange_army_contractors
+			}
+		}
+
+	option = {
+		name = portugal.5.b
+		ai_chance = { factor = 35 }
+		POR = { add_ideas = interchange_navy_contractors }
+		random_country = {
+					limit = { original_tag = SPR }
+					add_ideas = interchange_navy_contractors
+			}
+		}
+
+	option = {
+		name = portugal.5.c
+		ai_chance = { factor = 35 }
+		POR = { add_ideas = interchange_building_contractors }
+		random_country = {
+					limit = { original_tag = SPR }
+					add_ideas = interchange_building_contractors
+			}
+		}
+	}
+
+# Demand Ceuta from Spain
+country_event = {
+	id = portugal.10
+	title = portugal.10.t
+	desc = portugal.10.d
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = portugal.10.a
+		ai_chance = { factor = 0 } #Spain will never accept demand#
+		country_event = { id = portugal.11 }
+		effect_tooltip = {
+			POR = { transfer_state = 290 }
+			remove_opinion_modifier = { target = POR modifier = por_supported_spain_civil_war }
+		}
+	}
+	option = {
+		name = portugal.10.b
+		ai_chance = { factor = 100 }
+		POR = { country_event = { id = portugal.12 hours = 4 } }
+		effect_tooltip = {
+			POR = { country_event = { id = portugal.12 } }
+		}
+	}
+}
+
+# Spain Gives Up Ceuta
+country_event = {
+	id = portugal.11
+	title = portugal.11.t
+	desc = portugal.11.d
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = portugal.11.a
+		POR = { transfer_state = 290 }
+		remove_opinion_modifier = { target = POR modifier = por_supported_spain_civil_war }
+	}
+}
+
+# Spain Refuses to Give Up Ceuta
+country_event = {
+	id = portugal.12
+	title = portugal.12.t
+	desc = portugal.12.d
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+	
+	option = {
+		name = portugal.12.a
+		custom_effect_tooltip = portugal.12.a_tooltip
+		POR = { add_state_claim = 290 }
+	}
+
+	option = {
+		name = portugal.12.b
+		custom_effect_tooltip = portugal.12.b_tooltip
+		POR = {
+			hidden_effect = { add_state_claim = 290 }
+					create_wargoal = {
+					type = take_claimed_state
+					generator = { 290 }
+					target = FROM
+			}
+		}
+	}	
+}
+
+#DEMANDING MOLLUCAS#
+news_event = {
+		id = news.733
+		title = news.733.t
+		desc = news.733.d
+		picture = GFX_news_event_portuguese_assembleia
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+		option = {
+			name = news.733.a
+			FROM = { transfer_state = 667 }
+			FROM = { transfer_state = 668 }
+		}
+	}	
+
+
+#RENAMING CEUTA#
+news_event = {
+	id = portugal.8
+	title = portugal.8.t
+	desc = portugal.8.d
+	picture = GFX_news_event_portuguese_assembleia
+
+	fire_only_once = yes
+	
+	trigger = {
+			original_tag = POR
+			owns_state = 290
+	}
+	
+	option = {
+		name = portugal.8.a
+
+		290 = { set_state_name = "Portuguese Africa" }
+	}
+}
+
+#RENAMING URUGUAI#
+news_event = {
+	id = news.718
+	title = news.718.t
+	desc = news.718.d
+	picture = GFX_news_event_portuguese_assembleia
+
+	fire_only_once = yes
+	
+	trigger = {
+			original_tag = POR
+			owns_state = 300
+	}
+	
+	option = {
+		name = news.718.a
+
+		300 = { set_state_name = "Cisplatina" }
+	}
+}
+
+#RENAMING MOLUCCAS#
+news_event = {
+	id = news.719
+	title = news.719.t
+	desc = news.719.d
+	picture = GFX_news_event_portuguese_assembleia
+
+	fire_only_once = yes
+	
+	trigger = {
+			original_tag = POR
+			owns_state = 668
+	}
+	
+	option = {
+		name = news.719.a
+		668 = { set_state_name = "Spice Islands" }
+	}
+}
+
+#BRAZIL IS OURS#
+news_event = {
+	id = news.720
+	title = news.720.t
+	desc = news.720.d
+	picture = GFX_news_event_portuguese_assembleia
+
+	fire_only_once = yes
+	
+	trigger = {
+			original_tag = POR
+			owns_state = 495
+			owns_state = 496
+			owns_state = 497
+			owns_state = 498
+			owns_state = 499
+			owns_state = 500
+			owns_state = 501
+			owns_state = 502
+			owns_state = 503
+			owns_state = 504
+			owns_state = 505
+	}
+	
+	option = {
+		name = news.720.a
+	}
+}
+
+#PINK MAP IS OURS#
+news_event = {
+	id = news.721
+	title = news.721.t
+	desc = news.721.d
+	picture = GFX_news_event_portuguese_assembleia
+
+	fire_only_once = yes
+	
+	trigger = {
+			original_tag = POR
+			owns_state = 545
+	}
+	
+	option = {
+		name = news.721.a
+	}
+}
+
+#CEYLON IS OURS#
+news_event = {
+	id = news.722
+	title = news.722.t
+	desc = news.722.d
+	picture = GFX_news_event_portuguese_assembleia
+
+	fire_only_once = yes
+	
+	trigger = {
+			original_tag = POR
+			owns_state = 422
+	}
+	
+	option = {
+		name = news.722.a
+	}
+}
+
+#SPAIN ACCEPTS LUSO PACT#
+news_event = {
+	id = portugal.6
+	title = portugal.6.t
+	desc = portugal.6.d
+	picture = GFX_news_event_portuguese_assembleia
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {
+		name = portugal.6.a
+	}
+}
+
+# Formation of Iberia - deactivated
+news_event = {
+	id = news.705
+	title = news.705.t
+	desc = news.705.desc
+	picture = GFX_news_event_generic_parliament
+
+	is_triggered_only = yes
+	
+	option = {
+		name = news.705.a
+		trigger = {
+			OR = {
+				original_tag = POR
+			}
+			NOT = { has_war_with = FROM }
+		}
+	}
+	option = {
+		name = NEWS.705.b
+		trigger = {
+			NOT = { original_tag = POR }
+			NOT = { has_war_with = FROM }
+		}
+	}
+	option = {
+		name = news.705.c
+		trigger = {
+			has_war_with = FROM
+		}
+	}
+}
+
+#SPAIN ACCEPTS MONARCHIST AID#
+news_event = {
+	id = news.734
+	title = news.734.t
+	desc = news.734.d
+	picture = GFX_news_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {
+		name = news.734.a
+	}
+}	
+
+# Event starting neutral civil war
+country_event = {
+	id = news.706
+	title = news.706.t
+	desc = news.706.d
+	picture = GFX_report_event_ger_civil_war
+
+	is_triggered_only = yes
+	
+	#civil war starts
+	option = {
+		name = news.706.a
+		hidden_effect = {
+			set_capital = 112
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = neutrality
+				size = 0.5
+				capital = 180
+				states = { 180 181 }
+			}
+			random_other_country = {
+				limit = {
+					original_tag = POR
+					has_government = neutrality
+				}
+				set_stability = 0.9
+				set_war_support = 0.8
+			}
+			
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.8
+			}	
+			set_stability = 0.9
+			set_war_support = 0.8
+		}
+		custom_effect_tooltip = POR_fascism_civil_war_tt
+		add_stability = -0.25
+		random_other_country = {
+			limit = {
+				original_tag = POR
+				has_government = neutrality
+			}
+			set_cosmetic_tag = POR_civil_war
+		}
+	}
+}
+
+country_event = {
+	id = news.707
+	title = news.707.t
+	desc = news.707.d
+	picture = GFX_report_event_ger_civil_war
+
+	is_triggered_only = yes
+	
+	#civil war starts
+	option = {
+		name = news.707.a
+		hidden_effect = {
+			set_capital = 112
+			start_civil_war = {
+				ruling_party = communism
+				ideology = neutrality
+				size = 0.5
+				capital = 180
+				states = { 180 181 }
+			}
+			random_other_country = {
+				limit = {
+					original_tag = POR
+					has_government = neutrality
+				}
+				set_stability = 0.9
+				set_war_support = 0.8
+			}
+			
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.8
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0
+			}	
+			set_stability = 0.9
+			set_war_support = 0.8
+		}
+		custom_effect_tooltip = POR_communism_civil_war_tt
+		add_stability = -0.25
+		random_other_country = {
+			limit = {
+				original_tag = POR
+				has_government = neutrality
+			}
+			set_cosmetic_tag = POR_civil_war
+		}
+	}
+}
+
+country_event = {
+	id = news.708
+	title = news.708.t
+	desc = news.708.d
+	picture = GFX_report_event_ger_civil_war
+
+	is_triggered_only = yes
+	
+	#civil war starts
+	option = {
+		name = news.708.a
+		hidden_effect = {
+			set_capital = 180
+			start_civil_war = {
+				ruling_party = democratic
+				ideology = neutrality
+				size = 0.5
+				capital = 112
+				states = { 112 }
+			}
+			random_other_country = {
+				limit = {
+					original_tag = POR
+					has_government = neutrality
+				}
+				set_stability = 0.9
+				set_war_support = 0.8
+			}
+			
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.8
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}	
+			set_stability = 0.9
+			set_war_support = 0.8
+		}
+		custom_effect_tooltip = POR_democratic_civil_war_tt
+		add_stability = -0.50
+		random_other_country = {
+			limit = {
+				original_tag = POR
+				has_government = neutrality
+			}
+			set_cosmetic_tag = POR_civil_war
+		}
+	}
+}
+
+#DUARTE GETS IN CHARGE#
+
+news_event = {
+	id = news.716
+	title = news.716.t
+	desc = news.716.d
+	picture = GFX_news_event_portuguese_assembleia
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {
+		name = news.716.a
+		hidden_effect = {
+		add_war_support = 0.10
+		}
+	}
+}	
+
+#####  SPAIN MONARCHIST AID  #####
+
+country_event = {
+	id = portugal.22
+	title = portugal.22.t
+	desc = portugal.22.d
+
+	fire_only_once = yes
+
+	is_triggered_only=yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # yes
+		name = portugal.22.a
+		ai_chance = { factor = 100 }
+		random_country = {
+		limit = { original_tag = SPR }
+		add_ideas = POR_return_monarchy
+		set_party_name = { ideology = monarchism long_name = "House of Bourbon-Anjou" name = "House of Bourbon" }
+		add_popularity = {
+			ideology = monarchism
+			popularity = 0.6
+		}
+		create_country_leader = {
+			name = "Alfonso XIII"
+			desc = "POLITICS_VICTOR_EMMANUEL_III_DESC"
+			picture = "Portrait_Alfonso_XIII.tga"
+			expire = "1965.1.1"
+			ideology = absolutism
+			traits = {
+				}
+			}
+		}
+		POR = { country_event = { id = news.709 } }
+	}
+}	
+
+#SPAIN ACCEPTS MONARCHIST AID#
+news_event = {
+	id = news.709
+	title = news.709.t
+	desc = news.709.d
+	picture = GFX_news_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {
+		name = news.709.a
+	}
+}	
+
+#####  SPAIN JOINS PORTUGAL MONARCHISTS#####
+
+country_event = {
+	id = portugal.23
+	title = portugal.23.t
+	desc = portugal.23.d
+
+	fire_only_once = yes
+
+	is_triggered_only=yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # yes
+		name = portugal.23.a
+		ai_chance = { factor = 10 }
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+		set_cosmetic_tag = SPK
+		hidden_effect={
+		add_popularity = {
+			ideology = neutrality
+			popularity = 1
+		}
+		remove_ideas = SPA_recovering_from_civil_war
+		}
+		POR={
+		country_event = { id = news.710 }
+		create_faction = Monarchists_faction
+		add_to_faction=PREV}
+	}
+	option = { # no
+		name = portugal.23.b
+		ai_chance = { factor = 90 }
+		start_civil_war = {
+				ideology = monarchism
+				size = 0.4
+				capital = 174
+				states = { 165 177 166 172 176 174 171 }
+			}
+			hidden_effect={
+			random_other_country = {
+				limit = {
+					original_tag = SPR
+					has_government = monarchism
+				}
+				set_global_flag = civilwarversiontwo
+				set_cosmetic_tag = SPK
+				set_politics = { elections_allowed = no }
+				add_ideas=war_economy
+				add_ideas=limited_conscription
+				add_ideas=POR_return_monarchy
+				set_equipment_fraction = 0.5
+				set_stability = 0.9
+				set_war_support = 0.8
+				POR={
+				country_event = { id = news.711 }
+				create_faction = Monarchists_faction
+				add_to_faction=PREV
+				add_to_war={
+				targeted_alliance = PREV
+				enemy=ROOT}
+				}
+			}
+			add_popularity = {
+				ideology = monarchism
+				popularity = -1
+			}
+			set_equipment_fraction = 0.5
+			set_stability = 0.4
+			set_war_support = 0.6
+			}
+			add_ideas = SPA_recovering_from_civil_war
+			remove_ideas = POR_return_monarchy
+		}
+	}
+
+#SPAIN ACCEPTS BOURBON#
+news_event = {
+	id = news.710
+	title = news.710.t
+	desc = news.710.d
+	picture = GFX_news_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {
+		name = news.710.a
+	}
+}	
+
+#SPAIN DOES NOT ACCEPTS BOURBON#
+news_event = {
+	id = news.711
+	title = news.711.t
+	desc = news.711.d
+	picture = GFX_news_event_soldiers_marching
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {
+		name = news.711.a
+	}
+}	
+
+#SPAIN CIVIL WAR V2 OVER#
+news_event = {
+	id = news.717
+	title = news.717.t
+	desc = news.717.d
+	picture = GFX_news_event_038
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+   
+    trigger = {
+    }
+
+    	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = news.717.a
+	}
+}	
+
+#BRAZIL CIVIL WAR COMMUNISTS#
+	country_event = {
+	id = news.723
+	title = news.723.t
+	desc = news.723.d
+	picture = GFX_report_event_ger_civil_war
+
+	is_triggered_only = yes
+	
+	#civil war starts
+	option = {
+		name = news.723.a
+		hidden_effect = {
+			USA = {
+ 				diplomatic_relation = { country = BRA relation = guarantee active = no }
+ 				}
+ 			}
+		hidden_effect = {
+			set_capital = 500
+			start_civil_war = {
+				ruling_party = communism
+				ideology = neutrality
+				size = 0.5
+				capital = 501
+				states = { 501 504 280 503 502 }
+			}
+			random_other_country = {
+				limit = {
+					original_tag = BRA
+					has_government = neutrality
+				}
+				set_stability = 0.6
+				set_war_support = 0.7
+				remove_ideas = FRA_support_the_left_focus
+			}
+			random_other_country = {
+				limit = {
+					original_tag = BRA
+					has_government = communism
+				}
+				remove_ideas = american_influence_defence_democratic
+ 				remove_ideas = american_protection_defence_democratic
+ 				remove_ideas = american_protection_drift_democratic
+			}
+			
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 1
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0
+			}	
+			set_stability = 0.9
+			set_war_support = 0.8
+		}
+	}
+}
