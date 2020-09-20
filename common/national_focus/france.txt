@@ -50,7 +50,7 @@ focus_tree = {
 			
 			
 		}
-
+	}
 
 
 	focus = {
@@ -59,6 +59,26 @@ focus_tree = {
 		prerequisite = { focus = FRA_public_sector_funding}
 		relative_position_id = FRA_public_sector_funding
 		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			
+			
+		}
+	}
+
+	focus = {
+		id = FRA_raise_compulsory_school_attendance_age
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = FRA_public_sector_funding}
+		relative_position_id = FRA_public_sector_funding
+		x = 1
 		y = 1
 		cost = 10
 		ai_will_do = {
@@ -203,7 +223,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
->
+
 		}
 	}
 	
@@ -480,35 +500,6 @@ focus = {
 	}		
 }
 
-	
-
-	
-
-	
-
-	
-
-
-	
-	
-
-	
-
-	
-	
-	
-
-	
-
-	
-	
-	
-	
-	
-	
-	
-		
-	
 
 focus = {
 	id = FRA_administrative_reforms
@@ -558,8 +549,27 @@ focus = {
 
 	completion_reward = {
 			
+	}
 
+}
 
+focus = {
+	id = FRA_ban_the_communist_party
+	icon = GFX_focus_generic_treaty
+	prerequisite = { focus = FRA_war_powers focus = FRA_administrative_reforms}
+	relative_position_id = FRA_administrative_reforms
+	x = 2
+	y = 1
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
+
+}
 
 focus = {
 	id = FRA_laval_decree
@@ -571,9 +581,29 @@ focus = {
 	cost = 10
 	ai_will_do = {
 		factor = 12
+	}
 
+	completion_reward = {
+			
+	}
 
 }
+
+focus = {
+	id = FRA_modernize_counter_intelligence
+	icon = GFX_focus_generic_treaty
+	prerequisite = { focus = FRA_laval_decree }
+	relative_position_id = FRA_administrative_reforms
+	x = 0
+	y = 1
+	cost = 10
+	ai_will_do = {
+		factor = 12
+	}
+
+	completion_reward = {
+			
+	}
 
 }
 
